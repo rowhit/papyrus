@@ -24,6 +24,7 @@
           url="http://www.omgmarte.org/"/>
       <id>org.eclipse.papyrus.extra.marte.feature</id>
       <id>org.eclipse.papyrus.extra.marte.properties.feature</id>
+      <id>org.eclipse.papyrus.extra.marte.textedit.feature</id>
     </components>
   </categories>
   <categories
