@@ -26,6 +26,22 @@
       <id>org.eclipse.papyrus.extra.marte.properties.feature</id>
       <id>org.eclipse.papyrus.extra.marte.textedit.feature</id>
     </components>
+    <components
+        name="EAST-ADL"
+        provider="Eclipse Modeling Project"
+        description="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/EASTADL_32x32.gif"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <overview
+          summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
+          screenshot=""
+          url="http://www.east-adl.info/"/>
+      <id>org.eclipse.papyrus.extra.eastadl.feature</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
@@ -37,7 +53,7 @@
         description="This feature proposes additional layout functionalities for Papyrus GMF-based diagrams"
         license="EPL"
         groups="//@filters.1"
-        image32="images/layout.gif"
+        image32="images/Layout_32x32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
