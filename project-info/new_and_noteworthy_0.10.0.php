@@ -30,21 +30,20 @@ ob_start();
 
 <h3>Improved Stability</h3>
 <p align="JUSTIFY">
-More than <a href="https://bugs.eclipse.org/bugs/buglist.cgi?action=wrap&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2013-01-01&chfieldto=Now&classification=Modeling&component=Core&component=Diagram&component=Others&component=Table&component=Views&product=MDT.Papyrus&version=0.10.0&list_id=6028843">240 bugs</a> have been closed for version 0.10.0 since january 2013.
-More than <a href="https://hudson.eclipse.org/hudson/job/papyrus-trunk-nightly-tests/">8.000</a> unit tests are run against Papyrus every nights.  
+More than <a href="https://bugs.eclipse.org/bugs/buglist.cgi?action=wrap&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2013-01-01&chfieldto=Now&classification=Modeling&component=Core&component=Diagram&component=Others&component=Table&component=Views&product=MDT.Papyrus&version=0.10.0&list_id=6028843">240 bugs</a> have been closed for version 0.10.0 since january 2013, and more than <a href="https://hudson.eclipse.org/hudson/job/papyrus-trunk-nightly-tests/">8.000</a> unit tests are run against Papyrus every nights.  
 </p>
 
 <h3>CDO support</h3>
 Papyrus can now interact with models manipulated using <a href="http://wiki.eclipse.org/CDO">CDO</a>. Until 0.10.0 version, Papyrus models were stored locally in file resources. Papyrus models can now be shared through CDO repositories. This means that you can share and edit your models across several users!  
 <div id="screenshot">
-	<img width="640" src="images/cdo_overview.png"/>
+	<img width="640" src="../images/cdo_overview.png"/>
 </div>
 
 <h3>Textual Model Search</h3>
 It is now possible to search for elements in models using string or regular expressions. A new tab "Papyrus search" has been integrated into the Eclipse search window
 <sub>The search dialog is accessible using following key combination: Ctrl + 'h'</sub>     
 <div id="screenshot">
-	<img width="640" src="images/search_dialog.png"/>
+	<img width="640" src="../images/search_dialog.png"/>
 </div>
 
 
