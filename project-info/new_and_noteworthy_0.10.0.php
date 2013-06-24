@@ -34,15 +34,17 @@ More than <a href="https://bugs.eclipse.org/bugs/buglist.cgi?action=wrap&bug_sta
 </p>
 
 <h3>CDO support</h3>
-Papyrus can now interact with models manipulated using <a href="http://wiki.eclipse.org/CDO">CDO</a>. Until 0.10.0 version, Papyrus models were stored locally in file resources. Papyrus models can now be shared through CDO repositories. This means that you can share and edit your models across several users!  
-<div id="screenshot">
+<p>
+Papyrus can now interact with models manipulated using <a href="http://wiki.eclipse.org/CDO">CDO</a>. Until 0.10.0 version, Papyrus models were stored locally in file resources. Papyrus models can now be shared through CDO repositories. This means that you can share and edit your models across several users!
+</p>  
+<div id="screenshot_cdo">
 	<img width="640" src="../images/cdo_overview.png"/>
 </div>
 
 <h3>Textual Model Search</h3>
-It is now possible to search for elements in models using string or regular expressions. A new tab "Papyrus search" has been integrated into the Eclipse search window
-<sub>The search dialog is accessible using following key combination: Ctrl + 'h'</sub>     
-<div id="screenshot">
+<p>It is now possible to search for elements in models using string or regular expressions. A new tab "Papyrus search" has been integrated into the Eclipse search window</p>
+<sub><i>The search dialog is accessible using following key combination: Ctrl + 'h'</i></sub>     
+<div id="screenshot_search">
 	<img width="640" src="../images/search_dialog.png"/>
 </div>
 
