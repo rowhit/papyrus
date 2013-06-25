@@ -33,8 +33,7 @@
         groups="//@filters.0"
         image32="images/EASTADL_32x32.gif"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
           screenshot=""
