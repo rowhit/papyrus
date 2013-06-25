@@ -40,26 +40,36 @@
           url="http://www.east-adl.info/"/>
       <id>org.eclipse.papyrus.extra.eastadl.feature</id>
     </components>
+    <components
+        name="RobotML"
+        provider="Eclipse Modeling Project"
+        description="Modeling language and tools for mobile robotic applications"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/robotml_32_32.png"
+        incubation="true">
+      <sitesURLS> http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="Modeling language and tools for mobile robotic applications"/>
+      <id>org.eclipse.papyrus.extra.robotml.feature</id>
+    </components>
+    <components
+        name="RealTime"
+        provider="Eclipse Modeling Project"
+        description="UML Profile and tools for RealTime"
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="UML Profile and tools for RealTime"/>
+      <id>org.eclipse.papyrus.extra.umlrt.feature</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
       description="Extension of the tool"
       image48="">
-    <components
-        name="Automatic Layouts"
-        provider="Eclipse.org"
-        description="This feature proposes additional layout functionalities for Papyrus GMF-based diagrams"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/Layout_32x32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
-      <overview
-          summary="This feature provides an automatic layout tool for all GMF-based diagrams for Papyrus modeler"
-          screenshot="images/layout.gif"
-          url="http://www.eclipse.org/papyrus"/>
-      <id>org.eclipse.papyrus.extra.layout.feature</id>
-    </components>
     <components
         name="Diagram Stylesheets"
         provider="Eclipse Modeling Project"
@@ -104,7 +114,7 @@
         description="Provides tabular editors for Papyrus"
         license="EPL"
         groups="//@filters.1"
-        image32=""
+        image32="images/table_32x32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <sitesURLS>http://download.eclipse.org/nattable/releases/1.0.0/repository/</sitesURLS>
@@ -113,6 +123,84 @@
       <id>org.eclipse.papyrus.infra.nattable.feature</id>
       <id>org.eclipse.papyrus.uml.nattable.feature</id>
       <id>org.eclipse.papyrus.sysml.nattable.feature</id>
+    </components>
+    <components
+        name="Java Reverse and Code Generation"
+        provider="Eclipse Modeling Project"
+        description="Reverse Java Classes and Packages to Papyrus UML Models, and generate Java code from Papyrus UML Models"
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <overview
+          summary="Reverse Java Classes and Packages to Papyrus UML Models, and generate Java code from Papyrus UML Models"/>
+      <id>org.eclipse.papyrus.java.generator.feature</id>
+      <id>org.eclipse.papyrus.java.profile.feature</id>
+      <id>org.eclipse.papyrus.java.reverse.feature</id>
+    </components>
+    <components
+        name="C++ Code Generation"
+        provider="Eclipse Modeling Project"
+        description="C++ Code generation for Papyrus. Includes a C++ Profile; a code generator from UML; a C++ view allowing simple editing of Opaque Behaviors and manipulation of C++ profile attributes"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/codegen-32x32.gif"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="C++ Code generation for Papyrus. Includes a C++ Profile, enabling the specification for C++ features; a code generator from UML enriched with the C++ Profile; a C++ view allowing simple editing of Opaque Behaviors and manipulation of C++ profile attributes"/>
+      <id>org.eclipse.papyrus.extra.cpp.feature</id>
+    </components>
+    <components
+        name="Papyrus DSML Validation"
+        provider="Eclipse Modeling Project"
+        description="Component to generate a validation plug-in from a UML Profile"
+        license="EPL"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="Component to generate a validation plug-in from a UML Profile"/>
+      <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
+      <groups
+          href="../juno/papyrus-extra.xmi#//@filters.1"/>
+    </components>
+    <components
+        name="Qompass Designer"
+        provider="Eclipse Modeling Project"
+        description="The Qompass tool suite is a component based design methodology that enables the generation of executable (C++) code"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/qompass-32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="The Qompass tool suite is a component based design methodology that enables the generation of executable (C++) code. It supports the description of software as well as hardware components and the allocation of the former to the latter. It is based on a flexible component model (FCM) supporting dedicated interaction components and container services to develop platform independent components. Interaction components and container services are extensible via model libraries."/>
+      <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
+    </components>
+    <components
+        name="Tracing for Qompass Designer"
+        provider="Eclipse Modeling Project"
+        description="Tracing extensions for Qompass designer. Container services enable LTTng based application tracing. Can be used in conjunction with the Trace monitoring framework (TMF) for LTTng."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/qompass-32x32+trace.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="Tracing extensions for Qompass designer. Container services enable LTTng based application tracing. Can be used in conjunction with the Trace monitoring framework (TMF) for LTTng."/>
+      <id>org.eclipse.papyrus.extra.qompass.designer.tracing.feature</id>
+    </components>
+    <components
+        name="Papyrus Compare"
+        provider="Eclipse Modeling Project"
+        description="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/papyrus_compare_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <overview
+          summary="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"/>
+      <id>org.eclipse.papyrus.extra.uml.compare.feature</id>
     </components>
   </categories>
   <filters name="Stable"/>
