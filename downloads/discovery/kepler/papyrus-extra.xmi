@@ -16,8 +16,7 @@
         groups="//@filters.0"
         image32="images/marte-32x32.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="MARTE is the reference implementation of the OMG language for real time embedded systems (MARTE OMG)"
           screenshot="images/marte.png"
@@ -34,8 +33,7 @@
         groups="//@filters.0"
         image32="images/EASTADL_32x32.gif"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
           screenshot=""
@@ -55,8 +53,7 @@
         groups="//@filters.1"
         image32="images/Layout_32x32.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="This feature provides an automatic layout tool for all GMF-based diagrams for Papyrus modeler"
           screenshot="images/layout.gif"
@@ -70,8 +67,7 @@
         license="EPL"
         groups="//@filters.0"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"/>
       <id>org.eclipse.papyrus.extra.infra.gmfdiag.css.feature</id>
@@ -84,8 +80,7 @@
         groups="//@filters.1"
         image32="images/DiagramTemplate.gif"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
       <id>org.eclipse.papyrus.extra.diagramtemplate.feature</id>
@@ -98,8 +93,7 @@
         groups="//@filters.1"
         image32="images/Papyrus_CDO.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Provides integration with CDO model repository technology for sharing and real-time collaborative editing of Papyrus models."/>
       <id>org.eclipse.papyrus.extra.cdo.feature</id>
@@ -112,8 +106,7 @@
         groups="//@filters.1"
         image32=""
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/main</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC2/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <sitesURLS>http://download.eclipse.org/nattable/releases/1.0.0/repository/</sitesURLS>
       <overview
           summary="Provides tabular editors for Papyrus"/>
