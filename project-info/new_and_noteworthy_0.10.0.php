@@ -43,12 +43,39 @@ Papyrus can now interact with models manipulated using <a href="http://wiki.ecli
 
 <h3>Textual Model Search</h3>
 <p>It is now possible to search for elements in models using string or regular expressions. A new tab "Papyrus search" has been integrated into the Eclipse search window</p>
-<sub><i>The search dialog is accessible using following key combination: Ctrl + 'h'</i></sub>     
+<sup><i>The search dialog is accessible using following key combination: Ctrl + 'h'</i></sup>     
 <div id="screenshot_search">
 	<img width="640" src="../images/search_dialog.png"/>
 </div>
 
+<h3>OCL Support</h3>
+<p>Support for OCL constraints has been added in several parts of Papyrus. 
+<ul>
+<li>You can for example add constraints in your UML profiles. These constraints will be evaluated on models on which the profile has been applied.</li>
+<li>You can edit constraints direclty in diagrams using a smart editor (completion, syntax coloring, etc.)</li>
+<li>You can validate constraints and see errors and warnings on Papyrus views: model explorer, diagrams</li>
+</ul>
+</p>
 
+
+<h2>Diagrams</h2>
+<h3>Diagram Navigation</h3>
+<p>You can define navigation trough Papyrus diagrams using drag'n'drop from model explorer to element representation in diagram</p>
+<sup><i>Once you have defined shortcuts using drag'n'drop, you can double click on the representation to navigate to the diagram</i></sup>
+<sup><i>You can also reference object representations in diagrams instead of diagrams themselves</i></sup>        
+
+<h3>Symbols</h3>
+<p>The goal of the symbol support in Papyrus is to give users access to some custom representations. They can use their own representation, i.e. their own svg files, in their diagrams, so the model can be easily read and understood.</p>
+<div id="screenshot_symbols">
+	<img width="640" src="../images/Symbol_Example.png"/>
+</div>
+
+<h3>Navigation between type and typed elements</h3>
+<p>This facility is about the possibility to select any kind of element within a view (diagram, table or text) and to be able to retrieve this latter in the model explorer.</p>
+<sup><i>You can use alt + left click to navigate from a Property to its Type for example</i></sup>      
+
+<h3>New Diagrams</h3>
+<p>2 new diagrams are shipped with Papyrus 0.10.0: UML Timing diagram and UML Interaction Overview diagram.</p>
 
 </div>
 
