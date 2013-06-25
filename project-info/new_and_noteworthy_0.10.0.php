@@ -80,7 +80,7 @@ Papyrus can now interact with models manipulated using <a href="http://wiki.ecli
 <h3></h3>
 <p>Papyrus enables to insert references to Model Elements within comments. The displayed text of the comment is automatically computed to match the Model Element's name/label change.</p>
 <div id="screenshot_comment">
-	<img width="640" src="../images/comment.png"/>
+	<img width="260" src="../images/comment.png"/>
 </div>
 </div>
 
