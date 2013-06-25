@@ -6,8 +6,7 @@
   <categories
       name="Languages"
       description="UML language extensions"
-      relevance="6"
-      image48="">
+      relevance="6">
     <components
         name="MARTE"
         provider="Eclipse Modeling Project"
@@ -36,7 +35,6 @@
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
-          screenshot=""
           url="http://www.east-adl.info/"/>
       <id>org.eclipse.papyrus.extra.eastadl.feature</id>
     </components>
@@ -68,8 +66,7 @@
   </categories>
   <categories
       name="Modeler extensions"
-      description="Extension of the tool"
-      image48="">
+      description="Extension of the tool">
     <components
         name="Diagram Stylesheets"
         provider="Eclipse Modeling Project"
