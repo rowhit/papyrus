@@ -156,13 +156,12 @@
         provider="Eclipse Modeling Project"
         description="Component to generate a validation plug-in from a UML Profile"
         license="EPL"
+        groups="//@filters.1"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Component to generate a validation plug-in from a UML Profile"/>
       <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
-      <groups
-          href="../juno/papyrus-extra.xmi#//@filters.1"/>
     </components>
     <components
         name="Qompass Designer"
