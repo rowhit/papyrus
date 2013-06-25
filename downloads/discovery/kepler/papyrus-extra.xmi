@@ -48,7 +48,7 @@
         groups="//@filters.1"
         image32="images/robotml_32_32.png"
         incubation="true">
-      <sitesURLS> http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Modeling language and tools for mobile robotic applications"/>
       <id>org.eclipse.papyrus.extra.robotml.feature</id>
@@ -131,6 +131,7 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/extra/kepler</sitesURLS>
       <overview
           summary="Reverse Java Classes and Packages to Papyrus UML Models, and generate Java code from Papyrus UML Models"/>
       <id>org.eclipse.papyrus.java.generator.feature</id>
