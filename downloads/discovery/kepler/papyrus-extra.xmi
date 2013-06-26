@@ -54,19 +54,6 @@
           summary="Modeling language and tools for mobile robotic applications"/>
       <id>org.eclipse.papyrus.extra.robotml.feature</id>
     </components>
-    <components
-        name="RealTime"
-        provider="Eclipse Modeling Project"
-        description="UML Profile and tools for RealTime"
-        license="EPL"
-        groups="//@filters.1"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
-      <overview
-          summary="UML Profile and tools for RealTime"/>
-      <id>org.eclipse.papyrus.extra.umlrt.feature</id>
-    </components>
   </categories>
   <categories
       name="Modeler extensions"
@@ -130,35 +117,6 @@
       <id>org.eclipse.papyrus.sysml.nattable.feature</id>
     </components>
     <components
-        name="Java Reverse and Code Generation"
-        provider="Eclipse Modeling Project"
-        description="Reverse Java Classes and Packages to Papyrus UML Models, and generate Java code from Papyrus UML Models"
-        license="EPL"
-        groups="//@filters.1"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
-      <overview
-          summary="Reverse Java Classes and Packages to Papyrus UML Models, and generate Java code from Papyrus UML Models"/>
-      <id>org.eclipse.papyrus.java.generator.feature</id>
-      <id>org.eclipse.papyrus.java.profile.feature</id>
-      <id>org.eclipse.papyrus.java.reverse.feature</id>
-    </components>
-    <components
-        name="C++ Code Generation"
-        provider="Eclipse Modeling Project"
-        description="C++ Code generation for Papyrus. Includes a C++ Profile; a code generator from UML; a C++ view allowing simple editing of Opaque Behaviors and manipulation of C++ profile attributes"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/codegen-32x32.gif"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
-      <overview
-          summary="C++ Code generation for Papyrus. Includes a C++ Profile, enabling the specification for C++ features; a code generator from UML enriched with the C++ Profile; a C++ view allowing simple editing of Opaque Behaviors and manipulation of C++ profile attributes"/>
-      <id>org.eclipse.papyrus.extra.cpp.feature</id>
-    </components>
-    <components
         name="Papyrus DSML Validation"
         provider="Eclipse Modeling Project"
         description="Component to generate a validation plug-in from a UML Profile"
@@ -170,34 +128,6 @@
       <overview
           summary="Component to generate a validation plug-in from a UML Profile"/>
       <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
-    </components>
-    <components
-        name="Qompass Designer"
-        provider="Eclipse Modeling Project"
-        description="The Qompass tool suite is a component based design methodology that enables the generation of executable (C++) code"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/qompass-32x32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
-      <overview
-          summary="The Qompass tool suite is a component based design methodology that enables the generation of executable (C++) code. It supports the description of software as well as hardware components and the allocation of the former to the latter. It is based on a flexible component model (FCM) supporting dedicated interaction components and container services to develop platform independent components. Interaction components and container services are extensible via model libraries."/>
-      <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
-    </components>
-    <components
-        name="Tracing for Qompass Designer"
-        provider="Eclipse Modeling Project"
-        description="Tracing extensions for Qompass designer. Container services enable LTTng based application tracing. Can be used in conjunction with the Trace monitoring framework (TMF) for LTTng."
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/qompass-32x32+trace.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
-      <overview
-          summary="Tracing extensions for Qompass designer. Container services enable LTTng based application tracing. Can be used in conjunction with the Trace monitoring framework (TMF) for LTTng."/>
-      <id>org.eclipse.papyrus.extra.qompass.designer.tracing.feature</id>
     </components>
     <components
         name="Papyrus Compare"
