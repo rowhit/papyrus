@@ -28,11 +28,6 @@ ob_start();
 
 <h2>General</h2>
 
-<h3>Improved Stability</h3>
-<p align="JUSTIFY">
-More than <a href="https://bugs.eclipse.org/bugs/buglist.cgi?action=wrap&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2013-01-01&chfieldto=Now&classification=Modeling&component=Core&component=Diagram&component=Others&component=Table&component=Views&product=MDT.Papyrus&version=0.10.0&list_id=6028843">240 bugs</a> have been closed for version 0.10.0 since january 2013, and more than <a href="https://hudson.eclipse.org/hudson/job/papyrus-trunk-nightly-tests/">8.000</a> unit tests are run against Papyrus every nights.  
-</p>
-
 <h3>CDO support</h3>
 <p>
 Papyrus can now interact with models manipulated using <a href="http://wiki.eclipse.org/CDO">CDO</a>. Until 0.10.0 version, Papyrus models were stored locally in file resources. Papyrus models can now be shared through CDO repositories. This means that you can share and edit your models across several users!
@@ -77,11 +72,16 @@ Papyrus can now interact with models manipulated using <a href="http://wiki.ecli
 <h3>New Diagrams</h3>
 <p>2 new diagrams are shipped with Papyrus 0.10.0: UML Timing diagram and UML Interaction Overview diagram.</p>
 
-<h3></h3>
+<h3>Model element links in Comments</h3>
 <p>Papyrus enables to insert references to Model Elements within comments. The displayed text of the comment is automatically computed to match the Model Element's name/label change.</p>
 <div id="screenshot_comment">
 	<img width="260" src="../images/comment.png"/>
 </div>
+
+<h2>Tests and Debug</h2>
+<p align="JUSTIFY">
+More than <a href="https://bugs.eclipse.org/bugs/buglist.cgi?action=wrap&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2013-01-01&chfieldto=Now&classification=Modeling&component=Core&component=Diagram&component=Others&component=Table&component=Views&product=MDT.Papyrus&version=0.10.0&list_id=6028843">240 bugs</a> have been closed for version 0.10.0 since january 2013, and more than <a href="https://hudson.eclipse.org/hudson/job/papyrus-trunk-nightly-tests/">8.000</a> unit tests are run against Papyrus every nights.  
+</p>
 </div>
 
 <?php

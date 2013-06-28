@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.eclipse.org/modeling/papyrus/news" xmlns:tns="http://www.eclipse.org/modeling/papyrus/news">
+	<element name="news">
+		<complexType>
+			<sequence>
+				<element ref="tns:item" minOccurs="0" maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="item">
+		<complexType>
+			<all>
+				</all>
+			<attribute name="title" type="string" use="required"></attribute>
+			<attribute name="date" type="date" use="required"></attribute>
+		</complexType>
+	</element>
+
+</schema>

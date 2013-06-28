@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The structure of the news items are
+    
+    <news>
+    <item title="" date="YYYY-MM-DDThh:mm:ss">
+    News content
+    </item>*
+    </news>
+    
+    Add your item to the top of the list.  Do not delete or move any items.  We generate permalinks by inverse file position.
+    Please post in UTC.  The correct current time can be found at: http://www.time.gov/timezone.cgi?UTC/s/0/java
+    All links must be absolute!  If you do not specify a link, a link to your entry on the Web Tools News page will be
+    generated for you.
+
+    For announcements about releases, the release page is used because the download site will change after archival.
+-->
+<news>
+    <item
+        date="2013-06-27T14:27:00"
+        title="Papyrus 0.10.0 Released!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.0">
+       The Eclipse Papyrus 0.10.0 release is now available! For a short listing of what's new in
+        this release, check out the
+        <a href="http://www.eclipse.org/papyrus/project-info/new_and_noteworthy_0.10.0.php">New and Noteworthy</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/kepler/">Kepler packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
+    
+</news>
