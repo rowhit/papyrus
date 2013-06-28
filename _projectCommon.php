@@ -55,6 +55,8 @@
 	$Nav->addCustomNav("Documentation", "/modeling/mdt/papyrus/usersCorner/usersCornerIndex.php", "_self", 3);
 	$Nav->addCustomNav("Support", "/modeling/mdt/papyrus/support/index.php", "_self", 3);
 	$Nav->addCustomNav("Getting involved", "/modeling/mdt/papyrus/developpersCorner/developpersCornerIndex.php", "_self", 3);
+	$Nav->addCustomNav("About", "http://projects.eclipse.org/projects/modeling.mdt.papyrus", "_self", 3);
+	
 
 	# Define keywords, author and title here, or in each PHP page specifically
 	$pageKeywords	= "papyrus, dsl, modeling, domain specific language, graphical, uml, sysml";
@@ -71,6 +73,7 @@
 	$Menu->addMenuItem("Documentation", "/modeling/mdt/papyrus/usersCorner/usersCornerIndex.php", "_self");
 	$Menu->addMenuItem("Support", "/modeling/mdt/papyrus/support/index.php", "_self");
 	$Menu->addMenuItem("Getting involved", "/modeling/mdt/papyrus/developpersCorner/developpersCornerIndex.php", "_self");
+	$Menu->addMenuItem("About", "http://projects.eclipse.org/projects/modeling.mdt.papyrus", "_self");
 	
 	# To define additional CSS or other pre-body headers
 	# $App->AddExtraHtmlHeader('<link rel="stylesheet" type="text/css" href="/default/style.css"/>');
@@ -79,5 +82,5 @@
 	$App->Promotion = TRUE;
 	
 	# If you have Google Analytics code, use it here
-	# $App->SetGoogleAnalyticsTrackingCode("YOUR_CODE");
+	$App->SetGoogleAnalyticsTrackingCode("UA-42097450-1");
 ?>

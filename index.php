@@ -25,7 +25,7 @@
 	// Generate the HTML content for the news based on the news.xml file
 	// that appears in the root directory.
 	$newsTitle = "Project News";
-	$papyrusnews = news_to_html($root . "/papyrus/news.xml", "", "", "", true, "long", "5");
+	$papyrusnews = news_to_html($root . "/papyrus/news.xml", "", "", "", false, "long", "5");
 	
 	# Paste your HTML content between the EOHTML markers!
 	$html = <<<EOHTML
@@ -120,11 +120,6 @@
 		<p>
 			Papyrus team has released the version 0.10.0. It can be runned eiher on Kepler 4.3. You can download it <a href="updates/index.php">here</a> or using the <a href="http://www.eclipse.org/downloads/">Modeling Eclipse Package</a>, using its discovery interface.
 		</p>
-	</div>
-	
-	<div class="sideitem">
-		<h6>About Project</h6>
-		<p><a href="http://projects.eclipse.org/projects/modeling.mdt.papyrus">Project info</a>, Source Repositories, Committers, Activity...</p>
 	</div>
 	
 	<div class="sideitem">
