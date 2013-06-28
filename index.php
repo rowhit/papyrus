@@ -10,8 +10,9 @@
  * Sebastien Gerard & Remi Schnekenburger (CEA LIST)
  *    
  *******************************************************************************/
-
-	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
+	$root = $_SERVER['DOCUMENT_ROOT'];
+	require_once($root . "/eclipse.org-common/system/app.class.php");	require_once($root . "/eclipse.org-common/system/nav.class.php"); 	require_once($root . "/eclipse.org-common/system/menu.class.php"); 	require_once ($root . '/papyrus/common.php'); require_once ($root . '/papyrus/newstohtml.php'); $App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
+	
 	$App->AddExtraHtmlHeader('<link rel="stylesheet" type="text/css" href="/modeling/mdt/papyrus/style.css"/>');
 	
 	$localVersion = false;
@@ -20,6 +21,11 @@
 	$pageKeywords	= "papyrus, dsl, modeling, domain specific language, graphical, uml, sysml";
 	$pageAuthor		= "Sebastien Gerard";
 	$pageTitle 		= "Papyrus";
+	
+	// Generate the HTML content for the news based on the news.xml file
+	// that appears in the root directory.
+	$newsTitle = "Project News";
+	$papyrusnews = news_to_html($root . "/papyrus/news.xml", "", "", "", true, "long", "5");
 	
 	# Paste your HTML content between the EOHTML markers!
 	$html = <<<EOHTML
@@ -101,10 +107,10 @@
 <div id="rightcolumn">
 	<div class="sideitem">
 		<h6>$newsTitle
-			<a href="/webtools/news.php"><img src="/images/more.gif" title="More..." alt="[More]" /></a>
-			<a href="/webtools/news/"><img src="/images/rss.gif" align="right" title="RSS Feed" alt="[RSS]" /></a>
+			<a href="/papyrus/news.php"><img src="/images/more.gif" title="More..." alt="[More]" /></a>
+			<a href="/papyrus/news/"><img src="/images/rss.gif" align="right" title="RSS Feed" alt="[RSS]" /></a>
 		</h6>
-		$wtpnews
+		$papyrusnews
 	</div>
 </div>
 EOHTML;
