@@ -106,6 +106,38 @@
 	
 <div id="rightcolumn">
 	<div class="sideitem">
+		<h3>Ongoing work...</h3>
+		<div>
+			<ul>
+				<li><a
+					href="http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_kepler.xml">Papyrus
+						Roadmap</a></li>
+				<li><a href="http://wiki.eclipse.org/MDT/Papyrus/Ongoing">Ongoing tasks</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="sideitem">
+		<h3>Current Status</h3>
+		<p>
+			Papyrus team has released the version 0.10.0. It can be runned eiher on Kepler 4.3. You can download it <a href="updates/index.php">here</a> or using the <a href="http://www.eclipse.org/downloads/">Modeling Eclipse Package</a>, using its discovery interface.
+		</p>
+	</div>
+	
+	<div class="sideitem">
+		<h3>About Project</h3>
+		<p><a href="http://projects.eclipse.org/projects/modeling.mdt.papyrus">Project info</a>, Source Repositories, Committers, Activity...</p>
+	</div>
+	
+	<div class="sideitem">
+		<h3>Papyrus Cinema</h3>
+		<p>
+			Following this link, you will find the <a
+				href="cinemaCorner/cinemaCornerIndex.php">Papyrus cinema corner</a>.
+		</p>
+	</div>
+
+	<div class="sideitem">
 		<h6>$newsTitle
 			<a href="/papyrus/news.php"><img src="/images/more.gif" title="More..." alt="[More]" /></a>
 			<a href="/papyrus/news/"><img src="/images/rss.gif" align="right" title="RSS Feed" alt="[RSS]" /></a>
