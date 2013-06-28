@@ -4,7 +4,7 @@ $pageKeywords	= "";
 $pageAuthor		="Remi Schnekenburger";
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-#require_once ($root . '/modeling/mdt/papyrus/common.php');
+require_once ($root . '/modeling/mdt/papyrus/common.php');
 require_once ($root . '/modeling/mdt/papyrus/newstohtml.php');
 
 # Generate the web page
