@@ -11,7 +11,7 @@
  *******************************************************************************/
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-$filename = $root . '/modeling/mdt/papyrus/news.xml';
+$filename = $root . '/papyrus/news.xml';
 $lastBuildDate = date("r", filemtime($filename));
 $news = simplexml_load_file($filename);
 $items = "";
@@ -24,7 +24,7 @@ foreach ($news->item as $item) {
 	$date = date("r", strtotime($item['date'] . "+00:00"));
 	$items .= "<pubDate>$date</pubDate>";
 	// Generate a guid/permalink to the news.php page. We go in reverse order of xml item feed.
-	$permalink = "http://" . $_SERVER['HTTP_HOST'] . "/modeling/mdt/papyrus/news.php#permalink${item_count}";
+	$permalink = "http://" . $_SERVER['HTTP_HOST'] . "/papyrus/news.php#permalink${item_count}";
 	$link = $item['link'] ? $item['link'] : $permalink;
 	$items .= "<link>" .  htmlspecialchars($link) . "</link>";
 	$items .= "<guid isPermaLink=\"true\">";
