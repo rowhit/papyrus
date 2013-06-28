@@ -4,12 +4,12 @@ $pageKeywords	= "";
 $pageAuthor		="Remi Schnekenburger";
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once ($root . '/modeling/mdt/papyrus/common.php');
-require_once ($root . '/modeling/mdt/papyrus/newstohtml.php');
+require_once ($root . '/papyrus/common.php');
+require_once ($root . '/papyrus/newstohtml.php');
 
 # Generate the web page
 // Get the XML news feed as html
-$news = news_to_html($root . "/modeling/mdt/papyrus/news.xml", "$pageTitle", "/modeling/mdt/papyrus/news/");
+$news = news_to_html($root . "/papyrus/news.xml", "$pageTitle", "/papyrus/news/");
 
 $html = <<<EOHTML
 <div id="maincontent">
@@ -21,7 +21,7 @@ $html = <<<EOHTML
 					<div class="papyrussubtitle">$pageTitle</div>
 				</td>
 				<td>
-					<img src="/modeling/mdt/papyrus/images/PapyrusLogo48x48.gif"
+					<img src="/papyrus/images/PapyrusLogo48x48.gif"
 						align="middle" height="129" hspace="50" width="207" alt="Papyrus logo" 
 						usemap="logomap" />
                     <map
@@ -29,7 +29,7 @@ $html = <<<EOHTML
                         name="logomap">
                         <area
                             coords="0,0,207,129"
-                            href="/modeling/mdt/papyrus"
+                            href="/papyrus"
                             alt="Papyrus log" />
                     </map>
 				</td>

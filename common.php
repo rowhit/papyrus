@@ -21,7 +21,6 @@
 $papyrusTopButtons = <<<EOHTML
 <link rel="stylesheet" type="text/css" href="/papyrus/style.css" />
 
-<div class="logoBanner"><a href="/papyrus/"><img src="/modeling/mdt/papyrus/images/backgroundMainPapyrus.png" alt="Papyrus Logo Banner"/></a></div>
 <div id="bigbuttons">
 	<h3>Primary Links</h3>
 	<ul>
