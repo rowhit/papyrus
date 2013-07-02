@@ -7,12 +7,10 @@
 	$pageTitle = "Papyrus - Support";
 	$pageAuthor = "Sebastien Gerard";
 
-	$App->AddExtraHtmlHeader('<link rel="stylesheet" type="text/css" href="/modeling/mdt/papyrus/style.css"/>');
+	$App->AddExtraHtmlHeader('<link rel="stylesheet" type="text/css" href="/papyrus/style.css"/>');
 	
 	# Paste your HTML content between the EOHTML markers!
 	$html = <<<EOHTML
-	
-	$papyrusTopButtons
 	
 <div id="midcolumn">
 	<ul>
