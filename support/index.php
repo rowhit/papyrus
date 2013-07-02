@@ -1,8 +1,19 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
-	$pageTitle 		= "Papyrus - Support";
+<?php 
 
+	$root = $_SERVER['DOCUMENT_ROOT'];
+
+	require_once($root . "/eclipse.org-common/system/app.class.php");	require_once($root . "/eclipse.org-common/system/nav.class.php"); 	require_once($root . "/eclipse.org-common/system/menu.class.php"); 	require_once ($root . '/papyrus/common.php'); require_once ($root . '/papyrus/newstohtml.php'); $App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
+	
+	$pageTitle = "Papyrus - Support";
+	$pageAuthor = "Sebastien Gerard";
+
+	$App->AddExtraHtmlHeader('<link rel="stylesheet" type="text/css" href="/modeling/mdt/papyrus/style.css"/>');
+	
 	# Paste your HTML content between the EOHTML markers!
 	$html = <<<EOHTML
+	
+	$papyrusTopButtons
+	
 <div id="midcolumn">
 	<ul>
 		<li><b><a href="/modeling/mdt/papyrus/usersCorner/usersCornerIndex.php"
