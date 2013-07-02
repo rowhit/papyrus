@@ -44,32 +44,32 @@
 
 	<h1>Papyrus Update Sites</h1>
 		<p align="JUSTIFY">Eclipse provides also facilities for adding new software to the platform or updating software in the system. 
-In all cases, the site location (i.e. the Web URL or the archived Update Site provided above) is the only required item to update or insatll a software within Eclipse.</p>
+In all cases, the site location (i.e. the Web URL or the archived Update Site provided above) is the only required item to update or install a software within Eclipse.</p>
 		<p align="JUSTIFY">To add the Papyrus site, one of the procedures described from the <a href="http://help.eclipse.org/galileo/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Install Manager documentation</a> must be followed.</p>  
 
 		<h4>Update sites for Papyrus release versions:</h4>
 			<h5>Papyrus release 0.10.0 (Kepler) (Recommended):</h5>
 			<ul>
-				<li>Papyrus 0.10.X / Eclipse Kepler: 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
+				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
 			</ul>
 			<h5>Previous releases</h5>
 			<ul>
-				<li>Papyrus 0.9.2 / Eclipse Juno:		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/juno</font></li>
-				<li>Papyrus 0.8.2 / Eclipse Indigo: 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/maintenance/indigo</font></li>
-				<li>Papyrus 0.7.3 / Eclipse Helios: 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/helios</font></li>
+				<li>Papyrus 0.9.2 / Eclipse Juno:<br/>		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/juno</font></li>
+				<li>Papyrus 0.8.2 / Eclipse Indigo:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/maintenance/indigo</font></li>
+				<li>Papyrus 0.7.3 / Eclipse Helios:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/helios</font></li>
 			</ul>
 		
 		<h4>Update sites for Papyrus nightly builds:</h4>
 			<p>For advanced users and pioneers, you can access the latest commits done within Papyrus by accessing its nightly builds...</p>
 			<h5>Papyrus nightly builds, version 0.10.x (Kepler):</h5>
 			<ul>
-				<li>Papyrus 0.10.x / Eclipse Kepler: <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/kepler</font></li>
+				<li>Papyrus 0.10.x / Eclipse Kepler:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/kepler</font></li>
 			</ul>
 			
 			<h5>Previous nightly builds</h5>
 			<ul>
-				<li>Papyrus 0.9.x / Eclipse Juno: 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/juno</font></li>
-				<li>Papyrus 0.8.x / Eclipse Indigo: <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/indigo</font></li>
+				<li>Papyrus 0.9.x / Eclipse Juno:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/juno</font></li>
+				<li>Papyrus 0.8.x / Eclipse Indigo:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/indigo</font></li>
 			</ul>
 </div>
 EOHTML;
