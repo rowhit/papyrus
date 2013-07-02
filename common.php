@@ -24,15 +24,15 @@ $papyrusTopButtons = <<<EOHTML
 <div id="bigbuttons">
 	<h3>Primary Links</h3>
 	<ul>
-		<li><a id="buttonDownload" href="updates/index.php"
+		<li><a id="buttonDownload" href="/papyrus/updates/index.php"
 			title="Getting started">Papyrus installation guide and update site</a></li>
 		<li><a id="buttonDocumentation"
-			href="usersCorner/usersCornerIndex.php" title="Documentation">Tutorials,
+			href="/papyrus/usersCorner/usersCornerIndex.php" title="Documentation">Tutorials,
 				Examples, Videos, Reference Documentation...</a></li>
-		<li><a id="buttonSupport" href="support/index.php"
+		<li><a id="buttonSupport" href="/papyrus/support/index.php"
 			title="Support">Bug Tracker, Newsgroup, Professional Support</a></li>
 		<li><a id="buttonInvolved"
-			href="developpersCorner/developpersCornerIndex.php"
+			href="/papyrus/developpersCorner/developpersCornerIndex.php"
 			title="Developper Corner">SVN, Developper FAQ, Cookboock...</a></li>
 	</ul>
 </div>
