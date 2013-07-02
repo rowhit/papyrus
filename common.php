@@ -38,7 +38,4 @@ $papyrusTopButtons = <<<EOHTML
 </div>
 EOHTML;
 # * * * * *   $papyrusTopButtons END   * * * * * #
-$aboutLinks = <<<EOHTML
-<style>#leftcol{display:block !important;}#midcolumn{width:725px !important;}</style>
-EOHTML;
 ?>
