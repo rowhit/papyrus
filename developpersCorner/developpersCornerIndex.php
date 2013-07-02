@@ -10,44 +10,40 @@
  * Sébastien Gérard, CEA LIST
  *    
  *******************************************************************************/
+	$root = $_SERVER['DOCUMENT_ROOT'];
 
-	#
+	require_once($root . "/eclipse.org-common/system/app.class.php");	require_once($root . "/eclipse.org-common/system/nav.class.php"); 	require_once($root . "/eclipse.org-common/system/menu.class.php"); 	require_once ($root . '/papyrus/common.php'); require_once ($root . '/papyrus/newstohtml.php'); $App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
+
 	# Begin: page-specific settings.
 	$pageTitle 		= "Papyrus Developper Corner";
 	$pageKeywords	= "papyrus, developpers, documents, cookbook, examples";
 	$pageAuthor		= "Sebastien Gerard";
 		
-	# Paste your HTML content between the EOHTML markers!	
-	ob_start();
-	?>
-	<div id="midcolumn">
-		<h1>Get involved!</h1>
+# Paste your HTML content between the EOHTML markers!
+	$html = <<<EOHTML
+	
+<div id="midcolumn">
+	<h1>Get involved!</h1>
 		
-		<p>
-			There are many ways to help us developing and bringing to the community the Papyrus tool:  
-		</p>
-		<h3>Reporting bug or enhancement</h3>
-		<p>
-			<ul>
-    		 	<li>Download one of the latest Papyrus release or milestones. Take it for a test drive before next release and report any bugs you find.</li>
-    		 	<li>Report Enhancements: Got an idea for a killer feature? Or maybe something you use often could use some tweaking? Post an enhancement request!</li>
-   			</ul>
-   			
-   			You can achieve this going to the Eclipse bugzilla: <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=MDT.Papyrus&amp;version=0.9.0&amp;component=Core&amp;rep_platform=All&amp;op_sys=All"/>New Bug</a>
-		</p>
-				
-		<h3>Fix Bugs or Implement Enhancements</h3>
-		<p>	
-		Is there some bug that really bothers you? Instead of just reporting it, fix it and submit a patch on the Papyrus bugzilla.
-			<ul>
-				<li>To learn how the bug-fixing process works, check out the <a href="http://wiki.eclipse.org/Bug_Reporting_FAQ">bug reporting FAQ:</a></li>
-				<li>To learn about the lifecycle of bugzilla entries, check out the <a href="http://wiki.eclipse.org/Development_Resources/HOWTO/Bugzilla_Use">development process</a></li>	
-			</ul>
-		</p>
-	</div>	
-	<?
-	$html = ob_get_clean();
+	<p>There are many ways to help us developing and bringing to the community the Papyrus tool:  </p>
+	<h3>Reporting bug or enhancement</h3>
+	<ul>    
+		<li>Download one of the latest Papyrus release or milestones. Take it for a test drive before next release and report any bugs you find.</li>
+    	<li>Report Enhancements: Got an idea for a killer feature? Or maybe something you use often could use some tweaking? Post an enhancement request!</li>
+   	</ul>
+   		
+	You can achieve this going to the Eclipse bugzilla: <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=MDT.Papyrus&amp;version=0.9.0&amp;component=Core&amp;rep_platform=All&amp;op_sys=All"/>New Bug</a>
+			
+	<h3>Fix Bugs or Implement Enhancements</h3>
+	<p>Is there some bug that really bothers you? Instead of just reporting it, fix it and submit a patch on the Papyrus bugzilla.
+		<ul>
+			<li>To learn how the bug-fixing process works, check out the <a href="http://wiki.eclipse.org/Bug_Reporting_FAQ">bug reporting FAQ:</a></li>
+			<li>To learn about the lifecycle of bugzilla entries, check out the <a href="http://wiki.eclipse.org/Development_Resources/HOWTO/Bugzilla_Use">development process</a></li>	
+		</ul>
+	</p>
+</div>	
+EOHTML;
 
 	# Generate the web page
-	$App->generatePage('Nova', $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
+	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 ?>

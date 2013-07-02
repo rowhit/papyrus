@@ -10,90 +10,44 @@
  * Sébastien Gérard, CEA LIST
  *    
  *******************************************************************************/
+	$root = $_SERVER['DOCUMENT_ROOT'];
 
-	#
+	require_once($root . "/eclipse.org-common/system/app.class.php");	require_once($root . "/eclipse.org-common/system/nav.class.php"); 	require_once($root . "/eclipse.org-common/system/menu.class.php"); 	require_once ($root . '/papyrus/common.php'); require_once ($root . '/papyrus/newstohtml.php'); $App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
+
 	# Begin: page-specific settings.
 	$pageTitle 		= "Papyrus Custumization Documentation";
 	$pageKeywords	= "papyrus, users, documents, tutorials, examples";
 	$pageAuthor		= "Sebastien Gerard";
 		
 	# Paste your HTML content between the EOHTML markers!	
-	ob_start();
-	?>
-	<div id="midcolumn">
-		<h1>Papyrus Custumization Documentation Corner</h1>
+	$html = <<<EOHTML
+<div id="midcolumn">
+	<h1>Papyrus Custumization Documentation Corner</h1>
 		
-		<p>
-			Papyrus is a UML tool that provide very advanced facililitlies for custmizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custum facilities. 
-		</p>
+	<p>Papyrus is a UML tool that provide very advanced facilities for customizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custum facilities. </p>
 		
-		<h3>Tutorials</h3>
-			<ul>
-				<li>Coming soon...</li>
-			</ul>
-		<h3>Examples</h3>
-			<ul>
-				<li><a href="./custumizationExamples/custumizationExamplesIndex.php">The mixin machin DSML example</li>
-			</ul>
-		<!--
-		<h3>&lt;h3&gt; tag</h3>
-		<div class="homeitem">
-			<ul>
-				<li>This is an unordered list</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-				<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</li>
- 				<li>Curabitur vel lorem in turpis adipiscing dictum. Nunc mi est, scelerisque vitae, venenatis et, euismod et, sem. Praesent aliquet mi vel felis. Pellentesque pellentesque convallis ante. Praesent imperdiet velit vitae justo. Nullam quis purus. Aenean neque enim, consequat non, mattis eu, gravida sed, massa.</li>
-			</ul>
-			<ol> 
-				<li>This is an ordered list</li>
-				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-				<li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</li>
- 				<li>Curabitur vel lorem in turpis adipiscing dictum. Nunc mi est, scelerisque vitae, venenatis et, euismod et, sem. Praesent aliquet mi vel felis. Pellentesque pellentesque convallis ante. Praesent imperdiet velit vitae justo. Nullam quis purus. Aenean neque enim, consequat non, mattis eu, gravida sed, massa.</li>
-			</ol>				
-		</div>
-		
-		<h2>&lt;h2&gt; tag</h2>
-		<table>
-			<tr>
-				<td>Tables look </td>
-				<td>like this</td>
-			</tr>
-			<tr>
-				<td>Data</td>
-				<td>Data</td>
-			</tr>
-			<tr>
-				<td>Data</td>
-				<td>Data</td>
-			</tr>
-		</table>
-		-->
-		
-	</div>
+	<h3>Tutorials</h3>
+		<ul>
+			<li>Coming soon...</li>
+		</ul>
 
-	<!-- remove the entire <div> tag to omit the right column!  -->
-	<div id="rightcolumn">
-		<div class="sideitem">
-			<h6>Related Links</h6>
-			<ul>
-				<li>For developpers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
-				<li>For questions, let's go to the <a href="http://www.eclipse.org/newsportal/thread.php?group=eclipse.papyrus">Papyrus forum</a></li>
-			</ul>
-		</div>
-		<!--
-		<div class="sideitem">
-			<h6>&lt;h6&gt; tag</h6>
-				<div class="modal">
-					Wrapping your content using a div.modal tag here will add the gradient background
-				</div>
-		</div>
-		-->
-	</div>
+	<h3>Examples</h3>
+	<ul>
+		<li><a href="./custumizationExamples/custumizationExamplesIndex.php">The mixin machin DSML example</li>
+	</ul>
+</div>
 
-	
-	<?
-	$html = ob_get_clean();
+<div id="rightcolumn">
+	<div class="sideitem">
+		<h6>Related Links</h6>
+		<ul>
+			<li>For developpers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
+			<li>For questions, let's go to the <a href="http://www.eclipse.org/newsportal/thread.php?group=eclipse.papyrus">Papyrus forum</a></li>
+		</ul>
+	</div>
+</div>
+EOHTML;
 
 	# Generate the web page
-	$App->generatePage('Nova', $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
+	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 ?>
