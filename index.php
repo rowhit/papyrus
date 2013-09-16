@@ -109,7 +109,7 @@
 		<h6>Ongoing work...</h6>
 			<ul>
 				<li><a
-					href="http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_kepler.xml">Papyrus
+					href="http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_luna.xml">Papyrus
 						Roadmap</a></li>
 				<li><a href="http://wiki.eclipse.org/MDT/Papyrus/Ongoing">Ongoing tasks</a></li>
 			</ul>
