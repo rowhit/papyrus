@@ -34,7 +34,7 @@ final 4.4 release of the Platform, upon which Papyrus and other projects
 will release simultaneously. As Papyrus is a dependency of numerous
 other projects, Papyrus will deliver its milestones within three days of
 the Eclipse Platform. It is anticipated that Papyrus will synchronize its
-milestones with the Kepler milestone schedule.
+milestones with the Luna milestone schedule.
          </html:div>
       </preamble>
 	<milestone date="08/23/2013" milestone="M1" />
@@ -182,7 +182,7 @@ implementation and APIs. It concerns more precisely all features related to
 following concerns: [Documentation - User], and [Documentation - Developer].
                 </html:div>
             </description>
-            <committed bugzilla="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;status_whiteboard_type=substring&amp;status_whiteboard=Usability&amp;classification=Modeling&amp;product=MDT.Papyrus&amp;target_milestone=M1&amp;target_milestone=M2&amp;target_milestone=M3&amp;target_milestone=M4&amp;target_milestone=M5&amp;target_milestone=M6&amp;target_milestone=M7&amp;target_milestone=RC&amp;keywords_type=allwords&amp;keywords=plan&amp;field0-0-0=flagtypes.name&amp;type0-0-0=substring&amp;value0-0-0=luna&amp;field0-1-0=flagtypes.name&amp;type0-1-0=notsubstring&amp;value0-1-0=luna-" />
+            <committed bugzilla="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;status_whiteboard_type=substring&amp;status_whiteboard=Documentation&amp;classification=Modeling&amp;product=MDT.Papyrus&amp;component=Core&amp;target_milestone=M1&amp;target_milestone=M2&amp;target_milestone=M3&amp;target_milestone=M4&amp;target_milestone=M5&amp;target_milestone=M6&amp;target_milestone=M7&amp;target_milestone=RC&amp;keywords_type=allwords&amp;keywords=plan&amp;field0-0-0=flagtypes.name&amp;type0-0-0=substring&amp;value0-0-0=luna&amp;field0-1-0=flagtypes.name&amp;type0-1-0=notsubstring&amp;value0-1-0=luna-" />
       		<proposed bugzilla="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;status_whiteboard_type=substring&amp;status_whiteboard=Documentation&amp;classification=Modeling&amp;product=MDT.Papyrus&amp;target_milestone=luna&amp;keywords_type=allwords&amp;keywords=plan&amp;field0-0-0=flagtypes.name&amp;type0-0-0=substring&amp;value0-0-0=luna&amp;field0-1-0=flagtypes.name&amp;type0-1-0=notsubstring&amp;value0-1-0=luna-" />
       		<deferred bugzilla="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;status_whiteboard_type=substring&amp;status_whiteboard=Documentation&amp;classification=Modeling&amp;product=MDT.Papyrus&amp;keywords_type=allwords&amp;keywords=plan&amp;field0-0-0=flagtypes.name&amp;type0-0-0=equals&amp;value0-0-0=luna-" />
         </theme>
