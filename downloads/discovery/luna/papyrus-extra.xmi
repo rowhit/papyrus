@@ -83,6 +83,7 @@
       <overview
           summary="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"/>
       <id>org.eclipse.papyrus.extra.infra.gmfdiag.css.feature</id>
+      <id>org.eclipse.papyrus.uml.diagram.css</id>
     </components>
     <components
         name="Diagram generation"
