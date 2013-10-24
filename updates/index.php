@@ -36,7 +36,7 @@
 
 	<h1>Papyrus Installation Guide</h1>
 	<ul>
-		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/junor">Eclipse Modeling Package</a> for your own platform.</li>
+		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplerr">Eclipse Modeling Package</a> for your own platform.</li>
 		<li>Then, you have to use the discovery interface ("Help" => "Install Modeling Component") and select Papyrus.</li>
 		<li>Proceed through installation steps. Once the installation is completed, you will be asked to restart your eclipse platform and then Papyrus is ready to use!</li>
 	</ul>
@@ -48,9 +48,9 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		<p align="JUSTIFY">To add the Papyrus site, one of the procedures described from the <a href="http://help.eclipse.org/galileo/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Install Manager documentation</a> must be followed.</p>  
 
 		<h4>Update sites for Papyrus release versions:</h4>
-			<h5>Papyrus release 0.10.0 (Kepler) (Recommended):</h5>
+			<h5>Papyrus release 0.10.1 (Kepler) (Recommended):</h5>
 			<ul>
-				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
+				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'></font></li>
 			</ul>
 			<h5>Previous releases</h5>
 			<ul>
@@ -61,13 +61,14 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		
 		<h4>Update sites for Papyrus nightly builds:</h4>
 			<p>For advanced users and pioneers, you can access the latest commits done within Papyrus by accessing its nightly builds...</p>
-			<h5>Papyrus nightly builds, version 0.10.x (Kepler):</h5>
+			<h5>Papyrus nightly builds, version 1.0.x (Luna):</h5>
 			<ul>
-				<li>Papyrus 0.10.x / Eclipse Kepler:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/kepler</font></li>
+				<li>Papyrus 1.0.x / Eclipse Luna:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna</font></li>
 			</ul>
 			
 			<h5>Previous nightly builds</h5>
 			<ul>
+				<li>Papyrus 0.10.x / Eclipse Kepler:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/kepler</font></li>
 				<li>Papyrus 0.9.x / Eclipse Juno:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/juno</font></li>
 				<li>Papyrus 0.8.x / Eclipse Indigo:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/indigo</font></li>
 			</ul>
