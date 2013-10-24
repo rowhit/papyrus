@@ -50,7 +50,7 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		<h4>Update sites for Papyrus release versions:</h4>
 			<h5>Papyrus release 0.10.1 (Kepler) (Recommended):</h5>
 			<ul>
-				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'></font></li>
+				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
 			</ul>
 			<h5>Previous releases</h5>
 			<ul>
