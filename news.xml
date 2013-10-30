@@ -15,6 +15,27 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+	<item
+        date="2013-10-30T11:27:00"
+        title="Papyrus team at the Eclipse Conference Europe 2013!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+       You can meet some of the guys involved in the Papyrus project at the <a href="http://www.flickr.com/photos/33725200@N00/10553624006/">Booth #13</a> at the Eclipse conference Europe 2013, in Ludwisgburg.
+       <P>
+       You can also attend on Thursday to the <a href="http://www.eclipsecon.org/europe2013/scade-system-first-industrial-success-eclipse-papyrus-presented-cea">talk</a> on the first industrial success for Papyrus: Scade System from Esterel Technologies (an ANSYS group company).
+       </P>
+    </item>
+	<item
+        date="2013-09-28T15:27:00"
+        title="Papyrus 0.10.1 Released!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+       The Eclipse Papyrus 0.10.1 release is now available! For a short listing of the bugs fixed
+       in this service release , check out the
+        <a href="https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfieldfrom=2013-06-15&chfieldto=2013-09-25&classification=Modeling&list_id=7327889&product=MDT.Papyrus&query_format=advanced&target_milestone=0.10.0&target_milestone=0.7.0&target_milestone=0.8.0&target_milestone=0.9.0&target_milestone=1.0.0&target_milestone=3.0.0&target_milestone=3.1.0&target_milestone=3.2.0&target_milestone=4.0.0&target_milestone=M1&target_milestone=M2&target_milestone=M3&target_milestone=M4&target_milestone=M5&target_milestone=M6&target_milestone=M7&target_milestone=SR1&target_milestone=SR2&version=0.10.0&version=0.10.1&query_based_on=&columnlist=short_desc%2Cresolution%2Cchangeddate">0.10.1 bug fixes</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/kepler/">Kepler packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
     <item
         date="2013-06-27T14:27:00"
         title="Papyrus 0.10.0 Released!"
