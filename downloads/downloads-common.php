@@ -46,7 +46,8 @@ $hiddenBuilds = is_readable($_SERVER["DOCUMENT_ROOT"] . "/$PR/downloads/hidden.t
 $files = array (
 		$_SERVER["DOCUMENT_ROOT"] . "/$PR/downloads/extras-" . $projct . ".php", 
 		$_SERVER["DOCUMENT_ROOT"] . "/$PR/downloads/extras-" . $PR . ".php",
-		$_SERVER["DOCUMENT_ROOT"] . "/$PR/$projct/downloads/extras-$projct.php"
+		$_SERVER["DOCUMENT_ROOT"] . "/$PR/$projct/downloads/extras-$projct.php",
+		$_SERVER["DOCUMENT_ROOT"] . "/papyrus/downloads/extras-.php"
 		);
 foreach ($files as $file)
 {
@@ -57,7 +58,7 @@ foreach ($files as $file)
 	}
 	else
 	{
-		print "<!-- $file not found -->";
+		print "<!-- ${file} not found -->";
 	}
 }
 
