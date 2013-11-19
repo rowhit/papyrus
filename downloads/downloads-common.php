@@ -47,7 +47,7 @@ $files = array (
 		$_SERVER["DOCUMENT_ROOT"] . "/$PR/downloads/extras-" . $projct . ".php", 
 		$_SERVER["DOCUMENT_ROOT"] . "/$PR/downloads/extras-" . $PR . ".php",
 		$_SERVER["DOCUMENT_ROOT"] . "/$PR/$projct/downloads/extras-$projct.php",
-		$_SERVER["DOCUMENT_ROOT"] . "/papyrus/downloads/extras-.php"
+		$_SERVER["DOCUMENT_ROOT"] . "/papyrus/downloads/extras-papyrus.php" //Papyrus project name has changed. TODO: Change $PR to papyrus instead of modeling/mdt/papyrus?
 		);
 foreach ($files as $file)
 {
@@ -55,10 +55,6 @@ foreach ($files as $file)
 	{
 		include_once($file);
 		break;
-	}
-	else
-	{
-		print "<!-- ${file} not found -->";
 	}
 }
 
