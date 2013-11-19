@@ -55,6 +55,10 @@ foreach ($files as $file)
 		include_once($file);
 		break;
 	}
+	else
+	{
+		print "<!-- $file not found -->";
+	}
 }
 
 $hadLoadDirSimpleError = 1; //have we echoed the loadDirSimple() error msg yet? if 1, omit error; if 0, echo at most 1 error
