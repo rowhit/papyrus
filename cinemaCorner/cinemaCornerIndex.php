@@ -54,6 +54,7 @@
     			<img src="images/ProfileDiagramEditor.jpg" alt="Profile diagram editor." />
   			</div>
   			<br>
+  			<iframe width="640" height="480" src="//www.youtube.com/embed/VZi_KnOrvCQ?rel=0" frameborder="0" allowfullscreen></iframe>
   			<br>
   		</p>
  </body>
