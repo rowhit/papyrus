@@ -4,13 +4,13 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:discovery="http://www.eclipse.org/papyrus/discovery/1.0">
   <categories
-      name="Languages"
-      description="UML language extensions"
+      name="Additional Domain Specific Modeling Languages"
+      description=""
       relevance="6">
     <components
-        name="MARTE"
+        name="MARTE 1.1"
         provider="Eclipse Modeling Project"
-        description="MARTE is the language dedicated to Real Time Embedded systems"
+        description="MARTE is the OMG extension on the UML dedicated to real time embedded systems."
         license="EPL"
         groups="//@filters.0"
         image32="images/marte-32x32.png"
@@ -18,9 +18,9 @@
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
       <overview
-          summary="MARTE is the reference implementation of the OMG language for real time embedded systems (MARTE OMG)"
+          summary="This specification of a UML profile adds capabilities to UML for model-driven development of Real Time and Embedded Systems (RTES). This extension, called the UML profile for MARTE (in short MARTE), provides support for specification, design, and verification/validation stages. This new profile is intended to replace the existing UML Profile for Schedulability, Performance and Time (formal/03-09-01)."
           screenshot="images/marte.png"
-          url="http://www.omgmarte.org/"/>
+          url="http://www.omg.org/spec/MARTE/1.1/"/>
       <id>org.eclipse.papyrus.extra.marte.feature</id>
       <id>org.eclipse.papyrus.extra.marte.properties.feature</id>
       <id>org.eclipse.papyrus.extra.marte.textedit.feature</id>
@@ -55,33 +55,33 @@
       <id>org.eclipse.papyrus.extra.robotml.feature</id>
     </components>
     <components
-        name="RealTime"
+        name="UML-RT"
         provider="Eclipse Modeling Project"
-        description="UML Profile and tools for RealTime"
+        description="UML profile and tools for UML-RT"
         license="EPL"
         groups="//@filters.1"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
       <overview
-          summary="UML Profile and tools for RealTime"/>
+          summary="UML profile and tools for UML-RT"/>
       <id>org.eclipse.papyrus.extra.umlrt.feature</id>
     </components>
   </categories>
   <categories
-      name="Modeler extensions"
+      name="Modeler Extensions"
       description="Extension of the tool">
     <components
-        name="Diagram Stylesheets"
+        name="View Stylesheets"
         provider="Eclipse Modeling Project"
-        description="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"
+        description="Support of themes for Papyrus enabling specific stylesheets definition on views."
         license="EPL"
         groups="//@filters.0"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
       <overview
-          summary="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"/>
+          summary="Support of themes for Papyrus enabling specific stylesheets definition on views."/>
       <id>org.eclipse.papyrus.extra.infra.gmfdiag.css.feature</id>
     </components>
     <components
@@ -90,7 +90,7 @@
         description="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"
         license="EPL"
         groups="//@filters.1"
-        image32="images/DiagramTemplate.gif"
+        image32="images/DiagramTemplate_32x32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/0.10/RC6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/kepler</sitesURLS>
@@ -115,7 +115,7 @@
     <components
         name="Papyrus Tabular Editors"
         provider="Eclipse Modeling Project"
-        description="Provides tabular editors for Papyrus"
+        description="Tabular views for Papyrus"
         license="EPL"
         groups="//@filters.1"
         image32="images/table_32x32.png"
@@ -132,7 +132,7 @@
     <components
         name="Papyrus Compare"
         provider="Eclipse Modeling Project"
-        description="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"
+        description="Semantic and Diagram comparison for Papyrus Models"
         license="EPL"
         groups="//@filters.1"
         image32="images/papyrus_compare_32x32.png"
