@@ -72,20 +72,6 @@
       name="Modeler extensions"
       description="Extension of the tool">
     <components
-        name="Diagram Stylesheets"
-        provider="Eclipse Modeling Project"
-        description="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"
-        license="EPL"
-        groups="//@filters.0"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M3/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
-      <overview
-          summary="Support of CSS Stylesheets and Themes for Papyrus GMF-based diagrams"/>
-      <id>org.eclipse.papyrus.extra.infra.gmfdiag.css.feature</id>
-      <id>org.eclipse.papyrus.extra.uml.diagram.css.feature</id>
-    </components>
-    <components
         name="Diagram generation"
         provider="Eclipse Modeling Project"
         description="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"
