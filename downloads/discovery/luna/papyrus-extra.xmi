@@ -100,23 +100,6 @@
       <id>org.eclipse.papyrus.extra.cdo.feature</id>
     </components>
     <components
-        name="Papyrus Tabular Editors"
-        provider="Eclipse Modeling Project"
-        description="Provides tabular editors for Papyrus"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/table_32x32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M4/extra</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/nattable/releases/1.0.0/repository/</sitesURLS>
-      <overview
-          summary="Provides tabular editors for Papyrus"/>
-      <id>org.eclipse.papyrus.infra.nattable.feature</id>
-      <id>org.eclipse.papyrus.uml.nattable.feature</id>
-      <id>org.eclipse.papyrus.sysml.nattable.feature</id>
-    </components>
-    <components
         name="Papyrus Compare"
         provider="Eclipse Modeling Project"
         description="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"
