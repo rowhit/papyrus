@@ -15,7 +15,7 @@
         groups="//@filters.0"
         image32="images/marte-32x32.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="MARTE is the reference implementation of the OMG language for real time embedded systems (MARTE OMG)"
@@ -33,7 +33,7 @@
         groups="//@filters.0"
         image32="images/EASTADL_32x32.gif"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="EAST-ADL is an Architecture Description Language (ADL) for automotive embedded systems"
@@ -48,7 +48,7 @@
         groups="//@filters.1"
         image32="images/robotml_32_32.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="Modeling language and tools for mobile robotic applications"/>
@@ -61,7 +61,7 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="UML Profile and tools for RealTime"/>
@@ -79,7 +79,7 @@
         groups="//@filters.1"
         image32="images/DiagramTemplate.gif"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
@@ -93,9 +93,8 @@
         groups="//@filters.1"
         image32="images/Papyrus_CDO.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/emf/cdo/drops/S20140129-1205</sitesURLS>
       <overview
           summary="Provides integration with CDO model repository technology for sharing and real-time collaborative editing of Papyrus models."/>
       <id>org.eclipse.papyrus.extra.cdo.feature</id>
@@ -108,7 +107,7 @@
         groups="//@filters.1"
         image32="images/papyrus_compare_32x32.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M5/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/milestones/1.0/M6/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"/>
