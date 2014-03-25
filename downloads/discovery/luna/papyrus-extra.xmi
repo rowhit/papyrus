@@ -113,6 +113,19 @@
           summary="Papyrus integration of EMF Compare. Includes Semantic and Diagram comparison for Papyrus Models"/>
       <id>org.eclipse.papyrus.extra.uml.compare.feature</id>
     </components>
+    <components
+        name="Papyrus Layers"
+        provider="Eclipse Modeling Project"
+        description="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
+      <overview
+          summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
+      <id>org.eclipse.papyrus.layers.feature</id>
+    </components>
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
