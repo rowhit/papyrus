@@ -118,7 +118,7 @@
 	<div class="sideitem">
 		<h6>Current Status</h6>
 		<p>
-			Papyrus team has released the version 0.10.0. It can be runned eiher on Kepler 4.3. You can download it <a href="updates/index.php">here</a> or using the <a href="http://www.eclipse.org/downloads/">Modeling Eclipse Package</a>, using its discovery interface.
+			Papyrus team has released the version 0.10.2a. It can be runned on Kepler 4.3. You can install it using the instructions <a href="updates/index.php">here</a>.
 		</p>
 	</div>
 	

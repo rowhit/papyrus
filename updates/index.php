@@ -36,19 +36,20 @@
 
 	<h1>Papyrus Installation Guide</h1>
 	<ul>
-		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplerr">Eclipse Modeling Package</a> for your own platform.</li>
+		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplersr2">Eclipse Modeling Package</a> for your own platform.</li>
 		<li>Then, you have to use the discovery interface ("Help" => "Install Modeling Component") and select Papyrus.</li>
-		<li>Proceed through installation steps. Once the installation is completed, you will be asked to restart your eclipse platform and then Papyrus is ready to use!</li>
+		<li>Proceed through installation steps. It is then recommended to install latest release from Papyrus (0.10.2a). See instruction on following chapter "Papyrus Update sites".
+		<br/>See the <a href="http://www.eclipse.org/forums/index.php?t=rview&goto=1259579#msg_1259579">papyrus forum</a> for more information</li>
 	</ul>
 
 
 	<h1>Papyrus Update Sites</h1>
-		<p align="JUSTIFY">Eclipse provides also facilities for adding new software to the platform or updating software in the system. 
+		<p align="JUSTIFY">Eclipse provides facilities for adding new software to the platform or updating software in the system. 
 In all cases, the site location (i.e. the Web URL or the archived Update Site provided above) is the only required item to update or install a software within Eclipse.</p>
 		<p align="JUSTIFY">To add the Papyrus site, one of the procedures described from the <a href="http://help.eclipse.org/galileo/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Install Manager documentation</a> must be followed.</p>  
 
 		<h4>Update sites for Papyrus release versions:</h4>
-			<h5>Papyrus release 0.10.1 (Kepler) (Recommended):</h5>
+			<h5>Papyrus release 0.10.2a (Kepler) (Recommended):</h5>
 			<ul>
 				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
 			</ul>
