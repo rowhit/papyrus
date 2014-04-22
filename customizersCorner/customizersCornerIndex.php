@@ -15,33 +15,29 @@
 	require_once($root . "/eclipse.org-common/system/app.class.php");	require_once($root . "/eclipse.org-common/system/nav.class.php"); 	require_once($root . "/eclipse.org-common/system/menu.class.php"); 	require_once ($root . '/papyrus/common.php'); require_once ($root . '/papyrus/newstohtml.php'); $App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());
 
 	# Begin: page-specific settings.
-	$pageTitle 		= "Papyrus Custumization Documentation";
+	$pageTitle 		= "Papyrus Customization Documentation";
 	$pageKeywords	= "papyrus, users, documents, tutorials, examples";
 	$pageAuthor		= "Sebastien Gerard";
 		
 	# Paste your HTML content between the EOHTML markers!	
 	$html = <<<EOHTML
 <div id="midcolumn">
-	<h1>Papyrus Custumization Documentation Corner</h1>
-		
-	<p>Papyrus is a UML tool that provide very advanced facilities for customizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custum facilities. </p>
-		
-	<h3>Tutorials</h3>
+	<h1>Papyrus Customization Documentation Corner</h1>
+	<p>Papyrus is a UML tool that provide very advanced facilities for customizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custom facilities. </p>
+	<p>
 		<ul>
-			<li>Coming soon...</li>
+			<li><a href="http://wiki.eclipse.org/MDT/Papyrus/UserGuide/CSS">CSS documentation</a></li>
+			<li><a href="http://youtu.be/9WJF8SABSHA">CSS tutorial</a></li>
+			<li><a href="http://youtu.be/90Qt9a_0c-k">Custom SVG shapes with CSS</a></li>
 		</ul>
-
-	<h3>Examples</h3>
-	<ul>
-		<li><a href="./custumizationExamples/custumizationExamplesIndex.php">The mixin machin DSML example</li>
-	</ul>
+	</p>
 </div>
 
 <div id="rightcolumn">
 	<div class="sideitem">
 		<h6>Related Links</h6>
 		<ul>
-			<li>For developpers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
+			<li>For developers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
 			<li>For questions, let's go to the <a href="http://www.eclipse.org/newsportal/thread.php?group=eclipse.papyrus">Papyrus forum</a></li>
 		</ul>
 	</div>

@@ -24,14 +24,14 @@
 <div id="midcolumn">
 	<h1>Papyrus Documentation Corner</h1>
 	<p>
-	Papyrus is a UML tool that provide very advanced facililitlies for custmizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custum facilities.
-	Developpers may go the Papyrus wiki to know more Papyrus design and questions may be asked to the Papyrus forum.
+	Papyrus is a UML tool that provide very advanced facilities for customizing the tool. You will find in this page tutorials and examples illustrating the usage of all this custom facilities.
+	Developers may go the Papyrus wiki to know more Papyrus design and questions may be asked to the Papyrus forum.
 	In addition to the documentation available through this page, you will find documentation in the online help of the tool.
 	</p>
 	<p>
 		<ul>
 			<li><a href="./../usersTutorials/usersTutorialsIndex.php">Papyrus users corner</a></li>
-			<li><a href="./../custumizersCorner/custumizersCornerIndex.php">Papyrus custumizers corner</a></li>
+			<li><a href="./../customizersCorner/customizersCornerIndex.php">Papyrus customizers corner</a></li>
 		</ul>
 	</p>
 </div>
@@ -40,7 +40,7 @@
 	<div class="sideitem">
 		<h6>Related Links</h6>
 		<ul>
-			<li>For developpers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
+			<li>For developers, let's see at the <a href="http://wiki.eclipse.org/MDT/Papyrus">Papyrus wiki</a></li>
 			<li>For any questions, let's go to the <a href="http://www.eclipse.org/forums/index.php/f/121/">Papyrus forum</a></li>
 		</ul>
 	</div>
