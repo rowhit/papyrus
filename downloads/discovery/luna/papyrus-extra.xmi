@@ -120,7 +120,7 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
       <overview
           summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
