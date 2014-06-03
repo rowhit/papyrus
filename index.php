@@ -72,7 +72,7 @@
 		<h4>SysML</h4>
 		<p>
 			Papyrus provides also a complete support to <a
-				href="http://www.sysml.org/">SysML</a> in order to enable
+				href="http://www.omgsysml.org">SysML</a> in order to enable
 			model-based system engineering. It includes an implementation of the
 			SysML static profile and the specific graphical editors required for
 			SysML.
