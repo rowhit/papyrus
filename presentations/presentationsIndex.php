@@ -90,5 +90,5 @@
 	$html = ob_get_clean();
 
 	# Generate the web page
-	$App->generatePage('Nova', $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
+	$App->generatePage('solstice', $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 ?>
