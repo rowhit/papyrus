@@ -120,11 +120,25 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
       <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
       <overview
           summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
       <id>org.eclipse.papyrus.layers.feature</id>
+    </components>
+    <components
+        name="Moka (Incubation)"
+        provider="Eclipse Modeling Project"
+        description="Moka is a Papyrus module for execution, animation and debugging of UML models."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/moka.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
+      <overview
+          summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
+      <id>org.eclipse.papyrus.extra.moka.feature</id>
     </components>
   </categories>
   <filters name="Stable"/>
