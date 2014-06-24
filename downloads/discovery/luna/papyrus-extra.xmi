@@ -140,6 +140,48 @@
           summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
       <id>org.eclipse.papyrus.extra.moka.feature</id>
     </components>
+    <components
+        name="Qompass (Incubation)"
+        provider="Eclipse Modeling Project"
+        description="Component based design methodology"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/qompass-32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
+      <overview>
+      <summary><![CDATA[Component based design methodology based on:
+	- A profile derived from a flexible component model (FCM) with
+		- extensible port definitions (kind)
+		- extensible set of interaction components (connectors)
+		- extensible set of container services
+	- A library of predefined port kinds
+	- A library of interaction components along with their implementations
+	- The tool chain supporting a set of model-to-model transformation (connector and container expansion)]]></summary>
+      </overview>
+      <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
+    </components>
+    <components
+        name="C++ code generation (Incubation)"
+        provider="Eclipse Modeling Project"
+        description="C++ Profile and code generation"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/codegen-32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/luna</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
+      <overview>
+      	<summary><![CDATA[C++ profile and code generation
+	- A C++ profile, enabling the specification for C++ features, for instance: pointers, friends, constructor initializers
+	- A code generator from UML enriched with the C++ profile
+	- A C++ view allowing simple editing of opaque behaviors and manipulation of C++ profile attributes
+	- An experimental CDT integration]]>
+		</summary>
+        </overview>
+      <id>org.eclipse.papyrus.extra.cpp.feature</id>
+    </components>
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
