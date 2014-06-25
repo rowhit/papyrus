@@ -53,7 +53,7 @@
 	</div>
 
 	<div id="feature_1">
-		<h4>UML2.4.1</h4>
+		<h4>UML2.5.0</h4>
 		<p>
 			Papyrus is graphical editing tool for <a href="http://www.uml.org/">UML2</a>
 			as defined by <a href="http://www.omg.org/">OMG</a>. Papyrus targets
@@ -118,7 +118,7 @@
 	<div class="sideitem">
 		<h6>Current Status</h6>
 		<p>
-			Papyrus team has released the version 0.10.2a. It can be runned on Kepler 4.3. You can install it using the instructions <a href="updates/index.php">here</a>.
+			Papyrus team has released the version 1.0.0. It can be installed on Eclipse Luna 4.4. You can install it using the instructions <a href="updates/index.php">here</a>.
 		</p>
 	</div>
 	

@@ -16,10 +16,21 @@
 -->
 <news>
 	<item
+        date="2014-06-25T14:30:00"
+        title="Papyrus 1.0.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+       The Eclipse Papyrus 1.0.0 release is now available! For a short listing of the new features available in this release, check
+        <a href="https://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_luna.xml">the release plan</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/luna/">Luna packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
+	<item
         date="2013-10-30T11:27:00"
         title="Papyrus team at the Eclipse Conference Europe 2013!"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
-       You can meet some of the guys involved in the Papyrus project at the <a href="http://www.flickr.com/photos/33725200@N00/10553624006/">Booth #13</a> at the Eclipse conference Europe 2013, in Ludwisgburg.
+       You can meet some of the guys involved in the Papyrus project at the <a href="http://www.flickr.com/photos/33725200@N00/10553624006/">Booth #13</a> at the Eclipse conference Europe 2013, in Ludwigsburg.
        <P>
        You can also attend on Thursday to the <a href="http://www.eclipsecon.org/europe2013/scade-system-first-industrial-success-eclipse-papyrus-presented-cea">talk</a> on the first industrial success for Papyrus: Scade System from Esterel Technologies (an ANSYS group company).
        </P>
