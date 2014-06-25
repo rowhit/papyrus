@@ -36,7 +36,7 @@
 
 	<h1>Papyrus Installation Guide</h1>
 	<ul>
-		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/luna">Eclipse Modeling Package</a> for your own platform.</li>
+		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/lunar">Eclipse Modeling Package</a> for your own platform.</li>
 		<li>Then, you have to use the discovery interface ("Help" => "Install Modeling Component") and select Papyrus.</li>
 		<!--li>It is then recommended to install latest release from Papyrus (0.10.2a). See instruction on following chapter "Papyrus Update sites".
 		<br/>See the <a href="http://www.eclipse.org/forums/index.php?t=rview&goto=1259579#msg_1259579">papyrus forum</a> for more information</li-->
