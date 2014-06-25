@@ -36,10 +36,10 @@
 
 	<h1>Papyrus Installation Guide</h1>
 	<ul>
-		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplersr2">Eclipse Modeling Package</a> for your own platform.</li>
-		<!--<li>Then, you have to use the discovery interface ("Help" => "Install Modeling Component") and select Papyrus.</li>-->
-		<li>It is then recommended to install latest release from Papyrus (0.10.2a). See instruction on following chapter "Papyrus Update sites".
-		<br/>See the <a href="http://www.eclipse.org/forums/index.php?t=rview&goto=1259579#msg_1259579">papyrus forum</a> for more information</li>
+		<li>The most basic procedure for installing Papyrus consists in installing the <a href= "http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/luna">Eclipse Modeling Package</a> for your own platform.</li>
+		<li>Then, you have to use the discovery interface ("Help" => "Install Modeling Component") and select Papyrus.</li>
+		<!--li>It is then recommended to install latest release from Papyrus (0.10.2a). See instruction on following chapter "Papyrus Update sites".
+		<br/>See the <a href="http://www.eclipse.org/forums/index.php?t=rview&goto=1259579#msg_1259579">papyrus forum</a> for more information</li-->
 	</ul>
 
 
@@ -49,12 +49,13 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		<p align="JUSTIFY">To add the Papyrus site, one of the procedures described from the <a href="http://help.eclipse.org/galileo/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Install Manager documentation</a> must be followed.</p>  
 
 		<h4>Update sites for Papyrus release versions:</h4>
-			<h5>Papyrus release 0.10.2a (Kepler) (Recommended):</h5>
+			<h5>Papyrus release 1.0.0 (Luna) (Recommended):</h5>
 			<ul>
-				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
+				<li>Papyrus 1.0.X / Eclipse Luna:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna</font></li>
 			</ul>
 			<h5>Previous releases</h5>
 			<ul>
+				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
 				<li>Papyrus 0.9.2 / Eclipse Juno:<br/>		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/juno</font></li>
 				<li>Papyrus 0.8.2 / Eclipse Indigo:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/maintenance/indigo</font></li>
 				<li>Papyrus 0.7.3 / Eclipse Helios:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/helios</font></li>

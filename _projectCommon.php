@@ -24,7 +24,7 @@
 	$nodownloads = array(); //components with only information, no downloads, or no builds available yet, "projectkey"
 	$nonewsgroup = array(); //components without newsgroup
 	$nomailinglist = array(); //components without mailinglist
-	$incubating = true; // components which are incubating
+	$incubating = false; // components which are incubating
 	$nomenclature = "Project"; //are we dealing with "components" or "projects"?
 	
 	$buildtypes = array(
