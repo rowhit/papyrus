@@ -18,7 +18,7 @@
 	<item
         date="2014-06-25T14:30:00"
         title="Papyrus 1.0.0 Released"
-        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/1.0.0">
        The Eclipse Papyrus 1.0.0 release is now available! For a short listing of the new features available in this release, check
         <a href="https://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_luna.xml">the release plan</a>.
         You can easily install Papyrus from 
