@@ -187,7 +187,7 @@
         provider="Eclipse Modeling Project"
         description="Edit comments with a rich text editor"
         license="EPL"
-        groups="//@filters.2"
+        groups="//@filters.1"
         image32=""
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
