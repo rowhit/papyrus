@@ -17,6 +17,27 @@
 <news>
 	<item
         date="2014-06-25T14:30:00"
+        title="Save the date!"
+        link="http://www.eclipse.org/papyrus/news/save_the_date_CEA breakfast.pdf">
+        	<H2>INVITATION BUSINESS BREAKFAST CEA TECH (WITH THE PARTICIPATION OF ERICSSON)</H2>
+			<p>Your system design needs modeling: Papyrus, the MDE open-source cutting-edge solution
+			<ul><li>Thursday, January 29th at hotel Napoleon Paris</li></ul>
+			</p>
+			<p>If you cannot come to Paris, we invite you to join a web-conference on the same subject
+			Friday, January 30th at 10 am
+			</p>
+			<p>
+			Why participate? 
+			<ul>
+			<li>You will understand the strategic value of Papyrus modeling tool</li>
+			<li>You will understand how to leverage both standard modeling languages (e.g., UML and SysML) and domain-specific modeling languages.</li>
+			<li>You will listen and exchange around the feedback from the company ERICSSON</li>
+			</ul>
+			Send us an email to register (dils -at- cea.fr) 
+			</p>
+    </item>
+	<item
+        date="2014-06-25T14:30:00"
         title="Papyrus 1.0.0 Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/1.0.0">
        The Eclipse Papyrus 1.0.0 release is now available! For a short listing of the new features available in this release, check
