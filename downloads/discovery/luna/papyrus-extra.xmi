@@ -182,6 +182,17 @@
           summary="Import tool for RSA/RSA-RTE Models. Supported diagrams: Class, Composite Structure, Object, Profile, Activity, StateMachine"/>
       <id>org.eclipse.papyrus.migration.rsa.feature</id>
     </components>
+    <components
+        name="Rich Text for Papyrus"
+        provider="Eclipse Modeling Project"
+        description="Edit comments with a rich text editor"
+        license="EPL"
+        groups="//@filters.1">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna/extra</sitesURLS>
+      <overview
+          summary="This model allow editing comments with a rich text editor"/>
+      <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>
+    </components>
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
