@@ -191,7 +191,7 @@
         image32=""
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars/extra</sitesURLS>
       <overview
           summary="This model allow editing comments with a rich text editor"/>
       <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>

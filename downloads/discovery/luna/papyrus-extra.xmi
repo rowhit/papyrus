@@ -188,7 +188,7 @@
         description="Edit comments with a rich text editor"
         license="EPL"
         groups="//@filters.1">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna/extra</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna/extra</sitesURLS>
       <overview
           summary="This model allow editing comments with a rich text editor"/>
       <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>
