@@ -196,6 +196,12 @@
           summary="This model allow editing comments with a rich text editor"/>
       <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>
     </components>
+    <components name="Papyrus DSML Validation" provider="Eclipse Modeling Project" description="Component to generate a validation plug-in from a UML Profile" license="EPL" groups="//@filters.1" incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars/extra</sitesURLS>
+      <overview summary="Component to generate a validation plug-in from a UML Profile"/>
+      <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
+    </components>
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
