@@ -127,7 +127,7 @@
       <id>org.eclipse.papyrus.layers.feature</id>
     </components>
     <components
-        name="Moka (Incubation)"
+        name="Moka"
         provider="Eclipse Modeling Project"
         description="Moka is a Papyrus module for execution, animation and debugging of UML models."
         license="EPL"
@@ -141,7 +141,7 @@
       <id>org.eclipse.papyrus.extra.moka.feature</id>
     </components>
     <components
-        name="Qompass (Incubation)"
+        name="Qompass"
         provider="Eclipse Modeling Project"
         description="Component based design methodology"
         license="EPL"
@@ -155,7 +155,7 @@
       <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
     </components>
     <components
-        name="C++ code generation (Incubation)"
+        name="C++ code generation"
         provider="Eclipse Modeling Project"
         description="C++ Profile and code generation"
         license="EPL"
@@ -182,8 +182,8 @@
           summary="Import tool for RSA/RSA-RTE Models. Supported diagrams: Class, Composite Structure, Object, Profile, Activity, StateMachine"/>
       <id>org.eclipse.papyrus.migration.rsa.feature</id>
     </components>
-     <components
-        name="Rich Text for Papyrus"
+    <components
+        name="Rich Text Editor"
         provider="Eclipse Modeling Project"
         description="Edit comments with a rich text editor"
         license="EPL"
@@ -196,11 +196,32 @@
           summary="This model allow editing comments with a rich text editor"/>
       <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>
     </components>
-    <components name="Papyrus DSML Validation" provider="Eclipse Modeling Project" description="Component to generate a validation plug-in from a UML Profile" license="EPL" groups="//@filters.1" incubation="true">
+    <components
+        name="Papyrus DSML Validation"
+        provider="Eclipse Modeling Project"
+        description="Component to generate a validation plug-in from a UML Profile"
+        license="EPL"
+        groups="//@filters.1"
+        incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars/extra</sitesURLS>
-      <overview summary="Component to generate a validation plug-in from a UML Profile"/>
+      <overview
+          summary="Component to generate a validation plug-in from a UML Profile"/>
       <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
+    </components>
+    <components
+        name="Integrated ALF Editor"
+        provider="Eclipse Modeling Project"
+        description="Edit your packages, classes, signals, datatypes, enumerations, associations and activities with ALF"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/alf-icon-32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars/extra</sitesURLS>
+      <overview
+          summary="ALF is a standard language enabling the specification of fUML (subet of UML - scope limited to Classes an Activities) models using text. The advantage of ALF is that it is fully aligned on the subset of UML  covered by fUML. This means any ALF specification can be compiled as a fUML model. Conversely a fUML model can be translated as an ALF model whose representation is given textually. ALF provides a way to make easier the specification of fUML models. This is especially true in the case of activities which become hard to understand as soon as you have more than a dozen of action nodes. In the context of Papyrus an ALF editor is integrated within the property and become available according to the selection you have in your current model. For the moment edition is limited to Class, Signal, DataType, Enumeration, Package, Association and Activity. The user has the opportunity to modify, validate and compile (i.e. propagate the modifications) ALF specifications corresponding to these elements. "/>
+      <id>org.eclipse.papyrus.uml.alf.extra.feature</id>
     </components>
   </categories>
   <filters name="Stable"/>
