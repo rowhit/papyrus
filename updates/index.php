@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sébastien Gérard, CEA LIST
+ * Sï¿½bastien Gï¿½rard, CEA LIST
  *    
  *******************************************************************************/
 	
@@ -63,13 +63,14 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		
 		<h4>Update sites for Papyrus nightly builds:</h4>
 			<p>For advanced users and pioneers, you can access the latest commits done within Papyrus by accessing its nightly builds...</p>
-			<h5>Papyrus nightly builds, version 1.0.x (Luna):</h5>
+			<h5>Papyrus nightly builds, version 1.1.x (Mars):</h5>
 			<ul>
-				<li>Papyrus 1.0.x / Eclipse Luna:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna</font></li>
+				<li>Papyrus 1.1.x / Eclipse Mars:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars</font></li>
 			</ul>
 			
 			<h5>Previous nightly builds</h5>
 			<ul>
+				<li>Papyrus 1.0.x / Eclipse Luna:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/luna</font></li>
 				<li>Papyrus 0.10.x / Eclipse Kepler:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/kepler</font></li>
 				<li>Papyrus 0.9.x / Eclipse Juno:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/juno</font></li>
 				<li>Papyrus 0.8.x / Eclipse Indigo:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/indigo</font></li>
