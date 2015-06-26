@@ -49,12 +49,13 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		<p align="JUSTIFY">To add the Papyrus site, one of the procedures described from the <a href="http://help.eclipse.org/galileo/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm">Install Manager documentation</a> must be followed.</p>  
 
 		<h4>Update sites for Papyrus release versions:</h4>
-			<h5>Papyrus release 1.0.0 (Luna) (Recommended):</h5>
+			<h5>Papyrus release 1.1.0 (Mars) (Recommended):</h5>
 			<ul>
-				<li>Papyrus 1.0.X / Eclipse Luna:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna</font></li>
+				<li>Papyrus 1.1.X / Eclipse Mars:<br/> 		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars</font></li>
 			</ul>
 			<h5>Previous releases</h5>
 			<ul>
+				<li>Papyrus 1.0.X / Eclipse Luna:<br/> 		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/luna</font></li>
 				<li>Papyrus 0.10.X / Eclipse Kepler:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/kepler</font></li>
 				<li>Papyrus 0.9.2 / Eclipse Juno:<br/>		<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/juno</font></li>
 				<li>Papyrus 0.8.2 / Eclipse Indigo:<br/> 	<font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/maintenance/indigo</font></li>
@@ -63,9 +64,10 @@ In all cases, the site location (i.e. the Web URL or the archived Update Site pr
 		
 		<h4>Update sites for Papyrus nightly builds:</h4>
 			<p>For advanced users and pioneers, you can access the latest commits done within Papyrus by accessing its nightly builds...</p>
-			<h5>Papyrus nightly builds, version 1.1.x (Mars):</h5>
+			<h5>Papyrus nightly builds, version 1.1.x (Mars) and 1.2.x (Neon):</h5>
 			<ul>
 				<li>Papyrus 1.1.x / Eclipse Mars:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/mars</font></li>
+				<li>Papyrus 1.2.x / Eclipse Neon:<br/> <font color='#808080'>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon</font></li>
 			</ul>
 			
 			<h5>Previous nightly builds</h5>
