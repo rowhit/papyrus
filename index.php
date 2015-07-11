@@ -108,17 +108,15 @@
 	<div class="sideitem">
 		<h6>Ongoing work...</h6>
 			<ul>
-				<li><a
-					href="http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_luna.xml">Papyrus
-						Roadmap</a></li>
-				<li><a href="http://wiki.eclipse.org/MDT/Papyrus/Ongoing">Ongoing tasks</a></li>
+				<li>The plan for Papyrus 1.2.x is not available yet</li>
+				<li><a href="https://wiki.eclipse.org/Papyrus/Mars_Work_Description">Previous plan (1.1.0/Mars)</a></li>
 			</ul>
 	</div>
 
 	<div class="sideitem">
 		<h6>Current Status</h6>
 		<p>
-			Papyrus team has released the version 1.0.0. It can be installed on Eclipse Luna 4.4. You can install it using the instructions <a href="updates/index.php">here</a>.
+			Papyrus team has released the version 1.1.0. It can be installed on Eclipse Mars 4.5. You can install it using the instructions <a href="updates/index.php">here</a>.
 		</p>
 	</div>
 	
