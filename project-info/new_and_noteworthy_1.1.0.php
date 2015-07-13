@@ -40,7 +40,7 @@ You can now activate synchronization on your diagram or part of your diagram bet
 The modeling assistants are popup shortcuts that help you create new elements in the diagram. You can now create in Papyrus a model of your diagram assistants for your own profile, and load them into your running Papyrus instance for a live test.
 </p>
 <div id="screenshot_modelingassistants">
-	<img width="524" src="../images/screenshot_modelingassistants.png"/>profile
+	<img width="524" src="../images/screenshot_modelingassistants.png"/>
 </div>
 
 <h3>Hierarchical tables</h3>
