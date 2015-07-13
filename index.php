@@ -119,7 +119,7 @@
 			Papyrus team has released the version 1.1.0. It can be installed on Eclipse Mars 4.5. You can install it using the instructions <a href="updates/index.php">here</a>.
 		</p>
 		<p>
-			You can fin <a href="https://www.eclipse.org/papyrus/project-info/new_and_noteworthy_1.1.0.php">here</a> what is new and updated in this new version.
+			You can read <a href="https://www.eclipse.org/papyrus/project-info/new_and_noteworthy_1.1.0.php">here</a> what is new and updated in Papyrus 1.1.0.
 		</p>	
 	</div>
 	
