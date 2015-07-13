@@ -86,7 +86,7 @@ you can now create relationships like Associations and Dependencies using the co
 
 <h3>Papyrus EMF Compare integration</h3>
 <p align="JUSTIFY">
-The support for collaborative modeling in Papyrus relying on EMF Compare component has been improved. You can see more on that page:  
+The support for collaborative modeling in Papyrus relying on EMF Compare component has been improved. You can see more <a href="https://sites.google.com/a/eclipsesource.com/collaborative-modeling/">here</a>  
 </p>
 
 <h3>Papyrus Search</h3>
