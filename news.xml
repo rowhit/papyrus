@@ -16,6 +16,13 @@
 -->
 <news>
 	<item
+		date="2015-11-03"
+		title="2nd Papyrus Summit and EclipseCon Europe 2015"
+		link="https://www.eclipsecon.org/europe2015/">
+		<p>The <a href="https://wiki.eclipse.org/Papyrus/SummitEclipseConEurope2015">2nd Papyrus Summit</a> will be held Tuesday November 3, 2015 in Ludwigsburg, Germany. </p>
+		<p>The Papyrus Team will also give a couple of presentations during EclipseCon Europe 2015 : <a href="https://www.eclipsecon.org/europe2015/session/papyrus4java-uml-diagrams-ordinary-java-developers">"Papyrus4Java - UML diagrams for ordinary java developers"</a> and <a href="https://www.eclipsecon.org/europe2015/session/mde-papyrus-novelties-and-beyond-sponsored-cea-list">"MDE with Papyrus, novelties and beyond"</a></p>
+	</item>
+	<item
 		date="2015-06-24"
 		title="Papyrus 1.1.0 Released"
 		link="https://www.eclipse.org/papyrus/updates/index.php">
