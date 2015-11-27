@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The structure of the news items are
+    
+    <news>
+    <item title="" date="YYYY-MM-DDThh:mm:ss">
+    News content
+    </item>*
+    </news>
+    
+    Add your item to the top of the list.  Do not delete or move any items.  We generate permalinks by inverse file position.
+    Please post in UTC.  The correct current time can be found at: http://www.time.gov/timezone.cgi?UTC/s/0/java
+    All links must be absolute!  If you do not specify a link, a link to your entry on the Web Tools News page will be
+    generated for you.
+
+    For announcements about releases, the release page is used because the download site will change after archival.
+-->
+<news>
+	<item
+		date="2015-11-03"
+		title="2nd Papyrus Summit and EclipseCon Europe 2015"
+		link="https://www.eclipsecon.org/europe2015/">
+		<p>The <a href="https://wiki.eclipse.org/Papyrus/SummitEclipseConEurope2015">2nd Papyrus Summit</a> will be held Tuesday November 3, 2015 in Ludwigsburg, Germany. </p>
+		<p>The Papyrus Team will also give a couple of presentations during EclipseCon Europe 2015 : <a href="https://www.eclipsecon.org/europe2015/session/papyrus4java-uml-diagrams-ordinary-java-developers">"Papyrus4Java - UML diagrams for ordinary java developers"</a> and <a href="https://www.eclipsecon.org/europe2015/session/mde-papyrus-novelties-and-beyond-sponsored-cea-list">"MDE with Papyrus, novelties and beyond"</a></p>
+	</item>
+	<item
+		date="2015-06-24"
+		title="Papyrus 1.1.0 Released"
+		link="https://www.eclipse.org/papyrus/updates/index.php">
+		<p>The Eclipse Papyrus 1.1.0 release is now available! Check the new features on the <a href="https://www.eclipse.org/papyrus/project-info/new_and_noteworthy_1.1.0.php">what's new?</a> page.</p>
+		<p>You can install Papyrus from the <a href="https://www.eclipse.org/mars/">Mars packages</a> or use the <a href="https://www.eclipse.org/papyrus/downloads/">Papyrus Downloads page</a></p>
+		<p>Also check the <a href="https://www.eclipse.org/papyrus/updates/index.php">Papyrus installation guide</a> to install Papyrus 1.1.0b</p>
+	</item>
+	<item
+        date="2014-12-12T08:30:00"
+        title="Save the date!"
+        link="http://www.eclipse.org/papyrus/news/save_the_date_CEA breakfast.pdf">
+        	<H2>INVITATION BUSINESS BREAKFAST CEA TECH (WITH THE PARTICIPATION OF ERICSSON)</H2>
+			<p>Your system design needs modeling: Papyrus, the MDE open-source cutting-edge solution
+			<ul><li>Thursday, January 29th 2015, at hotel Napoleon Paris</li></ul>
+			</p>
+			<p>If you cannot come to Paris, we invite you to join a web-conference on the same subject
+			Friday, January 30th 2015 at 10 am
+			</p>
+			<p>
+			Why participate? 
+			<ul>
+			<li>You will understand the strategic value of Papyrus modeling tool</li>
+			<li>You will understand how to leverage both standard modeling languages (e.g., UML and SysML) and domain-specific modeling languages.</li>
+			<li>You will listen and exchange around the feedback from the company ERICSSON</li>
+			</ul>
+			Send us an email to register (dils -at- cea.fr) 
+			</p>
+    </item>
+	<item
+        date="2014-06-25T14:30:00"
+        title="Papyrus 1.0.0 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/1.0.0">
+       The Eclipse Papyrus 1.0.0 release is now available! For a short listing of the new features available in this release, check
+        <a href="https://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/papyrus/project-info/plan_luna.xml">the release plan</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/luna/">Luna packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
+	<item
+        date="2013-10-30T11:27:00"
+        title="Papyrus team at the Eclipse Conference Europe 2013!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+       You can meet some of the guys involved in the Papyrus project at the <a href="http://www.flickr.com/photos/33725200@N00/10553624006/">Booth #13</a> at the Eclipse conference Europe 2013, in Ludwigsburg.
+       <P>
+       You can also attend on Thursday to the <a href="http://www.eclipsecon.org/europe2013/scade-system-first-industrial-success-eclipse-papyrus-presented-cea">talk</a> on the first industrial success for Papyrus: Scade System from Esterel Technologies (an ANSYS group company).
+       </P>
+    </item>
+	<item
+        date="2013-09-28T15:27:00"
+        title="Papyrus 0.10.1 Released!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.1">
+       The Eclipse Papyrus 0.10.1 release is now available! For a short listing of the bugs fixed
+       in this service release , check out the
+        <a href="https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;chfieldfrom=2013-06-15&amp;chfieldto=2013-09-25&amp;classification=Modeling&amp;list_id=7327889&amp;product=MDT.Papyrus&amp;query_format=advanced&amp;target_milestone=0.10.0&amp;target_milestone=0.7.0&amp;target_milestone=0.8.0&amp;target_milestone=0.9.0&amp;target_milestone=1.0.0&amp;target_milestone=3.0.0&amp;target_milestone=3.1.0&amp;target_milestone=3.2.0&amp;target_milestone=4.0.0&amp;target_milestone=M1&amp;target_milestone=M2&amp;target_milestone=M3&amp;target_milestone=M4&amp;target_milestone=M5&amp;target_milestone=M6&amp;target_milestone=M7&amp;target_milestone=SR1&amp;target_milestone=SR2&amp;version=0.10.0&amp;version=0.10.1&amp;query_based_on=&amp;columnlist=short_desc%2Cresolution%2Cchangeddate">0.10.1 bug fixes</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/kepler/">Kepler packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
+    <item
+        date="2013-06-27T14:27:00"
+        title="Papyrus 0.10.0 Released!"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/0.10.0">
+       The Eclipse Papyrus 0.10.0 release is now available! For a short listing of what's new in
+        this release, check out the
+        <a href="http://www.eclipse.org/papyrus/project-info/new_and_noteworthy_0.10.0.php">New and Noteworthy</a>.
+        You can easily install Papyrus from 
+        <a href="http://www.eclipse.org/kepler/">Kepler packages</a>, and you can still download
+        <a href="http://eclipse.org/modeling/mdt/papyrus/updates/index.php">Papyrus builds
+            </a> manually.
+    </item>
+    
+</news>

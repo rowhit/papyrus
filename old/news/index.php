@@ -11,7 +11,7 @@
  *******************************************************************************/
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-$filename = 'news.xml';
+$filename = $root . '/papyrus/news.xml';
 $lastBuildDate = date("r", filemtime($filename));
 $news = simplexml_load_file($filename);
 $items = "";
