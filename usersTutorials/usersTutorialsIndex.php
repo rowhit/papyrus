@@ -25,7 +25,11 @@
 	<h1>Papyrus Tutorials</h1>
 		
 	<p>	This page is about the Papyrus documentation dedicated to both its users. It contains both tutorials and examples. In addition to this page, users may find documentation in the online help of the Eclipse tool.</p>
-		
+	
+	<h3>Presentations at conferences</h3>
+		<ul>
+			<li><a href="resources/ECE15-MDE WITH PAPYRUS novelties and beyond.pptx">Presentation at the EclipseCon 2015 Europe</a></li>
+		</ul>
 	<h3>Tutorials for modeling with Papyrus</h3>
 		<ul>
 			<li><a href="resources/TutorialOnPapyrusUSE_d20101001.pdf">A slide-ware tutorial on Papyrus usage for starters (2010-10-01).</a></li>
