@@ -73,18 +73,35 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
-                    <img class="img-responsive center-block" src="img/screenshot.png" alt="Papyrus">
-                </div>
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <h1 class="technology-name">Papyrus<br>
                         <span class="technology-moto">
                             Modeling environment
                         </span>
                     </h1>
-                    <p class="description-paragraph text-justify">Papyrus is aiming at providing an integrated and user-consumable environment for editing any kind of EMF model and particularly supporting <a href="http://www.uml.org">UML2</a> and related modeling languages such as <a href="http://www.omgsysml.org/">SysML</a> and MARTE. Papyrus provides diagram editors for EMF-based modeling languages amongst them <a href="http://www.uml.org">UML2</a> and <a href="http://www.omgsysml.org/">SysML</a> and the glue required for integrating these editors (GMF-based or not) with other MBD and MDSD tools.
+                    <img class="img-responsive center-block" src="img/screenshot.png" alt="Papyrus">
+
+
+                </div>
+                <div class="col-md-4">
+
+                    <h1 class="news-title">News &amp; Events <a href="news/index.php"><img src="img/rss.png" alt="RSS"></a></h1>
+                    <div class="well news-well">
+                        <?php
+                            require_once ('news/newstohtml.php');
+                            $papyrusnews = news_to_html("news/news.xml", "", "", "", false, "long", "5");
+                            echo $papyrusnews;
+                        ?>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12 description-paragraph">
+                    <p class="text-justify">Papyrus is aiming at providing an integrated and user-consumable environment for editing any kind of EMF model and particularly supporting <a href="http://www.uml.org">UML2</a> and related modeling languages such as <a href="http://www.omgsysml.org/">SysML</a> and <a href="http://www.omgmarte.org/">MARTE</a>. Papyrus provides diagram editors for EMF-based modeling languages amongst them <a href="http://www.uml.org">UML2</a> and <a href="http://www.omgsysml.org/">SysML</a> and the glue required for integrating these editors (GMF-based or not) with other MBD and MDSD tools.
                     </p>
-                    <p class="description-paragraph text-justify">Papyrus also offers a very advanced support of UML profiles that enables users to define editors for DSLs based on the <a href="http://www.uml.org">UML2</a> standard. The main feature of Papyrus regarding this latter point is a set of very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a "pure" DSL editor.
+                    <p class="text-justify">Papyrus also offers a very advanced support of UML profiles that enables users to define editors for DSLs based on the <a href="http://www.uml.org">UML2</a> standard. The main feature of Papyrus regarding this latter point is a set of very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a "pure" DSL editor.
                     </p>
                 </div>
             </div>
@@ -114,56 +131,6 @@
 
 
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#news">
-                                <div class="panel-heading panel-heading-custom">
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <h2 class="news-title">News &amp; Events</h2>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <div class="news-title">
-                                                <span class="caret"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </a>
-                            <div id="news" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="row">
-
-                                        <div class="col-md-10 col-md-offset-1">
-                                            <div class="text-right"><a href="news/index.php">Subscribe to Papyrus news
-                                                <img src="img/rss.png" alt="RSS"></a>
-                                            </div>
-                                            
-                                            <hr class="custom-divider">
-                                            
-                                            <div class="news-well">
-                                                <?php
-                                                    require_once ('news/newstohtml.php');
-                                                    $papyrusnews = news_to_html("news/news.xml", "", "", "", false, "long", "5");
-                                                    echo $papyrusnews;
-                                                ?>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>

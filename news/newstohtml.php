@@ -91,7 +91,7 @@ function news_to_html($file_name, $title, $rss_url=false, $more_url=false, $add_
 		if ($count == 0) break;
 		/*$html .= "<tr><td>"; */
         
-        $html .= "<h3 class=\"subsubsection-title\">";
+        $html .= "<b>";
 		// set up anchors and links.  We go in reverse order of xml item feed.
 		$anchor = "permalink${item_count}";
 		$permalink = "${more_url}#${anchor}";
@@ -105,11 +105,11 @@ function news_to_html($file_name, $title, $rss_url=false, $more_url=false, $add_
 		// Get date in UTC.
 		$date = date("M d, Y", strtotime($item['date'] . "+00:00"));
 		$date = str_replace(" ", "&nbsp;", $date);
-		$html .= "Posted&nbsp;$date";
+		$html .= "<br>Posted&nbsp;$date";
 		if ($add_permalink) {
 			$html .= " | <a href=\"$permalink\">Permalink</a>";
 		}
-        $html .= "</h3>";
+        $html .= "</b>";
         /*$html .= "<hr class=\"custom-divider\">";*/
 		if ($format == 'long') {
 			// Get item as xml and replace <item> tags with <p> leaving else untouched.

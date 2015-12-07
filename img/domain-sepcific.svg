@@ -28,9 +28,9 @@
      showgrid="false"
      inkscape:current-layer="svg4587"
      inkscape:document-units="px"
-     inkscape:cy="36.097788"
-     inkscape:cx="-7.4762518"
-     inkscape:zoom="0.87885424"
+     inkscape:cy="545.67205"
+     inkscape:cx="324.35146"
+     inkscape:zoom="0.3107219"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -139,18 +139,22 @@
          id="flowPara5141" /></flowRoot>  </g>
   <path
      style="opacity:1;fill:url(#linearGradient4218);fill-opacity:1;stroke:none;stroke-width:12.89999962;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 111.08203,103.58594 33.791784,155.85665 78.160156,281.67188 C 100.19588,293.69632 124.897,299.99819 150,300 c 32.50524,-0.0516 64.11412,-10.66083 90.06836,-30.23047 z"
+     d="M 111.08203,103.58594 33.791784,155.85665 89.971913,287.46033 C 108.86097,295.71059 129.29377,299.99851 150,300 c 27.89017,-0.0443 55.12044,-7.86107 78.68513,-22.44147 z"
      id="circle4193"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccc" />
   <path
      style="opacity:1;fill:url(#linearGradient4214);fill-opacity:1;stroke:none;stroke-width:12.89999962;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 178.66406 83.761719 L 121.54297 216.47656 L 142.38867 299.61914 A 150 150 0 0 0 150 300 A 150 150 0 0 0 282.61719 219.88281 L 178.66406 83.761719 z "
-     id="circle4198" />
+     d="m 178.66406,83.761719 -57.12109,132.714841 45.30091,82.56488 c 48.94217,-5.5577 92.49093,-34.93891 115.77331,-79.15863 z"
+     id="circle4198"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
   <path
      style="opacity:1;fill:url(#linearGradient4216);fill-opacity:1;stroke:none;stroke-width:12.89999962;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 266.5 147.18555 L 188.97266 194.33984 L 216.24219 284.48633 A 150 150 0 0 0 297.46875 176.75781 L 266.5 147.18555 z "
-     id="circle4203" />
+     d="m 266.5,147.18555 -77.52734,47.15429 50.63903,75.82816 c 26.91685,-25.19283 47.32932,-53.0064 55.64227,-83.64839 z"
+     id="circle4203"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:175.65364075px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
