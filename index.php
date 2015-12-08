@@ -199,7 +199,10 @@
 
             <div class="row">
 
-                <div class="col-md-9">
+                <div class="col-md-3 col-md-push-9 col-sm-12">
+                    <img class="feature-image img-responsive center-block" src="img/sysml.png" alt="SysML">
+                </div>
+                <div class="col-md-9 col-md-pull-3 col-sm-12">
                     <h2 class="feature-heading">SysML 1.2 and 1.4</h2>
                     <p class="feature-body">
                         Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific graphical editors required for SysML are also provided:
@@ -218,9 +221,6 @@
                         <li>Allocation table
                         </li>
                     </ul>
-                </div>
-                <div class="col-md-3">
-                    <img class="feature-image img-responsive center-block" src="img/sysml.png" alt="SysML">
                 </div>
             </div>
 
@@ -246,7 +246,10 @@
 
 
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-3 col-md-push-9 col-sm-12">
+                    <img class="feature-image img-responsive center-block" src="img/customization.png" alt="Customozation">
+                </div>
+                <div class="col-md-9 col-md-pull-3 col-sm-12">
                     <h2 class="feature-heading">Fully customizable environment</h2>
                     <p class="feature-body">
                         All the modeling features of Papyrus are designed to be customizable and to maximize reuse. Therefore, should you want to adapt the standard Papyrus configuration for a specific domain, notation, modeling practice, use the powerful customization mechanisms of Papyrus to adapt the Papyrus modeling environment to suit your needs. Many configurations in Papyrus being model-based, the customization can be done live.
@@ -260,9 +263,6 @@
                         <li>Reuse standard languages or define your own modeling language thanks to the UML profile editor. </li>
                     </ul>
 
-                </div>
-                <div class="col-md-3">
-                    <img class="feature-image img-responsive center-block" src="img/customization.png" alt="Customozation">
                 </div>
             </div>
 
