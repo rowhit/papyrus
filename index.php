@@ -105,7 +105,6 @@
                     </p>
                 </div>
             </div>
-            <br>
             <div class="row">
                 <div class="col-md-4">
 
@@ -128,8 +127,24 @@
                     <h2>Enabler</h2>
 
                     <p class="feature-body">Papyrus enables model-based techniques: model-based simulation, model-based formal testing, safety analysis, performance/trade-offs analysis, architecture exploration...</p>
-
-
+                </div>
+            </div>
+            
+            <hr class="custom-divider">
+            <div class="row">
+                
+                <div class="col-md-10 col-md-offset-1">
+                    
+                    <div class="well quote-well">
+                        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="5000">
+                            <?php
+                                require_once ('quotes/quotes2html.php');
+                                $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 5);
+                                echo $papyrusquotes;
+                            ?>
+                        </div>
+                    </div>
+                     <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='quotes.php'">Learn more about successful industrial and academic uses of Papyrus</button></p>
                 </div>
             </div>
         </div>

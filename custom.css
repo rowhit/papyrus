@@ -57,19 +57,76 @@ html {
 
 /* ------buttons------------------------- */
 
-.custom-success-btn:hover,
+.custom-success-btn {
+    white-space: normal;
+    background-color: transparent;
+    border-color: #0085a0;
+    color: #009bba;
+}
+
+.custom-success-btn.focus,
 .custom-success-btn:focus {
     background-color: #0085a0;
     border-color: #0085a0;
     background-position: 0 -15px;
 }
 
-.custom-success-btn {
+.custom-success-btn:hover {
+    background-color: #0085a0;
+    border-color: #0085a0;
+    background-position: 0 -15px;
+}
+
+.custom-success-btn.active,
+.custom-success-btn:active,
+.open>.dropdown-toggle.custom-success-btn {
+    background-color: #0085a0;
+    border-color: #0085a0;
+    background-position: 0 -15px;
+}
+
+.btn-success.active.focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.btn-success:active.focus,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.open>.dropdown-toggle.btn-success.focus,
+.open>.dropdown-toggle.btn-success:focus,
+.open>.dropdown-toggle.btn-success:hover {
+    background-color: #0085a0;
+    border-color: #0085a0;
+    background-position: 0 -15px;
+}
+
+.btn-success.active,
+.btn-success:active,
+.open>.dropdown-toggle.btn-success {
+    background-image: none
+}
+
+.btn-success.disabled,
+.btn-success.disabled.active,
+.btn-success.disabled.focus,
+.btn-success.disabled:active,
+.btn-success.disabled:focus,
+.btn-success.disabled:hover,
+.btn-success[disabled],
+.btn-success[disabled].active,
+.btn-success[disabled].focus,
+.btn-success[disabled]:active,
+.btn-success[disabled]:focus,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success,
+fieldset[disabled] .btn-success.active,
+fieldset[disabled] .btn-success.focus,
+fieldset[disabled] .btn-success:active,
+fieldset[disabled] .btn-success:focus,
+fieldset[disabled] .btn-success:hover {
     background-color: transparent;
     border-color: #0085a0;
     color: #009bba;
 }
-
 
 /* ------divider------------------- */
 
@@ -227,6 +284,63 @@ li.footer-link > a:visited {
     hyphens: auto;
 }
 
+/*---------------- Quotes -----------------------*/
+.quote-well {
+    background-color: white;
+    border: none;
+}
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: transparent;
+  border: 1px solid #009bba;
+}
+
+#fade-quote-carousel.carousel .carousel-indicators > li.active {
+  background-color: #009bba;
+  border: 1px solid #009bba;
+}
+
+#fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+}
+
+.openquote {
+    vertical-align: bottom;
+}
+
+.closequote {
+    vertical-align: top;
+}
+
+.quote-logo {
+    vertical-align: bottom;
+    margin-top: 10px;
+}
+
+.quote-content {
+    height: 90px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -239,6 +353,12 @@ li.footer-link > a:visited {
 @media (min-width: 992px) {
     body {
         padding-top: 30px;
+    }
+    
+    .quote-content {
+        height: 70px;
+        overflow-y: auto;
+        padding-right: 15px;
     }
     
     .news-well {
