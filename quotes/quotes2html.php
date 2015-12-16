@@ -95,11 +95,10 @@ function quoteshort_to_html($file_name, $quantity=5) {
 		}
 		$html .="<blockquote>";
 		$html .="<p class=\"text-justify quote-content\"><img class=\"openquote\" src=\"img/openquote.png\" alt=\"Open quote\">";
-        $html .= $quote['short'];
-		/*$item_xml = $quote->asXML();
+		$item_xml = $quote->asXML();
 		$item_xml = preg_replace('/<quote.*?>/', '', $item_xml);
 		$item_xml = preg_replace('/<\/quote>/', ' ', $item_xml);
-		$html .= $item_xml;*/
+		$html .= $item_xml;
 		
         $html .="<img class=\"closequote\" src=\"img/closequote.png\" alt=\"Close quote\"></p>";
         if ($quote['logo']) {

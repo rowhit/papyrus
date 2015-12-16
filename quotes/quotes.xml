@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quotes>
-    <quote author="Johan Hardy, Software Engineer at Spacebel" logo="quotes/spacebel.png" short="The development of TARANIS on-board software and the project itself are demonstrations that put in evidence benefits of using Eclipse Papyrus as modeling tool.">
+    <quote author="Johan Hardy, Software Engineer at Spacebel" logo="quotes/spacebel.png">
         The development of TARANIS on-board software and the project itself are demonstrations that put in evidence benefits of using Eclipse Papyrus as modeling tool.
     </quote>
-    <quote author="Arnaud Bourdoux, Project Manager at Spacebel" logo="quotes/spacebel.png" short="Given the success of this pilot project, the Eclipse and Papyrus based toolchain is now being deployed on most embedded-C projects at Spacebel.">
+    <quote author="Arnaud Bourdoux, Project Manager at Spacebel" logo="quotes/spacebel.png">
         Given the success of this pilot project, the Eclipse and Papyrus based toolchain is now being deployed on most embedded-C projects at Spacebel.
     </quote>
-    <quote author="Jonathan Dumont, Safety Architect project manager at All4tec" logo="quotes/all4tec.png" short="To build the new version of its tool of SAFETY Analysis “Safety Architect”, ALL4TEC has selected Papyrus technologies as framework.">
-        ALL4TEC is involved in the model based technologies since several years and works closely with the CEA List on many projects. To build the new version of its tool of SAFETY Analysis “Safety Architect”, ALL4TEC has selected Papyrus technologies as framework. The main added value is to focus our developments on CEA LIST field of expertise, and rely on a opened and dependable modeler.
-        <br/>This integration is performed as part of our common laboratory CALL4S, and the resulting perspectives, especially around the Open Source, are particularly welcomed by users and partners.
+    <quote author="Jonathan Dumont, Safety Architect project manager at All4tec" logo="quotes/all4tec.png">
+       To build the new version of its tool of SAFETY Analysis “Safety Architect”, ALL4TEC has selected Papyrus technologies as framework.
     </quote>
-    <quote author="Bran Selic, Malina Software Corp., Canada" logo="quotes/malina.png" short="Papyrus provides the complete package for software design professionals: from architects to developers.">
-        Papyrus provides the complete package for software design professionals: from architects to developers. It is the only open source modeling tool that I know of that is truly industrial strength. Based on a well-known standard, it is characterized by its unique ability to be adapted to a wide variety of different domains, purposes, and ways of working.
+    <quote author="Bran Selic, Malina Software Corp., Canada" logo="quotes/malina.png">
+       Papyrus provides the complete package for software design professionals: from architects to developers.
     </quote>
-    <quote author="Philippe Fiani, R&amp;D Manager at Sherpa Engineering" logo="quotes/sherpa.png" short="To complement its integrated tools for design and evaluation of cyber-physical systems, Sherpa Engineering has chosen Papyrus as a development platform for PhiSystem. ">
-        To complement its integrated tools for design and evaluation of cyber-physical systems, Sherpa Engineering has chosen Papyrus as a development platform for PhiSystem. For this new challenge, there was a need for expertise and for an efficient tool which meet SysML standard.
-        <br/>Thanks to our innovative laboratory with CEA-LIST and to Papyrus which is supported by a scientific and industrial community, we have successfully deployed PhiSystem for the benefit of our main customers.
+    <quote author="Philippe Fiani, R&amp;D Manager at Sherpa Engineering" logo="quotes/sherpa.png" short="">
+     To complement its integrated tools for design and evaluation of cyber-physical systems, Sherpa Engineering has chosen Papyrus as a development platform for PhiSystem. 
     </quote>
-    <quote author="Jean-Michel Bruel, Professor, IRIT/University of Toulouse, France" logo="quotes/irit-toulouse.png" short="I use Papyrus both for my research developments and for my teaching courses on UML or SysML. ">
-        I use Papyrus both for my research developments and for my teaching courses on UML or SysML. There are numerous reasons for that: Open source, developed by a reactive and competent research lab, integrated in the Polarsys project that involves so many big companies, fully compliant with the standards, fully customizable, … I am also very proud to contribute in its use in academia through the Papyrus4Education initiative.
+    <quote author="Jean-Michel Bruel, Professor, IRIT/University of Toulouse, France" logo="quotes/irit-toulouse.png">
+      I use Papyrus both for my research developments and for my teaching courses on UML or SysML. 
     </quote>
-    <quote author="Patrick Leserf, Associate Professor at ESTACA" logo="quotes/estaca.png" short="Papyrus has be chosen by ESTACA, a French engineering school, for teaching and research. ">
-        Papyrus has be chosen by ESTACA, a French engineering school, for teaching and research. In one hand, several student projects consist in modeling embedded systems with Papyrus (e.g., modeling an indoor UAV with autonomous guidance for performance estimation using SysML). In the other hand, one of the mean research topic of the school is optimization of system parameters such as cost and reliability, combining MBSE and CSP problem solving paradigms. The proposed solution is then implemented as a Papyrus extension using its various powerful customization mechanisms (e.g., DSML support).
+    <quote author="Patrick Leserf, Associate Professor at ESTACA" logo="quotes/estaca.png">
+       Papyrus has be chosen by ESTACA, a French engineering school, for teaching and research. 
+    </quote>
+	<quote author="Rodolphe Gelin, Chief Scientist Officer at Aldebaran Robotics" logo="quotes/aldebaran.png">
+        For the safety study of its companion robots, Aldebaran uses Papyrus as complex system modelling tool. 
+    </quote>
+	<quote author="Eric Bantégnie, President &amp; CEO of Esterel Technologies, a wholly owned subsidiary of ANSYS, Inc." logo="quotes/esterel.png">
+		Esterel Technologies has chosen the Papyrus technology platform from CEA LIST as a core component of its SCADE System model-based systems engineering product offering
     </quote>
 </quotes>

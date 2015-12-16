@@ -139,12 +139,12 @@
                         <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="5000">
                             <?php
                                 require_once ('quotes/quotes2html.php');
-                                $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 5);
+                                $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 4);
                                 echo $papyrusquotes;
                             ?>
                         </div>
                     </div>
-                     <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='quotes.php'">Learn more about successful industrial and academic uses of Papyrus</button></p>
+                     <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button></p>
                 </div>
             </div>
         </div>
