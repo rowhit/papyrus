@@ -54,7 +54,7 @@
 	$builds = $builds[0];
 	
 	$html  = "<div id=\"midcolumn\">\n";
-	$html .= "<ul>\n";
+	$html .= "<ul class=\"text-left\">\n";
 	$html .= generateHTMLReleaseList($releases, $projectTitle, $PR, $PWD, $websiteRoot);
 	$html .= generateHTMLBuildList($builds, $projectTitle, $PR, $PWD, $websiteRoot);
 	$html .= "</ul>\n";
