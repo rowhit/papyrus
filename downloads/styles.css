@@ -170,3 +170,7 @@ li p.subText {
 .level2 {
 	padding-right: 26px;
 }
+
+.text-left {
+    text-align: left;
+}
