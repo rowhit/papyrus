@@ -169,38 +169,38 @@
                         <tr>
                             <td>
                                 <ul class="feature-body">
-                                    <li>Class Diagram,
+                                    <li>Class Diagram
                                     </li>
-                                    <li>Object Diagram,
+                                    <li>Object Diagram
                                     </li>
-                                    <li>Package Diagram,
+                                    <li>Package Diagram
                                     </li>
-                                    <li>Composite Structure Diagram,
+                                    <li>Composite Structure Diagram
                                     </li>
-                                    <li>Component Diagram,
+                                    <li>Component Diagram
                                     </li>
-                                    <li>Deployment Diagram,
+                                    <li>Deployment Diagram
                                     </li>
-                                    <li>Profile Diagram.
+                                    <li>Profile Diagram
                                     </li>
                                 </ul>
                             </td>
                             <td>
                                 <ul class="feature-body">
 
-                                    <li>Use case Diagram,
+                                    <li>Use case Diagram
                                     </li>
-                                    <li>Activity Diagram,
+                                    <li>Activity Diagram
                                     </li>
-                                    <li>State machine Diagram,
+                                    <li>State machine Diagram
                                     </li>
-                                    <li>Communication Diagram,
+                                    <li>Communication Diagram
                                     </li>
-                                    <li>Sequence Diagram,
+                                    <li>Sequence Diagram
                                     </li>
-                                    <li>Timing Diagram,
+                                    <li>Timing Diagram
                                     </li>
-                                    <li>Interaction overview Diagram,
+                                    <li>Interaction overview Diagram
                                     </li>
                                 </ul>
                             </td>
@@ -223,15 +223,15 @@
                         Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific graphical editors required for SysML are also provided:
                     </p>
                     <ul class="feature-body">
-                        <li>Block Definition Diagram,
+                        <li>Block Definition Diagram
                         </li>
-                        <li>Internal Block Diagram,
+                        <li>Internal Block Diagram
                         </li>
-                        <li>Requirement Diagram,
+                        <li>Requirement Diagram
                         </li>
-                        <li>Parametric Diagram,
+                        <li>Parametric Diagram
                         </li>
-                        <li>Requirement table,
+                        <li>Requirement table
                         </li>
                         <li>Allocation table
                         </li>
@@ -300,7 +300,7 @@
                     <ul class="feature-body">
                         <li><a href="https://projects.eclipse.org/projects/modeling.papyrus-rt">Papyrus RT</a> for Real-time Systems modeling.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus-robotml.git/">RobotML</a>: a Papyrus-based modeling environment dedicated to robotics.</li>
-                        <li><a href="http://projects.eclipse.org/projects/modeling.upr">Eclipse UML Profiles Repository</a></li>
+                        <li><a href="http://projects.eclipse.org/projects/modeling.upr">Eclipse UML Profiles Repository</a>.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.tools.git/">Papyrus Tools</a>: a collection of tools that complement Papyrus. </li>
                         <li><a href="https://www.polarsys.org/esf/">Eclipse Safety Framework</a>: a set of tools for integrating safety techniques within a model driven engineering process. </li>
                     </ul>
