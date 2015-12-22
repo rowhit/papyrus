@@ -92,6 +92,7 @@
                             $papyrusnews = news_to_html("news/news.xml", "", "", "", false, "long", "5");
                             echo $papyrusnews;
                         ?>
+                        <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='news.php'">More news...</button></p>
                     </div>
 
                 </div>
@@ -99,9 +100,10 @@
             <br>
             <div class="row">
                 <div class="col-md-12 description-paragraph">
-                    <p class="text-justify">Papyrus is aiming at providing an integrated and user-consumable environment for editing any kind of EMF model and particularly supporting <a href="http://www.uml.org">UML2</a> and related modeling languages such as <a href="http://www.omgsysml.org/">SysML</a> and <a href="http://www.omgmarte.org/">MARTE</a>. Papyrus provides diagram editors for EMF-based modeling languages amongst them <a href="http://www.uml.org">UML2</a> and <a href="http://www.omgsysml.org/">SysML</a> and the glue required for integrating these editors (GMF-based or not) with other MBD and MDSD tools.
+                    <p class="text-justify">Papyrus is aiming at providing an integrated and user-consumable environment for editing any kind of EMF model and particularly supporting <a href="http://www.uml.org">UML2</a> and related modeling languages such as <a href="http://www.omgsysml.org/">SysML</a> and <a href="http://www.omgmarte.org/">MARTE</a>. Papyrus provides diagram editors for EMF-based modeling languages amongst them <a href="http://www.uml.org">UML2</a> and <a href="http://www.omgsysml.org/">SysML</a> and the glue required for integrating these editors (GMF-based or not) with other Model-Based Engineering and Model-Based Software Engineering tools.
                     </p>
-                    <p class="text-justify">Papyrus also offers a very advanced support of UML profiles that enables users to define editors for DSLs based on the <a href="http://www.uml.org">UML2</a> standard. The main feature of Papyrus regarding this latter point is a set of very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a "pure" DSL editor.
+                    <p class="text-justify">Papyrus also offers a very advanced support of UML profiles that enables users to define editors for DSLs based on the <a href="http://www.uml.org">UML2</a> standard. The main feature of Papyrus regarding this latter point is a set of very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a "pure" DSL editor.</p>
+                    <p class="text-justify">Papyrus is an industrial-grade open source MBE tool. Therefore, as part of <a href="https://www.polarsys.org/">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus">PolarSys Solution</a>. In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php">Papyrus Industrial Consortium</a> has been setup.
                     </p>
                 </div>
             </div>
@@ -220,7 +222,7 @@
                 <div class="col-md-9 col-md-pull-3 col-sm-12">
                     <h2 class="feature-heading">SysML 1.2 and 1.4</h2>
                     <p class="feature-body">
-                        Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific graphical editors required for SysML are also provided:
+                        Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific tabular and graphical editors required for SysML are also provided:
                     </p>
                     <ul class="feature-body">
                         <li>Block Definition Diagram

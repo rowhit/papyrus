@@ -16,6 +16,18 @@
 -->
 <news>
     <item
+		date="2015-12-21"
+		title="EclipseCon NA 2016"
+		link="https://www.eclipsecon.org/na2016/">
+		<p>Some presentation about or related to Papyrus will be given during EclipseCon NA 2016 : 
+            <ul>
+			<li><a href="https://www.eclipsecon.org/na2016/session/uml-gone-wild-lego-experience">"UML gone wild: the Lego experience"</a></li>
+			<li><a href="https://www.eclipsecon.org/na2016/session/papyrus-real-time-executable-modeling-eclipse">"Papyrus for Real Time: Executable modeling on Eclipse"</a></li>
+			<li><a href="https://www.eclipsecon.org/na2016/session/tailor-made-model-comparison-how-customize-emf-compare-your-modeling-language">"Tailor-made model comparison: how to customize EMF Compare for your modeling language"</a></li>
+			</ul>
+        </p>
+	</item>
+    <item
 		date="2015-12-01"
 		title="Papyrus 1.1.3 Released"
 		link="https://www.eclipse.org/papyrus/download.html">
