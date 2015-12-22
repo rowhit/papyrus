@@ -156,10 +156,10 @@
         <h1 class="section-title">Technologies</h1>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <img class="feature-image img-responsive center-block" src="img/uml.png" alt="UML">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive center-block" src="img/uml-modeling.png" alt="UML">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-7">
                     <h2 class="feature-heading">UML 2.5.0</h2>
                     <p class="feature-body">
                         Papyrus is graphical editing tool for <a href="http://www.uml.org">UML 2</a> as defined by <a href="http://www.omg.org">OMG</a>. Papyrus targets to implement 100% of the OMG specification!
