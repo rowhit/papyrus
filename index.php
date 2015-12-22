@@ -302,6 +302,7 @@
                     <ul class="feature-body">
                         <li><a href="https://projects.eclipse.org/projects/modeling.papyrus-rt">Papyrus RT</a> for Real-time Systems modeling.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus-robotml.git/">RobotML</a>: a Papyrus-based modeling environment dedicated to robotics.</li>
+                        <li><a href="https://www.polarsys.org/solutions/papyrus">Papyrus PolarSys Solution</a>: Papyrus packaged as a PolarSys Solution.</li>
                         <li><a href="http://projects.eclipse.org/projects/modeling.upr">Eclipse UML Profiles Repository</a>.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus.tools.git/">Papyrus Tools</a>: a collection of tools that complement Papyrus. </li>
                         <li><a href="https://www.polarsys.org/esf/">Eclipse Safety Framework</a>: a set of tools for integrating safety techniques within a model driven engineering process. </li>
