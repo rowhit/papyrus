@@ -70,9 +70,9 @@
     </nav>
 
     <section class="custom-section">
-        <h1 class="section-title">Papyrus News</h1>
-        <div class="container">
 
+        <div class="container">
+            <h1 class="section-title wrap">Papyrus News</h1>
             <div class="row">
                 <div class="col-md-12">
                     <?php

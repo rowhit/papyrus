@@ -46,7 +46,7 @@ html {
 
 .technology-name {
     text-align: left;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .technology-moto {
@@ -144,12 +144,6 @@ fieldset[disabled] .btn-success:hover {
     font-size: 30px;
 }
 
-.feature-body {
-    color: #777;
-    text-align: justify;
-    font-size: 18px;
-}
-
 .feature-image {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -187,7 +181,6 @@ fieldset[disabled] .btn-success:hover {
 /*----------------custom paragraphs-----------------------*/
 
 .description-paragraph {
-    color: #777;
     margin-bottom: 40px;
 }
 
@@ -228,7 +221,7 @@ li.footer-link > a:visited {
 }
 
 .section-title {
-    font-size: 60px;
+    font-size: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     /*padding-left: 10px;*/
@@ -275,12 +268,12 @@ li.footer-link > a:visited {
 
 .wrap {
     -ms-word-break: break-all;
-    /* Be VERY careful with this, breaks normal words wh_erever */
-    word-break: break-all;
-    /* Non standard for webkit */
-    word-break: break-word;
+/*    word-break: break-all;*/
+    word-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
     hyphens: auto;
 }
 
@@ -348,7 +341,14 @@ li.footer-link > a:visited {
 
 /* Responsive: Portrait tablets and up */
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .technology-name {
+        font-size: 80px;
+    }
+    .section-title {
+        font-size: 60px;
+    }
+}
 
 @media (min-width: 992px) {
     body {

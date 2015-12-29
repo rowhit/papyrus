@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <h1 class="technology-name">Papyrus<br>
-                        <span class="technology-moto">
+                        <span class="technology-moto wrap">
                             Modeling environment
                         </span>
                     </h1>
@@ -92,7 +92,9 @@
                             $papyrusnews = news_to_html("news/news.xml", "", "", "", false, "long", "5");
                             echo $papyrusnews;
                         ?>
-                        <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='news.php'">More news...</button></p>
+                            <p>
+                                <button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='news.php'">More news...</button>
+                            </p>
                     </div>
 
                 </div>
@@ -113,14 +115,14 @@
                     <img class="img-responsive center-block" src="img/standard-modeling.png" alt="Standard Modeling">
                     <h2>Standard based</h2>
 
-                    <p class="feature-body">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5.0</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.2 &amp; 1.4</a>, <a href="http://www.omg.org/spec/OCL/">OCL 2.3.1</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a> (incubation), <a href="http://www.east-adl.info/">EAST-ADL</a> (incubation), <a href="http://robotml.github.io/">RobotML</a> (incubation), UML-RT (incubation) and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
+                    <p class="text-justify">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5.0</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.2 &amp; 1.4</a>, <a href="http://www.omg.org/spec/OCL/">OCL 2.3.1</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a> (incubation), <a href="http://www.east-adl.info/">EAST-ADL</a> (incubation), <a href="http://robotml.github.io/">RobotML</a> (incubation), UML-RT (incubation) and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
                 </div>
                 <div class="col-md-4">
 
                     <img class="img-responsive center-block" src="img/domain-specific.png" alt="Domain Specific">
                     <h2>Domain Specific</h2>
 
-                    <p class="feature-body">To address any specific domain, every part of Papyrus may be customized: UML profile, model explorer, diagram notation and style, properties views, palette and creation menus, and much more...</p>
+                    <p class="text-justify">To address any specific domain, every part of Papyrus may be customized: UML profile, model explorer, diagram notation and style, properties views, palette and creation menus, and much more...</p>
 
                 </div>
                 <div class="col-md-4">
@@ -128,15 +130,15 @@
                     <img class="img-responsive center-block" src="img/exploitable.png" alt="Exploitable">
                     <h2>Enabler</h2>
 
-                    <p class="feature-body">Papyrus enables model-based techniques: model-based simulation, model-based formal testing, safety analysis, performance/trade-offs analysis, architecture exploration...</p>
+                    <p class="text-justify">Papyrus enables model-based techniques: model-based simulation, model-based formal testing, safety analysis, performance/trade-offs analysis, architecture exploration...</p>
                 </div>
             </div>
-            
+
             <hr class="custom-divider">
             <div class="row">
-                
+
                 <div class="col-md-10 col-md-offset-1">
-                    
+
                     <div class="well quote-well">
                         <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="5000">
                             <?php
@@ -146,69 +148,69 @@
                             ?>
                         </div>
                     </div>
-                     <p><button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button></p>
+                    <p>
+                        <button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="technologies" class="custom-section">
-        <h1 class="section-title">Technologies</h1>
+
         <div class="container">
+            <h1 class="section-title wrap">Technologies</h1>
             <div class="row">
                 <div class="col-md-5">
                     <img class="feature-image img-responsive center-block" src="img/uml-modeling.png" alt="UML">
                 </div>
                 <div class="col-md-7">
                     <h2 class="feature-heading">UML 2.5.0</h2>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Papyrus is graphical editing tool for <a href="http://www.uml.org">UML 2</a> as defined by <a href="http://www.omg.org">OMG</a>. Papyrus targets to implement 100% of the OMG specification!
                     </p>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Papyrus provides editors for all the UML diagrams:
                     </p>
-                    <table>
-                        <tr>
-                            <td>
-                                <ul class="feature-body">
-                                    <li>Class Diagram
-                                    </li>
-                                    <li>Object Diagram
-                                    </li>
-                                    <li>Package Diagram
-                                    </li>
-                                    <li>Composite Structure Diagram
-                                    </li>
-                                    <li>Component Diagram
-                                    </li>
-                                    <li>Deployment Diagram
-                                    </li>
-                                    <li>Profile Diagram
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul class="feature-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="text-left">
+                                <li>Class Diagram
+                                </li>
+                                <li>Object Diagram
+                                </li>
+                                <li>Package Diagram
+                                </li>
+                                <li>Composite Structure Diagram
+                                </li>
+                                <li>Component Diagram
+                                </li>
+                                <li>Deployment Diagram
+                                </li>
+                                <li>Profile Diagram
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="text-left">
 
-                                    <li>Use case Diagram
-                                    </li>
-                                    <li>Activity Diagram
-                                    </li>
-                                    <li>State machine Diagram
-                                    </li>
-                                    <li>Communication Diagram
-                                    </li>
-                                    <li>Sequence Diagram
-                                    </li>
-                                    <li>Timing Diagram
-                                    </li>
-                                    <li>Interaction overview Diagram
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
-
+                                <li>Use case Diagram
+                                </li>
+                                <li>Activity Diagram
+                                </li>
+                                <li>State machine Diagram
+                                </li>
+                                <li>Communication Diagram
+                                </li>
+                                <li>Sequence Diagram
+                                </li>
+                                <li>Timing Diagram
+                                </li>
+                                <li>Interaction overview Diagram
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -221,10 +223,10 @@
                 </div>
                 <div class="col-md-9 col-md-pull-3 col-sm-12">
                     <h2 class="feature-heading">SysML 1.2 and 1.4</h2>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific tabular and graphical editors required for SysML are also provided:
                     </p>
-                    <ul class="feature-body">
+                    <ul class="text-left">
                         <li>Block Definition Diagram
                         </li>
                         <li>Internal Block Diagram
@@ -250,10 +252,10 @@
                 </div>
                 <div class="col-md-7">
                     <h2 class="feature-heading">Model execution</h2>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Thanks to <a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus-moka.git/">Moka</a>, Papyrus can execute models using a rich and extensible animation and simulation framework.
                     </p>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Also, as graphical modeling is not always the best way for specifying the behavior of executable models, Papyrus provides textual notation edition with syntax highlight, completion and content assist. It is of course a customizable feature of Papyrus.
                     </p>
                 </div>
@@ -268,11 +270,11 @@
                 </div>
                 <div class="col-md-9 col-md-pull-3 col-sm-12">
                     <h2 class="feature-heading">Fully customizable environment</h2>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         All the modeling features of Papyrus are designed to be customizable and to maximize reuse. Therefore, should you want to adapt the standard Papyrus configuration for a specific domain, notation, modeling practice, use the powerful customization mechanisms of Papyrus to adapt the Papyrus modeling environment to suit your needs. Many configurations in Papyrus being model-based, the customization can be done live.
                     </p>
 
-                    <ul class="feature-body">
+                    <ul class="text-left">
                         <li>Define your own graphical, textual or tabular notation. </li>
                         <li>Filter existing palettes or define your own ones with a model-based configuration. </li>
                         <li>Define dedicated properties views to present just the characteristics that are important to you. </li>
@@ -292,14 +294,14 @@
                 </div>
                 <div class="col-md-9">
                     <h2 class="feature-heading">Papyrus relatives</h2>
-                    <p class="feature-body">
+                    <p class="text-justify">
                         Many technologies complement, extend or use Papyrus. Following are key ones:
 
 
 
 
                     </p>
-                    <ul class="feature-body">
+                    <ul class="text-left">
                         <li><a href="https://projects.eclipse.org/projects/modeling.papyrus-rt">Papyrus RT</a> for Real-time Systems modeling.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus-robotml.git/">RobotML</a>: a Papyrus-based modeling environment dedicated to robotics.</li>
                         <li><a href="https://www.polarsys.org/solutions/papyrus">Papyrus PolarSys Solution</a>: Papyrus packaged as a PolarSys Solution.</li>
