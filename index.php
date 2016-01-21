@@ -100,22 +100,14 @@
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-md-12 description-paragraph">
-                    <p class="text-justify">Papyrus is aiming at providing an integrated and user-consumable environment for editing any kind of EMF model and particularly supporting <a href="http://www.uml.org">UML2</a> and related modeling languages such as <a href="http://www.omgsysml.org/">SysML</a> and <a href="http://www.omgmarte.org/">MARTE</a>. Papyrus provides diagram editors for EMF-based modeling languages amongst them <a href="http://www.uml.org">UML2</a> and <a href="http://www.omgsysml.org/">SysML</a> and the glue required for integrating these editors (GMF-based or not) with other Model-Based Engineering and Model-Based Software Engineering tools.
-                    </p>
-                    <p class="text-justify">Papyrus also offers a very advanced support of UML profiles that enables users to define editors for DSLs based on the <a href="http://www.uml.org">UML2</a> standard. The main feature of Papyrus regarding this latter point is a set of very powerful customization mechanisms which can be leveraged to create user-defined Papyrus perspectives and give it the same look and feel as a "pure" DSL editor.</p>
-                    <p class="text-justify">Papyrus is an industrial-grade open source MBE tool. Therefore, as part of <a href="https://www.polarsys.org/">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus">PolarSys Solution</a>. In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php">Papyrus Industrial Consortium</a> has been setup.
-                    </p>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-md-4">
 
                     <img class="img-responsive center-block" src="img/standard-modeling.png" alt="Standard Modeling">
                     <h2>Standard based</h2>
 
-                    <p class="text-justify">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5.0</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.2 &amp; 1.4</a>, <a href="http://www.omg.org/spec/OCL/">OCL 2.3.1</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a> (incubation), <a href="http://www.east-adl.info/">EAST-ADL</a> (incubation), <a href="http://robotml.github.io/">RobotML</a> (incubation), UML-RT (incubation) and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
+                    <p class="text-justify">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5.0</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.1 &amp; 1.4</a>, <a href="http://www.omg.org/spec/OCL/">OCL 2.3.1</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a> (incubation), <a href="http://www.east-adl.info/">EAST-ADL</a> (incubation), <a href="http://robotml.github.io/">RobotML</a> (incubation), UML-RT (incubation) and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
                 </div>
                 <div class="col-md-4">
 
@@ -134,22 +126,45 @@
                 </div>
             </div>
 
-            <hr class="custom-divider">
+        </div>
+    </section>
+    <section id="industrial" class="indsutrial-section">
+
+        <div class="container">
             <div class="row">
+                <div class="col-md-12">
 
-                <div class="col-md-10 col-md-offset-1">
+                    <img class="img-responsive center-block" src="img/indusrial.png" alt="Industrial">
+                    <h1 class="section-title wrap">Industry ready, academia friendly</h1>
 
-                    <div class="well quote-well">
-                        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="5000">
-                            <?php
-                                require_once ('quotes/quotes2html.php');
-                                $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 4);
-                                echo $papyrusquotes;
-                            ?>
-                        </div>
+
+                    <p class="text-justify">Papyrus is an industrial-grade open source MBE tool. Papyrus has notably been used succesfuly in industrial projects and is the base platform for several industrial modeling tools.
+                    </p>
+                    <p class="text-justify">Also, as part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>. In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industrial Consortium</a> has been setup.
+                    </p>
+                    <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes. 
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="feature-heading-white">Use Case Stories</h2>
+                    <div class="list-group text-justify">
+                        <a href="resources/spacebel-usecasestory.pdf" class="list-group-item">&quot;From napkin sketches to production software&quot;  <span class="badge">+</span></a>
+                        <a href="resources/sherpa-usecasestory.pdf" class="list-group-item">&quot;Sherpa Engineering business empowered by Papyrus&quot; <span class="badge">+</span></a>
                     </div>
-                    <p>
-                        <button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <h2 class="feature-heading-white">Testimonials</h2>
+                    <?php
+                        require_once ('quotes/quotes2html.php');
+                        $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 1);
+                        echo $papyrusquotes;
+                    ?>
+                </div>
+                <div class="col-md-12">
+                    <p class="testimonials">
+                        <button type="button" class="btn btn-lg btn-success custom-white-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button>
                     </p>
                 </div>
             </div>
@@ -222,7 +237,7 @@
                     <img class="feature-image img-responsive center-block" src="img/sysml.png" alt="SysML">
                 </div>
                 <div class="col-md-9 col-md-pull-3 col-sm-12">
-                    <h2 class="feature-heading">SysML 1.2 and 1.4</h2>
+                    <h2 class="feature-heading">SysML 1.1 and 1.4</h2>
                     <p class="text-justify">
                         Papyrus provides also a complete support to <a href="http://www.omgsysml.org/">SysML</a> in order to enable model-based system engineering. Specific tabular and graphical editors required for SysML are also provided:
                     </p>
