@@ -67,20 +67,7 @@ function quoteshort_to_html($file_name, $quantity=5) {
 	}
 
 	
-	$html .="<!-- Carousel indicators -->";
-	$html .="<ol class=\"carousel-indicators\">";
-	for ($i = 0; $i < $quantity; $i++) {
-		if($i==0) {
-			$html .="<li data-target=\"#fade-quote-carousel\" data-slide-to=\"".$i."\" class=\"active\"></li>";
-		} else {
-			$html .="<li data-target=\"#fade-quote-carousel\" data-slide-to=\"".$i."\"></li>";
-		}
-	}
-    $html .="</ol>";
-	
-	$html .="<!-- Carousel items -->";
-    $html .="<div class=\"carousel-inner\" role=\"listbox\">";
-
+    $html .="<div>";
     
     $randValues = random(0, $quote_count-1, $quantity);
     
@@ -88,25 +75,18 @@ function quoteshort_to_html($file_name, $quantity=5) {
 		
         $quote=$xml->quote[$randValues[$i]];
 
-		if($i==0) {
-			$html .="<div class=\"active item\">";
-		} else {
-			$html .="<div class=\"item\">";
-		}
-		$html .="<blockquote>";
-		$html .="<p class=\"text-justify quote-content\"><img class=\"openquote\" src=\"img/openquote.png\" alt=\"Open quote\">";
+
+        $html .="<div>";
+		
+		$html .="<p class=\"text-justify\"><img class=\"openquote\" src=\"img/openquote.png\" alt=\"Open quote\">";
 		$item_xml = $quote->asXML();
 		$item_xml = preg_replace('/<quote.*?>/', '', $item_xml);
 		$item_xml = preg_replace('/<\/quote>/', ' ', $item_xml);
 		$html .= $item_xml;
 		
         $html .="<img class=\"closequote\" src=\"img/closequote.png\" alt=\"Close quote\"></p>";
-        if ($quote['logo']) {
-			$html .= "<p class=\"text-right\"><img class=\"quote-logo\" src=\"".$quote['logo']."\" alt=\"Quote logo\"></p>";
-		}
 		$html .= "<p class=\"text-right\"><b><em>" . $quote['author'] . "</em></b></p>";
         
-		$html .="</blockquote>";
 		$html .="</div>";
 	}
     
