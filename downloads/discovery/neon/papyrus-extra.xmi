@@ -54,19 +54,6 @@
           summary="Modeling language and tools for mobile robotic applications"/>
       <id>org.eclipse.papyrus.extra.robotml.feature</id>
     </components>
-    <components
-        name="RealTime"
-        provider="Eclipse Modeling Project"
-        description="UML Profile and tools for RealTime"
-        license="EPL"
-        groups="//@filters.1"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <overview
-          summary="UML Profile and tools for RealTime"/>
-      <id>org.eclipse.papyrus.extra.umlrt.feature</id>
-    </components>
   </categories>
   <categories
       name="Modeler extensions"
@@ -127,20 +114,6 @@
       <id>org.eclipse.papyrus.layers.feature</id>
     </components>
     <components
-        name="Moka"
-        provider="Eclipse Modeling Project"
-        description="Moka is a Papyrus module for execution, animation and debugging of UML models."
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/moka.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <overview
-          summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
-      <id>org.eclipse.papyrus.extra.moka.feature</id>
-    </components>
-    <components
         name="Qompass"
         provider="Eclipse Modeling Project"
         description="Component based design methodology"
@@ -153,20 +126,6 @@
       <overview
           summary="Component based design methodology based on:&#xA;&#x9;- A profile derived from a flexible component model (FCM) with&#xA;&#x9;&#x9;- extensible port definitions (kind)&#xA;&#x9;&#x9;- extensible set of interaction components (connectors)&#xA;&#x9;&#x9;- extensible set of container services&#xA;&#x9;- A library of predefined port kinds&#xA;&#x9;- A library of interaction components along with their implementations&#xA;&#x9;- The tool chain supporting a set of model-to-model transformation (connector and container expansion)"/>
       <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
-    </components>
-    <components
-        name="C++ code generation"
-        provider="Eclipse Modeling Project"
-        description="C++ Profile and code generation"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/codegen-32x32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <overview
-          summary="C++ profile and code generation&#xA;&#x9;- A C++ profile, enabling the specification for C++ features, for instance: pointers, friends, constructor initializers&#xA;&#x9;- A code generator from UML enriched with the C++ profile&#xA;&#x9;- A C++ view allowing simple editing of opaque behaviors and manipulation of C++ profile attributes&#xA;&#x9;- An experimental CDT integration&#xA;&#x9;&#x9;"/>
-      <id>org.eclipse.papyrus.extra.cpp.feature</id>
     </components>
     <components
         name="RSA Model Importer"
