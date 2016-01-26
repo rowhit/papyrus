@@ -138,20 +138,21 @@
                     <h1 class="section-title wrap">Industry ready, academia friendly</h1>
 
 
-                    <p class="text-justify">Papyrus is an industrial-grade open source MBE tool. Papyrus has notably been used succesfuly in industrial projects and is the base platform for several industrial modeling tools.
+                    <p class="text-justify">Papyrus is an industrial-grade open source Model-Based Engineering tool. Papyrus has notably been used succesfuly in industrial projects and is the base platform for several industrial modeling tools.
                     </p>
                     <p class="text-justify">Also, as part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>. In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industrial Consortium</a> has been setup.
                     </p>
-                    <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes. 
+                    <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes.
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="feature-heading-white">Use Case Stories</h2>
+                    <h2 class="feature-heading-white">Papyrus Use Case Stories</h2>
                     <div class="list-group text-justify">
                         <a href="resources/spacebel-usecasestory.pdf" class="list-group-item">&quot;From napkin sketches to production software&quot;  <span class="badge">+</span></a>
                         <a href="resources/sherpa-usecasestory.pdf" class="list-group-item">&quot;Sherpa Engineering business empowered by Papyrus&quot; <span class="badge">+</span></a>
+                        <a href="resources/plasticomnium-usecasestory.pdf" class="list-group-item">&quot;From document-centric to model-centric&quot; <span class="badge">+</span></a>
                     </div>
                 </div>
                 <div class="col-md-5 col-md-offset-1">
