@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-md-12">
                     <p class="testimonials">
-                        <button type="button" class="btn btn-lg btn-success custom-white-btn" onclick="location.href='testimonials.html'">Learn more about successful industrial and academic uses of Papyrus</button>
+                        <button type="button" class="btn btn-lg btn-success custom-white-btn" onclick="location.href='testimonials.html'"><img src="img/thumbup.png" alt="Testimonials">&nbsp;Learn more about successful industrial and academic uses of Papyrus</button>
                     </p>
                 </div>
             </div>
