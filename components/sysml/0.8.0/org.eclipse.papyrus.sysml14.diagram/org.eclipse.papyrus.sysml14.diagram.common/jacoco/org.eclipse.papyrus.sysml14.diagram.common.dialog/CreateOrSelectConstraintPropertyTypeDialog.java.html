@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateOrSelectConstraintPropertyTypeDialog.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.dialog</a> &gt; <span class="el_source">CreateOrSelectConstraintPropertyTypeDialog.java</span></div><h1>CreateOrSelectConstraintPropertyTypeDialog.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2011 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.dialog;
+
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+//import org.eclipse.papyrus.sysml14.constraints.ConstraintsPackage;
+//import org.eclipse.papyrus.sysml14.diagram.common.messages.Messages;
+//import org.eclipse.papyrus.sysml14.service.types.element.SysMLElementTypes;
+import org.eclipse.papyrus.uml.diagram.common.dialogs.CreateOrSelectTypeDialog;
+import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * Dialog for initialization of Part (Property) type (the type is either selected or created).
+ */
+public class CreateOrSelectConstraintPropertyTypeDialog extends CreateOrSelectTypeDialog {
+
+	/** Constructor */
+	public CreateOrSelectConstraintPropertyTypeDialog(Shell shell, NamedElement owner) {
+<span class="nc" id="L35">		super(shell, owner, ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_CONSTRAINTBLOCK), </span>
+<span class="nc" id="L36">				UMLPackage.eINSTANCE.getTypedElement_Type(),</span>
+<span class="nc" id="L37">				ConstraintblocksPackage.eINSTANCE.getConstraintBlock(),</span>
+<span class="nc" id="L38">				UMLElementTypes.PACKAGE,</span>
+<span class="nc" id="L39">				UMLPackage.eINSTANCE.getPackage_PackagedElement(), null);</span>
+<span class="nc" id="L40">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

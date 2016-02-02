@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysML14ElementTypesExtensionTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <span class="el_source">SysML14ElementTypesExtensionTest.java</span></div><h1>SysML14ElementTypesExtensionTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.tests;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.MatcherConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.SpecializationTypeConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+
+/**
+ * This class is to check any change in the SysML 1.4 element type id
+ * (since the ids can be used a specialization they are part of public API)
+ *
+ */
+<span class="fc" id="L41">public class SysML14ElementTypesExtensionTest {</span>
+
+	public static final String ELEMENTTYPE_EXTENSION_MENU_PATH = &quot;org.eclipse.papyrus.sysml14.service.types/model/SysML14-extension.elementtypesconfigurations&quot;; //$NON-NLS-1$
+	
+	@BeforeClass
+	public static void loadSysMLDefinition() {
+<span class="fc" id="L47">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L48">		ElementTypeSetConfiguration elementTypeSetConfiguration = instance.getElementTypeSetConfigurations().get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet.extension&quot;);</span>
+<span class="fc" id="L49">		Assert.assertNotNull(&quot;The SysML element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L50">	}</span>
+	
+	@Test
+	@Ignore //FIXME See Bug 477206
+	public void validateSysML14ElementTypesExtensionModel() {
+<span class="nc" id="L55">		URI createPlatformPluginURI = URI.createPlatformPluginURI(ELEMENTTYPE_EXTENSION_MENU_PATH, true);</span>
+<span class="nc" id="L56">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="nc" id="L57">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="nc" id="L58">		Assert.assertEquals(&quot;The SysML14ElementTypesExtension model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity());</span>
+<span class="nc" id="L59">	}</span>
+	
+	/**
+	 * Check that all SpecializationTypeConfiguration have a matcher (avoid to broke UML Diagrams)
+	 * TODO #482245 : a validation should be added to Papyrus core
+	 */
+	@Test
+	public void checkElementTypeMatcher() {
+<span class="fc" id="L67">		URI createPlatformPluginURI = URI.createPlatformPluginURI(ELEMENTTYPE_EXTENSION_MENU_PATH, true);</span>
+<span class="fc" id="L68">		ResourceSetImpl resourceSetImpl = new ResourceSetImpl();</span>
+<span class="fc" id="L69">		Resource resource = resourceSetImpl.getResource(createPlatformPluginURI, true);</span>
+
+
+<span class="fc" id="L72">		TreeIterator&lt;EObject&gt; allContents = resource.getAllContents();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		while (allContents.hasNext()) {</span>
+<span class="fc" id="L74">			EObject eObject = (EObject) allContents.next();</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">			if (eObject instanceof ElementTypeSetConfiguration) {</span>
+<span class="fc" id="L76">				ElementTypeSetConfiguration elementTypeSetConfiguration = (ElementTypeSetConfiguration) eObject;</span>
+<span class="fc" id="L77">				EList&lt;ElementTypeConfiguration&gt; elementTypeConfigurations = elementTypeSetConfiguration.getElementTypeConfigurations();</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">				for (ElementTypeConfiguration elementTypeConfiguration : elementTypeConfigurations) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">					if (elementTypeConfiguration instanceof SpecializationTypeConfiguration) {</span>
+<span class="fc" id="L80">						SpecializationTypeConfiguration specializationTypeConfiguration = (SpecializationTypeConfiguration) elementTypeConfiguration;</span>
+<span class="fc" id="L81">						MatcherConfiguration matcherConfiguration = specializationTypeConfiguration.getMatcherConfiguration();</span>
+<span class="fc" id="L82">						Assert.assertNotNull(specializationTypeConfiguration.getName()+&quot;is missing its matcher. All SysML 1.4 SpecializationTypeConfiguration must have a matcher. By default,  use org.eclipse.papyrus.sysml14.service.types.matcher.internal.SysML14ProfileMatcher)&quot;, matcherConfiguration);</span>
+					}
+				}
+			}
+		}
+<span class="fc" id="L87">	}	</span>
+	
+	
+    @Test
+	public void testRegistryContentForUnit() {
+<span class="fc" id="L92">		Assert.assertTrue(&quot;Unit element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Unit&quot;));</span>
+<span class="fc" id="L93">	}</span>
+
+    @Test
+	public void testRegistryContentForQuantityKind() {
+<span class="fc" id="L97">		Assert.assertTrue(&quot;QuantityKind element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.QuantityKind&quot;));</span>
+<span class="fc" id="L98">	}</span>
+
+    @Test
+	public void testRegistryContentForPartAssociation() {
+<span class="fc" id="L102">		Assert.assertTrue(&quot;PartAssociation element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.PartAssociation&quot;));</span>
+<span class="fc" id="L103">	}</span>
+
+    @Test
+	public void testRegistryContentForSharedAssociation() {
+<span class="fc" id="L107">		Assert.assertTrue(&quot;SharedAssociation element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.SharedAssociation&quot;));</span>
+<span class="fc" id="L108">	}</span>
+
+    @Test
+	public void testRegistryContentForConstraintProperty() {
+<span class="fc" id="L112">		Assert.assertTrue(&quot;ConstraintProperty element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConstraintProperty&quot;));</span>
+<span class="fc" id="L113">	}</span>
+
+    @Test
+	public void testRegistryContentForActorPart() {
+<span class="fc" id="L117">		Assert.assertTrue(&quot;ActorPart element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ActorPart&quot;));</span>
+<span class="fc" id="L118">	}</span>
+
+    @Test
+	public void testRegistryContentForValue() {
+<span class="fc" id="L122">		Assert.assertTrue(&quot;Value element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Value&quot;));</span>
+<span class="fc" id="L123">	}</span>
+
+    @Test
+	public void testRegistryContentForReference() {
+<span class="fc" id="L127">		Assert.assertTrue(&quot;Reference element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Reference&quot;));</span>
+<span class="fc" id="L128">	}</span>
+
+    @Test
+	public void testRegistryContentForPart() {
+<span class="fc" id="L132">		Assert.assertTrue(&quot;Part element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Part&quot;));</span>
+<span class="fc" id="L133">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

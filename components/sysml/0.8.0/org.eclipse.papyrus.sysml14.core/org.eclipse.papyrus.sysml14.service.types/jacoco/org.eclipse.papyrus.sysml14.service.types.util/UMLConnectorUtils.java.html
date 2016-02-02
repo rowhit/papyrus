@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UMLConnectorUtils.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.util</a> &gt; <span class="el_source">UMLConnectorUtils.java</span></div><h1>UMLConnectorUtils.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2012 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.util;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.TypedElement;
+
+/**
+ * Utility class for Connector edit helpers.
+ */
+// TODO : this class should be move to uml core
+<span class="nc" id="L37">public class UMLConnectorUtils extends org.eclipse.papyrus.uml.service.types.utils.ConnectorUtils {</span>
+
+	/**
+	 * the key used to store the nested path as parameter of the request. The value will be a List of {@link Property}
+	 */
+	public static final String NESTED_CONNECTOR_END_PATH = &quot;connectorEndPath&quot;; //$NON-NLS-1$
+
+	/** the separator used in the role path to distinguish the part. */
+	public static final String PART_SEPARATOR = &quot;.&quot;; //$NON-NLS-1$
+
+	/** allow to know if a string contains others characters than a-z A-Z 0-9 and _. */
+	public static final String HAS_NO_WORD_CHAR_REGEX = &quot;\\W+&quot;; //$NON-NLS-1$
+
+	/** String used to delimit a name with contains special chars. */
+	public static final String STRING_DELIMITER = &quot;\'&quot;; //$NON-NLS-1$
+
+	/**
+	 * Get the path of structure views crossed by the checked end.
+	 *
+	 * @param checkedEnd
+	 *            the checked end view.
+	 * @param oppositeEnd
+	 *            the opposite end view.
+	 * @return the list of crossed structure views.
+	 */
+	public List&lt;View&gt; getNestedPath(View checkedEnd, View oppositeEnd) {
+<span class="nc" id="L63">		List&lt;View&gt; isNestedConnectableElement = new ArrayList&lt;View&gt;();</span>
+
+<span class="nc" id="L65">		View nearestContainer = new UMLConnectorUtils().getNearestStructureContainer(checkedEnd);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		if (nearestContainer != null) {</span>
+<span class="nc" id="L67">			View containerView = new UMLConnectorUtils().deduceViewContainer(checkedEnd, oppositeEnd);</span>
+<span class="nc" id="L68">			List&lt;View&gt; containers = new UMLConnectorUtils().getStructureContainers(checkedEnd);</span>
+
+<span class="nc bnc" id="L70" title="All 2 branches missed.">			if (containers.indexOf(nearestContainer) &lt; containers.indexOf(containerView)) {</span>
+<span class="nc" id="L71">				isNestedConnectableElement = containers.subList(containers.indexOf(nearestContainer), containers.indexOf(containerView));</span>
+			}
+		}
+
+		// nested path is taken from the top block to the deepest property ==&gt; collection must be reverted
+<span class="nc" id="L76">		Collections.reverse(isNestedConnectableElement);</span>
+
+<span class="nc" id="L78">		return isNestedConnectableElement;</span>
+	}
+
+	/**
+	 * Get the path of structure views crossed by the checked end.
+	 *
+	 * @param checkedEnd
+	 *            the checked end view.
+	 * @param oppositeEnd
+	 *            the opposite end view.
+	 * @return the list of crossed structure views.
+	 */
+	public List&lt;Property&gt; getNestedPropertyPath(View checkedEnd, View oppositeEnd) {
+<span class="nc" id="L91">		List&lt;Property&gt; nestedPropertyPath = new ArrayList&lt;Property&gt;();</span>
+<span class="nc" id="L92">		List&lt;View&gt; nestedPath = getNestedPath(checkedEnd, oppositeEnd);</span>
+
+<span class="nc bnc" id="L94" title="All 2 branches missed.">		for (View view : nestedPath) {</span>
+<span class="nc bnc" id="L95" title="All 4 branches missed.">			if ((view.getElement() != null) &amp;&amp; (view.getElement() instanceof Property)) {</span>
+<span class="nc" id="L96">				nestedPropertyPath.add((Property) view.getElement());</span>
+			}
+		}
+
+		// if end is a port, and the list is not empty, add the property from the check view in the list
+<span class="nc bnc" id="L101" title="All 4 branches missed.">		if (!nestedPropertyPath.isEmpty() &amp;&amp; checkedEnd.getElement() instanceof Port) {</span>
+<span class="nc" id="L102">			Property partWithPort = getPartWithPort(checkedEnd, oppositeEnd);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			if (partWithPort != null) {</span>
+<span class="nc" id="L104">				nestedPropertyPath.add(partWithPort);</span>
+			}
+		}
+
+<span class="nc" id="L108">		return nestedPropertyPath;</span>
+	}
+
+	/**
+	 * Test if the checked end is nested (means it cross StructuredClassifier borders).
+	 *
+	 * @param checkedEnd
+	 *            the checked end view.
+	 * @param oppositeEnd
+	 *            the opposite end view.
+	 * @return true if the checked end is nested.
+	 */
+	public boolean isNestedConnectableElement(View checkedEnd, View oppositeEnd) {
+<span class="nc bnc" id="L121" title="All 2 branches missed.">		return !(getNestedPath(checkedEnd, oppositeEnd).isEmpty());</span>
+	}
+
+	/**
+	 * Gets the nearest structure container.
+	 *
+	 * @param view
+	 *            the view
+	 * @return the nearest structure container or null
+	 */
+	public View getNearestStructureContainer(View view) {
+<span class="nc" id="L132">		View nearestStructureContainer = null;</span>
+
+<span class="nc bnc" id="L134" title="All 2 branches missed.">		for (View containerView : getStructureContainers(view)) {</span>
+
+<span class="nc bnc" id="L136" title="All 2 branches missed.">			if (view == containerView) {</span>
+<span class="nc" id="L137">				continue;</span>
+			}
+
+<span class="nc bnc" id="L140" title="All 4 branches missed.">			if ((view.getElement() instanceof Port) &amp;&amp; (containerView.getChildren().contains(view))) {</span>
+<span class="nc" id="L141">				continue;</span>
+			}
+
+<span class="nc" id="L144">			nearestStructureContainer = containerView;</span>
+<span class="nc" id="L145">			break;</span>
+		}
+
+<span class="nc" id="L148">		return nearestStructureContainer;</span>
+	}
+
+	/**
+	 * Gets the name with quotes.
+	 *
+	 * @param property
+	 *            a property
+	 * @return the name with quotes
+	 *         the property name with name delimiter if it is required
+	 */
+	public static final String getNameWithQuotes(final NamedElement property) {
+<span class="nc" id="L160">		final String partName = property.getName();</span>
+<span class="nc" id="L161">		final StringBuffer partNameBuffer = new StringBuffer();</span>
+<span class="nc" id="L162">		final Pattern pattern = Pattern.compile(UMLConnectorUtils.HAS_NO_WORD_CHAR_REGEX);</span>
+<span class="nc" id="L163">		final Matcher matcher = pattern.matcher(partName);</span>
+<span class="nc" id="L164">		boolean mustHaveQuote = false;</span>
+<span class="nc bnc" id="L165" title="All 4 branches missed.">		while (matcher.find() &amp;&amp; !mustHaveQuote) {</span>
+<span class="nc" id="L166">			mustHaveQuote = true;</span>
+		}
+<span class="nc bnc" id="L168" title="All 2 branches missed.">		if (mustHaveQuote) {</span>
+<span class="nc" id="L169">			partNameBuffer.append(UMLConnectorUtils.STRING_DELIMITER);</span>
+<span class="nc" id="L170">			partNameBuffer.append(partName);</span>
+<span class="nc" id="L171">			partNameBuffer.append(UMLConnectorUtils.STRING_DELIMITER);</span>
+<span class="nc" id="L172">		} else {</span>
+<span class="nc" id="L173">			partNameBuffer.append(partName);</span>
+		}
+
+<span class="nc" id="L176">		return partNameBuffer.toString();</span>
+	}
+
+	/**
+	 * Can display existing connector between views according to partWithPort.
+	 *
+	 * @param connector
+	 *            the connector
+	 * @param sourceView
+	 *            the source view
+	 * @param targetView
+	 *            the target view
+	 * @return true, if successful
+	 */
+	public boolean canDisplayExistingConnectorBetweenViewsAccordingToPartWithPort(final Connector connector, final View sourceView, final View targetView) {
+<span class="nc" id="L191">		Property partWithPort = getPartWithPortFromConnector(connector);</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">		if (partWithPort != null) {</span>
+<span class="nc" id="L193">			String partWithPortName = partWithPort.getName();</span>
+<span class="nc" id="L194">			Type partWithPortType = partWithPort.getType();</span>
+<span class="nc" id="L195">			EObject sourceContainer = ((View) sourceView.eContainer()).getElement();</span>
+<span class="nc" id="L196">			EObject targetContainer = ((View) targetView.eContainer()).getElement();</span>
+
+<span class="nc" id="L198">			boolean sameSourceType = false;</span>
+<span class="nc bnc" id="L199" title="All 2 branches missed.">			if (sourceContainer instanceof TypedElement) {</span>
+<span class="nc" id="L200">				sameSourceType = partWithPortType.conformsTo(((TypedElement) sourceContainer).getType());</span>
+			}
+<span class="nc" id="L202">			boolean sameSourceName = partWithPortName.equals(((NamedElement) sourceContainer).getName());</span>
+
+<span class="nc" id="L204">			boolean sameTargetType = false;</span>
+<span class="nc bnc" id="L205" title="All 2 branches missed.">			if (targetContainer instanceof TypedElement) {</span>
+<span class="nc" id="L206">				sameTargetType = partWithPortType.conformsTo(((TypedElement) targetContainer).getType());</span>
+			}
+<span class="nc" id="L208">			boolean sametargetName = partWithPortName.equals(((NamedElement) targetContainer).getName());</span>
+
+<span class="nc bnc" id="L210" title="All 8 branches missed.">			return (sameSourceType &amp;&amp; sameSourceName) || (sameTargetType &amp;&amp; sametargetName);</span>
+		}
+<span class="nc" id="L212">		return true;</span>
+	}
+
+	/**
+	 * Gets the partWithPort from the connector.
+	 *
+	 * @param connector
+	 *            the connector
+	 * @return the part with port from connector
+	 */
+	public Property getPartWithPortFromConnector(final Connector connector) {
+<span class="nc bnc" id="L223" title="All 4 branches missed.">		if (connector != null &amp;&amp; connector.getEnds() != null) {</span>
+<span class="nc bnc" id="L224" title="All 2 branches missed.">			for (final ConnectorEnd end : connector.getEnds()) {</span>
+<span class="nc" id="L225">				Property partWithPort = end.getPartWithPort();</span>
+<span class="nc bnc" id="L226" title="All 2 branches missed.">				if (partWithPort != null) {</span>
+<span class="nc" id="L227">					return partWithPort;</span>
+				}
+			}
+		}
+<span class="nc" id="L231">		return null;</span>
+	}
+
+	/**
+	 * Test if the relationship creation is allowed.
+	 *
+	 * @param source
+	 *            the relationship source can be null
+	 * @param target
+	 *            the relationship target can be null
+	 * @param sourceView
+	 *            the relationship graphical source can be null
+	 * @param targetView
+	 *            the relationship graphical target can be null
+	 * @return true if the creation is allowed
+	 */
+	public static boolean canCreate(EObject source, EObject target, View sourceView, View targetView) {
+
+<span class="nc bnc" id="L249" title="All 4 branches missed.">		if ((source != null) &amp;&amp; !(source instanceof ConnectableElement)) {</span>
+<span class="nc" id="L250">			return false;</span>
+		}
+
+<span class="nc bnc" id="L253" title="All 4 branches missed.">		if ((target != null) &amp;&amp; !(target instanceof ConnectableElement)) {</span>
+<span class="nc" id="L254">			return false;</span>
+		}
+
+<span class="nc bnc" id="L257" title="All 4 branches missed.">		if ((sourceView != null) &amp;&amp; (targetView != null)) {</span>
+			// Cannot create a connector from a view representing a Part to its own Port (or the opposite)
+<span class="nc bnc" id="L259" title="All 4 branches missed.">			if ((sourceView.getChildren().contains(targetView)) || (targetView.getChildren().contains(sourceView))) {</span>
+<span class="nc" id="L260">				return false;</span>
+			}
+
+			// Cannot connect a Part to one of its (possibly indirect) containment, must connect to one of its Port.
+<span class="nc bnc" id="L264" title="All 4 branches missed.">			if (new UMLConnectorUtils().getStructureContainers(sourceView).contains(targetView) || new UMLConnectorUtils().getStructureContainers(targetView).contains(sourceView)) {</span>
+<span class="nc" id="L265">				return false;</span>
+			}
+		}
+<span class="nc" id="L268">		return true;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

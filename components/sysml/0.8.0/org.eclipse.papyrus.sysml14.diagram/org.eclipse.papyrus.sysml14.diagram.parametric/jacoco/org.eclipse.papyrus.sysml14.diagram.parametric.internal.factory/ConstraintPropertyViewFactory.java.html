@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConstraintPropertyViewFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.parametric</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory</a> &gt; <span class="el_source">ConstraintPropertyViewFactory.java</span></div><h1>ConstraintPropertyViewFactory.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   CEA LIST - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.sysml14.diagram.common.internal.factory.AbstractBasicViewFactory;
+import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartCompartmentEditPartCN;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartFloatingLabelEditPartCN;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN;
+import org.eclipse.papyrus.uml.diagram.composite.part.UMLVisualIDRegistry;
+
+/**
+ * extraction from Composite View Provider UML view Provider
+ *
+ */
+<span class="nc" id="L36">public class ConstraintPropertyViewFactory extends AbstractBasicViewFactory {</span>
+
+	@Override
+	public View createElementView(EObject domainElement, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
+<span class="nc" id="L40">		Shape node = NotationFactory.eINSTANCE.createShape();</span>
+<span class="nc" id="L41">		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());</span>
+<span class="nc" id="L42">		node.setType(semanticHint);</span>
+<span class="nc" id="L43">		ViewUtil.insertChildView(containerView, node, index, persisted);</span>
+<span class="nc" id="L44">		node.setElement(domainElement);</span>
+		// initializeFromPreferences
+<span class="nc" id="L46">		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();</span>
+<span class="nc" id="L47">		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, &quot;Property&quot;);</span>
+<span class="nc" id="L48">		createLabel(node, UMLVisualIDRegistry.getType(PropertyPartNameEditPartCN.VISUAL_ID));</span>
+<span class="nc" id="L49">		Node floatingLabel = createLabel(node, UMLVisualIDRegistry.getType(PropertyPartFloatingLabelEditPartCN.VISUAL_ID));</span>
+<span class="nc" id="L50">		floatingLabel.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());</span>
+<span class="nc" id="L51">		Location location6054 = (Location) floatingLabel.getLayoutConstraint();</span>
+<span class="nc" id="L52">		location6054.setX(0);</span>
+<span class="nc" id="L53">		location6054.setY(5);</span>
+<span class="nc" id="L54">		createCompartment(node, UMLVisualIDRegistry.getType(PropertyPartCompartmentEditPartCN.VISUAL_ID), true, true, false, false);</span>
+<span class="nc" id="L55">		PreferenceInitializerForElementHelper.initCompartmentsStatusFromPrefs(node, prefStore, &quot;Property&quot;);</span>
+<span class="nc" id="L56">		return node;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

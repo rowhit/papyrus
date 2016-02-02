@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NewChildMenuTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.tests.resources</a> &gt; <span class="el_source">NewChildMenuTest.java</span></div><h1>NewChildMenuTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.ui.tests.resources;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.CreationMenu;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.sysml14.ui.Activator;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * Test the new child model :
+ *  - checks that all element type are registered
+ *  - validate the model
+ * 
+ * @author Benoit Maggi
+ */
+<span class="fc" id="L42">public class NewChildMenuTest {</span>
+	
+	public static final String NEW_CHILD_MENU_PATH = Activator.PLUGIN_ID +&quot;/resources/SysML14.creationmenumodel&quot;; //$NON-NLS-1$
+	
+	
+	@BeforeClass
+	public static void loadElementTypeSet(){
+<span class="fc" id="L49">		ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L50">	}</span>
+	
+	/**
+	 * Check that referenced element type are in the registry
+	 */
+	@Test
+	public void checkMenuNewChildElementTypeIdRefs() {
+<span class="fc" id="L57">		URI createPlatformPluginURI = URI.createPlatformPluginURI(NEW_CHILD_MENU_PATH, true);</span>
+<span class="fc" id="L58">		ResourceSetImpl resourceSetImpl = new ResourceSetImpl();</span>
+<span class="fc" id="L59">		Resource resource = resourceSetImpl.getResource(createPlatformPluginURI, true);</span>
+
+<span class="fc" id="L61">		TreeIterator&lt;EObject&gt; allContents = resource.getAllContents();</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">		while (allContents.hasNext()) {</span>
+<span class="fc" id="L63">			EObject eObject = (EObject) allContents.next();</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">			if (eObject instanceof CreationMenu) {</span>
+<span class="fc" id="L66">				CreationMenu p = (CreationMenu) eObject;</span>
+<span class="fc" id="L67">				String elementTypeIdRef = p.getElementTypeIdRef();</span>
+<span class="fc" id="L68">				Assert.assertTrue(&quot;Unregistred element type id : &quot; + elementTypeIdRef, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(elementTypeIdRef));</span>
+
+<span class="fc" id="L70">				String iconPath = p.getIcon();</span>
+<span class="pc bpc" id="L71" title="1 of 4 branches missed.">				 if (iconPath != null &amp;&amp; !&quot;&quot;.equals(iconPath)){</span>
+						try {
+<span class="fc" id="L73">							URL url = new URL(iconPath);</span>
+<span class="fc" id="L74">							Assert.assertNotNull(&quot;The icon &quot;+iconPath+&quot;(for : &quot;+elementTypeIdRef+&quot;) can't be found&quot;, FileLocator.find(url));</span>
+<span class="pc" id="L75">						} catch (MalformedURLException e) {</span>
+<span class="nc" id="L76">							Assert.fail(&quot;The new child menu is refering to a malformed url &quot;+iconPath);</span>
+						}
+				 }
+			}
+		}
+<span class="fc" id="L81">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Test
+	public void useValidation() {
+<span class="fc" id="L88">		URI createPlatformPluginURI = URI.createPlatformPluginURI(NEW_CHILD_MENU_PATH, true);</span>
+<span class="fc" id="L89">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="fc" id="L90">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="fc" id="L91">		Assert.assertEquals(&quot;The new Child menu is not valid &quot;+NEW_CHILD_MENU_PATH, Diagnostic.OK, diagnostic.getSeverity()); //$NON-NLS-1$</span>
+<span class="fc" id="L92">	}</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

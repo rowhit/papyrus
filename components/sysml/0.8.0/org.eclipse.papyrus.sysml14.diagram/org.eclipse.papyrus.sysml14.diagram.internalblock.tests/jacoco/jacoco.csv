@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.diagram.internalblock.tests,org.eclipse.papyrus.sysml14.diagram.blockdefinition.tests.resources,DocModelTest,52,29,0,0,10,6,2,2,2,2
+org.eclipse.papyrus.sysml14.diagram.internalblock.tests,org.eclipse.papyrus.sysml14.diagram.blockdefinition.tests.resources,ViewpointModelTest,29,0,0,0,6,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.internalblock.tests,org.eclipse.papyrus.sysml14.diagram.blockdefinition.tests.resources,ExpansionModelTest,0,32,0,0,0,8,0,3,0,3
+org.eclipse.papyrus.sysml14.diagram.internalblock.tests,org.eclipse.papyrus.sysml14.diagram.blockdefinition.tests.resources,CssModelTest,29,0,0,0,6,0,2,0,2,0

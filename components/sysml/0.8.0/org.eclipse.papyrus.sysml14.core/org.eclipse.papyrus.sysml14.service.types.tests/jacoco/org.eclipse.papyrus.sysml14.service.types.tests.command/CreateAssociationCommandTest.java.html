@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateAssociationCommandTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests.command</a> &gt; <span class="el_source">CreateAssociationCommandTest.java</span></div><h1>CreateAssociationCommandTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.service.types.tests.command;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransaction;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.sysml14.service.types.command.CreateAssociationCommand;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Property;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Test on CreateAssociationCommand
+ *
+ */
+<span class="fc" id="L41">public class CreateAssociationCommandTest {</span>
+
+	
+	/**
+	 * Test method for {@link org.eclipse.papyrus.sysml14.service.types.command.CreateAssociationCommand#canExecute()}.
+	 */
+	@Test
+	public void testCanExecute() throws ServiceException, InterruptedException, RollbackException {
+<span class="fc" id="L49">		ResourceSetImpl resourceSet = new ResourceSetImpl();</span>
+<span class="fc" id="L50">		Model model = SysMLResource.createSysMLModel(resourceSet);</span>
+<span class="fc" id="L51">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+		
+<span class="fc" id="L53">		Class sourceClass = model.createOwnedClass(&quot;C1&quot;, false);</span>
+<span class="fc" id="L54">		Class targetClass = model.createOwnedClass(&quot;C2&quot;, false);</span>
+<span class="fc" id="L55">		Property property = sourceClass.createOwnedAttribute(&quot;P1&quot;, targetClass);</span>
+
+<span class="fc" id="L57">		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);</span>
+<span class="fc" id="L58">		InternalTransactionalEditingDomain editingDomain = (InternalTransactionalEditingDomain) TransactionUtil.getEditingDomain(model);</span>
+		
+<span class="fc" id="L60">		IElementType type = ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_PART);</span>
+<span class="fc" id="L61">		ConfigureRequest validRequest = new ConfigureRequest(editingDomain, property, type);</span>
+<span class="fc" id="L62">		CreateAssociationCommand createAssociationCommand = new CreateAssociationCommand(validRequest, null);</span>
+<span class="fc" id="L63">		Assert.assertFalse(&quot;The createAssociationCommand should'nt be executable&quot;, createAssociationCommand.canExecute());</span>
+<span class="fc" id="L64">	}	</span>
+	
+	/**
+	 * Test method for {@link org.eclipse.papyrus.sysml14.service.types.command.CreateAssociationCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)}.
+	 * 
+	 * @throws ServiceException
+	 * @throws InterruptedException
+	 * @throws RollbackException
+	 */	
+	@Test
+	public void testDoExecuteWithResultIProgressMonitorIAdaptable() throws ServiceException, InterruptedException, RollbackException {
+<span class="fc" id="L75">		ResourceSetImpl resourceSet = new ResourceSetImpl();</span>
+<span class="fc" id="L76">		Model model = SysMLResource.createSysMLModel(resourceSet);</span>
+<span class="fc" id="L77">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+		
+<span class="fc" id="L79">		Class sourceClass = model.createOwnedClass(&quot;C1&quot;, false);</span>
+<span class="fc" id="L80">		Class targetClass = model.createOwnedClass(&quot;C2&quot;, false);</span>
+<span class="fc" id="L81">		Property property = sourceClass.createOwnedAttribute(&quot;P1&quot;, targetClass);</span>
+
+<span class="fc" id="L83">		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);</span>
+<span class="fc" id="L84">		InternalTransactionalEditingDomain editingDomain = (InternalTransactionalEditingDomain) TransactionUtil.getEditingDomain(model);</span>
+		
+<span class="fc" id="L86">		IElementType type = ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_PART);</span>
+<span class="fc" id="L87">		ConfigureRequest validRequest = new ConfigureRequest(editingDomain, property, type);</span>
+<span class="fc" id="L88">		CreateAssociationCommand createAssociationCommand = new CreateAssociationCommand(validRequest, AggregationKind.COMPOSITE_LITERAL);</span>
+<span class="fc" id="L89">		Assert.assertTrue(&quot;The createAssociationCommand should be executable&quot;, createAssociationCommand.canExecute());</span>
+
+<span class="fc" id="L91">		InternalTransaction startTransaction = editingDomain.startTransaction(false, null);</span>
+<span class="fc" id="L92">		editingDomain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(createAssociationCommand));</span>
+<span class="fc" id="L93">		startTransaction.commit();</span>
+<span class="fc" id="L94">		Object result = createAssociationCommand.getCommandResult().getReturnValue();</span>
+<span class="fc" id="L95">		Assert.assertTrue(&quot;The result of a seNestedPathCommand should be a Connector&quot;, result instanceof Property);</span>
+<span class="fc" id="L96">		Assert.assertNotNull(&quot;The association wasn't created&quot;, ((Property) result).getAssociation());</span>
+<span class="fc" id="L97">		Assert.assertEquals(&quot;The property has the wrong aggregation&quot;,AggregationKind.COMPOSITE_LITERAL, ((Property) result).getAggregation());</span>
+<span class="fc" id="L98">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

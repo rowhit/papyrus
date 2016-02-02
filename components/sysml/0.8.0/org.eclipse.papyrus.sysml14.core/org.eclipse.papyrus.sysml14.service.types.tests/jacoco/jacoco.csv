@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests,SysML14ElementTypesExtensionTest,26,134,0,8,5,38,1,16,1,12
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests,SysML14ElementTypesTest,0,447,0,0,0,149,0,74,0,74
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests.command,CreateAssociationCommandTest,0,148,0,0,0,34,0,3,0,3
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests.command,SetNestedPathCommandTest,0,202,0,0,0,44,0,4,0,4
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests.advice,ConformCreationEditHelperAdviceTest,0,88,0,0,0,20,0,4,0,4
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests.advice,ConformReorientEditHelperAdviceTest,0,187,0,0,0,33,0,4,0,4
+org.eclipse.papyrus.sysml14.service.types.tests,org.eclipse.papyrus.sysml14.service.types.tests.util,SysMLServiceTypeUtilTest,33,45,1,3,5,13,1,4,0,3

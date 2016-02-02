@@ -1,0 +1,5 @@
+org.eclipse.papyrus.sysml14.nattable.common
+org.eclipse.papyrus.sysml14.nattable.common.manager.axis
+org.eclipse.papyrus.sysml14.nattable.common.manager.cell
+org.eclipse.papyrus.sysml14.nattable.common.provider
+org.eclipse.papyrus.sysml14.nattable.common.utils

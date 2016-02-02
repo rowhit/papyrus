@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AbstractPaletteTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.tests.palette</a> &gt; <span class="el_source">AbstractPaletteTest.java</span></div><h1>AbstractPaletteTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.ui.tests.palette;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ChildConfiguration;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.DrawerConfiguration;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteConfiguration;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration;
+import org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolKind;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * Abstract class used to launch tests on a palette model :
+ *  - check quality id (see developer documentation)
+ *  - chack that the model is valid
+ *  
+ * @author Benoit Maggi
+ */
+<span class="fc" id="L48">public abstract class AbstractPaletteTest {</span>
+
+	public static final String NODE = &quot;node&quot;; //$NON-NLS-1$
+
+	public static final String EDGE = &quot;edge&quot;; //$NON-NLS-1$
+
+<span class="fc" id="L54">	private String rootPath = &quot;&quot;; //$NON-NLS-1$</span>
+
+<span class="fc" id="L56">	private String palettePath = &quot;&quot;; //$NON-NLS-1$</span>
+
+<span class="fc" id="L58">	public ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+
+	public boolean assertPaletteId(String id) {
+<span class="pc bpc" id="L61" title="2 of 6 branches missed.">		return id != null &amp;&amp; (id.startsWith(rootPath + &quot;.&quot; + NODE) || id.startsWith(rootPath + &quot;.&quot; + EDGE));</span>
+	}
+	
+	/**
+	 * @return root path of expected element ids
+	 */
+	protected abstract String getRootPath();
+	
+	/**
+	 * @return path to the palette
+	 */
+	protected abstract String getPalettePath();
+	
+	/**
+	 * Get Palette information befor launching a test
+	 */
+	@Before
+	public void loadPalette() {
+<span class="fc" id="L79">		palettePath = getPalettePath();</span>
+<span class="fc" id="L80">		rootPath =  getRootPath();</span>
+<span class="fc" id="L81">	}</span>
+	
+	/**
+	 * Check palette ids and element type reference
+	 */
+	@Test
+	public void checkPaletteIds() {
+<span class="fc" id="L88">		URI createPlatformPluginURI = URI.createPlatformPluginURI(palettePath, true);</span>
+<span class="fc" id="L89">		ResourceSetImpl resourceSetImpl = new ResourceSetImpl();</span>
+<span class="fc" id="L90">		Resource resource = resourceSetImpl.getResource(createPlatformPluginURI, true);</span>
+
+
+<span class="fc" id="L93">		TreeIterator&lt;EObject&gt; allContents = resource.getAllContents();</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		while (allContents.hasNext()) {</span>
+<span class="fc" id="L95">			EObject eObject = (EObject) allContents.next();</span>
+
+<span class="fc bfc" id="L97" title="All 2 branches covered.">			if (eObject instanceof PaletteConfiguration) {</span>
+<span class="fc" id="L98">				PaletteConfiguration p = (PaletteConfiguration) eObject;</span>
+<span class="fc" id="L99">				EList&lt;DrawerConfiguration&gt; drawerConfigurations = p.getDrawerConfigurations();</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">				for (DrawerConfiguration drawerConfiguration : drawerConfigurations) {</span>
+<span class="fc" id="L101">					EList&lt;ChildConfiguration&gt; ownedConfigurations = drawerConfiguration.getOwnedConfigurations();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">					for (ChildConfiguration childConfiguration : ownedConfigurations) {</span>
+
+						// check id
+<span class="fc" id="L105">						String id = childConfiguration.getId();</span>
+<span class="fc" id="L106">						Assert.assertTrue(&quot;Malformed palette id : &quot; + id, assertPaletteId(id));</span>
+
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">						if (childConfiguration instanceof ToolConfiguration) {</span>
+<span class="fc" id="L109">							ToolConfiguration toolConfiguration = (ToolConfiguration) childConfiguration;</span>
+							
+							// check that the referenced elementtype exist
+<span class="fc" id="L112">							EList&lt;ElementDescriptor&gt; elementDescriptors = toolConfiguration.getElementDescriptors();</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">							for (ElementDescriptor elementDescriptor : elementDescriptors) {</span>
+<span class="fc" id="L114">								String elementTypeId = elementDescriptor.getElementTypeId();</span>
+<span class="fc" id="L115">								Assert.assertTrue(&quot;Unregistred element id : &quot; + elementTypeId, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(elementTypeId));</span>
+							}
+							
+							// check icon file
+<span class="fc" id="L119">							IconDescriptor icon = toolConfiguration.getIcon();</span>
+<span class="fc" id="L120">							String iconPath = &quot;platform:/plugin/&quot;+ icon.getPluginID()+&quot;/&quot;+  icon.getIconPath();</span>
+<span class="pc bpc" id="L121" title="2 of 4 branches missed.">							 if (iconPath != null &amp;&amp; !&quot;&quot;.equals(iconPath)){</span>
+									try {
+<span class="fc" id="L123">										URL url = new URL(iconPath);</span>
+<span class="fc" id="L124">										Assert.assertNotNull(&quot;The icon &quot;+iconPath+&quot;(for : &quot;+toolConfiguration.getId()+&quot;) can't be found&quot;, FileLocator.find(url));</span>
+<span class="pc" id="L125">									} catch (MalformedURLException e) {</span>
+<span class="nc" id="L126">										Assert.fail(&quot;The new child menu is refering to a malformed url &quot;+iconPath);</span>
+									}
+							 }	
+							 
+							 // check that elements in edge drawer are edges (TODO : a better way would be to find a way to identify &quot;edge&quot; element type)
+<span class="fc" id="L131">							 ToolKind kind = toolConfiguration.getKind();</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">							 if (ToolKind.CONNECTION_TOOL.equals(kind)){</span>
+<span class="fc" id="L133">								 Assert.assertTrue(&quot;An edge element &quot;+toolConfiguration.getId()+&quot; should always be in an edge Drawer &quot;+drawerConfiguration.getId(),drawerConfiguration.getId().contains(EDGE));</span>
+<span class="fc" id="L134">							 } else { </span>
+<span class="fc" id="L135">								 Assert.assertTrue(&quot;An node element &quot;+toolConfiguration.getId()+&quot; should always be in an node Drawer &quot;+drawerConfiguration.getId(),drawerConfiguration.getId().contains(NODE));</span>
+							 }
+						}
+					}
+				}
+			}
+		}
+<span class="fc" id="L142">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Test
+	public void useValidation() {
+<span class="fc" id="L149">		URI createPlatformPluginURI = URI.createPlatformPluginURI(palettePath, true);</span>
+<span class="fc" id="L150">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="fc" id="L151">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="fc" id="L152">		Assert.assertEquals(&quot;The palette is not valid &quot;+palettePath, Diagnostic.OK, diagnostic.getSeverity());</span>
+<span class="fc" id="L153">	}</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

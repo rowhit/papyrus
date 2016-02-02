@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Activator.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <span class="el_source">Activator.java</span></div><h1>Activator.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common;
+
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort;
+import org.eclipse.papyrus.sysml14.portsandflows.FlowDirection;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+
+/**
+ * The activator class controls the plug-in life cycle
+ */
+<span class="nc" id="L24">public class Activator extends AbstractUIPlugin {</span>
+
+	// The plug-in ID
+	public static final String PLUGIN_ID = &quot;org.eclipse.papyrus.sysml14.diagram.common&quot;; //$NON-NLS-1$
+
+	/**
+	 * Returns an image descriptor for the image file at the given
+	 * plug-in relative path
+	 *
+	 * @param path
+	 *            the path
+	 * @return the image descriptor
+	 */
+	public static ImageDescriptor getImageDescriptor(String path) {
+<span class="nc" id="L38">		return imageDescriptorFromPlugin(PLUGIN_ID, path);</span>
+	}
+	
+	
+	
+	/**
+	 * &lt;pre&gt;
+	 * Provide a FlowPort image for border edit part that take the border item position
+	 * into account.
+	 *
+	 * The image is not rotated, but predefined.
+	 *
+	 * The side of the image (relatively to the parent figure) can be:
+	 *         &lt;ul&gt;
+	 *         &lt;li&gt;{@linkplain PositionConstants#NORTH}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#SOUTH}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#EAST}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#WEST}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#NORTH_EAST}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#NORTH_WEST}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#SOUTH_EAST}&lt;/li&gt;
+	 *         &lt;li&gt; {@linkplain PositionConstants#SOUTH_WEST}&lt;/li&gt;
+	 *         &lt;/ul&gt;
+	 *
+	 * &lt;/pre&gt;
+	 */
+	public Image getFlowPortImage(FlowPort flowport, int side) {
+
+		// Prepare the image key
+<span class="nc" id="L67">		String imageKey = &quot;FlowPort_&quot;;</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		if (flowport.isAtomic()) {</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">			if (flowport.getDirection() == FlowDirection.IN) {</span>
+<span class="nc" id="L70">				imageKey = imageKey + &quot;IN_&quot;;</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">			} else if (flowport.getDirection() == FlowDirection.OUT) {</span>
+<span class="nc" id="L72">				imageKey = imageKey + &quot;OUT_&quot;;</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">			} else if (flowport.getDirection() == FlowDirection.INOUT) {</span>
+<span class="nc" id="L74">				imageKey = imageKey + &quot;INOUT_&quot;;</span>
+			}
+
+<span class="nc" id="L77">			imageKey = imageKey + &quot;A_&quot;;</span>
+<span class="nc" id="L78">		} else {</span>
+<span class="nc" id="L79">			imageKey = imageKey + &quot;NA_&quot;;</span>
+		}
+
+<span class="nc bnc" id="L82" title="All 2 branches missed.">		if (side == PositionConstants.WEST) {</span>
+<span class="nc" id="L83">			imageKey = imageKey + &quot;WEST&quot;;</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		} else if (side == PositionConstants.NORTH) {</span>
+<span class="nc" id="L85">			imageKey = imageKey + &quot;NORTH&quot;;</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		} else if (side == PositionConstants.SOUTH) {</span>
+<span class="nc" id="L87">			imageKey = imageKey + &quot;SOUTH&quot;;</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">		} else if (side == PositionConstants.EAST) {</span>
+<span class="nc" id="L89">			imageKey = imageKey + &quot;EAST&quot;;</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">		} else if (side == PositionConstants.NORTH_WEST) {</span>
+<span class="nc" id="L91">			imageKey = imageKey + &quot;NORTH_WEST&quot;;</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">		} else if (side == PositionConstants.NORTH_EAST) {</span>
+<span class="nc" id="L93">			imageKey = imageKey + &quot;NORTH_EAST&quot;;</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">		} else if (side == PositionConstants.SOUTH_EAST) {</span>
+<span class="nc" id="L95">			imageKey = imageKey + &quot;SOUTH_EAST&quot;;</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">		} else if (side == PositionConstants.SOUTH_WEST) {</span>
+<span class="nc" id="L97">			imageKey = imageKey + &quot;SOUTH_WEST&quot;;</span>
+		}
+
+		// Retrieve image from registry or add it in the registry
+<span class="nc" id="L101">		Image image = getImageRegistry().get(imageKey);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		if (image == null) {</span>
+
+<span class="nc" id="L104">			ImageDescriptor imageDescriptor = imageDescriptorFromPlugin(PLUGIN_ID, &quot;resources/icons/&quot; + imageKey + &quot;.gif&quot;);</span>
+
+<span class="nc bnc" id="L106" title="All 2 branches missed.">			if (imageDescriptor == null) {</span>
+<span class="nc" id="L107">				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();</span>
+			}
+<span class="nc" id="L109">			getImageRegistry().put(imageKey, imageDescriptor);</span>
+<span class="nc" id="L110">			image = getImageRegistry().get(imageKey);</span>
+		}
+
+<span class="nc" id="L113">		return image;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

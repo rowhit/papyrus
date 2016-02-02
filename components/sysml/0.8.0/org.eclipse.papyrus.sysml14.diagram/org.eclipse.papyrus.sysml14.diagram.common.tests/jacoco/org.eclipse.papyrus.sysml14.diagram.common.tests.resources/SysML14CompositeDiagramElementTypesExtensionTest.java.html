@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysML14CompositeDiagramElementTypesExtensionTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.tests.resources</a> &gt; <span class="el_source">SysML14CompositeDiagramElementTypesExtensionTest.java</span></div><h1>SysML14CompositeDiagramElementTypesExtensionTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.tests.resources;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.MatcherConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.SpecializationTypeConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * This class is to check any change in the SysML 1.4 Composite Structure Diagram element type id
+ * (since the ids can be used a specialization they are part of public API)
+ *
+ */
+<span class="fc" id="L39">public class SysML14CompositeDiagramElementTypesExtensionTest {</span>
+
+	public static final String COMPOSITE_DIAGRAM_EXTENSION_ELEMENT_TYPE_PATH = &quot;org.eclipse.papyrus.sysml14.diagram.common/resources/SysML14CompositeDiagram-extension.elementtypesconfigurations&quot;; //$NON-NLS-1$
+
+	@BeforeClass
+	public static void loadSysMLDefinition() {
+<span class="fc" id="L45">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L46">		ElementTypeSetConfiguration elementTypeSetConfiguration = instance.getElementTypeSetConfigurations().get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet.composite.extension&quot;);</span>
+<span class="fc" id="L47">		Assert.assertNotNull(&quot;The SysML element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L48">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Test
+	public void validateSysML14ClassDiagramElementTypesExtensionModel() {
+<span class="fc" id="L55">		URI createPlatformPluginURI = URI.createPlatformPluginURI(COMPOSITE_DIAGRAM_EXTENSION_ELEMENT_TYPE_PATH, true);</span>
+<span class="fc" id="L56">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="fc" id="L57">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="fc" id="L58">		Assert.assertEquals(&quot;The element type model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity());</span>
+<span class="fc" id="L59">	}</span>
+	
+	/**
+	 * Check that all SpecializationTypeConfiguration have a matcher (avoid to broke UML Diagrams)
+	 * TODO #482245 : a validation should be added to Papyrus core
+	 */
+	@Test
+	public void checkElementTypeMatcher() {
+<span class="fc" id="L67">		URI createPlatformPluginURI = URI.createPlatformPluginURI(COMPOSITE_DIAGRAM_EXTENSION_ELEMENT_TYPE_PATH, true);</span>
+<span class="fc" id="L68">		ResourceSetImpl resourceSetImpl = new ResourceSetImpl();</span>
+<span class="fc" id="L69">		Resource resource = resourceSetImpl.getResource(createPlatformPluginURI, true);</span>
+
+
+<span class="fc" id="L72">		TreeIterator&lt;EObject&gt; allContents = resource.getAllContents();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		while (allContents.hasNext()) {</span>
+<span class="fc" id="L74">			EObject eObject = (EObject) allContents.next();</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">			if (eObject instanceof ElementTypeSetConfiguration) {</span>
+<span class="fc" id="L76">				ElementTypeSetConfiguration elementTypeSetConfiguration = (ElementTypeSetConfiguration) eObject;</span>
+<span class="fc" id="L77">				EList&lt;ElementTypeConfiguration&gt; elementTypeConfigurations = elementTypeSetConfiguration.getElementTypeConfigurations();</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">				for (ElementTypeConfiguration elementTypeConfiguration : elementTypeConfigurations) {</span>
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">					if (elementTypeConfiguration instanceof SpecializationTypeConfiguration) {</span>
+<span class="fc" id="L80">						SpecializationTypeConfiguration specializationTypeConfiguration = (SpecializationTypeConfiguration) elementTypeConfiguration;</span>
+<span class="fc" id="L81">						MatcherConfiguration matcherConfiguration = specializationTypeConfiguration.getMatcherConfiguration();</span>
+<span class="fc" id="L82">						Assert.assertNotNull(specializationTypeConfiguration.getName()+&quot;is missing its matcher. All SysML 1.4 SpecializationTypeConfiguration must have a matcher. By default,  use org.eclipse.papyrus.sysml14.service.types.matcher.internal.SysML14ProfileMatcher)&quot;, matcherConfiguration);</span>
+					}
+				}
+			}
+		}
+<span class="fc" id="L87">	}	</span>
+	
+    @Test
+	public void testRegistryContentForConstraintProperty3070() {
+<span class="fc" id="L91">		Assert.assertTrue(&quot;ConstraintProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConstraintProperty_3070&quot;));</span>
+<span class="fc" id="L92">	}</span>
+
+    @Test
+	public void testRegistryContentForConstraintProperty3101() {
+<span class="fc" id="L96">		Assert.assertTrue(&quot;ConstraintProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConstraintProperty_3101&quot;));</span>
+<span class="fc" id="L97">	}</span>
+
+    @Test
+	public void testRegistryContentForActorPart() {
+<span class="fc" id="L101">		Assert.assertTrue(&quot;ActorPart element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ActorPart_3070&quot;));</span>
+<span class="fc" id="L102">	}</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

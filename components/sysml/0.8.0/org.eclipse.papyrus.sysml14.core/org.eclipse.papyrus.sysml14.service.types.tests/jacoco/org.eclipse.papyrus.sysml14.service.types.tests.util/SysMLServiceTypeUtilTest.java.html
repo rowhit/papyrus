@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysMLServiceTypeUtilTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests.util</a> &gt; <span class="el_source">SysMLServiceTypeUtilTest.java</span></div><h1>SysMLServiceTypeUtilTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.service.types.tests.util;
+
+import java.lang.reflect.Field;
+
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditServiceProvider;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * 
+ * The class should test that all constant in SysMLServiceTypeUtil should be referring 
+ * to an existing element type
+ * @author Benoit Maggi
+ *
+ */
+<span class="fc" id="L35">public class SysMLServiceTypeUtilTest {</span>
+
+	/**
+	 * Check that the required element type set are correctly loaded
+	 */
+	@BeforeClass
+	public static void loadSysml14Defintion() {
+<span class="fc" id="L42">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L43">		ElementTypeSetConfiguration elementTypeSetConfiguration = instance.getElementTypeSetConfigurations().get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet&quot;);</span>
+<span class="fc" id="L44">		Assert.assertNotNull(&quot;The SysML 1.4 element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L45">		ElementTypeSetConfiguration elementTypeSetConfigurationExtension = instance.getElementTypeSetConfigurations().get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet.extension&quot;);</span>
+<span class="fc" id="L46">		Assert.assertNotNull(&quot;The SysML 1.4 element type set extension definition is missing&quot;, elementTypeSetConfigurationExtension);</span>
+		
+<span class="fc" id="L48">	}</span>
+	
+	
+    /**
+     * Check that each field is referencing an existing element type
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     */
+    @Test
+	public void testElementTypeIdsDefinedAsConstant() throws IllegalArgumentException, IllegalAccessException {	
+<span class="fc" id="L58">    	IElementEditServiceProvider editServiceProvider = ElementEditServiceUtils.getEditServiceProvider();</span>
+<span class="fc" id="L59">		Field[] declaredFields = SysMLServiceTypeUtil.class.getDeclaredFields();</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">		for (int i = 0; i &lt; declaredFields.length; i++) {</span>
+<span class="fc" id="L61">			Field field = declaredFields[i];</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">			if (field.isAccessible()){</span>
+<span class="nc" id="L63">				String name = field.getName();</span>
+<span class="nc" id="L64">				Object value = field.get(SysMLServiceTypeUtil.class);</span>
+<span class="nc" id="L65">				Assert.assertTrue(name+&quot; value should define as a String&quot;, value instanceof String);</span>
+<span class="nc" id="L66">				boolean knownElementType = editServiceProvider.isKnownElementType((String) value);</span>
+<span class="nc" id="L67">				Assert.assertTrue(name+&quot; value should define an existing elementtype id&quot;, knownElementType);				</span>
+			}
+		}
+<span class="fc" id="L70">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DirectedRelationshipPropertyPathEditHelperAdvice.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.advice</a> &gt; <span class="el_source">DirectedRelationshipPropertyPathEditHelperAdvice.java</span></div><h1>DirectedRelationshipPropertyPathEditHelperAdvice.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.advice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.ISpecializationType;
+import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.sysml14.service.types.command.SetDirectedRelationshipPropertyPathCommand;
+import org.eclipse.papyrus.sysml14.service.types.command.wrapper.EMFToCreateElementEditCommandWrapper;
+import org.eclipse.papyrus.sysml14.service.types.command.wrapper.EMFToIEditCommandWrapper;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.uml.service.types.utils.RequestParameterUtils;
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * 8.3.2.7 DirectedRelationshipPropertyPath
+ * sourcePropertyPath: Property [0..*] {ordered, nonunique}
+ * A series of properties that identifies the source of the directed relationship in the context of the block specified by the
+ * sourceContext property. The ordering of properties is from a property of the sourceContext block, through a property
+ * of each intermediate block that types the preceding property, ending in a property with a type that owns or inherits the
+ * source of the directed relationship. The source is not included in the propertyPath list. The same property might
+ * appear more than once because a block can own a property with the same or specialized block as a type.
+ * • targetPropertyPath: Property [0..*] {ordered, nonunique}
+ * A series of properties that identifies the target of the directed relationship in the context of the block specified by the
+ * targetContext property. The ordering of properties is from a property of the targetContext block, through a property of
+ * each intermediate block that types the preceding property, ending in a property with a type that owns or inherits the
+ * target of the directed relationship. The target is not included in the propertyPath list. The same property might appear
+ * more than once because a block can own a property with the same or specialized block as a type.
+ * • sourceContext: Classifier [0.1]
+ * Gives the context for sourcePropertyPath to begin from.
+ * • targetContext: Classifier [0.1]
+ * Gives the context for targetPropertyPath to begin from.
+ *
+ */
+<span class="nc" id="L54">public class DirectedRelationshipPropertyPathEditHelperAdvice extends AbstractEditHelperAdvice {</span>
+
+
+
+
+	@Override
+	protected ICommand getAfterCreateRelationshipCommand(CreateRelationshipRequest request) {
+
+<span class="nc" id="L62">		ICommand defaultCommand = super.getAfterCreateRelationshipCommand(request);</span>
+
+<span class="nc" id="L64">		View sourceView = RequestParameterUtils.getSourceView(request);</span>
+<span class="nc" id="L65">		View targetView = RequestParameterUtils.getTargetView(request);</span>
+
+
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		if (request.getElementType() instanceof ISpecializationType) {</span>
+			// get all specializations from elementTypes
+<span class="nc" id="L70">			ArrayList&lt;IElementType&gt; elementTypesHierarchy = new ArrayList&lt;IElementType&gt;();</span>
+<span class="nc" id="L71">			elementTypesHierarchy.add(request.getElementType());</span>
+<span class="nc" id="L72">			ISpecializationType iSpecializationType = (ISpecializationType) request.getElementType();</span>
+<span class="nc" id="L73">			elementTypesHierarchy.addAll(Arrays.asList(iSpecializationType.getAllSuperTypes()));</span>
+
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">			if ((elementTypesHierarchy.contains(ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_ALLOCATE_ABSTRACTION))) ||</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">					(elementTypesHierarchy.contains(ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_REFINE_ABSTRACTION))) ||</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">					(elementTypesHierarchy.contains(ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_TRACE_ABSTRACTION)))) {</span>
+
+<span class="nc bnc" id="L80" title="All 2 branches missed.">				if (sourceView.getElement() instanceof Property) {</span>
+<span class="nc" id="L81">					SetDirectedRelationshipPropertyPathCommand setPropertyPathCommand = new SetDirectedRelationshipPropertyPathCommand(request.getEditingDomain(), sourceView, true);</span>
+<span class="nc" id="L82">					EMFToIEditCommandWrapper editCommandWrapper = new EMFToCreateElementEditCommandWrapper(request.getContainer(), request, setPropertyPathCommand);</span>
+<span class="nc" id="L83">					defaultCommand = CompositeCommand.compose(defaultCommand, editCommandWrapper);</span>
+				}
+
+<span class="nc bnc" id="L86" title="All 2 branches missed.">				if (targetView.getElement() instanceof Property) {</span>
+<span class="nc" id="L87">					SetDirectedRelationshipPropertyPathCommand setPropertyPathCommand = new SetDirectedRelationshipPropertyPathCommand(request.getEditingDomain(), targetView, false);</span>
+<span class="nc" id="L88">					EMFToIEditCommandWrapper editCommandWrapper = new EMFToCreateElementEditCommandWrapper(request.getContainer(), request, setPropertyPathCommand);</span>
+<span class="nc" id="L89">					defaultCommand = CompositeCommand.compose(defaultCommand, editCommandWrapper);</span>
+				}
+			}
+
+		}
+
+<span class="nc" id="L95">		return defaultCommand;</span>
+	}
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

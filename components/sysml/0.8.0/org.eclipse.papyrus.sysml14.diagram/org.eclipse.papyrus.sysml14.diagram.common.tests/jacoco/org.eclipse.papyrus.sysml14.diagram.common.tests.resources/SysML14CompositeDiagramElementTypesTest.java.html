@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysML14CompositeDiagramElementTypesTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.tests.resources</a> &gt; <span class="el_source">SysML14CompositeDiagramElementTypesTest.java</span></div><h1>SysML14CompositeDiagramElementTypesTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.tests.resources;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * This class is to check any change in the SysML 1.4 Composite Structure Diagram element type id
+ * (since the ids can be used a specialization they are part of public API)
+ *
+ */
+<span class="fc" id="L33">public class SysML14CompositeDiagramElementTypesTest {</span>
+
+	public static final String COMPOSITE_DIAGRAM_ELEMENT_TYPE_PATH = &quot;org.eclipse.papyrus.sysml14.diagram.common/resources/SysML14CompositeDiagram.elementtypesconfigurations&quot;; //$NON-NLS-1$
+
+
+	@BeforeClass
+	public static void loadSysML14CompositeStructureDiagramDefinition() {
+<span class="fc" id="L40">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L41">		ElementTypeSetConfiguration elementTypeSetConfiguration = instance.getElementTypeSetConfigurations().get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet.composite&quot;);</span>
+<span class="fc" id="L42">		Assert.assertNotNull(&quot;The SysML 1.4 Composite Structure Diagram element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L43">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Test
+	public void validateSysML14ClassDiagramElementTypesExtensionModel() {
+<span class="fc" id="L50">		URI createPlatformPluginURI = URI.createPlatformPluginURI(COMPOSITE_DIAGRAM_ELEMENT_TYPE_PATH, true);</span>
+<span class="fc" id="L51">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="fc" id="L52">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="fc" id="L53">		Assert.assertEquals(&quot;The element type model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity());</span>
+<span class="fc" id="L54">	}	</span>
+
+	@Test
+	public void testRegistryContentForAdjunctProperty3070() {
+<span class="fc" id="L58">		Assert.assertTrue(&quot;AdjunctProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.AdjunctProperty_3070&quot;));</span>
+<span class="fc" id="L59">	}</span>
+
+	@Test
+	public void testRegistryContentForAdjunctProperty3101() {
+<span class="fc" id="L63">		Assert.assertTrue(&quot;AdjunctProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.AdjunctProperty_3101&quot;));</span>
+<span class="fc" id="L64">	}</span>
+
+	@Test
+	public void testRegistryContentForAllocateAbstraction() {
+<span class="fc" id="L68">		Assert.assertTrue(&quot;Allocate Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Allocate_Abstraction_4007&quot;));</span>
+<span class="fc" id="L69">	}</span>
+
+	@Test
+	public void testRegistryContentForBindingConnector() {
+<span class="fc" id="L73">		Assert.assertTrue(&quot;BindingConnector element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.BindingConnector_4013&quot;));</span>
+<span class="fc" id="L74">	}</span>
+
+	@Test
+	public void testRegistryContentForBlock2073() {
+<span class="fc" id="L78">		Assert.assertTrue(&quot;Block (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Block_2073&quot;));</span>
+<span class="fc" id="L79">	}</span>
+
+	@Test
+	public void testRegistryContentForBlock3085() {
+<span class="fc" id="L83">		Assert.assertTrue(&quot;Block (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Block_3085&quot;));</span>
+<span class="fc" id="L84">	}</span>
+
+	@Test
+	public void testRegistryContentForBoundReference3070() {
+<span class="fc" id="L88">		Assert.assertTrue(&quot;BoundReference (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.BoundReference_3070&quot;));</span>
+<span class="fc" id="L89">	}</span>
+
+	@Test
+	public void testRegistryContentForBoundReference3101() {
+<span class="fc" id="L93">		Assert.assertTrue(&quot;BoundReference (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.BoundReference_3101&quot;));</span>
+<span class="fc" id="L94">	}</span>
+
+	@Test
+	public void testRegistryContentForChangeStructuralFeatureEvent() {
+<span class="fc" id="L98">		Assert.assertTrue(&quot;ChangeStructuralFeatureEvent element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ChangeStructuralFeatureEvent_2088&quot;));</span>
+<span class="fc" id="L99">	}</span>
+
+	@Test
+	public void testRegistryContentForClassifierBehaviorProperty3070() {
+<span class="fc" id="L103">		Assert.assertTrue(&quot;ClassifierBehaviorProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ClassifierBehaviorProperty_3070&quot;));</span>
+<span class="fc" id="L104">	}</span>
+
+	@Test
+	public void testRegistryContentForClassifierBehaviorProperty3101() {
+<span class="fc" id="L108">		Assert.assertTrue(&quot;ClassifierBehaviorProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ClassifierBehaviorProperty_3101&quot;));</span>
+<span class="fc" id="L109">	}</span>
+
+	@Test
+	public void testRegistryContentForConform() {
+<span class="fc" id="L113">		Assert.assertTrue(&quot;Conform element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Conform_4015&quot;));</span>
+<span class="fc" id="L114">	}</span>
+
+	@Test
+	public void testRegistryContentForConnectorProperty3070() {
+<span class="fc" id="L118">		Assert.assertTrue(&quot;ConnectorProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConnectorProperty_3070&quot;));</span>
+<span class="fc" id="L119">	}</span>
+
+	@Test
+	public void testRegistryContentForConnectorProperty3101() {
+<span class="fc" id="L123">		Assert.assertTrue(&quot;ConnectorProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConnectorProperty_3101&quot;));</span>
+<span class="fc" id="L124">	}</span>
+
+	@Test
+	public void testRegistryContentForConstraintBlock2073() {
+<span class="fc" id="L128">		Assert.assertTrue(&quot;ConstraintBlock (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConstraintBlock_2073&quot;));</span>
+<span class="fc" id="L129">	}</span>
+
+	@Test
+	public void testRegistryContentForConstraintBlock3085() {
+<span class="fc" id="L133">		Assert.assertTrue(&quot;ConstraintBlock (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ConstraintBlock_3085&quot;));</span>
+<span class="fc" id="L134">	}</span>
+
+	@Test
+	public void testRegistryContentForContinuousParameter() {
+<span class="fc" id="L138">		Assert.assertTrue(&quot;Continuous Parameter element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Continuous_Parameter_3088&quot;));</span>
+<span class="fc" id="L139">	}</span>
+
+	@Test
+	public void testRegistryContentForControlOperatorOperation() {
+<span class="fc" id="L143">		Assert.assertTrue(&quot;ControlOperator Operation element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ControlOperator_Operation_3102&quot;));</span>
+<span class="fc" id="L144">	}</span>
+
+	@Test
+	public void testRegistryContentForCopyAbstraction() {
+<span class="fc" id="L148">		Assert.assertTrue(&quot;Copy Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Copy_Abstraction_4007&quot;));</span>
+<span class="fc" id="L149">	}</span>
+
+	@Test
+	public void testRegistryContentForDeriveReqtAbstraction() {
+<span class="fc" id="L153">		Assert.assertTrue(&quot;DeriveReqt Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.DeriveReqt_Abstraction_4007&quot;));</span>
+<span class="fc" id="L154">	}</span>
+
+	@Test
+	public void testRegistryContentForDiscreteParameter() {
+<span class="fc" id="L158">		Assert.assertTrue(&quot;Discrete Parameter element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Discrete_Parameter_3088&quot;));</span>
+<span class="fc" id="L159">	}</span>
+
+	@Test
+	public void testRegistryContentForDistributedProperty3070() {
+<span class="fc" id="L163">		Assert.assertTrue(&quot;DistributedProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.DistributedProperty_3070&quot;));</span>
+<span class="fc" id="L164">	}</span>
+
+	@Test
+	public void testRegistryContentForDistributedProperty3101() {
+<span class="fc" id="L168">		Assert.assertTrue(&quot;DistributedProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.DistributedProperty_3101&quot;));</span>
+<span class="fc" id="L169">	}</span>
+
+	@Test
+	public void testRegistryContentForElementGroup2109() {
+<span class="fc" id="L173">		Assert.assertTrue(&quot;ElementGroup (2109) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ElementGroup_2109&quot;));</span>
+<span class="fc" id="L174">	}</span>
+
+	@Test
+	public void testRegistryContentForElementGroup3097() {
+<span class="fc" id="L178">		Assert.assertTrue(&quot;ElementGroup (3097) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ElementGroup_3097&quot;));</span>
+<span class="fc" id="L179">	}</span>
+
+	@Test
+	public void testRegistryContentForEndPathMultiplicity3070() {
+<span class="fc" id="L183">		Assert.assertTrue(&quot;EndPathMultiplicity (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.EndPathMultiplicity_3070&quot;));</span>
+<span class="fc" id="L184">	}</span>
+
+	@Test
+	public void testRegistryContentForEndPathMultiplicity3101() {
+<span class="fc" id="L188">		Assert.assertTrue(&quot;EndPathMultiplicity (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.EndPathMultiplicity_3101&quot;));</span>
+<span class="fc" id="L189">	}</span>
+
+	@Test
+	public void testRegistryContentForExpose() {
+<span class="fc" id="L193">		Assert.assertTrue(&quot;Expose element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Expose_4010&quot;));</span>
+<span class="fc" id="L194">	}</span>
+
+	@Test
+	public void testRegistryContentForFlowPort() {
+<span class="fc" id="L198">		Assert.assertTrue(&quot;FlowPort element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FlowPort_3069&quot;));</span>
+<span class="fc" id="L199">	}</span>
+
+	@Test
+	public void testRegistryContentForFlowProperty3070() {
+<span class="fc" id="L203">		Assert.assertTrue(&quot;FlowProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FlowProperty_3070&quot;));</span>
+<span class="fc" id="L204">	}</span>
+
+	@Test
+	public void testRegistryContentForFlowProperty3101() {
+<span class="fc" id="L208">		Assert.assertTrue(&quot;FlowProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FlowProperty_3101&quot;));</span>
+<span class="fc" id="L209">	}</span>
+
+	@Test
+	public void testRegistryContentForFlowSpecification2076() {
+<span class="fc" id="L213">		Assert.assertTrue(&quot;FlowSpecification (2076) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FlowSpecification_2076&quot;));</span>
+<span class="fc" id="L214">	}</span>
+
+	@Test
+	public void testRegistryContentForFlowSpecification3087() {
+<span class="fc" id="L218">		Assert.assertTrue(&quot;FlowSpecification (3087) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FlowSpecification_3087&quot;));</span>
+<span class="fc" id="L219">	}</span>
+
+	@Test
+	public void testRegistryContentForFullPort() {
+<span class="fc" id="L223">		Assert.assertTrue(&quot;FullPort element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.FullPort_3069&quot;));</span>
+<span class="fc" id="L224">	}</span>
+
+	@Test
+	public void testRegistryContentForInterfaceBlock2073() {
+<span class="fc" id="L228">		Assert.assertTrue(&quot;InterfaceBlock (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.InterfaceBlock_2073&quot;));</span>
+<span class="fc" id="L229">	}</span>
+
+	@Test
+	public void testRegistryContentForInterfaceBlock3085() {
+<span class="fc" id="L233">		Assert.assertTrue(&quot;InterfaceBlock (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.InterfaceBlock_3085&quot;));</span>
+<span class="fc" id="L234">	}</span>
+
+	@Test
+	public void testRegistryContentForItemFlow() {
+<span class="fc" id="L238">		Assert.assertTrue(&quot;ItemFlow element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ItemFlow_4021&quot;));</span>
+<span class="fc" id="L239">	}</span>
+
+	@Test
+	public void testRegistryContentForOptional() {
+<span class="fc" id="L243">		Assert.assertTrue(&quot;Optional element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Optional_3088&quot;));</span>
+<span class="fc" id="L244">	}</span>
+
+	@Test
+	public void testRegistryContentForParticipantProperty3070() {
+<span class="fc" id="L248">		Assert.assertTrue(&quot;ParticipantProperty (3070) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ParticipantProperty_3070&quot;));</span>
+<span class="fc" id="L249">	}</span>
+
+	@Test
+	public void testRegistryContentForParticipantProperty3101() {
+<span class="fc" id="L253">		Assert.assertTrue(&quot;ParticipantProperty (3101) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ParticipantProperty_3101&quot;));</span>
+<span class="fc" id="L254">	}</span>
+
+	@Test
+	public void testRegistryContentForProblem2109() {
+<span class="fc" id="L258">		Assert.assertTrue(&quot;Problem (2109) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Problem_2109&quot;));</span>
+<span class="fc" id="L259">	}</span>
+
+	@Test
+	public void testRegistryContentForProblem3097() {
+<span class="fc" id="L263">		Assert.assertTrue(&quot;Problem (3097) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Problem_3097&quot;));</span>
+<span class="fc" id="L264">	}</span>
+
+	@Test
+	public void testRegistryContentForProxyPort() {
+<span class="fc" id="L268">		Assert.assertTrue(&quot;ProxyPort element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ProxyPort_3069&quot;));</span>
+<span class="fc" id="L269">	}</span>
+
+	@Test
+	public void testRegistryContentForRateParameter() {
+<span class="fc" id="L273">		Assert.assertTrue(&quot;Rate Parameter element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Rate_Parameter_3088&quot;));</span>
+<span class="fc" id="L274">	}</span>
+
+	@Test
+	public void testRegistryContentForRationale2109() {
+<span class="fc" id="L278">		Assert.assertTrue(&quot;Rationale (2109) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Rationale_2109&quot;));</span>
+<span class="fc" id="L279">	}</span>
+
+	@Test
+	public void testRegistryContentForRationale3097() {
+<span class="fc" id="L283">		Assert.assertTrue(&quot;Rationale (3097) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Rationale_3097&quot;));</span>
+<span class="fc" id="L284">	}</span>
+
+	@Test
+	public void testRegistryContentForRefineAbstraction() {
+<span class="fc" id="L288">		Assert.assertTrue(&quot;Refine Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Refine_Abstraction_4007&quot;));</span>
+<span class="fc" id="L289">	}</span>
+
+	@Test
+	public void testRegistryContentForRequirement2073() {
+<span class="fc" id="L293">		Assert.assertTrue(&quot;Requirement (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Requirement_2073&quot;));</span>
+<span class="fc" id="L294">	}</span>
+
+	@Test
+	public void testRegistryContentForRequirement3085() {
+<span class="fc" id="L298">		Assert.assertTrue(&quot;Requirement (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Requirement_3085&quot;));</span>
+<span class="fc" id="L299">	}</span>
+
+	@Test
+	public void testRegistryContentForSatisfyAbstraction() {
+<span class="fc" id="L303">		Assert.assertTrue(&quot;Satisfy Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Satisfy_Abstraction_4007&quot;));</span>
+<span class="fc" id="L304">	}</span>
+
+	@Test
+	public void testRegistryContentForTestCaseOperation() {
+<span class="fc" id="L308">		Assert.assertTrue(&quot;TestCase Operation element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.TestCase_Operation_3102&quot;));</span>
+<span class="fc" id="L309">	}</span>
+
+	@Test
+	public void testRegistryContentForTraceAbstraction() {
+<span class="fc" id="L313">		Assert.assertTrue(&quot;Trace Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Trace_Abstraction_4007&quot;));</span>
+<span class="fc" id="L314">	}</span>
+
+	@Test
+	public void testRegistryContentForValueType2068() {
+<span class="fc" id="L318">		Assert.assertTrue(&quot;ValueType (2068) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ValueType_2068&quot;));</span>
+<span class="fc" id="L319">	}</span>
+
+	@Test
+	public void testRegistryContentForValueType3080() {
+<span class="fc" id="L323">		Assert.assertTrue(&quot;ValueType (3080) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.ValueType_3080&quot;));</span>
+<span class="fc" id="L324">	}</span>
+
+	@Test
+	public void testRegistryContentForVerifyAbstraction() {
+<span class="fc" id="L328">		Assert.assertTrue(&quot;Verify Abstraction element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Verify_Abstraction_4007&quot;));</span>
+<span class="fc" id="L329">	}</span>
+
+	@Test
+	public void testRegistryContentForView2073() {
+<span class="fc" id="L333">		Assert.assertTrue(&quot;View (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.View_2073&quot;));</span>
+<span class="fc" id="L334">	}</span>
+
+	@Test
+	public void testRegistryContentForView3085() {
+<span class="fc" id="L338">		Assert.assertTrue(&quot;View (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.View_3085&quot;));</span>
+<span class="fc" id="L339">	}</span>
+
+	@Test
+	public void testRegistryContentForViewpoint2073() {
+<span class="fc" id="L343">		Assert.assertTrue(&quot;Viewpoint (2073) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Viewpoint_2073&quot;));</span>
+<span class="fc" id="L344">	}</span>
+
+	@Test
+	public void testRegistryContentForViewpoint3085() {
+<span class="fc" id="L348">		Assert.assertTrue(&quot;Viewpoint (3085) element type not found in SysML element type set &quot;, ElementEditServiceUtils.getEditServiceProvider().isKnownElementType(&quot;org.eclipse.papyrus.SysML14.Viewpoint_3085&quot;));</span>
+<span class="fc" id="L349">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

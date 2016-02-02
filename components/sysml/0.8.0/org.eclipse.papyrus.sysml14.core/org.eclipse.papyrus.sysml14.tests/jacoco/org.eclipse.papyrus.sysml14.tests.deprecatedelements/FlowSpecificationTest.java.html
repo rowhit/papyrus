@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FlowSpecificationTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.deprecatedelements</a> &gt; <span class="el_source">FlowSpecificationTest.java</span></div><h1>FlowSpecificationTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.deprecatedelements;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * A test case for the model object '&lt;em&gt;&lt;b&gt;FlowSpecification&lt;/b&gt;&lt;/em&gt;'.
+ * 
+ * &lt;p&gt;
+ * The following features are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getFlowProperties &lt;em&gt;FlowProperties&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ */
+<span class="fc" id="L39">public class FlowSpecificationTest {</span>
+
+<span class="fc" id="L41">	private FlowSpecification flowSpecification=null;</span>
+
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp()  {
+		// Prepare Model test
+<span class="fc" id="L49">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L50">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+<span class="fc" id="L52">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+		/*
+		 * create a FlowSpecification
+		 */
+<span class="fc" id="L56">		Interface flowSpecificationInterface=model.createOwnedInterface(&quot;FlowSpecification1&quot;);</span>
+<span class="fc" id="L57">		flowSpecification = (FlowSpecification) stereotypeApplicationHelper.applyStereotype(flowSpecificationInterface, DeprecatedelementsPackage.eINSTANCE.getFlowSpecification());</span>
+
+		/*
+		 * create a flow property and add it to the FlowSpecification
+		 */
+<span class="fc" id="L62">		Property property1 = flowSpecificationInterface.createOwnedAttribute(&quot;property1&quot;, null);</span>
+<span class="fc" id="L63">		StereotypeApplicationHelper.getInstance(null).applyStereotype(property1, PortsandflowsPackage.eINSTANCE.getFlowProperty());</span>
+		
+<span class="fc" id="L65">	}</span>
+	
+	/**
+	 * @pap.req Flow specifications cannot own operations or receptions (they can only own FlowProperties)
+	 */
+	@Test
+	public void testGetOperations() { 
+<span class="fc" id="L72">		Assert.assertEquals(&quot;Operations size should be 0&quot;, 0, flowSpecification.getBase_Interface().getAllOperations().size());</span>
+<span class="fc" id="L73">	}</span>
+	
+	/**
+	 * @pap.req Flow specifications cannot own operations or receptions (they can only own FlowProperties)
+	 */
+	@Test
+	public void testGetReceptions() { 
+<span class="fc" id="L80">		Assert.assertEquals(&quot;Receptions size should be 0&quot;, 0, flowSpecification.getBase_Interface().getOwnedReceptions().size());</span>
+<span class="fc" id="L81">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getFlowProperties()
+	 * &lt;em&gt;FlowProperty&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getFlowProperties()
+	 */
+	@Test
+	public void testGetFlowProperties() {  
+<span class="fc" id="L90">		Assert.assertNotNull(&quot;FlowProperties should not be null&quot;, flowSpecification.getFlowProperties());</span>
+<span class="fc" id="L91">		Assert.assertEquals(&quot;FlowProperties size should be 1&quot;, 1, flowSpecification.getFlowProperties().size());</span>
+<span class="fc" id="L92">	}</span>
+	
+
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

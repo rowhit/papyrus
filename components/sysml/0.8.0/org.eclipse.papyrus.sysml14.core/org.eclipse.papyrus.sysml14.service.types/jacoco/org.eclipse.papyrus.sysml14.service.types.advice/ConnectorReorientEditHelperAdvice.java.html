@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConnectorReorientEditHelperAdvice.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.advice</a> &gt; <span class="el_source">ConnectorReorientEditHelperAdvice.java</span></div><h1>ConnectorReorientEditHelperAdvice.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.advice;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.ISpecializationType;
+import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+import org.eclipse.papyrus.sysml14.service.types.command.SetNestedPathCommand;
+import org.eclipse.papyrus.sysml14.service.types.util.ConnectorUtil;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.service.types.util.UMLConnectorUtils;
+import org.eclipse.papyrus.uml.service.types.utils.RequestParameterUtils;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * 8.3.2.3 Block
+ * the service edit must implement the following constraints
+ * isEncapsulated: Boolean [0..1]
+ * If true, then the block is treated as a black box; a part typed by this black box can only be connected via its ports or
+ * directly to its outer boundary. If false, or if a value is not present, then connections can be established to elements of
+ * its internal structure via deep-nested connector ends.
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_007}
+ *
+ */
+<span class="nc" id="L57">public class ConnectorReorientEditHelperAdvice extends AbstractEditHelperAdvice {</span>
+
+<span class="nc" id="L59">	private UMLConnectorUtils utils = new UMLConnectorUtils();</span>
+
+	/**
+	 *
+	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
+	 *
+	 * @param request
+	 * @return
+	 */
+	@Override
+	protected ICommand getBeforeReorientRelationshipCommand(final ReorientRelationshipRequest request) {
+<span class="nc" id="L70">		final CompositeCommand compositeCommand = new CompositeCommand(&quot;Destroy Connector View Command&quot;);</span>
+
+		// the UML Connector Edit Helper Advice destroys connector views when roles changes
+		// Here, we destroys connectors views, when the path changes
+<span class="nc" id="L74">		final EObject editedElement = request.getRelationship();</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">		if (editedElement instanceof Connector) {</span>
+
+<span class="nc bnc" id="L77" title="All 2 branches missed.">			if (applySysMLRules(((Connector) editedElement).getOwner())) {</span>
+<span class="nc" id="L78">				final Connector connector = (Connector) editedElement;</span>
+				// verify the path now
+<span class="nc" id="L80">				int reorientDirection = request.getDirection();</span>
+<span class="nc" id="L81">				Edge reorientedEdgeView = RequestParameterUtils.getReconnectedEdge(request);</span>
+<span class="nc" id="L82">				View newEndView = RequestParameterUtils.getReconnectedEndView(request);</span>
+<span class="nc" id="L83">				View oppositeEndView = null;</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">				if (reorientedEdgeView != null) {</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">					oppositeEndView = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();</span>
+				}
+<span class="nc" id="L87">				List&lt;Property&gt; newNestedPath = null;</span>
+<span class="nc bnc" id="L88" title="All 4 branches missed.">				if (reorientedEdgeView != null &amp;&amp; newEndView != null) {</span>
+					// we are working with a 'graphical' reconnect request
+<span class="nc" id="L90">					newNestedPath = utils.getNestedPropertyPath(newEndView, oppositeEndView);</span>
+<span class="nc" id="L91">				} else {</span>
+<span class="nc" id="L92">					newNestedPath = (List&lt;Property&gt;) request.getParameter(UMLConnectorUtils.NESTED_CONNECTOR_END_PATH);</span>
+				}
+
+<span class="nc" id="L95">				final Set&lt;View&gt; viewsToDestroy = utils.getViewsRepresentingConnector(connector);</span>
+<span class="nc" id="L96">				final Iterator&lt;View&gt; iter = viewsToDestroy.iterator();</span>
+
+<span class="nc bnc" id="L98" title="All 2 branches missed.">				while (iter.hasNext()) {</span>
+<span class="nc" id="L99">					final Edge current = (Edge) iter.next();</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">					if (current != reorientedEdgeView) {</span>
+<span class="nc" id="L101">						View oldEndView = null;</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">						if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {</span>
+<span class="nc" id="L103">							oldEndView = current.getSource();</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">						} else if (reorientDirection == ReorientRequest.REORIENT_TARGET) {</span>
+<span class="nc" id="L105">							oldEndView = current.getTarget();</span>
+						}
+<span class="nc bnc" id="L107" title="All 2 branches missed.">						if (oppositeEndView != null) {</span>
+<span class="nc" id="L108">							final List&lt;Property&gt; oldNestedPath = utils.getNestedPropertyPath(oldEndView, oppositeEndView);</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">							if (!newNestedPath.equals(oldNestedPath)) {</span>
+<span class="nc" id="L110">								final DestroyElementRequest destroyRequest = new DestroyElementRequest(request.getEditingDomain(), current, false);</span>
+<span class="nc" id="L111">								final IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(current);</span>
+<span class="nc" id="L112">								compositeCommand.add(commandProvider.getEditCommand(destroyRequest));</span>
+							}
+						}
+					}
+				}
+<span class="nc bnc" id="L117" title="All 2 branches missed.">				if (!compositeCommand.isEmpty()) {</span>
+<span class="nc" id="L118">					return compositeCommand;</span>
+				}
+			}
+		}
+<span class="nc" id="L122">		return null;</span>
+	}
+
+	/**
+	 *
+	 * @param connectorOwner
+	 *            the owner of the connector
+	 * @return
+	 */
+	// FIXME : Bad name and should not use/define a qualified name here
+	protected boolean applySysMLRules(final Element connectorOwner) {
+<span class="nc bnc" id="L133" title="All 2 branches missed.">		return connectorOwner.getApplicableStereotype(&quot;SysML::Blocks::Block&quot;) != null;</span>
+	}
+
+	@Override
+	protected ICommand getAfterReorientRelationshipCommand(final ReorientRelationshipRequest request) {
+		// we set the new value for the nested path
+<span class="nc" id="L139">		ICommand defaultCommand = super.getAfterReorientRelationshipCommand(request);</span>
+
+<span class="nc" id="L141">		int reorientDirection = request.getDirection();</span>
+
+
+		// Restrict this advice action to the end of Connector creation gesture (before clicking on target)
+		// in order to add SysML specific constraint
+<span class="nc" id="L146">		Connector connector = (Connector) request.getRelationship();</span>
+		// get the direction
+
+		// Restrict action to SysML Connector (meaning owned by Block)
+<span class="nc bnc" id="L150" title="All 2 branches missed.">		if (((ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_BLOCK)).getMatcher().matches(connector.eContainer())) {</span>
+<span class="nc" id="L151">			List&lt;Property&gt; newFullNestedPath = new ArrayList&lt;Property&gt;();</span>
+<span class="nc" id="L152">			Edge reorientedEdgeView = RequestParameterUtils.getReconnectedEdge(request);</span>
+<span class="nc" id="L153">			View newEndView = RequestParameterUtils.getReconnectedEndView(request);</span>
+<span class="nc" id="L154">			View oppositeEndView = null;</span>
+
+			// graphical case : verify encapsulation and get the new path
+<span class="nc bnc" id="L157" title="All 2 branches missed.">			if (reorientedEdgeView != null) {</span>
+
+<span class="nc bnc" id="L159" title="All 2 branches missed.">				oppositeEndView = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();</span>
+<span class="nc bnc" id="L160" title="All 4 branches missed.">				if (newEndView != null &amp;&amp; oppositeEndView != null) {</span>
+					// If the source or target view is enclosed in a structure encapsulated view, forbid creation.
+<span class="nc bnc" id="L162" title="All 4 branches missed.">					if (ConnectorUtil.isCrossingEncapsulation(newEndView, oppositeEndView) || ConnectorUtil.isCrossingEncapsulation(oppositeEndView, newEndView)) {</span>
+<span class="nc" id="L163">						return UnexecutableCommand.INSTANCE;</span>
+					}
+<span class="nc" id="L165">					newFullNestedPath = utils.getNestedPropertyPath(newEndView, oppositeEndView);</span>
+				}
+<span class="nc" id="L167">			} else {</span>
+				// we are in the semantic case
+<span class="nc" id="L169">				newFullNestedPath = ((List&lt;Property&gt;) request.getParameter(UMLConnectorUtils.NESTED_CONNECTOR_END_PATH));</span>
+
+				// we need to verify encapsulation
+<span class="nc bnc" id="L172" title="All 2 branches missed.">				if (ConnectorUtil.isCrossingEncapuslation(newFullNestedPath)) {</span>
+<span class="nc" id="L173">					return UnexecutableCommand.INSTANCE;</span>
+				}
+			}
+
+<span class="nc" id="L177">			Property newRole = (Property) request.getNewRelationshipEnd();</span>
+			final ConnectorEnd oppositeEnd;
+<span class="nc bnc" id="L179" title="All 2 branches missed.">			if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {</span>
+<span class="nc" id="L180">				oppositeEnd = ((Connector) request.getRelationship()).getEnds().get(1);</span>
+<span class="nc" id="L181">			} else {</span>
+<span class="nc" id="L182">				oppositeEnd = ((Connector) request.getRelationship()).getEnds().get(0);</span>
+			}
+<span class="nc" id="L184">			UMLUtil.getStereotypeApplication(oppositeEnd, NestedConnectorEnd.class);</span>
+<span class="nc" id="L185">			newFullNestedPath.add(newRole);</span>
+
+
+<span class="nc bnc" id="L188" title="All 2 branches missed.">			int tmpNestedPathDirection = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? SetNestedPathCommand.NESTED_SOURCE : SetNestedPathCommand.NESTED_TARGET;</span>
+<span class="nc" id="L189">			defaultCommand = CompositeCommand.compose(defaultCommand, new SetNestedPathCommand(&quot;Set connector nested source path&quot;, request.getRelationship(), request, newFullNestedPath, tmpNestedPathDirection));</span>
+		}
+
+<span class="nc" id="L192">		return defaultCommand;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>IsTypedPropertyJavaQuery.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.queries.property</a> &gt; <span class="el_source">IsTypedPropertyJavaQuery.java</span></div><h1>IsTypedPropertyJavaQuery.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre francois.le-fevre@cea.fr  - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.ui.queries.property;
+
+import org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager;
+import org.eclipse.papyrus.emf.facet.efacet.core.exception.DerivedTypedElementException;
+import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
+import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * Query used for Menu Explorer customisation
+ * @pap.req org.eclipse.papyrus.sysml14.ui#REQ_001
+ * 
+ * @author Francois Le Fevre
+ *
+ */
+<span class="nc" id="L28">public class IsTypedPropertyJavaQuery implements IJavaQuery2&lt;Property, Boolean&gt; {</span>
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2#evaluate(org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2, org.eclipse.papyrus.emf.facet.efacet.core.IFacetManager)
+	 * @Override
+	 * Return true if the element is a typed property
+	 */
+	public Boolean evaluate(Property source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">		return (source.getType()!=null);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

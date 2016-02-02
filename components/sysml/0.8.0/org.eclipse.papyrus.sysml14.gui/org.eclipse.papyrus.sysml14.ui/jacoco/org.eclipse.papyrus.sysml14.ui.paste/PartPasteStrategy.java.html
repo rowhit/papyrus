@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PartPasteStrategy.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.paste</a> &gt; <span class="el_source">PartPasteStrategy.java</span></div><h1>PartPasteStrategy.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2014 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.ui.paste;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.eclipse.emf.common.command.CompoundCommand;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper;
+import org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.core.clipboard.IClipboardAdditionalData;
+import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.DefaultPasteStrategy;
+import org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * Offer a strategy for copying stereotypes.
+ */
+<span class="nc" id="L50">public class PartPasteStrategy implements IPasteStrategy {</span>
+
+	/** The instance. */
+<span class="nc" id="L53">	private static IPasteStrategy instance = new PartPasteStrategy();</span>
+
+	/**
+	 * Gets the single instance of StereotypePasteStrategy.
+	 *
+	 * @return single instance of StereotypePasteStrategy
+	 */
+	public static IPasteStrategy getInstance() {
+<span class="nc" id="L61">		return instance;</span>
+	}
+
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
+	 */
+	@Override
+	public String getLabel() {
+<span class="nc" id="L72">		return &quot;partPasteStrategy&quot;; //$NON-NLS-1$</span>
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
+	 */
+	@Override
+	public String getID() {
+<span class="nc" id="L82">		return Activator.ID + &quot;.partPasteStrategy&quot;; //$NON-NLS-1$</span>
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
+	 */
+	@Override
+	public String getDescription() {
+<span class="nc" id="L92">		return &quot;Paste part elements with association&quot;; //$NON-NLS-1$</span>
+	}
+
+	/**
+	 * Gets the category id.
+	 *
+	 * @return the category id
+	 */
+	public String getCategoryID() {
+<span class="nc" id="L101">		return &quot;org.eclipse.papyrus.strategy.paste&quot;; //$NON-NLS-1$</span>
+	}
+
+	/**
+	 * Gets the category label.
+	 *
+	 * @return the category label
+	 */
+	public String getCategoryLabel() {
+<span class="nc" id="L110">		return &quot;Paste all copied elements&quot;; //$NON-NLS-1$</span>
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getImage()
+	 */
+	@Override
+	@Deprecated
+	public Image getImage() {
+<span class="nc" id="L121">		return null;</span>
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getPriority()
+	 */
+	@Override
+	@Deprecated
+	public int getPriority() {
+<span class="nc" id="L132">		return 1;</span>
+	}
+
+	/**
+	 * Sets the options.
+	 *
+	 * @param options
+	 *            the options
+	 */
+	public void setOptions(Map&lt;String, Object&gt; options) {
+		// Nothing
+<span class="nc" id="L143">	}</span>
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getSemanticCommand(org.eclipse.emf.edit.domain.EditingDomain,
+	 * org.eclipse.emf.ecore.EObject, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
+	 */
+	@Override
+	public org.eclipse.emf.common.command.Command getSemanticCommand(EditingDomain domain, EObject targetOwner, PapyrusClipboard&lt;Object&gt; papyrusClipboard) {
+<span class="nc bnc" id="L153" title="All 4 branches missed.">		if (targetOwner instanceof Classifier || targetOwner instanceof Package) { // test if block or package</span>
+			// get affiliate AdditionnalData
+<span class="nc" id="L155">			Map&lt;Object, ?&gt; additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">			if (additionalDataMap != null) {</span>
+<span class="nc" id="L157">				CompoundCommand compoundCommand = new CompoundCommand(&quot;Copy associations for parts&quot;); //$NON-NLS-1$</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">				for (Iterator&lt;Object&gt; iterator = papyrusClipboard.iterator(); iterator.hasNext();) {</span>
+<span class="nc" id="L159">					Object object = iterator.next();</span>
+<span class="nc" id="L160">					EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);</span>
+<span class="nc" id="L161">					Object additionnalData = additionalDataMap.get(object);</span>
+<span class="nc" id="L162">					EList&lt;Association&gt; listDuplicatedAssociation = new BasicEList&lt;Association&gt;();</span>
+<span class="nc" id="L163">					EObject associationContainer = null;</span>
+<span class="nc bnc" id="L164" title="All 6 branches missed.">					if (target instanceof Property &amp;&amp; targetOwner instanceof Classifier &amp;&amp; additionnalData instanceof PartAdditionalData) { // test if it is a part</span>
+<span class="nc" id="L165">						Classifier block = (Classifier) targetOwner;</span>
+<span class="nc" id="L166">						Property property = (Property) target;</span>
+<span class="nc" id="L167">						PartAdditionalData partAdditionalData = (PartAdditionalData) additionnalData;</span>
+<span class="nc" id="L168">						Association newAssociation = partAdditionalData.getDuplicatedAssociation();</span>
+<span class="nc" id="L169">						restoreAssociationPartContext(block, property, newAssociation);</span>
+<span class="nc" id="L170">						listDuplicatedAssociation.add(newAssociation);</span>
+<span class="nc" id="L171">						associationContainer = block.eContainer();</span>
+<span class="nc bnc" id="L172" title="All 6 branches missed.">					} else if (target instanceof Classifier &amp;&amp; targetOwner instanceof Package &amp;&amp; additionnalData instanceof PartBlockAdditionalData) { // test if it is a block</span>
+<span class="nc" id="L173">						Classifier classifier = (Classifier) target;</span>
+<span class="nc" id="L174">						EList&lt;Property&gt; allAttributes = classifier.getAllAttributes();</span>
+<span class="nc" id="L175">						PartBlockAdditionalData partBlockAdditionalData = (PartBlockAdditionalData) additionnalData;</span>
+<span class="nc bnc" id="L176" title="All 2 branches missed.">						for (Property property : allAttributes) {</span>
+<span class="nc" id="L177">							Association duplicatedAssociation = partBlockAdditionalData.getDuplicatedAssociationByPropertyName(property.getName());</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">							if (duplicatedAssociation != null) {</span>
+<span class="nc" id="L179">								restoreAssociationPartContext(classifier, property, duplicatedAssociation);</span>
+<span class="nc" id="L180">								listDuplicatedAssociation.add(duplicatedAssociation);</span>
+							}
+						}
+<span class="nc" id="L183">						associationContainer = targetOwner;</span>
+					}
+<span class="nc bnc" id="L185" title="All 4 branches missed.">					if (associationContainer != null &amp;&amp; !listDuplicatedAssociation.isEmpty()) {</span>
+						// add associations to the nearest container
+<span class="nc" id="L187">						MoveRequest moveRequest = new MoveRequest(associationContainer, listDuplicatedAssociation);</span>
+<span class="nc" id="L188">						IElementEditService provider = ElementEditServiceUtils.getCommandProvider(targetOwner);</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">						if (provider != null) {</span>
+<span class="nc" id="L190">							ICommand editCommand = provider.getEditCommand(moveRequest);</span>
+<span class="nc" id="L191">							GMFtoEMFCommandWrapper gmFtoEMFCommandWrapper = new GMFtoEMFCommandWrapper(editCommand);</span>
+<span class="nc" id="L192">							compoundCommand.append(gmFtoEMFCommandWrapper);</span>
+						}
+					}
+				}
+				// An empty command can't be executed
+<span class="nc bnc" id="L197" title="All 2 branches missed.">				if (compoundCommand.getCommandList().isEmpty()) {</span>
+<span class="nc" id="L198">					return null;</span>
+				}
+<span class="nc" id="L200">				return compoundCommand;</span>
+			}
+		}
+<span class="nc" id="L203">		return null;</span>
+	}
+
+
+
+
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getGraphicalCommand(org.eclipse.emf.edit.domain.EditingDomain,
+	 * org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart, org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
+	 */
+	@Override
+	public Command getGraphicalCommand(EditingDomain domain, org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart targetEditPart, PapyrusClipboard&lt;Object&gt; papyrusClipboard) {
+<span class="nc" id="L218">		View targetView = (View) targetEditPart.getModel();</span>
+<span class="nc" id="L219">		EObject targetOwner = targetView.getElement();</span>
+<span class="nc" id="L220">		org.eclipse.emf.common.command.Command semanticCommand = getSemanticCommand(domain, targetOwner, papyrusClipboard);</span>
+<span class="nc bnc" id="L221" title="All 2 branches missed.">		if (semanticCommand != null) {</span>
+<span class="nc" id="L222">			org.eclipse.gef.commands.CompoundCommand compoundCommand = new org.eclipse.gef.commands.CompoundCommand(&quot;Association Part Semantic And Graphical paste&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L223">			EMFtoGEFCommandWrapper emFtoGEFCommandWrapper = new EMFtoGEFCommandWrapper(semanticCommand);</span>
+<span class="nc" id="L224">			compoundCommand.add(emFtoGEFCommandWrapper);</span>
+<span class="nc" id="L225">			return compoundCommand;</span>
+		}
+<span class="nc" id="L227">		return null;</span>
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#dependsOn()
+	 */
+	@Override
+	public IPasteStrategy dependsOn() {
+<span class="nc" id="L237">		return DefaultPasteStrategy.getInstance();</span>
+	}
+
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#prepare(org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard)
+	 */
+	@Override
+	public void prepare(PapyrusClipboard&lt;Object&gt; papyrusClipboard, Collection&lt;EObject&gt; selection) {
+<span class="nc" id="L248">		Map&lt;Object, IClipboardAdditionalData&gt; mapCopyPartData = new HashMap&lt;Object, IClipboardAdditionalData&gt;();</span>
+<span class="nc bnc" id="L249" title="All 2 branches missed.">		for (Iterator&lt;EObject&gt; iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {</span>
+<span class="nc" id="L250">			EObject eObjectSource = iterator.next();</span>
+<span class="nc bnc" id="L251" title="All 2 branches missed.">			if (eObjectSource instanceof Element) {</span>
+<span class="nc" id="L252">				Element elementSource = (Element) eObjectSource;</span>
+<span class="nc" id="L253">				IClipboardAdditionalData clipboardAdditionalData = null;</span>
+<span class="nc bnc" id="L254" title="All 4 branches missed.">				if (elementSource instanceof Property &amp;&amp; UMLUtil.getStereotypeApplication(elementSource.getOwner(), Block.class) != null) { // is part</span>
+<span class="nc" id="L255">					Property propertySource = (Property) elementSource;</span>
+<span class="nc" id="L256">					Association association = propertySource.getAssociation();</span>
+<span class="nc bnc" id="L257" title="All 2 branches missed.">					if (association != null) {</span>
+<span class="nc" id="L258">						clipboardAdditionalData = new PartAdditionalData(association);</span>
+					}
+<span class="nc bnc" id="L260" title="All 4 branches missed.">				} else if (elementSource instanceof Classifier &amp;&amp; UMLUtil.getStereotypeApplication(elementSource, Block.class) != null) {// is Block</span>
+<span class="nc" id="L261">					Classifier block = (Classifier) elementSource;</span>
+<span class="nc" id="L262">					clipboardAdditionalData = new PartBlockAdditionalData(block);</span>
+				}
+<span class="nc bnc" id="L264" title="All 2 branches missed.">				if (clipboardAdditionalData != null) {</span>
+<span class="nc" id="L265">					Object copy = papyrusClipboard.getCopyFromSource(eObjectSource);</span>
+<span class="nc" id="L266">					mapCopyPartData.put(copy, clipboardAdditionalData);</span>
+				}
+			}
+
+		}
+<span class="nc" id="L271">		papyrusClipboard.pushAdditionalData(getID(), mapCopyPartData);</span>
+<span class="nc" id="L272">	}</span>
+
+
+	/**
+	 * Duplicate the association
+	 *
+	 * @param association
+	 * @return
+	 */
+	protected Association duplicateAssociation(Association association) {
+<span class="nc" id="L282">		EcoreUtil.Copier copier = new EcoreUtil.Copier();</span>
+<span class="nc" id="L283">		copier.copy(association);</span>
+<span class="nc" id="L284">		return (Association) copier.get(association);</span>
+	}
+
+	/**
+	 * Init the association in the new context
+	 *
+	 * @param classifier
+	 * @param property
+	 * @param association
+	 */
+	protected void restoreAssociationPartContext(Classifier classifier, Property property, Association association) {
+<span class="nc" id="L295">		EList&lt;Property&gt; memberEnds = association.getMemberEnds(); // should have only one element</span>
+<span class="nc bnc" id="L296" title="All 2 branches missed.">		if (memberEnds != null ) {</span>
+<span class="nc bnc" id="L297" title="All 2 branches missed.">			if (!memberEnds.isEmpty()){</span>
+<span class="nc" id="L298">				Property blockProperty = memberEnds.get(0);</span>
+<span class="nc" id="L299">				blockProperty.setType(classifier);				</span>
+			}
+<span class="nc" id="L301">			memberEnds.add(property);</span>
+		}	
+<span class="nc" id="L303">	}</span>
+
+
+	/**
+	 * The Class PartAdditionalData.
+	 */
+	protected class PartAdditionalData implements IClipboardAdditionalData {
+
+		/** The association. */
+		protected Association asssociation;
+
+		/**
+		 * @param association
+		 */
+<span class="nc" id="L317">		public PartAdditionalData(Association asssociation) {</span>
+<span class="nc" id="L318">			this.asssociation = duplicateAssociation(asssociation);</span>
+<span class="nc" id="L319">		}</span>
+
+		/**
+		 * @return a copy of the association
+		 */
+		public Association getDuplicatedAssociation() {
+<span class="nc" id="L325">			return duplicateAssociation(asssociation);</span>
+		}
+
+	}
+
+	/**
+	 * The Class PartBlockAdditionalData.
+	 */
+	protected class PartBlockAdditionalData implements IClipboardAdditionalData {
+
+		/** The associations by property name. */
+		protected Map&lt;String, Association&gt; mapPropertyNameToAssociation;
+
+		/**
+		 * @param block
+		 */
+<span class="nc" id="L341">		public PartBlockAdditionalData(Classifier block) {</span>
+<span class="nc" id="L342">			this.mapPropertyNameToAssociation = new HashMap&lt;String, Association&gt;();</span>
+<span class="nc" id="L343">			EList&lt;Property&gt; allAttributes = block.getAllAttributes();</span>
+<span class="nc bnc" id="L344" title="All 2 branches missed.">			for (Property property : allAttributes) {</span>
+<span class="nc" id="L345">				Association association = property.getAssociation();</span>
+<span class="nc" id="L346">				Association newAssociation = duplicateAssociation(association);</span>
+<span class="nc" id="L347">				mapPropertyNameToAssociation.put(property.getName(), newAssociation);</span>
+			}
+
+<span class="nc" id="L350">		}</span>
+
+		/**
+		 * @param propertyName
+		 * @return a copy of the association
+		 */
+		public Association getDuplicatedAssociationByPropertyName(String propertyName) {
+<span class="nc" id="L357">			Association association = mapPropertyNameToAssociation.get(propertyName);</span>
+<span class="nc" id="L358">			return duplicateAssociation(association);</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

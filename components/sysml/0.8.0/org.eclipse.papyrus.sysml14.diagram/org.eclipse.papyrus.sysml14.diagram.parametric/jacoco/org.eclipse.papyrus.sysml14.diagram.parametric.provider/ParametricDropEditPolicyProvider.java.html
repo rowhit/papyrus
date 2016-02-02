@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ParametricDropEditPolicyProvider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.parametric</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.parametric.provider</a> &gt; <span class="el_source">ParametricDropEditPolicyProvider.java</span></div><h1>ParametricDropEditPolicyProvider.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2012 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.parametric.provider;
+
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
+import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
+import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
+import org.eclipse.papyrus.sysml14.diagram.parametric.policy.ParametricDropEditPolicy;
+
+/**
+ * This class is used to ensure that the drop of constraint property and parameter can be done without choosing the kind of the drop
+ *
+ */
+<span class="nc" id="L34">public class ParametricDropEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {</span>
+
+	private static final String PARAMETRIC_DIAGRAM_NAME = &quot;SysML 1.4 Parametric&quot;;
+
+	@Override
+	public boolean provides(IOperation operation) {
+<span class="nc" id="L40">		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;</span>
+
+		try {
+<span class="nc" id="L43">			ServicesRegistry registry = ServiceUtilsForEditPart.getInstance().getServiceRegistry(epOperation.getEditPart());</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">			if (registry == null) {</span>
+<span class="nc" id="L45">				return false;</span>
+			}
+<span class="nc" id="L47">		} catch (ServiceException e) {</span>
+<span class="nc" id="L48">			return false;</span>
+		}
+		// this editpolicy provider is only available in the parametric diagram
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (epOperation.getEditPart() instanceof GraphicalEditPart) {</span>
+<span class="nc" id="L52">			String currentDiagramType = getDiagramType(((GraphicalEditPart) epOperation.getEditPart()).getNotationView());</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">			if (PARAMETRIC_DIAGRAM_NAME.equals(currentDiagramType)) {</span>
+<span class="nc" id="L54">				return true;</span>
+			}
+		}
+<span class="nc" id="L57">		return false;</span>
+	}
+
+	@Override
+	public void createEditPolicies(EditPart editPart) {
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		if (editPart instanceof GraphicalEditPart) {</span>
+<span class="nc" id="L63">			String currentDiagramType = getDiagramType(((GraphicalEditPart) editPart).getNotationView());</span>
+
+			// add editpolicy that allow the specific drop of the Parametric diagram.
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			if (PARAMETRIC_DIAGRAM_NAME.equals(currentDiagramType)) {</span>
+<span class="nc" id="L67">				EditPolicy defaultDropEditPolicy = editPart.getEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE);</span>
+<span class="nc" id="L68">				EditPolicy defaultCreationEditPolicy = editPart.getEditPolicy(EditPolicyRoles.CREATION_ROLE);</span>
+
+<span class="nc" id="L70">				ParametricDropEditPolicy dropEditPolicy = new ParametricDropEditPolicy(defaultDropEditPolicy, defaultCreationEditPolicy);</span>
+
+<span class="nc" id="L72">				editPart.installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, null);</span>
+<span class="nc" id="L73">				editPart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, dropEditPolicy);</span>
+			}
+		}
+<span class="nc" id="L76">	}</span>
+
+	/**
+	 * used to obtain the id of the diagram
+	 * 
+	 * @param currentView
+	 *            a view inside the diagram, never null
+	 * @return id of the diagram or the id of the diagram inside the view point
+	 */
+	protected String getDiagramType(View currentView) {
+<span class="nc" id="L86">		Diagram diagram = currentView.getDiagram();</span>
+<span class="nc" id="L87">		String currentDiagramType = null;</span>
+<span class="nc" id="L88">		ViewPrototype viewPrototype = org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils.getPrototype(diagram);</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">		if (viewPrototype != null) {</span>
+<span class="nc" id="L90">			currentDiagramType = viewPrototype.getLabel();</span>
+<span class="nc" id="L91">		} else {</span>
+<span class="nc" id="L92">			currentDiagramType = diagram.getType();</span>
+		}
+<span class="nc" id="L94">		return currentDiagramType;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

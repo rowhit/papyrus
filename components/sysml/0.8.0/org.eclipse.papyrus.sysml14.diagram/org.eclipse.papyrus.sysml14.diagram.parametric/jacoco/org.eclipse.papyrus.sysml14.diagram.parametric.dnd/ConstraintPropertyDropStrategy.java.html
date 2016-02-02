@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConstraintPropertyDropStrategy.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.parametric</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.parametric.dnd</a> &gt; <span class="el_source">ConstraintPropertyDropStrategy.java</span></div><h1>ConstraintPropertyDropStrategy.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.parametric.dnd;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.ISpecializationType;
+import org.eclipse.papyrus.infra.gmfdiag.dnd.strategy.ExpansionElementDropStrategy;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.ClassCompositeCompartmentEditPart;
+
+/**
+ * This strategy is a specialization in order to be able to drop Constraint inside constraint Property
+ *
+ */
+<span class="nc" id="L35">public class ConstraintPropertyDropStrategy extends ExpansionElementDropStrategy implements IParametricDropStrategy {</span>
+
+
+	/**
+	 * ID tje internal Structure of a block
+	 */
+	private static final String INTERNAL_STRUCTURE_ID = &quot;&quot; + ClassCompositeCompartmentEditPart.VISUAL_ID;
+
+	@Override
+	public String getLabel() {
+<span class="nc" id="L45">		return &quot;Constraint Property drag and drop inside parametric diagram&quot;;</span>
+	}
+
+	@Override
+	public String getID() {
+<span class="nc" id="L50">		return &quot;org.eclipse.papyrus.sysml14.diagram.parametric.dnd.ConstraintPropertyDropStrategy&quot;;</span>
+	}
+
+	@Override
+	public String getDescription() {
+<span class="nc" id="L55">		return &quot;This strategy is is a specialization in order to be able to drop a Constraint Property inside Parametric diagram.&quot;;</span>
+	}
+
+
+
+	@Override
+	public Command doGetCommand(Request request, final EditPart targetEditPart) {
+
+<span class="nc" id="L63">		CompositeCommand cc = new CompositeCommand(getLabel());</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">		if (targetEditPart instanceof GraphicalEditPart) {</span>
+<span class="nc" id="L65">			IGraphicalEditPart graphicalEditPart = (IGraphicalEditPart) targetEditPart;</span>
+<span class="nc" id="L66">			List&lt;EObject&gt; sourceElements = getSourceEObjects(request);</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">			if (sourceElements.size() == 0) {</span>
+<span class="nc" id="L68">				return null;</span>
+			}
+
+<span class="nc" id="L71">			final List&lt;EObject&gt; valuesToAdd = new ArrayList&lt;EObject&gt;(sourceElements.size());</span>
+<span class="nc" id="L72">			final ISpecializationType constraintPropertyElementType = (ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_CONSTRAINTPROPERTY);</span>
+			// the target must me a constraint property
+<span class="nc bnc" id="L74" title="All 2 branches missed.">			if (INTERNAL_STRUCTURE_ID.equals(graphicalEditPart.getNotationView().getType())) {</span>
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">				for (EObject sourceElement : sourceElements) {</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">					if ((constraintPropertyElementType.getMatcher().matches(sourceElement))) {</span>
+<span class="nc" id="L78">						addCommandDrop(targetEditPart, cc, valuesToAdd, sourceElement, (ISpecializationType) ElementTypeRegistry.getInstance().getType(&quot;org.eclipse.papyrus.SysML14.ConstraintPropertyComposite&quot;));</span>
+					}
+
+				}
+			}
+		}
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		return cc.canExecute() ? new ICommandProxy(cc.reduce()) : null;</span>
+	}
+
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.dnd.strategy.ExpansionElementDropStrategy#getPriority()
+	 *
+	 * @return
+	 */
+	@Override
+	public int getPriority() {
+<span class="nc" id="L95">		return -1000;</span>
+	}
+
+	@Override
+	public String getCategoryID() {
+<span class="nc" id="L100">		return PARAMETRIC_DROP_CATEGORY_ID;</span>
+	}
+
+	@Override
+	public String getCategoryLabel() {
+<span class="nc" id="L105">		return &quot;Constraint property drag and drop&quot;;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

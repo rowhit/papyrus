@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementTableTesterTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.nattable.requirement.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.nattable.requirement.tests.tester</a> &gt; <span class="el_source">RequirementTableTesterTest.java</span></div><h1>RequirementTableTesterTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.nattable.requirement.tests.tester;
+
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.infra.elementtypesconfigurations.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.sysml14.nattable.requirement.tester.RequirementTableTester;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * Tests on RequirementTableTester
+ */
+<span class="fc" id="L33">public class RequirementTableTesterTest {</span>
+
+	
+	@BeforeClass
+	public static void loadElementTypeSet (){
+<span class="fc" id="L38">		ElementTypeSetConfigurationRegistry.getInstance(); // FIXME : this should'nt be requirement papyrus element type fwk should provide a getter that initialize the tooling</span>
+<span class="fc" id="L39">	}</span>
+	
+	/**
+	 * Check that the tester don't allow null parameter
+	 */
+	@Test
+	public void testNull() {
+<span class="fc" id="L46">		RequirementTableTester tableRequirementTester = new RequirementTableTester();</span>
+<span class="fc" id="L47">		IStatus emptyNotAllowed = tableRequirementTester.isAllowed(null);</span>
+<span class="fc" id="L48">		Assert.assertEquals(&quot;The tester should not work on a null entry&quot;, IStatus.ERROR, emptyNotAllowed.getSeverity()); //$NON-NLS-1$</span>
+<span class="fc" id="L49">	}</span>
+
+	/**
+	 * Check that the tester don't allow non profiled parameter
+	 */
+	@Test
+	public void testMissingProfile() {
+<span class="fc" id="L56">		RequirementTableTester tableRequirementTester = new RequirementTableTester();</span>
+<span class="fc" id="L57">		org.eclipse.uml2.uml.Package pck = UMLFactory.eINSTANCE.createPackage();</span>
+<span class="fc" id="L58">		IStatus missingStereotypeNotAllowed = tableRequirementTester.isAllowed(pck);</span>
+<span class="fc" id="L59">		Assert.assertEquals(&quot;The tester should not work on a non profiled entry&quot;, IStatus.ERROR, missingStereotypeNotAllowed.getSeverity()); //$NON-NLS-1$</span>
+<span class="fc" id="L60">	}	</span>
+	
+	
+	/**
+	 * Check that the tester allow a requirement
+	 */
+	@Test
+	public void testRequirement() {
+<span class="fc" id="L68">		RequirementTableTester tableRequirementTester = new RequirementTableTester();</span>
+<span class="fc" id="L69">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L70">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty()); //$NON-NLS-1$</span>
+<span class="fc" id="L71">		Class requirement = model.createOwnedClass(&quot;requirement&quot;, false);//$NON-NLS-1$</span>
+<span class="fc" id="L72">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+<span class="fc" id="L73">		stereotypeApplicationHelper.applyStereotype(requirement, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L74">		IStatus missingStereotypeNotAllowed = tableRequirementTester.isAllowed(requirement);</span>
+<span class="fc" id="L75">		Assert.assertEquals(&quot;The tester should work on a requirement&quot;, IStatus.OK, missingStereotypeNotAllowed.getSeverity()); //$NON-NLS-1$</span>
+<span class="fc" id="L76">	}		</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

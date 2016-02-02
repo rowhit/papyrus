@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateAllocateHandler.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.nattable.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.nattable.handlers.allocation</a> &gt; <span class="el_source">CreateAllocateHandler.java</span></div><h1>CreateAllocateHandler.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.nattable.handlers.allocation;
+
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.utils.INattableModelManagerUtils;
+import org.eclipse.papyrus.sysml14.nattable.menu.handlers.AllocateHandler;
+
+/**
+ * This handler allows to create an Allocate object, only if the table is a PapyrusSysMLAllocationTable
+ *
+ *
+ */
+<span class="nc" id="L27">public class CreateAllocateHandler extends AllocateHandler {</span>
+
+	/**
+	 * the id used for the Papyrus SysML Allocation Table
+	 */
+	public static final String TABLE_ALLOCATION_TYPE = &quot;PapyrusSysMLAllocationTable&quot;; //$NON-NLS-1$
+
+	/**
+	 *
+	 * @see org.eclipse.papyrus.sysml14.nattable.menu.handlers.AbstractSysmlNattableCreateCommandHandler#setEnabled(java.lang.Object)
+	 *
+	 * @param evaluationContext
+	 */
+	@Override
+	public void setEnabled(Object evaluationContext) {
+<span class="nc" id="L42">		Command command = getCommand();</span>
+<span class="nc" id="L43">		boolean isEnabled = command.canExecute();</span>
+<span class="nc" id="L44">		INattableModelManager tableManager = INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart());</span>
+<span class="nc bnc" id="L45" title="All 4 branches missed.">		isEnabled = isEnabled &amp;&amp; tableManager.getTable().getTableConfiguration().getType().equals(TABLE_ALLOCATION_TYPE);</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">		if (isEnabled) {</span>
+<span class="nc" id="L47">			IElementType newElementType = getElementTypeToCreate();</span>
+<span class="nc" id="L48">			String id = newElementType.getId();</span>
+<span class="nc" id="L49">			isEnabled = tableManager.canCreateRowElement(id);</span>
+		}
+<span class="nc" id="L51">		setBaseEnabled(isEnabled);</span>
+
+<span class="nc" id="L53">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

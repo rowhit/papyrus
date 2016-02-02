@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PropertyPathUtil.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.util</a> &gt; <span class="el_source">PropertyPathUtil.java</span></div><h1>PropertyPathUtil.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Patrick Tessier (CEA LIST) - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.service.types.util;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * This class is used to calculus property path and block context in the context of SysML
+ * To do that the view inside the diagram is needed.
+ */
+public final class PropertyPathUtil {
+
+	/**
+	 * Constructor.
+	 *
+	 */
+<span class="nc" id="L35">	private PropertyPathUtil() {</span>
+<span class="nc" id="L36">	}</span>
+
+	/**
+	 * 
+	 * @param view
+	 *            the current view
+	 * @return the composite context from a view (it look for the first representation of a classifier)
+	 */
+	public static Classifier getCompositeContext(View view) {
+<span class="nc" id="L45">		View currentView = view;</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">		while (currentView != null) {</span>
+<span class="nc bnc" id="L47" title="All 4 branches missed.">			if (currentView instanceof Shape &amp;&amp; currentView.getElement() instanceof Classifier) {</span>
+<span class="nc" id="L48">				return (Classifier) currentView.getElement();</span>
+			}
+<span class="nc" id="L50">			currentView = (View) currentView.eContainer();</span>
+		}
+<span class="nc" id="L52">		return null;</span>
+	}
+
+	/**
+	 * 
+	 * @param view
+	 *            the view that references an element in the diagram
+	 * @return a list of properties defined by hierarchy of view, maybe an empty list
+	 */
+	public static List&lt;Property&gt; getPropertyListFromView(View view) {
+<span class="nc" id="L62">		ArrayList&lt;Property&gt; propertiesList = new ArrayList&lt;Property&gt;();</span>
+<span class="nc" id="L63">		View currentView = view;</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">		while (currentView != null) {</span>
+<span class="nc bnc" id="L65" title="All 4 branches missed.">			if (currentView instanceof Shape &amp;&amp; currentView.getElement() instanceof Property) {</span>
+<span class="nc" id="L66">				propertiesList.add((Property) currentView.getElement());</span>
+			}
+<span class="nc" id="L68">			currentView = (View) currentView.eContainer();</span>
+		}
+<span class="nc" id="L70">		return propertiesList;</span>
+	}
+
+	/**
+	 * A series of properties that identifies the source of the directed relationship in the context of the block specified by the
+	 * sourceContext property. The ordering of properties is from a property of the sourceContext block, through a property
+	 * of each intermediate block that types the preceding property, ending in a property with a type that owns or inherits the
+	 * source of the directed relationship. The source is not included in the propertyPath list. The same property might
+	 * appear more than once because a block can own a property with the same or specialized block as a type.
+	 * 
+	 * @param SourceView
+	 *            the view that represent the property
+	 *
+	 * @return the property path as defined in SysML, maybe an emptylist
+	 */
+	public static List&lt;Property&gt; getPropertyPath(View sourceView) {
+<span class="nc" id="L86">		List&lt;Property&gt; propertyList = getPropertyListFromView(sourceView);</span>
+		// remove the first property
+<span class="nc bnc" id="L88" title="All 2 branches missed.">		if (propertyList.size() != 0) {</span>
+<span class="nc" id="L89">			propertyList.remove(0);</span>
+<span class="nc" id="L90">			Collections.reverse(propertyList);</span>
+		}
+<span class="nc" id="L92">		return propertyList;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

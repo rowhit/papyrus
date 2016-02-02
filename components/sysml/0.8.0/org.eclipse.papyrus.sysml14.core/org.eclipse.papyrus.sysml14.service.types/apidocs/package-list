@@ -1,0 +1,7 @@
+org.eclipse.papyrus.sysml14.service.types
+org.eclipse.papyrus.sysml14.service.types.advice
+org.eclipse.papyrus.sysml14.service.types.command
+org.eclipse.papyrus.sysml14.service.types.command.wrapper
+org.eclipse.papyrus.sysml14.service.types.matcher
+org.eclipse.papyrus.sysml14.service.types.matcher.internal
+org.eclipse.papyrus.sysml14.service.types.util
