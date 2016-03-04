@@ -16,6 +16,13 @@
 -->
 <news>
     <item
+		date="2016-03-04"
+		title="Papyrus used to simplify distribution of computing tasks in complex systems"
+		link="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/simpler-distribution-of-computing-tasks-in-complex-systems-advanced-manufacturing.aspx">
+		<p>Researchers at List, a CEA Tech institute, have developed a technique and related tools based on Papyrus for distributing software across machines in complex systems. This novel technique is faster and more efficient than the traditional method. <a href="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/simpler-distribution-of-computing-tasks-in-complex-systems-advanced-manufacturing.aspx">Details here.</a>
+        </p>
+	</item>
+    <item
 		date="2015-12-21"
 		title="EclipseCon NA 2016"
 		link="https://www.eclipsecon.org/na2016/">
