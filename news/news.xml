@@ -16,6 +16,13 @@
 -->
 <news>
     <item
+		date="2016-03-08"
+		title="Papyrus, a full-fledged framework for empowering model-based engineering for better complex systems"
+		link="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/model-based-engineering-for-better-complex-systems-systems-engineering.aspx">
+		<p>Thanks to Papyrus, engineers from various industrial domains can put model-based engineering to work for their systems and software engineering projects. <a href="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/model-based-engineering-for-better-complex-systems-systems-engineering.aspx">Details here.</a>
+        </p>
+	</item>
+    <item
 		date="2016-03-04"
 		title="Papyrus used to simplify distribution of computing tasks in complex systems"
 		link="http://www.cea-tech.fr/cea-tech/english/Pages/news/latest-news/simpler-distribution-of-computing-tasks-in-complex-systems-advanced-manufacturing.aspx">
