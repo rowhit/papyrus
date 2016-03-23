@@ -40,20 +40,6 @@
           url="http://www.east-adl.info/"/>
       <id>org.eclipse.papyrus.extra.eastadl.feature</id>
     </components>
-    <components
-        name="RobotML"
-        provider="Eclipse Modeling Project"
-        description="Modeling language and tools for mobile robotic applications"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/robotml_32_32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <overview
-          summary="Modeling language and tools for mobile robotic applications"/>
-      <id>org.eclipse.papyrus.extra.robotml.feature</id>
-    </components>
   </categories>
   <categories
       name="Modeler extensions"
@@ -112,35 +98,6 @@
       <overview
           summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
       <id>org.eclipse.papyrus.layers.feature</id>
-    </components>
-    <components
-        name="Moka"
-        provider="Eclipse Modeling Project"
-        description="Moka is a Papyrus module for execution, animation and debugging of UML models."
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/moka.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka</sitesURLS>
-      <overview
-          summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
-      <id>org.eclipse.papyrus.extra.moka.feature</id>
-    </components>
-    <components
-        name="Qompass"
-        provider="Eclipse Modeling Project"
-        description="Component based design methodology"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/qompass-32x32.png"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <overview
-          summary="Component based design methodology based on:&#xA;&#x9;- A profile derived from a flexible component model (FCM) with&#xA;&#x9;&#x9;- extensible port definitions (kind)&#xA;&#x9;&#x9;- extensible set of interaction components (connectors)&#xA;&#x9;&#x9;- extensible set of container services&#xA;&#x9;- A library of predefined port kinds&#xA;&#x9;- A library of interaction components along with their implementations&#xA;&#x9;- The tool chain supporting a set of model-to-model transformation (connector and container expansion)"/>
-      <id>org.eclipse.papyrus.extra.qompass.designer.basic.feature</id>
     </components>
     <components
         name="RSA Model Importer"
