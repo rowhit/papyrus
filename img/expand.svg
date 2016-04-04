@@ -14,10 +14,10 @@
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="rss.svg"
+   sodipodi:docname="expand.svg"
    version="1.0"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="C:\wamp\www\papyrus\img\rss.png"
+   inkscape:export-filename="C:\wamp\www\papyrus\img\expand.png"
    inkscape:export-xdpi="5.625"
    inkscape:export-ydpi="5.625">
   <defs
@@ -29,14 +29,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="168.07894"
-     inkscape:cy="119.48269"
+     inkscape:zoom="0.7"
+     inkscape:cx="-275.00927"
+     inkscape:cy="198.07758"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:window-width="1920"
-     inkscape:window-height="1178"
-     inkscape:window-x="2552"
+     inkscape:window-width="2560"
+     inkscape:window-height="1378"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      showgrid="false"
      inkscape:window-maximized="1" />
@@ -82,10 +82,22 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-373.642,-318.344)">
-    <path
-       style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.875;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.875, 1.75000000000000000;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 45.984375 10.505859 C 26.324298 10.505859 10.496094 26.332111 10.496094 45.992188 L 10.496094 210.00781 C 10.496094 229.66789 26.324298 245.49414 45.984375 245.49414 L 210.01562 245.49414 C 229.6757 245.49414 245.50391 229.66789 245.50391 210.00781 L 245.50391 45.992188 C 245.50391 26.332111 229.6757 10.505859 210.01562 10.505859 L 45.984375 10.505859 z M 53.679688 55.470703 C 153.10809 60.086963 206.35815 132.23762 207.0293 208.37891 L 175.83203 207.93945 C 177.19695 159.23596 141.16587 87.672383 54.558594 86.226562 L 53.679688 55.470703 z M 54.119141 106.43945 C 118.82521 109.8149 154.73966 156.11247 155.62109 208.37891 L 125.30273 208.37891 C 124.79972 162.43814 93.561889 138.38412 54.193359 136.71289 L 54.119141 106.43945 z M 75.009766 165.91797 A 21.438237 20.816838 0 0 1 96.447266 186.73633 A 21.438237 20.816838 0 0 1 75.009766 207.55273 A 21.438237 20.816838 0 0 1 53.572266 186.73633 A 21.438237 20.816838 0 0 1 75.009766 165.91797 z "
-       transform="translate(373.642,318.344)"
-       id="rect1942" />
+    <g
+       id="g4148"
+       transform="matrix(1.2630832,0,0,1.2630263,-151.80807,-97.141265)"
+       inkscape:export-xdpi="4.2894864"
+       inkscape:export-ydpi="4.2894864"
+       style="stroke:#333333">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4136"
+         d="m 517.34521,343.45703 0,173.69393"
+         style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:11.87596893;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:11.87596893;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 603.95941,430.30399 -173.22839,0"
+         id="path4138"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>

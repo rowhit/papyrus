@@ -52,6 +52,9 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
+                        <a href="#applications">Applications</a>
+                    </li>
+                    <li class="page-scroll">
                         <a href="#technologies">Technologies</a>
                     </li>
                     <li class="page-scroll">
@@ -85,18 +88,37 @@
                 </div>
                 <div class="col-md-4">
 
-                    <h1 class="news-title">News &amp; Events <a href="news/index.php"><img src="img/rss.png" alt="RSS"></a></h1>
-                    <div class="well news-well">
+                    <!--<div class="panel panel-default news-block">-->
+                      <div class="well news-well">
                         <?php
                             require_once ('news/newstohtml.php');
                             $papyrusnews = news_to_html("news/news.xml", "", "", "", false, "long", "5");
                             echo $papyrusnews;
                         ?>
-                            <p>
-                                <button type="button" class="btn btn-lg btn-success custom-success-btn" onclick="location.href='news.php'">More news...</button>
-                            </p>
+                      </div>
+                        
+                    <!--</div>-->
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                        <div class="btn-group btn-group-xs" role="group">
+                            <button type="button" class="btn btn-default" onclick="location.href='news.php'"><img src="img/expand.png" alt="Expand"></button>
+                        </div>
+                        <div class="btn-group btn-group-xs" role="group">
+                            <button type="button" class="btn btn-default" onclick="location.href='news/index.php'"><img src="img/rss.png" alt="RSS"></button>
+                        </div>
                     </div>
-
+                    
+                    <div class="well testimonial">
+                        <?php
+                            require_once ('quotes/quotes2html.php');
+                            $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 1);
+                            echo $papyrusquotes;
+                        ?>
+                    </div>
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                        <div class="btn-group btn-group-xs" role="group">
+                            <button type="button" class="btn btn-default" onclick="location.href='testimonials.html#testimonials'"><img src="img/expand.png" alt="Expand"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <br>
@@ -128,7 +150,7 @@
 
         </div>
     </section>
-    <section id="industrial" class="indsutrial-section">
+    <section id="applications" class="industrial-section">
 
         <div class="container">
             <div class="row">
@@ -138,37 +160,37 @@
                     <h1 class="section-title wrap">Industry ready, academia friendly</h1>
 
 
-                    <p class="text-justify">Papyrus is an industrial-grade open source Model-Based Engineering tool. Papyrus has notably been used succesfuly in industrial projects and is the base platform for several industrial modeling tools.
+                    <p class="text-justify">Papyrus is an industrial-grade open source Model-Based Engineering tool. Papyrus has notably been used successfuly in industrial projects and is the base platform for several industrial modeling tools.
                     </p>
-                    <p class="text-justify">Also, as part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>. In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industrial Consortium</a> has been setup.
+                    <h2 class="feature-heading-white">Papyrus Use Case Stories</h2>
+                    <p class="text-justify">Have a look to our detailed use case stories to learn how Papyrus has been applied to enable MBE in practice: 
+                    </p>
+                    <div class="row">
+                        
+                        <?php
+                                require_once ('applications/applications2html.php');
+                                $papyrusapplication = applications_to_html("applications/applications.xml", 3);
+                                echo $papyrusapplication;
+                        ?>
+                    <p>
+                        <button type="button" class="btn btn-lg btn-success custom-white-btn testimonial-btn" onclick="location.href='testimonials.html'"><img src="img/thumbup.png" alt="Testimonials">&nbsp;Discover more successful applications of Papyrus</button>
+                    </p>
+     
+                    </div>
+                    <h2 class="feature-heading-white">A MBE solution for industrial and academic applications</h2>
+                    <p class="text-justify">As part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>.
+                    </p>
+                    <p class="text-justify">
+                        In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industrial Consortium</a> has been setup.
                     </p>
                     <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes.
                     </p>
+   
+
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="feature-heading-white">Papyrus Use Case Stories</h2>
-                    <div class="list-group text-justify">
-                        <a href="resources/spacebel-usecasestory.pdf" class="list-group-item">&quot;From napkin sketches to production software&quot;  <span class="badge">+</span></a>
-                        <a href="resources/sherpa-usecasestory.pdf" class="list-group-item">&quot;Sherpa Engineering business empowered by Papyrus&quot; <span class="badge">+</span></a>
-                        <a href="resources/plasticomnium-usecasestory.pdf" class="list-group-item">&quot;From document-centric to model-centric&quot; <span class="badge">+</span></a>
-                    </div>
-                </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <h2 class="feature-heading-white">Testimonials</h2>
-                    <?php
-                        require_once ('quotes/quotes2html.php');
-                        $papyrusquotes = quoteshort_to_html("quotes/quotes.xml", 1);
-                        echo $papyrusquotes;
-                    ?>
-                </div>
-                <div class="col-md-12">
-                    <p class="testimonials">
-                        <button type="button" class="btn btn-lg btn-success custom-white-btn" onclick="location.href='testimonials.html'"><img src="img/thumbup.png" alt="Testimonials">&nbsp;Learn more about successful industrial and academic uses of Papyrus</button>
-                    </p>
-                </div>
-            </div>
+            
         </div>
     </section>
 
