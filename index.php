@@ -159,7 +159,14 @@
                     <img class="img-responsive center-block" src="img/indusrial.png" alt="Industrial">
                     <h1 class="section-title wrap">Industry ready, academia friendly</h1>
 
-
+                    <div class="row papyrus-video">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/qaypKeO5AUk?autoplay=0&modestbranding=1&rel=0&controls=2&theme=light&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <p class="text-justify">Papyrus is an industrial-grade open source Model-Based Engineering tool. Papyrus has notably been used successfuly in industrial projects and is the base platform for several industrial modeling tools.
                     </p>
                     <h2 class="feature-heading-white">Papyrus Use Case Stories</h2>

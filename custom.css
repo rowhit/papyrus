@@ -371,6 +371,11 @@ li.footer-link > a:visited {
     hyphens: auto;
 }
 
+
+.papyrus-video {
+    margin-bottom: 50px;
+}
+
 /*---------------- Quotes -----------------------*/
 .quote-well {
     background-color: transparent;
