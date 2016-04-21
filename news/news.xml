@@ -15,6 +15,13 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+	<item
+		date="2016-04-21"
+		title="Eclipse Newsletter on Model-Based Engineering"
+		link="https://www.eclipse.org/community/eclipse_newsletter/2016/april/">
+		<p>This month, the Eclipse Newsletter focuses on Model-Based Engineering. Some applications of Papyrus for MBE and the last developments of Papyrus are presented in four detailed articles. <a href="https://www.eclipse.org/community/eclipse_newsletter/2016/april/">Details here.</a>
+        </p>
+	</item>
     <item
 		date="2016-03-08"
 		title="Papyrus, a full-fledged framework for empowering model-based engineering for better complex systems"
