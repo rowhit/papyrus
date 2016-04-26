@@ -15,6 +15,17 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+    <item
+		date="2016-04-26"
+		title="Talks at EclipseCon France 2016"
+		link="https://www.eclipsecon.org/france2016/">
+		<p>Some presentations about or related to Papyrus will be given during EclipseCon France 2016 : 
+            <ul>
+                <li><a href="https://www.eclipsecon.org/france2016/session/lessons-learned-migrating-industrial-development-proprietary-commercial-tool-papyrus">"Lessons Learned from Migrating Industrial Development from Proprietary Commercial Tool to Papyrus"</a></li>
+                <li><a href="https://www.eclipsecon.org/france2016/session/close-encounters-requirements-sysml">"Close Encounters of Requirements with SysML"</a></li>
+			</ul>
+        </p>
+	</item>
 	<item
 		date="2016-04-21"
 		title="Eclipse Newsletter on Model-Based Engineering"
@@ -40,7 +51,7 @@
 		date="2015-12-21"
 		title="EclipseCon NA 2016"
 		link="https://www.eclipsecon.org/na2016/">
-		<p>Some presentation about or related to Papyrus will be given during EclipseCon NA 2016 : 
+		<p>Some presentations about or related to Papyrus will be given during EclipseCon NA 2016 : 
             <ul>
 			<li><a href="https://www.eclipsecon.org/na2016/session/uml-gone-wild-lego-experience">"UML gone wild: the Lego experience"</a></li>
 			<li><a href="https://www.eclipsecon.org/na2016/session/papyrus-real-time-executable-modeling-eclipse">"Papyrus for Real Time: Executable modeling on Eclipse"</a></li>
