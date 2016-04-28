@@ -44,6 +44,21 @@
   <categories
       name="Modeler extensions"
       description="Extension of the tool">
+    </components>
+        <components
+        name="Papyrus for Requirements"
+        provider="Eclipse Modeling Project"
+        description="Model-based Requirements Engineering "
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/Papyrus_4_Requirements_logo_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
+      <overview
+          summary="Papyrus for Requirements helps you to specify and analyze requirements in the context of systems modeling. It aims to cover the Specification, Management, Analysis and Validation-Verification activities of Requirements Engineering. Papyrus for Requirements depends on the components Papyrus SysML and Papyrus for Metrics."/>
+      <id>org.eclipse.papyrus.requirements.feature</id>
+    </components> 
     <components
         name="Diagram generation"
         provider="Eclipse Modeling Project"
