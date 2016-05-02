@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ElementPropertyPathImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">ElementPropertyPathImpl.java</span></div><h1>ElementPropertyPathImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath;
+
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Element Property Path&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ElementPropertyPathImpl#getBase_Element &lt;em&gt;Base Element&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ElementPropertyPathImpl#getPropertyPath &lt;em&gt;Property Path&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public abstract class ElementPropertyPathImpl extends MinimalEObjectImpl.Container implements ElementPropertyPath {
+	/**
+	 * The cached value of the '{@link #getBase_Element() &lt;em&gt;Base Element&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Element()
+	 * @generated
+	 * @ordered
+	 */
+	protected Element base_Element;
+
+	/**
+	 * The cached value of the '{@link #getPropertyPath() &lt;em&gt;Property Path&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getPropertyPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Property&gt; propertyPath;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ElementPropertyPathImpl() {
+<span class="fc" id="L77">		super();</span>
+<span class="fc" id="L78">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L87">		return BlocksPackage.Literals.ELEMENT_PROPERTY_PATH;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Element getBase_Element() {
+<span class="nc bnc" id="L96" title="All 4 branches missed.">		if (base_Element != null &amp;&amp; base_Element.eIsProxy()) {</span>
+<span class="nc" id="L97">			InternalEObject oldBase_Element = (InternalEObject)base_Element;</span>
+<span class="nc" id="L98">			base_Element = (Element)eResolveProxy(oldBase_Element);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">			if (base_Element != oldBase_Element) {</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L101">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT, oldBase_Element, base_Element));</span>
+			}
+		}
+<span class="nc" id="L104">		return base_Element;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Element basicGetBase_Element() {
+<span class="nc" id="L113">		return base_Element;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Element(Element newBase_Element) {
+<span class="fc" id="L122">		Element oldBase_Element = base_Element;</span>
+<span class="fc" id="L123">		base_Element = newBase_Element;</span>
+<span class="pc bpc" id="L124" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L125">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT, oldBase_Element, base_Element));</span>
+<span class="fc" id="L126">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Property&gt; getPropertyPath() {
+<span class="nc bnc" id="L134" title="All 2 branches missed.">		if (propertyPath == null) {</span>
+<span class="nc" id="L135">			propertyPath = new EObjectResolvingEList&lt;Property&gt;(Property.class, this, BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH);</span>
+		}
+<span class="nc" id="L137">		return propertyPath;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getPropertyPath(String name, Type type) {
+<span class="nc" id="L146">		return getPropertyPath(name, type, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getPropertyPath(String name, Type type, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		propertyPathLoop: for (Property propertyPath : getPropertyPath()) {</span>
+<span class="nc bnc" id="L156" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(propertyPath))</span>
+<span class="nc" id="L157">				continue propertyPathLoop;</span>
+<span class="nc bnc" id="L158" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(propertyPath.getName()) : name.equals(propertyPath.getName())))</span>
+<span class="nc" id="L159">				continue propertyPathLoop;</span>
+<span class="nc bnc" id="L160" title="All 4 branches missed.">			if (type != null &amp;&amp; !type.equals(propertyPath.getType()))</span>
+<span class="nc" id="L161">				continue propertyPathLoop;</span>
+<span class="nc" id="L162">			return propertyPath;</span>
+		}
+<span class="nc" id="L164">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L174" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT:
+<span class="nc bnc" id="L176" title="All 2 branches missed.">				if (resolve) return getBase_Element();</span>
+<span class="nc" id="L177">				return basicGetBase_Element();</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH:
+<span class="nc" id="L179">				return getPropertyPath();</span>
+		}
+<span class="nc" id="L181">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L192" title="2 of 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT:
+<span class="fc" id="L194">				setBase_Element((Element)newValue);</span>
+<span class="fc" id="L195">				return;</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH:
+<span class="nc" id="L197">				getPropertyPath().clear();</span>
+<span class="nc" id="L198">				getPropertyPath().addAll((Collection&lt;? extends Property&gt;)newValue);</span>
+<span class="nc" id="L199">				return;</span>
+		}
+<span class="nc" id="L201">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L202">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L211" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT:
+<span class="nc" id="L213">				setBase_Element((Element)null);</span>
+<span class="nc" id="L214">				return;</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH:
+<span class="nc" id="L216">				getPropertyPath().clear();</span>
+<span class="nc" id="L217">				return;</span>
+		}
+<span class="nc" id="L219">		super.eUnset(featureID);</span>
+<span class="nc" id="L220">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L229" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT:
+<span class="nc bnc" id="L231" title="All 2 branches missed.">				return base_Element != null;</span>
+			case BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH:
+<span class="nc bnc" id="L233" title="All 4 branches missed.">				return propertyPath != null &amp;&amp; !propertyPath.isEmpty();</span>
+		}
+<span class="nc" id="L235">		return super.eIsSet(featureID);</span>
+	}
+
+} //ElementPropertyPathImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

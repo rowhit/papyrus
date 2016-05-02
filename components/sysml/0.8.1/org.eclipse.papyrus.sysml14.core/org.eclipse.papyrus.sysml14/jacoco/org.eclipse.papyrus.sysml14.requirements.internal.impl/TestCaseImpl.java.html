@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TestCaseImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements.internal.impl</a> &gt; <span class="el_source">TestCaseImpl.java</span></div><h1>TestCaseImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.requirements.TestCase;
+
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Operation;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Test Case&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl#getBase_Behavior &lt;em&gt;Base Behavior&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl#getBase_Operation &lt;em&gt;Base Operation&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCase {
+	/**
+	 * The cached value of the '{@link #getBase_Behavior() &lt;em&gt;Base Behavior&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Behavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior base_Behavior;
+
+	/**
+	 * The cached value of the '{@link #getBase_Operation() &lt;em&gt;Base Operation&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Operation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Operation base_Operation;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected TestCaseImpl() {
+<span class="fc" id="L70">		super();</span>
+<span class="fc" id="L71">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L80">		return RequirementsPackage.Literals.TEST_CASE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Behavior getBase_Behavior() {
+<span class="nc bnc" id="L89" title="All 4 branches missed.">		if (base_Behavior != null &amp;&amp; base_Behavior.eIsProxy()) {</span>
+<span class="nc" id="L90">			InternalEObject oldBase_Behavior = (InternalEObject)base_Behavior;</span>
+<span class="nc" id="L91">			base_Behavior = (Behavior)eResolveProxy(oldBase_Behavior);</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			if (base_Behavior != oldBase_Behavior) {</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L94">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.TEST_CASE__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));</span>
+			}
+		}
+<span class="nc" id="L97">		return base_Behavior;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Behavior basicGetBase_Behavior() {
+<span class="nc" id="L106">		return base_Behavior;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Behavior(Behavior newBase_Behavior) {
+<span class="nc" id="L115">		Behavior oldBase_Behavior = base_Behavior;</span>
+<span class="nc" id="L116">		base_Behavior = newBase_Behavior;</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L118">			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.TEST_CASE__BASE_BEHAVIOR, oldBase_Behavior, base_Behavior));</span>
+<span class="nc" id="L119">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Operation getBase_Operation() {
+<span class="pc bpc" id="L127" title="2 of 4 branches missed.">		if (base_Operation != null &amp;&amp; base_Operation.eIsProxy()) {</span>
+<span class="nc" id="L128">			InternalEObject oldBase_Operation = (InternalEObject)base_Operation;</span>
+<span class="nc" id="L129">			base_Operation = (Operation)eResolveProxy(oldBase_Operation);</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">			if (base_Operation != oldBase_Operation) {</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L132">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.TEST_CASE__BASE_OPERATION, oldBase_Operation, base_Operation));</span>
+			}
+		}
+<span class="fc" id="L135">		return base_Operation;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Operation basicGetBase_Operation() {
+<span class="nc" id="L144">		return base_Operation;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Operation(Operation newBase_Operation) {
+<span class="fc" id="L153">		Operation oldBase_Operation = base_Operation;</span>
+<span class="fc" id="L154">		base_Operation = newBase_Operation;</span>
+<span class="pc bpc" id="L155" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L156">			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.TEST_CASE__BASE_OPERATION, oldBase_Operation, base_Operation));</span>
+<span class="fc" id="L157">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L166" title="All 3 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.TEST_CASE__BASE_BEHAVIOR:
+<span class="nc bnc" id="L168" title="All 2 branches missed.">				if (resolve) return getBase_Behavior();</span>
+<span class="nc" id="L169">				return basicGetBase_Behavior();</span>
+			case RequirementsPackage.TEST_CASE__BASE_OPERATION:
+<span class="nc bnc" id="L171" title="All 2 branches missed.">				if (resolve) return getBase_Operation();</span>
+<span class="nc" id="L172">				return basicGetBase_Operation();</span>
+		}
+<span class="nc" id="L174">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L184" title="2 of 3 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.TEST_CASE__BASE_BEHAVIOR:
+<span class="nc" id="L186">				setBase_Behavior((Behavior)newValue);</span>
+<span class="nc" id="L187">				return;</span>
+			case RequirementsPackage.TEST_CASE__BASE_OPERATION:
+<span class="fc" id="L189">				setBase_Operation((Operation)newValue);</span>
+<span class="fc" id="L190">				return;</span>
+		}
+<span class="nc" id="L192">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L193">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L202" title="All 3 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.TEST_CASE__BASE_BEHAVIOR:
+<span class="nc" id="L204">				setBase_Behavior((Behavior)null);</span>
+<span class="nc" id="L205">				return;</span>
+			case RequirementsPackage.TEST_CASE__BASE_OPERATION:
+<span class="nc" id="L207">				setBase_Operation((Operation)null);</span>
+<span class="nc" id="L208">				return;</span>
+		}
+<span class="nc" id="L210">		super.eUnset(featureID);</span>
+<span class="nc" id="L211">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L220" title="All 3 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.TEST_CASE__BASE_BEHAVIOR:
+<span class="nc bnc" id="L222" title="All 2 branches missed.">				return base_Behavior != null;</span>
+			case RequirementsPackage.TEST_CASE__BASE_OPERATION:
+<span class="nc bnc" id="L224" title="All 2 branches missed.">				return base_Operation != null;</span>
+		}
+<span class="nc" id="L226">		return super.eIsSet(featureID);</span>
+	}
+
+} //TestCaseImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysMLResource.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.util</a> &gt; <span class="el_source">SysMLResource.java</span></div><h1>SysMLResource.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.util;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.resource.UMLResource;
+
+/**
+ * Utility class to get informations on SysML resources
+ *
+ */
+public final class SysMLResource {
+
+<span class="nc" id="L33">	private SysMLResource(){</span>
+
+<span class="nc" id="L35">	}</span>
+
+	public static final String PROFILES_PATHMAP = &quot;pathmap://SysML14_PROFILES/&quot;; //$NON-NLS-1$	
+	
+	public static final String PROFILE_PATH = PROFILES_PATHMAP+&quot;SysML.profile.uml&quot;; //$NON-NLS-1$
+
+	public static final String PROFILE_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML&quot;; //$NON-NLS-1$
+
+	public static final String LIBRARIES_PATHMAP = &quot;pathmap://SysML14_LIBRARIES/&quot;; //$NON-NLS-1$	 
+	
+	public static final String LIBRARY_PATH = LIBRARIES_PATHMAP+&quot;SysML-Standard-Library.uml&quot;; //$NON-NLS-1$
+
+	public static final String LIBRARY_ROOT_ID = &quot;SysML.package_packagedElement_Libraries&quot;; //$NON-NLS-1$
+	
+	public static final String QUDV_LIBRARY_PATH = LIBRARIES_PATHMAP+&quot;QUDV.uml&quot;; //$NON-NLS-1$
+
+	public static final String QUDV_LIBRARY_ROOT_ID = &quot;QUDV&quot;; //$NON-NLS-1$
+	
+	private static final String UNNAMED = &quot;unnamed&quot;; //$NON-NLS-1$
+
+	/**
+	 * Creates a model with SysML profile applied
+	 *
+	 * @param resourceSet
+	 *        the resource set in which to create the model
+	 * @return the created model
+	 */
+	public static Model createSysMLModel(ResourceSet resourceSet) {//, String modelName
+<span class="fc" id="L63">		return createSysMLModel(resourceSet, UNNAMED+&quot;.&quot;+UMLResource.FILE_EXTENSION, UNNAMED); //$NON-NLS-1$</span>
+	}
+
+	/**
+	 * Creates a model with SysML profile applied
+	 *  
+	 * @param resourceSet the resource set in which to create the model
+	 * @param resourceName name of the resource
+	 * @param modelName name of the model
+	 * @return the created model
+	 */
+	public static Model createSysMLModel(ResourceSet resourceSet, String resourceName, String modelName) {
+<span class="fc" id="L75">		Model model = UMLFactory.eINSTANCE.createModel();</span>
+<span class="fc" id="L76">		model.setName(modelName);</span>
+<span class="fc" id="L77">		Resource resource = resourceSet.createResource(URI.createURI(resourceName));</span>
+<span class="fc" id="L78">		resource.getContents().add(model);</span>
+		// Apply UML Standard profile
+		// Retrieve standard profile
+<span class="fc" id="L81">		Resource standardProfileResource = resourceSet.getResource(URI.createURI(UMLResource.STANDARD_PROFILE_URI), true);</span>
+<span class="fc" id="L82">		Profile umlStdProfile = (Profile) EcoreUtil.getObjectByType(standardProfileResource.getContents(), UMLPackage.Literals.PACKAGE);</span>
+		// Apply to the model
+<span class="fc" id="L84">		model.applyProfile(umlStdProfile);</span>
+		// Retrieve SysML profile and apply with subprofile
+<span class="fc" id="L86">		Resource sysmlProfileResource = resourceSet.getResource(URI.createURI(SysMLResource.PROFILE_PATH), true);</span>
+<span class="fc" id="L87">		Profile sysmlProfile = (Profile) EcoreUtil.getObjectByType(sysmlProfileResource.getContents(), UMLPackage.Literals.PACKAGE);</span>
+<span class="fc" id="L88">		model.applyProfile(sysmlProfile);</span>
+<span class="fc" id="L89">		return model;</span>
+	}
+
+	/**
+	 * Recursive function
+	 * @param element the initial uml2 element
+	 * @param profileLookup the profil we are looking for
+	 * @return a package, a model profiled by sysml or null
+	 */
+	public static Package getFirstSysMLMatchingContainerProfiledBySysMLProfile(Element element){
+<span class="fc" id="L99">		return getFirstMatchingContainerProfiledBy(element,SysMLResource.PROFILE_URI);</span>
+	}
+
+	/**
+	 * Recursive function
+	 * @param element the initial uml2 element
+	 * @param profileUri the profil we are looking for
+	 * @return a package, a model or null
+	 */
+	public static Package getFirstMatchingContainerProfiledBy(Element element, String profileUri){
+<span class="fc" id="L109">		EList&lt;Profile&gt; appliedProfiles = null;</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">		if(element instanceof Package){</span>
+<span class="fc" id="L111">			Package pakage = (Package)element;</span>
+			
+<span class="fc" id="L113">			appliedProfiles = pakage.getAppliedProfiles();</span>
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">			if (appliedProfiles!=null){</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">				for (Profile appliedProfile : appliedProfiles) {</span>
+					//as soon as we match with the profile we return true
+<span class="pc bpc" id="L117" title="1 of 4 branches missed.">					if(appliedProfile.getURI()!=null &amp;&amp; appliedProfile.getURI().compareTo(profileUri)==0){</span>
+<span class="fc" id="L118">						return pakage;</span>
+					}
+				}		
+			}
+
+<span class="fc" id="L123">			Package myOwnerPackage = (Package) element.getOwner();</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">			if(myOwnerPackage!=null ){</span>
+<span class="fc" id="L125">				return getFirstMatchingContainerProfiledBy(myOwnerPackage, profileUri);</span>
+			}
+		}
+		//If no match then look at the nearest package
+<span class="fc bfc" id="L129" title="All 2 branches covered.">		if(element!=null){</span>
+<span class="fc" id="L130">			Package myNearestPackage = element.getNearestPackage();</span>
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">			if(myNearestPackage!=element){</span>
+<span class="nc" id="L132">				return getFirstMatchingContainerProfiledBy(myNearestPackage, profileUri);</span>
+			}
+		}
+		//If we are here, it means we have no lookuped profile attached at one container of our element.
+<span class="fc" id="L136">		return null;</span>
+	}
+
+
+	/**
+	 * @param element
+	 * @return true if the element is profiled with SysML profile
+	 */
+	public static boolean isSysMLProfileApplied(Element element){
+<span class="nc" id="L145">		return isProfiledByProfile(element,SysMLResource.PROFILE_URI);</span>
+	}
+
+
+	/**
+	 * @param element
+	 * @param profileUri
+	 * @return true if the element is profiled by the given profileUri
+	 */
+	public static boolean isProfiledByProfile(Element element, String profileUri){
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		return getFirstMatchingContainerProfiledBy(element,profileUri)!=null;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

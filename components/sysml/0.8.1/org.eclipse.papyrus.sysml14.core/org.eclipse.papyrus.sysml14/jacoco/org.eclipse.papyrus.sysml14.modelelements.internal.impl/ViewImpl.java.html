@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ViewImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.modelelements.internal.impl</a> &gt; <span class="el_source">ViewImpl.java</span></div><h1>ViewImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.modelelements.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+import org.eclipse.papyrus.sysml14.modelelements.Stakeholder;
+import org.eclipse.papyrus.sysml14.modelelements.View;
+import org.eclipse.papyrus.sysml14.modelelements.Viewpoint;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;View&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl#getStakeholder &lt;em&gt;Stakeholder&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl#getViewPoint &lt;em&gt;View Point&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ViewImpl extends MinimalEObjectImpl.Container implements View {
+	/**
+	 * The cached value of the '{@link #getBase_Class() &lt;em&gt;Base Class&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Class()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.eclipse.uml2.uml.Class base_Class;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ViewImpl() {
+<span class="fc" id="L64">		super();</span>
+<span class="fc" id="L65">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L74">		return ModelelementsPackage.Literals.VIEW;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+<span class="pc bpc" id="L83" title="2 of 4 branches missed.">		if (base_Class != null &amp;&amp; base_Class.eIsProxy()) {</span>
+<span class="nc" id="L84">			InternalEObject oldBase_Class = (InternalEObject)base_Class;</span>
+<span class="nc" id="L85">			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">			if (base_Class != oldBase_Class) {</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L88">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.VIEW__BASE_CLASS, oldBase_Class, base_Class));</span>
+			}
+		}
+<span class="fc" id="L91">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
+<span class="nc" id="L100">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+<span class="fc" id="L109">		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;</span>
+<span class="fc" id="L110">		base_Class = newBase_Class;</span>
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L112">			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.VIEW__BASE_CLASS, oldBase_Class, base_Class));</span>
+<span class="fc" id="L113">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Stakeholder&gt; getStakeholder() {
+		// TODO: implement this method to return the 'Stakeholder' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L123">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Viewpoint getViewPoint() {
+<span class="fc" id="L132">		Viewpoint viewPoint = basicGetViewPoint();</span>
+<span class="pc bpc" id="L133" title="2 of 4 branches missed.">		return viewPoint != null &amp;&amp; viewPoint.eIsProxy() ? (Viewpoint)eResolveProxy((InternalEObject)viewPoint) : viewPoint;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Viewpoint basicGetViewPoint() {
+		// TODO: implement this method to return the 'View Point' reference
+		// -&gt; do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L145">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setViewPoint(Viewpoint newViewPoint) {
+		// TODO: implement this method to set the 'View Point' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L156">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L166" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEW__BASE_CLASS:
+<span class="nc bnc" id="L168" title="All 2 branches missed.">				if (resolve) return getBase_Class();</span>
+<span class="nc" id="L169">				return basicGetBase_Class();</span>
+			case ModelelementsPackage.VIEW__STAKEHOLDER:
+<span class="nc" id="L171">				return getStakeholder();</span>
+			case ModelelementsPackage.VIEW__VIEW_POINT:
+<span class="nc bnc" id="L173" title="All 2 branches missed.">				if (resolve) return getViewPoint();</span>
+<span class="nc" id="L174">				return basicGetViewPoint();</span>
+		}
+<span class="nc" id="L176">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L187" title="3 of 4 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEW__BASE_CLASS:
+<span class="fc" id="L189">				setBase_Class((org.eclipse.uml2.uml.Class)newValue);</span>
+<span class="fc" id="L190">				return;</span>
+			case ModelelementsPackage.VIEW__STAKEHOLDER:
+<span class="nc" id="L192">				getStakeholder().clear();</span>
+<span class="nc" id="L193">				getStakeholder().addAll((Collection&lt;? extends Stakeholder&gt;)newValue);</span>
+<span class="nc" id="L194">				return;</span>
+			case ModelelementsPackage.VIEW__VIEW_POINT:
+<span class="nc" id="L196">				setViewPoint((Viewpoint)newValue);</span>
+<span class="nc" id="L197">				return;</span>
+		}
+<span class="nc" id="L199">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L200">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L209" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEW__BASE_CLASS:
+<span class="nc" id="L211">				setBase_Class((org.eclipse.uml2.uml.Class)null);</span>
+<span class="nc" id="L212">				return;</span>
+			case ModelelementsPackage.VIEW__STAKEHOLDER:
+<span class="nc" id="L214">				getStakeholder().clear();</span>
+<span class="nc" id="L215">				return;</span>
+			case ModelelementsPackage.VIEW__VIEW_POINT:
+<span class="nc" id="L217">				setViewPoint((Viewpoint)null);</span>
+<span class="nc" id="L218">				return;</span>
+		}
+<span class="nc" id="L220">		super.eUnset(featureID);</span>
+<span class="nc" id="L221">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L230" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEW__BASE_CLASS:
+<span class="nc bnc" id="L232" title="All 2 branches missed.">				return base_Class != null;</span>
+			case ModelelementsPackage.VIEW__STAKEHOLDER:
+<span class="nc bnc" id="L234" title="All 2 branches missed.">				return !getStakeholder().isEmpty();</span>
+			case ModelelementsPackage.VIEW__VIEW_POINT:
+<span class="nc bnc" id="L236" title="All 2 branches missed.">				return basicGetViewPoint() != null;</span>
+		}
+<span class="nc" id="L238">		return super.eIsSet(featureID);</span>
+	}
+
+} //ViewImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

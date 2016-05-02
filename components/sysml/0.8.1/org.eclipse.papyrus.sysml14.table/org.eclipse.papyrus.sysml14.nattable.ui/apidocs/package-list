@@ -1,0 +1,6 @@
+org.eclipse.papyrus.sysml14.nattable.allocation.tester
+org.eclipse.papyrus.sysml14.nattable.handlers.allocation
+org.eclipse.papyrus.sysml14.nattable.menu
+org.eclipse.papyrus.sysml14.nattable.menu.handlers
+org.eclipse.papyrus.sysml14.nattable.ui
+org.eclipse.papyrus.sysml14.service.types.filter

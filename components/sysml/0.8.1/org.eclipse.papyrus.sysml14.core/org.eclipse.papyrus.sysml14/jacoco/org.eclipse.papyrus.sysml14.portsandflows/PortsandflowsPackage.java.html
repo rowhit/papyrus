@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PortsandflowsPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows</a> &gt; <span class="el_source">PortsandflowsPackage.java</span></div><h1>PortsandflowsPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='PortsAndFlows'&quot;
+ * @generated
+ */
+public interface PortsandflowsPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;portsandflows&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/PortsAndFlows&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;PortsAndFlows&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L72">	PortsandflowsPackage eINSTANCE = org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.AcceptChangeStructuralFeatureEventActionImpl &lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.AcceptChangeStructuralFeatureEventActionImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getAcceptChangeStructuralFeatureEventAction()
+	 * @generated
+	 */
+	int ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Accept Event Action&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION__BASE_ACCEPT_EVENT_ACTION = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ChangeStructuralFeatureEventImpl &lt;em&gt;Change Structural Feature Event&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ChangeStructuralFeatureEventImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getChangeStructuralFeatureEvent()
+	 * @generated
+	 */
+	int CHANGE_STRUCTURAL_FEATURE_EVENT = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Change Event&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_STRUCTURAL_FEATURE_EVENT__BASE_CHANGE_EVENT = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Structural Feature&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_STRUCTURAL_FEATURE_EVENT__STRUCTURAL_FEATURE = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Change Structural Feature Event&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_STRUCTURAL_FEATURE_EVENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Change Structural Feature Event&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_STRUCTURAL_FEATURE_EVENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl &lt;em&gt;Directed Feature&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getDirectedFeature()
+	 * @generated
+	 */
+	int DIRECTED_FEATURE = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Feature&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_FEATURE__BASE_FEATURE = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_FEATURE__FEATURE_DIRECTION = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Directed Feature&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_FEATURE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Directed Feature&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_FEATURE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FlowPropertyImpl &lt;em&gt;Flow Property&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FlowPropertyImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFlowProperty()
+	 * @generated
+	 */
+	int FLOW_PROPERTY = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Property&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PROPERTY__BASE_PROPERTY = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PROPERTY__DIRECTION = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Flow Property&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PROPERTY_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Icon&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PROPERTY___GET_ICON = 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Flow Property&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PROPERTY_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FullPortImpl &lt;em&gt;Full Port&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FullPortImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFullPort()
+	 * @generated
+	 */
+	int FULL_PORT = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FULL_PORT__BASE_PORT = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Full Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FULL_PORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Full Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FULL_PORT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InterfaceBlockImpl &lt;em&gt;Interface Block&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InterfaceBlockImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getInterfaceBlock()
+	 * @generated
+	 */
+	int INTERFACE_BLOCK = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK__BASE_CLASS = BlocksPackage.BLOCK__BASE_CLASS;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Is Encapsulated&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK__IS_ENCAPSULATED = BlocksPackage.BLOCK__IS_ENCAPSULATED;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Interface Block&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK_FEATURE_COUNT = BlocksPackage.BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get References&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK___GET_REFERENCES = BlocksPackage.BLOCK___GET_REFERENCES;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Parts&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK___GET_PARTS = BlocksPackage.BLOCK___GET_PARTS;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Flow Properties&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK___GET_FLOW_PROPERTIES = BlocksPackage.BLOCK___GET_FLOW_PROPERTIES;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Interface Block&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_BLOCK_OPERATION_COUNT = BlocksPackage.BLOCK_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl &lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getInvocationOnNestedPortAction()
+	 * @generated
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Element&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION__BASE_ELEMENT = BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION__PROPERTY_PATH = BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Invocation Action&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;On Nested Port&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION_FEATURE_COUNT = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int INVOCATION_ON_NESTED_PORT_ACTION_OPERATION_COUNT = BlocksPackage.ELEMENT_PROPERTY_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl &lt;em&gt;Item Flow&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getItemFlow()
+	 * @generated
+	 */
+	int ITEM_FLOW = 7;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Information Flow&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_FLOW__BASE_INFORMATION_FLOW = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Item Property&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_FLOW__ITEM_PROPERTY = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Item Flow&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_FLOW_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Item Flow&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_FLOW_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ProxyPortImpl &lt;em&gt;Proxy Port&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ProxyPortImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getProxyPort()
+	 * @generated
+	 */
+	int PROXY_PORT = 8;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROXY_PORT__BASE_PORT = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Proxy Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROXY_PORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Proxy Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROXY_PORT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.TriggerOnNestedPortImpl &lt;em&gt;Trigger On Nested Port&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.TriggerOnNestedPortImpl
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getTriggerOnNestedPort()
+	 * @generated
+	 */
+	int TRIGGER_ON_NESTED_PORT = 9;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Element&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT__BASE_ELEMENT = BlocksPackage.ELEMENT_PROPERTY_PATH__BASE_ELEMENT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT__PROPERTY_PATH = BlocksPackage.ELEMENT_PROPERTY_PATH__PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Trigger&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT__BASE_TRIGGER = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;On Nested Port&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT__ON_NESTED_PORT = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Trigger On Nested Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT_FEATURE_COUNT = BlocksPackage.ELEMENT_PROPERTY_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Trigger On Nested Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_ON_NESTED_PORT_OPERATION_COUNT = BlocksPackage.ELEMENT_PROPERTY_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection &lt;em&gt;Feature Direction&lt;/em&gt;}' enum.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFeatureDirection()
+	 * @generated
+	 */
+	int FEATURE_DIRECTION = 10;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowDirection &lt;em&gt;Flow Direction&lt;/em&gt;}' enum.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowDirection
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFlowDirection()
+	 * @generated
+	 */
+<span class="fc" id="L597">	int FLOW_DIRECTION = 11;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction &lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction
+	 * @generated
+	 */
+	EClass getAcceptChangeStructuralFeatureEventAction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction#getBase_AcceptEventAction &lt;em&gt;Base Accept Event Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Accept Event Action&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction#getBase_AcceptEventAction()
+	 * @see #getAcceptChangeStructuralFeatureEventAction()
+	 * @generated
+	 */
+	EReference getAcceptChangeStructuralFeatureEventAction_Base_AcceptEventAction();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent &lt;em&gt;Change Structural Feature Event&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Change Structural Feature Event&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent
+	 * @generated
+	 */
+	EClass getChangeStructuralFeatureEvent();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent#getBase_ChangeEvent &lt;em&gt;Base Change Event&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Change Event&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent#getBase_ChangeEvent()
+	 * @see #getChangeStructuralFeatureEvent()
+	 * @generated
+	 */
+	EReference getChangeStructuralFeatureEvent_Base_ChangeEvent();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent#getStructuralFeature &lt;em&gt;Structural Feature&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Structural Feature&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent#getStructuralFeature()
+	 * @see #getChangeStructuralFeatureEvent()
+	 * @generated
+	 */
+	EReference getChangeStructuralFeatureEvent_StructuralFeature();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature &lt;em&gt;Directed Feature&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Directed Feature&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature
+	 * @generated
+	 */
+	EClass getDirectedFeature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature#getBase_Feature &lt;em&gt;Base Feature&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Feature&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature#getBase_Feature()
+	 * @see #getDirectedFeature()
+	 * @generated
+	 */
+	EReference getDirectedFeature_Base_Feature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature#getFeatureDirection &lt;em&gt;Feature Direction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Feature Direction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature#getFeatureDirection()
+	 * @see #getDirectedFeature()
+	 * @generated
+	 */
+	EAttribute getDirectedFeature_FeatureDirection();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty &lt;em&gt;Flow Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Flow Property&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowProperty
+	 * @generated
+	 */
+	EClass getFlowProperty();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getBase_Property &lt;em&gt;Base Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Property&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getBase_Property()
+	 * @see #getFlowProperty()
+	 * @generated
+	 */
+	EReference getFlowProperty_Base_Property();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getDirection &lt;em&gt;Direction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Direction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getDirection()
+	 * @see #getFlowProperty()
+	 * @generated
+	 */
+	EAttribute getFlowProperty_Direction();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getIcon() &lt;em&gt;Get Icon&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Icon&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getIcon()
+	 * @generated
+	 */
+	EOperation getFlowProperty__GetIcon();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.FullPort &lt;em&gt;Full Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Full Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FullPort
+	 * @generated
+	 */
+	EClass getFullPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.FullPort#getBase_Port &lt;em&gt;Base Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FullPort#getBase_Port()
+	 * @see #getFullPort()
+	 * @generated
+	 */
+	EReference getFullPort_Base_Port();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.InterfaceBlock &lt;em&gt;Interface Block&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Interface Block&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InterfaceBlock
+	 * @generated
+	 */
+	EClass getInterfaceBlock();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction &lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction
+	 * @generated
+	 */
+	EClass getInvocationOnNestedPortAction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction#getBase_InvocationAction &lt;em&gt;Base Invocation Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Invocation Action&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction#getBase_InvocationAction()
+	 * @see #getInvocationOnNestedPortAction()
+	 * @generated
+	 */
+	EReference getInvocationOnNestedPortAction_Base_InvocationAction();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction#getOnNestedPort &lt;em&gt;On Nested Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;On Nested Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction#getOnNestedPort()
+	 * @see #getInvocationOnNestedPortAction()
+	 * @generated
+	 */
+	EReference getInvocationOnNestedPortAction_OnNestedPort();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.ItemFlow &lt;em&gt;Item Flow&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Item Flow&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ItemFlow
+	 * @generated
+	 */
+	EClass getItemFlow();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.ItemFlow#getBase_InformationFlow &lt;em&gt;Base Information Flow&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Information Flow&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ItemFlow#getBase_InformationFlow()
+	 * @see #getItemFlow()
+	 * @generated
+	 */
+	EReference getItemFlow_Base_InformationFlow();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.ItemFlow#getItemProperty &lt;em&gt;Item Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Item Property&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ItemFlow#getItemProperty()
+	 * @see #getItemFlow()
+	 * @generated
+	 */
+	EReference getItemFlow_ItemProperty();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.ProxyPort &lt;em&gt;Proxy Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Proxy Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ProxyPort
+	 * @generated
+	 */
+	EClass getProxyPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.ProxyPort#getBase_Port &lt;em&gt;Base Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ProxyPort#getBase_Port()
+	 * @see #getProxyPort()
+	 * @generated
+	 */
+	EReference getProxyPort_Base_Port();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort &lt;em&gt;Trigger On Nested Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Trigger On Nested Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort
+	 * @generated
+	 */
+	EClass getTriggerOnNestedPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort#getBase_Trigger &lt;em&gt;Base Trigger&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Trigger&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort#getBase_Trigger()
+	 * @see #getTriggerOnNestedPort()
+	 * @generated
+	 */
+	EReference getTriggerOnNestedPort_Base_Trigger();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort#getOnNestedPort &lt;em&gt;On Nested Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;On Nested Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort#getOnNestedPort()
+	 * @see #getTriggerOnNestedPort()
+	 * @generated
+	 */
+	EReference getTriggerOnNestedPort_OnNestedPort();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection &lt;em&gt;Feature Direction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for enum '&lt;em&gt;Feature Direction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection
+	 * @generated
+	 */
+	EEnum getFeatureDirection();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowDirection &lt;em&gt;Flow Direction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for enum '&lt;em&gt;Flow Direction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowDirection
+	 * @generated
+	 */
+	EEnum getFlowDirection();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	PortsandflowsFactory getPortsandflowsFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.AcceptChangeStructuralFeatureEventActionImpl &lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.AcceptChangeStructuralFeatureEventActionImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getAcceptChangeStructuralFeatureEventAction()
+		 * @generated
+		 */
+<span class="fc" id="L926">		EClass ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION = eINSTANCE.getAcceptChangeStructuralFeatureEventAction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Accept Event Action&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L934">		EReference ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION__BASE_ACCEPT_EVENT_ACTION = eINSTANCE.getAcceptChangeStructuralFeatureEventAction_Base_AcceptEventAction();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ChangeStructuralFeatureEventImpl &lt;em&gt;Change Structural Feature Event&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ChangeStructuralFeatureEventImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getChangeStructuralFeatureEvent()
+		 * @generated
+		 */
+<span class="fc" id="L944">		EClass CHANGE_STRUCTURAL_FEATURE_EVENT = eINSTANCE.getChangeStructuralFeatureEvent();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Change Event&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L952">		EReference CHANGE_STRUCTURAL_FEATURE_EVENT__BASE_CHANGE_EVENT = eINSTANCE.getChangeStructuralFeatureEvent_Base_ChangeEvent();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Structural Feature&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L960">		EReference CHANGE_STRUCTURAL_FEATURE_EVENT__STRUCTURAL_FEATURE = eINSTANCE.getChangeStructuralFeatureEvent_StructuralFeature();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl &lt;em&gt;Directed Feature&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getDirectedFeature()
+		 * @generated
+		 */
+<span class="fc" id="L970">		EClass DIRECTED_FEATURE = eINSTANCE.getDirectedFeature();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Feature&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L978">		EReference DIRECTED_FEATURE__BASE_FEATURE = eINSTANCE.getDirectedFeature_Base_Feature();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L986">		EAttribute DIRECTED_FEATURE__FEATURE_DIRECTION = eINSTANCE.getDirectedFeature_FeatureDirection();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FlowPropertyImpl &lt;em&gt;Flow Property&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FlowPropertyImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFlowProperty()
+		 * @generated
+		 */
+<span class="fc" id="L996">		EClass FLOW_PROPERTY = eINSTANCE.getFlowProperty();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Property&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1004">		EReference FLOW_PROPERTY__BASE_PROPERTY = eINSTANCE.getFlowProperty_Base_Property();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1012">		EAttribute FLOW_PROPERTY__DIRECTION = eINSTANCE.getFlowProperty_Direction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Icon&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1020">		EOperation FLOW_PROPERTY___GET_ICON = eINSTANCE.getFlowProperty__GetIcon();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FullPortImpl &lt;em&gt;Full Port&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.FullPortImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFullPort()
+		 * @generated
+		 */
+<span class="fc" id="L1030">		EClass FULL_PORT = eINSTANCE.getFullPort();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1038">		EReference FULL_PORT__BASE_PORT = eINSTANCE.getFullPort_Base_Port();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InterfaceBlockImpl &lt;em&gt;Interface Block&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InterfaceBlockImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getInterfaceBlock()
+		 * @generated
+		 */
+<span class="fc" id="L1048">		EClass INTERFACE_BLOCK = eINSTANCE.getInterfaceBlock();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl &lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getInvocationOnNestedPortAction()
+		 * @generated
+		 */
+<span class="fc" id="L1058">		EClass INVOCATION_ON_NESTED_PORT_ACTION = eINSTANCE.getInvocationOnNestedPortAction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Invocation Action&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1066">		EReference INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION = eINSTANCE.getInvocationOnNestedPortAction_Base_InvocationAction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;On Nested Port&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1074">		EReference INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT = eINSTANCE.getInvocationOnNestedPortAction_OnNestedPort();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl &lt;em&gt;Item Flow&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getItemFlow()
+		 * @generated
+		 */
+<span class="fc" id="L1084">		EClass ITEM_FLOW = eINSTANCE.getItemFlow();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Information Flow&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1092">		EReference ITEM_FLOW__BASE_INFORMATION_FLOW = eINSTANCE.getItemFlow_Base_InformationFlow();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Item Property&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1100">		EReference ITEM_FLOW__ITEM_PROPERTY = eINSTANCE.getItemFlow_ItemProperty();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ProxyPortImpl &lt;em&gt;Proxy Port&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ProxyPortImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getProxyPort()
+		 * @generated
+		 */
+<span class="fc" id="L1110">		EClass PROXY_PORT = eINSTANCE.getProxyPort();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1118">		EReference PROXY_PORT__BASE_PORT = eINSTANCE.getProxyPort_Base_Port();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.TriggerOnNestedPortImpl &lt;em&gt;Trigger On Nested Port&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.TriggerOnNestedPortImpl
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getTriggerOnNestedPort()
+		 * @generated
+		 */
+<span class="fc" id="L1128">		EClass TRIGGER_ON_NESTED_PORT = eINSTANCE.getTriggerOnNestedPort();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Trigger&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1136">		EReference TRIGGER_ON_NESTED_PORT__BASE_TRIGGER = eINSTANCE.getTriggerOnNestedPort_Base_Trigger();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;On Nested Port&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1144">		EReference TRIGGER_ON_NESTED_PORT__ON_NESTED_PORT = eINSTANCE.getTriggerOnNestedPort_OnNestedPort();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection &lt;em&gt;Feature Direction&lt;/em&gt;}' enum.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFeatureDirection()
+		 * @generated
+		 */
+<span class="fc" id="L1154">		EEnum FEATURE_DIRECTION = eINSTANCE.getFeatureDirection();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowDirection &lt;em&gt;Flow Direction&lt;/em&gt;}' enum.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowDirection
+		 * @see org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl#getFlowDirection()
+		 * @generated
+		 */
+<span class="fc" id="L1164">		EEnum FLOW_DIRECTION = eINSTANCE.getFlowDirection();</span>
+
+	}
+
+} //PortsandflowsPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

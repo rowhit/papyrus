@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>InvocationOnNestedPortActionImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.internal.impl</a> &gt; <span class="el_source">InvocationOnNestedPortActionImpl.java</span></div><h1>InvocationOnNestedPortActionImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.ElementPropertyPathImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.uml2.uml.InvocationAction;
+import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.Type;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Invocation On Nested Port Action&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl#getBase_InvocationAction &lt;em&gt;Base Invocation Action&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.InvocationOnNestedPortActionImpl#getOnNestedPort &lt;em&gt;On Nested Port&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class InvocationOnNestedPortActionImpl extends ElementPropertyPathImpl implements InvocationOnNestedPortAction {
+	/**
+	 * The cached value of the '{@link #getBase_InvocationAction() &lt;em&gt;Base Invocation Action&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_InvocationAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected InvocationAction base_InvocationAction;
+
+	/**
+	 * The cached value of the '{@link #getOnNestedPort() &lt;em&gt;On Nested Port&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getOnNestedPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Port&gt; onNestedPort;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected InvocationOnNestedPortActionImpl() {
+<span class="nc" id="L78">		super();</span>
+<span class="nc" id="L79">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L88">		return PortsandflowsPackage.Literals.INVOCATION_ON_NESTED_PORT_ACTION;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InvocationAction getBase_InvocationAction() {
+<span class="nc bnc" id="L97" title="All 4 branches missed.">		if (base_InvocationAction != null &amp;&amp; base_InvocationAction.eIsProxy()) {</span>
+<span class="nc" id="L98">			InternalEObject oldBase_InvocationAction = (InternalEObject)base_InvocationAction;</span>
+<span class="nc" id="L99">			base_InvocationAction = (InvocationAction)eResolveProxy(oldBase_InvocationAction);</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">			if (base_InvocationAction != oldBase_InvocationAction) {</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L102">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION, oldBase_InvocationAction, base_InvocationAction));</span>
+			}
+		}
+<span class="nc" id="L105">		return base_InvocationAction;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InvocationAction basicGetBase_InvocationAction() {
+<span class="nc" id="L114">		return base_InvocationAction;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_InvocationAction(InvocationAction newBase_InvocationAction) {
+<span class="nc" id="L123">		InvocationAction oldBase_InvocationAction = base_InvocationAction;</span>
+<span class="nc" id="L124">		base_InvocationAction = newBase_InvocationAction;</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L126">			eNotify(new ENotificationImpl(this, Notification.SET, PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION, oldBase_InvocationAction, base_InvocationAction));</span>
+<span class="nc" id="L127">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Port&gt; getOnNestedPort() {
+<span class="nc bnc" id="L135" title="All 2 branches missed.">		if (onNestedPort == null) {</span>
+<span class="nc" id="L136">			onNestedPort = new EObjectResolvingEList&lt;Port&gt;(Port.class, this, PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT);</span>
+		}
+<span class="nc" id="L138">		return onNestedPort;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Port getOnNestedPort(String name, Type type) {
+<span class="nc" id="L147">		return getOnNestedPort(name, type, false);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Port getOnNestedPort(String name, Type type, boolean ignoreCase) {
+<span class="nc bnc" id="L156" title="All 2 branches missed.">		onNestedPortLoop: for (Port onNestedPort : getOnNestedPort()) {</span>
+<span class="nc bnc" id="L157" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(onNestedPort.getName()) : name.equals(onNestedPort.getName())))</span>
+<span class="nc" id="L158">				continue onNestedPortLoop;</span>
+<span class="nc bnc" id="L159" title="All 4 branches missed.">			if (type != null &amp;&amp; !type.equals(onNestedPort.getType()))</span>
+<span class="nc" id="L160">				continue onNestedPortLoop;</span>
+<span class="nc" id="L161">			return onNestedPort;</span>
+		}
+<span class="nc" id="L163">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L173" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION:
+<span class="nc bnc" id="L175" title="All 2 branches missed.">				if (resolve) return getBase_InvocationAction();</span>
+<span class="nc" id="L176">				return basicGetBase_InvocationAction();</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT:
+<span class="nc" id="L178">				return getOnNestedPort();</span>
+		}
+<span class="nc" id="L180">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L191" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION:
+<span class="nc" id="L193">				setBase_InvocationAction((InvocationAction)newValue);</span>
+<span class="nc" id="L194">				return;</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT:
+<span class="nc" id="L196">				getOnNestedPort().clear();</span>
+<span class="nc" id="L197">				getOnNestedPort().addAll((Collection&lt;? extends Port&gt;)newValue);</span>
+<span class="nc" id="L198">				return;</span>
+		}
+<span class="nc" id="L200">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L201">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L210" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION:
+<span class="nc" id="L212">				setBase_InvocationAction((InvocationAction)null);</span>
+<span class="nc" id="L213">				return;</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT:
+<span class="nc" id="L215">				getOnNestedPort().clear();</span>
+<span class="nc" id="L216">				return;</span>
+		}
+<span class="nc" id="L218">		super.eUnset(featureID);</span>
+<span class="nc" id="L219">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L228" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION:
+<span class="nc bnc" id="L230" title="All 2 branches missed.">				return base_InvocationAction != null;</span>
+			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT:
+<span class="nc bnc" id="L232" title="All 4 branches missed.">				return onNestedPort != null &amp;&amp; !onNestedPort.isEmpty();</span>
+		}
+<span class="nc" id="L234">		return super.eIsSet(featureID);</span>
+	}
+
+} //InvocationOnNestedPortActionImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

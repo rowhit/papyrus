@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ActivitiesPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities</a> &gt; <span class="el_source">ActivitiesPackage.java</span></div><h1>ActivitiesPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.activities.ActivitiesFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='Activities'&quot;
+ * @generated
+ */
+public interface ActivitiesPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;activities&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/Activities&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;Activities&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L67">	ActivitiesPackage eINSTANCE = org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl &lt;em&gt;Rate&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getRate()
+	 * @generated
+	 */
+	int RATE = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE__BASE_ACTIVITY_EDGE = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE__BASE_OBJECT_NODE = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE__BASE_PARAMETER = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Rate&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE__RATE = 3;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Rate&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Rate&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ContinuousImpl &lt;em&gt;Continuous&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ContinuousImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getContinuous()
+	 * @generated
+	 */
+	int CONTINUOUS = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS__BASE_ACTIVITY_EDGE = RATE__BASE_ACTIVITY_EDGE;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS__BASE_OBJECT_NODE = RATE__BASE_OBJECT_NODE;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS__BASE_PARAMETER = RATE__BASE_PARAMETER;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Rate&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS__RATE = RATE__RATE;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Continuous&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_FEATURE_COUNT = RATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Continuous&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_OPERATION_COUNT = RATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ControlOperatorImpl &lt;em&gt;Control Operator&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ControlOperatorImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getControlOperator()
+	 * @generated
+	 */
+	int CONTROL_OPERATOR = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Behavior&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OPERATOR__BASE_BEHAVIOR = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Operation&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OPERATOR__BASE_OPERATION = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Control Operator&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OPERATOR_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Control Operator&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_OPERATOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.DiscreteImpl &lt;em&gt;Discrete&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.DiscreteImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getDiscrete()
+	 * @generated
+	 */
+	int DISCRETE = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE__BASE_ACTIVITY_EDGE = RATE__BASE_ACTIVITY_EDGE;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE__BASE_OBJECT_NODE = RATE__BASE_OBJECT_NODE;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE__BASE_PARAMETER = RATE__BASE_PARAMETER;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Rate&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE__RATE = RATE__RATE;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Discrete&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_FEATURE_COUNT = RATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Discrete&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_OPERATION_COUNT = RATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.NoBufferImpl &lt;em&gt;No Buffer&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.NoBufferImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getNoBuffer()
+	 * @generated
+	 */
+	int NO_BUFFER = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int NO_BUFFER__BASE_OBJECT_NODE = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;No Buffer&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int NO_BUFFER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;No Buffer&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int NO_BUFFER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.OptionalImpl &lt;em&gt;Optional&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.OptionalImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getOptional()
+	 * @generated
+	 */
+	int OPTIONAL = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL__BASE_PARAMETER = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Optional&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Optional&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.OverwriteImpl &lt;em&gt;Overwrite&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.OverwriteImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getOverwrite()
+	 * @generated
+	 */
+	int OVERWRITE = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OVERWRITE__BASE_OBJECT_NODE = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Overwrite&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OVERWRITE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Overwrite&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int OVERWRITE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl &lt;em&gt;Probability&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl
+	 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getProbability()
+	 * @generated
+	 */
+	int PROBABILITY = 7;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILITY__BASE_ACTIVITY_EDGE = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Parameter Set&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILITY__BASE_PARAMETER_SET = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Probability&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILITY__PROBABILITY = 2;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Probability&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILITY_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Probability&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L471">	int PROBABILITY_OPERATION_COUNT = 0;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Continuous &lt;em&gt;Continuous&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Continuous&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Continuous
+	 * @generated
+	 */
+	EClass getContinuous();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Rate &lt;em&gt;Rate&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Rate&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Rate
+	 * @generated
+	 */
+	EClass getRate();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Rate#getBase_ActivityEdge &lt;em&gt;Base Activity Edge&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Activity Edge&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Rate#getBase_ActivityEdge()
+	 * @see #getRate()
+	 * @generated
+	 */
+	EReference getRate_Base_ActivityEdge();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Rate#getBase_ObjectNode &lt;em&gt;Base Object Node&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Object Node&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Rate#getBase_ObjectNode()
+	 * @see #getRate()
+	 * @generated
+	 */
+	EReference getRate_Base_ObjectNode();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Rate#getBase_Parameter &lt;em&gt;Base Parameter&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Parameter&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Rate#getBase_Parameter()
+	 * @see #getRate()
+	 * @generated
+	 */
+	EReference getRate_Base_Parameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Rate#getRate &lt;em&gt;Rate&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Rate&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Rate#getRate()
+	 * @see #getRate()
+	 * @generated
+	 */
+	EReference getRate_Rate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.ControlOperator &lt;em&gt;Control Operator&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Control Operator&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.ControlOperator
+	 * @generated
+	 */
+	EClass getControlOperator();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.ControlOperator#getBase_Behavior &lt;em&gt;Base Behavior&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Behavior&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.ControlOperator#getBase_Behavior()
+	 * @see #getControlOperator()
+	 * @generated
+	 */
+	EReference getControlOperator_Base_Behavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.ControlOperator#getBase_Operation &lt;em&gt;Base Operation&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Operation&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.ControlOperator#getBase_Operation()
+	 * @see #getControlOperator()
+	 * @generated
+	 */
+	EReference getControlOperator_Base_Operation();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Discrete &lt;em&gt;Discrete&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Discrete&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Discrete
+	 * @generated
+	 */
+	EClass getDiscrete();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.NoBuffer &lt;em&gt;No Buffer&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;No Buffer&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.NoBuffer
+	 * @generated
+	 */
+	EClass getNoBuffer();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.NoBuffer#getBase_ObjectNode &lt;em&gt;Base Object Node&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Object Node&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.NoBuffer#getBase_ObjectNode()
+	 * @see #getNoBuffer()
+	 * @generated
+	 */
+	EReference getNoBuffer_Base_ObjectNode();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Optional &lt;em&gt;Optional&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Optional&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Optional
+	 * @generated
+	 */
+	EClass getOptional();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Optional#getBase_Parameter &lt;em&gt;Base Parameter&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Parameter&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Optional#getBase_Parameter()
+	 * @see #getOptional()
+	 * @generated
+	 */
+	EReference getOptional_Base_Parameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Overwrite &lt;em&gt;Overwrite&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Overwrite&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Overwrite
+	 * @generated
+	 */
+	EClass getOverwrite();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Overwrite#getBase_ObjectNode &lt;em&gt;Base Object Node&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Object Node&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Overwrite#getBase_ObjectNode()
+	 * @see #getOverwrite()
+	 * @generated
+	 */
+	EReference getOverwrite_Base_ObjectNode();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.activities.Probability &lt;em&gt;Probability&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Probability&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Probability
+	 * @generated
+	 */
+	EClass getProbability();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Probability#getBase_ActivityEdge &lt;em&gt;Base Activity Edge&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Activity Edge&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Probability#getBase_ActivityEdge()
+	 * @see #getProbability()
+	 * @generated
+	 */
+	EReference getProbability_Base_ActivityEdge();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Probability#getBase_ParameterSet &lt;em&gt;Base Parameter Set&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Parameter Set&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Probability#getBase_ParameterSet()
+	 * @see #getProbability()
+	 * @generated
+	 */
+	EReference getProbability_Base_ParameterSet();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.activities.Probability#getProbability &lt;em&gt;Probability&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Probability&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.activities.Probability#getProbability()
+	 * @see #getProbability()
+	 * @generated
+	 */
+	EReference getProbability_Probability();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	ActivitiesFactory getActivitiesFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ContinuousImpl &lt;em&gt;Continuous&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ContinuousImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getContinuous()
+		 * @generated
+		 */
+<span class="nc" id="L717">		EClass CONTINUOUS = eINSTANCE.getContinuous();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl &lt;em&gt;Rate&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getRate()
+		 * @generated
+		 */
+<span class="nc" id="L727">		EClass RATE = eINSTANCE.getRate();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L735">		EReference RATE__BASE_ACTIVITY_EDGE = eINSTANCE.getRate_Base_ActivityEdge();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L743">		EReference RATE__BASE_OBJECT_NODE = eINSTANCE.getRate_Base_ObjectNode();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L751">		EReference RATE__BASE_PARAMETER = eINSTANCE.getRate_Base_Parameter();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Rate&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L759">		EReference RATE__RATE = eINSTANCE.getRate_Rate();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ControlOperatorImpl &lt;em&gt;Control Operator&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ControlOperatorImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getControlOperator()
+		 * @generated
+		 */
+<span class="nc" id="L769">		EClass CONTROL_OPERATOR = eINSTANCE.getControlOperator();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Behavior&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L777">		EReference CONTROL_OPERATOR__BASE_BEHAVIOR = eINSTANCE.getControlOperator_Base_Behavior();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Operation&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L785">		EReference CONTROL_OPERATOR__BASE_OPERATION = eINSTANCE.getControlOperator_Base_Operation();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.DiscreteImpl &lt;em&gt;Discrete&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.DiscreteImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getDiscrete()
+		 * @generated
+		 */
+<span class="nc" id="L795">		EClass DISCRETE = eINSTANCE.getDiscrete();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.NoBufferImpl &lt;em&gt;No Buffer&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.NoBufferImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getNoBuffer()
+		 * @generated
+		 */
+<span class="nc" id="L805">		EClass NO_BUFFER = eINSTANCE.getNoBuffer();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L813">		EReference NO_BUFFER__BASE_OBJECT_NODE = eINSTANCE.getNoBuffer_Base_ObjectNode();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.OptionalImpl &lt;em&gt;Optional&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.OptionalImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getOptional()
+		 * @generated
+		 */
+<span class="nc" id="L823">		EClass OPTIONAL = eINSTANCE.getOptional();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Parameter&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L831">		EReference OPTIONAL__BASE_PARAMETER = eINSTANCE.getOptional_Base_Parameter();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.OverwriteImpl &lt;em&gt;Overwrite&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.OverwriteImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getOverwrite()
+		 * @generated
+		 */
+<span class="nc" id="L841">		EClass OVERWRITE = eINSTANCE.getOverwrite();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Object Node&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L849">		EReference OVERWRITE__BASE_OBJECT_NODE = eINSTANCE.getOverwrite_Base_ObjectNode();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl &lt;em&gt;Probability&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl
+		 * @see org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl#getProbability()
+		 * @generated
+		 */
+<span class="nc" id="L859">		EClass PROBABILITY = eINSTANCE.getProbability();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Activity Edge&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L867">		EReference PROBABILITY__BASE_ACTIVITY_EDGE = eINSTANCE.getProbability_Base_ActivityEdge();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Parameter Set&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L875">		EReference PROBABILITY__BASE_PARAMETER_SET = eINSTANCE.getProbability_Base_ParameterSet();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Probability&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="nc" id="L883">		EReference PROBABILITY__PROBABILITY = eINSTANCE.getProbability_Probability();</span>
+
+	}
+
+} //ActivitiesPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

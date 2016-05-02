@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementItemProvider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.edit</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements.provider</a> &gt; <span class="el_source">RequirementItemProvider.java</span></div><h1>RequirementItemProvider.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements.provider;
+
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.eclipse.papyrus.sysml14.provider.SysMLEditPlugin;
+
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+/**
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml14.requirements.Requirement} object.
+ * &lt;!-- begin-user-doc --&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class RequirementItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public RequirementItemProvider(AdapterFactory adapterFactory) {
+<span class="nc" id="L61">		super(adapterFactory);</span>
+<span class="nc" id="L62">	}</span>
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public List&lt;IItemPropertyDescriptor&gt; getPropertyDescriptors(Object object) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		if (itemPropertyDescriptors == null) {</span>
+<span class="nc" id="L73">			super.getPropertyDescriptors(object);</span>
+
+<span class="nc" id="L75">			addBase_ClassPropertyDescriptor(object);</span>
+<span class="nc" id="L76">			addDerivedPropertyDescriptor(object);</span>
+<span class="nc" id="L77">			addDerivedFromPropertyDescriptor(object);</span>
+<span class="nc" id="L78">			addIdPropertyDescriptor(object);</span>
+<span class="nc" id="L79">			addMasterPropertyDescriptor(object);</span>
+<span class="nc" id="L80">			addRefinedByPropertyDescriptor(object);</span>
+<span class="nc" id="L81">			addSatisfiedByPropertyDescriptor(object);</span>
+<span class="nc" id="L82">			addTextPropertyDescriptor(object);</span>
+<span class="nc" id="L83">			addTracedToPropertyDescriptor(object);</span>
+<span class="nc" id="L84">			addVerifiedByPropertyDescriptor(object);</span>
+		}
+<span class="nc" id="L86">		return itemPropertyDescriptors;</span>
+	}
+
+	/**
+	 * This adds a property descriptor for the Base Class feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addBase_ClassPropertyDescriptor(Object object) {
+<span class="nc" id="L96">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L97">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L98">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L99">				 getResourceLocator(),</span>
+<span class="nc" id="L100">				 getString(&quot;_UI_Requirement_base_Class_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L101">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_base_Class_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L102">				 RequirementsPackage.Literals.REQUIREMENT__BASE_CLASS,</span>
+<span class="nc" id="L103">				 true,</span>
+<span class="nc" id="L104">				 false,</span>
+<span class="nc" id="L105">				 true,</span>
+<span class="nc" id="L106">				 null,</span>
+<span class="nc" id="L107">				 null,</span>
+<span class="nc" id="L108">				 null));</span>
+<span class="nc" id="L109">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Derived feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addDerivedPropertyDescriptor(Object object) {
+<span class="nc" id="L118">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L119">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L120">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L121">				 getResourceLocator(),</span>
+<span class="nc" id="L122">				 getString(&quot;_UI_Requirement_derived_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L123">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_derived_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L124">				 RequirementsPackage.Literals.REQUIREMENT__DERIVED,</span>
+<span class="nc" id="L125">				 true,</span>
+<span class="nc" id="L126">				 false,</span>
+<span class="nc" id="L127">				 true,</span>
+<span class="nc" id="L128">				 null,</span>
+<span class="nc" id="L129">				 null,</span>
+<span class="nc" id="L130">				 null));</span>
+<span class="nc" id="L131">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Derived From feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addDerivedFromPropertyDescriptor(Object object) {
+<span class="nc" id="L140">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L141">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L142">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L143">				 getResourceLocator(),</span>
+<span class="nc" id="L144">				 getString(&quot;_UI_Requirement_derivedFrom_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L145">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_derivedFrom_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L146">				 RequirementsPackage.Literals.REQUIREMENT__DERIVED_FROM,</span>
+<span class="nc" id="L147">				 true,</span>
+<span class="nc" id="L148">				 false,</span>
+<span class="nc" id="L149">				 true,</span>
+<span class="nc" id="L150">				 null,</span>
+<span class="nc" id="L151">				 null,</span>
+<span class="nc" id="L152">				 null));</span>
+<span class="nc" id="L153">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+<span class="nc" id="L162">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L163">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L164">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L165">				 getResourceLocator(),</span>
+<span class="nc" id="L166">				 getString(&quot;_UI_Requirement_id_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L167">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_id_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L168">				 RequirementsPackage.Literals.REQUIREMENT__ID,</span>
+<span class="nc" id="L169">				 true,</span>
+<span class="nc" id="L170">				 false,</span>
+<span class="nc" id="L171">				 false,</span>
+<span class="nc" id="L172">				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,</span>
+<span class="nc" id="L173">				 null,</span>
+<span class="nc" id="L174">				 null));</span>
+<span class="nc" id="L175">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Master feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addMasterPropertyDescriptor(Object object) {
+<span class="nc" id="L184">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L185">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L186">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L187">				 getResourceLocator(),</span>
+<span class="nc" id="L188">				 getString(&quot;_UI_Requirement_master_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L189">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_master_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L190">				 RequirementsPackage.Literals.REQUIREMENT__MASTER,</span>
+<span class="nc" id="L191">				 true,</span>
+<span class="nc" id="L192">				 false,</span>
+<span class="nc" id="L193">				 true,</span>
+<span class="nc" id="L194">				 null,</span>
+<span class="nc" id="L195">				 null,</span>
+<span class="nc" id="L196">				 null));</span>
+<span class="nc" id="L197">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Refined By feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addRefinedByPropertyDescriptor(Object object) {
+<span class="nc" id="L206">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L207">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L208">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L209">				 getResourceLocator(),</span>
+<span class="nc" id="L210">				 getString(&quot;_UI_Requirement_refinedBy_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L211">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_refinedBy_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L212">				 RequirementsPackage.Literals.REQUIREMENT__REFINED_BY,</span>
+<span class="nc" id="L213">				 true,</span>
+<span class="nc" id="L214">				 false,</span>
+<span class="nc" id="L215">				 true,</span>
+<span class="nc" id="L216">				 null,</span>
+<span class="nc" id="L217">				 null,</span>
+<span class="nc" id="L218">				 null));</span>
+<span class="nc" id="L219">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Satisfied By feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addSatisfiedByPropertyDescriptor(Object object) {
+<span class="nc" id="L228">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L229">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L230">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L231">				 getResourceLocator(),</span>
+<span class="nc" id="L232">				 getString(&quot;_UI_Requirement_satisfiedBy_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L233">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_satisfiedBy_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L234">				 RequirementsPackage.Literals.REQUIREMENT__SATISFIED_BY,</span>
+<span class="nc" id="L235">				 true,</span>
+<span class="nc" id="L236">				 false,</span>
+<span class="nc" id="L237">				 true,</span>
+<span class="nc" id="L238">				 null,</span>
+<span class="nc" id="L239">				 null,</span>
+<span class="nc" id="L240">				 null));</span>
+<span class="nc" id="L241">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Text feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addTextPropertyDescriptor(Object object) {
+<span class="nc" id="L250">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L251">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L252">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L253">				 getResourceLocator(),</span>
+<span class="nc" id="L254">				 getString(&quot;_UI_Requirement_text_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L255">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_text_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L256">				 RequirementsPackage.Literals.REQUIREMENT__TEXT,</span>
+<span class="nc" id="L257">				 true,</span>
+<span class="nc" id="L258">				 false,</span>
+<span class="nc" id="L259">				 false,</span>
+<span class="nc" id="L260">				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,</span>
+<span class="nc" id="L261">				 null,</span>
+<span class="nc" id="L262">				 null));</span>
+<span class="nc" id="L263">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Traced To feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addTracedToPropertyDescriptor(Object object) {
+<span class="nc" id="L272">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L273">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L274">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L275">				 getResourceLocator(),</span>
+<span class="nc" id="L276">				 getString(&quot;_UI_Requirement_tracedTo_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L277">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_tracedTo_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L278">				 RequirementsPackage.Literals.REQUIREMENT__TRACED_TO,</span>
+<span class="nc" id="L279">				 true,</span>
+<span class="nc" id="L280">				 false,</span>
+<span class="nc" id="L281">				 true,</span>
+<span class="nc" id="L282">				 null,</span>
+<span class="nc" id="L283">				 null,</span>
+<span class="nc" id="L284">				 null));</span>
+<span class="nc" id="L285">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Verified By feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addVerifiedByPropertyDescriptor(Object object) {
+<span class="nc" id="L294">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L295">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L296">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L297">				 getResourceLocator(),</span>
+<span class="nc" id="L298">				 getString(&quot;_UI_Requirement_verifiedBy_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L299">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_Requirement_verifiedBy_feature&quot;, &quot;_UI_Requirement_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L300">				 RequirementsPackage.Literals.REQUIREMENT__VERIFIED_BY,</span>
+<span class="nc" id="L301">				 true,</span>
+<span class="nc" id="L302">				 false,</span>
+<span class="nc" id="L303">				 true,</span>
+<span class="nc" id="L304">				 null,</span>
+<span class="nc" id="L305">				 null,</span>
+<span class="nc" id="L306">				 null));</span>
+<span class="nc" id="L307">	}</span>
+
+	/**
+	 * This returns Requirement.gif.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+<span class="nc" id="L317">		return overlayImage(object, getResourceLocator().getImage(&quot;full/obj16/Requirement&quot;)); //$NON-NLS-1$</span>
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+<span class="nc" id="L328">		String label = ((Requirement)object).getId();</span>
+<span class="nc bnc" id="L329" title="All 4 branches missed.">		return label == null || label.length() == 0 ?</span>
+<span class="nc" id="L330">			getString(&quot;_UI_Requirement_type&quot;) : //$NON-NLS-1$</span>
+<span class="nc" id="L331">			getString(&quot;_UI_Requirement_type&quot;) + &quot; &quot; + label; //$NON-NLS-1$ //$NON-NLS-2$</span>
+	}
+	
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+<span class="nc" id="L344">		updateChildren(notification);</span>
+
+<span class="nc bnc" id="L346" title="All 2 branches missed.">		switch (notification.getFeatureID(Requirement.class)) {</span>
+			case RequirementsPackage.REQUIREMENT__ID:
+			case RequirementsPackage.REQUIREMENT__TEXT:
+<span class="nc" id="L349">				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));</span>
+<span class="nc" id="L350">				return;</span>
+		}
+<span class="nc" id="L352">		super.notifyChanged(notification);</span>
+<span class="nc" id="L353">	}</span>
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection&lt;Object&gt; newChildDescriptors, Object object) {
+<span class="nc" id="L364">		super.collectNewChildDescriptors(newChildDescriptors, object);</span>
+<span class="nc" id="L365">	}</span>
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+<span class="nc" id="L375">		return SysMLEditPlugin.INSTANCE;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

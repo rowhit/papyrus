@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BlocksPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">BlocksPackageImpl.java</span></div><h1>BlocksPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.AdjunctProperty;
+import org.eclipse.papyrus.sysml14.blocks.BindingConnector;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.sysml14.blocks.BlocksFactory;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.BoundReference;
+import org.eclipse.papyrus.sysml14.blocks.ClassifierBehaviorProperty;
+import org.eclipse.papyrus.sysml14.blocks.ConnectorProperty;
+import org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath;
+import org.eclipse.papyrus.sysml14.blocks.DistributedProperty;
+import org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath;
+import org.eclipse.papyrus.sysml14.blocks.EndPathMultiplicity;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+import org.eclipse.papyrus.sysml14.blocks.ParticipantProperty;
+import org.eclipse.papyrus.sysml14.blocks.PropertySpecificType;
+import org.eclipse.papyrus.sysml14.blocks.ValueType;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class BlocksPackageImpl extends EPackageImpl implements BlocksPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L84">	private EClass adjunctPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L91">	private EClass bindingConnectorEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L98">	private EClass blockEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L105">	private EClass boundReferenceEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L112">	private EClass endPathMultiplicityEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L119">	private EClass classifierBehaviorPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L126">	private EClass connectorPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L133">	private EClass distributedPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L140">	private EClass elementPropertyPathEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L147">	private EClass nestedConnectorEndEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L154">	private EClass participantPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L161">	private EClass propertySpecificTypeEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L168">	private EClass valueTypeEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L175">	private EClass directedRelationshipPropertyPathEClass = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.blocks.BlocksPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private BlocksPackageImpl() {
+<span class="fc" id="L193">		super(eNS_URI, BlocksFactory.eINSTANCE);</span>
+<span class="fc" id="L194">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L201">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link BlocksPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static BlocksPackage init() {
+<span class="pc bpc" id="L216" title="1 of 2 branches missed.">		if (isInited) return (BlocksPackage)EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L219" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new BlocksPackageImpl());</span>
+
+<span class="fc" id="L221">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L224">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L227" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L228" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L229" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L230" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L231" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L232" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L233" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L236">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L237">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L238">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L239">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L240">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L241">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L242">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L243">		theRequirementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L246">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L247">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L248">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L249">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L250">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L251">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L252">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L253">		theRequirementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L256">		theBlocksPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L260">		EPackage.Registry.INSTANCE.put(BlocksPackage.eNS_URI, theBlocksPackage);</span>
+<span class="fc" id="L261">		return theBlocksPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getAdjunctProperty() {
+<span class="fc" id="L270">		return adjunctPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getAdjunctProperty_Base_Property() {
+<span class="fc" id="L279">		return (EReference)adjunctPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getAdjunctProperty_Principal() {
+<span class="fc" id="L288">		return (EReference)adjunctPropertyEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getBindingConnector() {
+<span class="fc" id="L297">		return bindingConnectorEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getBindingConnector_Base_Connector() {
+<span class="fc" id="L306">		return (EReference)bindingConnectorEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getBlock() {
+<span class="fc" id="L315">		return blockEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getBlock_Base_Class() {
+<span class="fc" id="L324">		return (EReference)blockEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getBlock_IsEncapsulated() {
+<span class="fc" id="L333">		return (EAttribute)blockEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getBlock__GetReferences() {
+<span class="fc" id="L342">		return blockEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getBlock__GetParts() {
+<span class="fc" id="L351">		return blockEClass.getEOperations().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getBlock__GetFlowProperties() {
+<span class="fc" id="L360">		return blockEClass.getEOperations().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getBoundReference() {
+<span class="fc" id="L369">		return boundReferenceEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getBoundReference_BindingPath() {
+<span class="fc" id="L378">		return (EReference)boundReferenceEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getBoundReference_BoundEnd() {
+<span class="fc" id="L387">		return (EReference)boundReferenceEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getEndPathMultiplicity() {
+<span class="fc" id="L396">		return endPathMultiplicityEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getEndPathMultiplicity_Base_Property() {
+<span class="fc" id="L405">		return (EReference)endPathMultiplicityEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getEndPathMultiplicity_Lower() {
+<span class="fc" id="L414">		return (EAttribute)endPathMultiplicityEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getEndPathMultiplicity_Upper() {
+<span class="fc" id="L423">		return (EAttribute)endPathMultiplicityEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getClassifierBehaviorProperty() {
+<span class="fc" id="L432">		return classifierBehaviorPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getClassifierBehaviorProperty_Base_Property() {
+<span class="fc" id="L441">		return (EReference)classifierBehaviorPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getConnectorProperty() {
+<span class="fc" id="L450">		return connectorPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getConnectorProperty_Base_Property() {
+<span class="fc" id="L459">		return (EReference)connectorPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getConnectorProperty_Connector() {
+<span class="fc" id="L468">		return (EReference)connectorPropertyEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getDistributedProperty() {
+<span class="fc" id="L477">		return distributedPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDistributedProperty_Base_Property() {
+<span class="fc" id="L486">		return (EReference)distributedPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getElementPropertyPath() {
+<span class="fc" id="L495">		return elementPropertyPathEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getElementPropertyPath_Base_Element() {
+<span class="fc" id="L504">		return (EReference)elementPropertyPathEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getElementPropertyPath_PropertyPath() {
+<span class="fc" id="L513">		return (EReference)elementPropertyPathEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getNestedConnectorEnd() {
+<span class="fc" id="L522">		return nestedConnectorEndEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getNestedConnectorEnd_Base_ConnectorEnd() {
+<span class="fc" id="L531">		return (EReference)nestedConnectorEndEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getParticipantProperty() {
+<span class="fc" id="L540">		return participantPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getParticipantProperty_Base_Property() {
+<span class="fc" id="L549">		return (EReference)participantPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getParticipantProperty_End() {
+<span class="fc" id="L558">		return (EReference)participantPropertyEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getPropertySpecificType() {
+<span class="fc" id="L567">		return propertySpecificTypeEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getPropertySpecificType_Base_Classifier() {
+<span class="fc" id="L576">		return (EReference)propertySpecificTypeEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getValueType() {
+<span class="fc" id="L585">		return valueTypeEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getValueType_Base_DataType() {
+<span class="fc" id="L594">		return (EReference)valueTypeEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getValueType_QuantityKind() {
+<span class="fc" id="L603">		return (EReference)valueTypeEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getValueType_Unit() {
+<span class="fc" id="L612">		return (EReference)valueTypeEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getDirectedRelationshipPropertyPath() {
+<span class="fc" id="L621">		return directedRelationshipPropertyPathEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedRelationshipPropertyPath_Base_DirectedRelationship() {
+<span class="fc" id="L630">		return (EReference)directedRelationshipPropertyPathEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedRelationshipPropertyPath_SourceContext() {
+<span class="fc" id="L639">		return (EReference)directedRelationshipPropertyPathEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedRelationshipPropertyPath_SourcePropertyPath() {
+<span class="fc" id="L648">		return (EReference)directedRelationshipPropertyPathEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedRelationshipPropertyPath_TargetContext() {
+<span class="fc" id="L657">		return (EReference)directedRelationshipPropertyPathEClass.getEStructuralFeatures().get(3);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedRelationshipPropertyPath_TargetPropertyPath() {
+<span class="fc" id="L666">		return (EReference)directedRelationshipPropertyPathEClass.getEStructuralFeatures().get(4);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public BlocksFactory getBlocksFactory() {
+<span class="nc" id="L675">		return (BlocksFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L683">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L693" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L694">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L697">		adjunctPropertyEClass = createEClass(ADJUNCT_PROPERTY);</span>
+<span class="fc" id="L698">		createEReference(adjunctPropertyEClass, ADJUNCT_PROPERTY__BASE_PROPERTY);</span>
+<span class="fc" id="L699">		createEReference(adjunctPropertyEClass, ADJUNCT_PROPERTY__PRINCIPAL);</span>
+
+<span class="fc" id="L701">		bindingConnectorEClass = createEClass(BINDING_CONNECTOR);</span>
+<span class="fc" id="L702">		createEReference(bindingConnectorEClass, BINDING_CONNECTOR__BASE_CONNECTOR);</span>
+
+<span class="fc" id="L704">		blockEClass = createEClass(BLOCK);</span>
+<span class="fc" id="L705">		createEReference(blockEClass, BLOCK__BASE_CLASS);</span>
+<span class="fc" id="L706">		createEAttribute(blockEClass, BLOCK__IS_ENCAPSULATED);</span>
+<span class="fc" id="L707">		createEOperation(blockEClass, BLOCK___GET_REFERENCES);</span>
+<span class="fc" id="L708">		createEOperation(blockEClass, BLOCK___GET_PARTS);</span>
+<span class="fc" id="L709">		createEOperation(blockEClass, BLOCK___GET_FLOW_PROPERTIES);</span>
+
+<span class="fc" id="L711">		boundReferenceEClass = createEClass(BOUND_REFERENCE);</span>
+<span class="fc" id="L712">		createEReference(boundReferenceEClass, BOUND_REFERENCE__BINDING_PATH);</span>
+<span class="fc" id="L713">		createEReference(boundReferenceEClass, BOUND_REFERENCE__BOUND_END);</span>
+
+<span class="fc" id="L715">		endPathMultiplicityEClass = createEClass(END_PATH_MULTIPLICITY);</span>
+<span class="fc" id="L716">		createEReference(endPathMultiplicityEClass, END_PATH_MULTIPLICITY__BASE_PROPERTY);</span>
+<span class="fc" id="L717">		createEAttribute(endPathMultiplicityEClass, END_PATH_MULTIPLICITY__LOWER);</span>
+<span class="fc" id="L718">		createEAttribute(endPathMultiplicityEClass, END_PATH_MULTIPLICITY__UPPER);</span>
+
+<span class="fc" id="L720">		classifierBehaviorPropertyEClass = createEClass(CLASSIFIER_BEHAVIOR_PROPERTY);</span>
+<span class="fc" id="L721">		createEReference(classifierBehaviorPropertyEClass, CLASSIFIER_BEHAVIOR_PROPERTY__BASE_PROPERTY);</span>
+
+<span class="fc" id="L723">		connectorPropertyEClass = createEClass(CONNECTOR_PROPERTY);</span>
+<span class="fc" id="L724">		createEReference(connectorPropertyEClass, CONNECTOR_PROPERTY__BASE_PROPERTY);</span>
+<span class="fc" id="L725">		createEReference(connectorPropertyEClass, CONNECTOR_PROPERTY__CONNECTOR);</span>
+
+<span class="fc" id="L727">		distributedPropertyEClass = createEClass(DISTRIBUTED_PROPERTY);</span>
+<span class="fc" id="L728">		createEReference(distributedPropertyEClass, DISTRIBUTED_PROPERTY__BASE_PROPERTY);</span>
+
+<span class="fc" id="L730">		elementPropertyPathEClass = createEClass(ELEMENT_PROPERTY_PATH);</span>
+<span class="fc" id="L731">		createEReference(elementPropertyPathEClass, ELEMENT_PROPERTY_PATH__BASE_ELEMENT);</span>
+<span class="fc" id="L732">		createEReference(elementPropertyPathEClass, ELEMENT_PROPERTY_PATH__PROPERTY_PATH);</span>
+
+<span class="fc" id="L734">		nestedConnectorEndEClass = createEClass(NESTED_CONNECTOR_END);</span>
+<span class="fc" id="L735">		createEReference(nestedConnectorEndEClass, NESTED_CONNECTOR_END__BASE_CONNECTOR_END);</span>
+
+<span class="fc" id="L737">		participantPropertyEClass = createEClass(PARTICIPANT_PROPERTY);</span>
+<span class="fc" id="L738">		createEReference(participantPropertyEClass, PARTICIPANT_PROPERTY__BASE_PROPERTY);</span>
+<span class="fc" id="L739">		createEReference(participantPropertyEClass, PARTICIPANT_PROPERTY__END);</span>
+
+<span class="fc" id="L741">		propertySpecificTypeEClass = createEClass(PROPERTY_SPECIFIC_TYPE);</span>
+<span class="fc" id="L742">		createEReference(propertySpecificTypeEClass, PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER);</span>
+
+<span class="fc" id="L744">		valueTypeEClass = createEClass(VALUE_TYPE);</span>
+<span class="fc" id="L745">		createEReference(valueTypeEClass, VALUE_TYPE__BASE_DATA_TYPE);</span>
+<span class="fc" id="L746">		createEReference(valueTypeEClass, VALUE_TYPE__QUANTITY_KIND);</span>
+<span class="fc" id="L747">		createEReference(valueTypeEClass, VALUE_TYPE__UNIT);</span>
+
+<span class="fc" id="L749">		directedRelationshipPropertyPathEClass = createEClass(DIRECTED_RELATIONSHIP_PROPERTY_PATH);</span>
+<span class="fc" id="L750">		createEReference(directedRelationshipPropertyPathEClass, DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP);</span>
+<span class="fc" id="L751">		createEReference(directedRelationshipPropertyPathEClass, DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT);</span>
+<span class="fc" id="L752">		createEReference(directedRelationshipPropertyPathEClass, DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH);</span>
+<span class="fc" id="L753">		createEReference(directedRelationshipPropertyPathEClass, DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT);</span>
+<span class="fc" id="L754">		createEReference(directedRelationshipPropertyPathEClass, DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH);</span>
+<span class="fc" id="L755">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L762">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L772" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L773">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L776">		setName(eNAME);</span>
+<span class="fc" id="L777">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L778">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L781">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+<span class="fc" id="L782">		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+<span class="fc" id="L789">		boundReferenceEClass.getESuperTypes().add(this.getEndPathMultiplicity());</span>
+<span class="fc" id="L790">		nestedConnectorEndEClass.getESuperTypes().add(this.getElementPropertyPath());</span>
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L793">		initEClass(adjunctPropertyEClass, AdjunctProperty.class, &quot;AdjunctProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L794">		initEReference(getAdjunctProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, AdjunctProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L795">		initEReference(getAdjunctProperty_Principal(), theUMLPackage.getElement(), null, &quot;principal&quot;, null, 1, 1, AdjunctProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L797">		initEClass(bindingConnectorEClass, BindingConnector.class, &quot;BindingConnector&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L798">		initEReference(getBindingConnector_Base_Connector(), theUMLPackage.getConnector(), null, &quot;base_Connector&quot;, null, 0, 1, BindingConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L800">		initEClass(blockEClass, Block.class, &quot;Block&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L801">		initEReference(getBlock_Base_Class(), theUMLPackage.getClass_(), null, &quot;base_Class&quot;, null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L802">		initEAttribute(getBlock_IsEncapsulated(), theTypesPackage.getBoolean(), &quot;isEncapsulated&quot;, null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L804">		initEOperation(getBlock__GetReferences(), theUMLPackage.getProperty(), &quot;getReferences&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L806">		initEOperation(getBlock__GetParts(), theUMLPackage.getProperty(), &quot;getParts&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L808">		initEOperation(getBlock__GetFlowProperties(), theUMLPackage.getProperty(), &quot;getFlowProperties&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L810">		initEClass(boundReferenceEClass, BoundReference.class, &quot;BoundReference&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L811">		initEReference(getBoundReference_BindingPath(), theUMLPackage.getProperty(), null, &quot;bindingPath&quot;, null, 1, -1, BoundReference.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L812">		initEReference(getBoundReference_BoundEnd(), theUMLPackage.getConnectorEnd(), null, &quot;boundEnd&quot;, null, 1, 1, BoundReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L814">		initEClass(endPathMultiplicityEClass, EndPathMultiplicity.class, &quot;EndPathMultiplicity&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L815">		initEReference(getEndPathMultiplicity_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, EndPathMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L816">		initEAttribute(getEndPathMultiplicity_Lower(), theTypesPackage.getInteger(), &quot;lower&quot;, &quot;0&quot;, 0, 1, EndPathMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+<span class="fc" id="L817">		initEAttribute(getEndPathMultiplicity_Upper(), theTypesPackage.getUnlimitedNatural(), &quot;upper&quot;, &quot;-1&quot;, 0, 1, EndPathMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+
+<span class="fc" id="L819">		initEClass(classifierBehaviorPropertyEClass, ClassifierBehaviorProperty.class, &quot;ClassifierBehaviorProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L820">		initEReference(getClassifierBehaviorProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, ClassifierBehaviorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L822">		initEClass(connectorPropertyEClass, ConnectorProperty.class, &quot;ConnectorProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L823">		initEReference(getConnectorProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, ConnectorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L824">		initEReference(getConnectorProperty_Connector(), theUMLPackage.getConnector(), null, &quot;connector&quot;, null, 1, 1, ConnectorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L826">		initEClass(distributedPropertyEClass, DistributedProperty.class, &quot;DistributedProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L827">		initEReference(getDistributedProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, DistributedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L829">		initEClass(elementPropertyPathEClass, ElementPropertyPath.class, &quot;ElementPropertyPath&quot;, IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L830">		initEReference(getElementPropertyPath_Base_Element(), theUMLPackage.getElement(), null, &quot;base_Element&quot;, null, 0, 1, ElementPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L831">		initEReference(getElementPropertyPath_PropertyPath(), theUMLPackage.getProperty(), null, &quot;propertyPath&quot;, null, 1, -1, ElementPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L833">		initEClass(nestedConnectorEndEClass, NestedConnectorEnd.class, &quot;NestedConnectorEnd&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L834">		initEReference(getNestedConnectorEnd_Base_ConnectorEnd(), theUMLPackage.getConnectorEnd(), null, &quot;base_ConnectorEnd&quot;, null, 0, 1, NestedConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L836">		initEClass(participantPropertyEClass, ParticipantProperty.class, &quot;ParticipantProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L837">		initEReference(getParticipantProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, ParticipantProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L838">		initEReference(getParticipantProperty_End(), theUMLPackage.getProperty(), null, &quot;end&quot;, null, 1, 1, ParticipantProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L840">		initEClass(propertySpecificTypeEClass, PropertySpecificType.class, &quot;PropertySpecificType&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L841">		initEReference(getPropertySpecificType_Base_Classifier(), theUMLPackage.getClassifier(), null, &quot;base_Classifier&quot;, null, 0, 1, PropertySpecificType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L843">		initEClass(valueTypeEClass, ValueType.class, &quot;ValueType&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L844">		initEReference(getValueType_Base_DataType(), theUMLPackage.getDataType(), null, &quot;base_DataType&quot;, null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L845">		initEReference(getValueType_QuantityKind(), theUMLPackage.getInstanceSpecification(), null, &quot;quantityKind&quot;, null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L846">		initEReference(getValueType_Unit(), theUMLPackage.getInstanceSpecification(), null, &quot;unit&quot;, null, 0, 1, ValueType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L848">		initEClass(directedRelationshipPropertyPathEClass, DirectedRelationshipPropertyPath.class, &quot;DirectedRelationshipPropertyPath&quot;, IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L849">		initEReference(getDirectedRelationshipPropertyPath_Base_DirectedRelationship(), theUMLPackage.getDirectedRelationship(), null, &quot;base_DirectedRelationship&quot;, null, 0, 1, DirectedRelationshipPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L850">		initEReference(getDirectedRelationshipPropertyPath_SourceContext(), theUMLPackage.getClassifier(), null, &quot;sourceContext&quot;, null, 0, 1, DirectedRelationshipPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L851">		initEReference(getDirectedRelationshipPropertyPath_SourcePropertyPath(), theUMLPackage.getProperty(), null, &quot;sourcePropertyPath&quot;, null, 0, -1, DirectedRelationshipPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L852">		initEReference(getDirectedRelationshipPropertyPath_TargetContext(), theUMLPackage.getClassifier(), null, &quot;targetContext&quot;, null, 0, 1, DirectedRelationshipPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L853">		initEReference(getDirectedRelationshipPropertyPath_TargetPropertyPath(), theUMLPackage.getProperty(), null, &quot;targetPropertyPath&quot;, null, 0, -1, DirectedRelationshipPropertyPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Create resource
+<span class="fc" id="L856">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L860">		createUMLAnnotations();</span>
+<span class="fc" id="L861">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L870">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L871">		addAnnotation</span>
+<span class="fc" id="L872">		  (this, </span>
+<span class="fc" id="L873">		   source, </span>
+<span class="fc" id="L874">		   new String[] {</span>
+<span class="fc" id="L875">			 &quot;originalName&quot;, &quot;Blocks&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L877">	}</span>
+
+} //BlocksPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

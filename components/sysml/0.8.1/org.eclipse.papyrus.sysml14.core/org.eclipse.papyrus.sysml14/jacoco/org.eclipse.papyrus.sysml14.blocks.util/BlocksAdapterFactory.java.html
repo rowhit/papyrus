@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BlocksAdapterFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.util</a> &gt; <span class="el_source">BlocksAdapterFactory.java</span></div><h1>BlocksAdapterFactory.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.util;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.papyrus.sysml14.blocks.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Adapter Factory&lt;/b&gt; for the model.
+ * It provides an adapter &lt;code&gt;createXXX&lt;/code&gt; method for each class of the model.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.blocks.BlocksPackage
+ * @generated
+ */
+public class BlocksAdapterFactory extends AdapterFactoryImpl {
+	/**
+	 * The cached model package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static BlocksPackage modelPackage;
+
+	/**
+	 * Creates an instance of the adapter factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L47">	public BlocksAdapterFactory() {</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L49">			modelPackage = BlocksPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L51">	}</span>
+
+	/**
+	 * Returns whether this factory is applicable for the type of the object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns &lt;code&gt;true&lt;/code&gt; if the object is either the model's package or is an instance object of the model.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object object) {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">		if (object == modelPackage) {</span>
+<span class="nc" id="L64">			return true;</span>
+		}
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		if (object instanceof EObject) {</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">			return ((EObject)object).eClass().getEPackage() == modelPackage;</span>
+		}
+<span class="nc" id="L69">		return false;</span>
+	}
+
+	/**
+	 * The switch that delegates to the &lt;code&gt;createXXX&lt;/code&gt; methods.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L78">	protected BlocksSwitch&lt;Adapter&gt; modelSwitch =</span>
+<span class="nc" id="L79">		new BlocksSwitch&lt;Adapter&gt;() {</span>
+			@Override
+			public Adapter caseAdjunctProperty(AdjunctProperty object) {
+<span class="nc" id="L82">				return createAdjunctPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter caseBindingConnector(BindingConnector object) {
+<span class="nc" id="L86">				return createBindingConnectorAdapter();</span>
+			}
+			@Override
+			public Adapter caseBlock(Block object) {
+<span class="nc" id="L90">				return createBlockAdapter();</span>
+			}
+			@Override
+			public Adapter caseBoundReference(BoundReference object) {
+<span class="nc" id="L94">				return createBoundReferenceAdapter();</span>
+			}
+			@Override
+			public Adapter caseEndPathMultiplicity(EndPathMultiplicity object) {
+<span class="nc" id="L98">				return createEndPathMultiplicityAdapter();</span>
+			}
+			@Override
+			public Adapter caseClassifierBehaviorProperty(ClassifierBehaviorProperty object) {
+<span class="nc" id="L102">				return createClassifierBehaviorPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter caseConnectorProperty(ConnectorProperty object) {
+<span class="nc" id="L106">				return createConnectorPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter caseDistributedProperty(DistributedProperty object) {
+<span class="nc" id="L110">				return createDistributedPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter caseElementPropertyPath(ElementPropertyPath object) {
+<span class="nc" id="L114">				return createElementPropertyPathAdapter();</span>
+			}
+			@Override
+			public Adapter caseNestedConnectorEnd(NestedConnectorEnd object) {
+<span class="nc" id="L118">				return createNestedConnectorEndAdapter();</span>
+			}
+			@Override
+			public Adapter caseParticipantProperty(ParticipantProperty object) {
+<span class="nc" id="L122">				return createParticipantPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter casePropertySpecificType(PropertySpecificType object) {
+<span class="nc" id="L126">				return createPropertySpecificTypeAdapter();</span>
+			}
+			@Override
+			public Adapter caseValueType(ValueType object) {
+<span class="nc" id="L130">				return createValueTypeAdapter();</span>
+			}
+			@Override
+			public Adapter caseDirectedRelationshipPropertyPath(DirectedRelationshipPropertyPath object) {
+<span class="nc" id="L134">				return createDirectedRelationshipPropertyPathAdapter();</span>
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+<span class="nc" id="L138">				return createEObjectAdapter();</span>
+			}
+		};
+
+	/**
+	 * Creates an adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param target the object to adapt.
+	 * @return the adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdapter(Notifier target) {
+<span class="nc" id="L152">		return modelSwitch.doSwitch((EObject)target);</span>
+	}
+
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.AdjunctProperty &lt;em&gt;Adjunct Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.AdjunctProperty
+	 * @generated
+	 */
+	public Adapter createAdjunctPropertyAdapter() {
+<span class="nc" id="L167">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.BindingConnector &lt;em&gt;Binding Connector&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.BindingConnector
+	 * @generated
+	 */
+	public Adapter createBindingConnectorAdapter() {
+<span class="nc" id="L181">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.Block &lt;em&gt;Block&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.Block
+	 * @generated
+	 */
+	public Adapter createBlockAdapter() {
+<span class="nc" id="L195">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.BoundReference &lt;em&gt;Bound Reference&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.BoundReference
+	 * @generated
+	 */
+	public Adapter createBoundReferenceAdapter() {
+<span class="nc" id="L209">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.EndPathMultiplicity &lt;em&gt;End Path Multiplicity&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.EndPathMultiplicity
+	 * @generated
+	 */
+	public Adapter createEndPathMultiplicityAdapter() {
+<span class="nc" id="L223">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ClassifierBehaviorProperty &lt;em&gt;Classifier Behavior Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ClassifierBehaviorProperty
+	 * @generated
+	 */
+	public Adapter createClassifierBehaviorPropertyAdapter() {
+<span class="nc" id="L237">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ConnectorProperty &lt;em&gt;Connector Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ConnectorProperty
+	 * @generated
+	 */
+	public Adapter createConnectorPropertyAdapter() {
+<span class="nc" id="L251">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.DistributedProperty &lt;em&gt;Distributed Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.DistributedProperty
+	 * @generated
+	 */
+	public Adapter createDistributedPropertyAdapter() {
+<span class="nc" id="L265">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath &lt;em&gt;Element Property Path&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath
+	 * @generated
+	 */
+	public Adapter createElementPropertyPathAdapter() {
+<span class="nc" id="L279">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd &lt;em&gt;Nested Connector End&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd
+	 * @generated
+	 */
+	public Adapter createNestedConnectorEndAdapter() {
+<span class="nc" id="L293">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ParticipantProperty &lt;em&gt;Participant Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ParticipantProperty
+	 * @generated
+	 */
+	public Adapter createParticipantPropertyAdapter() {
+<span class="nc" id="L307">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.PropertySpecificType &lt;em&gt;Property Specific Type&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.PropertySpecificType
+	 * @generated
+	 */
+	public Adapter createPropertySpecificTypeAdapter() {
+<span class="nc" id="L321">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ValueType &lt;em&gt;Value Type&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ValueType
+	 * @generated
+	 */
+	public Adapter createValueTypeAdapter() {
+<span class="nc" id="L335">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath &lt;em&gt;Directed Relationship Property Path&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath
+	 * @generated
+	 */
+	public Adapter createDirectedRelationshipPropertyPathAdapter() {
+<span class="nc" id="L349">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for the default case.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @generated
+	 */
+	public Adapter createEObjectAdapter() {
+<span class="nc" id="L361">		return null;</span>
+	}
+
+} //BlocksAdapterFactory
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

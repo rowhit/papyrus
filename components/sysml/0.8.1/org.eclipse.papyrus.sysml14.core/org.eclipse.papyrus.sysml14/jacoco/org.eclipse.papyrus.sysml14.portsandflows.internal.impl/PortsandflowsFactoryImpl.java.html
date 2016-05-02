@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PortsandflowsFactoryImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.internal.impl</a> &gt; <span class="el_source">PortsandflowsFactoryImpl.java</span></div><h1>PortsandflowsFactoryImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.papyrus.sysml14.portsandflows.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Factory&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class PortsandflowsFactoryImpl extends EFactoryImpl implements PortsandflowsFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public static PortsandflowsFactory init() {
+		try {
+<span class="fc" id="L41">			PortsandflowsFactory thePortsandflowsFactory = (PortsandflowsFactory)EPackage.Registry.INSTANCE.getEFactory(PortsandflowsPackage.eNS_URI);</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">			if (thePortsandflowsFactory != null) {</span>
+<span class="fc" id="L43">				return thePortsandflowsFactory;</span>
+			}
+		}
+<span class="nc" id="L46">		catch (Exception exception) {</span>
+<span class="nc" id="L47">			EcorePlugin.INSTANCE.log(exception);</span>
+		}
+<span class="nc" id="L49">		return new PortsandflowsFactoryImpl();</span>
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public PortsandflowsFactoryImpl() {
+<span class="fc" id="L59">		super();</span>
+<span class="fc" id="L60">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+<span class="pc bpc" id="L69" title="10 of 11 branches missed.">		switch (eClass.getClassifierID()) {</span>
+<span class="nc" id="L70">			case PortsandflowsPackage.ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION: return createAcceptChangeStructuralFeatureEventAction();</span>
+<span class="nc" id="L71">			case PortsandflowsPackage.CHANGE_STRUCTURAL_FEATURE_EVENT: return createChangeStructuralFeatureEvent();</span>
+<span class="nc" id="L72">			case PortsandflowsPackage.DIRECTED_FEATURE: return createDirectedFeature();</span>
+<span class="fc" id="L73">			case PortsandflowsPackage.FLOW_PROPERTY: return createFlowProperty();</span>
+<span class="nc" id="L74">			case PortsandflowsPackage.FULL_PORT: return createFullPort();</span>
+<span class="nc" id="L75">			case PortsandflowsPackage.INTERFACE_BLOCK: return createInterfaceBlock();</span>
+<span class="nc" id="L76">			case PortsandflowsPackage.INVOCATION_ON_NESTED_PORT_ACTION: return createInvocationOnNestedPortAction();</span>
+<span class="nc" id="L77">			case PortsandflowsPackage.ITEM_FLOW: return createItemFlow();</span>
+<span class="nc" id="L78">			case PortsandflowsPackage.PROXY_PORT: return createProxyPort();</span>
+<span class="nc" id="L79">			case PortsandflowsPackage.TRIGGER_ON_NESTED_PORT: return createTriggerOnNestedPort();</span>
+			default:
+<span class="nc" id="L81">				throw new IllegalArgumentException(&quot;The class '&quot; + eClass.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+<span class="nc bnc" id="L92" title="All 3 branches missed.">		switch (eDataType.getClassifierID()) {</span>
+			case PortsandflowsPackage.FEATURE_DIRECTION:
+<span class="nc" id="L94">				return createFeatureDirectionFromString(eDataType, initialValue);</span>
+			case PortsandflowsPackage.FLOW_DIRECTION:
+<span class="nc" id="L96">				return createFlowDirectionFromString(eDataType, initialValue);</span>
+			default:
+<span class="nc" id="L98">				throw new IllegalArgumentException(&quot;The datatype '&quot; + eDataType.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+<span class="nc bnc" id="L109" title="All 3 branches missed.">		switch (eDataType.getClassifierID()) {</span>
+			case PortsandflowsPackage.FEATURE_DIRECTION:
+<span class="nc" id="L111">				return convertFeatureDirectionToString(eDataType, instanceValue);</span>
+			case PortsandflowsPackage.FLOW_DIRECTION:
+<span class="nc" id="L113">				return convertFlowDirectionToString(eDataType, instanceValue);</span>
+			default:
+<span class="nc" id="L115">				throw new IllegalArgumentException(&quot;The datatype '&quot; + eDataType.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AcceptChangeStructuralFeatureEventAction createAcceptChangeStructuralFeatureEventAction() {
+<span class="nc" id="L125">		AcceptChangeStructuralFeatureEventActionImpl acceptChangeStructuralFeatureEventAction = new AcceptChangeStructuralFeatureEventActionImpl();</span>
+<span class="nc" id="L126">		return acceptChangeStructuralFeatureEventAction;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ChangeStructuralFeatureEvent createChangeStructuralFeatureEvent() {
+<span class="nc" id="L135">		ChangeStructuralFeatureEventImpl changeStructuralFeatureEvent = new ChangeStructuralFeatureEventImpl();</span>
+<span class="nc" id="L136">		return changeStructuralFeatureEvent;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DirectedFeature createDirectedFeature() {
+<span class="nc" id="L145">		DirectedFeatureImpl directedFeature = new DirectedFeatureImpl();</span>
+<span class="nc" id="L146">		return directedFeature;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FlowProperty createFlowProperty() {
+<span class="nc" id="L155">		FlowPropertyImpl flowProperty = new FlowPropertyImpl();</span>
+<span class="nc" id="L156">		return flowProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FullPort createFullPort() {
+<span class="nc" id="L165">		FullPortImpl fullPort = new FullPortImpl();</span>
+<span class="nc" id="L166">		return fullPort;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InterfaceBlock createInterfaceBlock() {
+<span class="nc" id="L175">		InterfaceBlockImpl interfaceBlock = new InterfaceBlockImpl();</span>
+<span class="nc" id="L176">		return interfaceBlock;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InvocationOnNestedPortAction createInvocationOnNestedPortAction() {
+<span class="nc" id="L185">		InvocationOnNestedPortActionImpl invocationOnNestedPortAction = new InvocationOnNestedPortActionImpl();</span>
+<span class="nc" id="L186">		return invocationOnNestedPortAction;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ItemFlow createItemFlow() {
+<span class="nc" id="L195">		ItemFlowImpl itemFlow = new ItemFlowImpl();</span>
+<span class="nc" id="L196">		return itemFlow;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ProxyPort createProxyPort() {
+<span class="nc" id="L205">		ProxyPortImpl proxyPort = new ProxyPortImpl();</span>
+<span class="nc" id="L206">		return proxyPort;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public TriggerOnNestedPort createTriggerOnNestedPort() {
+<span class="nc" id="L215">		TriggerOnNestedPortImpl triggerOnNestedPort = new TriggerOnNestedPortImpl();</span>
+<span class="nc" id="L216">		return triggerOnNestedPort;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FeatureDirection createFeatureDirectionFromString(EDataType eDataType, String initialValue) {
+<span class="nc" id="L225">		FeatureDirection result = FeatureDirection.get(initialValue);</span>
+<span class="nc bnc" id="L226" title="All 2 branches missed.">		if (result == null) throw new IllegalArgumentException(&quot;The value '&quot; + initialValue + &quot;' is not a valid enumerator of '&quot; + eDataType.getName() + &quot;'&quot;); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L227">		return result;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String convertFeatureDirectionToString(EDataType eDataType, Object instanceValue) {
+<span class="nc bnc" id="L236" title="All 2 branches missed.">		return instanceValue == null ? null : instanceValue.toString();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FlowDirection createFlowDirectionFromString(EDataType eDataType, String initialValue) {
+<span class="nc" id="L245">		FlowDirection result = FlowDirection.get(initialValue);</span>
+<span class="nc bnc" id="L246" title="All 2 branches missed.">		if (result == null) throw new IllegalArgumentException(&quot;The value '&quot; + initialValue + &quot;' is not a valid enumerator of '&quot; + eDataType.getName() + &quot;'&quot;); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L247">		return result;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String convertFlowDirectionToString(EDataType eDataType, Object instanceValue) {
+<span class="nc bnc" id="L256" title="All 2 branches missed.">		return instanceValue == null ? null : instanceValue.toString();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public PortsandflowsPackage getPortsandflowsPackage() {
+<span class="nc" id="L265">		return (PortsandflowsPackage)getEPackage();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static PortsandflowsPackage getPackage() {
+<span class="nc" id="L276">		return PortsandflowsPackage.eINSTANCE;</span>
+	}
+
+} //PortsandflowsFactoryImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

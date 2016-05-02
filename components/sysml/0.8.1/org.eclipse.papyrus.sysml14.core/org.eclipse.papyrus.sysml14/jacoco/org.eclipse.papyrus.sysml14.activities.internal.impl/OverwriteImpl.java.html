@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>OverwriteImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities.internal.impl</a> &gt; <span class="el_source">OverwriteImpl.java</span></div><h1>OverwriteImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+import org.eclipse.papyrus.sysml14.activities.Overwrite;
+
+import org.eclipse.uml2.uml.ObjectNode;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Overwrite&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.OverwriteImpl#getBase_ObjectNode &lt;em&gt;Base Object Node&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class OverwriteImpl extends MinimalEObjectImpl.Container implements Overwrite {
+	/**
+	 * The cached value of the '{@link #getBase_ObjectNode() &lt;em&gt;Base Object Node&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ObjectNode()
+	 * @generated
+	 * @ordered
+	 */
+	protected ObjectNode base_ObjectNode;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected OverwriteImpl() {
+<span class="nc" id="L58">		super();</span>
+<span class="nc" id="L59">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L68">		return ActivitiesPackage.Literals.OVERWRITE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ObjectNode getBase_ObjectNode() {
+<span class="nc bnc" id="L77" title="All 4 branches missed.">		if (base_ObjectNode != null &amp;&amp; base_ObjectNode.eIsProxy()) {</span>
+<span class="nc" id="L78">			InternalEObject oldBase_ObjectNode = (InternalEObject)base_ObjectNode;</span>
+<span class="nc" id="L79">			base_ObjectNode = (ObjectNode)eResolveProxy(oldBase_ObjectNode);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">			if (base_ObjectNode != oldBase_ObjectNode) {</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L82">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));</span>
+			}
+		}
+<span class="nc" id="L85">		return base_ObjectNode;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ObjectNode basicGetBase_ObjectNode() {
+<span class="nc" id="L94">		return base_ObjectNode;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ObjectNode(ObjectNode newBase_ObjectNode) {
+<span class="nc" id="L103">		ObjectNode oldBase_ObjectNode = base_ObjectNode;</span>
+<span class="nc" id="L104">		base_ObjectNode = newBase_ObjectNode;</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L106">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));</span>
+<span class="nc" id="L107">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L116" title="All 2 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE:
+<span class="nc bnc" id="L118" title="All 2 branches missed.">				if (resolve) return getBase_ObjectNode();</span>
+<span class="nc" id="L119">				return basicGetBase_ObjectNode();</span>
+		}
+<span class="nc" id="L121">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L131" title="All 2 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE:
+<span class="nc" id="L133">				setBase_ObjectNode((ObjectNode)newValue);</span>
+<span class="nc" id="L134">				return;</span>
+		}
+<span class="nc" id="L136">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L137">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L146" title="All 2 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE:
+<span class="nc" id="L148">				setBase_ObjectNode((ObjectNode)null);</span>
+<span class="nc" id="L149">				return;</span>
+		}
+<span class="nc" id="L151">		super.eUnset(featureID);</span>
+<span class="nc" id="L152">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L161" title="All 2 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.OVERWRITE__BASE_OBJECT_NODE:
+<span class="nc bnc" id="L163" title="All 2 branches missed.">				return base_ObjectNode != null;</span>
+		}
+<span class="nc" id="L165">		return super.eIsSet(featureID);</span>
+	}
+
+} //OverwriteImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

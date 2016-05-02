@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RateImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities.internal.impl</a> &gt; <span class="el_source">RateImpl.java</span></div><h1>RateImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+import org.eclipse.papyrus.sysml14.activities.Rate;
+
+import org.eclipse.uml2.uml.ActivityEdge;
+import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.ObjectNode;
+import org.eclipse.uml2.uml.Parameter;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Rate&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl#getBase_ActivityEdge &lt;em&gt;Base Activity Edge&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl#getBase_ObjectNode &lt;em&gt;Base Object Node&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl#getBase_Parameter &lt;em&gt;Base Parameter&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.RateImpl#getRate &lt;em&gt;Rate&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class RateImpl extends MinimalEObjectImpl.Container implements Rate {
+	/**
+	 * The cached value of the '{@link #getBase_ActivityEdge() &lt;em&gt;Base Activity Edge&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ActivityEdge()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActivityEdge base_ActivityEdge;
+
+	/**
+	 * The cached value of the '{@link #getBase_ObjectNode() &lt;em&gt;Base Object Node&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ObjectNode()
+	 * @generated
+	 * @ordered
+	 */
+	protected ObjectNode base_ObjectNode;
+
+	/**
+	 * The cached value of the '{@link #getBase_Parameter() &lt;em&gt;Base Parameter&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Parameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Parameter base_Parameter;
+
+	/**
+	 * The cached value of the '{@link #getRate() &lt;em&gt;Rate&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getRate()
+	 * @generated
+	 * @ordered
+	 */
+	protected InstanceSpecification rate;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected RateImpl() {
+<span class="nc" id="L94">		super();</span>
+<span class="nc" id="L95">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L104">		return ActivitiesPackage.Literals.RATE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ActivityEdge getBase_ActivityEdge() {
+<span class="nc bnc" id="L113" title="All 4 branches missed.">		if (base_ActivityEdge != null &amp;&amp; base_ActivityEdge.eIsProxy()) {</span>
+<span class="nc" id="L114">			InternalEObject oldBase_ActivityEdge = (InternalEObject)base_ActivityEdge;</span>
+<span class="nc" id="L115">			base_ActivityEdge = (ActivityEdge)eResolveProxy(oldBase_ActivityEdge);</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">			if (base_ActivityEdge != oldBase_ActivityEdge) {</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L118">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE, oldBase_ActivityEdge, base_ActivityEdge));</span>
+			}
+		}
+<span class="nc" id="L121">		return base_ActivityEdge;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ActivityEdge basicGetBase_ActivityEdge() {
+<span class="nc" id="L130">		return base_ActivityEdge;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ActivityEdge(ActivityEdge newBase_ActivityEdge) {
+<span class="nc" id="L139">		ActivityEdge oldBase_ActivityEdge = base_ActivityEdge;</span>
+<span class="nc" id="L140">		base_ActivityEdge = newBase_ActivityEdge;</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L142">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE, oldBase_ActivityEdge, base_ActivityEdge));</span>
+<span class="nc" id="L143">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ObjectNode getBase_ObjectNode() {
+<span class="nc bnc" id="L151" title="All 4 branches missed.">		if (base_ObjectNode != null &amp;&amp; base_ObjectNode.eIsProxy()) {</span>
+<span class="nc" id="L152">			InternalEObject oldBase_ObjectNode = (InternalEObject)base_ObjectNode;</span>
+<span class="nc" id="L153">			base_ObjectNode = (ObjectNode)eResolveProxy(oldBase_ObjectNode);</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">			if (base_ObjectNode != oldBase_ObjectNode) {</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L156">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.RATE__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));</span>
+			}
+		}
+<span class="nc" id="L159">		return base_ObjectNode;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ObjectNode basicGetBase_ObjectNode() {
+<span class="nc" id="L168">		return base_ObjectNode;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ObjectNode(ObjectNode newBase_ObjectNode) {
+<span class="nc" id="L177">		ObjectNode oldBase_ObjectNode = base_ObjectNode;</span>
+<span class="nc" id="L178">		base_ObjectNode = newBase_ObjectNode;</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L180">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.RATE__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));</span>
+<span class="nc" id="L181">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Parameter getBase_Parameter() {
+<span class="nc bnc" id="L189" title="All 4 branches missed.">		if (base_Parameter != null &amp;&amp; base_Parameter.eIsProxy()) {</span>
+<span class="nc" id="L190">			InternalEObject oldBase_Parameter = (InternalEObject)base_Parameter;</span>
+<span class="nc" id="L191">			base_Parameter = (Parameter)eResolveProxy(oldBase_Parameter);</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">			if (base_Parameter != oldBase_Parameter) {</span>
+<span class="nc bnc" id="L193" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L194">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.RATE__BASE_PARAMETER, oldBase_Parameter, base_Parameter));</span>
+			}
+		}
+<span class="nc" id="L197">		return base_Parameter;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Parameter basicGetBase_Parameter() {
+<span class="nc" id="L206">		return base_Parameter;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Parameter(Parameter newBase_Parameter) {
+<span class="nc" id="L215">		Parameter oldBase_Parameter = base_Parameter;</span>
+<span class="nc" id="L216">		base_Parameter = newBase_Parameter;</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L218">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.RATE__BASE_PARAMETER, oldBase_Parameter, base_Parameter));</span>
+<span class="nc" id="L219">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification getRate() {
+<span class="nc bnc" id="L227" title="All 4 branches missed.">		if (rate != null &amp;&amp; rate.eIsProxy()) {</span>
+<span class="nc" id="L228">			InternalEObject oldRate = (InternalEObject)rate;</span>
+<span class="nc" id="L229">			rate = (InstanceSpecification)eResolveProxy(oldRate);</span>
+<span class="nc bnc" id="L230" title="All 2 branches missed.">			if (rate != oldRate) {</span>
+<span class="nc bnc" id="L231" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L232">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.RATE__RATE, oldRate, rate));</span>
+			}
+		}
+<span class="nc" id="L235">		return rate;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification basicGetRate() {
+<span class="nc" id="L244">		return rate;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setRate(InstanceSpecification newRate) {
+<span class="nc" id="L253">		InstanceSpecification oldRate = rate;</span>
+<span class="nc" id="L254">		rate = newRate;</span>
+<span class="nc bnc" id="L255" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L256">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.RATE__RATE, oldRate, rate));</span>
+<span class="nc" id="L257">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L266" title="All 5 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE:
+<span class="nc bnc" id="L268" title="All 2 branches missed.">				if (resolve) return getBase_ActivityEdge();</span>
+<span class="nc" id="L269">				return basicGetBase_ActivityEdge();</span>
+			case ActivitiesPackage.RATE__BASE_OBJECT_NODE:
+<span class="nc bnc" id="L271" title="All 2 branches missed.">				if (resolve) return getBase_ObjectNode();</span>
+<span class="nc" id="L272">				return basicGetBase_ObjectNode();</span>
+			case ActivitiesPackage.RATE__BASE_PARAMETER:
+<span class="nc bnc" id="L274" title="All 2 branches missed.">				if (resolve) return getBase_Parameter();</span>
+<span class="nc" id="L275">				return basicGetBase_Parameter();</span>
+			case ActivitiesPackage.RATE__RATE:
+<span class="nc bnc" id="L277" title="All 2 branches missed.">				if (resolve) return getRate();</span>
+<span class="nc" id="L278">				return basicGetRate();</span>
+		}
+<span class="nc" id="L280">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L290" title="All 5 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE:
+<span class="nc" id="L292">				setBase_ActivityEdge((ActivityEdge)newValue);</span>
+<span class="nc" id="L293">				return;</span>
+			case ActivitiesPackage.RATE__BASE_OBJECT_NODE:
+<span class="nc" id="L295">				setBase_ObjectNode((ObjectNode)newValue);</span>
+<span class="nc" id="L296">				return;</span>
+			case ActivitiesPackage.RATE__BASE_PARAMETER:
+<span class="nc" id="L298">				setBase_Parameter((Parameter)newValue);</span>
+<span class="nc" id="L299">				return;</span>
+			case ActivitiesPackage.RATE__RATE:
+<span class="nc" id="L301">				setRate((InstanceSpecification)newValue);</span>
+<span class="nc" id="L302">				return;</span>
+		}
+<span class="nc" id="L304">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L305">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L314" title="All 5 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE:
+<span class="nc" id="L316">				setBase_ActivityEdge((ActivityEdge)null);</span>
+<span class="nc" id="L317">				return;</span>
+			case ActivitiesPackage.RATE__BASE_OBJECT_NODE:
+<span class="nc" id="L319">				setBase_ObjectNode((ObjectNode)null);</span>
+<span class="nc" id="L320">				return;</span>
+			case ActivitiesPackage.RATE__BASE_PARAMETER:
+<span class="nc" id="L322">				setBase_Parameter((Parameter)null);</span>
+<span class="nc" id="L323">				return;</span>
+			case ActivitiesPackage.RATE__RATE:
+<span class="nc" id="L325">				setRate((InstanceSpecification)null);</span>
+<span class="nc" id="L326">				return;</span>
+		}
+<span class="nc" id="L328">		super.eUnset(featureID);</span>
+<span class="nc" id="L329">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L338" title="All 5 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.RATE__BASE_ACTIVITY_EDGE:
+<span class="nc bnc" id="L340" title="All 2 branches missed.">				return base_ActivityEdge != null;</span>
+			case ActivitiesPackage.RATE__BASE_OBJECT_NODE:
+<span class="nc bnc" id="L342" title="All 2 branches missed.">				return base_ObjectNode != null;</span>
+			case ActivitiesPackage.RATE__BASE_PARAMETER:
+<span class="nc bnc" id="L344" title="All 2 branches missed.">				return base_Parameter != null;</span>
+			case ActivitiesPackage.RATE__RATE:
+<span class="nc bnc" id="L346" title="All 2 branches missed.">				return rate != null;</span>
+		}
+<span class="nc" id="L348">		return super.eIsSet(featureID);</span>
+	}
+
+} //RateImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

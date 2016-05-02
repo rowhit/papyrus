@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PortsandflowsAdapterFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.util</a> &gt; <span class="el_source">PortsandflowsAdapterFactory.java</span></div><h1>PortsandflowsAdapterFactory.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.util;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath;
+
+import org.eclipse.papyrus.sysml14.portsandflows.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Adapter Factory&lt;/b&gt; for the model.
+ * It provides an adapter &lt;code&gt;createXXX&lt;/code&gt; method for each class of the model.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage
+ * @generated
+ */
+public class PortsandflowsAdapterFactory extends AdapterFactoryImpl {
+	/**
+	 * The cached model package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static PortsandflowsPackage modelPackage;
+
+	/**
+	 * Creates an instance of the adapter factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L50">	public PortsandflowsAdapterFactory() {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L52">			modelPackage = PortsandflowsPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L54">	}</span>
+
+	/**
+	 * Returns whether this factory is applicable for the type of the object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns &lt;code&gt;true&lt;/code&gt; if the object is either the model's package or is an instance object of the model.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object object) {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		if (object == modelPackage) {</span>
+<span class="nc" id="L67">			return true;</span>
+		}
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (object instanceof EObject) {</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">			return ((EObject)object).eClass().getEPackage() == modelPackage;</span>
+		}
+<span class="nc" id="L72">		return false;</span>
+	}
+
+	/**
+	 * The switch that delegates to the &lt;code&gt;createXXX&lt;/code&gt; methods.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L81">	protected PortsandflowsSwitch&lt;Adapter&gt; modelSwitch =</span>
+<span class="nc" id="L82">		new PortsandflowsSwitch&lt;Adapter&gt;() {</span>
+			@Override
+			public Adapter caseAcceptChangeStructuralFeatureEventAction(AcceptChangeStructuralFeatureEventAction object) {
+<span class="nc" id="L85">				return createAcceptChangeStructuralFeatureEventActionAdapter();</span>
+			}
+			@Override
+			public Adapter caseChangeStructuralFeatureEvent(ChangeStructuralFeatureEvent object) {
+<span class="nc" id="L89">				return createChangeStructuralFeatureEventAdapter();</span>
+			}
+			@Override
+			public Adapter caseDirectedFeature(DirectedFeature object) {
+<span class="nc" id="L93">				return createDirectedFeatureAdapter();</span>
+			}
+			@Override
+			public Adapter caseFlowProperty(FlowProperty object) {
+<span class="nc" id="L97">				return createFlowPropertyAdapter();</span>
+			}
+			@Override
+			public Adapter caseFullPort(FullPort object) {
+<span class="nc" id="L101">				return createFullPortAdapter();</span>
+			}
+			@Override
+			public Adapter caseInterfaceBlock(InterfaceBlock object) {
+<span class="nc" id="L105">				return createInterfaceBlockAdapter();</span>
+			}
+			@Override
+			public Adapter caseInvocationOnNestedPortAction(InvocationOnNestedPortAction object) {
+<span class="nc" id="L109">				return createInvocationOnNestedPortActionAdapter();</span>
+			}
+			@Override
+			public Adapter caseItemFlow(ItemFlow object) {
+<span class="nc" id="L113">				return createItemFlowAdapter();</span>
+			}
+			@Override
+			public Adapter caseProxyPort(ProxyPort object) {
+<span class="nc" id="L117">				return createProxyPortAdapter();</span>
+			}
+			@Override
+			public Adapter caseTriggerOnNestedPort(TriggerOnNestedPort object) {
+<span class="nc" id="L121">				return createTriggerOnNestedPortAdapter();</span>
+			}
+			@Override
+			public Adapter caseBlock(Block object) {
+<span class="nc" id="L125">				return createBlockAdapter();</span>
+			}
+			@Override
+			public Adapter caseElementPropertyPath(ElementPropertyPath object) {
+<span class="nc" id="L129">				return createElementPropertyPathAdapter();</span>
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+<span class="nc" id="L133">				return createEObjectAdapter();</span>
+			}
+		};
+
+	/**
+	 * Creates an adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param target the object to adapt.
+	 * @return the adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdapter(Notifier target) {
+<span class="nc" id="L147">		return modelSwitch.doSwitch((EObject)target);</span>
+	}
+
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction &lt;em&gt;Accept Change Structural Feature Event Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction
+	 * @generated
+	 */
+	public Adapter createAcceptChangeStructuralFeatureEventActionAdapter() {
+<span class="nc" id="L162">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent &lt;em&gt;Change Structural Feature Event&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent
+	 * @generated
+	 */
+	public Adapter createChangeStructuralFeatureEventAdapter() {
+<span class="nc" id="L176">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature &lt;em&gt;Directed Feature&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature
+	 * @generated
+	 */
+	public Adapter createDirectedFeatureAdapter() {
+<span class="nc" id="L190">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty &lt;em&gt;Flow Property&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FlowProperty
+	 * @generated
+	 */
+	public Adapter createFlowPropertyAdapter() {
+<span class="nc" id="L204">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.FullPort &lt;em&gt;Full Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.FullPort
+	 * @generated
+	 */
+	public Adapter createFullPortAdapter() {
+<span class="nc" id="L218">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.InterfaceBlock &lt;em&gt;Interface Block&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InterfaceBlock
+	 * @generated
+	 */
+	public Adapter createInterfaceBlockAdapter() {
+<span class="nc" id="L232">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction &lt;em&gt;Invocation On Nested Port Action&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction
+	 * @generated
+	 */
+	public Adapter createInvocationOnNestedPortActionAdapter() {
+<span class="nc" id="L246">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.ItemFlow &lt;em&gt;Item Flow&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ItemFlow
+	 * @generated
+	 */
+	public Adapter createItemFlowAdapter() {
+<span class="nc" id="L260">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.ProxyPort &lt;em&gt;Proxy Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.ProxyPort
+	 * @generated
+	 */
+	public Adapter createProxyPortAdapter() {
+<span class="nc" id="L274">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort &lt;em&gt;Trigger On Nested Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort
+	 * @generated
+	 */
+	public Adapter createTriggerOnNestedPortAdapter() {
+<span class="nc" id="L288">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.Block &lt;em&gt;Block&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.Block
+	 * @generated
+	 */
+	public Adapter createBlockAdapter() {
+<span class="nc" id="L302">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath &lt;em&gt;Element Property Path&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.ElementPropertyPath
+	 * @generated
+	 */
+	public Adapter createElementPropertyPathAdapter() {
+<span class="nc" id="L316">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for the default case.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @generated
+	 */
+	public Adapter createEObjectAdapter() {
+<span class="nc" id="L328">		return null;</span>
+	}
+
+} //PortsandflowsAdapterFactory
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

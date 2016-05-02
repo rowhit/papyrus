@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DirectedRelationshipPropertyPathImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">DirectedRelationshipPropertyPathImpl.java</span></div><h1>DirectedRelationshipPropertyPathImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath;
+
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.DirectedRelationship;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Directed Relationship Property Path&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.DirectedRelationshipPropertyPathImpl#getBase_DirectedRelationship &lt;em&gt;Base Directed Relationship&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.DirectedRelationshipPropertyPathImpl#getSourceContext &lt;em&gt;Source Context&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.DirectedRelationshipPropertyPathImpl#getSourcePropertyPath &lt;em&gt;Source Property Path&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.DirectedRelationshipPropertyPathImpl#getTargetContext &lt;em&gt;Target Context&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.DirectedRelationshipPropertyPathImpl#getTargetPropertyPath &lt;em&gt;Target Property Path&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public abstract class DirectedRelationshipPropertyPathImpl extends MinimalEObjectImpl.Container implements DirectedRelationshipPropertyPath {
+	/**
+	 * The cached value of the '{@link #getBase_DirectedRelationship() &lt;em&gt;Base Directed Relationship&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_DirectedRelationship()
+	 * @generated
+	 * @ordered
+	 */
+	protected DirectedRelationship base_DirectedRelationship;
+
+	/**
+	 * The cached value of the '{@link #getSourceContext() &lt;em&gt;Source Context&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getSourceContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected Classifier sourceContext;
+
+	/**
+	 * The cached value of the '{@link #getSourcePropertyPath() &lt;em&gt;Source Property Path&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getSourcePropertyPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Property&gt; sourcePropertyPath;
+
+	/**
+	 * The cached value of the '{@link #getTargetContext() &lt;em&gt;Target Context&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getTargetContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected Classifier targetContext;
+
+	/**
+	 * The cached value of the '{@link #getTargetPropertyPath() &lt;em&gt;Target Property Path&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getTargetPropertyPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Property&gt; targetPropertyPath;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected DirectedRelationshipPropertyPathImpl() {
+<span class="fc" id="L111">		super();</span>
+<span class="fc" id="L112">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L121">		return BlocksPackage.Literals.DIRECTED_RELATIONSHIP_PROPERTY_PATH;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DirectedRelationship getBase_DirectedRelationship() {
+<span class="nc bnc" id="L130" title="All 4 branches missed.">		if (base_DirectedRelationship != null &amp;&amp; base_DirectedRelationship.eIsProxy()) {</span>
+<span class="nc" id="L131">			InternalEObject oldBase_DirectedRelationship = (InternalEObject)base_DirectedRelationship;</span>
+<span class="nc" id="L132">			base_DirectedRelationship = (DirectedRelationship)eResolveProxy(oldBase_DirectedRelationship);</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">			if (base_DirectedRelationship != oldBase_DirectedRelationship) {</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L135">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP, oldBase_DirectedRelationship, base_DirectedRelationship));</span>
+			}
+		}
+<span class="nc" id="L138">		return base_DirectedRelationship;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DirectedRelationship basicGetBase_DirectedRelationship() {
+<span class="nc" id="L147">		return base_DirectedRelationship;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_DirectedRelationship(DirectedRelationship newBase_DirectedRelationship) {
+<span class="fc" id="L156">		DirectedRelationship oldBase_DirectedRelationship = base_DirectedRelationship;</span>
+<span class="fc" id="L157">		base_DirectedRelationship = newBase_DirectedRelationship;</span>
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L159">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP, oldBase_DirectedRelationship, base_DirectedRelationship));</span>
+<span class="fc" id="L160">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Classifier getSourceContext() {
+<span class="nc bnc" id="L168" title="All 4 branches missed.">		if (sourceContext != null &amp;&amp; sourceContext.eIsProxy()) {</span>
+<span class="nc" id="L169">			InternalEObject oldSourceContext = (InternalEObject)sourceContext;</span>
+<span class="nc" id="L170">			sourceContext = (Classifier)eResolveProxy(oldSourceContext);</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">			if (sourceContext != oldSourceContext) {</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L173">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT, oldSourceContext, sourceContext));</span>
+			}
+		}
+<span class="nc" id="L176">		return sourceContext;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Classifier basicGetSourceContext() {
+<span class="nc" id="L185">		return sourceContext;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setSourceContext(Classifier newSourceContext) {
+<span class="nc" id="L194">		Classifier oldSourceContext = sourceContext;</span>
+<span class="nc" id="L195">		sourceContext = newSourceContext;</span>
+<span class="nc bnc" id="L196" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L197">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT, oldSourceContext, sourceContext));</span>
+<span class="nc" id="L198">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Property&gt; getSourcePropertyPath() {
+<span class="nc bnc" id="L206" title="All 2 branches missed.">		if (sourcePropertyPath == null) {</span>
+<span class="nc" id="L207">			sourcePropertyPath = new EObjectResolvingEList&lt;Property&gt;(Property.class, this, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH);</span>
+		}
+<span class="nc" id="L209">		return sourcePropertyPath;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getSourcePropertyPath(String name, Type type) {
+<span class="nc" id="L218">		return getSourcePropertyPath(name, type, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getSourcePropertyPath(String name, Type type, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L227" title="All 2 branches missed.">		sourcePropertyPathLoop: for (Property sourcePropertyPath : getSourcePropertyPath()) {</span>
+<span class="nc bnc" id="L228" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(sourcePropertyPath))</span>
+<span class="nc" id="L229">				continue sourcePropertyPathLoop;</span>
+<span class="nc bnc" id="L230" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(sourcePropertyPath.getName()) : name.equals(sourcePropertyPath.getName())))</span>
+<span class="nc" id="L231">				continue sourcePropertyPathLoop;</span>
+<span class="nc bnc" id="L232" title="All 4 branches missed.">			if (type != null &amp;&amp; !type.equals(sourcePropertyPath.getType()))</span>
+<span class="nc" id="L233">				continue sourcePropertyPathLoop;</span>
+<span class="nc" id="L234">			return sourcePropertyPath;</span>
+		}
+<span class="nc" id="L236">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Classifier getTargetContext() {
+<span class="nc bnc" id="L245" title="All 4 branches missed.">		if (targetContext != null &amp;&amp; targetContext.eIsProxy()) {</span>
+<span class="nc" id="L246">			InternalEObject oldTargetContext = (InternalEObject)targetContext;</span>
+<span class="nc" id="L247">			targetContext = (Classifier)eResolveProxy(oldTargetContext);</span>
+<span class="nc bnc" id="L248" title="All 2 branches missed.">			if (targetContext != oldTargetContext) {</span>
+<span class="nc bnc" id="L249" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L250">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT, oldTargetContext, targetContext));</span>
+			}
+		}
+<span class="nc" id="L253">		return targetContext;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Classifier basicGetTargetContext() {
+<span class="nc" id="L262">		return targetContext;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setTargetContext(Classifier newTargetContext) {
+<span class="nc" id="L271">		Classifier oldTargetContext = targetContext;</span>
+<span class="nc" id="L272">		targetContext = newTargetContext;</span>
+<span class="nc bnc" id="L273" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L274">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT, oldTargetContext, targetContext));</span>
+<span class="nc" id="L275">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Property&gt; getTargetPropertyPath() {
+<span class="nc bnc" id="L283" title="All 2 branches missed.">		if (targetPropertyPath == null) {</span>
+<span class="nc" id="L284">			targetPropertyPath = new EObjectResolvingEList&lt;Property&gt;(Property.class, this, BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH);</span>
+		}
+<span class="nc" id="L286">		return targetPropertyPath;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getTargetPropertyPath(String name, Type type) {
+<span class="nc" id="L295">		return getTargetPropertyPath(name, type, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getTargetPropertyPath(String name, Type type, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L304" title="All 2 branches missed.">		targetPropertyPathLoop: for (Property targetPropertyPath : getTargetPropertyPath()) {</span>
+<span class="nc bnc" id="L305" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(targetPropertyPath))</span>
+<span class="nc" id="L306">				continue targetPropertyPathLoop;</span>
+<span class="nc bnc" id="L307" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(targetPropertyPath.getName()) : name.equals(targetPropertyPath.getName())))</span>
+<span class="nc" id="L308">				continue targetPropertyPathLoop;</span>
+<span class="nc bnc" id="L309" title="All 4 branches missed.">			if (type != null &amp;&amp; !type.equals(targetPropertyPath.getType()))</span>
+<span class="nc" id="L310">				continue targetPropertyPathLoop;</span>
+<span class="nc" id="L311">			return targetPropertyPath;</span>
+		}
+<span class="nc" id="L313">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L323" title="All 6 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP:
+<span class="nc bnc" id="L325" title="All 2 branches missed.">				if (resolve) return getBase_DirectedRelationship();</span>
+<span class="nc" id="L326">				return basicGetBase_DirectedRelationship();</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT:
+<span class="nc bnc" id="L328" title="All 2 branches missed.">				if (resolve) return getSourceContext();</span>
+<span class="nc" id="L329">				return basicGetSourceContext();</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH:
+<span class="nc" id="L331">				return getSourcePropertyPath();</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT:
+<span class="nc bnc" id="L333" title="All 2 branches missed.">				if (resolve) return getTargetContext();</span>
+<span class="nc" id="L334">				return basicGetTargetContext();</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH:
+<span class="nc" id="L336">				return getTargetPropertyPath();</span>
+		}
+<span class="nc" id="L338">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L349" title="5 of 6 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP:
+<span class="fc" id="L351">				setBase_DirectedRelationship((DirectedRelationship)newValue);</span>
+<span class="fc" id="L352">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT:
+<span class="nc" id="L354">				setSourceContext((Classifier)newValue);</span>
+<span class="nc" id="L355">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH:
+<span class="nc" id="L357">				getSourcePropertyPath().clear();</span>
+<span class="nc" id="L358">				getSourcePropertyPath().addAll((Collection&lt;? extends Property&gt;)newValue);</span>
+<span class="nc" id="L359">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT:
+<span class="nc" id="L361">				setTargetContext((Classifier)newValue);</span>
+<span class="nc" id="L362">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH:
+<span class="nc" id="L364">				getTargetPropertyPath().clear();</span>
+<span class="nc" id="L365">				getTargetPropertyPath().addAll((Collection&lt;? extends Property&gt;)newValue);</span>
+<span class="nc" id="L366">				return;</span>
+		}
+<span class="nc" id="L368">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L369">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L378" title="All 6 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP:
+<span class="nc" id="L380">				setBase_DirectedRelationship((DirectedRelationship)null);</span>
+<span class="nc" id="L381">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT:
+<span class="nc" id="L383">				setSourceContext((Classifier)null);</span>
+<span class="nc" id="L384">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH:
+<span class="nc" id="L386">				getSourcePropertyPath().clear();</span>
+<span class="nc" id="L387">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT:
+<span class="nc" id="L389">				setTargetContext((Classifier)null);</span>
+<span class="nc" id="L390">				return;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH:
+<span class="nc" id="L392">				getTargetPropertyPath().clear();</span>
+<span class="nc" id="L393">				return;</span>
+		}
+<span class="nc" id="L395">		super.eUnset(featureID);</span>
+<span class="nc" id="L396">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L405" title="All 6 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP:
+<span class="nc bnc" id="L407" title="All 2 branches missed.">				return base_DirectedRelationship != null;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT:
+<span class="nc bnc" id="L409" title="All 2 branches missed.">				return sourceContext != null;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH:
+<span class="nc bnc" id="L411" title="All 4 branches missed.">				return sourcePropertyPath != null &amp;&amp; !sourcePropertyPath.isEmpty();</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT:
+<span class="nc bnc" id="L413" title="All 2 branches missed.">				return targetContext != null;</span>
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH:
+<span class="nc bnc" id="L415" title="All 4 branches missed.">				return targetPropertyPath != null &amp;&amp; !targetPropertyPath.isEmpty();</span>
+		}
+<span class="nc" id="L417">		return super.eIsSet(featureID);</span>
+	}
+
+} //DirectedRelationshipPropertyPathImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

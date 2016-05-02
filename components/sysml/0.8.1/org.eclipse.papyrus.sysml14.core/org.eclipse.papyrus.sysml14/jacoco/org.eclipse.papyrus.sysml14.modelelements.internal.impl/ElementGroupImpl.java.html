@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ElementGroupImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.modelelements.internal.impl</a> &gt; <span class="el_source">ElementGroupImpl.java</span></div><h1>ElementGroupImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.modelelements.internal.impl;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.papyrus.sysml14.modelelements.ElementGroup;
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Element Group&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getBase_Comment &lt;em&gt;Base Comment&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getCriterion &lt;em&gt;Criterion&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getMember &lt;em&gt;Member&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getName &lt;em&gt;Name&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getOrderedMemeber &lt;em&gt;Ordered Memeber&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl#getSize &lt;em&gt;Size&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ElementGroupImpl extends MinimalEObjectImpl.Container implements ElementGroup {
+	/**
+	 * The cached value of the '{@link #getBase_Comment() &lt;em&gt;Base Comment&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Comment()
+	 * @generated
+	 * @ordered
+	 */
+	protected Comment base_Comment;
+
+	/**
+	 * The default value of the '{@link #getCriterion() &lt;em&gt;Criterion&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getCriterion()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L74">	protected static final String CRITERION_EDEFAULT = null;</span>
+
+	/**
+	 * The default value of the '{@link #getName() &lt;em&gt;Name&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L84">	protected static final String NAME_EDEFAULT = null;</span>
+
+	/**
+	 * The cached value of the '{@link #getName() &lt;em&gt;Name&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L94">	protected String name = NAME_EDEFAULT;</span>
+
+	/**
+	 * The cached value of the '{@link #getOrderedMemeber() &lt;em&gt;Ordered Memeber&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getOrderedMemeber()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Element&gt; orderedMemeber;
+
+	/**
+	 * The default value of the '{@link #getSize() &lt;em&gt;Size&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L114">	protected static final int SIZE_EDEFAULT = 0;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ElementGroupImpl() {
+<span class="fc" id="L122">		super();</span>
+<span class="fc" id="L123">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L132">		return ModelelementsPackage.Literals.ELEMENT_GROUP;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Comment getBase_Comment() {
+<span class="pc bpc" id="L141" title="2 of 4 branches missed.">		if (base_Comment != null &amp;&amp; base_Comment.eIsProxy()) {</span>
+<span class="nc" id="L142">			InternalEObject oldBase_Comment = (InternalEObject)base_Comment;</span>
+<span class="nc" id="L143">			base_Comment = (Comment)eResolveProxy(oldBase_Comment);</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">			if (base_Comment != oldBase_Comment) {</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L146">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT, oldBase_Comment, base_Comment));</span>
+			}
+		}
+<span class="fc" id="L149">		return base_Comment;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Comment basicGetBase_Comment() {
+<span class="nc" id="L158">		return base_Comment;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Comment(Comment newBase_Comment) {
+<span class="fc" id="L167">		Comment oldBase_Comment = base_Comment;</span>
+<span class="fc" id="L168">		base_Comment = newBase_Comment;</span>
+<span class="pc bpc" id="L169" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L170">			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT, oldBase_Comment, base_Comment));</span>
+<span class="fc" id="L171">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getCriterion() {
+		// TODO: implement this method to return the 'Criterion' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L181">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setCriterion(String newCriterion) {
+		// TODO: implement this method to set the 'Criterion' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L192">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Element&gt; getMember() {
+		// TODO: implement this method to return the 'Member' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L203">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getName() {
+<span class="nc" id="L212">		return name;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setName(String newName) {
+<span class="nc" id="L221">		String oldName = name;</span>
+<span class="nc" id="L222">		name = newName;</span>
+<span class="nc bnc" id="L223" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L224">			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.ELEMENT_GROUP__NAME, oldName, name));</span>
+<span class="nc" id="L225">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Element&gt; getOrderedMemeber() {
+<span class="nc bnc" id="L233" title="All 2 branches missed.">		if (orderedMemeber == null) {</span>
+<span class="nc" id="L234">			orderedMemeber = new EObjectResolvingEList&lt;Element&gt;(Element.class, this, ModelelementsPackage.ELEMENT_GROUP__ORDERED_MEMEBER);</span>
+		}
+<span class="nc" id="L236">		return orderedMemeber;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public int getSize() {
+		// TODO: implement this method to return the 'Size' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L247">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setSize(int newSize) {
+		// TODO: implement this method to set the 'Size' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L258">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void allGroups(Element e, EList&lt;ElementGroup&gt; result) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L269">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void criterion(String result) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L280">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void member(EList&lt;Element&gt; result) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L291">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void size(int result) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L302">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L312" title="All 7 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT:
+<span class="nc bnc" id="L314" title="All 2 branches missed.">				if (resolve) return getBase_Comment();</span>
+<span class="nc" id="L315">				return basicGetBase_Comment();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__CRITERION:
+<span class="nc" id="L317">				return getCriterion();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__MEMBER:
+<span class="nc" id="L319">				return getMember();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__NAME:
+<span class="nc" id="L321">				return getName();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__ORDERED_MEMEBER:
+<span class="nc" id="L323">				return getOrderedMemeber();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__SIZE:
+<span class="nc" id="L325">				return getSize();</span>
+		}
+<span class="nc" id="L327">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L338" title="6 of 7 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT:
+<span class="fc" id="L340">				setBase_Comment((Comment)newValue);</span>
+<span class="fc" id="L341">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__CRITERION:
+<span class="nc" id="L343">				setCriterion((String)newValue);</span>
+<span class="nc" id="L344">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__MEMBER:
+<span class="nc" id="L346">				getMember().clear();</span>
+<span class="nc" id="L347">				getMember().addAll((Collection&lt;? extends Element&gt;)newValue);</span>
+<span class="nc" id="L348">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__NAME:
+<span class="nc" id="L350">				setName((String)newValue);</span>
+<span class="nc" id="L351">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__ORDERED_MEMEBER:
+<span class="nc" id="L353">				getOrderedMemeber().clear();</span>
+<span class="nc" id="L354">				getOrderedMemeber().addAll((Collection&lt;? extends Element&gt;)newValue);</span>
+<span class="nc" id="L355">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__SIZE:
+<span class="nc" id="L357">				setSize((Integer)newValue);</span>
+<span class="nc" id="L358">				return;</span>
+		}
+<span class="nc" id="L360">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L361">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L370" title="All 7 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT:
+<span class="nc" id="L372">				setBase_Comment((Comment)null);</span>
+<span class="nc" id="L373">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__CRITERION:
+<span class="nc" id="L375">				setCriterion(CRITERION_EDEFAULT);</span>
+<span class="nc" id="L376">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__MEMBER:
+<span class="nc" id="L378">				getMember().clear();</span>
+<span class="nc" id="L379">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__NAME:
+<span class="nc" id="L381">				setName(NAME_EDEFAULT);</span>
+<span class="nc" id="L382">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__ORDERED_MEMEBER:
+<span class="nc" id="L384">				getOrderedMemeber().clear();</span>
+<span class="nc" id="L385">				return;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__SIZE:
+<span class="nc" id="L387">				setSize(SIZE_EDEFAULT);</span>
+<span class="nc" id="L388">				return;</span>
+		}
+<span class="nc" id="L390">		super.eUnset(featureID);</span>
+<span class="nc" id="L391">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L400" title="All 7 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.ELEMENT_GROUP__BASE_COMMENT:
+<span class="nc bnc" id="L402" title="All 2 branches missed.">				return base_Comment != null;</span>
+			case ModelelementsPackage.ELEMENT_GROUP__CRITERION:
+<span class="nc bnc" id="L404" title="All 6 branches missed.">				return CRITERION_EDEFAULT == null ? getCriterion() != null : !CRITERION_EDEFAULT.equals(getCriterion());</span>
+			case ModelelementsPackage.ELEMENT_GROUP__MEMBER:
+<span class="nc bnc" id="L406" title="All 2 branches missed.">				return !getMember().isEmpty();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__NAME:
+<span class="nc bnc" id="L408" title="All 6 branches missed.">				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);</span>
+			case ModelelementsPackage.ELEMENT_GROUP__ORDERED_MEMEBER:
+<span class="nc bnc" id="L410" title="All 4 branches missed.">				return orderedMemeber != null &amp;&amp; !orderedMemeber.isEmpty();</span>
+			case ModelelementsPackage.ELEMENT_GROUP__SIZE:
+<span class="nc bnc" id="L412" title="All 2 branches missed.">				return getSize() != SIZE_EDEFAULT;</span>
+		}
+<span class="nc" id="L414">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings(&quot;unchecked&quot;)
+	public Object eInvoke(int operationID, EList&lt;?&gt; arguments) throws InvocationTargetException {
+<span class="nc bnc" id="L425" title="All 5 branches missed.">		switch (operationID) {</span>
+			case ModelelementsPackage.ELEMENT_GROUP___ALL_GROUPS__ELEMENT_ELIST:
+<span class="nc" id="L427">				allGroups((Element)arguments.get(0), (EList&lt;ElementGroup&gt;)arguments.get(1));</span>
+<span class="nc" id="L428">				return null;</span>
+			case ModelelementsPackage.ELEMENT_GROUP___CRITERION__STRING:
+<span class="nc" id="L430">				criterion((String)arguments.get(0));</span>
+<span class="nc" id="L431">				return null;</span>
+			case ModelelementsPackage.ELEMENT_GROUP___MEMBER__ELIST:
+<span class="nc" id="L433">				member((EList&lt;Element&gt;)arguments.get(0));</span>
+<span class="nc" id="L434">				return null;</span>
+			case ModelelementsPackage.ELEMENT_GROUP___SIZE__INT:
+<span class="nc" id="L436">				size((Integer)arguments.get(0));</span>
+<span class="nc" id="L437">				return null;</span>
+		}
+<span class="nc" id="L439">		return super.eInvoke(operationID, arguments);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L449" title="All 2 branches missed.">		if (eIsProxy()) return super.toString();</span>
+
+<span class="nc" id="L451">		StringBuffer result = new StringBuffer(super.toString());</span>
+<span class="nc" id="L452">		result.append(&quot; (name: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L453">		result.append(name);</span>
+<span class="nc" id="L454">		result.append(')');</span>
+<span class="nc" id="L455">		return result.toString();</span>
+	}
+
+} //ElementGroupImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

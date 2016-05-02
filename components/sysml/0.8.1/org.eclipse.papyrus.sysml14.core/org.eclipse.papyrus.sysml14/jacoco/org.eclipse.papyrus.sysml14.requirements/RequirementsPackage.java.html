@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementsPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements</a> &gt; <span class="el_source">RequirementsPackage.java</span></div><h1>RequirementsPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.requirements.RequirementsFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='Requirements'&quot;
+ * @generated
+ */
+public interface RequirementsPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;requirements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;Requirements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L71">	RequirementsPackage eINSTANCE = org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TraceImpl &lt;em&gt;Trace&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.TraceImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getTrace()
+	 * @generated
+	 */
+	int TRACE = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__BASE_DIRECTED_RELATIONSHIP = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__SOURCE_CONTEXT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__SOURCE_PROPERTY_PATH = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__TARGET_CONTEXT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__TARGET_PROPERTY_PATH = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__BASE_ABSTRACTION = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Trace&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE_FEATURE_COUNT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Trace&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE_OPERATION_COUNT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.CopyImpl &lt;em&gt;Copy&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.CopyImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getCopy()
+	 * @generated
+	 */
+	int COPY = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__BASE_DIRECTED_RELATIONSHIP = TRACE__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__SOURCE_CONTEXT = TRACE__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__SOURCE_PROPERTY_PATH = TRACE__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__TARGET_CONTEXT = TRACE__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__TARGET_PROPERTY_PATH = TRACE__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY__BASE_ABSTRACTION = TRACE__BASE_ABSTRACTION;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Copy&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY_FEATURE_COUNT = TRACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY___GET_TRACED_FROM__NAMEDELEMENT_ELIST = TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Copy&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int COPY_OPERATION_COUNT = TRACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl &lt;em&gt;Requirement&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getRequirement()
+	 * @generated
+	 */
+	int REQUIREMENT = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__BASE_CLASS = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Derived&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__DERIVED = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Derived From&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__DERIVED_FROM = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Id&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__ID = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Master&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__MASTER = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Refined By&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__REFINED_BY = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Satisfied By&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__SATISFIED_BY = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__TEXT = 7;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Traced To&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__TRACED_TO = 8;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Verified By&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__VERIFIED_BY = 9;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Requirement&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_FEATURE_COUNT = 10;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Requirement&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.DeriveReqtImpl &lt;em&gt;Derive Reqt&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.DeriveReqtImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getDeriveReqt()
+	 * @generated
+	 */
+	int DERIVE_REQT = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__BASE_DIRECTED_RELATIONSHIP = TRACE__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__SOURCE_CONTEXT = TRACE__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__SOURCE_PROPERTY_PATH = TRACE__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__TARGET_CONTEXT = TRACE__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__TARGET_PROPERTY_PATH = TRACE__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT__BASE_ABSTRACTION = TRACE__BASE_ABSTRACTION;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Derive Reqt&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT_FEATURE_COUNT = TRACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT___GET_TRACED_FROM__NAMEDELEMENT_ELIST = TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Derive Reqt&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVE_REQT_OPERATION_COUNT = TRACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RefineImpl &lt;em&gt;Refine&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RefineImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getRefine()
+	 * @generated
+	 */
+	int REFINE = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__BASE_DIRECTED_RELATIONSHIP = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__SOURCE_CONTEXT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__SOURCE_PROPERTY_PATH = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__TARGET_CONTEXT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__TARGET_PROPERTY_PATH = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE__BASE_ABSTRACTION = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Refine&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE_FEATURE_COUNT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Refines&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE___GET_REFINES__NAMEDELEMENT_ELIST = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Refine&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int REFINE_OPERATION_COUNT = BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.SatisfyImpl &lt;em&gt;Satisfy&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.SatisfyImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getSatisfy()
+	 * @generated
+	 */
+	int SATISFY = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__BASE_DIRECTED_RELATIONSHIP = TRACE__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__SOURCE_CONTEXT = TRACE__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__SOURCE_PROPERTY_PATH = TRACE__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__TARGET_CONTEXT = TRACE__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__TARGET_PROPERTY_PATH = TRACE__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY__BASE_ABSTRACTION = TRACE__BASE_ABSTRACTION;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Satisfy&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY_FEATURE_COUNT = TRACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY___GET_TRACED_FROM__NAMEDELEMENT_ELIST = TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Satisfies&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY___GET_SATISFIES__NAMEDELEMENT_ELIST = TRACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Satisfy&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int SATISFY_OPERATION_COUNT = TRACE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl &lt;em&gt;Test Case&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getTestCase()
+	 * @generated
+	 */
+	int TEST_CASE = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Behavior&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_CASE__BASE_BEHAVIOR = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Operation&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_CASE__BASE_OPERATION = 1;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Test Case&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_CASE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Test Case&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_CASE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.VerifyImpl &lt;em&gt;Verify&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.VerifyImpl
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getVerify()
+	 * @generated
+	 */
+	int VERIFY = 7;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Directed Relationship&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__BASE_DIRECTED_RELATIONSHIP = TRACE__BASE_DIRECTED_RELATIONSHIP;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__SOURCE_CONTEXT = TRACE__SOURCE_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Source Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__SOURCE_PROPERTY_PATH = TRACE__SOURCE_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Context&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__TARGET_CONTEXT = TRACE__TARGET_CONTEXT;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Target Property Path&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__TARGET_PROPERTY_PATH = TRACE__TARGET_PROPERTY_PATH;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY__BASE_ABSTRACTION = TRACE__BASE_ABSTRACTION;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Verify&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY_FEATURE_COUNT = TRACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY___GET_TRACED_FROM__NAMEDELEMENT_ELIST = TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Verifies&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFY___GET_VERIFIES__NAMEDELEMENT_ELIST = TRACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Verify&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L799">	int VERIFY_OPERATION_COUNT = TRACE_OPERATION_COUNT + 1;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Copy &lt;em&gt;Copy&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Copy&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Copy
+	 * @generated
+	 */
+	EClass getCopy();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Trace &lt;em&gt;Trace&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Trace&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Trace
+	 * @generated
+	 */
+	EClass getTrace();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.Trace#getBase_Abstraction &lt;em&gt;Base Abstraction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Abstraction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Trace#getBase_Abstraction()
+	 * @see #getTrace()
+	 * @generated
+	 */
+	EReference getTrace_Base_Abstraction();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.requirements.Trace#getTracedFrom(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList) &lt;em&gt;Get Traced From&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Traced From&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Trace#getTracedFrom(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getTrace__GetTracedFrom__NamedElement_EList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Requirement &lt;em&gt;Requirement&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Requirement&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement
+	 * @generated
+	 */
+	EClass getRequirement();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Class&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getBase_Class()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_Base_Class();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerived &lt;em&gt;Derived&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Derived&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getDerived()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_Derived();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerivedFrom &lt;em&gt;Derived From&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Derived From&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getDerivedFrom()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_DerivedFrom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getId &lt;em&gt;Id&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Id&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getId()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EAttribute getRequirement_Id();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getMaster &lt;em&gt;Master&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Master&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getMaster()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_Master();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getRefinedBy &lt;em&gt;Refined By&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Refined By&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getRefinedBy()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_RefinedBy();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getSatisfiedBy &lt;em&gt;Satisfied By&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Satisfied By&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getSatisfiedBy()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_SatisfiedBy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getText &lt;em&gt;Text&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Text&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getText()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EAttribute getRequirement_Text();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getTracedTo &lt;em&gt;Traced To&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Traced To&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getTracedTo()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_TracedTo();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getVerifiedBy &lt;em&gt;Verified By&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Verified By&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getVerifiedBy()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_VerifiedBy();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.DeriveReqt &lt;em&gt;Derive Reqt&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Derive Reqt&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.DeriveReqt
+	 * @generated
+	 */
+	EClass getDeriveReqt();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Refine &lt;em&gt;Refine&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Refine&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Refine
+	 * @generated
+	 */
+	EClass getRefine();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.Refine#getBase_Abstraction &lt;em&gt;Base Abstraction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Abstraction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Refine#getBase_Abstraction()
+	 * @see #getRefine()
+	 * @generated
+	 */
+	EReference getRefine_Base_Abstraction();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.requirements.Refine#getRefines(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList) &lt;em&gt;Get Refines&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Refines&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Refine#getRefines(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getRefine__GetRefines__NamedElement_EList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Satisfy &lt;em&gt;Satisfy&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Satisfy&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Satisfy
+	 * @generated
+	 */
+	EClass getSatisfy();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.requirements.Satisfy#getSatisfies(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList) &lt;em&gt;Get Satisfies&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Satisfies&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Satisfy#getSatisfies(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getSatisfy__GetSatisfies__NamedElement_EList();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.TestCase &lt;em&gt;Test Case&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Test Case&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.TestCase
+	 * @generated
+	 */
+	EClass getTestCase();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.TestCase#getBase_Behavior &lt;em&gt;Base Behavior&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Behavior&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.TestCase#getBase_Behavior()
+	 * @see #getTestCase()
+	 * @generated
+	 */
+	EReference getTestCase_Base_Behavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.requirements.TestCase#getBase_Operation &lt;em&gt;Base Operation&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Operation&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.TestCase#getBase_Operation()
+	 * @see #getTestCase()
+	 * @generated
+	 */
+	EReference getTestCase_Base_Operation();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.requirements.Verify &lt;em&gt;Verify&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Verify&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Verify
+	 * @generated
+	 */
+	EClass getVerify();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.requirements.Verify#getVerifies(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList) &lt;em&gt;Get Verifies&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Verifies&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Verify#getVerifies(org.eclipse.uml2.uml.NamedElement, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getVerify__GetVerifies__NamedElement_EList();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	RequirementsFactory getRequirementsFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.CopyImpl &lt;em&gt;Copy&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.CopyImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getCopy()
+		 * @generated
+		 */
+<span class="fc" id="L1107">		EClass COPY = eINSTANCE.getCopy();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TraceImpl &lt;em&gt;Trace&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.TraceImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getTrace()
+		 * @generated
+		 */
+<span class="fc" id="L1117">		EClass TRACE = eINSTANCE.getTrace();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1125">		EReference TRACE__BASE_ABSTRACTION = eINSTANCE.getTrace_Base_Abstraction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Traced From&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1133">		EOperation TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST = eINSTANCE.getTrace__GetTracedFrom__NamedElement_EList();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl &lt;em&gt;Requirement&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getRequirement()
+		 * @generated
+		 */
+<span class="fc" id="L1143">		EClass REQUIREMENT = eINSTANCE.getRequirement();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1151">		EReference REQUIREMENT__BASE_CLASS = eINSTANCE.getRequirement_Base_Class();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Derived&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1159">		EReference REQUIREMENT__DERIVED = eINSTANCE.getRequirement_Derived();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Derived From&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1167">		EReference REQUIREMENT__DERIVED_FROM = eINSTANCE.getRequirement_DerivedFrom();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Id&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1175">		EAttribute REQUIREMENT__ID = eINSTANCE.getRequirement_Id();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Master&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1183">		EReference REQUIREMENT__MASTER = eINSTANCE.getRequirement_Master();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Refined By&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1191">		EReference REQUIREMENT__REFINED_BY = eINSTANCE.getRequirement_RefinedBy();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Satisfied By&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1199">		EReference REQUIREMENT__SATISFIED_BY = eINSTANCE.getRequirement_SatisfiedBy();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1207">		EAttribute REQUIREMENT__TEXT = eINSTANCE.getRequirement_Text();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Traced To&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1215">		EReference REQUIREMENT__TRACED_TO = eINSTANCE.getRequirement_TracedTo();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Verified By&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1223">		EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.DeriveReqtImpl &lt;em&gt;Derive Reqt&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.DeriveReqtImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getDeriveReqt()
+		 * @generated
+		 */
+<span class="fc" id="L1233">		EClass DERIVE_REQT = eINSTANCE.getDeriveReqt();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RefineImpl &lt;em&gt;Refine&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RefineImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getRefine()
+		 * @generated
+		 */
+<span class="fc" id="L1243">		EClass REFINE = eINSTANCE.getRefine();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Abstraction&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1251">		EReference REFINE__BASE_ABSTRACTION = eINSTANCE.getRefine_Base_Abstraction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Refines&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1259">		EOperation REFINE___GET_REFINES__NAMEDELEMENT_ELIST = eINSTANCE.getRefine__GetRefines__NamedElement_EList();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.SatisfyImpl &lt;em&gt;Satisfy&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.SatisfyImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getSatisfy()
+		 * @generated
+		 */
+<span class="fc" id="L1269">		EClass SATISFY = eINSTANCE.getSatisfy();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Satisfies&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1277">		EOperation SATISFY___GET_SATISFIES__NAMEDELEMENT_ELIST = eINSTANCE.getSatisfy__GetSatisfies__NamedElement_EList();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl &lt;em&gt;Test Case&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.TestCaseImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getTestCase()
+		 * @generated
+		 */
+<span class="fc" id="L1287">		EClass TEST_CASE = eINSTANCE.getTestCase();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Behavior&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1295">		EReference TEST_CASE__BASE_BEHAVIOR = eINSTANCE.getTestCase_Base_Behavior();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Operation&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1303">		EReference TEST_CASE__BASE_OPERATION = eINSTANCE.getTestCase_Base_Operation();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.VerifyImpl &lt;em&gt;Verify&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.VerifyImpl
+		 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl#getVerify()
+		 * @generated
+		 */
+<span class="fc" id="L1313">		EClass VERIFY = eINSTANCE.getVerify();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Verifies&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1321">		EOperation VERIFY___GET_VERIFIES__NAMEDELEMENT_ELIST = eINSTANCE.getVerify__GetVerifies__NamedElement_EList();</span>
+
+	}
+
+} //RequirementsPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

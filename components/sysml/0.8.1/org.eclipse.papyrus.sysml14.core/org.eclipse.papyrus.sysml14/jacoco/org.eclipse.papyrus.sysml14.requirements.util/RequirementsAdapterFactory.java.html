@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementsAdapterFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements.util</a> &gt; <span class="el_source">RequirementsAdapterFactory.java</span></div><h1>RequirementsAdapterFactory.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements.util;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath;
+
+import org.eclipse.papyrus.sysml14.requirements.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Adapter Factory&lt;/b&gt; for the model.
+ * It provides an adapter &lt;code&gt;createXXX&lt;/code&gt; method for each class of the model.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.requirements.RequirementsPackage
+ * @generated
+ */
+public class RequirementsAdapterFactory extends AdapterFactoryImpl {
+	/**
+	 * The cached model package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static RequirementsPackage modelPackage;
+
+	/**
+	 * Creates an instance of the adapter factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L49">	public RequirementsAdapterFactory() {</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L51">			modelPackage = RequirementsPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L53">	}</span>
+
+	/**
+	 * Returns whether this factory is applicable for the type of the object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns &lt;code&gt;true&lt;/code&gt; if the object is either the model's package or is an instance object of the model.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return whether this factory is applicable for the type of the object.
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object object) {
+<span class="nc bnc" id="L65" title="All 2 branches missed.">		if (object == modelPackage) {</span>
+<span class="nc" id="L66">			return true;</span>
+		}
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		if (object instanceof EObject) {</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">			return ((EObject)object).eClass().getEPackage() == modelPackage;</span>
+		}
+<span class="nc" id="L71">		return false;</span>
+	}
+
+	/**
+	 * The switch that delegates to the &lt;code&gt;createXXX&lt;/code&gt; methods.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L80">	protected RequirementsSwitch&lt;Adapter&gt; modelSwitch =</span>
+<span class="nc" id="L81">		new RequirementsSwitch&lt;Adapter&gt;() {</span>
+			@Override
+			public Adapter caseCopy(Copy object) {
+<span class="nc" id="L84">				return createCopyAdapter();</span>
+			}
+			@Override
+			public Adapter caseTrace(Trace object) {
+<span class="nc" id="L88">				return createTraceAdapter();</span>
+			}
+			@Override
+			public Adapter caseRequirement(Requirement object) {
+<span class="nc" id="L92">				return createRequirementAdapter();</span>
+			}
+			@Override
+			public Adapter caseDeriveReqt(DeriveReqt object) {
+<span class="nc" id="L96">				return createDeriveReqtAdapter();</span>
+			}
+			@Override
+			public Adapter caseRefine(Refine object) {
+<span class="nc" id="L100">				return createRefineAdapter();</span>
+			}
+			@Override
+			public Adapter caseSatisfy(Satisfy object) {
+<span class="nc" id="L104">				return createSatisfyAdapter();</span>
+			}
+			@Override
+			public Adapter caseTestCase(TestCase object) {
+<span class="nc" id="L108">				return createTestCaseAdapter();</span>
+			}
+			@Override
+			public Adapter caseVerify(Verify object) {
+<span class="nc" id="L112">				return createVerifyAdapter();</span>
+			}
+			@Override
+			public Adapter caseDirectedRelationshipPropertyPath(DirectedRelationshipPropertyPath object) {
+<span class="nc" id="L116">				return createDirectedRelationshipPropertyPathAdapter();</span>
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+<span class="nc" id="L120">				return createEObjectAdapter();</span>
+			}
+		};
+
+	/**
+	 * Creates an adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param target the object to adapt.
+	 * @return the adapter for the &lt;code&gt;target&lt;/code&gt;.
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdapter(Notifier target) {
+<span class="nc" id="L134">		return modelSwitch.doSwitch((EObject)target);</span>
+	}
+
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Copy &lt;em&gt;Copy&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Copy
+	 * @generated
+	 */
+	public Adapter createCopyAdapter() {
+<span class="nc" id="L149">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Trace &lt;em&gt;Trace&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Trace
+	 * @generated
+	 */
+	public Adapter createTraceAdapter() {
+<span class="nc" id="L163">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Requirement &lt;em&gt;Requirement&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement
+	 * @generated
+	 */
+	public Adapter createRequirementAdapter() {
+<span class="nc" id="L177">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.DeriveReqt &lt;em&gt;Derive Reqt&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.DeriveReqt
+	 * @generated
+	 */
+	public Adapter createDeriveReqtAdapter() {
+<span class="nc" id="L191">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Refine &lt;em&gt;Refine&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Refine
+	 * @generated
+	 */
+	public Adapter createRefineAdapter() {
+<span class="nc" id="L205">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Satisfy &lt;em&gt;Satisfy&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Satisfy
+	 * @generated
+	 */
+	public Adapter createSatisfyAdapter() {
+<span class="nc" id="L219">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.TestCase &lt;em&gt;Test Case&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.TestCase
+	 * @generated
+	 */
+	public Adapter createTestCaseAdapter() {
+<span class="nc" id="L233">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.requirements.Verify &lt;em&gt;Verify&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Verify
+	 * @generated
+	 */
+	public Adapter createVerifyAdapter() {
+<span class="nc" id="L247">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath &lt;em&gt;Directed Relationship Property Path&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath
+	 * @generated
+	 */
+	public Adapter createDirectedRelationshipPropertyPathAdapter() {
+<span class="nc" id="L261">		return null;</span>
+	}
+
+	/**
+	 * Creates a new adapter for the default case.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This default implementation returns null.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the new adapter.
+	 * @generated
+	 */
+	public Adapter createEObjectAdapter() {
+<span class="nc" id="L273">		return null;</span>
+	}
+
+} //RequirementsAdapterFactory
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

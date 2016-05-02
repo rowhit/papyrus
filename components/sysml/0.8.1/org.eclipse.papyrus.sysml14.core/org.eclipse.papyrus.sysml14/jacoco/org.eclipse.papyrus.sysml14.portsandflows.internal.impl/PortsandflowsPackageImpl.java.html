@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PortsandflowsPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.internal.impl</a> &gt; <span class="el_source">PortsandflowsPackageImpl.java</span></div><h1>PortsandflowsPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.internal.impl;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.AcceptChangeStructuralFeatureEventAction;
+import org.eclipse.papyrus.sysml14.portsandflows.ChangeStructuralFeatureEvent;
+import org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature;
+import org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection;
+import org.eclipse.papyrus.sysml14.portsandflows.FlowDirection;
+import org.eclipse.papyrus.sysml14.portsandflows.FlowProperty;
+import org.eclipse.papyrus.sysml14.portsandflows.FullPort;
+import org.eclipse.papyrus.sysml14.portsandflows.InterfaceBlock;
+import org.eclipse.papyrus.sysml14.portsandflows.InvocationOnNestedPortAction;
+import org.eclipse.papyrus.sysml14.portsandflows.ItemFlow;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsFactory;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+import org.eclipse.papyrus.sysml14.portsandflows.ProxyPort;
+import org.eclipse.papyrus.sysml14.portsandflows.TriggerOnNestedPort;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class PortsandflowsPackageImpl extends EPackageImpl implements PortsandflowsPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L81">	private EClass acceptChangeStructuralFeatureEventActionEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L88">	private EClass changeStructuralFeatureEventEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L95">	private EClass directedFeatureEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L102">	private EClass flowPropertyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L109">	private EClass fullPortEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L116">	private EClass interfaceBlockEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L123">	private EClass invocationOnNestedPortActionEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L130">	private EClass itemFlowEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L137">	private EClass proxyPortEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L144">	private EClass triggerOnNestedPortEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L151">	private EEnum featureDirectionEEnum = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L158">	private EEnum flowDirectionEEnum = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private PortsandflowsPackageImpl() {
+<span class="fc" id="L176">		super(eNS_URI, PortsandflowsFactory.eINSTANCE);</span>
+<span class="fc" id="L177">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L184">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link PortsandflowsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static PortsandflowsPackage init() {
+<span class="pc bpc" id="L199" title="1 of 2 branches missed.">		if (isInited) return (PortsandflowsPackage)EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L202" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PortsandflowsPackageImpl());</span>
+
+<span class="fc" id="L204">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L207">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L210" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L211" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L212" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L213" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L214" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L215" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L216" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L219">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L220">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L221">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L222">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L223">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L224">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L225">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L226">		theRequirementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L229">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L230">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L231">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L232">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L233">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L234">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L235">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L236">		theRequirementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L239">		thePortsandflowsPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L243">		EPackage.Registry.INSTANCE.put(PortsandflowsPackage.eNS_URI, thePortsandflowsPackage);</span>
+<span class="fc" id="L244">		return thePortsandflowsPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getAcceptChangeStructuralFeatureEventAction() {
+<span class="fc" id="L253">		return acceptChangeStructuralFeatureEventActionEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getAcceptChangeStructuralFeatureEventAction_Base_AcceptEventAction() {
+<span class="fc" id="L262">		return (EReference)acceptChangeStructuralFeatureEventActionEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getChangeStructuralFeatureEvent() {
+<span class="fc" id="L271">		return changeStructuralFeatureEventEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getChangeStructuralFeatureEvent_Base_ChangeEvent() {
+<span class="fc" id="L280">		return (EReference)changeStructuralFeatureEventEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getChangeStructuralFeatureEvent_StructuralFeature() {
+<span class="fc" id="L289">		return (EReference)changeStructuralFeatureEventEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getDirectedFeature() {
+<span class="fc" id="L298">		return directedFeatureEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getDirectedFeature_Base_Feature() {
+<span class="fc" id="L307">		return (EReference)directedFeatureEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getDirectedFeature_FeatureDirection() {
+<span class="fc" id="L316">		return (EAttribute)directedFeatureEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getFlowProperty() {
+<span class="fc" id="L325">		return flowPropertyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getFlowProperty_Base_Property() {
+<span class="fc" id="L334">		return (EReference)flowPropertyEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getFlowProperty_Direction() {
+<span class="fc" id="L343">		return (EAttribute)flowPropertyEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getFlowProperty__GetIcon() {
+<span class="fc" id="L352">		return flowPropertyEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getFullPort() {
+<span class="fc" id="L361">		return fullPortEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getFullPort_Base_Port() {
+<span class="fc" id="L370">		return (EReference)fullPortEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getInterfaceBlock() {
+<span class="fc" id="L379">		return interfaceBlockEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getInvocationOnNestedPortAction() {
+<span class="fc" id="L388">		return invocationOnNestedPortActionEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getInvocationOnNestedPortAction_Base_InvocationAction() {
+<span class="fc" id="L397">		return (EReference)invocationOnNestedPortActionEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getInvocationOnNestedPortAction_OnNestedPort() {
+<span class="fc" id="L406">		return (EReference)invocationOnNestedPortActionEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getItemFlow() {
+<span class="fc" id="L415">		return itemFlowEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getItemFlow_Base_InformationFlow() {
+<span class="fc" id="L424">		return (EReference)itemFlowEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getItemFlow_ItemProperty() {
+<span class="fc" id="L433">		return (EReference)itemFlowEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getProxyPort() {
+<span class="fc" id="L442">		return proxyPortEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getProxyPort_Base_Port() {
+<span class="fc" id="L451">		return (EReference)proxyPortEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getTriggerOnNestedPort() {
+<span class="fc" id="L460">		return triggerOnNestedPortEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getTriggerOnNestedPort_Base_Trigger() {
+<span class="fc" id="L469">		return (EReference)triggerOnNestedPortEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getTriggerOnNestedPort_OnNestedPort() {
+<span class="fc" id="L478">		return (EReference)triggerOnNestedPortEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EEnum getFeatureDirection() {
+<span class="fc" id="L487">		return featureDirectionEEnum;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EEnum getFlowDirection() {
+<span class="fc" id="L496">		return flowDirectionEEnum;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public PortsandflowsFactory getPortsandflowsFactory() {
+<span class="nc" id="L505">		return (PortsandflowsFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L513">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L523" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L524">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L527">		acceptChangeStructuralFeatureEventActionEClass = createEClass(ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION);</span>
+<span class="fc" id="L528">		createEReference(acceptChangeStructuralFeatureEventActionEClass, ACCEPT_CHANGE_STRUCTURAL_FEATURE_EVENT_ACTION__BASE_ACCEPT_EVENT_ACTION);</span>
+
+<span class="fc" id="L530">		changeStructuralFeatureEventEClass = createEClass(CHANGE_STRUCTURAL_FEATURE_EVENT);</span>
+<span class="fc" id="L531">		createEReference(changeStructuralFeatureEventEClass, CHANGE_STRUCTURAL_FEATURE_EVENT__BASE_CHANGE_EVENT);</span>
+<span class="fc" id="L532">		createEReference(changeStructuralFeatureEventEClass, CHANGE_STRUCTURAL_FEATURE_EVENT__STRUCTURAL_FEATURE);</span>
+
+<span class="fc" id="L534">		directedFeatureEClass = createEClass(DIRECTED_FEATURE);</span>
+<span class="fc" id="L535">		createEReference(directedFeatureEClass, DIRECTED_FEATURE__BASE_FEATURE);</span>
+<span class="fc" id="L536">		createEAttribute(directedFeatureEClass, DIRECTED_FEATURE__FEATURE_DIRECTION);</span>
+
+<span class="fc" id="L538">		flowPropertyEClass = createEClass(FLOW_PROPERTY);</span>
+<span class="fc" id="L539">		createEReference(flowPropertyEClass, FLOW_PROPERTY__BASE_PROPERTY);</span>
+<span class="fc" id="L540">		createEAttribute(flowPropertyEClass, FLOW_PROPERTY__DIRECTION);</span>
+<span class="fc" id="L541">		createEOperation(flowPropertyEClass, FLOW_PROPERTY___GET_ICON);</span>
+
+<span class="fc" id="L543">		fullPortEClass = createEClass(FULL_PORT);</span>
+<span class="fc" id="L544">		createEReference(fullPortEClass, FULL_PORT__BASE_PORT);</span>
+
+<span class="fc" id="L546">		interfaceBlockEClass = createEClass(INTERFACE_BLOCK);</span>
+
+<span class="fc" id="L548">		invocationOnNestedPortActionEClass = createEClass(INVOCATION_ON_NESTED_PORT_ACTION);</span>
+<span class="fc" id="L549">		createEReference(invocationOnNestedPortActionEClass, INVOCATION_ON_NESTED_PORT_ACTION__BASE_INVOCATION_ACTION);</span>
+<span class="fc" id="L550">		createEReference(invocationOnNestedPortActionEClass, INVOCATION_ON_NESTED_PORT_ACTION__ON_NESTED_PORT);</span>
+
+<span class="fc" id="L552">		itemFlowEClass = createEClass(ITEM_FLOW);</span>
+<span class="fc" id="L553">		createEReference(itemFlowEClass, ITEM_FLOW__BASE_INFORMATION_FLOW);</span>
+<span class="fc" id="L554">		createEReference(itemFlowEClass, ITEM_FLOW__ITEM_PROPERTY);</span>
+
+<span class="fc" id="L556">		proxyPortEClass = createEClass(PROXY_PORT);</span>
+<span class="fc" id="L557">		createEReference(proxyPortEClass, PROXY_PORT__BASE_PORT);</span>
+
+<span class="fc" id="L559">		triggerOnNestedPortEClass = createEClass(TRIGGER_ON_NESTED_PORT);</span>
+<span class="fc" id="L560">		createEReference(triggerOnNestedPortEClass, TRIGGER_ON_NESTED_PORT__BASE_TRIGGER);</span>
+<span class="fc" id="L561">		createEReference(triggerOnNestedPortEClass, TRIGGER_ON_NESTED_PORT__ON_NESTED_PORT);</span>
+
+		// Create enums
+<span class="fc" id="L564">		featureDirectionEEnum = createEEnum(FEATURE_DIRECTION);</span>
+<span class="fc" id="L565">		flowDirectionEEnum = createEEnum(FLOW_DIRECTION);</span>
+<span class="fc" id="L566">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L573">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L583" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L584">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L587">		setName(eNAME);</span>
+<span class="fc" id="L588">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L589">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L592">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+<span class="fc" id="L593">		BlocksPackage theBlocksPackage = (BlocksPackage)EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+<span class="fc" id="L600">		interfaceBlockEClass.getESuperTypes().add(theBlocksPackage.getBlock());</span>
+<span class="fc" id="L601">		invocationOnNestedPortActionEClass.getESuperTypes().add(theBlocksPackage.getElementPropertyPath());</span>
+<span class="fc" id="L602">		triggerOnNestedPortEClass.getESuperTypes().add(theBlocksPackage.getElementPropertyPath());</span>
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L605">		initEClass(acceptChangeStructuralFeatureEventActionEClass, AcceptChangeStructuralFeatureEventAction.class, &quot;AcceptChangeStructuralFeatureEventAction&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L606">		initEReference(getAcceptChangeStructuralFeatureEventAction_Base_AcceptEventAction(), theUMLPackage.getAcceptEventAction(), null, &quot;base_AcceptEventAction&quot;, null, 0, 1, AcceptChangeStructuralFeatureEventAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L608">		initEClass(changeStructuralFeatureEventEClass, ChangeStructuralFeatureEvent.class, &quot;ChangeStructuralFeatureEvent&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L609">		initEReference(getChangeStructuralFeatureEvent_Base_ChangeEvent(), theUMLPackage.getChangeEvent(), null, &quot;base_ChangeEvent&quot;, null, 0, 1, ChangeStructuralFeatureEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L610">		initEReference(getChangeStructuralFeatureEvent_StructuralFeature(), theUMLPackage.getStructuralFeature(), null, &quot;structuralFeature&quot;, null, 1, 1, ChangeStructuralFeatureEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L612">		initEClass(directedFeatureEClass, DirectedFeature.class, &quot;DirectedFeature&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L613">		initEReference(getDirectedFeature_Base_Feature(), theUMLPackage.getFeature(), null, &quot;base_Feature&quot;, null, 0, 1, DirectedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L614">		initEAttribute(getDirectedFeature_FeatureDirection(), this.getFeatureDirection(), &quot;featureDirection&quot;, null, 1, 1, DirectedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L616">		initEClass(flowPropertyEClass, FlowProperty.class, &quot;FlowProperty&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L617">		initEReference(getFlowProperty_Base_Property(), theUMLPackage.getProperty(), null, &quot;base_Property&quot;, null, 0, 1, FlowProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L618">		initEAttribute(getFlowProperty_Direction(), this.getFlowDirection(), &quot;direction&quot;, &quot;inout&quot;, 1, 1, FlowProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+
+<span class="fc" id="L620">		initEOperation(getFlowProperty__GetIcon(), theUMLPackage.getImage(), &quot;getIcon&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L622">		initEClass(fullPortEClass, FullPort.class, &quot;FullPort&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L623">		initEReference(getFullPort_Base_Port(), theUMLPackage.getPort(), null, &quot;base_Port&quot;, null, 0, 1, FullPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L625">		initEClass(interfaceBlockEClass, InterfaceBlock.class, &quot;InterfaceBlock&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L627">		initEClass(invocationOnNestedPortActionEClass, InvocationOnNestedPortAction.class, &quot;InvocationOnNestedPortAction&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L628">		initEReference(getInvocationOnNestedPortAction_Base_InvocationAction(), theUMLPackage.getInvocationAction(), null, &quot;base_InvocationAction&quot;, null, 0, 1, InvocationOnNestedPortAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L629">		initEReference(getInvocationOnNestedPortAction_OnNestedPort(), theUMLPackage.getPort(), null, &quot;onNestedPort&quot;, null, 1, -1, InvocationOnNestedPortAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L631">		initEClass(itemFlowEClass, ItemFlow.class, &quot;ItemFlow&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L632">		initEReference(getItemFlow_Base_InformationFlow(), theUMLPackage.getInformationFlow(), null, &quot;base_InformationFlow&quot;, null, 0, 1, ItemFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L633">		initEReference(getItemFlow_ItemProperty(), theUMLPackage.getProperty(), null, &quot;itemProperty&quot;, null, 0, 1, ItemFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L635">		initEClass(proxyPortEClass, ProxyPort.class, &quot;ProxyPort&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L636">		initEReference(getProxyPort_Base_Port(), theUMLPackage.getPort(), null, &quot;base_Port&quot;, null, 0, 1, ProxyPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L638">		initEClass(triggerOnNestedPortEClass, TriggerOnNestedPort.class, &quot;TriggerOnNestedPort&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L639">		initEReference(getTriggerOnNestedPort_Base_Trigger(), theUMLPackage.getTrigger(), null, &quot;base_Trigger&quot;, null, 1, 1, TriggerOnNestedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L640">		initEReference(getTriggerOnNestedPort_OnNestedPort(), theUMLPackage.getPort(), null, &quot;onNestedPort&quot;, null, 1, -1, TriggerOnNestedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Initialize enums and add enum literals
+<span class="fc" id="L643">		initEEnum(featureDirectionEEnum, FeatureDirection.class, &quot;FeatureDirection&quot;); //$NON-NLS-1$</span>
+<span class="fc" id="L644">		addEEnumLiteral(featureDirectionEEnum, FeatureDirection.PROVIDED);</span>
+<span class="fc" id="L645">		addEEnumLiteral(featureDirectionEEnum, FeatureDirection.PROVIDED_REQUIRED);</span>
+<span class="fc" id="L646">		addEEnumLiteral(featureDirectionEEnum, FeatureDirection.REQUIRED);</span>
+
+<span class="fc" id="L648">		initEEnum(flowDirectionEEnum, FlowDirection.class, &quot;FlowDirection&quot;); //$NON-NLS-1$</span>
+<span class="fc" id="L649">		addEEnumLiteral(flowDirectionEEnum, FlowDirection.IN);</span>
+<span class="fc" id="L650">		addEEnumLiteral(flowDirectionEEnum, FlowDirection.INOUT);</span>
+<span class="fc" id="L651">		addEEnumLiteral(flowDirectionEEnum, FlowDirection.OUT);</span>
+
+		// Create resource
+<span class="fc" id="L654">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L658">		createUMLAnnotations();</span>
+<span class="fc" id="L659">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L668">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L669">		addAnnotation</span>
+<span class="fc" id="L670">		  (this, </span>
+<span class="fc" id="L671">		   source, </span>
+<span class="fc" id="L672">		   new String[] {</span>
+<span class="fc" id="L673">			 &quot;originalName&quot;, &quot;PortsAndFlows&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L675">	}</span>
+
+} //PortsandflowsPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

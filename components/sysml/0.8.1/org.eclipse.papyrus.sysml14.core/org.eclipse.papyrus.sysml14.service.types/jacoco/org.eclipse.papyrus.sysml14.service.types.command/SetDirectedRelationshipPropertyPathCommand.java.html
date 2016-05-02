@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SetDirectedRelationshipPropertyPathCommand.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.command</a> &gt; <span class="el_source">SetDirectedRelationshipPropertyPathCommand.java</span></div><h1>SetDirectedRelationshipPropertyPathCommand.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Patrick Tessier(CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.service.types.command;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.sysml14.blocks.DirectedRelationshipPropertyPath;
+import org.eclipse.papyrus.sysml14.service.types.command.wrapper.IEMFElementToEditCommand;
+import org.eclipse.papyrus.sysml14.service.types.util.PropertyPathUtil;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * 8.3.2.7 DirectedRelationshipPropertyPath
+ * sourcePropertyPath: Property [0..*] {ordered, nonunique}
+ * A series of properties that identifies the source of the directed relationship in the context of the block specified by the
+ * sourceContext property. The ordering of properties is from a property of the sourceContext block, through a property
+ * of each intermediate block that types the preceding property, ending in a property with a type that owns or inherits the
+ * source of the directed relationship. The source is not included in the propertyPath list. The same property might
+ * appear more than once because a block can own a property with the same or specialized block as a type.
+ * • targetPropertyPath: Property [0..*] {ordered, nonunique}
+ * A series of properties that identifies the target of the directed relationship in the context of the block specified by the
+ * targetContext property. The ordering of properties is from a property of the targetContext block, through a property of
+ * each intermediate block that types the preceding property, ending in a property with a type that owns or inherits the
+ * target of the directed relationship. The target is not included in the propertyPath list. The same property might appear
+ * more than once because a block can own a property with the same or specialized block as a type.
+ * • sourceContext: Classifier [0.1]
+ * Gives the context for sourcePropertyPath to begin from.
+ * • targetContext: Classifier [0.1]
+ * Gives the context for targetPropertyPath to begin from.
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_009}
+ */
+public class SetDirectedRelationshipPropertyPathCommand extends RecordingCommand implements IEMFElementToEditCommand {
+
+<span class="nc" id="L48">	protected Element directedRelationShipPropertyPath = null;</span>
+<span class="nc" id="L49">	protected View sourceView = null;</span>
+	protected boolean isSource;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param domain
+	 * @param view
+	 *            the view that reference the semantic element, it is need to calculus the context...
+	 * @param isSource
+	 *            if true fill information about the source, false fill information about the target
+	 */
+	public SetDirectedRelationshipPropertyPathCommand(TransactionalEditingDomain domain, View view, boolean isSource) {
+<span class="nc" id="L62">		super(domain);</span>
+<span class="nc" id="L63">		this.sourceView = view;</span>
+<span class="nc" id="L64">		this.isSource = isSource;</span>
+<span class="nc" id="L65">	}</span>
+
+	/**
+	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean canExecute() {
+<span class="nc bnc" id="L74" title="All 4 branches missed.">		if (directedRelationShipPropertyPath == null || sourceView == null) {</span>
+<span class="nc" id="L75">			return false;</span>
+		}
+<span class="nc" id="L77">		return super.canExecute();</span>
+	}
+
+	/**
+	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
+	 *
+	 */
+	@Override
+	protected void doExecute() {
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		if (canExecute()) {</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">			if (isSource) {</span>
+<span class="nc" id="L88">				DirectedRelationshipPropertyPath stereotypeApplication = UMLUtil.getStereotypeApplication(directedRelationShipPropertyPath, DirectedRelationshipPropertyPath.class);</span>
+<span class="nc" id="L89">				stereotypeApplication.getSourcePropertyPath().clear();</span>
+<span class="nc" id="L90">				stereotypeApplication.getSourcePropertyPath().addAll(PropertyPathUtil.getPropertyPath(sourceView));</span>
+<span class="nc" id="L91">				stereotypeApplication.setSourceContext(PropertyPathUtil.getCompositeContext(sourceView));</span>
+<span class="nc" id="L92">			} else {</span>
+<span class="nc" id="L93">				DirectedRelationshipPropertyPath stereotypeApplication = UMLUtil.getStereotypeApplication(directedRelationShipPropertyPath, DirectedRelationshipPropertyPath.class);</span>
+<span class="nc" id="L94">				stereotypeApplication.getTargetPropertyPath().clear();</span>
+<span class="nc" id="L95">				stereotypeApplication.getTargetPropertyPath().addAll(PropertyPathUtil.getPropertyPath(sourceView));</span>
+<span class="nc" id="L96">				stereotypeApplication.setTargetContext(PropertyPathUtil.getCompositeContext(sourceView));</span>
+			}
+		}
+<span class="nc" id="L99">	}</span>
+
+	/**
+	 * @see org.eclipse.papyrus.sysml14.service.types.command.wrapper.IEMFElementToEditCommand#SetElementToEdit(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param eObject
+	 */
+	@Override
+	public void setElementToEdit(EObject eObject) {
+<span class="nc bnc" id="L108" title="All 2 branches missed.">		if (eObject instanceof Element) {</span>
+<span class="nc" id="L109">			directedRelationShipPropertyPath = (Element) eObject;</span>
+		}
+<span class="nc" id="L111">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

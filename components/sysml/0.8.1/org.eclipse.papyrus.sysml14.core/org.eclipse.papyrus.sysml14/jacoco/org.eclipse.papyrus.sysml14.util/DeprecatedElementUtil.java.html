@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DeprecatedElementUtil.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.util</a> &gt; <span class="el_source">DeprecatedElementUtil.java</span></div><h1>DeprecatedElementUtil.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.util;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Stereotype;
+
+/**
+ * Utility class to get informations on DeprecatedElement resources
+ *
+ */
+public final class DeprecatedElementUtil {
+	//TODO update the norm extraction to be able to catch the deprecated elements.
+<span class="nc" id="L25">	private DeprecatedElementUtil(){</span>
+
+<span class="nc" id="L27">	}</span>
+
+	/**
+	 * @param eObject
+	 * @return It returns true if the EObject is a deprecated Stereotype or if the Uml element is stereotyped by a deprecated stereotype
+	 */
+	//TODO an optimization could be possible but with introducing static attributes matching to FlowSpecification and FlowPort
+	public static boolean isDeprecatedElement(EObject eObject) {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">		if(eObject instanceof Element){</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">			for(Stereotype s : ((Element)eObject).getAppliedStereotypes()){</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">				for(Namespace n : s.allNamespaces()){</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">					if(&quot;SysML::DeprecatedElements&quot;.equals(n.getQualifiedName())){ //$NON-NLS-1$</span>
+<span class="fc" id="L39">						return true;</span>
+					}
+				}
+			}
+		}
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">		if(eObject!=null){</span>
+<span class="fc" id="L45">			return eObject.getClass().toString().contains(&quot;org.eclipse.papyrus.sysml14.deprecatedelements&quot;); //$NON-NLS-1$</span>
+		}
+		else{
+<span class="nc" id="L48">			return false;</span>
+		}
+	}
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

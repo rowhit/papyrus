@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NestedConnectorEndImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">NestedConnectorEndImpl.java</span></div><h1>NestedConnectorEndImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+
+import org.eclipse.uml2.uml.ConnectorEnd;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Nested Connector End&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.NestedConnectorEndImpl#getBase_ConnectorEnd &lt;em&gt;Base Connector End&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class NestedConnectorEndImpl extends ElementPropertyPathImpl implements NestedConnectorEnd {
+	/**
+	 * The cached value of the '{@link #getBase_ConnectorEnd() &lt;em&gt;Base Connector End&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ConnectorEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConnectorEnd base_ConnectorEnd;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected NestedConnectorEndImpl() {
+<span class="fc" id="L57">		super();</span>
+<span class="fc" id="L58">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L67">		return BlocksPackage.Literals.NESTED_CONNECTOR_END;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ConnectorEnd getBase_ConnectorEnd() {
+<span class="nc bnc" id="L76" title="All 4 branches missed.">		if (base_ConnectorEnd != null &amp;&amp; base_ConnectorEnd.eIsProxy()) {</span>
+<span class="nc" id="L77">			InternalEObject oldBase_ConnectorEnd = (InternalEObject)base_ConnectorEnd;</span>
+<span class="nc" id="L78">			base_ConnectorEnd = (ConnectorEnd)eResolveProxy(oldBase_ConnectorEnd);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">			if (base_ConnectorEnd != oldBase_ConnectorEnd) {</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L81">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END, oldBase_ConnectorEnd, base_ConnectorEnd));</span>
+			}
+		}
+<span class="nc" id="L84">		return base_ConnectorEnd;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ConnectorEnd basicGetBase_ConnectorEnd() {
+<span class="nc" id="L93">		return base_ConnectorEnd;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ConnectorEnd(ConnectorEnd newBase_ConnectorEnd) {
+<span class="nc" id="L102">		ConnectorEnd oldBase_ConnectorEnd = base_ConnectorEnd;</span>
+<span class="nc" id="L103">		base_ConnectorEnd = newBase_ConnectorEnd;</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L105">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END, oldBase_ConnectorEnd, base_ConnectorEnd));</span>
+<span class="nc" id="L106">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L115" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END:
+<span class="nc bnc" id="L117" title="All 2 branches missed.">				if (resolve) return getBase_ConnectorEnd();</span>
+<span class="nc" id="L118">				return basicGetBase_ConnectorEnd();</span>
+		}
+<span class="nc" id="L120">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END:
+<span class="nc" id="L132">				setBase_ConnectorEnd((ConnectorEnd)newValue);</span>
+<span class="nc" id="L133">				return;</span>
+		}
+<span class="fc" id="L135">		super.eSet(featureID, newValue);</span>
+<span class="fc" id="L136">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L145" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END:
+<span class="nc" id="L147">				setBase_ConnectorEnd((ConnectorEnd)null);</span>
+<span class="nc" id="L148">				return;</span>
+		}
+<span class="nc" id="L150">		super.eUnset(featureID);</span>
+<span class="nc" id="L151">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L160" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.NESTED_CONNECTOR_END__BASE_CONNECTOR_END:
+<span class="nc bnc" id="L162" title="All 2 branches missed.">				return base_ConnectorEnd != null;</span>
+		}
+<span class="nc" id="L164">		return super.eIsSet(featureID);</span>
+	}
+
+} //NestedConnectorEndImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

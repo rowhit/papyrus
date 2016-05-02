@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProbabilityImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities.internal.impl</a> &gt; <span class="el_source">ProbabilityImpl.java</span></div><h1>ProbabilityImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+import org.eclipse.papyrus.sysml14.activities.Probability;
+
+import org.eclipse.uml2.uml.ActivityEdge;
+import org.eclipse.uml2.uml.ParameterSet;
+import org.eclipse.uml2.uml.ValueSpecification;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Probability&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl#getBase_ActivityEdge &lt;em&gt;Base Activity Edge&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl#getBase_ParameterSet &lt;em&gt;Base Parameter Set&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.activities.internal.impl.ProbabilityImpl#getProbability &lt;em&gt;Probability&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ProbabilityImpl extends MinimalEObjectImpl.Container implements Probability {
+	/**
+	 * The cached value of the '{@link #getBase_ActivityEdge() &lt;em&gt;Base Activity Edge&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ActivityEdge()
+	 * @generated
+	 * @ordered
+	 */
+	protected ActivityEdge base_ActivityEdge;
+
+	/**
+	 * The cached value of the '{@link #getBase_ParameterSet() &lt;em&gt;Base Parameter Set&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_ParameterSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected ParameterSet base_ParameterSet;
+
+	/**
+	 * The cached value of the '{@link #getProbability() &lt;em&gt;Probability&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getProbability()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueSpecification probability;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ProbabilityImpl() {
+<span class="nc" id="L82">		super();</span>
+<span class="nc" id="L83">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L92">		return ActivitiesPackage.Literals.PROBABILITY;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ActivityEdge getBase_ActivityEdge() {
+<span class="nc bnc" id="L101" title="All 4 branches missed.">		if (base_ActivityEdge != null &amp;&amp; base_ActivityEdge.eIsProxy()) {</span>
+<span class="nc" id="L102">			InternalEObject oldBase_ActivityEdge = (InternalEObject)base_ActivityEdge;</span>
+<span class="nc" id="L103">			base_ActivityEdge = (ActivityEdge)eResolveProxy(oldBase_ActivityEdge);</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">			if (base_ActivityEdge != oldBase_ActivityEdge) {</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L106">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE, oldBase_ActivityEdge, base_ActivityEdge));</span>
+			}
+		}
+<span class="nc" id="L109">		return base_ActivityEdge;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ActivityEdge basicGetBase_ActivityEdge() {
+<span class="nc" id="L118">		return base_ActivityEdge;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ActivityEdge(ActivityEdge newBase_ActivityEdge) {
+<span class="nc" id="L127">		ActivityEdge oldBase_ActivityEdge = base_ActivityEdge;</span>
+<span class="nc" id="L128">		base_ActivityEdge = newBase_ActivityEdge;</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L130">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE, oldBase_ActivityEdge, base_ActivityEdge));</span>
+<span class="nc" id="L131">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ParameterSet getBase_ParameterSet() {
+<span class="nc bnc" id="L139" title="All 4 branches missed.">		if (base_ParameterSet != null &amp;&amp; base_ParameterSet.eIsProxy()) {</span>
+<span class="nc" id="L140">			InternalEObject oldBase_ParameterSet = (InternalEObject)base_ParameterSet;</span>
+<span class="nc" id="L141">			base_ParameterSet = (ParameterSet)eResolveProxy(oldBase_ParameterSet);</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">			if (base_ParameterSet != oldBase_ParameterSet) {</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L144">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET, oldBase_ParameterSet, base_ParameterSet));</span>
+			}
+		}
+<span class="nc" id="L147">		return base_ParameterSet;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ParameterSet basicGetBase_ParameterSet() {
+<span class="nc" id="L156">		return base_ParameterSet;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_ParameterSet(ParameterSet newBase_ParameterSet) {
+<span class="nc" id="L165">		ParameterSet oldBase_ParameterSet = base_ParameterSet;</span>
+<span class="nc" id="L166">		base_ParameterSet = newBase_ParameterSet;</span>
+<span class="nc bnc" id="L167" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L168">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET, oldBase_ParameterSet, base_ParameterSet));</span>
+<span class="nc" id="L169">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ValueSpecification getProbability() {
+<span class="nc bnc" id="L177" title="All 4 branches missed.">		if (probability != null &amp;&amp; probability.eIsProxy()) {</span>
+<span class="nc" id="L178">			InternalEObject oldProbability = (InternalEObject)probability;</span>
+<span class="nc" id="L179">			probability = (ValueSpecification)eResolveProxy(oldProbability);</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">			if (probability != oldProbability) {</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L182">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.PROBABILITY__PROBABILITY, oldProbability, probability));</span>
+			}
+		}
+<span class="nc" id="L185">		return probability;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ValueSpecification basicGetProbability() {
+<span class="nc" id="L194">		return probability;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setProbability(ValueSpecification newProbability) {
+<span class="nc" id="L203">		ValueSpecification oldProbability = probability;</span>
+<span class="nc" id="L204">		probability = newProbability;</span>
+<span class="nc bnc" id="L205" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L206">			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.PROBABILITY__PROBABILITY, oldProbability, probability));</span>
+<span class="nc" id="L207">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L216" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE:
+<span class="nc bnc" id="L218" title="All 2 branches missed.">				if (resolve) return getBase_ActivityEdge();</span>
+<span class="nc" id="L219">				return basicGetBase_ActivityEdge();</span>
+			case ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET:
+<span class="nc bnc" id="L221" title="All 2 branches missed.">				if (resolve) return getBase_ParameterSet();</span>
+<span class="nc" id="L222">				return basicGetBase_ParameterSet();</span>
+			case ActivitiesPackage.PROBABILITY__PROBABILITY:
+<span class="nc bnc" id="L224" title="All 2 branches missed.">				if (resolve) return getProbability();</span>
+<span class="nc" id="L225">				return basicGetProbability();</span>
+		}
+<span class="nc" id="L227">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L237" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE:
+<span class="nc" id="L239">				setBase_ActivityEdge((ActivityEdge)newValue);</span>
+<span class="nc" id="L240">				return;</span>
+			case ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET:
+<span class="nc" id="L242">				setBase_ParameterSet((ParameterSet)newValue);</span>
+<span class="nc" id="L243">				return;</span>
+			case ActivitiesPackage.PROBABILITY__PROBABILITY:
+<span class="nc" id="L245">				setProbability((ValueSpecification)newValue);</span>
+<span class="nc" id="L246">				return;</span>
+		}
+<span class="nc" id="L248">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L249">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L258" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE:
+<span class="nc" id="L260">				setBase_ActivityEdge((ActivityEdge)null);</span>
+<span class="nc" id="L261">				return;</span>
+			case ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET:
+<span class="nc" id="L263">				setBase_ParameterSet((ParameterSet)null);</span>
+<span class="nc" id="L264">				return;</span>
+			case ActivitiesPackage.PROBABILITY__PROBABILITY:
+<span class="nc" id="L266">				setProbability((ValueSpecification)null);</span>
+<span class="nc" id="L267">				return;</span>
+		}
+<span class="nc" id="L269">		super.eUnset(featureID);</span>
+<span class="nc" id="L270">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L279" title="All 4 branches missed.">		switch (featureID) {</span>
+			case ActivitiesPackage.PROBABILITY__BASE_ACTIVITY_EDGE:
+<span class="nc bnc" id="L281" title="All 2 branches missed.">				return base_ActivityEdge != null;</span>
+			case ActivitiesPackage.PROBABILITY__BASE_PARAMETER_SET:
+<span class="nc bnc" id="L283" title="All 2 branches missed.">				return base_ParameterSet != null;</span>
+			case ActivitiesPackage.PROBABILITY__PROBABILITY:
+<span class="nc bnc" id="L285" title="All 2 branches missed.">				return probability != null;</span>
+		}
+<span class="nc" id="L287">		return super.eIsSet(featureID);</span>
+	}
+
+} //ProbabilityImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ModelelementsPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.modelelements</a> &gt; <span class="el_source">ModelelementsPackage.java</span></div><h1>ModelelementsPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.modelelements;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.modelelements.ModelelementsFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='ModelElements'&quot;
+ * @generated
+ */
+public interface ModelelementsPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;modelelements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/ModelElements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;ModelElements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L69">	ModelelementsPackage eINSTANCE = org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ConformImpl &lt;em&gt;Conform&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ConformImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getConform()
+	 * @generated
+	 */
+	int CONFORM = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Generalization&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORM__BASE_GENERALIZATION = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Conform&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Conform&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONFORM_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl &lt;em&gt;Element Group&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getElementGroup()
+	 * @generated
+	 */
+	int ELEMENT_GROUP = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__BASE_COMMENT = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Criterion&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__CRITERION = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__MEMBER = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__NAME = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Ordered Memeber&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__ORDERED_MEMEBER = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Size&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP__SIZE = 5;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Element Group&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP_FEATURE_COUNT = 6;
+
+	/**
+	 * The operation id for the '&lt;em&gt;All Groups&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP___ALL_GROUPS__ELEMENT_ELIST = 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Criterion&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP___CRITERION__STRING = 1;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Member&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP___MEMBER__ELIST = 2;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Size&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP___SIZE__INT = 3;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Element Group&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_GROUP_OPERATION_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ExposeImpl &lt;em&gt;Expose&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ExposeImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getExpose()
+	 * @generated
+	 */
+	int EXPOSE = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Dependency&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int EXPOSE__BASE_DEPENDENCY = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Expose&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int EXPOSE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Expose&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int EXPOSE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ProblemImpl &lt;em&gt;Problem&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ProblemImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getProblem()
+	 * @generated
+	 */
+	int PROBLEM = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Problem&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Problem&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int PROBLEM_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.RationaleImpl &lt;em&gt;Rationale&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.RationaleImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getRationale()
+	 * @generated
+	 */
+	int RATIONALE = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATIONALE__BASE_COMMENT = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Rationale&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATIONALE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Rationale&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int RATIONALE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.StakeholderImpl &lt;em&gt;Stakeholder&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.StakeholderImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getStakeholder()
+	 * @generated
+	 */
+	int STAKEHOLDER = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Classifier&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int STAKEHOLDER__BASE_CLASSIFIER = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Concern List&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int STAKEHOLDER__CONCERN_LIST = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Concern&lt;/b&gt;&lt;/em&gt;' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int STAKEHOLDER__CONCERN = 2;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Stakeholder&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int STAKEHOLDER_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Stakeholder&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int STAKEHOLDER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl &lt;em&gt;View&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getView()
+	 * @generated
+	 */
+	int VIEW = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__BASE_CLASS = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Stakeholder&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__STAKEHOLDER = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;View Point&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__VIEW_POINT = 2;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;View&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;View&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl &lt;em&gt;Viewpoint&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl
+	 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getViewpoint()
+	 * @generated
+	 */
+	int VIEWPOINT = 7;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__BASE_CLASS = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Concern&lt;/b&gt;&lt;/em&gt;' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__CONCERN = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Concern List&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__CONCERN_LIST = 2;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Language&lt;/b&gt;&lt;/em&gt;' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__LANGUAGE = 3;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Method&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__METHOD = 4;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Presentation&lt;/b&gt;&lt;/em&gt;' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__PRESENTATION = 5;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Purpose&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__PURPOSE = 6;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Stakeholder&lt;/b&gt;&lt;/em&gt;' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__STAKEHOLDER = 7;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Viewpoint&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT_FEATURE_COUNT = 8;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Viewpoint&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L545">	int VIEWPOINT_OPERATION_COUNT = 0;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Conform &lt;em&gt;Conform&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Conform&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Conform
+	 * @generated
+	 */
+	EClass getConform();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Conform#getBase_Generalization &lt;em&gt;Base Generalization&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Generalization&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Conform#getBase_Generalization()
+	 * @see #getConform()
+	 * @generated
+	 */
+	EReference getConform_Base_Generalization();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup &lt;em&gt;Element Group&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Element Group&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup
+	 * @generated
+	 */
+	EClass getElementGroup();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getBase_Comment &lt;em&gt;Base Comment&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Comment&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getBase_Comment()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EReference getElementGroup_Base_Comment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getCriterion &lt;em&gt;Criterion&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Criterion&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getCriterion()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EAttribute getElementGroup_Criterion();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getMember &lt;em&gt;Member&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Member&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getMember()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EReference getElementGroup_Member();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getName &lt;em&gt;Name&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Name&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getName()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EAttribute getElementGroup_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getOrderedMemeber &lt;em&gt;Ordered Memeber&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Ordered Memeber&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getOrderedMemeber()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EReference getElementGroup_OrderedMemeber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getSize &lt;em&gt;Size&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Size&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#getSize()
+	 * @see #getElementGroup()
+	 * @generated
+	 */
+	EAttribute getElementGroup_Size();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#allGroups(org.eclipse.uml2.uml.Element, org.eclipse.emf.common.util.EList) &lt;em&gt;All Groups&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;All Groups&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#allGroups(org.eclipse.uml2.uml.Element, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getElementGroup__AllGroups__Element_EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#criterion(java.lang.String) &lt;em&gt;Criterion&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Criterion&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#criterion(java.lang.String)
+	 * @generated
+	 */
+	EOperation getElementGroup__Criterion__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#member(org.eclipse.emf.common.util.EList) &lt;em&gt;Member&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Member&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#member(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getElementGroup__Member__EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.modelelements.ElementGroup#size(int) &lt;em&gt;Size&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Size&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.ElementGroup#size(int)
+	 * @generated
+	 */
+	EOperation getElementGroup__Size__int();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Expose &lt;em&gt;Expose&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Expose&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Expose
+	 * @generated
+	 */
+	EClass getExpose();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Expose#getBase_Dependency &lt;em&gt;Base Dependency&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Dependency&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Expose#getBase_Dependency()
+	 * @see #getExpose()
+	 * @generated
+	 */
+	EReference getExpose_Base_Dependency();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Problem &lt;em&gt;Problem&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Problem&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Problem
+	 * @generated
+	 */
+	EClass getProblem();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Problem#getBase_Comment &lt;em&gt;Base Comment&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Comment&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Problem#getBase_Comment()
+	 * @see #getProblem()
+	 * @generated
+	 */
+	EReference getProblem_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Rationale &lt;em&gt;Rationale&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Rationale&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Rationale
+	 * @generated
+	 */
+	EClass getRationale();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Rationale#getBase_Comment &lt;em&gt;Base Comment&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Comment&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Rationale#getBase_Comment()
+	 * @see #getRationale()
+	 * @generated
+	 */
+	EReference getRationale_Base_Comment();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Stakeholder &lt;em&gt;Stakeholder&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Stakeholder&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Stakeholder
+	 * @generated
+	 */
+	EClass getStakeholder();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getBase_Classifier &lt;em&gt;Base Classifier&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Classifier&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getBase_Classifier()
+	 * @see #getStakeholder()
+	 * @generated
+	 */
+	EReference getStakeholder_Base_Classifier();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getConcernList &lt;em&gt;Concern List&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Concern List&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getConcernList()
+	 * @see #getStakeholder()
+	 * @generated
+	 */
+	EReference getStakeholder_ConcernList();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getConcern &lt;em&gt;Concern&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute list '&lt;em&gt;Concern&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Stakeholder#getConcern()
+	 * @see #getStakeholder()
+	 * @generated
+	 */
+	EAttribute getStakeholder_Concern();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.View &lt;em&gt;View&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;View&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View
+	 * @generated
+	 */
+	EClass getView();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.View#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Class&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View#getBase_Class()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_Base_Class();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.View#getStakeholder &lt;em&gt;Stakeholder&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Stakeholder&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View#getStakeholder()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_Stakeholder();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.View#getViewPoint &lt;em&gt;View Point&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;View Point&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View#getViewPoint()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_ViewPoint();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint &lt;em&gt;Viewpoint&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Viewpoint&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint
+	 * @generated
+	 */
+	EClass getViewpoint();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Class&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getBase_Class()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EReference getViewpoint_Base_Class();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getConcern &lt;em&gt;Concern&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute list '&lt;em&gt;Concern&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getConcern()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EAttribute getViewpoint_Concern();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getConcernList &lt;em&gt;Concern List&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Concern List&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getConcernList()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EReference getViewpoint_ConcernList();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getLanguage &lt;em&gt;Language&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute list '&lt;em&gt;Language&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getLanguage()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EAttribute getViewpoint_Language();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getMethod &lt;em&gt;Method&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Method&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getMethod()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EReference getViewpoint_Method();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getPresentation &lt;em&gt;Presentation&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute list '&lt;em&gt;Presentation&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getPresentation()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EAttribute getViewpoint_Presentation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getPurpose &lt;em&gt;Purpose&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Purpose&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getPurpose()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EAttribute getViewpoint_Purpose();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getStakeholder &lt;em&gt;Stakeholder&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference list '&lt;em&gt;Stakeholder&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.modelelements.Viewpoint#getStakeholder()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EReference getViewpoint_Stakeholder();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	ModelelementsFactory getModelelementsFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ConformImpl &lt;em&gt;Conform&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ConformImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getConform()
+		 * @generated
+		 */
+<span class="fc" id="L963">		EClass CONFORM = eINSTANCE.getConform();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Generalization&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L971">		EReference CONFORM__BASE_GENERALIZATION = eINSTANCE.getConform_Base_Generalization();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl &lt;em&gt;Element Group&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ElementGroupImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getElementGroup()
+		 * @generated
+		 */
+<span class="fc" id="L981">		EClass ELEMENT_GROUP = eINSTANCE.getElementGroup();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L989">		EReference ELEMENT_GROUP__BASE_COMMENT = eINSTANCE.getElementGroup_Base_Comment();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Criterion&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L997">		EAttribute ELEMENT_GROUP__CRITERION = eINSTANCE.getElementGroup_Criterion();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1005">		EReference ELEMENT_GROUP__MEMBER = eINSTANCE.getElementGroup_Member();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1013">		EAttribute ELEMENT_GROUP__NAME = eINSTANCE.getElementGroup_Name();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Ordered Memeber&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1021">		EReference ELEMENT_GROUP__ORDERED_MEMEBER = eINSTANCE.getElementGroup_OrderedMemeber();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Size&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1029">		EAttribute ELEMENT_GROUP__SIZE = eINSTANCE.getElementGroup_Size();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;All Groups&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1037">		EOperation ELEMENT_GROUP___ALL_GROUPS__ELEMENT_ELIST = eINSTANCE.getElementGroup__AllGroups__Element_EList();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Criterion&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1045">		EOperation ELEMENT_GROUP___CRITERION__STRING = eINSTANCE.getElementGroup__Criterion__String();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Member&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1053">		EOperation ELEMENT_GROUP___MEMBER__ELIST = eINSTANCE.getElementGroup__Member__EList();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Size&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1061">		EOperation ELEMENT_GROUP___SIZE__INT = eINSTANCE.getElementGroup__Size__int();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ExposeImpl &lt;em&gt;Expose&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ExposeImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getExpose()
+		 * @generated
+		 */
+<span class="fc" id="L1071">		EClass EXPOSE = eINSTANCE.getExpose();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Dependency&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1079">		EReference EXPOSE__BASE_DEPENDENCY = eINSTANCE.getExpose_Base_Dependency();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ProblemImpl &lt;em&gt;Problem&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ProblemImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getProblem()
+		 * @generated
+		 */
+<span class="fc" id="L1089">		EClass PROBLEM = eINSTANCE.getProblem();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1097">		EReference PROBLEM__BASE_COMMENT = eINSTANCE.getProblem_Base_Comment();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.RationaleImpl &lt;em&gt;Rationale&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.RationaleImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getRationale()
+		 * @generated
+		 */
+<span class="fc" id="L1107">		EClass RATIONALE = eINSTANCE.getRationale();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Comment&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1115">		EReference RATIONALE__BASE_COMMENT = eINSTANCE.getRationale_Base_Comment();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.StakeholderImpl &lt;em&gt;Stakeholder&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.StakeholderImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getStakeholder()
+		 * @generated
+		 */
+<span class="fc" id="L1125">		EClass STAKEHOLDER = eINSTANCE.getStakeholder();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Classifier&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1133">		EReference STAKEHOLDER__BASE_CLASSIFIER = eINSTANCE.getStakeholder_Base_Classifier();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Concern List&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1141">		EReference STAKEHOLDER__CONCERN_LIST = eINSTANCE.getStakeholder_ConcernList();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Concern&lt;/b&gt;&lt;/em&gt;' attribute list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1149">		EAttribute STAKEHOLDER__CONCERN = eINSTANCE.getStakeholder_Concern();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl &lt;em&gt;View&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getView()
+		 * @generated
+		 */
+<span class="fc" id="L1159">		EClass VIEW = eINSTANCE.getView();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1167">		EReference VIEW__BASE_CLASS = eINSTANCE.getView_Base_Class();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Stakeholder&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1175">		EReference VIEW__STAKEHOLDER = eINSTANCE.getView_Stakeholder();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;View Point&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1183">		EReference VIEW__VIEW_POINT = eINSTANCE.getView_ViewPoint();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl &lt;em&gt;Viewpoint&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl
+		 * @see org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl#getViewpoint()
+		 * @generated
+		 */
+<span class="fc" id="L1193">		EClass VIEWPOINT = eINSTANCE.getViewpoint();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1201">		EReference VIEWPOINT__BASE_CLASS = eINSTANCE.getViewpoint_Base_Class();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Concern&lt;/b&gt;&lt;/em&gt;' attribute list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1209">		EAttribute VIEWPOINT__CONCERN = eINSTANCE.getViewpoint_Concern();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Concern List&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1217">		EReference VIEWPOINT__CONCERN_LIST = eINSTANCE.getViewpoint_ConcernList();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Language&lt;/b&gt;&lt;/em&gt;' attribute list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1225">		EAttribute VIEWPOINT__LANGUAGE = eINSTANCE.getViewpoint_Language();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Method&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1233">		EReference VIEWPOINT__METHOD = eINSTANCE.getViewpoint_Method();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Presentation&lt;/b&gt;&lt;/em&gt;' attribute list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1241">		EAttribute VIEWPOINT__PRESENTATION = eINSTANCE.getViewpoint_Presentation();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Purpose&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1249">		EAttribute VIEWPOINT__PURPOSE = eINSTANCE.getViewpoint_Purpose();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Stakeholder&lt;/b&gt;&lt;/em&gt;' reference list feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L1257">		EReference VIEWPOINT__STAKEHOLDER = eINSTANCE.getViewpoint_Stakeholder();</span>
+
+	}
+
+} //ModelelementsPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AllocationsPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.allocations.internal.impl</a> &gt; <span class="el_source">AllocationsPackageImpl.java</span></div><h1>AllocationsPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.allocations.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+
+import org.eclipse.papyrus.sysml14.allocations.Allocate;
+import org.eclipse.papyrus.sysml14.allocations.AllocateActivityPartition;
+import org.eclipse.papyrus.sysml14.allocations.AllocationsFactory;
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class AllocationsPackageImpl extends EPackageImpl implements AllocationsPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L69">	private EClass allocateEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L76">	private EClass allocateActivityPartitionEClass = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.allocations.AllocationsPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private AllocationsPackageImpl() {
+<span class="fc" id="L94">		super(eNS_URI, AllocationsFactory.eINSTANCE);</span>
+<span class="fc" id="L95">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L102">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link AllocationsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static AllocationsPackage init() {
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">		if (isInited) return (AllocationsPackage)EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AllocationsPackageImpl());</span>
+
+<span class="fc" id="L122">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L125">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L129" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L132" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L137">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L138">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L139">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L140">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L141">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L142">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L143">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L144">		theRequirementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L147">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L148">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L149">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L150">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L151">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L152">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L153">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L154">		theRequirementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L157">		theAllocationsPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L161">		EPackage.Registry.INSTANCE.put(AllocationsPackage.eNS_URI, theAllocationsPackage);</span>
+<span class="fc" id="L162">		return theAllocationsPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getAllocate() {
+<span class="nc" id="L171">		return allocateEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getAllocate_Base_Abstraction() {
+<span class="fc" id="L180">		return (EReference)allocateEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getAllocate__GetAllocatedFrom__NamedElement_EList() {
+<span class="fc" id="L189">		return allocateEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getAllocate__GetAllocatedTo__NamedElement_EList() {
+<span class="fc" id="L198">		return allocateEClass.getEOperations().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getAllocateActivityPartition() {
+<span class="nc" id="L207">		return allocateActivityPartitionEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getAllocateActivityPartition_Base_ActivityPartition() {
+<span class="fc" id="L216">		return (EReference)allocateActivityPartitionEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AllocationsFactory getAllocationsFactory() {
+<span class="nc" id="L225">		return (AllocationsFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L233">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L243" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L244">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L247">		allocateEClass = createEClass(ALLOCATE);</span>
+<span class="fc" id="L248">		createEReference(allocateEClass, ALLOCATE__BASE_ABSTRACTION);</span>
+<span class="fc" id="L249">		createEOperation(allocateEClass, ALLOCATE___GET_ALLOCATED_FROM__NAMEDELEMENT_ELIST);</span>
+<span class="fc" id="L250">		createEOperation(allocateEClass, ALLOCATE___GET_ALLOCATED_TO__NAMEDELEMENT_ELIST);</span>
+
+<span class="fc" id="L252">		allocateActivityPartitionEClass = createEClass(ALLOCATE_ACTIVITY_PARTITION);</span>
+<span class="fc" id="L253">		createEReference(allocateActivityPartitionEClass, ALLOCATE_ACTIVITY_PARTITION__BASE_ACTIVITY_PARTITION);</span>
+<span class="fc" id="L254">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L261">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L271" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L272">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L275">		setName(eNAME);</span>
+<span class="fc" id="L276">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L277">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L280">		BlocksPackage theBlocksPackage = (BlocksPackage)EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI);</span>
+<span class="fc" id="L281">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+<span class="fc" id="L288">		allocateEClass.getESuperTypes().add(theBlocksPackage.getDirectedRelationshipPropertyPath());</span>
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L291">		initEClass(allocateEClass, Allocate.class, &quot;Allocate&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L292">		initEReference(getAllocate_Base_Abstraction(), theUMLPackage.getAbstraction(), null, &quot;base_Abstraction&quot;, null, 0, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L294">		EOperation op = initEOperation(getAllocate__GetAllocatedFrom__NamedElement_EList(), null, &quot;getAllocatedFrom&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L295">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L296">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L298">		op = initEOperation(getAllocate__GetAllocatedTo__NamedElement_EList(), null, &quot;getAllocatedTo&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L299">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L300">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L302">		initEClass(allocateActivityPartitionEClass, AllocateActivityPartition.class, &quot;AllocateActivityPartition&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L303">		initEReference(getAllocateActivityPartition_Base_ActivityPartition(), theUMLPackage.getActivityPartition(), null, &quot;base_ActivityPartition&quot;, null, 0, 1, AllocateActivityPartition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Create resource
+<span class="fc" id="L306">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L310">		createUMLAnnotations();</span>
+<span class="fc" id="L311">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L320">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L321">		addAnnotation</span>
+<span class="fc" id="L322">		  (this, </span>
+<span class="fc" id="L323">		   source, </span>
+<span class="fc" id="L324">		   new String[] {</span>
+<span class="fc" id="L325">			 &quot;originalName&quot;, &quot;Allocations&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L327">	}</span>
+
+} //AllocationsPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

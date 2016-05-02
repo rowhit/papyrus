@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ValueTypeImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">ValueTypeImpl.java</span></div><h1>ValueTypeImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.ValueType;
+
+import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.InstanceSpecification;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Value Type&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ValueTypeImpl#getBase_DataType &lt;em&gt;Base Data Type&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ValueTypeImpl#getQuantityKind &lt;em&gt;Quantity Kind&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ValueTypeImpl#getUnit &lt;em&gt;Unit&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ValueTypeImpl extends MinimalEObjectImpl.Container implements ValueType {
+	/**
+	 * The cached value of the '{@link #getBase_DataType() &lt;em&gt;Base Data Type&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_DataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType base_DataType;
+
+	/**
+	 * The cached value of the '{@link #getQuantityKind() &lt;em&gt;Quantity Kind&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getQuantityKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected InstanceSpecification quantityKind;
+
+	/**
+	 * The cached value of the '{@link #getUnit() &lt;em&gt;Unit&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected InstanceSpecification unit;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ValueTypeImpl() {
+<span class="fc" id="L81">		super();</span>
+<span class="fc" id="L82">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L91">		return BlocksPackage.Literals.VALUE_TYPE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DataType getBase_DataType() {
+<span class="nc bnc" id="L100" title="All 4 branches missed.">		if (base_DataType != null &amp;&amp; base_DataType.eIsProxy()) {</span>
+<span class="nc" id="L101">			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;</span>
+<span class="nc" id="L102">			base_DataType = (DataType)eResolveProxy(oldBase_DataType);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			if (base_DataType != oldBase_DataType) {</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L105">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));</span>
+			}
+		}
+<span class="nc" id="L108">		return base_DataType;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DataType basicGetBase_DataType() {
+<span class="nc" id="L117">		return base_DataType;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_DataType(DataType newBase_DataType) {
+<span class="fc" id="L126">		DataType oldBase_DataType = base_DataType;</span>
+<span class="fc" id="L127">		base_DataType = newBase_DataType;</span>
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L129">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));</span>
+<span class="fc" id="L130">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification getQuantityKind() {
+<span class="nc bnc" id="L138" title="All 4 branches missed.">		if (quantityKind != null &amp;&amp; quantityKind.eIsProxy()) {</span>
+<span class="nc" id="L139">			InternalEObject oldQuantityKind = (InternalEObject)quantityKind;</span>
+<span class="nc" id="L140">			quantityKind = (InstanceSpecification)eResolveProxy(oldQuantityKind);</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">			if (quantityKind != oldQuantityKind) {</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L143">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.VALUE_TYPE__QUANTITY_KIND, oldQuantityKind, quantityKind));</span>
+			}
+		}
+<span class="nc" id="L146">		return quantityKind;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification basicGetQuantityKind() {
+<span class="nc" id="L155">		return quantityKind;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setQuantityKind(InstanceSpecification newQuantityKind) {
+<span class="nc" id="L164">		InstanceSpecification oldQuantityKind = quantityKind;</span>
+<span class="nc" id="L165">		quantityKind = newQuantityKind;</span>
+<span class="nc bnc" id="L166" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L167">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.VALUE_TYPE__QUANTITY_KIND, oldQuantityKind, quantityKind));</span>
+<span class="nc" id="L168">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification getUnit() {
+<span class="nc bnc" id="L176" title="All 4 branches missed.">		if (unit != null &amp;&amp; unit.eIsProxy()) {</span>
+<span class="nc" id="L177">			InternalEObject oldUnit = (InternalEObject)unit;</span>
+<span class="nc" id="L178">			unit = (InstanceSpecification)eResolveProxy(oldUnit);</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">			if (unit != oldUnit) {</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L181">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.VALUE_TYPE__UNIT, oldUnit, unit));</span>
+			}
+		}
+<span class="nc" id="L184">		return unit;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InstanceSpecification basicGetUnit() {
+<span class="nc" id="L193">		return unit;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setUnit(InstanceSpecification newUnit) {
+<span class="nc" id="L202">		InstanceSpecification oldUnit = unit;</span>
+<span class="nc" id="L203">		unit = newUnit;</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L205">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.VALUE_TYPE__UNIT, oldUnit, unit));</span>
+<span class="nc" id="L206">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L215" title="All 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE:
+<span class="nc bnc" id="L217" title="All 2 branches missed.">				if (resolve) return getBase_DataType();</span>
+<span class="nc" id="L218">				return basicGetBase_DataType();</span>
+			case BlocksPackage.VALUE_TYPE__QUANTITY_KIND:
+<span class="nc bnc" id="L220" title="All 2 branches missed.">				if (resolve) return getQuantityKind();</span>
+<span class="nc" id="L221">				return basicGetQuantityKind();</span>
+			case BlocksPackage.VALUE_TYPE__UNIT:
+<span class="nc bnc" id="L223" title="All 2 branches missed.">				if (resolve) return getUnit();</span>
+<span class="nc" id="L224">				return basicGetUnit();</span>
+		}
+<span class="nc" id="L226">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L236" title="3 of 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE:
+<span class="fc" id="L238">				setBase_DataType((DataType)newValue);</span>
+<span class="fc" id="L239">				return;</span>
+			case BlocksPackage.VALUE_TYPE__QUANTITY_KIND:
+<span class="nc" id="L241">				setQuantityKind((InstanceSpecification)newValue);</span>
+<span class="nc" id="L242">				return;</span>
+			case BlocksPackage.VALUE_TYPE__UNIT:
+<span class="nc" id="L244">				setUnit((InstanceSpecification)newValue);</span>
+<span class="nc" id="L245">				return;</span>
+		}
+<span class="nc" id="L247">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L248">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L257" title="All 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE:
+<span class="nc" id="L259">				setBase_DataType((DataType)null);</span>
+<span class="nc" id="L260">				return;</span>
+			case BlocksPackage.VALUE_TYPE__QUANTITY_KIND:
+<span class="nc" id="L262">				setQuantityKind((InstanceSpecification)null);</span>
+<span class="nc" id="L263">				return;</span>
+			case BlocksPackage.VALUE_TYPE__UNIT:
+<span class="nc" id="L265">				setUnit((InstanceSpecification)null);</span>
+<span class="nc" id="L266">				return;</span>
+		}
+<span class="nc" id="L268">		super.eUnset(featureID);</span>
+<span class="nc" id="L269">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="pc bpc" id="L278" title="1 of 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.VALUE_TYPE__BASE_DATA_TYPE:
+<span class="pc bpc" id="L280" title="1 of 2 branches missed.">				return base_DataType != null;</span>
+			case BlocksPackage.VALUE_TYPE__QUANTITY_KIND:
+<span class="pc bpc" id="L282" title="1 of 2 branches missed.">				return quantityKind != null;</span>
+			case BlocksPackage.VALUE_TYPE__UNIT:
+<span class="pc bpc" id="L284" title="1 of 2 branches missed.">				return unit != null;</span>
+		}
+<span class="nc" id="L286">		return super.eIsSet(featureID);</span>
+	}
+
+} //ValueTypeImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AllocationsFactoryImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.allocations.internal.impl</a> &gt; <span class="el_source">AllocationsFactoryImpl.java</span></div><h1>AllocationsFactoryImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.allocations.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.papyrus.sysml14.allocations.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Factory&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public static AllocationsFactory init() {
+		try {
+<span class="fc" id="L40">			AllocationsFactory theAllocationsFactory = (AllocationsFactory)EPackage.Registry.INSTANCE.getEFactory(AllocationsPackage.eNS_URI);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">			if (theAllocationsFactory != null) {</span>
+<span class="nc" id="L42">				return theAllocationsFactory;</span>
+			}
+		}
+<span class="nc" id="L45">		catch (Exception exception) {</span>
+<span class="nc" id="L46">			EcorePlugin.INSTANCE.log(exception);</span>
+		}
+<span class="fc" id="L48">		return new AllocationsFactoryImpl();</span>
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AllocationsFactoryImpl() {
+<span class="fc" id="L58">		super();</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+<span class="nc bnc" id="L68" title="All 3 branches missed.">		switch (eClass.getClassifierID()) {</span>
+<span class="nc" id="L69">			case AllocationsPackage.ALLOCATE: return createAllocate();</span>
+<span class="nc" id="L70">			case AllocationsPackage.ALLOCATE_ACTIVITY_PARTITION: return createAllocateActivityPartition();</span>
+			default:
+<span class="nc" id="L72">				throw new IllegalArgumentException(&quot;The class '&quot; + eClass.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Allocate createAllocate() {
+<span class="nc" id="L82">		AllocateImpl allocate = new AllocateImpl();</span>
+<span class="nc" id="L83">		return allocate;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AllocateActivityPartition createAllocateActivityPartition() {
+<span class="nc" id="L92">		AllocateActivityPartitionImpl allocateActivityPartition = new AllocateActivityPartitionImpl();</span>
+<span class="nc" id="L93">		return allocateActivityPartition;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AllocationsPackage getAllocationsPackage() {
+<span class="nc" id="L102">		return (AllocationsPackage)getEPackage();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static AllocationsPackage getPackage() {
+<span class="nc" id="L113">		return AllocationsPackage.eINSTANCE;</span>
+	}
+
+} //AllocationsFactoryImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

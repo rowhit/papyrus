@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DirectedFeatureImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.internal.impl</a> &gt; <span class="el_source">DirectedFeatureImpl.java</span></div><h1>DirectedFeatureImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.DirectedFeature;
+import org.eclipse.papyrus.sysml14.portsandflows.FeatureDirection;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.uml2.uml.Feature;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Directed Feature&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl#getBase_Feature &lt;em&gt;Base Feature&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.DirectedFeatureImpl#getFeatureDirection &lt;em&gt;Feature Direction&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class DirectedFeatureImpl extends MinimalEObjectImpl.Container implements DirectedFeature {
+	/**
+	 * The cached value of the '{@link #getBase_Feature() &lt;em&gt;Base Feature&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Feature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature base_Feature;
+
+	/**
+	 * The default value of the '{@link #getFeatureDirection() &lt;em&gt;Feature Direction&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getFeatureDirection()
+	 * @generated
+	 * @ordered
+	 */
+<span class="nc" id="L62">	protected static final FeatureDirection FEATURE_DIRECTION_EDEFAULT = FeatureDirection.PROVIDED;</span>
+
+	/**
+	 * The cached value of the '{@link #getFeatureDirection() &lt;em&gt;Feature Direction&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getFeatureDirection()
+	 * @generated
+	 * @ordered
+	 */
+<span class="nc" id="L72">	protected FeatureDirection featureDirection = FEATURE_DIRECTION_EDEFAULT;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected DirectedFeatureImpl() {
+<span class="nc" id="L80">		super();</span>
+<span class="nc" id="L81">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L90">		return PortsandflowsPackage.Literals.DIRECTED_FEATURE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Feature getBase_Feature() {
+<span class="nc bnc" id="L99" title="All 4 branches missed.">		if (base_Feature != null &amp;&amp; base_Feature.eIsProxy()) {</span>
+<span class="nc" id="L100">			InternalEObject oldBase_Feature = (InternalEObject)base_Feature;</span>
+<span class="nc" id="L101">			base_Feature = (Feature)eResolveProxy(oldBase_Feature);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">			if (base_Feature != oldBase_Feature) {</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L104">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE, oldBase_Feature, base_Feature));</span>
+			}
+		}
+<span class="nc" id="L107">		return base_Feature;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Feature basicGetBase_Feature() {
+<span class="nc" id="L116">		return base_Feature;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Feature(Feature newBase_Feature) {
+<span class="nc" id="L125">		Feature oldBase_Feature = base_Feature;</span>
+<span class="nc" id="L126">		base_Feature = newBase_Feature;</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L128">			eNotify(new ENotificationImpl(this, Notification.SET, PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE, oldBase_Feature, base_Feature));</span>
+<span class="nc" id="L129">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FeatureDirection getFeatureDirection() {
+<span class="nc" id="L137">		return featureDirection;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setFeatureDirection(FeatureDirection newFeatureDirection) {
+<span class="nc" id="L146">		FeatureDirection oldFeatureDirection = featureDirection;</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">		featureDirection = newFeatureDirection == null ? FEATURE_DIRECTION_EDEFAULT : newFeatureDirection;</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L149">			eNotify(new ENotificationImpl(this, Notification.SET, PortsandflowsPackage.DIRECTED_FEATURE__FEATURE_DIRECTION, oldFeatureDirection, featureDirection));</span>
+<span class="nc" id="L150">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L159" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE:
+<span class="nc bnc" id="L161" title="All 2 branches missed.">				if (resolve) return getBase_Feature();</span>
+<span class="nc" id="L162">				return basicGetBase_Feature();</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__FEATURE_DIRECTION:
+<span class="nc" id="L164">				return getFeatureDirection();</span>
+		}
+<span class="nc" id="L166">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L176" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE:
+<span class="nc" id="L178">				setBase_Feature((Feature)newValue);</span>
+<span class="nc" id="L179">				return;</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__FEATURE_DIRECTION:
+<span class="nc" id="L181">				setFeatureDirection((FeatureDirection)newValue);</span>
+<span class="nc" id="L182">				return;</span>
+		}
+<span class="nc" id="L184">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L185">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L194" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE:
+<span class="nc" id="L196">				setBase_Feature((Feature)null);</span>
+<span class="nc" id="L197">				return;</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__FEATURE_DIRECTION:
+<span class="nc" id="L199">				setFeatureDirection(FEATURE_DIRECTION_EDEFAULT);</span>
+<span class="nc" id="L200">				return;</span>
+		}
+<span class="nc" id="L202">		super.eUnset(featureID);</span>
+<span class="nc" id="L203">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L212" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__BASE_FEATURE:
+<span class="nc bnc" id="L214" title="All 2 branches missed.">				return base_Feature != null;</span>
+			case PortsandflowsPackage.DIRECTED_FEATURE__FEATURE_DIRECTION:
+<span class="nc bnc" id="L216" title="All 2 branches missed.">				return featureDirection != FEATURE_DIRECTION_EDEFAULT;</span>
+		}
+<span class="nc" id="L218">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L228" title="All 2 branches missed.">		if (eIsProxy()) return super.toString();</span>
+
+<span class="nc" id="L230">		StringBuffer result = new StringBuffer(super.toString());</span>
+<span class="nc" id="L231">		result.append(&quot; (featureDirection: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L232">		result.append(featureDirection);</span>
+<span class="nc" id="L233">		result.append(')');</span>
+<span class="nc" id="L234">		return result.toString();</span>
+	}
+
+} //DirectedFeatureImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
