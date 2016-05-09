@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FlowSpecificationImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl</a> &gt; <span class="el_source">FlowSpecificationImpl.java</span></div><h1>FlowSpecificationImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl;
+
+import java.lang.reflect.InvocationTargetException;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification;
+
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Flow Specification&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowSpecificationImpl#getBase_Interface &lt;em&gt;Base Interface&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implements FlowSpecification {
+	/**
+	 * The cached value of the '{@link #getBase_Interface() &lt;em&gt;Base Interface&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Interface()
+	 * @generated
+	 * @ordered
+	 */
+	protected Interface base_Interface;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected FlowSpecificationImpl() {
+<span class="fc" id="L61">		super();</span>
+<span class="fc" id="L62">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L71">		return DeprecatedelementsPackage.Literals.FLOW_SPECIFICATION;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Interface getBase_Interface() {
+<span class="pc bpc" id="L80" title="2 of 4 branches missed.">		if (base_Interface != null &amp;&amp; base_Interface.eIsProxy()) {</span>
+<span class="nc" id="L81">			InternalEObject oldBase_Interface = (InternalEObject)base_Interface;</span>
+<span class="nc" id="L82">			base_Interface = (Interface)eResolveProxy(oldBase_Interface);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">			if (base_Interface != oldBase_Interface) {</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L85">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));</span>
+			}
+		}
+<span class="fc" id="L88">		return base_Interface;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Interface basicGetBase_Interface() {
+<span class="nc" id="L97">		return base_Interface;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Interface(Interface newBase_Interface) {
+<span class="fc" id="L106">		Interface oldBase_Interface = base_Interface;</span>
+<span class="fc" id="L107">		base_Interface = newBase_Interface;</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L109">			eNotify(new ENotificationImpl(this, Notification.SET, DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));</span>
+<span class="fc" id="L110">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Property&gt; getFlowProperties() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L120">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L130" title="All 2 branches missed.">		switch (featureID) {</span>
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
+<span class="nc bnc" id="L132" title="All 2 branches missed.">				if (resolve) return getBase_Interface();</span>
+<span class="nc" id="L133">				return basicGetBase_Interface();</span>
+		}
+<span class="nc" id="L135">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L145" title="1 of 2 branches missed.">		switch (featureID) {</span>
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
+<span class="fc" id="L147">				setBase_Interface((Interface)newValue);</span>
+<span class="fc" id="L148">				return;</span>
+		}
+<span class="nc" id="L150">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L151">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L160" title="All 2 branches missed.">		switch (featureID) {</span>
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
+<span class="nc" id="L162">				setBase_Interface((Interface)null);</span>
+<span class="nc" id="L163">				return;</span>
+		}
+<span class="nc" id="L165">		super.eUnset(featureID);</span>
+<span class="nc" id="L166">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L175" title="All 2 branches missed.">		switch (featureID) {</span>
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
+<span class="nc bnc" id="L177" title="All 2 branches missed.">				return base_Interface != null;</span>
+		}
+<span class="nc" id="L179">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList&lt;?&gt; arguments) throws InvocationTargetException {
+<span class="nc bnc" id="L189" title="All 2 branches missed.">		switch (operationID) {</span>
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION___GET_FLOW_PROPERTIES:
+<span class="nc" id="L191">				return getFlowProperties();</span>
+		}
+<span class="nc" id="L193">		return super.eInvoke(operationID, arguments);</span>
+	}
+
+} //FlowSpecificationImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

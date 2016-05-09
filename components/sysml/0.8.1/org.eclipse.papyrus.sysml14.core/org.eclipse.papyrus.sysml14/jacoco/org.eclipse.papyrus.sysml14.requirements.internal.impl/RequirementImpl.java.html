@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements.internal.impl</a> &gt; <span class="el_source">RequirementImpl.java</span></div><h1>RequirementImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.uml2.uml.NamedElement;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Requirement&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getDerived &lt;em&gt;Derived&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getDerivedFrom &lt;em&gt;Derived From&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getId &lt;em&gt;Id&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getMaster &lt;em&gt;Master&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getRefinedBy &lt;em&gt;Refined By&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getSatisfiedBy &lt;em&gt;Satisfied By&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getText &lt;em&gt;Text&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getTracedTo &lt;em&gt;Traced To&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getVerifiedBy &lt;em&gt;Verified By&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class RequirementImpl extends MinimalEObjectImpl.Container implements Requirement {
+	/**
+	 * The cached value of the '{@link #getBase_Class() &lt;em&gt;Base Class&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Class()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.eclipse.uml2.uml.Class base_Class;
+
+	/**
+	 * The default value of the '{@link #getId() &lt;em&gt;Id&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = &quot;&quot;; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getId() &lt;em&gt;Id&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L83">	protected String id = ID_EDEFAULT;</span>
+
+	/**
+	 * The default value of the '{@link #getText() &lt;em&gt;Text&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = &quot;&quot;; //$NON-NLS-1$
+
+	/**
+	 * The cached value of the '{@link #getText() &lt;em&gt;Text&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L103">	protected String text = TEXT_EDEFAULT;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected RequirementImpl() {
+<span class="fc" id="L111">		super();</span>
+<span class="fc" id="L112">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L121">		return RequirementsPackage.Literals.REQUIREMENT;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+<span class="pc bpc" id="L130" title="2 of 4 branches missed.">		if (base_Class != null &amp;&amp; base_Class.eIsProxy()) {</span>
+<span class="nc" id="L131">			InternalEObject oldBase_Class = (InternalEObject)base_Class;</span>
+<span class="nc" id="L132">			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">			if (base_Class != oldBase_Class) {</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L135">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_CLASS, oldBase_Class, base_Class));</span>
+			}
+		}
+<span class="fc" id="L138">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
+<span class="nc" id="L147">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+<span class="fc" id="L156">		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;</span>
+<span class="fc" id="L157">		base_Class = newBase_Class;</span>
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L159">			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_CLASS, oldBase_Class, base_Class));</span>
+<span class="fc" id="L160">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Requirement&gt; getDerived() {
+		// TODO: implement this method to return the 'Derived' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L170">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Requirement&gt; getDerivedFrom() {
+		// TODO: implement this method to return the 'Derived From' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L181">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getId() {
+<span class="nc" id="L190">		return id;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setId(String newId) {
+<span class="nc" id="L199">		String oldId = id;</span>
+<span class="nc" id="L200">		id = newId;</span>
+<span class="nc bnc" id="L201" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L202">			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__ID, oldId, id));</span>
+<span class="nc" id="L203">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Requirement getMaster() {
+<span class="fc" id="L211">		Requirement master = basicGetMaster();</span>
+<span class="pc bpc" id="L212" title="1 of 4 branches missed.">		return master != null &amp;&amp; master.eIsProxy() ? (Requirement)eResolveProxy((InternalEObject)master) : master;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Requirement basicGetMaster() {
+		// TODO: implement this method to return the 'Master' reference
+		// -&gt; do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L224">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setMaster(Requirement newMaster) {
+		// TODO: implement this method to set the 'Master' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L235">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;NamedElement&gt; getRefinedBy() {
+		// TODO: implement this method to return the 'Refined By' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L246">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getRefinedBy(String name) {
+<span class="nc" id="L255">		return getRefinedBy(name, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getRefinedBy(String name, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L264" title="All 2 branches missed.">		refinedByLoop: for (NamedElement refinedBy : getRefinedBy()) {</span>
+<span class="nc bnc" id="L265" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(refinedBy))</span>
+<span class="nc" id="L266">				continue refinedByLoop;</span>
+<span class="nc bnc" id="L267" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(refinedBy.getName()) : name.equals(refinedBy.getName())))</span>
+<span class="nc" id="L268">				continue refinedByLoop;</span>
+<span class="nc" id="L269">			return refinedBy;</span>
+		}
+<span class="nc" id="L271">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;NamedElement&gt; getSatisfiedBy() {
+		// TODO: implement this method to return the 'Satisfied By' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L282">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getSatisfiedBy(String name) {
+<span class="nc" id="L291">		return getSatisfiedBy(name, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getSatisfiedBy(String name, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L300" title="All 2 branches missed.">		satisfiedByLoop: for (NamedElement satisfiedBy : getSatisfiedBy()) {</span>
+<span class="nc bnc" id="L301" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(satisfiedBy))</span>
+<span class="nc" id="L302">				continue satisfiedByLoop;</span>
+<span class="nc bnc" id="L303" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(satisfiedBy.getName()) : name.equals(satisfiedBy.getName())))</span>
+<span class="nc" id="L304">				continue satisfiedByLoop;</span>
+<span class="nc" id="L305">			return satisfiedBy;</span>
+		}
+<span class="nc" id="L307">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getText() {
+<span class="nc" id="L316">		return text;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setText(String newText) {
+<span class="nc" id="L325">		String oldText = text;</span>
+<span class="nc" id="L326">		text = newText;</span>
+<span class="nc bnc" id="L327" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L328">			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__TEXT, oldText, text));</span>
+<span class="nc" id="L329">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;NamedElement&gt; getTracedTo() {
+		// TODO: implement this method to return the 'Traced To' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L339">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getTracedTo(String name) {
+<span class="nc" id="L348">		return getTracedTo(name, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getTracedTo(String name, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L357" title="All 2 branches missed.">		tracedToLoop: for (NamedElement tracedTo : getTracedTo()) {</span>
+<span class="nc bnc" id="L358" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(tracedTo))</span>
+<span class="nc" id="L359">				continue tracedToLoop;</span>
+<span class="nc bnc" id="L360" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(tracedTo.getName()) : name.equals(tracedTo.getName())))</span>
+<span class="nc" id="L361">				continue tracedToLoop;</span>
+<span class="nc" id="L362">			return tracedTo;</span>
+		}
+<span class="nc" id="L364">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;NamedElement&gt; getVerifiedBy() {
+		// TODO: implement this method to return the 'Verified By' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L375">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getVerifiedBy(String name) {
+<span class="nc" id="L384">		return getVerifiedBy(name, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NamedElement getVerifiedBy(String name, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L393" title="All 2 branches missed.">		verifiedByLoop: for (NamedElement verifiedBy : getVerifiedBy()) {</span>
+<span class="nc bnc" id="L394" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(verifiedBy))</span>
+<span class="nc" id="L395">				continue verifiedByLoop;</span>
+<span class="nc bnc" id="L396" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(verifiedBy.getName()) : name.equals(verifiedBy.getName())))</span>
+<span class="nc" id="L397">				continue verifiedByLoop;</span>
+<span class="nc" id="L398">			return verifiedBy;</span>
+		}
+<span class="nc" id="L400">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L410" title="All 11 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.REQUIREMENT__BASE_CLASS:
+<span class="nc bnc" id="L412" title="All 2 branches missed.">				if (resolve) return getBase_Class();</span>
+<span class="nc" id="L413">				return basicGetBase_Class();</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED:
+<span class="nc" id="L415">				return getDerived();</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED_FROM:
+<span class="nc" id="L417">				return getDerivedFrom();</span>
+			case RequirementsPackage.REQUIREMENT__ID:
+<span class="nc" id="L419">				return getId();</span>
+			case RequirementsPackage.REQUIREMENT__MASTER:
+<span class="nc bnc" id="L421" title="All 2 branches missed.">				if (resolve) return getMaster();</span>
+<span class="nc" id="L422">				return basicGetMaster();</span>
+			case RequirementsPackage.REQUIREMENT__REFINED_BY:
+<span class="nc" id="L424">				return getRefinedBy();</span>
+			case RequirementsPackage.REQUIREMENT__SATISFIED_BY:
+<span class="nc" id="L426">				return getSatisfiedBy();</span>
+			case RequirementsPackage.REQUIREMENT__TEXT:
+<span class="nc" id="L428">				return getText();</span>
+			case RequirementsPackage.REQUIREMENT__TRACED_TO:
+<span class="nc" id="L430">				return getTracedTo();</span>
+			case RequirementsPackage.REQUIREMENT__VERIFIED_BY:
+<span class="nc" id="L432">				return getVerifiedBy();</span>
+		}
+<span class="nc" id="L434">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L445" title="10 of 11 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.REQUIREMENT__BASE_CLASS:
+<span class="fc" id="L447">				setBase_Class((org.eclipse.uml2.uml.Class)newValue);</span>
+<span class="fc" id="L448">				return;</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED:
+<span class="nc" id="L450">				getDerived().clear();</span>
+<span class="nc" id="L451">				getDerived().addAll((Collection&lt;? extends Requirement&gt;)newValue);</span>
+<span class="nc" id="L452">				return;</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED_FROM:
+<span class="nc" id="L454">				getDerivedFrom().clear();</span>
+<span class="nc" id="L455">				getDerivedFrom().addAll((Collection&lt;? extends Requirement&gt;)newValue);</span>
+<span class="nc" id="L456">				return;</span>
+			case RequirementsPackage.REQUIREMENT__ID:
+<span class="nc" id="L458">				setId((String)newValue);</span>
+<span class="nc" id="L459">				return;</span>
+			case RequirementsPackage.REQUIREMENT__MASTER:
+<span class="nc" id="L461">				setMaster((Requirement)newValue);</span>
+<span class="nc" id="L462">				return;</span>
+			case RequirementsPackage.REQUIREMENT__REFINED_BY:
+<span class="nc" id="L464">				getRefinedBy().clear();</span>
+<span class="nc" id="L465">				getRefinedBy().addAll((Collection&lt;? extends NamedElement&gt;)newValue);</span>
+<span class="nc" id="L466">				return;</span>
+			case RequirementsPackage.REQUIREMENT__SATISFIED_BY:
+<span class="nc" id="L468">				getSatisfiedBy().clear();</span>
+<span class="nc" id="L469">				getSatisfiedBy().addAll((Collection&lt;? extends NamedElement&gt;)newValue);</span>
+<span class="nc" id="L470">				return;</span>
+			case RequirementsPackage.REQUIREMENT__TEXT:
+<span class="nc" id="L472">				setText((String)newValue);</span>
+<span class="nc" id="L473">				return;</span>
+			case RequirementsPackage.REQUIREMENT__TRACED_TO:
+<span class="nc" id="L475">				getTracedTo().clear();</span>
+<span class="nc" id="L476">				getTracedTo().addAll((Collection&lt;? extends NamedElement&gt;)newValue);</span>
+<span class="nc" id="L477">				return;</span>
+			case RequirementsPackage.REQUIREMENT__VERIFIED_BY:
+<span class="nc" id="L479">				getVerifiedBy().clear();</span>
+<span class="nc" id="L480">				getVerifiedBy().addAll((Collection&lt;? extends NamedElement&gt;)newValue);</span>
+<span class="nc" id="L481">				return;</span>
+		}
+<span class="nc" id="L483">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L484">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L493" title="All 11 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.REQUIREMENT__BASE_CLASS:
+<span class="nc" id="L495">				setBase_Class((org.eclipse.uml2.uml.Class)null);</span>
+<span class="nc" id="L496">				return;</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED:
+<span class="nc" id="L498">				getDerived().clear();</span>
+<span class="nc" id="L499">				return;</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED_FROM:
+<span class="nc" id="L501">				getDerivedFrom().clear();</span>
+<span class="nc" id="L502">				return;</span>
+			case RequirementsPackage.REQUIREMENT__ID:
+<span class="nc" id="L504">				setId(ID_EDEFAULT);</span>
+<span class="nc" id="L505">				return;</span>
+			case RequirementsPackage.REQUIREMENT__MASTER:
+<span class="nc" id="L507">				setMaster((Requirement)null);</span>
+<span class="nc" id="L508">				return;</span>
+			case RequirementsPackage.REQUIREMENT__REFINED_BY:
+<span class="nc" id="L510">				getRefinedBy().clear();</span>
+<span class="nc" id="L511">				return;</span>
+			case RequirementsPackage.REQUIREMENT__SATISFIED_BY:
+<span class="nc" id="L513">				getSatisfiedBy().clear();</span>
+<span class="nc" id="L514">				return;</span>
+			case RequirementsPackage.REQUIREMENT__TEXT:
+<span class="nc" id="L516">				setText(TEXT_EDEFAULT);</span>
+<span class="nc" id="L517">				return;</span>
+			case RequirementsPackage.REQUIREMENT__TRACED_TO:
+<span class="nc" id="L519">				getTracedTo().clear();</span>
+<span class="nc" id="L520">				return;</span>
+			case RequirementsPackage.REQUIREMENT__VERIFIED_BY:
+<span class="nc" id="L522">				getVerifiedBy().clear();</span>
+<span class="nc" id="L523">				return;</span>
+		}
+<span class="nc" id="L525">		super.eUnset(featureID);</span>
+<span class="nc" id="L526">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L535" title="All 11 branches missed.">		switch (featureID) {</span>
+			case RequirementsPackage.REQUIREMENT__BASE_CLASS:
+<span class="nc bnc" id="L537" title="All 2 branches missed.">				return base_Class != null;</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED:
+<span class="nc bnc" id="L539" title="All 2 branches missed.">				return !getDerived().isEmpty();</span>
+			case RequirementsPackage.REQUIREMENT__DERIVED_FROM:
+<span class="nc bnc" id="L541" title="All 2 branches missed.">				return !getDerivedFrom().isEmpty();</span>
+			case RequirementsPackage.REQUIREMENT__ID:
+<span class="nc bnc" id="L543" title="All 6 branches missed.">				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);</span>
+			case RequirementsPackage.REQUIREMENT__MASTER:
+<span class="nc bnc" id="L545" title="All 2 branches missed.">				return basicGetMaster() != null;</span>
+			case RequirementsPackage.REQUIREMENT__REFINED_BY:
+<span class="nc bnc" id="L547" title="All 2 branches missed.">				return !getRefinedBy().isEmpty();</span>
+			case RequirementsPackage.REQUIREMENT__SATISFIED_BY:
+<span class="nc bnc" id="L549" title="All 2 branches missed.">				return !getSatisfiedBy().isEmpty();</span>
+			case RequirementsPackage.REQUIREMENT__TEXT:
+<span class="nc bnc" id="L551" title="All 6 branches missed.">				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);</span>
+			case RequirementsPackage.REQUIREMENT__TRACED_TO:
+<span class="nc bnc" id="L553" title="All 2 branches missed.">				return !getTracedTo().isEmpty();</span>
+			case RequirementsPackage.REQUIREMENT__VERIFIED_BY:
+<span class="nc bnc" id="L555" title="All 2 branches missed.">				return !getVerifiedBy().isEmpty();</span>
+		}
+<span class="nc" id="L557">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L567" title="All 2 branches missed.">		if (eIsProxy()) return super.toString();</span>
+
+<span class="nc" id="L569">		StringBuffer result = new StringBuffer(super.toString());</span>
+<span class="nc" id="L570">		result.append(&quot; (id: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L571">		result.append(id);</span>
+<span class="nc" id="L572">		result.append(&quot;, text: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L573">		result.append(text);</span>
+<span class="nc" id="L574">		result.append(')');</span>
+<span class="nc" id="L575">		return result.toString();</span>
+	}
+
+} //RequirementImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

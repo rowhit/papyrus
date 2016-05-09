@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ModelelementsFactoryImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.modelelements.internal.impl</a> &gt; <span class="el_source">ModelelementsFactoryImpl.java</span></div><h1>ModelelementsFactoryImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.modelelements.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.papyrus.sysml14.modelelements.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Factory&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class ModelelementsFactoryImpl extends EFactoryImpl implements ModelelementsFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public static ModelelementsFactory init() {
+		try {
+<span class="fc" id="L40">			ModelelementsFactory theModelelementsFactory = (ModelelementsFactory)EPackage.Registry.INSTANCE.getEFactory(ModelelementsPackage.eNS_URI);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">			if (theModelelementsFactory != null) {</span>
+<span class="fc" id="L42">				return theModelelementsFactory;</span>
+			}
+		}
+<span class="nc" id="L45">		catch (Exception exception) {</span>
+<span class="nc" id="L46">			EcorePlugin.INSTANCE.log(exception);</span>
+		}
+<span class="nc" id="L48">		return new ModelelementsFactoryImpl();</span>
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ModelelementsFactoryImpl() {
+<span class="fc" id="L58">		super();</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+<span class="pc bpc" id="L68" title="4 of 9 branches missed.">		switch (eClass.getClassifierID()) {</span>
+<span class="fc" id="L69">			case ModelelementsPackage.CONFORM: return createConform();</span>
+<span class="fc" id="L70">			case ModelelementsPackage.ELEMENT_GROUP: return createElementGroup();</span>
+<span class="nc" id="L71">			case ModelelementsPackage.EXPOSE: return createExpose();</span>
+<span class="nc" id="L72">			case ModelelementsPackage.PROBLEM: return createProblem();</span>
+<span class="nc" id="L73">			case ModelelementsPackage.RATIONALE: return createRationale();</span>
+<span class="fc" id="L74">			case ModelelementsPackage.STAKEHOLDER: return createStakeholder();</span>
+<span class="fc" id="L75">			case ModelelementsPackage.VIEW: return createView();</span>
+<span class="fc" id="L76">			case ModelelementsPackage.VIEWPOINT: return createViewpoint();</span>
+			default:
+<span class="nc" id="L78">				throw new IllegalArgumentException(&quot;The class '&quot; + eClass.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Conform createConform() {
+<span class="fc" id="L88">		ConformImpl conform = new ConformImpl();</span>
+<span class="fc" id="L89">		return conform;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ElementGroup createElementGroup() {
+<span class="nc" id="L98">		ElementGroupImpl elementGroup = new ElementGroupImpl();</span>
+<span class="nc" id="L99">		return elementGroup;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Expose createExpose() {
+<span class="nc" id="L108">		ExposeImpl expose = new ExposeImpl();</span>
+<span class="nc" id="L109">		return expose;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Problem createProblem() {
+<span class="nc" id="L118">		ProblemImpl problem = new ProblemImpl();</span>
+<span class="nc" id="L119">		return problem;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Rationale createRationale() {
+<span class="nc" id="L128">		RationaleImpl rationale = new RationaleImpl();</span>
+<span class="nc" id="L129">		return rationale;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Stakeholder createStakeholder() {
+<span class="nc" id="L138">		StakeholderImpl stakeholder = new StakeholderImpl();</span>
+<span class="nc" id="L139">		return stakeholder;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public View createView() {
+<span class="nc" id="L148">		ViewImpl view = new ViewImpl();</span>
+<span class="nc" id="L149">		return view;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Viewpoint createViewpoint() {
+<span class="nc" id="L158">		ViewpointImpl viewpoint = new ViewpointImpl();</span>
+<span class="nc" id="L159">		return viewpoint;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ModelelementsPackage getModelelementsPackage() {
+<span class="nc" id="L168">		return (ModelelementsPackage)getEPackage();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static ModelelementsPackage getPackage() {
+<span class="nc" id="L179">		return ModelelementsPackage.eINSTANCE;</span>
+	}
+
+} //ModelelementsFactoryImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

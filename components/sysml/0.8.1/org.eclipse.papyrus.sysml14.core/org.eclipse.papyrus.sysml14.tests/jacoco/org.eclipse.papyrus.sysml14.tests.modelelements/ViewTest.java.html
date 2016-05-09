@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ViewTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.modelelements</a> &gt; <span class="el_source">ViewTest.java</span></div><h1>ViewTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c)  2015 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick.tessier (CEA LIST) patrick.tessier@cea.fr - refactor all the test
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.modelelements;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+import org.eclipse.papyrus.sysml14.modelelements.Stakeholder;
+import org.eclipse.papyrus.sysml14.modelelements.View;
+import org.eclipse.papyrus.sysml14.modelelements.Viewpoint;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * A test case for the model object '&lt;em&gt;&lt;b&gt;View&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;p&gt; See the requirement &lt;b&gt;{@papyrus.req org.eclipse.papyrus.sysml14#Req015}&lt;/b&gt;. 
+ * The following features are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.View#getViewPoint() &lt;em&gt;View Point&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.View#getStakeholder() &lt;em&gt;Stakeholder&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ */
+<span class="fc" id="L40">public class ViewTest {</span>
+
+<span class="fc" id="L42">	private Viewpoint viewpoint = null;</span>
+
+<span class="fc" id="L44">	private View defaultView = null;</span>
+
+	private Stakeholder stakeholder;
+
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp()  {
+
+		// Prepare test
+<span class="fc" id="L55">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+
+<span class="fc" id="L57">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+		// Create class
+<span class="fc" id="L60">		Class defaultClass = model.createOwnedClass(&quot;View1&quot;, false);</span>
+
+<span class="fc" id="L62">		Class class1 = model.createOwnedClass(&quot;Viewpoint1&quot;, false);</span>
+<span class="fc" id="L63">		Class class2= model.createOwnedClass(&quot;stakeholder&quot;, false);</span>
+
+		// Add View stereotype
+
+<span class="fc" id="L67">		defaultView = (View)StereotypeApplicationHelper.getInstance(null).applyStereotype(defaultClass, ModelelementsPackage.eINSTANCE.getView());</span>
+
+		// Add ViewPoint stereotype
+<span class="fc" id="L70">		viewpoint = (Viewpoint)StereotypeApplicationHelper.getInstance(null).applyStereotype(class1, ModelelementsPackage.eINSTANCE.getViewpoint());</span>
+<span class="fc" id="L71">		stakeholder = (Stakeholder)StereotypeApplicationHelper.getInstance(null).applyStereotype(class2, ModelelementsPackage.eINSTANCE.getStakeholder());</span>
+
+
+		// create conform link based on Generalization
+<span class="fc" id="L75">		Generalization generalization=defaultClass.createGeneralization(class1);</span>
+<span class="fc" id="L76">		StereotypeApplicationHelper.getInstance(null).applyStereotype(generalization, ModelelementsPackage.eINSTANCE.getConform());</span>
+		
+		//add stakeholder to the viewpoint
+<span class="fc" id="L79">		viewpoint.getStakeholder().add(stakeholder);</span>
+
+<span class="fc" id="L81">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.modelelements.View#getViewPoint()
+	 * &lt;em&gt;View Point&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View#getViewPoint()
+	 */
+	@Test
+	public void testGetViewPoint() {
+<span class="fc" id="L90">		Assert.assertNotNull(&quot;The derived property viewpoint is baldy computed for View, it must not be null&quot;, defaultView.getViewPoint());</span>
+<span class="fc" id="L91">		Assert.assertEquals(&quot;The derived property viewpoint is baldy computed for View, it must not be equal to view point&quot;,viewpoint, defaultView.getViewPoint());</span>
+<span class="fc" id="L92">	}</span>
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.modelelements.View#getStakeholder()
+	 * &lt;em&gt;Stakeholder&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.modelelements.View#getStakeholder()
+	 */
+	@Test
+	public void testGetStakeholder() {
+<span class="fc" id="L100">		Assert.assertEquals(&quot;The derived property Stakeholder is baldy computed for View, it must not be equal to 1&quot;,1, defaultView.getStakeholder().size());</span>
+<span class="fc" id="L101">		Assert.assertTrue(&quot;The derived property Stakeholder is baldy computed for View, it must not be equal to the stakeholder&quot;,defaultView.getStakeholder().contains(stakeholder));</span>
+<span class="fc" id="L102">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

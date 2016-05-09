@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConstraintBlockTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.constraintblocks</a> &gt; <span class="el_source">ConstraintBlockTest.java</span></div><h1>ConstraintBlockTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.constraintblocks;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock;
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * A test case for the model object '&lt;em&gt;&lt;b&gt;Block&lt;/b&gt;&lt;/em&gt;'.
+ * 
+ * &lt;p&gt;
+ * The following features are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock#getParameters &lt;em&gt;Parameters&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ */
+<span class="fc" id="L38">public class ConstraintBlockTest {</span>
+
+<span class="fc" id="L40">	private ConstraintBlock constraintBlock=null;</span>
+	private ConstraintBlock nestedConstraintPropertyBlock1 ;
+	private ConstraintBlock normalConstraintPropertyBlock2;  
+
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp()  {
+		// Prepare Model test
+<span class="fc" id="L50">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L51">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+<span class="fc" id="L53">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+		
+		/*
+		 * 10.3.2.1 ConstraintBlock
+Description
+A constraint block is a block that packages the statement of a constraint so it may be applied in a reusable way to
+constrain properties of other blocks. A constraint block typically defines one or more constraint parameters, which are
+bound to properties of other blocks in a surrounding context where the constraint is used. Binding connectors, as defined
+in Clause 8, “Blocks,” are used to bind each parameter of the constraint block to a property in the surrounding context.
+All properties of a constraint block are constraint parameters, with the exception of constraint properties that hold
+internally nested usages of constraint blocks.
+A constraint property is a property of any block that is typed by a constraint block. It holds a localized usage of the
+constraint block. Binding connectors may be used to bind the parameters of this constraint block to other properties of the
+block that contains the usage.
+Constraints
+[1] A constraint block may not own any structural or behavioral elements beyond the properties that define its constraint
+parameters, constraint properties that hold internal usages of constraint blocks, binding connectors between its internally
+nested constraint parameters, constraint expressions that define an interpretation for the constraint block, and general-pur-
+pose model management and crosscutting elements.
+[2] Any classifier that specializes a ConstraintBlock must also have the ConstraintBlock stereotype applied.
+[3] Any property of a block that is typed by a ConstraintBlock must have composite aggregation.
+INV Block;
+self.ownedAttribute-&gt;forAll(p | p.type.oclIsKindOf(ConstraintBlock) implies p.aggregation = #composite)
+
+/*		Constraint blocks support a special form of compartment, with the label “parameters,” which may contain declarations for
+		some or all of its constraint parameters. Properties of a constraint block should be shown either in the constraints
+		compartment, for org eclipse uml2 create nested constraint properties, or within the parameters compartment.
+*/
+		
+<span class="fc" id="L82">		Class ownedBlockClass3=model.createOwnedClass(&quot;Block3&quot;, false);</span>
+<span class="fc" id="L83">		stereotypeApplicationHelper.applyStereotype(ownedBlockClass3, BlocksPackage.eINSTANCE.getBlock());</span>
+		
+		//The root constraintBlock
+<span class="fc" id="L86">		Class constraintBlockClass = model.createOwnedClass(&quot;ConstraintBlock&quot;, false);</span>
+<span class="fc" id="L87">		constraintBlock = (ConstraintBlock) stereotypeApplicationHelper.applyStereotype(constraintBlockClass, ConstraintblocksPackage.eINSTANCE.getConstraintBlock());</span>
+		
+<span class="fc" id="L89">		Class ownedBlockClass2=model.createOwnedClass(&quot;Block2&quot;, false);</span>
+<span class="fc" id="L90">		stereotypeApplicationHelper.applyStereotype(ownedBlockClass2, BlocksPackage.eINSTANCE.getBlock());</span>
+		
+		//create a owned property type by a ConstraintBlock
+<span class="fc" id="L93">		constraintBlockClass.createOwnedAttribute(&quot;cbProperty&quot;, constraintBlockClass);</span>
+		//create a owned property type by a Block
+<span class="fc" id="L95">		constraintBlockClass.createOwnedAttribute(&quot;uncbProperty&quot;, ownedBlockClass2);</span>
+<span class="fc" id="L96">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock#getParameters()
+	 * &lt;em&gt;FlowProperty&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock#getParameters
+	 */
+	@Test
+	public void testGetParameters() {  
+<span class="fc" id="L105">		Assert.assertNotNull(&quot;Parameters should not be null&quot;, constraintBlock.getParameters());</span>
+<span class="fc" id="L106">		Assert.assertEquals(&quot;Parameters size should be 1&quot;, 1, constraintBlock.getParameters().size());</span>
+<span class="fc" id="L107">	}</span>
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

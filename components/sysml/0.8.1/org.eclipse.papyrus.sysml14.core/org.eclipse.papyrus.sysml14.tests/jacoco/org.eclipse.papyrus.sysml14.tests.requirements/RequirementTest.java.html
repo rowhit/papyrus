@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.requirements</a> &gt; <span class="el_source">RequirementTest.java</span></div><h1>RequirementTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2009, 2014 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.requirements;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.Realization;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.profile.standard.StandardPackage;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ *  A test case for the model object '&lt;em&gt;&lt;b&gt;Requirement&lt;/b&gt;&lt;/em&gt;'. 
+ *
+ * See the requirement org.eclipse.papyrus.sysml14.Req011 
+ * &lt;p&gt;
+ * The following features are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerived() &lt;em&gt;Derived&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerivedFrom() &lt;em&gt;Derived From&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getSatisfiedBy() &lt;em&gt;Satisfied By&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getRefinedBy() &lt;em&gt;Refined By&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getTracedTo() &lt;em&gt;Traced To&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getVerifiedBy() &lt;em&gt;Verified By&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getMaster() &lt;em&gt;Master&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ *
+ * 
+ */
+<span class="fc" id="L53">public class RequirementTest {</span>
+
+<span class="fc" id="L55">	private Requirement defaultReq = null;</span>
+
+<span class="fc" id="L57">	private Class copy = null;</span>
+
+<span class="fc" id="L59">	private Requirement copyReq = null;</span>
+
+<span class="fc" id="L61">	private Requirement masterReq = null;</span>
+
+<span class="fc" id="L63">	private Class derived1 = null;</span>
+
+<span class="fc" id="L65">	private Class derived2 = null;</span>
+
+<span class="fc" id="L67">	private Requirement derive1Req = null;</span>
+
+<span class="fc" id="L69">	private Requirement derive2Req = null;</span>
+
+<span class="fc" id="L71">	private Requirement derived1Req = null;</span>
+
+<span class="fc" id="L73">	private Requirement derived2Req = null;</span>
+
+<span class="fc" id="L75">	private Class satisfyingNE1 = null;</span>
+
+<span class="fc" id="L77">	private Class satisfyingNE2 = null;</span>
+
+<span class="fc" id="L79">	private Requirement satisfiedReq = null;</span>
+
+<span class="fc" id="L81">	private Class refiningNE1 = null;</span>
+
+<span class="fc" id="L83">	private Class refiningNE2 = null;</span>
+
+<span class="fc" id="L85">	private Requirement refinedReq = null;</span>
+
+<span class="fc" id="L87">	private Class traced1 = null;</span>
+
+<span class="fc" id="L89">	private Class traced2 = null;</span>
+
+<span class="fc" id="L91">	private Class trace = null;</span>
+
+<span class="fc" id="L93">	private Requirement traceReq = null;</span>
+
+<span class="fc" id="L95">	private Requirement verifiedReq = null;</span>
+
+<span class="fc" id="L97">	private org.eclipse.papyrus.sysml14.requirements.TestCase testCase1 = null;</span>
+
+<span class="fc" id="L99">	private NamedElement verifierNamedElement = null;</span>
+
+<span class="fc" id="L101">	private org.eclipse.papyrus.sysml14.requirements.TestCase testCase2 = null;</span>
+
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp() {
+		// Prepare test
+<span class="fc" id="L109">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+
+<span class="fc" id="L111">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+		// Create classes &amp; interface
+<span class="fc" id="L114">		Class defaultClass = model.createOwnedClass(&quot;defaultClass&quot;, false);</span>
+
+		// Add Requirement stereotypes
+<span class="fc" id="L117">		defaultReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(defaultClass, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getMaster test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L123">		Class master = model.createOwnedClass(&quot;master&quot;, false);</span>
+<span class="fc" id="L124">		masterReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(master, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L125">		copy = model.createOwnedClass(&quot;copy&quot;, false);</span>
+<span class="fc" id="L126">		copyReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(copy, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+		// Add &quot;copy&quot; (Abstraction) between master and copy
+		// copy -&gt; master
+<span class="fc" id="L130">		Abstraction copy2Master = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L131">		copy2Master.getClients().add(copy);</span>
+<span class="fc" id="L132">		copy2Master.getSuppliers().add(master);</span>
+<span class="fc" id="L133">		model.getPackagedElements().add(copy2Master);</span>
+<span class="fc" id="L134">		StereotypeApplicationHelper.getInstance(null).applyStereotype(copy2Master, RequirementsPackage.eINSTANCE.getCopy());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getDerived / getDerivedFrom test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L142">		Class derive1 = model.createOwnedClass(&quot;d1&quot;, false);</span>
+<span class="fc" id="L143">		derive1Req = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(derive1, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L145">		Class derive2 = model.createOwnedClass(&quot;d2&quot;, false);</span>
+<span class="fc" id="L146">		derive2Req = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(derive2, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L148">		derived1 = model.createOwnedClass(&quot;dd1&quot;, false);</span>
+<span class="fc" id="L149">		derived1Req = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(derived1, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L151">		derived2 = model.createOwnedClass(&quot;dd2&quot;, false);</span>
+<span class="fc" id="L152">		derived2Req = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(derived2, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+		// Add &quot;DeriveReqt&quot; (Abstraction) between derive and derived
+		// derived1 -&gt; derive1, derive2
+		// derived2 -&gt; derive2
+<span class="fc" id="L157">		Abstraction d11 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L158">		d11.getClients().add(derived1);</span>
+<span class="fc" id="L159">		d11.getSuppliers().add(derive1);</span>
+<span class="fc" id="L160">		model.getPackagedElements().add(d11);</span>
+<span class="fc" id="L161">		StereotypeApplicationHelper.getInstance(null).applyStereotype(d11, RequirementsPackage.eINSTANCE.getDeriveReqt());</span>
+
+<span class="fc" id="L163">		Abstraction d12 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L164">		d12.getClients().add(derived1);</span>
+<span class="fc" id="L165">		d12.getSuppliers().add(derive2);</span>
+<span class="fc" id="L166">		model.getPackagedElements().add(d12);</span>
+<span class="fc" id="L167">		StereotypeApplicationHelper.getInstance(null).applyStereotype(d12, RequirementsPackage.eINSTANCE.getDeriveReqt());</span>
+
+<span class="fc" id="L169">		Abstraction d22 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L170">		d22.getClients().add(derived2);</span>
+<span class="fc" id="L171">		d22.getSuppliers().add(derive2);</span>
+<span class="fc" id="L172">		model.getPackagedElements().add(d22);</span>
+<span class="fc" id="L173">		StereotypeApplicationHelper.getInstance(null).applyStereotype(d22, RequirementsPackage.eINSTANCE.getDeriveReqt());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getSatisfiedBy test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L181">		Class satisfied = model.createOwnedClass(&quot;satisfied&quot;, false);</span>
+<span class="fc" id="L182">		satisfiedReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(satisfied, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L184">		satisfyingNE1 = model.createOwnedClass(&quot;sNE1&quot;, false);</span>
+<span class="fc" id="L185">		satisfyingNE2 = model.createOwnedClass(&quot;sNE2&quot;, false);</span>
+
+		// Add &quot;Satisfy&quot; (Realization) between satisfyingNE(s) and satisfied
+		// requirement
+		// satisfyingNE1, satisfyingNE2 -&gt; satisfied
+<span class="fc" id="L190">		Realization ne12S1 = UMLFactory.eINSTANCE.createRealization();</span>
+<span class="fc" id="L191">		ne12S1.getClients().add(satisfyingNE1);</span>
+<span class="fc" id="L192">		ne12S1.getSuppliers().add(satisfied);</span>
+<span class="fc" id="L193">		model.getPackagedElements().add(ne12S1);</span>
+<span class="fc" id="L194">		StereotypeApplicationHelper.getInstance(null).applyStereotype(ne12S1, RequirementsPackage.eINSTANCE.getSatisfy());</span>
+
+<span class="fc" id="L196">		Realization ne22S1 = UMLFactory.eINSTANCE.createRealization();</span>
+<span class="fc" id="L197">		ne22S1.getClients().add(satisfyingNE2);</span>
+<span class="fc" id="L198">		ne22S1.getSuppliers().add(satisfied);</span>
+<span class="fc" id="L199">		model.getPackagedElements().add(ne22S1);</span>
+<span class="fc" id="L200">		StereotypeApplicationHelper.getInstance(null).applyStereotype(ne22S1, RequirementsPackage.eINSTANCE.getSatisfy());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getRefinedBy test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L208">		Class refined = model.createOwnedClass(&quot;refined&quot;, false);</span>
+<span class="fc" id="L209">		refinedReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(refined, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L211">		refiningNE1 = model.createOwnedClass(&quot;rNE1&quot;, false);</span>
+<span class="fc" id="L212">		refiningNE2 = model.createOwnedClass(&quot;rNE2&quot;, false);</span>
+
+		// Add &quot;Refine&quot; (Abstraction) between refiningNE(s) and refined
+		// requirement
+		// refiningNE1, refiningNE2 -&gt; refined
+<span class="fc" id="L217">		Abstraction rne12S1 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L218">		rne12S1.getClients().add(refiningNE1);</span>
+<span class="fc" id="L219">		rne12S1.getSuppliers().add(refined);</span>
+<span class="fc" id="L220">		model.getPackagedElements().add(rne12S1);</span>
+<span class="fc" id="L221">		StereotypeApplicationHelper.getInstance(null).applyStereotype(rne12S1, StandardPackage.eINSTANCE.getRefine());</span>
+
+<span class="fc" id="L223">		Abstraction rne22S1 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L224">		rne22S1.getClients().add(refiningNE2);</span>
+<span class="fc" id="L225">		rne22S1.getSuppliers().add(refined);</span>
+<span class="fc" id="L226">		model.getPackagedElements().add(rne22S1);</span>
+<span class="fc" id="L227">		StereotypeApplicationHelper.getInstance(null).applyStereotype(rne22S1, StandardPackage.eINSTANCE.getRefine());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getTracedTo test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L235">		traced1 = model.createOwnedClass(&quot;traced1&quot;, false);</span>
+<span class="fc" id="L236">		StereotypeApplicationHelper.getInstance(null).applyStereotype(traced1, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L238">		traced2 = model.createOwnedClass(&quot;traced2&quot;, false);</span>
+<span class="fc" id="L239">		StereotypeApplicationHelper.getInstance(null).applyStereotype(traced2, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L241">		trace = model.createOwnedClass(&quot;trace&quot;, false);</span>
+<span class="fc" id="L242">		traceReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(trace, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+		// Add &quot;Trace&quot; (Abstraction)
+		// [traced1, traced2] -&gt; trace
+<span class="fc" id="L246">		Abstraction t11 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L247">		t11.getClients().add(traced1);</span>
+<span class="fc" id="L248">		t11.getSuppliers().add(trace);</span>
+<span class="fc" id="L249">		model.getPackagedElements().add(t11);</span>
+<span class="fc" id="L250">		StereotypeApplicationHelper.getInstance(null).applyStereotype(t11, StandardPackage.eINSTANCE.getTrace());</span>
+
+<span class="fc" id="L252">		Abstraction t12 = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L253">		t12.getClients().add(traced2);</span>
+<span class="fc" id="L254">		t12.getSuppliers().add(trace);</span>
+<span class="fc" id="L255">		model.getPackagedElements().add(t12);</span>
+<span class="fc" id="L256">		StereotypeApplicationHelper.getInstance(null).applyStereotype(t12, StandardPackage.eINSTANCE.getTrace());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+
+		// ////////////////////////////////////////////////////////////////////
+		// Prepare getVerifiedBy test elements
+		// ////////////////////////////////////////////////////////////////////
+
+<span class="fc" id="L264">		verifierNamedElement = model.createOwnedClass(&quot;verifierNamedElement&quot;, false);</span>
+
+<span class="fc" id="L266">		Class verified = model.createOwnedClass(&quot;verified&quot;, false);</span>
+<span class="fc" id="L267">		verifiedReq = (Requirement)StereotypeApplicationHelper.getInstance(null).applyStereotype(verified, RequirementsPackage.eINSTANCE.getRequirement());</span>
+
+<span class="fc" id="L269">		Class testClass = model.createOwnedClass(&quot;testClass&quot;, false);</span>
+<span class="fc" id="L270">		Operation op1 = testClass.createOwnedOperation(&quot;op1&quot;, null, null, null);</span>
+<span class="fc" id="L271">		Operation op2 = testClass.createOwnedOperation(&quot;op2&quot;, null, null, null);</span>
+
+<span class="fc" id="L273">		testCase1 = (org.eclipse.papyrus.sysml14.requirements.TestCase)StereotypeApplicationHelper.getInstance(null).applyStereotype(op1, RequirementsPackage.eINSTANCE.getTestCase());</span>
+<span class="fc" id="L274">		testCase2 = (org.eclipse.papyrus.sysml14.requirements.TestCase)StereotypeApplicationHelper.getInstance(null).applyStereotype(op2, RequirementsPackage.eINSTANCE.getTestCase());</span>
+
+		// Add &quot;Verify&quot; (Abstraction)
+		// testCase1, testCase2 -&gt; verified
+<span class="fc" id="L278">		Abstraction t12V = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L279">		t12V.getClients().add(op1);</span>
+<span class="fc" id="L280">		t12V.getSuppliers().add(verified);</span>
+<span class="fc" id="L281">		model.getPackagedElements().add(t12V);</span>
+<span class="fc" id="L282">		StereotypeApplicationHelper.getInstance(null).applyStereotype(t12V, RequirementsPackage.eINSTANCE.getVerify());</span>
+
+<span class="fc" id="L284">		Abstraction t22V = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L285">		t22V.getClients().add(op2);</span>
+<span class="fc" id="L286">		t22V.getSuppliers().add(verified);</span>
+<span class="fc" id="L287">		model.getPackagedElements().add(t22V);</span>
+<span class="fc" id="L288">		StereotypeApplicationHelper.getInstance(null).applyStereotype(t22V, RequirementsPackage.eINSTANCE.getVerify());</span>
+
+		// Add &quot;Verify&quot; (Abstraction)
+		// verifierNamedElement -&gt; verified
+<span class="fc" id="L292">		Abstraction t32V = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L293">		t32V.getClients().add(verifierNamedElement);</span>
+<span class="fc" id="L294">		t32V.getSuppliers().add(verified);</span>
+<span class="fc" id="L295">		model.getPackagedElements().add(t32V);</span>
+<span class="fc" id="L296">		StereotypeApplicationHelper.getInstance(null).applyStereotype(t32V, RequirementsPackage.eINSTANCE.getVerify());</span>
+
+		// ////////////////////////////////////////////////////////////////////
+<span class="fc" id="L299">	}</span>
+
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerived()
+	 * &lt;em&gt;Derived&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getDerived()
+	 */
+	@Test
+	public void testGetDerived() {
+<span class="fc" id="L309">		Assert.assertTrue(&quot;Isolated requirement : default_req.getDerived() = []&quot;, defaultReq.getDerived().isEmpty());</span>
+<span class="fc" id="L310">		Assert.assertTrue(&quot;Verifies : derive1_req.getDerived() = [derived1_req]&quot;, derive1Req.getDerived().contains(derived1Req));</span>
+<span class="fc" id="L311">		Assert.assertTrue(&quot;Verifies : derive2_req.getDerived() = [derived1_req, derived2_req]&quot;,derive2Req.getDerived().contains(derived1Req));</span>
+<span class="fc" id="L312">		Assert.assertTrue(&quot;Verifies : derive2_req.getDerived() = [derived1_req, derived2_req]&quot;,derive2Req.getDerived().contains(derived2Req));</span>
+<span class="fc" id="L313">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getDerivedFrom()
+	 * &lt;em&gt;Derived From&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getDerivedFrom()
+	 */
+	@Test
+	public void testGetDerivedFrom() {
+<span class="fc" id="L322">		Assert.assertTrue(&quot;Isolated requirement : default_req.getDerivedFrom() = []&quot;,defaultReq.getDerivedFrom().isEmpty());</span>
+<span class="fc" id="L323">		Assert.assertTrue(&quot;Verifies : derived2_req.getDerivedFrom() = [derive2_req]&quot;,derived2Req.getDerivedFrom().contains(derive2Req));</span>
+<span class="fc" id="L324">		Assert.assertTrue(&quot;Verifies : derived1_req.getDerivedFrom() = [derive1_req, derive2_req]&quot;,derived1Req.getDerivedFrom().contains(derive1Req));</span>
+<span class="fc" id="L325">		Assert.assertTrue(&quot;Verifies : derived1_req.getDerivedFrom() = [derive1_req, derive2_req]&quot;,derived1Req.getDerivedFrom().contains(derive2Req));</span>
+<span class="fc" id="L326">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getMaster()
+	 * &lt;em&gt;Master&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getMaster()
+	 */
+	@Test
+	public void testGetMaster() {
+<span class="fc" id="L335">		Assert.assertNull(&quot;Isolated requirement : default_req.getMaster() = null&quot;, defaultReq.getMaster());</span>
+<span class="fc" id="L336">		Assert.assertEquals(&quot;Try retrieving Master from Copy requirement&quot;, masterReq, copyReq.getMaster());</span>
+<span class="fc" id="L337">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getRefinedBy()
+	 * &lt;em&gt;Refined By&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getRefinedBy()
+	 */
+	@Test
+	public void testGetRefinedBy() {
+<span class="fc" id="L346">		Assert.assertTrue(&quot;Isolated requirement : default_req.getRefinedBy() = []&quot;, defaultReq.getRefinedBy().isEmpty());</span>
+<span class="fc" id="L347">		Assert.assertTrue(&quot;Verifies : refined_req.getRefinedBy() = [refiningNE1, refiningNE2]&quot;,refinedReq.getRefinedBy().contains(refiningNE1));</span>
+<span class="fc" id="L348">		Assert.assertTrue(&quot;Verifies : refined_req.getRefinedBy() = [refiningNE1, refiningNE2]&quot;,refinedReq.getRefinedBy().contains(refiningNE2));</span>
+<span class="fc" id="L349">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getSatisfiedBy()
+	 * &lt;em&gt;Satisfied By&lt;/em&gt;}' feature getter.
+	 *
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getSatisfiedBy()
+	 */
+	@Test
+	public void testGetSatisfiedBy() {
+<span class="fc" id="L359">		Assert.assertTrue(&quot;Isolated requirement : default_req.getSatisfiedBy() = []&quot;,defaultReq.getSatisfiedBy().isEmpty());</span>
+<span class="fc" id="L360">		Assert.assertTrue(&quot;Verifies : satisfied_req.getSatisfiedBy() = [satisfyingNE1, satisfyingNE2]&quot;,satisfiedReq.getSatisfiedBy().contains(satisfyingNE1));</span>
+<span class="fc" id="L361">		Assert.assertTrue(&quot;Verifies : satisfied_req.getSatisfiedBy() = [satisfyingNE1, satisfyingNE2]&quot;,satisfiedReq.getSatisfiedBy().contains(satisfyingNE2));</span>
+<span class="fc" id="L362">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getTracedTo()
+	 * &lt;em&gt;Traced To&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getTracedTo()
+	 */
+	@Test
+	public void testGetTracedTo() {
+<span class="fc" id="L371">		Assert.assertTrue(&quot;Isolated requirement : default_req.getTracedTo = []&quot;,defaultReq.getTracedTo().isEmpty());</span>
+		// DeriveReqt / Verify / Copy inherits from Trace 
+<span class="fc" id="L373">		Assert.assertFalse(&quot;Test getter through Copy (should not be taken into account see bug #352563)&quot;,masterReq.getTracedTo().contains(copy));</span>
+		// Test getter through DeriveReqt (tracedTo = Clients)
+<span class="fc" id="L375">		Assert.assertFalse(&quot;derived1 -&gt; [derive1_req, derive2_req] (should not be taken into account see bug #352563)&quot;,derive1Req.getTracedTo().contains(derived1));</span>
+<span class="fc" id="L376">		Assert.assertFalse(&quot;derived1 -&gt; [derive1_req, derive2_req] (should not be taken into account see bug #352563)&quot;,derive2Req.getTracedTo().contains(derived1));</span>
+<span class="fc" id="L377">		Assert.assertFalse(&quot;derived2 -&gt; [derive2_req] (should not be taken into account see bug #352563)&quot;,derive2Req.getTracedTo().contains(derived2));</span>
+		// Should not happen...
+		// Direct test
+<span class="fc" id="L380">		Assert.assertTrue(&quot;Test getter through Verify (should not be taken into account see bug #352563)&quot;,traceReq.getTracedTo().contains(traced1));</span>
+<span class="fc" id="L381">		Assert.assertTrue(&quot;Test getter through Verify (should not be taken into account see bug #352563)&quot;,traceReq.getTracedTo().contains(traced2));</span>
+<span class="fc" id="L382">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.requirements.Requirement#getVerifiedBy()
+	 * &lt;em&gt;Verified By&lt;/em&gt;}' feature getter.
+	 * @see org.eclipse.papyrus.sysml14.requirements.Requirement#getVerifiedBy()
+	 */
+	@Test
+	public void testGetVerifiedBy() {
+<span class="fc" id="L391">		Assert.assertTrue(&quot;Isolated requirement : default_req.getVerifiedBy() = []&quot;, defaultReq.getVerifiedBy().isEmpty());</span>
+<span class="fc" id="L392">		Assert.assertTrue(&quot;Test getVerifiedBy getter for [testCase1, testCase2, verifierNamedElement] -&gt; verified_req&quot;, verifiedReq.getVerifiedBy().contains(testCase1.getBase_Operation()));</span>
+<span class="fc" id="L393">		Assert.assertTrue(&quot;Test getVerifiedBy getter for [testCase1, testCase2, verifierNamedElement] -&gt; verified_req&quot;, verifiedReq.getVerifiedBy().contains(testCase2.getBase_Operation()));</span>
+<span class="fc" id="L394">		Assert.assertTrue(&quot;Test getVerifiedBy getter for [testCase1, testCase2, verifierNamedElement] -&gt; verified_req&quot;, verifiedReq.getVerifiedBy().contains(verifierNamedElement));</span>
+<span class="fc" id="L395">	}</span>
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

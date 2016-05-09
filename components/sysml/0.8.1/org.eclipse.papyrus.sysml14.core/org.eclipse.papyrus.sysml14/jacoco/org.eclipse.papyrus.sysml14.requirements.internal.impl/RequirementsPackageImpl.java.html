@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementsPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements.internal.impl</a> &gt; <span class="el_source">RequirementsPackageImpl.java</span></div><h1>RequirementsPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.requirements.internal.impl;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.Copy;
+import org.eclipse.papyrus.sysml14.requirements.DeriveReqt;
+import org.eclipse.papyrus.sysml14.requirements.Refine;
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsFactory;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.requirements.Satisfy;
+import org.eclipse.papyrus.sysml14.requirements.TestCase;
+import org.eclipse.papyrus.sysml14.requirements.Trace;
+import org.eclipse.papyrus.sysml14.requirements.Verify;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class RequirementsPackageImpl extends EPackageImpl implements RequirementsPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L78">	private EClass copyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L85">	private EClass traceEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L92">	private EClass requirementEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L99">	private EClass deriveReqtEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L106">	private EClass refineEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L113">	private EClass satisfyEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L120">	private EClass testCaseEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L127">	private EClass verifyEClass = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.requirements.RequirementsPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private RequirementsPackageImpl() {
+<span class="fc" id="L145">		super(eNS_URI, RequirementsFactory.eINSTANCE);</span>
+<span class="fc" id="L146">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L153">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link RequirementsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static RequirementsPackage init() {
+<span class="pc bpc" id="L168" title="1 of 2 branches missed.">		if (isInited) return (RequirementsPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RequirementsPackageImpl());</span>
+
+<span class="fc" id="L173">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L176">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L179" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L180" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L183" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L184" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L185" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L188">		theRequirementsPackage.createPackageContents();</span>
+<span class="fc" id="L189">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L190">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L191">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L192">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L193">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L194">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L195">		theModelelementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L198">		theRequirementsPackage.initializePackageContents();</span>
+<span class="fc" id="L199">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L200">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L201">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L202">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L203">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L204">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L205">		theModelelementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L208">		theRequirementsPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L212">		EPackage.Registry.INSTANCE.put(RequirementsPackage.eNS_URI, theRequirementsPackage);</span>
+<span class="fc" id="L213">		return theRequirementsPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getCopy() {
+<span class="fc" id="L222">		return copyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getTrace() {
+<span class="fc" id="L231">		return traceEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getTrace_Base_Abstraction() {
+<span class="fc" id="L240">		return (EReference)traceEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getTrace__GetTracedFrom__NamedElement_EList() {
+<span class="fc" id="L249">		return traceEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getRequirement() {
+<span class="fc" id="L258">		return requirementEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_Base_Class() {
+<span class="fc" id="L267">		return (EReference)requirementEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_Derived() {
+<span class="fc" id="L276">		return (EReference)requirementEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_DerivedFrom() {
+<span class="fc" id="L285">		return (EReference)requirementEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getRequirement_Id() {
+<span class="fc" id="L294">		return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_Master() {
+<span class="fc" id="L303">		return (EReference)requirementEClass.getEStructuralFeatures().get(4);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_RefinedBy() {
+<span class="fc" id="L312">		return (EReference)requirementEClass.getEStructuralFeatures().get(5);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_SatisfiedBy() {
+<span class="fc" id="L321">		return (EReference)requirementEClass.getEStructuralFeatures().get(6);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getRequirement_Text() {
+<span class="fc" id="L330">		return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_TracedTo() {
+<span class="fc" id="L339">		return (EReference)requirementEClass.getEStructuralFeatures().get(8);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRequirement_VerifiedBy() {
+<span class="fc" id="L348">		return (EReference)requirementEClass.getEStructuralFeatures().get(9);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getDeriveReqt() {
+<span class="fc" id="L357">		return deriveReqtEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getRefine() {
+<span class="fc" id="L366">		return refineEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRefine_Base_Abstraction() {
+<span class="fc" id="L375">		return (EReference)refineEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getRefine__GetRefines__NamedElement_EList() {
+<span class="fc" id="L384">		return refineEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getSatisfy() {
+<span class="fc" id="L393">		return satisfyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getSatisfy__GetSatisfies__NamedElement_EList() {
+<span class="fc" id="L402">		return satisfyEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getTestCase() {
+<span class="fc" id="L411">		return testCaseEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getTestCase_Base_Behavior() {
+<span class="fc" id="L420">		return (EReference)testCaseEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getTestCase_Base_Operation() {
+<span class="fc" id="L429">		return (EReference)testCaseEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getVerify() {
+<span class="fc" id="L438">		return verifyEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getVerify__GetVerifies__NamedElement_EList() {
+<span class="fc" id="L447">		return verifyEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public RequirementsFactory getRequirementsFactory() {
+<span class="nc" id="L456">		return (RequirementsFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L464">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L474" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L475">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L478">		copyEClass = createEClass(COPY);</span>
+
+<span class="fc" id="L480">		traceEClass = createEClass(TRACE);</span>
+<span class="fc" id="L481">		createEReference(traceEClass, TRACE__BASE_ABSTRACTION);</span>
+<span class="fc" id="L482">		createEOperation(traceEClass, TRACE___GET_TRACED_FROM__NAMEDELEMENT_ELIST);</span>
+
+<span class="fc" id="L484">		requirementEClass = createEClass(REQUIREMENT);</span>
+<span class="fc" id="L485">		createEReference(requirementEClass, REQUIREMENT__BASE_CLASS);</span>
+<span class="fc" id="L486">		createEReference(requirementEClass, REQUIREMENT__DERIVED);</span>
+<span class="fc" id="L487">		createEReference(requirementEClass, REQUIREMENT__DERIVED_FROM);</span>
+<span class="fc" id="L488">		createEAttribute(requirementEClass, REQUIREMENT__ID);</span>
+<span class="fc" id="L489">		createEReference(requirementEClass, REQUIREMENT__MASTER);</span>
+<span class="fc" id="L490">		createEReference(requirementEClass, REQUIREMENT__REFINED_BY);</span>
+<span class="fc" id="L491">		createEReference(requirementEClass, REQUIREMENT__SATISFIED_BY);</span>
+<span class="fc" id="L492">		createEAttribute(requirementEClass, REQUIREMENT__TEXT);</span>
+<span class="fc" id="L493">		createEReference(requirementEClass, REQUIREMENT__TRACED_TO);</span>
+<span class="fc" id="L494">		createEReference(requirementEClass, REQUIREMENT__VERIFIED_BY);</span>
+
+<span class="fc" id="L496">		deriveReqtEClass = createEClass(DERIVE_REQT);</span>
+
+<span class="fc" id="L498">		refineEClass = createEClass(REFINE);</span>
+<span class="fc" id="L499">		createEReference(refineEClass, REFINE__BASE_ABSTRACTION);</span>
+<span class="fc" id="L500">		createEOperation(refineEClass, REFINE___GET_REFINES__NAMEDELEMENT_ELIST);</span>
+
+<span class="fc" id="L502">		satisfyEClass = createEClass(SATISFY);</span>
+<span class="fc" id="L503">		createEOperation(satisfyEClass, SATISFY___GET_SATISFIES__NAMEDELEMENT_ELIST);</span>
+
+<span class="fc" id="L505">		testCaseEClass = createEClass(TEST_CASE);</span>
+<span class="fc" id="L506">		createEReference(testCaseEClass, TEST_CASE__BASE_BEHAVIOR);</span>
+<span class="fc" id="L507">		createEReference(testCaseEClass, TEST_CASE__BASE_OPERATION);</span>
+
+<span class="fc" id="L509">		verifyEClass = createEClass(VERIFY);</span>
+<span class="fc" id="L510">		createEOperation(verifyEClass, VERIFY___GET_VERIFIES__NAMEDELEMENT_ELIST);</span>
+<span class="fc" id="L511">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L518">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L528" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L529">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L532">		setName(eNAME);</span>
+<span class="fc" id="L533">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L534">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L537">		BlocksPackage theBlocksPackage = (BlocksPackage)EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI);</span>
+<span class="fc" id="L538">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+<span class="fc" id="L539">		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+<span class="fc" id="L546">		copyEClass.getESuperTypes().add(this.getTrace());</span>
+<span class="fc" id="L547">		traceEClass.getESuperTypes().add(theBlocksPackage.getDirectedRelationshipPropertyPath());</span>
+<span class="fc" id="L548">		deriveReqtEClass.getESuperTypes().add(this.getTrace());</span>
+<span class="fc" id="L549">		refineEClass.getESuperTypes().add(theBlocksPackage.getDirectedRelationshipPropertyPath());</span>
+<span class="fc" id="L550">		satisfyEClass.getESuperTypes().add(this.getTrace());</span>
+<span class="fc" id="L551">		verifyEClass.getESuperTypes().add(this.getTrace());</span>
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L554">		initEClass(copyEClass, Copy.class, &quot;Copy&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L556">		initEClass(traceEClass, Trace.class, &quot;Trace&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L557">		initEReference(getTrace_Base_Abstraction(), theUMLPackage.getAbstraction(), null, &quot;base_Abstraction&quot;, null, 0, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L559">		EOperation op = initEOperation(getTrace__GetTracedFrom__NamedElement_EList(), null, &quot;getTracedFrom&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L560">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L561">		addEParameter(op, this.getRequirement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L563">		initEClass(requirementEClass, Requirement.class, &quot;Requirement&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L564">		initEReference(getRequirement_Base_Class(), theUMLPackage.getClass_(), null, &quot;base_Class&quot;, null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L565">		initEReference(getRequirement_Derived(), this.getRequirement(), null, &quot;derived&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L566">		initEReference(getRequirement_DerivedFrom(), this.getRequirement(), null, &quot;derivedFrom&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L567">		initEAttribute(getRequirement_Id(), theTypesPackage.getString(), &quot;id&quot;, &quot;&quot;, 1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+<span class="fc" id="L568">		initEReference(getRequirement_Master(), this.getRequirement(), null, &quot;master&quot;, null, 0, 1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L569">		initEReference(getRequirement_RefinedBy(), theUMLPackage.getNamedElement(), null, &quot;refinedBy&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L570">		initEReference(getRequirement_SatisfiedBy(), theUMLPackage.getNamedElement(), null, &quot;satisfiedBy&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L571">		initEAttribute(getRequirement_Text(), theTypesPackage.getString(), &quot;text&quot;, &quot;&quot;, 1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+<span class="fc" id="L572">		initEReference(getRequirement_TracedTo(), theUMLPackage.getNamedElement(), null, &quot;tracedTo&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L573">		initEReference(getRequirement_VerifiedBy(), theUMLPackage.getNamedElement(), null, &quot;verifiedBy&quot;, null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L575">		initEClass(deriveReqtEClass, DeriveReqt.class, &quot;DeriveReqt&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L577">		initEClass(refineEClass, Refine.class, &quot;Refine&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L578">		initEReference(getRefine_Base_Abstraction(), theUMLPackage.getAbstraction(), null, &quot;base_Abstraction&quot;, null, 0, 1, Refine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L580">		op = initEOperation(getRefine__GetRefines__NamedElement_EList(), null, &quot;getRefines&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L581">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L582">		addEParameter(op, this.getRequirement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L584">		initEClass(satisfyEClass, Satisfy.class, &quot;Satisfy&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L586">		op = initEOperation(getSatisfy__GetSatisfies__NamedElement_EList(), null, &quot;getSatisfies&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L587">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L588">		addEParameter(op, this.getRequirement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L590">		initEClass(testCaseEClass, TestCase.class, &quot;TestCase&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L591">		initEReference(getTestCase_Base_Behavior(), theUMLPackage.getBehavior(), null, &quot;base_Behavior&quot;, null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L592">		initEReference(getTestCase_Base_Operation(), theUMLPackage.getOperation(), null, &quot;base_Operation&quot;, null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L594">		initEClass(verifyEClass, Verify.class, &quot;Verify&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L596">		op = initEOperation(getVerify__GetVerifies__NamedElement_EList(), null, &quot;getVerifies&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L597">		addEParameter(op, theUMLPackage.getNamedElement(), &quot;ref&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L598">		addEParameter(op, this.getRequirement(), &quot;result&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Create resource
+<span class="fc" id="L601">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L605">		createUMLAnnotations();</span>
+<span class="fc" id="L606">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L615">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L616">		addAnnotation</span>
+<span class="fc" id="L617">		  (this, </span>
+<span class="fc" id="L618">		   source, </span>
+<span class="fc" id="L619">		   new String[] {</span>
+<span class="fc" id="L620">			 &quot;originalName&quot;, &quot;Requirements&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L622">	}</span>
+
+} //RequirementsPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

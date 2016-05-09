@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ParticipantPropertyImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">ParticipantPropertyImpl.java</span></div><h1>ParticipantPropertyImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.ParticipantProperty;
+
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Participant Property&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ParticipantPropertyImpl#getBase_Property &lt;em&gt;Base Property&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.ParticipantPropertyImpl#getEnd &lt;em&gt;End&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implements ParticipantProperty {
+	/**
+	 * The cached value of the '{@link #getBase_Property() &lt;em&gt;Base Property&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Property()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property base_Property;
+
+	/**
+	 * The cached value of the '{@link #getEnd() &lt;em&gt;End&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property end;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ParticipantPropertyImpl() {
+<span class="nc" id="L69">		super();</span>
+<span class="nc" id="L70">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L79">		return BlocksPackage.Literals.PARTICIPANT_PROPERTY;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getBase_Property() {
+<span class="nc bnc" id="L88" title="All 4 branches missed.">		if (base_Property != null &amp;&amp; base_Property.eIsProxy()) {</span>
+<span class="nc" id="L89">			InternalEObject oldBase_Property = (InternalEObject)base_Property;</span>
+<span class="nc" id="L90">			base_Property = (Property)eResolveProxy(oldBase_Property);</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">			if (base_Property != oldBase_Property) {</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L93">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));</span>
+			}
+		}
+<span class="nc" id="L96">		return base_Property;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property basicGetBase_Property() {
+<span class="nc" id="L105">		return base_Property;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Property(Property newBase_Property) {
+<span class="nc" id="L114">		Property oldBase_Property = base_Property;</span>
+<span class="nc" id="L115">		base_Property = newBase_Property;</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L117">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));</span>
+<span class="nc" id="L118">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getEnd() {
+<span class="nc bnc" id="L126" title="All 4 branches missed.">		if (end != null &amp;&amp; end.eIsProxy()) {</span>
+<span class="nc" id="L127">			InternalEObject oldEnd = (InternalEObject)end;</span>
+<span class="nc" id="L128">			end = (Property)eResolveProxy(oldEnd);</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">			if (end != oldEnd) {</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L131">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.PARTICIPANT_PROPERTY__END, oldEnd, end));</span>
+			}
+		}
+<span class="nc" id="L134">		return end;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property basicGetEnd() {
+<span class="nc" id="L143">		return end;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setEnd(Property newEnd) {
+<span class="nc" id="L152">		Property oldEnd = end;</span>
+<span class="nc" id="L153">		end = newEnd;</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L155">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.PARTICIPANT_PROPERTY__END, oldEnd, end));</span>
+<span class="nc" id="L156">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L165" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
+<span class="nc bnc" id="L167" title="All 2 branches missed.">				if (resolve) return getBase_Property();</span>
+<span class="nc" id="L168">				return basicGetBase_Property();</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__END:
+<span class="nc bnc" id="L170" title="All 2 branches missed.">				if (resolve) return getEnd();</span>
+<span class="nc" id="L171">				return basicGetEnd();</span>
+		}
+<span class="nc" id="L173">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L183" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
+<span class="nc" id="L185">				setBase_Property((Property)newValue);</span>
+<span class="nc" id="L186">				return;</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__END:
+<span class="nc" id="L188">				setEnd((Property)newValue);</span>
+<span class="nc" id="L189">				return;</span>
+		}
+<span class="nc" id="L191">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L192">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L201" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
+<span class="nc" id="L203">				setBase_Property((Property)null);</span>
+<span class="nc" id="L204">				return;</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__END:
+<span class="nc" id="L206">				setEnd((Property)null);</span>
+<span class="nc" id="L207">				return;</span>
+		}
+<span class="nc" id="L209">		super.eUnset(featureID);</span>
+<span class="nc" id="L210">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L219" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
+<span class="nc bnc" id="L221" title="All 2 branches missed.">				return base_Property != null;</span>
+			case BlocksPackage.PARTICIPANT_PROPERTY__END:
+<span class="nc bnc" id="L223" title="All 2 branches missed.">				return end != null;</span>
+		}
+<span class="nc" id="L225">		return super.eIsSet(featureID);</span>
+	}
+
+} //ParticipantPropertyImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

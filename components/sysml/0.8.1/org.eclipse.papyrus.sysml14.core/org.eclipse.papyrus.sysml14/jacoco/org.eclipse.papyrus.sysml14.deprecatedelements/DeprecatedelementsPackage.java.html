@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DeprecatedelementsPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.deprecatedelements</a> &gt; <span class="el_source">DeprecatedelementsPackage.java</span></div><h1>DeprecatedelementsPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.deprecatedelements;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='DeprecatedElements'&quot;
+ * @generated
+ */
+public interface DeprecatedelementsPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;deprecatedelements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/DeprecatedElements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;DeprecatedElements&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L69">	DeprecatedelementsPackage eINSTANCE = org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowPortImpl &lt;em&gt;Flow Port&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowPortImpl
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl#getFlowPort()
+	 * @generated
+	 */
+	int FLOW_PORT = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT__BASE_PORT = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT__DIRECTION = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Is Atomic&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT__IS_ATOMIC = 2;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Flow Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT_FEATURE_COUNT = 3;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Icon&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT___GET_ICON = 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Flow Port&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_PORT_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowSpecificationImpl &lt;em&gt;Flow Specification&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowSpecificationImpl
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl#getFlowSpecification()
+	 * @generated
+	 */
+	int FLOW_SPECIFICATION = 1;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Interface&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_SPECIFICATION__BASE_INTERFACE = 0;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Flow Specification&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_SPECIFICATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Flow Properties&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_SPECIFICATION___GET_FLOW_PROPERTIES = 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Flow Specification&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L179">	int FLOW_SPECIFICATION_OPERATION_COUNT = 1;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort &lt;em&gt;Flow Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Flow Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort
+	 * @generated
+	 */
+	EClass getFlowPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getBase_Port &lt;em&gt;Base Port&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Port&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getBase_Port()
+	 * @see #getFlowPort()
+	 * @generated
+	 */
+	EReference getFlowPort_Base_Port();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getDirection &lt;em&gt;Direction&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Direction&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getDirection()
+	 * @see #getFlowPort()
+	 * @generated
+	 */
+	EAttribute getFlowPort_Direction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#isAtomic &lt;em&gt;Is Atomic&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the attribute '&lt;em&gt;Is Atomic&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#isAtomic()
+	 * @see #getFlowPort()
+	 * @generated
+	 */
+	EAttribute getFlowPort_IsAtomic();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getIcon() &lt;em&gt;Get Icon&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Icon&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort#getIcon()
+	 * @generated
+	 */
+	EOperation getFlowPort__GetIcon();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification &lt;em&gt;Flow Specification&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Flow Specification&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification
+	 * @generated
+	 */
+	EClass getFlowSpecification();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getBase_Interface &lt;em&gt;Base Interface&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the reference '&lt;em&gt;Base Interface&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getBase_Interface()
+	 * @see #getFlowSpecification()
+	 * @generated
+	 */
+	EReference getFlowSpecification_Base_Interface();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getFlowProperties() &lt;em&gt;Get Flow Properties&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Flow Properties&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification#getFlowProperties()
+	 * @generated
+	 */
+	EOperation getFlowSpecification__GetFlowProperties();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	DeprecatedelementsFactory getDeprecatedelementsFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowPortImpl &lt;em&gt;Flow Port&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowPortImpl
+		 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl#getFlowPort()
+		 * @generated
+		 */
+<span class="fc" id="L297">		EClass FLOW_PORT = eINSTANCE.getFlowPort();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Port&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L305">		EReference FLOW_PORT__BASE_PORT = eINSTANCE.getFlowPort_Base_Port();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L313">		EAttribute FLOW_PORT__DIRECTION = eINSTANCE.getFlowPort_Direction();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Is Atomic&lt;/b&gt;&lt;/em&gt;' attribute feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L321">		EAttribute FLOW_PORT__IS_ATOMIC = eINSTANCE.getFlowPort_IsAtomic();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Icon&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L329">		EOperation FLOW_PORT___GET_ICON = eINSTANCE.getFlowPort__GetIcon();</span>
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowSpecificationImpl &lt;em&gt;Flow Specification&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.FlowSpecificationImpl
+		 * @see org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl#getFlowSpecification()
+		 * @generated
+		 */
+<span class="fc" id="L339">		EClass FLOW_SPECIFICATION = eINSTANCE.getFlowSpecification();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Base Interface&lt;/b&gt;&lt;/em&gt;' reference feature.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L347">		EReference FLOW_SPECIFICATION__BASE_INTERFACE = eINSTANCE.getFlowSpecification_Base_Interface();</span>
+
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Flow Properties&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L355">		EOperation FLOW_SPECIFICATION___GET_FLOW_PROPERTIES = eINSTANCE.getFlowSpecification__GetFlowProperties();</span>
+
+	}
+
+} //DeprecatedelementsPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

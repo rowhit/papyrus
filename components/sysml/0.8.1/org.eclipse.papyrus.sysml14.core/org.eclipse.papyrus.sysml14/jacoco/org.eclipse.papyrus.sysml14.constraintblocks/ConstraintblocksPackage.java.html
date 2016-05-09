@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConstraintblocksPackage.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.constraintblocks</a> &gt; <span class="el_source">ConstraintblocksPackage.java</span></div><h1>ConstraintblocksPackage.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.constraintblocks;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Package&lt;/b&gt; for the model.
+ * It contains accessors for the meta objects to represent
+ * &lt;ul&gt;
+ *   &lt;li&gt;each class,&lt;/li&gt;
+ *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+ *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+ *   &lt;li&gt;each enum,&lt;/li&gt;
+ *   &lt;li&gt;and each data type&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksFactory
+ * @model kind=&quot;package&quot;
+ *        annotation=&quot;http://www.eclipse.org/uml2/2.0.0/UML originalName='ConstraintBlocks'&quot;
+ * @generated
+ */
+public interface ConstraintblocksPackage extends EPackage {
+	/**
+	 * The package name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNAME = &quot;constraintblocks&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace URI.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_URI = &quot;http://www.eclipse.org/papyrus/sysml/1.4/SysML/ConstraintBlocks&quot;; //$NON-NLS-1$
+
+	/**
+	 * The package namespace name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	String eNS_PREFIX = &quot;ConstraintBlocks&quot;; //$NON-NLS-1$
+
+	/**
+	 * The singleton instance of the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L69">	ConstraintblocksPackage eINSTANCE = org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl.init();</span>
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintBlockImpl &lt;em&gt;Constraint Block&lt;/em&gt;}' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintBlockImpl
+	 * @see org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl#getConstraintBlock()
+	 * @generated
+	 */
+	int CONSTRAINT_BLOCK = 0;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Base Class&lt;/b&gt;&lt;/em&gt;' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK__BASE_CLASS = BlocksPackage.BLOCK__BASE_CLASS;
+
+	/**
+	 * The feature id for the '&lt;em&gt;&lt;b&gt;Is Encapsulated&lt;/b&gt;&lt;/em&gt;' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK__IS_ENCAPSULATED = BlocksPackage.BLOCK__IS_ENCAPSULATED;
+
+	/**
+	 * The number of structural features of the '&lt;em&gt;Constraint Block&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK_FEATURE_COUNT = BlocksPackage.BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get References&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK___GET_REFERENCES = BlocksPackage.BLOCK___GET_REFERENCES;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Parts&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK___GET_PARTS = BlocksPackage.BLOCK___GET_PARTS;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Flow Properties&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK___GET_FLOW_PROPERTIES = BlocksPackage.BLOCK___GET_FLOW_PROPERTIES;
+
+	/**
+	 * The operation id for the '&lt;em&gt;Get Parameters&lt;/em&gt;' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_BLOCK___GET_PARAMETERS = BlocksPackage.BLOCK_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '&lt;em&gt;Constraint Block&lt;/em&gt;' class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L151">	int CONSTRAINT_BLOCK_OPERATION_COUNT = BlocksPackage.BLOCK_OPERATION_COUNT + 1;</span>
+
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock &lt;em&gt;Constraint Block&lt;/em&gt;}'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for class '&lt;em&gt;Constraint Block&lt;/em&gt;'.
+	 * @see org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock
+	 * @generated
+	 */
+	EClass getConstraintBlock();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock#getParameters() &lt;em&gt;Get Parameters&lt;/em&gt;}' operation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the meta object for the '&lt;em&gt;Get Parameters&lt;/em&gt;' operation.
+	 * @see org.eclipse.papyrus.sysml14.constraintblocks.ConstraintBlock#getParameters()
+	 * @generated
+	 */
+	EOperation getConstraintBlock__GetParameters();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	ConstraintblocksFactory getConstraintblocksFactory();
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * Defines literals for the meta objects that represent
+	 * &lt;ul&gt;
+	 *   &lt;li&gt;each class,&lt;/li&gt;
+	 *   &lt;li&gt;each feature of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each operation of each class,&lt;/li&gt;
+	 *   &lt;li&gt;each enum,&lt;/li&gt;
+	 *   &lt;li&gt;and each data type&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintBlockImpl &lt;em&gt;Constraint Block&lt;/em&gt;}' class.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @see org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintBlockImpl
+		 * @see org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl#getConstraintBlock()
+		 * @generated
+		 */
+<span class="fc" id="L205">		EClass CONSTRAINT_BLOCK = eINSTANCE.getConstraintBlock();</span>
+		/**
+		 * The meta object literal for the '&lt;em&gt;&lt;b&gt;Get Parameters&lt;/b&gt;&lt;/em&gt;' operation.
+		 * &lt;!-- begin-user-doc --&gt;
+		 * &lt;!-- end-user-doc --&gt;
+		 * @generated
+		 */
+<span class="fc" id="L212">		EOperation CONSTRAINT_BLOCK___GET_PARAMETERS = eINSTANCE.getConstraintBlock__GetParameters();</span>
+
+	}
+
+} //ConstraintblocksPackage
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

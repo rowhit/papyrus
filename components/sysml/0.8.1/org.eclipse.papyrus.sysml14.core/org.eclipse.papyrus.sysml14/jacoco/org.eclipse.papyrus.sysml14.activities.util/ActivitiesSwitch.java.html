@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ActivitiesSwitch.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities.util</a> &gt; <span class="el_source">ActivitiesSwitch.java</span></div><h1>ActivitiesSwitch.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities.util;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.papyrus.sysml14.activities.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Switch&lt;/b&gt; for the model's inheritance hierarchy.
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
+ * to invoke the &lt;code&gt;caseXXX&lt;/code&gt; method for each class of the model,
+ * starting with the actual class of the object
+ * and proceeding up the inheritance hierarchy
+ * until a non-null result is returned,
+ * which is the result of the switch.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.activities.ActivitiesPackage
+ * @generated
+ */
+public class ActivitiesSwitch&lt;T&gt; extends Switch&lt;T&gt; {
+	/**
+	 * The cached model package
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static ActivitiesPackage modelPackage;
+
+	/**
+	 * Creates an instance of the switch.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L50">	public ActivitiesSwitch() {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L52">			modelPackage = ActivitiesPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L54">	}</span>
+
+	/**
+	 * Checks whether this is a switch for the given package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
+	 * @generated
+	 */
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		return ePackage == modelPackage;</span>
+	}
+
+	/**
+	 * Calls &lt;code&gt;caseXXX&lt;/code&gt; for each class of the model until one returns a non null result; it yields that result.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the first non-null result returned by a &lt;code&gt;caseXXX&lt;/code&gt; call.
+	 * @generated
+	 */
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
+<span class="nc bnc" id="L78" title="All 9 branches missed.">		switch (classifierID) {</span>
+			case ActivitiesPackage.CONTINUOUS: {
+<span class="nc" id="L80">				Continuous continuous = (Continuous)theEObject;</span>
+<span class="nc" id="L81">				T result = caseContinuous(continuous);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">				if (result == null) result = caseRate(continuous);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L84">				return result;</span>
+			}
+			case ActivitiesPackage.RATE: {
+<span class="nc" id="L87">				Rate rate = (Rate)theEObject;</span>
+<span class="nc" id="L88">				T result = caseRate(rate);</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L90">				return result;</span>
+			}
+			case ActivitiesPackage.CONTROL_OPERATOR: {
+<span class="nc" id="L93">				ControlOperator controlOperator = (ControlOperator)theEObject;</span>
+<span class="nc" id="L94">				T result = caseControlOperator(controlOperator);</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L96">				return result;</span>
+			}
+			case ActivitiesPackage.DISCRETE: {
+<span class="nc" id="L99">				Discrete discrete = (Discrete)theEObject;</span>
+<span class="nc" id="L100">				T result = caseDiscrete(discrete);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">				if (result == null) result = caseRate(discrete);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L103">				return result;</span>
+			}
+			case ActivitiesPackage.NO_BUFFER: {
+<span class="nc" id="L106">				NoBuffer noBuffer = (NoBuffer)theEObject;</span>
+<span class="nc" id="L107">				T result = caseNoBuffer(noBuffer);</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L109">				return result;</span>
+			}
+			case ActivitiesPackage.OPTIONAL: {
+<span class="nc" id="L112">				Optional optional = (Optional)theEObject;</span>
+<span class="nc" id="L113">				T result = caseOptional(optional);</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L115">				return result;</span>
+			}
+			case ActivitiesPackage.OVERWRITE: {
+<span class="nc" id="L118">				Overwrite overwrite = (Overwrite)theEObject;</span>
+<span class="nc" id="L119">				T result = caseOverwrite(overwrite);</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L121">				return result;</span>
+			}
+			case ActivitiesPackage.PROBABILITY: {
+<span class="nc" id="L124">				Probability probability = (Probability)theEObject;</span>
+<span class="nc" id="L125">				T result = caseProbability(probability);</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L127">				return result;</span>
+			}
+<span class="nc" id="L129">			default: return defaultCase(theEObject);</span>
+		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Continuous&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Continuous&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContinuous(Continuous object) {
+<span class="nc" id="L145">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Rate&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Rate&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRate(Rate object) {
+<span class="nc" id="L160">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Control Operator&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Control Operator&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseControlOperator(ControlOperator object) {
+<span class="nc" id="L175">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Discrete&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Discrete&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscrete(Discrete object) {
+<span class="nc" id="L190">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;No Buffer&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;No Buffer&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNoBuffer(NoBuffer object) {
+<span class="nc" id="L205">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Optional&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Optional&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptional(Optional object) {
+<span class="nc" id="L220">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Overwrite&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Overwrite&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOverwrite(Overwrite object) {
+<span class="nc" id="L235">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Probability&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Probability&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProbability(Probability object) {
+<span class="nc" id="L250">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch, but this is the last case anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	@Override
+	public T defaultCase(EObject object) {
+<span class="nc" id="L266">		return null;</span>
+	}
+
+} //ActivitiesSwitch
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

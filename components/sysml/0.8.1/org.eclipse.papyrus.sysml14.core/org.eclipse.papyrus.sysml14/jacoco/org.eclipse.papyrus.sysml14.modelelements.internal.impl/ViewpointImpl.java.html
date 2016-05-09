@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ViewpointImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.modelelements.internal.impl</a> &gt; <span class="el_source">ViewpointImpl.java</span></div><h1>ViewpointImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.modelelements.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+import org.eclipse.papyrus.sysml14.modelelements.Stakeholder;
+import org.eclipse.papyrus.sysml14.modelelements.Viewpoint;
+
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Comment;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Viewpoint&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getBase_Class &lt;em&gt;Base Class&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getConcern &lt;em&gt;Concern&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getConcernList &lt;em&gt;Concern List&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getLanguage &lt;em&gt;Language&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getMethod &lt;em&gt;Method&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getPresentation &lt;em&gt;Presentation&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getPurpose &lt;em&gt;Purpose&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.modelelements.internal.impl.ViewpointImpl#getStakeholder &lt;em&gt;Stakeholder&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewpoint {
+	/**
+	 * The cached value of the '{@link #getBase_Class() &lt;em&gt;Base Class&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Class()
+	 * @generated
+	 * @ordered
+	 */
+	protected org.eclipse.uml2.uml.Class base_Class;
+
+	/**
+	 * The cached value of the '{@link #getConcernList() &lt;em&gt;Concern List&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getConcernList()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Comment&gt; concernList;
+
+	/**
+	 * The cached value of the '{@link #getLanguage() &lt;em&gt;Language&lt;/em&gt;}' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;String&gt; language;
+
+	/**
+	 * The cached value of the '{@link #getPresentation() &lt;em&gt;Presentation&lt;/em&gt;}' attribute list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getPresentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;String&gt; presentation;
+
+	/**
+	 * The default value of the '{@link #getPurpose() &lt;em&gt;Purpose&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getPurpose()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L106">	protected static final String PURPOSE_EDEFAULT = null;</span>
+
+	/**
+	 * The cached value of the '{@link #getPurpose() &lt;em&gt;Purpose&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getPurpose()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L116">	protected String purpose = PURPOSE_EDEFAULT;</span>
+
+	/**
+	 * The cached value of the '{@link #getStakeholder() &lt;em&gt;Stakeholder&lt;/em&gt;}' reference list.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getStakeholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList&lt;Stakeholder&gt; stakeholder;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ViewpointImpl() {
+<span class="fc" id="L134">		super();</span>
+<span class="fc" id="L135">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L144">		return ModelelementsPackage.Literals.VIEWPOINT;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+<span class="pc bpc" id="L153" title="2 of 4 branches missed.">		if (base_Class != null &amp;&amp; base_Class.eIsProxy()) {</span>
+<span class="nc" id="L154">			InternalEObject oldBase_Class = (InternalEObject)base_Class;</span>
+<span class="nc" id="L155">			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">			if (base_Class != oldBase_Class) {</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L158">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelelementsPackage.VIEWPOINT__BASE_CLASS, oldBase_Class, base_Class));</span>
+			}
+		}
+<span class="fc" id="L161">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
+<span class="nc" id="L170">		return base_Class;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+<span class="fc" id="L179">		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;</span>
+<span class="fc" id="L180">		base_Class = newBase_Class;</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L182">			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.VIEWPOINT__BASE_CLASS, oldBase_Class, base_Class));</span>
+<span class="fc" id="L183">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;String&gt; getConcern() {
+		// TODO: implement this method to return the 'Concern' attribute list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L193">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Comment&gt; getConcernList() {
+<span class="fc bfc" id="L202" title="All 2 branches covered.">		if (concernList == null) {</span>
+<span class="fc" id="L203">			concernList = new EObjectResolvingEList&lt;Comment&gt;(Comment.class, this, ModelelementsPackage.VIEWPOINT__CONCERN_LIST);</span>
+		}
+<span class="fc" id="L205">		return concernList;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;String&gt; getLanguage() {
+<span class="nc bnc" id="L214" title="All 2 branches missed.">		if (language == null) {</span>
+<span class="nc" id="L215">			language = new EDataTypeUniqueEList&lt;String&gt;(String.class, this, ModelelementsPackage.VIEWPOINT__LANGUAGE);</span>
+		}
+<span class="nc" id="L217">		return language;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Behavior&gt; getMethod() {
+		// TODO: implement this method to return the 'Method' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L228">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Behavior getMethod(String name) {
+<span class="nc" id="L237">		return getMethod(name, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Behavior getMethod(String name, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L246" title="All 2 branches missed.">		methodLoop: for (Behavior method : getMethod()) {</span>
+<span class="nc bnc" id="L247" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(method))</span>
+<span class="nc" id="L248">				continue methodLoop;</span>
+<span class="nc bnc" id="L249" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(method.getName()) : name.equals(method.getName())))</span>
+<span class="nc" id="L250">				continue methodLoop;</span>
+<span class="nc" id="L251">			return method;</span>
+		}
+<span class="nc" id="L253">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;String&gt; getPresentation() {
+<span class="nc bnc" id="L262" title="All 2 branches missed.">		if (presentation == null) {</span>
+<span class="nc" id="L263">			presentation = new EDataTypeUniqueEList&lt;String&gt;(String.class, this, ModelelementsPackage.VIEWPOINT__PRESENTATION);</span>
+		}
+<span class="nc" id="L265">		return presentation;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getPurpose() {
+<span class="nc" id="L274">		return purpose;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setPurpose(String newPurpose) {
+<span class="nc" id="L283">		String oldPurpose = purpose;</span>
+<span class="nc" id="L284">		purpose = newPurpose;</span>
+<span class="nc bnc" id="L285" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L286">			eNotify(new ENotificationImpl(this, Notification.SET, ModelelementsPackage.VIEWPOINT__PURPOSE, oldPurpose, purpose));</span>
+<span class="nc" id="L287">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Stakeholder&gt; getStakeholder() {
+<span class="fc bfc" id="L295" title="All 2 branches covered.">		if (stakeholder == null) {</span>
+<span class="fc" id="L296">			stakeholder = new EObjectResolvingEList&lt;Stakeholder&gt;(Stakeholder.class, this, ModelelementsPackage.VIEWPOINT__STAKEHOLDER);</span>
+		}
+<span class="fc" id="L298">		return stakeholder;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="pc bpc" id="L308" title="7 of 9 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEWPOINT__BASE_CLASS:
+<span class="nc bnc" id="L310" title="All 2 branches missed.">				if (resolve) return getBase_Class();</span>
+<span class="nc" id="L311">				return basicGetBase_Class();</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN:
+<span class="nc" id="L313">				return getConcern();</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN_LIST:
+<span class="fc" id="L315">				return getConcernList();</span>
+			case ModelelementsPackage.VIEWPOINT__LANGUAGE:
+<span class="nc" id="L317">				return getLanguage();</span>
+			case ModelelementsPackage.VIEWPOINT__METHOD:
+<span class="nc" id="L319">				return getMethod();</span>
+			case ModelelementsPackage.VIEWPOINT__PRESENTATION:
+<span class="nc" id="L321">				return getPresentation();</span>
+			case ModelelementsPackage.VIEWPOINT__PURPOSE:
+<span class="nc" id="L323">				return getPurpose();</span>
+			case ModelelementsPackage.VIEWPOINT__STAKEHOLDER:
+<span class="fc" id="L325">				return getStakeholder();</span>
+		}
+<span class="nc" id="L327">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L338" title="8 of 9 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEWPOINT__BASE_CLASS:
+<span class="fc" id="L340">				setBase_Class((org.eclipse.uml2.uml.Class)newValue);</span>
+<span class="fc" id="L341">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN:
+<span class="nc" id="L343">				getConcern().clear();</span>
+<span class="nc" id="L344">				getConcern().addAll((Collection&lt;? extends String&gt;)newValue);</span>
+<span class="nc" id="L345">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN_LIST:
+<span class="nc" id="L347">				getConcernList().clear();</span>
+<span class="nc" id="L348">				getConcernList().addAll((Collection&lt;? extends Comment&gt;)newValue);</span>
+<span class="nc" id="L349">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__LANGUAGE:
+<span class="nc" id="L351">				getLanguage().clear();</span>
+<span class="nc" id="L352">				getLanguage().addAll((Collection&lt;? extends String&gt;)newValue);</span>
+<span class="nc" id="L353">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__METHOD:
+<span class="nc" id="L355">				getMethod().clear();</span>
+<span class="nc" id="L356">				getMethod().addAll((Collection&lt;? extends Behavior&gt;)newValue);</span>
+<span class="nc" id="L357">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__PRESENTATION:
+<span class="nc" id="L359">				getPresentation().clear();</span>
+<span class="nc" id="L360">				getPresentation().addAll((Collection&lt;? extends String&gt;)newValue);</span>
+<span class="nc" id="L361">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__PURPOSE:
+<span class="nc" id="L363">				setPurpose((String)newValue);</span>
+<span class="nc" id="L364">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__STAKEHOLDER:
+<span class="nc" id="L366">				getStakeholder().clear();</span>
+<span class="nc" id="L367">				getStakeholder().addAll((Collection&lt;? extends Stakeholder&gt;)newValue);</span>
+<span class="nc" id="L368">				return;</span>
+		}
+<span class="nc" id="L370">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L371">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L380" title="All 9 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEWPOINT__BASE_CLASS:
+<span class="nc" id="L382">				setBase_Class((org.eclipse.uml2.uml.Class)null);</span>
+<span class="nc" id="L383">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN:
+<span class="nc" id="L385">				getConcern().clear();</span>
+<span class="nc" id="L386">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN_LIST:
+<span class="nc" id="L388">				getConcernList().clear();</span>
+<span class="nc" id="L389">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__LANGUAGE:
+<span class="nc" id="L391">				getLanguage().clear();</span>
+<span class="nc" id="L392">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__METHOD:
+<span class="nc" id="L394">				getMethod().clear();</span>
+<span class="nc" id="L395">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__PRESENTATION:
+<span class="nc" id="L397">				getPresentation().clear();</span>
+<span class="nc" id="L398">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__PURPOSE:
+<span class="nc" id="L400">				setPurpose(PURPOSE_EDEFAULT);</span>
+<span class="nc" id="L401">				return;</span>
+			case ModelelementsPackage.VIEWPOINT__STAKEHOLDER:
+<span class="nc" id="L403">				getStakeholder().clear();</span>
+<span class="nc" id="L404">				return;</span>
+		}
+<span class="nc" id="L406">		super.eUnset(featureID);</span>
+<span class="nc" id="L407">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L416" title="All 9 branches missed.">		switch (featureID) {</span>
+			case ModelelementsPackage.VIEWPOINT__BASE_CLASS:
+<span class="nc bnc" id="L418" title="All 2 branches missed.">				return base_Class != null;</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN:
+<span class="nc bnc" id="L420" title="All 2 branches missed.">				return !getConcern().isEmpty();</span>
+			case ModelelementsPackage.VIEWPOINT__CONCERN_LIST:
+<span class="nc bnc" id="L422" title="All 4 branches missed.">				return concernList != null &amp;&amp; !concernList.isEmpty();</span>
+			case ModelelementsPackage.VIEWPOINT__LANGUAGE:
+<span class="nc bnc" id="L424" title="All 4 branches missed.">				return language != null &amp;&amp; !language.isEmpty();</span>
+			case ModelelementsPackage.VIEWPOINT__METHOD:
+<span class="nc bnc" id="L426" title="All 2 branches missed.">				return !getMethod().isEmpty();</span>
+			case ModelelementsPackage.VIEWPOINT__PRESENTATION:
+<span class="nc bnc" id="L428" title="All 4 branches missed.">				return presentation != null &amp;&amp; !presentation.isEmpty();</span>
+			case ModelelementsPackage.VIEWPOINT__PURPOSE:
+<span class="nc bnc" id="L430" title="All 6 branches missed.">				return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);</span>
+			case ModelelementsPackage.VIEWPOINT__STAKEHOLDER:
+<span class="nc bnc" id="L432" title="All 4 branches missed.">				return stakeholder != null &amp;&amp; !stakeholder.isEmpty();</span>
+		}
+<span class="nc" id="L434">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L444" title="All 2 branches missed.">		if (eIsProxy()) return super.toString();</span>
+
+<span class="nc" id="L446">		StringBuffer result = new StringBuffer(super.toString());</span>
+<span class="nc" id="L447">		result.append(&quot; (language: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L448">		result.append(language);</span>
+<span class="nc" id="L449">		result.append(&quot;, presentation: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L450">		result.append(presentation);</span>
+<span class="nc" id="L451">		result.append(&quot;, purpose: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L452">		result.append(purpose);</span>
+<span class="nc" id="L453">		result.append(')');</span>
+<span class="nc" id="L454">		return result.toString();</span>
+	}
+
+} //ViewpointImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

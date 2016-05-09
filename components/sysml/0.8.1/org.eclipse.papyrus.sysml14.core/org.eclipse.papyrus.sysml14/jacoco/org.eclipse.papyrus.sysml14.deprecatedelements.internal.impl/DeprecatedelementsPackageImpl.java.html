@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DeprecatedelementsPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl</a> &gt; <span class="el_source">DeprecatedelementsPackageImpl.java</span></div><h1>DeprecatedelementsPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsFactory;
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class DeprecatedelementsPackageImpl extends EPackageImpl implements DeprecatedelementsPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L72">	private EClass flowPortEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L79">	private EClass flowSpecificationEClass = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private DeprecatedelementsPackageImpl() {
+<span class="fc" id="L97">		super(eNS_URI, DeprecatedelementsFactory.eINSTANCE);</span>
+<span class="fc" id="L98">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L105">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link DeprecatedelementsPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static DeprecatedelementsPackage init() {
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">		if (isInited) return (DeprecatedelementsPackage)EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DeprecatedelementsPackageImpl());</span>
+
+<span class="fc" id="L125">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L128">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L132" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L135" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L137" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L140">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L141">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L142">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L143">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L144">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L145">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L146">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L147">		theRequirementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L150">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L151">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L152">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L153">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L154">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L155">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L156">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L157">		theRequirementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L160">		theDeprecatedelementsPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L164">		EPackage.Registry.INSTANCE.put(DeprecatedelementsPackage.eNS_URI, theDeprecatedelementsPackage);</span>
+<span class="fc" id="L165">		return theDeprecatedelementsPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getFlowPort() {
+<span class="fc" id="L174">		return flowPortEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getFlowPort_Base_Port() {
+<span class="fc" id="L183">		return (EReference)flowPortEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getFlowPort_Direction() {
+<span class="fc" id="L192">		return (EAttribute)flowPortEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EAttribute getFlowPort_IsAtomic() {
+<span class="fc" id="L201">		return (EAttribute)flowPortEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getFlowPort__GetIcon() {
+<span class="fc" id="L210">		return flowPortEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getFlowSpecification() {
+<span class="fc" id="L219">		return flowSpecificationEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getFlowSpecification_Base_Interface() {
+<span class="fc" id="L228">		return (EReference)flowSpecificationEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EOperation getFlowSpecification__GetFlowProperties() {
+<span class="fc" id="L237">		return flowSpecificationEClass.getEOperations().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DeprecatedelementsFactory getDeprecatedelementsFactory() {
+<span class="nc" id="L246">		return (DeprecatedelementsFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L254">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L264" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L265">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L268">		flowPortEClass = createEClass(FLOW_PORT);</span>
+<span class="fc" id="L269">		createEReference(flowPortEClass, FLOW_PORT__BASE_PORT);</span>
+<span class="fc" id="L270">		createEAttribute(flowPortEClass, FLOW_PORT__DIRECTION);</span>
+<span class="fc" id="L271">		createEAttribute(flowPortEClass, FLOW_PORT__IS_ATOMIC);</span>
+<span class="fc" id="L272">		createEOperation(flowPortEClass, FLOW_PORT___GET_ICON);</span>
+
+<span class="fc" id="L274">		flowSpecificationEClass = createEClass(FLOW_SPECIFICATION);</span>
+<span class="fc" id="L275">		createEReference(flowSpecificationEClass, FLOW_SPECIFICATION__BASE_INTERFACE);</span>
+<span class="fc" id="L276">		createEOperation(flowSpecificationEClass, FLOW_SPECIFICATION___GET_FLOW_PROPERTIES);</span>
+<span class="fc" id="L277">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L284">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L294" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L295">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L298">		setName(eNAME);</span>
+<span class="fc" id="L299">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L300">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L303">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+<span class="fc" id="L304">		PortsandflowsPackage thePortsandflowsPackage = (PortsandflowsPackage)EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI);</span>
+<span class="fc" id="L305">		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L314">		initEClass(flowPortEClass, FlowPort.class, &quot;FlowPort&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L315">		initEReference(getFlowPort_Base_Port(), theUMLPackage.getPort(), null, &quot;base_Port&quot;, null, 1, 1, FlowPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L316">		initEAttribute(getFlowPort_Direction(), thePortsandflowsPackage.getFlowDirection(), &quot;direction&quot;, &quot;inout&quot;, 1, 1, FlowPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$</span>
+<span class="fc" id="L317">		initEAttribute(getFlowPort_IsAtomic(), theTypesPackage.getBoolean(), &quot;isAtomic&quot;, null, 1, 1, FlowPort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L319">		initEOperation(getFlowPort__GetIcon(), theUMLPackage.getImage(), &quot;getIcon&quot;, 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L321">		initEClass(flowSpecificationEClass, FlowSpecification.class, &quot;FlowSpecification&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L322">		initEReference(getFlowSpecification_Base_Interface(), theUMLPackage.getInterface(), null, &quot;base_Interface&quot;, null, 1, 1, FlowSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L324">		initEOperation(getFlowSpecification__GetFlowProperties(), theUMLPackage.getProperty(), &quot;getFlowProperties&quot;, 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Create resource
+<span class="fc" id="L327">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L331">		createUMLAnnotations();</span>
+<span class="fc" id="L332">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L341">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L342">		addAnnotation</span>
+<span class="fc" id="L343">		  (this, </span>
+<span class="fc" id="L344">		   source, </span>
+<span class="fc" id="L345">		   new String[] {</span>
+<span class="fc" id="L346">			 &quot;originalName&quot;, &quot;DeprecatedElements&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L348">	}</span>
+
+} //DeprecatedelementsPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

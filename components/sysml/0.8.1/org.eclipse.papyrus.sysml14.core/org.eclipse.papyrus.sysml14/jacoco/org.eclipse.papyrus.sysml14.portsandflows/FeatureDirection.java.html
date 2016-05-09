@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FeatureDirection.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows</a> &gt; <span class="el_source">FeatureDirection.java</span></div><h1>FeatureDirection.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.emf.common.util.Enumerator;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * A representation of the literals of the enumeration '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;',
+ * and utility methods for working with them.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage#getFeatureDirection()
+ * @model
+ * @generated
+ */
+public enum FeatureDirection implements Enumerator {
+<span class="fc" id="L31">	/**</span>
+	 * The '&lt;em&gt;&lt;b&gt;Provided&lt;/b&gt;&lt;/em&gt;' literal object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #PROVIDED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L39">	PROVIDED(0, &quot;provided&quot;, &quot;provided&quot;), //$NON-NLS-1$ //$NON-NLS-2$</span>
+
+	/**
+	 * The '&lt;em&gt;&lt;b&gt;Provided Required&lt;/b&gt;&lt;/em&gt;' literal object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #PROVIDED_REQUIRED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L49">	PROVIDED_REQUIRED(1, &quot;providedRequired&quot;, &quot;providedRequired&quot;), //$NON-NLS-1$ //$NON-NLS-2$</span>
+
+	/**
+	 * The '&lt;em&gt;&lt;b&gt;Required&lt;/b&gt;&lt;/em&gt;' literal object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #REQUIRED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L59">	REQUIRED(2, &quot;required&quot;, &quot;required&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+
+	/**
+	 * The '&lt;em&gt;&lt;b&gt;Provided&lt;/b&gt;&lt;/em&gt;' literal value.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;p&gt;
+	 * If the meaning of '&lt;em&gt;&lt;b&gt;Provided&lt;/b&gt;&lt;/em&gt;' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * &lt;/p&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #PROVIDED
+	 * @model name=&quot;provided&quot;
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PROVIDED_VALUE = 0;
+
+	/**
+	 * The '&lt;em&gt;&lt;b&gt;Provided Required&lt;/b&gt;&lt;/em&gt;' literal value.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;p&gt;
+	 * If the meaning of '&lt;em&gt;&lt;b&gt;Provided Required&lt;/b&gt;&lt;/em&gt;' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * &lt;/p&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #PROVIDED_REQUIRED
+	 * @model name=&quot;providedRequired&quot;
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PROVIDED_REQUIRED_VALUE = 1;
+
+	/**
+	 * The '&lt;em&gt;&lt;b&gt;Required&lt;/b&gt;&lt;/em&gt;' literal value.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;p&gt;
+	 * If the meaning of '&lt;em&gt;&lt;b&gt;Required&lt;/b&gt;&lt;/em&gt;' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * &lt;/p&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #REQUIRED
+	 * @model name=&quot;required&quot;
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REQUIRED_VALUE = 2;
+
+	/**
+	 * An array of all the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' enumerators.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L112">	private static final FeatureDirection[] VALUES_ARRAY =</span>
+<span class="fc" id="L113">		new FeatureDirection[] {</span>
+<span class="fc" id="L114">			PROVIDED,</span>
+<span class="fc" id="L115">			PROVIDED_REQUIRED,</span>
+<span class="fc" id="L116">			REQUIRED,</span>
+		};
+
+	/**
+	 * A public read-only list of all the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' enumerators.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L125">	public static final List&lt;FeatureDirection&gt; VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));</span>
+
+	/**
+	 * Returns the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' literal with the specified literal value.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param literal the literal.
+	 * @return the matching enumerator or &lt;code&gt;null&lt;/code&gt;.
+	 * @generated
+	 */
+	public static FeatureDirection get(String literal) {
+<span class="nc bnc" id="L136" title="All 2 branches missed.">		for (int i = 0; i &lt; VALUES_ARRAY.length; ++i) {</span>
+<span class="nc" id="L137">			FeatureDirection result = VALUES_ARRAY[i];</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">			if (result.toString().equals(literal)) {</span>
+<span class="nc" id="L139">				return result;</span>
+			}
+		}
+<span class="nc" id="L142">		return null;</span>
+	}
+
+	/**
+	 * Returns the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' literal with the specified name.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param name the name.
+	 * @return the matching enumerator or &lt;code&gt;null&lt;/code&gt;.
+	 * @generated
+	 */
+	public static FeatureDirection getByName(String name) {
+<span class="nc bnc" id="L154" title="All 2 branches missed.">		for (int i = 0; i &lt; VALUES_ARRAY.length; ++i) {</span>
+<span class="nc" id="L155">			FeatureDirection result = VALUES_ARRAY[i];</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">			if (result.getName().equals(name)) {</span>
+<span class="nc" id="L157">				return result;</span>
+			}
+		}
+<span class="nc" id="L160">		return null;</span>
+	}
+
+	/**
+	 * Returns the '&lt;em&gt;&lt;b&gt;Feature Direction&lt;/b&gt;&lt;/em&gt;' literal with the specified integer value.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param value the integer value.
+	 * @return the matching enumerator or &lt;code&gt;null&lt;/code&gt;.
+	 * @generated
+	 */
+	public static FeatureDirection get(int value) {
+<span class="nc bnc" id="L172" title="All 4 branches missed.">		switch (value) {</span>
+<span class="nc" id="L173">			case PROVIDED_VALUE: return PROVIDED;</span>
+<span class="nc" id="L174">			case PROVIDED_REQUIRED_VALUE: return PROVIDED_REQUIRED;</span>
+<span class="nc" id="L175">			case REQUIRED_VALUE: return REQUIRED;</span>
+		}
+<span class="nc" id="L177">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	private final String literal;
+
+	/**
+	 * Only this class can construct instances.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L207">	private FeatureDirection(int value, String name, String literal) {</span>
+<span class="fc" id="L208">		this.value = value;</span>
+<span class="fc" id="L209">		this.name = name;</span>
+<span class="fc" id="L210">		this.literal = literal;</span>
+<span class="fc" id="L211">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public int getValue() {
+<span class="fc" id="L219">	  return value;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getName() {
+<span class="fc" id="L228">	  return name;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public String getLiteral() {
+<span class="fc" id="L237">	  return literal;</span>
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc" id="L248">		return literal;</span>
+	}
+	
+} //FeatureDirection
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

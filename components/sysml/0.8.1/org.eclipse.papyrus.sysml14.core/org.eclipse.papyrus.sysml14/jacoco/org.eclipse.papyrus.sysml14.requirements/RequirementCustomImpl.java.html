@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RequirementCustomImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.requirements</a> &gt; <span class="el_source">RequirementCustomImpl.java</span></div><h1>RequirementCustomImpl.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.requirements;
+
+import java.util.Iterator;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreEList.UnmodifiableEList;
+import org.eclipse.papyrus.sysml14.requirements.Copy;
+import org.eclipse.papyrus.sysml14.requirements.DeriveReqt;
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.requirements.Satisfy;
+import org.eclipse.papyrus.sysml14.requirements.Verify;
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl;
+import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.DirectedRelationship;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.profile.standard.Refine;
+import org.eclipse.uml2.uml.profile.standard.StandardPackage;
+import org.eclipse.uml2.uml.profile.standard.Trace;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * this class has been implemented in order to calculate derived properties of &quot;Requirement&quot; stereotype see Requirement DerivedProperties Req0010 
+ *
+ */
+<span class="fc" id="L40">public class RequirementCustomImpl extends RequirementImpl implements Requirement {</span>
+
+	/**
+	 * 16.3.2.4 Requirement : /master: Requirement [0..1
+This is a derived property that lists the master requirement for this slave requirement. The master attribute is
+derived from the supplier of the Copy dependency that has this requirement as the slave.
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#basicGetMaster()
+	 *
+	 * @return the Requirement
+	 */
+	@Override
+	public Requirement basicGetMaster() {
+		// The Requirement is the supplier of the Copy link between the master
+		// Requirement and
+		// current
+		// This should return the TestCase verifying current Requirement
+<span class="fc" id="L56">		Requirement master = null;</span>
+<span class="fc" id="L57">		Copy currentCopy = null;</span>
+
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L60">			Iterator&lt;Dependency&gt; itDep = getBase_Class().getClientDependencies().iterator();</span>
+
+			// Find Copy link
+<span class="fc bfc" id="L63" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L64">				Dependency currentDep = itDep.next();</span>
+<span class="fc" id="L65">				currentCopy = UMLUtil.getStereotypeApplication(currentDep, Copy.class);</span>
+
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">				if (currentCopy != null) {</span>
+<span class="fc" id="L68">					EList&lt;NamedElement&gt; suppliers = currentCopy.getBase_Abstraction().getSuppliers();</span>
+<span class="fc" id="L69">					Iterator&lt;NamedElement&gt; it = suppliers.iterator();</span>
+<span class="pc bpc" id="L70" title="1 of 4 branches missed.">					while (it.hasNext() &amp;&amp; (master == null)) {</span>
+<span class="fc" id="L71">						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">						if (currentRequirement != null) {</span>
+<span class="fc" id="L73">							master = currentRequirement;</span>
+						}
+					}
+				}
+			}
+		}
+<span class="fc" id="L79">		return master;</span>
+	}
+
+
+	/**
+	 * 16.3.2.4 Requirement : /derived: Requirement [*]
+Derived from all requirements that are the client of a «deriveReqt» relationship for which this requirement is a
+supplier.
+	 * 
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getDerived()
+	 *
+	 * @return the list of Requirement
+	 */
+	@Override
+	public EList&lt;Requirement&gt; getDerived() {
+		// This should return the Requirement(s) derived from current
+<span class="fc" id="L95">		EList&lt;Requirement&gt; derived = new BasicEList&lt;Requirement&gt;();</span>
+<span class="fc" id="L96">		DeriveReqt currentDeriveReqt = null;</span>
+
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L99">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getTargetDirectedRelationships().iterator();</span>
+
+			// Find DeriveReqt link
+<span class="fc bfc" id="L102" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L103">				DirectedRelationship currentDirectedRelationship = itDep.next();</span>
+<span class="fc" id="L104">				currentDeriveReqt = UMLUtil.getStereotypeApplication(currentDirectedRelationship, DeriveReqt.class);</span>
+
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">				if (currentDeriveReqt != null) {</span>
+<span class="fc" id="L107">					EList&lt;NamedElement&gt; clients = currentDeriveReqt.getBase_Abstraction().getClients();</span>
+<span class="fc" id="L108">					Iterator&lt;NamedElement&gt; it = clients.iterator();</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">					while (it.hasNext()) {</span>
+<span class="fc" id="L110">						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);</span>
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">						if (currentRequirement != null) {</span>
+<span class="fc" id="L112">							derived.add(currentRequirement);</span>
+						}
+					}
+				}
+			}
+		}
+
+<span class="fc" id="L119">		return new UnmodifiableEList&lt;Requirement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_Derived(), derived.size(), derived.toArray());</span>
+	}
+
+	/**
+	 * 16.3.2.4 Requirement : /derivedFrom: Requirement [*]
+Derived from all requirements that are the supplier of a «deriveReqt» relationship for which this requirement is a
+client.
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getDerivedFrom()
+	 *
+	 * @return the list of Requirement
+	 */
+	@Override
+	public EList&lt;Requirement&gt; getDerivedFrom() {
+		// This should return the Requirement(s) this Requirement is derived
+		// from
+<span class="fc" id="L134">		EList&lt;Requirement&gt; derivedFrom = new BasicEList&lt;Requirement&gt;();</span>
+<span class="fc" id="L135">		DeriveReqt currentDeriveReqt = null;</span>
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L137">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getSourceDirectedRelationships().iterator();</span>
+
+			// Find DeriveReqt link
+<span class="fc bfc" id="L140" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L141">				DirectedRelationship currentDRelationship = itDep.next();</span>
+<span class="fc" id="L142">				currentDeriveReqt = UMLUtil.getStereotypeApplication(currentDRelationship, DeriveReqt.class);</span>
+
+<span class="pc bpc" id="L144" title="1 of 2 branches missed.">				if (currentDeriveReqt != null) {</span>
+<span class="fc" id="L145">					EList&lt;NamedElement&gt; suppliers = currentDeriveReqt.getBase_Abstraction().getSuppliers();</span>
+<span class="fc" id="L146">					Iterator&lt;NamedElement&gt; it = suppliers.iterator();</span>
+<span class="fc bfc" id="L147" title="All 2 branches covered.">					while (it.hasNext()) {</span>
+<span class="fc" id="L148">						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">						if (currentRequirement != null) {</span>
+<span class="fc" id="L150">							derivedFrom.add(currentRequirement);</span>
+						}
+					}
+				}
+			}
+		}
+
+<span class="fc" id="L157">		return new UnmodifiableEList&lt;Requirement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_DerivedFrom(), derivedFrom.size(), derivedFrom.toArray());</span>
+	}
+
+
+	/**
+	 * 16.3.2.4 Requirement : /refinedBy: NamedElement [*]
+Derived from all elements that are the client of a «refine» relationship for which this requirement is a supplier.
+	 * 
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getRefinedBy()
+	 *
+	 * @return the list of refining NamedElements
+	 */
+	@Override
+	public EList&lt;NamedElement&gt; getRefinedBy() {
+		// This should return the NamedElement(s) that refine current
+		// Requirement
+<span class="fc" id="L173">		EList&lt;NamedElement&gt; refinedBy = new BasicEList&lt;NamedElement&gt;();</span>
+<span class="fc" id="L174">		Refine currentRefine = null;</span>
+
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L177">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getTargetDirectedRelationships().iterator();</span>
+
+			// Find Refine link
+<span class="fc bfc" id="L180" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L181">				DirectedRelationship currentDRelationship = itDep.next();</span>
+<span class="fc" id="L182">				currentRefine = UMLUtil.getStereotypeApplication(currentDRelationship, Refine.class);</span>
+
+<span class="pc bpc" id="L184" title="1 of 2 branches missed.">				if (currentRefine != null) {</span>
+<span class="fc" id="L185">					refinedBy.addAll(currentRefine.getBase_Abstraction().getClients());</span>
+				}
+			}
+		}
+
+<span class="fc" id="L190">		return new UnmodifiableEList&lt;NamedElement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_RefinedBy(), refinedBy.size(), refinedBy.toArray());</span>
+	}
+
+	
+
+	/**
+	 * 16.3.2.4 Requirement : /satisfiedBy: NamedElement [*]
+Derived from all elements that are the client of a «satisfy» relationship for which this requirement is a supplier.
+	 * 
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getSatisfiedBy()
+	 *
+	 * @return the list of statisfying NamedElements
+	 */
+	@Override
+	public EList&lt;NamedElement&gt; getSatisfiedBy() {
+		// This should return the NamedElement(s) that satisfy current
+		// Requirement
+<span class="fc" id="L207">		EList&lt;NamedElement&gt; satisfyBy = new BasicEList&lt;NamedElement&gt;();</span>
+<span class="fc" id="L208">		Satisfy currentSatisfy = null;</span>
+
+<span class="pc bpc" id="L210" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L211">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getTargetDirectedRelationships().iterator();</span>
+
+			// Find Satisfy link
+<span class="fc bfc" id="L214" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L215">				DirectedRelationship currentDRelationship = itDep.next();</span>
+<span class="fc" id="L216">				currentSatisfy = UMLUtil.getStereotypeApplication(currentDRelationship, Satisfy.class);</span>
+
+<span class="pc bpc" id="L218" title="1 of 2 branches missed.">				if (currentSatisfy != null) {</span>
+<span class="fc" id="L219">					satisfyBy.addAll(currentSatisfy.getBase_Abstraction().getClients());</span>
+				}
+			}
+		}
+
+<span class="fc" id="L224">		return new UnmodifiableEList&lt;NamedElement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_SatisfiedBy(), satisfyBy.size(), satisfyBy.toArray());</span>
+	}
+
+
+	/**
+	 * 16.3.2.4 Requirement : /tracedTo: NamedElement [*]
+Derived from all elements that are the supplier of a «trace» relationship for which this requirement is a client.
+	 * 
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getTracedTo()
+	 *
+	 * @return the list of tracing NamedElements
+	 */
+	@Override
+	public EList&lt;NamedElement&gt; getTracedTo() {
+		// This should return the NamedElement(s) traced by current Requirement
+		// SysML spec. : Derived from all elements that are the client of a
+		// &lt;&lt;trace&gt;&gt; relationship
+		// for which this requirement is a supplier.
+<span class="fc" id="L242">		EList&lt;NamedElement&gt; tracedTo = new BasicEList&lt;NamedElement&gt;();</span>
+<span class="fc" id="L243">		Trace currentTrace = null;</span>
+
+<span class="pc bpc" id="L245" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L246">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getTargetDirectedRelationships().iterator();</span>
+
+			// Find Trace link
+<span class="fc bfc" id="L249" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L250">				DirectedRelationship currentDR = itDep.next();</span>
+<span class="fc" id="L251">				currentTrace = UMLUtil.getStereotypeApplication(currentDR, Trace.class);</span>
+
+				// Must be a Trace not a subtype (see bug #352563).
+<span class="pc bpc" id="L254" title="1 of 4 branches missed.">				if ((currentTrace != null) &amp;&amp; (currentTrace.eClass() == StandardPackage.eINSTANCE.getTrace())) {</span>
+<span class="fc" id="L255">					EList&lt;NamedElement&gt; suppliers = currentTrace.getBase_Abstraction().getClients();</span>
+<span class="fc" id="L256">					tracedTo.addAll(suppliers);</span>
+				}
+			}
+		}
+
+<span class="fc" id="L261">		return new UnmodifiableEList&lt;NamedElement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_TracedTo(), tracedTo.size(), tracedTo.toArray());</span>
+	}
+
+	
+
+	/**
+	 * 16.3.2.4 Requirement : /verifiedBy: NamedElement [*]
+Derived from all elements that are the client of a «verify» relationship for which this requirement is a supplier.
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#getVerifiedBy()
+	 *
+	 * @return the list of verifying NamedElements
+	 */
+	@Override
+	public EList&lt;NamedElement&gt; getVerifiedBy() {
+		// This should return the list of NamedElement verifying current
+		// Requirement
+<span class="fc" id="L277">		EList&lt;NamedElement&gt; verifiedBy = new BasicEList&lt;NamedElement&gt;();</span>
+<span class="fc" id="L278">		Verify currentVerify = null;</span>
+
+<span class="pc bpc" id="L280" title="1 of 2 branches missed.">		if (getBase_Class() != null) {</span>
+<span class="fc" id="L281">			Iterator&lt;DirectedRelationship&gt; itDep = getBase_Class().getTargetDirectedRelationships().iterator();</span>
+
+			// Find Verify link
+<span class="fc bfc" id="L284" title="All 2 branches covered.">			while (itDep.hasNext()) {</span>
+<span class="fc" id="L285">				DirectedRelationship currentDRelationship = itDep.next();</span>
+<span class="fc" id="L286">				currentVerify = UMLUtil.getStereotypeApplication(currentDRelationship, Verify.class);</span>
+
+<span class="pc bpc" id="L288" title="1 of 2 branches missed.">				if (currentVerify != null) {</span>
+<span class="fc" id="L289">					verifiedBy.addAll(currentVerify.getBase_Abstraction().getClients());</span>
+				}
+			}
+		}
+
+<span class="fc" id="L294">		return new UnmodifiableEList&lt;NamedElement&gt;(this, RequirementsPackage.eINSTANCE.getRequirement_VerifiedBy(), verifiedBy.size(), verifiedBy.toArray());</span>
+	}
+
+
+	
+
+	/**
+	 * 16.3.2.4 Requirement : /master: Requirement [0..1
+This is a derived property that lists the master requirement for this slave requirement. The master attribute is
+derived from the supplier of the Copy dependency that has this requirement as the slave.
+	 * 
+	 * @see org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementImpl#setMaster(org.eclipse.papyrus.sysml14.requirements.Requirement)
+	 *
+	 * @param newMaster the requirement
+	 */
+	@Override
+	public void setMaster(Requirement newMaster) {
+
+<span class="nc" id="L312">	}</span>
+
+	
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

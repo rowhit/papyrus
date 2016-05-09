@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BlocksSwitch.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.util</a> &gt; <span class="el_source">BlocksSwitch.java</span></div><h1>BlocksSwitch.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.util;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.papyrus.sysml14.blocks.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Switch&lt;/b&gt; for the model's inheritance hierarchy.
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
+ * to invoke the &lt;code&gt;caseXXX&lt;/code&gt; method for each class of the model,
+ * starting with the actual class of the object
+ * and proceeding up the inheritance hierarchy
+ * until a non-null result is returned,
+ * which is the result of the switch.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.blocks.BlocksPackage
+ * @generated
+ */
+public class BlocksSwitch&lt;T&gt; extends Switch&lt;T&gt; {
+	/**
+	 * The cached model package
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static BlocksPackage modelPackage;
+
+	/**
+	 * Creates an instance of the switch.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L50">	public BlocksSwitch() {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L52">			modelPackage = BlocksPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L54">	}</span>
+
+	/**
+	 * Checks whether this is a switch for the given package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
+	 * @generated
+	 */
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		return ePackage == modelPackage;</span>
+	}
+
+	/**
+	 * Calls &lt;code&gt;caseXXX&lt;/code&gt; for each class of the model until one returns a non null result; it yields that result.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the first non-null result returned by a &lt;code&gt;caseXXX&lt;/code&gt; call.
+	 * @generated
+	 */
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
+<span class="nc bnc" id="L78" title="All 15 branches missed.">		switch (classifierID) {</span>
+			case BlocksPackage.ADJUNCT_PROPERTY: {
+<span class="nc" id="L80">				AdjunctProperty adjunctProperty = (AdjunctProperty)theEObject;</span>
+<span class="nc" id="L81">				T result = caseAdjunctProperty(adjunctProperty);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L83">				return result;</span>
+			}
+			case BlocksPackage.BINDING_CONNECTOR: {
+<span class="nc" id="L86">				BindingConnector bindingConnector = (BindingConnector)theEObject;</span>
+<span class="nc" id="L87">				T result = caseBindingConnector(bindingConnector);</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L89">				return result;</span>
+			}
+			case BlocksPackage.BLOCK: {
+<span class="nc" id="L92">				Block block = (Block)theEObject;</span>
+<span class="nc" id="L93">				T result = caseBlock(block);</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L95">				return result;</span>
+			}
+			case BlocksPackage.BOUND_REFERENCE: {
+<span class="nc" id="L98">				BoundReference boundReference = (BoundReference)theEObject;</span>
+<span class="nc" id="L99">				T result = caseBoundReference(boundReference);</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">				if (result == null) result = caseEndPathMultiplicity(boundReference);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L102">				return result;</span>
+			}
+			case BlocksPackage.END_PATH_MULTIPLICITY: {
+<span class="nc" id="L105">				EndPathMultiplicity endPathMultiplicity = (EndPathMultiplicity)theEObject;</span>
+<span class="nc" id="L106">				T result = caseEndPathMultiplicity(endPathMultiplicity);</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L108">				return result;</span>
+			}
+			case BlocksPackage.CLASSIFIER_BEHAVIOR_PROPERTY: {
+<span class="nc" id="L111">				ClassifierBehaviorProperty classifierBehaviorProperty = (ClassifierBehaviorProperty)theEObject;</span>
+<span class="nc" id="L112">				T result = caseClassifierBehaviorProperty(classifierBehaviorProperty);</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L114">				return result;</span>
+			}
+			case BlocksPackage.CONNECTOR_PROPERTY: {
+<span class="nc" id="L117">				ConnectorProperty connectorProperty = (ConnectorProperty)theEObject;</span>
+<span class="nc" id="L118">				T result = caseConnectorProperty(connectorProperty);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L120">				return result;</span>
+			}
+			case BlocksPackage.DISTRIBUTED_PROPERTY: {
+<span class="nc" id="L123">				DistributedProperty distributedProperty = (DistributedProperty)theEObject;</span>
+<span class="nc" id="L124">				T result = caseDistributedProperty(distributedProperty);</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L126">				return result;</span>
+			}
+			case BlocksPackage.ELEMENT_PROPERTY_PATH: {
+<span class="nc" id="L129">				ElementPropertyPath elementPropertyPath = (ElementPropertyPath)theEObject;</span>
+<span class="nc" id="L130">				T result = caseElementPropertyPath(elementPropertyPath);</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L132">				return result;</span>
+			}
+			case BlocksPackage.NESTED_CONNECTOR_END: {
+<span class="nc" id="L135">				NestedConnectorEnd nestedConnectorEnd = (NestedConnectorEnd)theEObject;</span>
+<span class="nc" id="L136">				T result = caseNestedConnectorEnd(nestedConnectorEnd);</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">				if (result == null) result = caseElementPropertyPath(nestedConnectorEnd);</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L139">				return result;</span>
+			}
+			case BlocksPackage.PARTICIPANT_PROPERTY: {
+<span class="nc" id="L142">				ParticipantProperty participantProperty = (ParticipantProperty)theEObject;</span>
+<span class="nc" id="L143">				T result = caseParticipantProperty(participantProperty);</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L145">				return result;</span>
+			}
+			case BlocksPackage.PROPERTY_SPECIFIC_TYPE: {
+<span class="nc" id="L148">				PropertySpecificType propertySpecificType = (PropertySpecificType)theEObject;</span>
+<span class="nc" id="L149">				T result = casePropertySpecificType(propertySpecificType);</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L151">				return result;</span>
+			}
+			case BlocksPackage.VALUE_TYPE: {
+<span class="nc" id="L154">				ValueType valueType = (ValueType)theEObject;</span>
+<span class="nc" id="L155">				T result = caseValueType(valueType);</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L157">				return result;</span>
+			}
+			case BlocksPackage.DIRECTED_RELATIONSHIP_PROPERTY_PATH: {
+<span class="nc" id="L160">				DirectedRelationshipPropertyPath directedRelationshipPropertyPath = (DirectedRelationshipPropertyPath)theEObject;</span>
+<span class="nc" id="L161">				T result = caseDirectedRelationshipPropertyPath(directedRelationshipPropertyPath);</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L163">				return result;</span>
+			}
+<span class="nc" id="L165">			default: return defaultCase(theEObject);</span>
+		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Adjunct Property&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Adjunct Property&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdjunctProperty(AdjunctProperty object) {
+<span class="nc" id="L181">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Binding Connector&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Binding Connector&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBindingConnector(BindingConnector object) {
+<span class="nc" id="L196">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Block&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Block&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBlock(Block object) {
+<span class="nc" id="L211">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Bound Reference&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Bound Reference&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoundReference(BoundReference object) {
+<span class="nc" id="L226">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;End Path Multiplicity&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;End Path Multiplicity&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndPathMultiplicity(EndPathMultiplicity object) {
+<span class="nc" id="L241">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Classifier Behavior Property&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Classifier Behavior Property&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClassifierBehaviorProperty(ClassifierBehaviorProperty object) {
+<span class="nc" id="L256">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Connector Property&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Connector Property&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorProperty(ConnectorProperty object) {
+<span class="nc" id="L271">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Distributed Property&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Distributed Property&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDistributedProperty(DistributedProperty object) {
+<span class="nc" id="L286">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Element Property Path&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Element Property Path&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementPropertyPath(ElementPropertyPath object) {
+<span class="nc" id="L301">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Nested Connector End&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Nested Connector End&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNestedConnectorEnd(NestedConnectorEnd object) {
+<span class="nc" id="L316">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Participant Property&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Participant Property&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipantProperty(ParticipantProperty object) {
+<span class="nc" id="L331">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Property Specific Type&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Property Specific Type&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertySpecificType(PropertySpecificType object) {
+<span class="nc" id="L346">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Value Type&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Value Type&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseValueType(ValueType object) {
+<span class="nc" id="L361">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Directed Relationship Property Path&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Directed Relationship Property Path&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDirectedRelationshipPropertyPath(DirectedRelationshipPropertyPath object) {
+<span class="nc" id="L376">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch, but this is the last case anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	@Override
+	public T defaultCase(EObject object) {
+<span class="nc" id="L392">		return null;</span>
+	}
+
+} //BlocksSwitch
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

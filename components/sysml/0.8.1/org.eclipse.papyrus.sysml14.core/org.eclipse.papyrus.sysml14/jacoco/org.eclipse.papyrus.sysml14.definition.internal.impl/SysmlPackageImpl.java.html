@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysmlPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.definition.internal.impl</a> &gt; <span class="el_source">SysmlPackageImpl.java</span></div><h1>SysmlPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *  
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ */
+package org.eclipse.papyrus.sysml14.definition.internal.impl;
+
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+import org.eclipse.papyrus.sysml14.activities.internal.impl.ActivitiesPackageImpl;
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+import org.eclipse.papyrus.sysml14.definition.SysmlFactory;
+import org.eclipse.papyrus.sysml14.definition.SysmlPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+import org.eclipse.uml2.uml.profile.standard.StandardPackage;
+
+/**
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ */
+public class SysmlPackageImpl extends EPackageImpl implements SysmlPackage {
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * 
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.definition.SysmlPackage#eNS_URI
+	 * @see #init()
+	 * 
+	 */
+	private SysmlPackageImpl() {
+<span class="fc" id="L56">		super(eNS_URI, SysmlFactory.eINSTANCE);</span>
+<span class="fc" id="L57">	}</span>
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+<span class="fc" id="L64">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link SysmlPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * 
+	 * 
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * 
+	 */
+	public static SysmlPackage init() {
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">		if (isInited) {</span>
+<span class="nc" id="L80">			return (SysmlPackage)EPackage.Registry.INSTANCE.getEPackage(SysmlPackage.eNS_URI);</span>
+		}
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">		SysmlPackageImpl thesysmlPackage = (SysmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SysmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SysmlPackageImpl());</span>
+
+<span class="fc" id="L86">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L89">		StandardPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI) : ActivitiesPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L102">		thesysmlPackage.createPackageContents();</span>
+<span class="fc" id="L103">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L104">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L105">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L106">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L107">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L108">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L109">		theRequirementsPackage.createPackageContents();</span>
+<span class="fc" id="L110">		theDeprecatedelementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L113">		thesysmlPackage.initializePackageContents();</span>
+<span class="fc" id="L114">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L115">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L116">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L117">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L118">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L119">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L120">		theRequirementsPackage.initializePackageContents();</span>
+<span class="fc" id="L121">		theDeprecatedelementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L124">		thesysmlPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L128">		EPackage.Registry.INSTANCE.put(SysmlPackage.eNS_URI, thesysmlPackage);</span>
+<span class="fc" id="L129">		return thesysmlPackage;</span>
+	}
+
+	public SysmlFactory getSysmlFactory() {
+<span class="nc" id="L133">		return (SysmlFactory)getEFactoryInstance();</span>
+	}
+
+<span class="fc" id="L136">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 */
+	public void createPackageContents() {
+<span class="pc bpc" id="L143" title="1 of 2 branches missed.">		if (isCreated) {</span>
+<span class="nc" id="L144">			return;</span>
+		}
+<span class="fc" id="L146">		isCreated = true;	</span>
+<span class="fc" id="L147">	}</span>
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+<span class="fc" id="L154">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 */
+	public void initializePackageContents() {
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">		if (isInitialized) {</span>
+<span class="nc" id="L162">			return;</span>
+		}
+<span class="fc" id="L164">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L167">		setName(eNAME);</span>
+<span class="fc" id="L168">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L169">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L172">		BlocksPackage theBlocksPackage = (BlocksPackage)EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI);</span>
+<span class="fc" id="L173">		PortsandflowsPackage thePortsandflowsPackage = (PortsandflowsPackage)EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI);</span>
+<span class="fc" id="L174">		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);</span>
+<span class="fc" id="L175">		ModelelementsPackage theModelelementsPackage = (ModelelementsPackage)EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI);</span>
+<span class="fc" id="L176">		ConstraintblocksPackage theConstraintblocksPackage = (ConstraintblocksPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI);</span>
+<span class="fc" id="L177">		AllocationsPackage theAllocationsPackage = (AllocationsPackage)EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI);</span>
+<span class="fc" id="L178">		RequirementsPackage theRequirementsPackage = (RequirementsPackage)EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI);</span>
+<span class="fc" id="L179">		DeprecatedelementsPackage theDeprecatedelementsPackage = (DeprecatedelementsPackage)EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI);</span>
+
+		// Add subpackages
+<span class="fc" id="L182">		getESubpackages().add(theBlocksPackage);</span>
+<span class="fc" id="L183">		getESubpackages().add(thePortsandflowsPackage);</span>
+<span class="fc" id="L184">		getESubpackages().add(theActivitiesPackage);</span>
+<span class="fc" id="L185">		getESubpackages().add(theModelelementsPackage);</span>
+<span class="fc" id="L186">		getESubpackages().add(theConstraintblocksPackage);</span>
+<span class="fc" id="L187">		getESubpackages().add(theAllocationsPackage);</span>
+<span class="fc" id="L188">		getESubpackages().add(theRequirementsPackage);</span>
+<span class="fc" id="L189">		getESubpackages().add(theDeprecatedelementsPackage);</span>
+
+		// Create resource
+<span class="fc" id="L192">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L196">		createUMLAnnotations();</span>
+<span class="fc" id="L197">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L203">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L204">		addAnnotation</span>
+<span class="fc" id="L205">		  (this, </span>
+<span class="fc" id="L206">		   source, </span>
+<span class="fc" id="L207">		   new String[] {</span>
+<span class="fc" id="L208">			 &quot;originalName&quot;, &quot;SysML&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L210">	}</span>
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

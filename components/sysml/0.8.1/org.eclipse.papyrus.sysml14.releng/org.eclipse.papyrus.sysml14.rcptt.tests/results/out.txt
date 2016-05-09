@@ -1,0 +1,35 @@
+Started at Mon May 02 16:03:28 CEST 2016
+RCPTT Runner version: 2.0
+Invalid project location in '-import' arg: /export/home/flefevre/gitNeon/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.sysml14.rcptt.tests-0.8.1.zip
+Initializing target platform...
+Target platform is valid.
+Looking for tests...
+Existing projects in workspace:
+    /export/home/flefevre/gitNeon/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.tools.org.eclipse.papyrus.tools.rcptt
+    /export/home/flefevre/gitNeon/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.sysml14.rcptt.tests
+No projects to import
+Searching for tests in projects:
+    org.eclipse.papyrus.sysml.rcptt.tests... 
+Complete OK
+    org.eclipse.papyrus.tools.rcptt... 
+No tests found
+Testcase Artifacts:7
+AUT-0:Launching
+AUT-0:Product: org.eclipse.papyrus.sysml14.rcp.product
+AUT-0:Application: org.eclipse.ui.ide.workbench
+AUT-0:Architecture: x86_64
+64bit arch is selected because AUT uses launcher library
+	"plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417" specified in config file: papyrusSysML.ini
+/export/home/flefevre/gitNeon/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT arguments: -os ${target.os} -arch ${target.arch} -consoleLog
+/export/home/flefevre/gitNeon/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT VM arguments: -Xms256m -Xmx1024m -XX:MaxPermSize=256m
+Pass 1 (7) processed. 0 failed. spent: 0:33, 0:55 mins remaining. TC-AA-Init. time: 32220ms 
+Pass 2 (7) processed. 0 failed. spent: 1:07, 1:07 mins remaining. TC-AProjectCreation. time: 33317ms 
+Fail 3 (7) processed. 1 failed. spent: 1:35, 0:57 mins remaining. TC-BDD-DataType. time: 27001ms  Cause: Failed to locate the figure by name: ValueType1.
+Pass 4 (7) processed. 1 failed. spent: 1:44, 0:34 mins remaining. TC-BDD-OpenDiagram. time: 8499ms 
+Pass 5 (7) processed. 1 failed. spent: 1:53, 0:16 mins remaining. TC-DeleteAllFilesModel. time: 8608ms 
+Pass 6 (7) processed. 1 failed. spent: 2:01, 0:00 mins remaining. TC-DeleteSampleModel. time: 8444ms 
+Fail 7 (7) processed. 2 failed. spent: 2:33, 0:00 mins remaining. TC-ME-Property. time: 30911ms  Cause: Assertion of childCount failed: expected:<2> but was:<0>.
+Failed Tests:
+TC-ME-Property
+TC-BDD-DataType
+Process terminated. Shut down AUTs

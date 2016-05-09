@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>EndPathMultiplicityImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">EndPathMultiplicityImpl.java</span></div><h1>EndPathMultiplicityImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.EndPathMultiplicity;
+
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;End Path Multiplicity&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.EndPathMultiplicityImpl#getBase_Property &lt;em&gt;Base Property&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.EndPathMultiplicityImpl#getLower &lt;em&gt;Lower&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.EndPathMultiplicityImpl#getUpper &lt;em&gt;Upper&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class EndPathMultiplicityImpl extends MinimalEObjectImpl.Container implements EndPathMultiplicity {
+	/**
+	 * The cached value of the '{@link #getBase_Property() &lt;em&gt;Base Property&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Property()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property base_Property;
+
+	/**
+	 * The default value of the '{@link #getLower() &lt;em&gt;Lower&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getLower()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOWER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLower() &lt;em&gt;Lower&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getLower()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L72">	protected int lower = LOWER_EDEFAULT;</span>
+
+	/**
+	 * The default value of the '{@link #getUpper() &lt;em&gt;Upper&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getUpper()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getUpper() &lt;em&gt;Upper&lt;/em&gt;}' attribute.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getUpper()
+	 * @generated
+	 * @ordered
+	 */
+<span class="fc" id="L92">	protected int upper = UPPER_EDEFAULT;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected EndPathMultiplicityImpl() {
+<span class="fc" id="L100">		super();</span>
+<span class="fc" id="L101">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L110">		return BlocksPackage.Literals.END_PATH_MULTIPLICITY;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getBase_Property() {
+<span class="nc bnc" id="L119" title="All 4 branches missed.">		if (base_Property != null &amp;&amp; base_Property.eIsProxy()) {</span>
+<span class="nc" id="L120">			InternalEObject oldBase_Property = (InternalEObject)base_Property;</span>
+<span class="nc" id="L121">			base_Property = (Property)eResolveProxy(oldBase_Property);</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">			if (base_Property != oldBase_Property) {</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L124">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY, oldBase_Property, base_Property));</span>
+			}
+		}
+<span class="nc" id="L127">		return base_Property;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property basicGetBase_Property() {
+<span class="nc" id="L136">		return base_Property;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Property(Property newBase_Property) {
+<span class="fc" id="L145">		Property oldBase_Property = base_Property;</span>
+<span class="fc" id="L146">		base_Property = newBase_Property;</span>
+<span class="pc bpc" id="L147" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L148">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY, oldBase_Property, base_Property));</span>
+<span class="fc" id="L149">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public int getLower() {
+<span class="nc" id="L157">		return lower;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setLower(int newLower) {
+<span class="nc" id="L166">		int oldLower = lower;</span>
+<span class="nc" id="L167">		lower = newLower;</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L169">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.END_PATH_MULTIPLICITY__LOWER, oldLower, lower));</span>
+<span class="nc" id="L170">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public int getUpper() {
+<span class="nc" id="L178">		return upper;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setUpper(int newUpper) {
+<span class="nc" id="L187">		int oldUpper = upper;</span>
+<span class="nc" id="L188">		upper = newUpper;</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L190">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.END_PATH_MULTIPLICITY__UPPER, oldUpper, upper));</span>
+<span class="nc" id="L191">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L200" title="All 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY:
+<span class="nc bnc" id="L202" title="All 2 branches missed.">				if (resolve) return getBase_Property();</span>
+<span class="nc" id="L203">				return basicGetBase_Property();</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__LOWER:
+<span class="nc" id="L205">				return getLower();</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__UPPER:
+<span class="nc" id="L207">				return getUpper();</span>
+		}
+<span class="nc" id="L209">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L219" title="3 of 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY:
+<span class="fc" id="L221">				setBase_Property((Property)newValue);</span>
+<span class="fc" id="L222">				return;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__LOWER:
+<span class="nc" id="L224">				setLower((Integer)newValue);</span>
+<span class="nc" id="L225">				return;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__UPPER:
+<span class="nc" id="L227">				setUpper((Integer)newValue);</span>
+<span class="nc" id="L228">				return;</span>
+		}
+<span class="nc" id="L230">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L231">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L240" title="All 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY:
+<span class="nc" id="L242">				setBase_Property((Property)null);</span>
+<span class="nc" id="L243">				return;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__LOWER:
+<span class="nc" id="L245">				setLower(LOWER_EDEFAULT);</span>
+<span class="nc" id="L246">				return;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__UPPER:
+<span class="nc" id="L248">				setUpper(UPPER_EDEFAULT);</span>
+<span class="nc" id="L249">				return;</span>
+		}
+<span class="nc" id="L251">		super.eUnset(featureID);</span>
+<span class="nc" id="L252">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L261" title="All 4 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__BASE_PROPERTY:
+<span class="nc bnc" id="L263" title="All 2 branches missed.">				return base_Property != null;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__LOWER:
+<span class="nc bnc" id="L265" title="All 2 branches missed.">				return lower != LOWER_EDEFAULT;</span>
+			case BlocksPackage.END_PATH_MULTIPLICITY__UPPER:
+<span class="nc bnc" id="L267" title="All 2 branches missed.">				return upper != UPPER_EDEFAULT;</span>
+		}
+<span class="nc" id="L269">		return super.eIsSet(featureID);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L279" title="All 2 branches missed.">		if (eIsProxy()) return super.toString();</span>
+
+<span class="nc" id="L281">		StringBuffer result = new StringBuffer(super.toString());</span>
+<span class="nc" id="L282">		result.append(&quot; (lower: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L283">		result.append(lower);</span>
+<span class="nc" id="L284">		result.append(&quot;, upper: &quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L285">		result.append(upper);</span>
+<span class="nc" id="L286">		result.append(')');</span>
+<span class="nc" id="L287">		return result.toString();</span>
+	}
+
+} //EndPathMultiplicityImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

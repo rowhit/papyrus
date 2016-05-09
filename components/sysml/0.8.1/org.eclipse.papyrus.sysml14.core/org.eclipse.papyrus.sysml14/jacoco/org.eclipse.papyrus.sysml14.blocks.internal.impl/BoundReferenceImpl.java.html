@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BoundReferenceImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">BoundReferenceImpl.java</span></div><h1>BoundReferenceImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.BoundReference;
+
+import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Bound Reference&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.BoundReferenceImpl#getBindingPath &lt;em&gt;Binding Path&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.BoundReferenceImpl#getBoundEnd &lt;em&gt;Bound End&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class BoundReferenceImpl extends EndPathMultiplicityImpl implements BoundReference {
+	/**
+	 * The cached value of the '{@link #getBoundEnd() &lt;em&gt;Bound End&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBoundEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConnectorEnd boundEnd;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected BoundReferenceImpl() {
+<span class="fc" id="L64">		super();</span>
+<span class="fc" id="L65">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L74">		return BlocksPackage.Literals.BOUND_REFERENCE;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EList&lt;Property&gt; getBindingPath() {
+		// TODO: implement this method to return the 'Binding Path' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+<span class="nc" id="L85">		throw new UnsupportedOperationException();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getBindingPath(String name, Type type) {
+<span class="nc" id="L94">		return getBindingPath(name, type, false, null);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getBindingPath(String name, Type type, boolean ignoreCase, EClass eClass) {
+<span class="nc bnc" id="L103" title="All 2 branches missed.">		bindingPathLoop: for (Property bindingPath : getBindingPath()) {</span>
+<span class="nc bnc" id="L104" title="All 4 branches missed.">			if (eClass != null &amp;&amp; !eClass.isInstance(bindingPath))</span>
+<span class="nc" id="L105">				continue bindingPathLoop;</span>
+<span class="nc bnc" id="L106" title="All 8 branches missed.">			if (name != null &amp;&amp; !(ignoreCase ? name.equalsIgnoreCase(bindingPath.getName()) : name.equals(bindingPath.getName())))</span>
+<span class="nc" id="L107">				continue bindingPathLoop;</span>
+<span class="nc bnc" id="L108" title="All 4 branches missed.">			if (type != null &amp;&amp; !type.equals(bindingPath.getType()))</span>
+<span class="nc" id="L109">				continue bindingPathLoop;</span>
+<span class="nc" id="L110">			return bindingPath;</span>
+		}
+<span class="nc" id="L112">		return null;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ConnectorEnd getBoundEnd() {
+<span class="pc bpc" id="L121" title="2 of 4 branches missed.">		if (boundEnd != null &amp;&amp; boundEnd.eIsProxy()) {</span>
+<span class="nc" id="L122">			InternalEObject oldBoundEnd = (InternalEObject)boundEnd;</span>
+<span class="nc" id="L123">			boundEnd = (ConnectorEnd)eResolveProxy(oldBoundEnd);</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">			if (boundEnd != oldBoundEnd) {</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L126">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.BOUND_REFERENCE__BOUND_END, oldBoundEnd, boundEnd));</span>
+			}
+		}
+<span class="fc" id="L129">		return boundEnd;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ConnectorEnd basicGetBoundEnd() {
+<span class="nc" id="L138">		return boundEnd;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBoundEnd(ConnectorEnd newBoundEnd) {
+<span class="fc" id="L147">		ConnectorEnd oldBoundEnd = boundEnd;</span>
+<span class="fc" id="L148">		boundEnd = newBoundEnd;</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L150">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.BOUND_REFERENCE__BOUND_END, oldBoundEnd, boundEnd));</span>
+<span class="fc" id="L151">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L160" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BOUND_REFERENCE__BINDING_PATH:
+<span class="nc" id="L162">				return getBindingPath();</span>
+			case BlocksPackage.BOUND_REFERENCE__BOUND_END:
+<span class="nc bnc" id="L164" title="All 2 branches missed.">				if (resolve) return getBoundEnd();</span>
+<span class="nc" id="L165">				return basicGetBoundEnd();</span>
+		}
+<span class="nc" id="L167">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L178" title="2 of 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BOUND_REFERENCE__BINDING_PATH:
+<span class="nc" id="L180">				getBindingPath().clear();</span>
+<span class="nc" id="L181">				getBindingPath().addAll((Collection&lt;? extends Property&gt;)newValue);</span>
+<span class="nc" id="L182">				return;</span>
+			case BlocksPackage.BOUND_REFERENCE__BOUND_END:
+<span class="nc" id="L184">				setBoundEnd((ConnectorEnd)newValue);</span>
+<span class="nc" id="L185">				return;</span>
+		}
+<span class="fc" id="L187">		super.eSet(featureID, newValue);</span>
+<span class="fc" id="L188">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L197" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BOUND_REFERENCE__BINDING_PATH:
+<span class="nc" id="L199">				getBindingPath().clear();</span>
+<span class="nc" id="L200">				return;</span>
+			case BlocksPackage.BOUND_REFERENCE__BOUND_END:
+<span class="nc" id="L202">				setBoundEnd((ConnectorEnd)null);</span>
+<span class="nc" id="L203">				return;</span>
+		}
+<span class="nc" id="L205">		super.eUnset(featureID);</span>
+<span class="nc" id="L206">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L215" title="All 3 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BOUND_REFERENCE__BINDING_PATH:
+<span class="nc bnc" id="L217" title="All 2 branches missed.">				return !getBindingPath().isEmpty();</span>
+			case BlocksPackage.BOUND_REFERENCE__BOUND_END:
+<span class="nc bnc" id="L219" title="All 2 branches missed.">				return boundEnd != null;</span>
+		}
+<span class="nc" id="L221">		return super.eIsSet(featureID);</span>
+	}
+
+} //BoundReferenceImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

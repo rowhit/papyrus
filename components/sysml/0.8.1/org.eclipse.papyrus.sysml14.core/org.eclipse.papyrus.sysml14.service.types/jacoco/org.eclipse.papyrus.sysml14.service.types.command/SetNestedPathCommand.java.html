@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SetNestedPathCommand.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.command</a> &gt; <span class="el_source">SetNestedPathCommand.java</span></div><h1>SetNestedPathCommand.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2012 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.command;
+
+import java.util.List;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.ISpecializationType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.BoundReference;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.service.types.util.UMLConnectorUtils;
+import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+
+/**
+ * 8.3.2.3 Block
+ * the service edit must implement the following constraints
+ * isEncapsulated: Boolean [0..1]
+ * If true, then the block is treated as a black box; a part typed by this black box can only be connected via its ports or
+ * directly to its outer boundary. If false, or if a value is not present, then connections can be established to elements of
+ * its internal structure via deep-nested connector ends.
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_007}
+ * 
+ * 8.3.2.4 Bound Reference
+ * set the BoundEnd
+ * boundEnd : ConnectorEnd [1]
+ * Gives a connector end of a binding connector opposite to the end linked to the stereotyped property, or linked to
+ * property that generalizes the stereotyped one through redefinition.
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_008}
+ */
+public class SetNestedPathCommand extends EditElementCommand {
+
+<span class="nc" id="L60">	private UMLConnectorUtils utils = new UMLConnectorUtils();</span>
+
+	/**
+	 * The ordered list of {@link Property} to follow in order to reach the nested {@link ConnectableElement}.
+	 */
+	private List&lt;Property&gt; nestedPath;
+
+	/**
+	 * Indicates that the source of the {@link Connector} is nested.
+	 */
+	public static final int NESTED_SOURCE = 1;
+
+	/**
+	 * Indicates that the target of the {@link Connector} is nested.
+	 */
+	public static final int NESTED_TARGET = 2;
+
+	/**
+	 * Indicates whether or not the source of the target of the {@link Connector} is nested.
+	 * One of {@link #NESTED_SOURCE} or {@link #NESTED_TARGET}.
+	 */
+	private final int nestedEndDirection;
+
+	/**
+	 *
+	 * Constructor.
+	 *
+	 * @param label
+	 *            the command label.
+	 * @param elementToEdit
+	 *            the element to edit.
+	 * @param request
+	 *            the request this command contribute to ({@link CreateRelationshipRequest} or {@link ReorientRelationshipRequest})
+	 * @param nestedPath
+	 *            the property path to set (in {@link NestedConnectorEnd#getPropertyPath()} ).
+	 * @param nestedEndDirection
+	 *            the direction ({@link #NESTED_SOURCE} or {@link #NESTED_TARGET}) of the {@link ConnectorEnd} to modify.
+	 */
+	public SetNestedPathCommand(String label, EObject elementToEdit, IEditCommandRequest request, List&lt;Property&gt; nestedPath, int nestedEndDirection) {
+<span class="nc" id="L99">		super(label, elementToEdit, request);</span>
+<span class="nc" id="L100">		this.nestedPath = nestedPath;</span>
+<span class="nc" id="L101">		this.nestedEndDirection = nestedEndDirection;</span>
+<span class="nc" id="L102">	}</span>
+
+	/**
+	 * Test whether the command can be executed or not.
+	 */
+	@Override
+	public boolean canExecute() {
+
+		// Verify the kind of request
+<span class="nc bnc" id="L111" title="All 4 branches missed.">		if (!(getRequest() instanceof CreateRelationshipRequest) &amp;&amp; !(getRequest() instanceof ReorientRelationshipRequest)) {</span>
+<span class="nc" id="L112">			return false;</span>
+		}
+
+		// if (!(getElementToEdit() instanceof Connector)) {
+		// return false;
+		// }
+
+		// Verify (basic) that the related Connector well-formed.
+		// In case of Connector creation, the connector is most probably not created yet
+<span class="nc bnc" id="L121" title="All 4 branches missed.">		if ((getConnector() != null) &amp;&amp; (getConnector().getEnds().size() != 2)) {</span>
+<span class="nc" id="L122">			return false; // binary connector expected.</span>
+		}
+
+<span class="nc" id="L125">		return super.canExecute();// true;</span>
+	}
+
+	@Override
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+<span class="nc bnc" id="L130" title="All 2 branches missed.">		if (!canExecute()) {</span>
+<span class="nc" id="L131">			throw new ExecutionException(&quot;Unexecutable command.&quot;); //$NON-NLS-1$</span>
+		}
+
+<span class="nc" id="L134">		ConnectorEnd modifiedEnd = getModifiedConnectorEnd();</span>
+<span class="nc" id="L135">		NestedConnectorEnd nestedConnectorEnd = UMLUtil.getStereotypeApplication(modifiedEnd, NestedConnectorEnd.class);</span>
+
+<span class="nc bnc" id="L137" title="All 2 branches missed.">		if (nestedPath.isEmpty()) {</span>
+			// Remove stereotype if applied
+<span class="nc bnc" id="L139" title="All 2 branches missed.">			if (nestedConnectorEnd != null) {</span>
+<span class="nc" id="L140">				EcoreUtil.delete(nestedConnectorEnd, true);</span>
+			}
+
+<span class="nc" id="L143">		} else {</span>
+			// Add stereotype if not applied and set new path if different from existing
+<span class="nc bnc" id="L145" title="All 2 branches missed.">			if (nestedConnectorEnd == null) {</span>
+				// apply stereotype
+<span class="nc" id="L147">				nestedConnectorEnd = (NestedConnectorEnd) StereotypeApplicationHelper.getInstance(null).applyStereotype(modifiedEnd, BlocksPackage.eINSTANCE.getNestedConnectorEnd());</span>
+				// look for the opposite conectorEnd
+<span class="nc" id="L149">				ConnectorEnd opposite = getNonModifiedConnectorEnd();</span>
+<span class="nc" id="L150">				ConnectableElement connectableElement = opposite.getRole();</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">				if (((ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_BOUNDREFERENCE)).getMatcher().matches(connectableElement)) {</span>
+<span class="nc" id="L152">					BoundReference defaultBoundReference = UMLUtil.getStereotypeApplication(connectableElement, BoundReference.class);</span>
+<span class="nc" id="L153">					defaultBoundReference.setBoundEnd(modifiedEnd);</span>
+				}
+
+
+				// Set path
+<span class="nc bnc" id="L158" title="All 2 branches missed.">				if (!nestedConnectorEnd.getPropertyPath().equals(nestedPath)) {</span>
+<span class="nc" id="L159">					nestedConnectorEnd.getPropertyPath().clear();</span>
+<span class="nc" id="L160">					nestedConnectorEnd.getPropertyPath().addAll(nestedPath);</span>
+				}
+			}
+		}
+
+<span class="nc" id="L165">		return CommandResult.newOKCommandResult(getConnector());</span>
+	}
+
+	/**
+	 * Get the {@link ConnectorEnd} currently modified by the command.
+	 *
+	 * @return the modified {@link ConnectorEnd}.
+	 */
+	private ConnectorEnd getModifiedConnectorEnd() {
+<span class="nc" id="L174">		return (nestedEndDirection == NESTED_SOURCE) ? utils.getSourceConnectorEnd(getConnector()) : utils.getTargetConnectorEnd(getConnector());</span>
+	}
+
+	/**
+	 * Get the {@link ConnectorEnd} currently modified by the command.
+	 *
+	 * @return the modified {@link ConnectorEnd}.
+	 */
+	private ConnectorEnd getNonModifiedConnectorEnd() {
+<span class="nc" id="L183">		return (nestedEndDirection == NESTED_SOURCE) ? utils.getTargetConnectorEnd(getConnector()) : utils.getSourceConnectorEnd(getConnector());</span>
+	}
+
+	/**
+	 * Get the {@link Connector} currently under creation or re-orient that hold {@link ConnectorEnd} to update.
+	 *
+	 * @return the related {@link Connector}.
+	 */
+	private Connector getConnector() {
+<span class="nc bnc" id="L192" title="All 2 branches missed.">		if (getElementToEdit() != null) {</span>
+<span class="nc" id="L193">			return (Connector) getElementToEdit();</span>
+		}
+<span class="nc bnc" id="L195" title="All 2 branches missed.">		if (getRequest() instanceof CreateRelationshipRequest) {</span>
+<span class="nc" id="L196">			return (Connector) ((CreateRelationshipRequest) getRequest()).getNewElement();</span>
+<span class="nc bnc" id="L197" title="All 2 branches missed.">		} else if (getRequest() instanceof ReorientRelationshipRequest) {</span>
+<span class="nc" id="L198">			return (Connector) ((ReorientRelationshipRequest) getRequest()).getRelationship();</span>
+		}
+<span class="nc" id="L200">		return null;</span>
+
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

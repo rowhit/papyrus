@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ItemFlowImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.portsandflows.internal.impl</a> &gt; <span class="el_source">ItemFlowImpl.java</span></div><h1>ItemFlowImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.portsandflows.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.ItemFlow;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.uml2.uml.InformationFlow;
+import org.eclipse.uml2.uml.Property;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Item Flow&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl#getBase_InformationFlow &lt;em&gt;Base Information Flow&lt;/em&gt;}&lt;/li&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.internal.impl.ItemFlowImpl#getItemProperty &lt;em&gt;Item Property&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class ItemFlowImpl extends MinimalEObjectImpl.Container implements ItemFlow {
+	/**
+	 * The cached value of the '{@link #getBase_InformationFlow() &lt;em&gt;Base Information Flow&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_InformationFlow()
+	 * @generated
+	 * @ordered
+	 */
+	protected InformationFlow base_InformationFlow;
+
+	/**
+	 * The cached value of the '{@link #getItemProperty() &lt;em&gt;Item Property&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getItemProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property itemProperty;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected ItemFlowImpl() {
+<span class="nc" id="L70">		super();</span>
+<span class="nc" id="L71">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="nc" id="L80">		return PortsandflowsPackage.Literals.ITEM_FLOW;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InformationFlow getBase_InformationFlow() {
+<span class="nc bnc" id="L89" title="All 4 branches missed.">		if (base_InformationFlow != null &amp;&amp; base_InformationFlow.eIsProxy()) {</span>
+<span class="nc" id="L90">			InternalEObject oldBase_InformationFlow = (InternalEObject)base_InformationFlow;</span>
+<span class="nc" id="L91">			base_InformationFlow = (InformationFlow)eResolveProxy(oldBase_InformationFlow);</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">			if (base_InformationFlow != oldBase_InformationFlow) {</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L94">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW, oldBase_InformationFlow, base_InformationFlow));</span>
+			}
+		}
+<span class="nc" id="L97">		return base_InformationFlow;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public InformationFlow basicGetBase_InformationFlow() {
+<span class="nc" id="L106">		return base_InformationFlow;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_InformationFlow(InformationFlow newBase_InformationFlow) {
+<span class="nc" id="L115">		InformationFlow oldBase_InformationFlow = base_InformationFlow;</span>
+<span class="nc" id="L116">		base_InformationFlow = newBase_InformationFlow;</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L118">			eNotify(new ENotificationImpl(this, Notification.SET, PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW, oldBase_InformationFlow, base_InformationFlow));</span>
+<span class="nc" id="L119">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property getItemProperty() {
+<span class="nc bnc" id="L127" title="All 4 branches missed.">		if (itemProperty != null &amp;&amp; itemProperty.eIsProxy()) {</span>
+<span class="nc" id="L128">			InternalEObject oldItemProperty = (InternalEObject)itemProperty;</span>
+<span class="nc" id="L129">			itemProperty = (Property)eResolveProxy(oldItemProperty);</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">			if (itemProperty != oldItemProperty) {</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L132">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY, oldItemProperty, itemProperty));</span>
+			}
+		}
+<span class="nc" id="L135">		return itemProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Property basicGetItemProperty() {
+<span class="nc" id="L144">		return itemProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setItemProperty(Property newItemProperty) {
+<span class="nc" id="L153">		Property oldItemProperty = itemProperty;</span>
+<span class="nc" id="L154">		itemProperty = newItemProperty;</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="nc" id="L156">			eNotify(new ENotificationImpl(this, Notification.SET, PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY, oldItemProperty, itemProperty));</span>
+<span class="nc" id="L157">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L166" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW:
+<span class="nc bnc" id="L168" title="All 2 branches missed.">				if (resolve) return getBase_InformationFlow();</span>
+<span class="nc" id="L169">				return basicGetBase_InformationFlow();</span>
+			case PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY:
+<span class="nc bnc" id="L171" title="All 2 branches missed.">				if (resolve) return getItemProperty();</span>
+<span class="nc" id="L172">				return basicGetItemProperty();</span>
+		}
+<span class="nc" id="L174">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="nc bnc" id="L184" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW:
+<span class="nc" id="L186">				setBase_InformationFlow((InformationFlow)newValue);</span>
+<span class="nc" id="L187">				return;</span>
+			case PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY:
+<span class="nc" id="L189">				setItemProperty((Property)newValue);</span>
+<span class="nc" id="L190">				return;</span>
+		}
+<span class="nc" id="L192">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L193">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L202" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW:
+<span class="nc" id="L204">				setBase_InformationFlow((InformationFlow)null);</span>
+<span class="nc" id="L205">				return;</span>
+			case PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY:
+<span class="nc" id="L207">				setItemProperty((Property)null);</span>
+<span class="nc" id="L208">				return;</span>
+		}
+<span class="nc" id="L210">		super.eUnset(featureID);</span>
+<span class="nc" id="L211">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L220" title="All 3 branches missed.">		switch (featureID) {</span>
+			case PortsandflowsPackage.ITEM_FLOW__BASE_INFORMATION_FLOW:
+<span class="nc bnc" id="L222" title="All 2 branches missed.">				return base_InformationFlow != null;</span>
+			case PortsandflowsPackage.ITEM_FLOW__ITEM_PROPERTY:
+<span class="nc bnc" id="L224" title="All 2 branches missed.">				return itemProperty != null;</span>
+		}
+<span class="nc" id="L226">		return super.eIsSet(featureID);</span>
+	}
+
+} //ItemFlowImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

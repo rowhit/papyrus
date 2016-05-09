@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BindingConnectorImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">BindingConnectorImpl.java</span></div><h1>BindingConnectorImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BindingConnector;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.uml2.uml.Connector;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model object '&lt;em&gt;&lt;b&gt;Binding Connector&lt;/b&gt;&lt;/em&gt;'.
+ * &lt;!-- end-user-doc --&gt;
+ * &lt;p&gt;
+ * The following features are implemented:
+ * &lt;/p&gt;
+ * &lt;ul&gt;
+ *   &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.internal.impl.BindingConnectorImpl#getBase_Connector &lt;em&gt;Base Connector&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @generated
+ */
+public class BindingConnectorImpl extends MinimalEObjectImpl.Container implements BindingConnector {
+	/**
+	 * The cached value of the '{@link #getBase_Connector() &lt;em&gt;Base Connector&lt;/em&gt;}' reference.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #getBase_Connector()
+	 * @generated
+	 * @ordered
+	 */
+	protected Connector base_Connector;
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected BindingConnectorImpl() {
+<span class="fc" id="L58">		super();</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+<span class="fc" id="L68">		return BlocksPackage.Literals.BINDING_CONNECTOR;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Connector getBase_Connector() {
+<span class="nc bnc" id="L77" title="All 4 branches missed.">		if (base_Connector != null &amp;&amp; base_Connector.eIsProxy()) {</span>
+<span class="nc" id="L78">			InternalEObject oldBase_Connector = (InternalEObject)base_Connector;</span>
+<span class="nc" id="L79">			base_Connector = (Connector)eResolveProxy(oldBase_Connector);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">			if (base_Connector != oldBase_Connector) {</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">				if (eNotificationRequired())</span>
+<span class="nc" id="L82">					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));</span>
+			}
+		}
+<span class="nc" id="L85">		return base_Connector;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Connector basicGetBase_Connector() {
+<span class="nc" id="L94">		return base_Connector;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void setBase_Connector(Connector newBase_Connector) {
+<span class="fc" id="L103">		Connector oldBase_Connector = base_Connector;</span>
+<span class="fc" id="L104">		base_Connector = newBase_Connector;</span>
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">		if (eNotificationRequired())</span>
+<span class="fc" id="L106">			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));</span>
+<span class="fc" id="L107">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+<span class="nc bnc" id="L116" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
+<span class="nc bnc" id="L118" title="All 2 branches missed.">				if (resolve) return getBase_Connector();</span>
+<span class="nc" id="L119">				return basicGetBase_Connector();</span>
+		}
+<span class="nc" id="L121">		return super.eGet(featureID, resolve, coreType);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
+<span class="fc" id="L133">				setBase_Connector((Connector)newValue);</span>
+<span class="fc" id="L134">				return;</span>
+		}
+<span class="nc" id="L136">		super.eSet(featureID, newValue);</span>
+<span class="nc" id="L137">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+<span class="nc bnc" id="L146" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
+<span class="nc" id="L148">				setBase_Connector((Connector)null);</span>
+<span class="nc" id="L149">				return;</span>
+		}
+<span class="nc" id="L151">		super.eUnset(featureID);</span>
+<span class="nc" id="L152">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+<span class="nc bnc" id="L161" title="All 2 branches missed.">		switch (featureID) {</span>
+			case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
+<span class="nc bnc" id="L163" title="All 2 branches missed.">				return base_Connector != null;</span>
+		}
+<span class="nc" id="L165">		return super.eIsSet(featureID);</span>
+	}
+
+} //BindingConnectorImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

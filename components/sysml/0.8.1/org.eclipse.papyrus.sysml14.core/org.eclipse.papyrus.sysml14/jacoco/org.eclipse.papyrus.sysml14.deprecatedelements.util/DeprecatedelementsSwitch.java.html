@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DeprecatedelementsSwitch.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.deprecatedelements.util</a> &gt; <span class="el_source">DeprecatedelementsSwitch.java</span></div><h1>DeprecatedelementsSwitch.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.deprecatedelements.util;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * The &lt;b&gt;Switch&lt;/b&gt; for the model's inheritance hierarchy.
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
+ * to invoke the &lt;code&gt;caseXXX&lt;/code&gt; method for each class of the model,
+ * starting with the actual class of the object
+ * and proceeding up the inheritance hierarchy
+ * until a non-null result is returned,
+ * which is the result of the switch.
+ * &lt;!-- end-user-doc --&gt;
+ * @see org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage
+ * @generated
+ */
+public class DeprecatedelementsSwitch&lt;T&gt; extends Switch&lt;T&gt; {
+	/**
+	 * The cached model package
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected static DeprecatedelementsPackage modelPackage;
+
+	/**
+	 * Creates an instance of the switch.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="nc" id="L50">	public DeprecatedelementsSwitch() {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (modelPackage == null) {</span>
+<span class="nc" id="L52">			modelPackage = DeprecatedelementsPackage.eINSTANCE;</span>
+		}
+<span class="nc" id="L54">	}</span>
+
+	/**
+	 * Checks whether this is a switch for the given package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
+	 * @generated
+	 */
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		return ePackage == modelPackage;</span>
+	}
+
+	/**
+	 * Calls &lt;code&gt;caseXXX&lt;/code&gt; for each class of the model until one returns a non null result; it yields that result.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @return the first non-null result returned by a &lt;code&gt;caseXXX&lt;/code&gt; call.
+	 * @generated
+	 */
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
+<span class="nc bnc" id="L78" title="All 3 branches missed.">		switch (classifierID) {</span>
+			case DeprecatedelementsPackage.FLOW_PORT: {
+<span class="nc" id="L80">				FlowPort flowPort = (FlowPort)theEObject;</span>
+<span class="nc" id="L81">				T result = caseFlowPort(flowPort);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L83">				return result;</span>
+			}
+			case DeprecatedelementsPackage.FLOW_SPECIFICATION: {
+<span class="nc" id="L86">				FlowSpecification flowSpecification = (FlowSpecification)theEObject;</span>
+<span class="nc" id="L87">				T result = caseFlowSpecification(flowSpecification);</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">				if (result == null) result = defaultCase(theEObject);</span>
+<span class="nc" id="L89">				return result;</span>
+			}
+<span class="nc" id="L91">			default: return defaultCase(theEObject);</span>
+		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Flow Port&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Flow Port&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFlowPort(FlowPort object) {
+<span class="nc" id="L107">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;Flow Specification&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;Flow Specification&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFlowSpecification(FlowSpecification object) {
+<span class="nc" id="L122">		return null;</span>
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch, but this is the last case anyway.
+	 * &lt;!-- end-user-doc --&gt;
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '&lt;em&gt;EObject&lt;/em&gt;'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	@Override
+	public T defaultCase(EObject object) {
+<span class="nc" id="L138">		return null;</span>
+	}
+
+} //DeprecatedelementsSwitch
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

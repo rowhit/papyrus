@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ActivitiesPackageImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.activities.internal.impl</a> &gt; <span class="el_source">ActivitiesPackageImpl.java</span></div><h1>ActivitiesPackageImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.activities.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.papyrus.sysml14.activities.ActivitiesFactory;
+import org.eclipse.papyrus.sysml14.activities.ActivitiesPackage;
+import org.eclipse.papyrus.sysml14.activities.Continuous;
+import org.eclipse.papyrus.sysml14.activities.ControlOperator;
+import org.eclipse.papyrus.sysml14.activities.Discrete;
+import org.eclipse.papyrus.sysml14.activities.NoBuffer;
+import org.eclipse.papyrus.sysml14.activities.Optional;
+import org.eclipse.papyrus.sysml14.activities.Overwrite;
+import org.eclipse.papyrus.sysml14.activities.Probability;
+import org.eclipse.papyrus.sysml14.activities.Rate;
+
+import org.eclipse.papyrus.sysml14.allocations.AllocationsPackage;
+
+import org.eclipse.papyrus.sysml14.allocations.internal.impl.AllocationsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+
+import org.eclipse.papyrus.sysml14.blocks.internal.impl.BlocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.ConstraintblocksPackage;
+
+import org.eclipse.papyrus.sysml14.constraintblocks.internal.impl.ConstraintblocksPackageImpl;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.internal.impl.DeprecatedelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+
+import org.eclipse.papyrus.sysml14.modelelements.internal.impl.ModelelementsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+
+import org.eclipse.papyrus.sysml14.portsandflows.internal.impl.PortsandflowsPackageImpl;
+
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+
+import org.eclipse.papyrus.sysml14.requirements.internal.impl.RequirementsPackageImpl;
+
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Package&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class ActivitiesPackageImpl extends EPackageImpl implements ActivitiesPackage {
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L74">	private EClass continuousEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L81">	private EClass rateEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L88">	private EClass controlOperatorEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L95">	private EClass discreteEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L102">	private EClass noBufferEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L109">	private EClass optionalEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L116">	private EClass overwriteEClass = null;</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L123">	private EClass probabilityEClass = null;</span>
+
+	/**
+	 * Creates an instance of the model &lt;b&gt;Package&lt;/b&gt;, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * &lt;p&gt;Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.papyrus.sysml14.activities.ActivitiesPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private ActivitiesPackageImpl() {
+<span class="fc" id="L141">		super(eNS_URI, ActivitiesFactory.eINSTANCE);</span>
+<span class="fc" id="L142">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L149">	private static boolean isInited = false;</span>
+
+	/**
+	 * Creates, registers, and initializes the &lt;b&gt;Package&lt;/b&gt; for this model, and for any others upon which it depends.
+	 * 
+	 * &lt;p&gt;This method is used to initialize {@link ActivitiesPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static ActivitiesPackage init() {
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">		if (isInited) return (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);</span>
+
+		// Obtain or create and register package
+<span class="pc bpc" id="L167" title="1 of 2 branches missed.">		ActivitiesPackageImpl theActivitiesPackage = (ActivitiesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ActivitiesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ActivitiesPackageImpl());</span>
+
+<span class="fc" id="L169">		isInited = true;</span>
+
+		// Initialize simple dependencies
+<span class="fc" id="L172">		UMLPackage.eINSTANCE.eClass();</span>
+
+		// Obtain or create and register interdependencies
+<span class="pc bpc" id="L175" title="1 of 2 branches missed.">		AllocationsPackageImpl theAllocationsPackage = (AllocationsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) instanceof AllocationsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationsPackage.eNS_URI) : AllocationsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">		BlocksPackageImpl theBlocksPackage = (BlocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) instanceof BlocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BlocksPackage.eNS_URI) : BlocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L177" title="1 of 2 branches missed.">		ConstraintblocksPackageImpl theConstraintblocksPackage = (ConstraintblocksPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) instanceof ConstraintblocksPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintblocksPackage.eNS_URI) : ConstraintblocksPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L178" title="1 of 2 branches missed.">		DeprecatedelementsPackageImpl theDeprecatedelementsPackage = (DeprecatedelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) instanceof DeprecatedelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeprecatedelementsPackage.eNS_URI) : DeprecatedelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L179" title="1 of 2 branches missed.">		PortsandflowsPackageImpl thePortsandflowsPackage = (PortsandflowsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) instanceof PortsandflowsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortsandflowsPackage.eNS_URI) : PortsandflowsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L180" title="1 of 2 branches missed.">		ModelelementsPackageImpl theModelelementsPackage = (ModelelementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) instanceof ModelelementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelelementsPackage.eNS_URI) : ModelelementsPackage.eINSTANCE);</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) instanceof RequirementsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI) : RequirementsPackage.eINSTANCE);</span>
+
+		// Create package meta-data objects
+<span class="fc" id="L184">		theActivitiesPackage.createPackageContents();</span>
+<span class="fc" id="L185">		theAllocationsPackage.createPackageContents();</span>
+<span class="fc" id="L186">		theBlocksPackage.createPackageContents();</span>
+<span class="fc" id="L187">		theConstraintblocksPackage.createPackageContents();</span>
+<span class="fc" id="L188">		theDeprecatedelementsPackage.createPackageContents();</span>
+<span class="fc" id="L189">		thePortsandflowsPackage.createPackageContents();</span>
+<span class="fc" id="L190">		theModelelementsPackage.createPackageContents();</span>
+<span class="fc" id="L191">		theRequirementsPackage.createPackageContents();</span>
+
+		// Initialize created meta-data
+<span class="fc" id="L194">		theActivitiesPackage.initializePackageContents();</span>
+<span class="fc" id="L195">		theAllocationsPackage.initializePackageContents();</span>
+<span class="fc" id="L196">		theBlocksPackage.initializePackageContents();</span>
+<span class="fc" id="L197">		theConstraintblocksPackage.initializePackageContents();</span>
+<span class="fc" id="L198">		theDeprecatedelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L199">		thePortsandflowsPackage.initializePackageContents();</span>
+<span class="fc" id="L200">		theModelelementsPackage.initializePackageContents();</span>
+<span class="fc" id="L201">		theRequirementsPackage.initializePackageContents();</span>
+
+		// Mark meta-data to indicate it can't be changed
+<span class="fc" id="L204">		theActivitiesPackage.freeze();</span>
+
+  
+		// Update the registry and return the package
+<span class="fc" id="L208">		EPackage.Registry.INSTANCE.put(ActivitiesPackage.eNS_URI, theActivitiesPackage);</span>
+<span class="fc" id="L209">		return theActivitiesPackage;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getContinuous() {
+<span class="nc" id="L218">		return continuousEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getRate() {
+<span class="fc" id="L227">		return rateEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRate_Base_ActivityEdge() {
+<span class="fc" id="L236">		return (EReference)rateEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRate_Base_ObjectNode() {
+<span class="fc" id="L245">		return (EReference)rateEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRate_Base_Parameter() {
+<span class="fc" id="L254">		return (EReference)rateEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getRate_Rate() {
+<span class="fc" id="L263">		return (EReference)rateEClass.getEStructuralFeatures().get(3);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getControlOperator() {
+<span class="nc" id="L272">		return controlOperatorEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getControlOperator_Base_Behavior() {
+<span class="fc" id="L281">		return (EReference)controlOperatorEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getControlOperator_Base_Operation() {
+<span class="fc" id="L290">		return (EReference)controlOperatorEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getDiscrete() {
+<span class="nc" id="L299">		return discreteEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getNoBuffer() {
+<span class="nc" id="L308">		return noBufferEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getNoBuffer_Base_ObjectNode() {
+<span class="fc" id="L317">		return (EReference)noBufferEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getOptional() {
+<span class="nc" id="L326">		return optionalEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getOptional_Base_Parameter() {
+<span class="fc" id="L335">		return (EReference)optionalEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getOverwrite() {
+<span class="nc" id="L344">		return overwriteEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getOverwrite_Base_ObjectNode() {
+<span class="fc" id="L353">		return (EReference)overwriteEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EClass getProbability() {
+<span class="nc" id="L362">		return probabilityEClass;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getProbability_Base_ActivityEdge() {
+<span class="fc" id="L371">		return (EReference)probabilityEClass.getEStructuralFeatures().get(0);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getProbability_Base_ParameterSet() {
+<span class="fc" id="L380">		return (EReference)probabilityEClass.getEStructuralFeatures().get(1);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EReference getProbability_Probability() {
+<span class="fc" id="L389">		return (EReference)probabilityEClass.getEStructuralFeatures().get(2);</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ActivitiesFactory getActivitiesFactory() {
+<span class="nc" id="L398">		return (ActivitiesFactory)getEFactoryInstance();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L406">	private boolean isCreated = false;</span>
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void createPackageContents() {
+<span class="fc bfc" id="L416" title="All 2 branches covered.">		if (isCreated) return;</span>
+<span class="fc" id="L417">		isCreated = true;</span>
+
+		// Create classes and their features
+<span class="fc" id="L420">		continuousEClass = createEClass(CONTINUOUS);</span>
+
+<span class="fc" id="L422">		rateEClass = createEClass(RATE);</span>
+<span class="fc" id="L423">		createEReference(rateEClass, RATE__BASE_ACTIVITY_EDGE);</span>
+<span class="fc" id="L424">		createEReference(rateEClass, RATE__BASE_OBJECT_NODE);</span>
+<span class="fc" id="L425">		createEReference(rateEClass, RATE__BASE_PARAMETER);</span>
+<span class="fc" id="L426">		createEReference(rateEClass, RATE__RATE);</span>
+
+<span class="fc" id="L428">		controlOperatorEClass = createEClass(CONTROL_OPERATOR);</span>
+<span class="fc" id="L429">		createEReference(controlOperatorEClass, CONTROL_OPERATOR__BASE_BEHAVIOR);</span>
+<span class="fc" id="L430">		createEReference(controlOperatorEClass, CONTROL_OPERATOR__BASE_OPERATION);</span>
+
+<span class="fc" id="L432">		discreteEClass = createEClass(DISCRETE);</span>
+
+<span class="fc" id="L434">		noBufferEClass = createEClass(NO_BUFFER);</span>
+<span class="fc" id="L435">		createEReference(noBufferEClass, NO_BUFFER__BASE_OBJECT_NODE);</span>
+
+<span class="fc" id="L437">		optionalEClass = createEClass(OPTIONAL);</span>
+<span class="fc" id="L438">		createEReference(optionalEClass, OPTIONAL__BASE_PARAMETER);</span>
+
+<span class="fc" id="L440">		overwriteEClass = createEClass(OVERWRITE);</span>
+<span class="fc" id="L441">		createEReference(overwriteEClass, OVERWRITE__BASE_OBJECT_NODE);</span>
+
+<span class="fc" id="L443">		probabilityEClass = createEClass(PROBABILITY);</span>
+<span class="fc" id="L444">		createEReference(probabilityEClass, PROBABILITY__BASE_ACTIVITY_EDGE);</span>
+<span class="fc" id="L445">		createEReference(probabilityEClass, PROBABILITY__BASE_PARAMETER_SET);</span>
+<span class="fc" id="L446">		createEReference(probabilityEClass, PROBABILITY__PROBABILITY);</span>
+<span class="fc" id="L447">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+<span class="fc" id="L454">	private boolean isInitialized = false;</span>
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public void initializePackageContents() {
+<span class="fc bfc" id="L464" title="All 2 branches covered.">		if (isInitialized) return;</span>
+<span class="fc" id="L465">		isInitialized = true;</span>
+
+		// Initialize package
+<span class="fc" id="L468">		setName(eNAME);</span>
+<span class="fc" id="L469">		setNsPrefix(eNS_PREFIX);</span>
+<span class="fc" id="L470">		setNsURI(eNS_URI);</span>
+
+		// Obtain other dependent packages
+<span class="fc" id="L473">		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);</span>
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+<span class="fc" id="L480">		continuousEClass.getESuperTypes().add(this.getRate());</span>
+<span class="fc" id="L481">		discreteEClass.getESuperTypes().add(this.getRate());</span>
+
+		// Initialize classes, features, and operations; add parameters
+<span class="fc" id="L484">		initEClass(continuousEClass, Continuous.class, &quot;Continuous&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L486">		initEClass(rateEClass, Rate.class, &quot;Rate&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L487">		initEReference(getRate_Base_ActivityEdge(), theUMLPackage.getActivityEdge(), null, &quot;base_ActivityEdge&quot;, null, 0, 1, Rate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L488">		initEReference(getRate_Base_ObjectNode(), theUMLPackage.getObjectNode(), null, &quot;base_ObjectNode&quot;, null, 0, 1, Rate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L489">		initEReference(getRate_Base_Parameter(), theUMLPackage.getParameter(), null, &quot;base_Parameter&quot;, null, 0, 1, Rate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L490">		initEReference(getRate_Rate(), theUMLPackage.getInstanceSpecification(), null, &quot;rate&quot;, null, 1, 1, Rate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L492">		initEClass(controlOperatorEClass, ControlOperator.class, &quot;ControlOperator&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L493">		initEReference(getControlOperator_Base_Behavior(), theUMLPackage.getBehavior(), null, &quot;base_Behavior&quot;, null, 0, 1, ControlOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L494">		initEReference(getControlOperator_Base_Operation(), theUMLPackage.getOperation(), null, &quot;base_Operation&quot;, null, 0, 1, ControlOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L496">		initEClass(discreteEClass, Discrete.class, &quot;Discrete&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+
+<span class="fc" id="L498">		initEClass(noBufferEClass, NoBuffer.class, &quot;NoBuffer&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L499">		initEReference(getNoBuffer_Base_ObjectNode(), theUMLPackage.getObjectNode(), null, &quot;base_ObjectNode&quot;, null, 0, 1, NoBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L501">		initEClass(optionalEClass, Optional.class, &quot;Optional&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L502">		initEReference(getOptional_Base_Parameter(), theUMLPackage.getParameter(), null, &quot;base_Parameter&quot;, null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L504">		initEClass(overwriteEClass, Overwrite.class, &quot;Overwrite&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L505">		initEReference(getOverwrite_Base_ObjectNode(), theUMLPackage.getObjectNode(), null, &quot;base_ObjectNode&quot;, null, 0, 1, Overwrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+<span class="fc" id="L507">		initEClass(probabilityEClass, Probability.class, &quot;Probability&quot;, !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$</span>
+<span class="fc" id="L508">		initEReference(getProbability_Base_ActivityEdge(), theUMLPackage.getActivityEdge(), null, &quot;base_ActivityEdge&quot;, null, 0, 1, Probability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L509">		initEReference(getProbability_Base_ParameterSet(), theUMLPackage.getParameterSet(), null, &quot;base_ParameterSet&quot;, null, 0, 1, Probability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+<span class="fc" id="L510">		initEReference(getProbability_Probability(), theUMLPackage.getValueSpecification(), null, &quot;probability&quot;, null, 1, 1, Probability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$</span>
+
+		// Create resource
+<span class="fc" id="L513">		createResource(eNS_URI);</span>
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+<span class="fc" id="L517">		createUMLAnnotations();</span>
+<span class="fc" id="L518">	}</span>
+
+	/**
+	 * Initializes the annotations for &lt;b&gt;http://www.eclipse.org/uml2/2.0.0/UML&lt;/b&gt;.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+<span class="fc" id="L527">		String source = &quot;http://www.eclipse.org/uml2/2.0.0/UML&quot;; //$NON-NLS-1$	</span>
+<span class="fc" id="L528">		addAnnotation</span>
+<span class="fc" id="L529">		  (this, </span>
+<span class="fc" id="L530">		   source, </span>
+<span class="fc" id="L531">		   new String[] {</span>
+<span class="fc" id="L532">			 &quot;originalName&quot;, &quot;Activities&quot; //$NON-NLS-1$ //$NON-NLS-2$</span>
+		   });
+<span class="fc" id="L534">	}</span>
+
+} //ActivitiesPackageImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

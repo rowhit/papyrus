@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BlocksFactoryImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.blocks.internal.impl</a> &gt; <span class="el_source">BlocksFactoryImpl.java</span></div><h1>BlocksFactoryImpl.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.blocks.internal.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.eclipse.papyrus.sysml14.blocks.*;
+
+/**
+ * &lt;!-- begin-user-doc --&gt;
+ * An implementation of the model &lt;b&gt;Factory&lt;/b&gt;.
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class BlocksFactoryImpl extends EFactoryImpl implements BlocksFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public static BlocksFactory init() {
+		try {
+<span class="fc" id="L40">			BlocksFactory theBlocksFactory = (BlocksFactory)EPackage.Registry.INSTANCE.getEFactory(BlocksPackage.eNS_URI);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">			if (theBlocksFactory != null) {</span>
+<span class="fc" id="L42">				return theBlocksFactory;</span>
+			}
+		}
+<span class="nc" id="L45">		catch (Exception exception) {</span>
+<span class="nc" id="L46">			EcorePlugin.INSTANCE.log(exception);</span>
+		}
+<span class="nc" id="L48">		return new BlocksFactoryImpl();</span>
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public BlocksFactoryImpl() {
+<span class="fc" id="L58">		super();</span>
+<span class="fc" id="L59">	}</span>
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+<span class="pc bpc" id="L68" title="8 of 13 branches missed.">		switch (eClass.getClassifierID()) {</span>
+<span class="nc" id="L69">			case BlocksPackage.ADJUNCT_PROPERTY: return createAdjunctProperty();</span>
+<span class="fc" id="L70">			case BlocksPackage.BINDING_CONNECTOR: return createBindingConnector();</span>
+<span class="fc" id="L71">			case BlocksPackage.BLOCK: return createBlock();</span>
+<span class="fc" id="L72">			case BlocksPackage.BOUND_REFERENCE: return createBoundReference();</span>
+<span class="nc" id="L73">			case BlocksPackage.END_PATH_MULTIPLICITY: return createEndPathMultiplicity();</span>
+<span class="nc" id="L74">			case BlocksPackage.CLASSIFIER_BEHAVIOR_PROPERTY: return createClassifierBehaviorProperty();</span>
+<span class="nc" id="L75">			case BlocksPackage.CONNECTOR_PROPERTY: return createConnectorProperty();</span>
+<span class="nc" id="L76">			case BlocksPackage.DISTRIBUTED_PROPERTY: return createDistributedProperty();</span>
+<span class="fc" id="L77">			case BlocksPackage.NESTED_CONNECTOR_END: return createNestedConnectorEnd();</span>
+<span class="nc" id="L78">			case BlocksPackage.PARTICIPANT_PROPERTY: return createParticipantProperty();</span>
+<span class="nc" id="L79">			case BlocksPackage.PROPERTY_SPECIFIC_TYPE: return createPropertySpecificType();</span>
+<span class="fc" id="L80">			case BlocksPackage.VALUE_TYPE: return createValueType();</span>
+			default:
+<span class="nc" id="L82">				throw new IllegalArgumentException(&quot;The class '&quot; + eClass.getName() + &quot;' is not a valid classifier&quot;); //$NON-NLS-1$ //$NON-NLS-2$</span>
+		}
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public AdjunctProperty createAdjunctProperty() {
+<span class="nc" id="L92">		AdjunctPropertyImpl adjunctProperty = new AdjunctPropertyImpl();</span>
+<span class="nc" id="L93">		return adjunctProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public BindingConnector createBindingConnector() {
+<span class="fc" id="L102">		BindingConnectorImpl bindingConnector = new BindingConnectorImpl();</span>
+<span class="fc" id="L103">		return bindingConnector;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public Block createBlock() {
+<span class="nc" id="L112">		BlockImpl block = new BlockImpl();</span>
+<span class="nc" id="L113">		return block;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public BoundReference createBoundReference() {
+<span class="nc" id="L122">		BoundReferenceImpl boundReference = new BoundReferenceImpl();</span>
+<span class="nc" id="L123">		return boundReference;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public EndPathMultiplicity createEndPathMultiplicity() {
+<span class="nc" id="L132">		EndPathMultiplicityImpl endPathMultiplicity = new EndPathMultiplicityImpl();</span>
+<span class="nc" id="L133">		return endPathMultiplicity;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ClassifierBehaviorProperty createClassifierBehaviorProperty() {
+<span class="nc" id="L142">		ClassifierBehaviorPropertyImpl classifierBehaviorProperty = new ClassifierBehaviorPropertyImpl();</span>
+<span class="nc" id="L143">		return classifierBehaviorProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ConnectorProperty createConnectorProperty() {
+<span class="nc" id="L152">		ConnectorPropertyImpl connectorProperty = new ConnectorPropertyImpl();</span>
+<span class="nc" id="L153">		return connectorProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public DistributedProperty createDistributedProperty() {
+<span class="nc" id="L162">		DistributedPropertyImpl distributedProperty = new DistributedPropertyImpl();</span>
+<span class="nc" id="L163">		return distributedProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public NestedConnectorEnd createNestedConnectorEnd() {
+<span class="fc" id="L172">		NestedConnectorEndImpl nestedConnectorEnd = new NestedConnectorEndImpl();</span>
+<span class="fc" id="L173">		return nestedConnectorEnd;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ParticipantProperty createParticipantProperty() {
+<span class="nc" id="L182">		ParticipantPropertyImpl participantProperty = new ParticipantPropertyImpl();</span>
+<span class="nc" id="L183">		return participantProperty;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public PropertySpecificType createPropertySpecificType() {
+<span class="nc" id="L192">		PropertySpecificTypeImpl propertySpecificType = new PropertySpecificTypeImpl();</span>
+<span class="nc" id="L193">		return propertySpecificType;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public ValueType createValueType() {
+<span class="fc" id="L202">		ValueTypeImpl valueType = new ValueTypeImpl();</span>
+<span class="fc" id="L203">		return valueType;</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public BlocksPackage getBlocksPackage() {
+<span class="nc" id="L212">		return (BlocksPackage)getEPackage();</span>
+	}
+
+	/**
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static BlocksPackage getPackage() {
+<span class="nc" id="L223">		return BlocksPackage.eINSTANCE;</span>
+	}
+
+} //BlocksFactoryImpl
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

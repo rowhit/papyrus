@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysmlResourceTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.util</a> &gt; <span class="el_source">SysmlResourceTest.java</span></div><h1>SysmlResourceTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.util;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Basic test for Sysml 1.4 profile
+ * 
+ * @author Francois Le Fevre
+ */
+<span class="fc" id="L35">public class SysmlResourceTest {</span>
+
+	/**
+	 * Check that profile application lookup is well implemented
+	 */
+	@Test
+	public void testGetFirstSysMLMatchingContainerProfiledBySysMLProfile4UMLModel()  {
+		//Model tree is umlModel&gt;nestedPackage,rootPackage&gt;secondPackage
+		Package rootPackage,secondPackage,nestedPackage;
+		Package resultPackage,pakage;
+		
+<span class="fc" id="L46">		Model umlModel = UMLFactory.eINSTANCE.createModel();</span>
+<span class="fc" id="L47">		pakage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(umlModel);</span>
+<span class="fc" id="L48">		Assert.assertNull(&quot;Initial model should not match any SysML profile&quot;,pakage);//$NON-NLS-1$</span>
+
+<span class="fc" id="L50">		nestedPackage = umlModel.createNestedPackage(&quot;myNestedPackage&quot;);//$NON-NLS-1$</span>
+<span class="fc" id="L51">		pakage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(nestedPackage);</span>
+<span class="fc" id="L52">		Assert.assertNull(&quot;Nested package should not match any SysML profile&quot;,pakage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L54">		rootPackage = (Package)umlModel.createPackagedElement(&quot;myRootPackage&quot;, UMLPackage.eINSTANCE.getPackage());//$NON-NLS-1$</span>
+<span class="fc" id="L55">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(rootPackage);</span>
+<span class="fc" id="L56">		Assert.assertNull(&quot;Root package should not match any SysML profil&quot;,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L58">		secondPackage = (Package)rootPackage.createPackagedElement(&quot;myPackage2&quot;, UMLPackage.eINSTANCE.getPackage());//$NON-NLS-1$</span>
+<span class="fc" id="L59">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(pakage);</span>
+<span class="fc" id="L60">		Assert.assertNull(&quot;Secund level package should not match any SysML profile&quot;,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L62">		ResourceSet resourceSet= new ResourceSetImpl();</span>
+<span class="fc" id="L63">		Resource sysmlProfileResource = resourceSet.getResource(URI.createURI(SysMLResource.PROFILE_PATH), true);</span>
+<span class="fc" id="L64">		Profile sysmlProfile = (Profile) EcoreUtil.getObjectByType(sysmlProfileResource.getContents(), UMLPackage.Literals.PACKAGE);</span>
+<span class="fc" id="L65">		rootPackage.applyProfile(sysmlProfile);</span>
+<span class="fc" id="L66">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(rootPackage);</span>
+<span class="fc" id="L67">		Assert.assertNotNull(&quot;Should retrieve a root package with SysML applied profile&quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L68">		Assert.assertEquals(&quot;Should retrieve the root package with SysML applied profile&quot;,rootPackage,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L70">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(secondPackage);</span>
+<span class="fc" id="L71">		Assert.assertNotNull(&quot;Should retrieve a root package from the level2 package with SysML applied profile&quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L72">		Assert.assertEquals(&quot;Should retrieve the root package from the level2 package with SysML applied profile&quot;,rootPackage,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L73">	}</span>
+	
+	/**
+	 * Check that profile application lookup is well implemented
+	 */
+	@Test
+	public void testGetFirstSysMLMatchingContainerProfiledBySysMLProfile4SysMLModel()  {
+		//Model tree is model&gt;rootPackage&gt;secondPackage
+		Package rootPackage,secondPackage;
+		Package resultPackage;
+
+<span class="fc" id="L84">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L85">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());//$NON-NLS-1$</span>
+
+<span class="fc" id="L87">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(model);</span>
+<span class="fc" id="L88">		Assert.assertNotNull(&quot;Model is the first lvel with SysML applied profil&quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L89">		Assert.assertEquals(model,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L91">		rootPackage = (Package)model.createPackagedElement(&quot;rootPackage&quot;, UMLPackage.eINSTANCE.getPackage());//$NON-NLS-1$</span>
+<span class="fc" id="L92">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(rootPackage);</span>
+<span class="fc" id="L93">		Assert.assertNotNull(&quot;Should retrieve a package&quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L94">		Assert.assertEquals(&quot;Should retrieve the root model&quot;,model,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L96">		secondPackage = (Package)rootPackage.createPackagedElement(&quot;myPackage2&quot;, UMLPackage.eINSTANCE.getPackage());//$NON-NLS-1$</span>
+<span class="fc" id="L97">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(secondPackage);</span>
+<span class="fc" id="L98">		Assert.assertNotNull(&quot;Should retrieve a result from the level2 package&quot;,resultPackage);</span>
+<span class="fc" id="L99">		Assert.assertEquals(&quot;Should retrieve the root model&quot;,model,resultPackage);</span>
+		
+<span class="fc" id="L101">		ResourceSet resourceSet= new ResourceSetImpl();</span>
+<span class="fc" id="L102">		Resource sysmlProfileResource = resourceSet.getResource(URI.createURI(SysMLResource.PROFILE_PATH), true);</span>
+<span class="fc" id="L103">		Profile sysmlProfile = (Profile) EcoreUtil.getObjectByType(sysmlProfileResource.getContents(), UMLPackage.Literals.PACKAGE);</span>
+<span class="fc" id="L104">		rootPackage.applyProfile(sysmlProfile);</span>
+<span class="fc" id="L105">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(rootPackage);</span>
+<span class="fc" id="L106">		Assert.assertNotNull(&quot;Should retrieve a package with applied sysml profil&quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L107">		Assert.assertEquals(&quot;Should retrieve the root package with applied sysml profil&quot;,rootPackage,resultPackage);//$NON-NLS-1$</span>
+		
+<span class="fc" id="L109">		resultPackage = SysMLResource.getFirstSysMLMatchingContainerProfiledBySysMLProfile(secondPackage);</span>
+<span class="fc" id="L110">		Assert.assertNotNull(&quot;Should retrieve a package from the level2 package with applied sysml profil &quot;,resultPackage);//$NON-NLS-1$</span>
+<span class="fc" id="L111">		Assert.assertEquals(&quot;Should retrieve the root package from the level2 package with applied sysml profil&quot;,rootPackage,resultPackage);//$NON-NLS-1$</span>
+
+<span class="fc" id="L113">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
