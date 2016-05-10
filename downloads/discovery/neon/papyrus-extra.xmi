@@ -40,6 +40,21 @@
           url="http://www.east-adl.info/"/>
       <id>org.eclipse.papyrus.extra.eastadl.feature</id>
     </components>
+    <components
+        name="RobotML"
+        provider="Eclipse Modeling Project"
+        description="Modeling language and tools for mobile robotic applications"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/robotml_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/robotml</sitesURLS>
+      <overview
+          summary="Modeling language and tools for mobile robotic applications"/>
+      <id>org.eclipse.papyrus.robotml.feature</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
