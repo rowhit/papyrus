@@ -1,0 +1,7 @@
+org.eclipse.papyrus.robotml.diagram.common
+org.eclipse.papyrus.robotml.diagram.common.commands
+org.eclipse.papyrus.robotml.diagram.common.editpolicies
+org.eclipse.papyrus.robotml.diagram.common.editpolicy.provider
+org.eclipse.papyrus.robotml.diagram.common.factory
+org.eclipse.papyrus.robotml.diagram.common.migration
+org.eclipse.papyrus.robotml.diagram.common.utils

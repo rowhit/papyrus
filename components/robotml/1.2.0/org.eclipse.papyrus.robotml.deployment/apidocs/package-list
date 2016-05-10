@@ -1,0 +1,4 @@
+org.eclipse.papyrus.robotml.deployment
+org.eclipse.papyrus.robotml.deployment.dialog
+org.eclipse.papyrus.robotml.deployment.handlers
+org.eclipse.papyrus.robotml.deployment.listener
