@@ -44,7 +44,6 @@
   <categories
       name="Modeler extensions"
       description="Extension of the tool">
-    </components>
         <components
         name="Papyrus for Requirements"
         provider="Eclipse Modeling Project"
