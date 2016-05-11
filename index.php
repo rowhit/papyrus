@@ -179,11 +179,10 @@
                                 $papyrusapplication = applications_to_html("applications/applications.xml", 3);
                                 echo $papyrusapplication;
                         ?>
+                    </div>
                     <p>
                         <button type="button" class="btn btn-lg btn-success custom-white-btn testimonial-btn" onclick="location.href='testimonials.html'"><img src="img/thumbup.png" alt="Testimonials">&nbsp;Discover more successful applications of Papyrus</button>
                     </p>
-     
-                    </div>
                     <h2 class="feature-heading-white">A MBE solution for industrial and academic applications</h2>
                     <p class="text-justify">As part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>.
                     </p>
