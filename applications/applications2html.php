@@ -26,7 +26,7 @@ function applications_to_html($file_name, $quantity=2) {
 		$item_xml = preg_replace('/<\/application>/', ' ', $item_xml);
 		
 		$html .="<div class=\"col-sm-4\">";
-			$html .="<a href=\"".$application['resource']."\">";
+			$html .="<a href=\"".$application['resource']."\" target=\"_blank\">";
 			$html .="<img class=\"img-responsive center-block application-img\" src=\"".$application['logo']."\" alt=\"".$application['author']." Use Case Story\">";
 			$html .="</a>";
 			$html .="\"<b>".$item_xml."</b>\"<br>".$application['author'];
