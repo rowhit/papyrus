@@ -55,6 +55,21 @@
       <id>org.eclipse.papyrus.extra.robotml.feature</id>
     </components>
     <components
+        name="SysML"
+        provider="Eclipse Modeling Project"
+        description="A Papyrus DSML for the SysML 1.4 OMG norm"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/sysml_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/mars</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/mars</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14</sitesURLS>
+      <overview
+          summary="A Papyrus DSML for the SysML 1.4 OMG norm"/>
+      <id>org.eclipse.papyrus.sysml14.feature</id>
+    </components>
+    <components
         name="RealTime"
         provider="Eclipse Modeling Project"
         description="UML Profile and tools for RealTime"
