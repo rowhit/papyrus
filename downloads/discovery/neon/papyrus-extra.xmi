@@ -61,7 +61,7 @@
         description="A Papyrus DSML for the SysML 1.4 OMG norm"
         license="EPL"
         groups="//@filters.1"
-        image32="images/sysml_32_32.png"
+        image32="images/sysml_32_32.gif"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
@@ -76,7 +76,7 @@
         description="Modeling language and tools to specify and connect system solutions to their intent using the BMM OMG norm"
         license="EPL"
         groups="//@filters.1"
-        image32="images/BMM_logo_32_32.png"
+        image32="images/BMM_logo_32x32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
