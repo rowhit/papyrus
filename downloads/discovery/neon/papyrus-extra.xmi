@@ -83,7 +83,7 @@
       <overview
           summary="The Business Motivation Model (BMM) in enterprise architecture provides a scheme and structure for developing, communicating, and managing business plans in an organized manner"
           url="http://www.omg.org/spec/BMM/"/>
-      <id>org.eclipse.papyrus.bmm.feature</id>
+      <id>org.eclipse.papyrus.bmm.extra.feature</id>
     </components>
   </categories>
   <categories
