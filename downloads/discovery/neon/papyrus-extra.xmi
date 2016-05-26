@@ -203,20 +203,6 @@
       <id>org.eclipse.papyrus.migration.rsa.feature</id>
     </components>
     <components
-        name="Rich Text Editor"
-        provider="Eclipse Modeling Project"
-        description="Edit comments with a rich text editor"
-        license="EPL"
-        groups="//@filters.1"
-        image32=""
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
-      <overview
-          summary="This model allow editing comments with a rich text editor"/>
-      <id>org.eclipse.papyrus.extra.epf.richtext.feature</id>
-    </components>
-    <components
         name="Papyrus DSML Validation"
         provider="Eclipse Modeling Project"
         description="Component to generate a validation plug-in from a UML Profile"
