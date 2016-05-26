@@ -70,6 +70,21 @@
           summary="A Papyrus DSML for the SysML 1.4 OMG norm"/>
       <id>org.eclipse.papyrus.sysml14.feature</id>
     </components>
+    <components
+        name="BMM"
+        provider="Eclipse Modeling Project"
+        description="Modeling language and tools to specify and connect system solutions to their intent using the BMM OMG norm"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/BMM_logo_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
+      <overview
+          summary="The Business Motivation Model (BMM) in enterprise architecture provides a scheme and structure for developing, communicating, and managing business plans in an organized manner"
+          url="http://www.omg.org/spec/BMM/"/>
+      <id>org.eclipse.papyrus.bmm.feature</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
@@ -85,8 +100,23 @@
       <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
       <overview
-          summary="Papyrus for Requirements helps you to specify and analyze requirements in the context of systems modeling. It aims to cover the Specification, Management, Analysis and Validation-Verification activities of Requirements Engineering. Papyrus for Requirements depends on the components Papyrus SysML and Papyrus for Metrics."/>
+          summary="Papyrus for Requirements helps you to specify and analyze requirements in the context of systems modeling. It aims to cover the Specification, Management, Analysis and Validation-Verification activities of Requirements Engineering. Papyrus for Requirements depends on the components Papyrus SysML and Papyrus for Metrics"/>
       <id>org.eclipse.papyrus.requirements.feature</id>
+    </components>
+    <components
+        name="Papyrus for Metrics"
+        provider="Eclipse Modeling Project"
+        description="Model-based measurement using the OMG Structured Metrics-Model (SMM) standard "
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/Papyrus_4_Metrics_logo_32x32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
+      <overview
+          summary="Papyrus for Metrics provides an implementation of the Structured Metrics Metamodel (SMM) specification from the Object Management Group (OMG)"
+          url="http://www.omg.org/spec/SMM/"/>
+      <id>org.eclipse.papyrus.metrics.feature</id>
     </components>
     <components
         name="Diagram generation"
