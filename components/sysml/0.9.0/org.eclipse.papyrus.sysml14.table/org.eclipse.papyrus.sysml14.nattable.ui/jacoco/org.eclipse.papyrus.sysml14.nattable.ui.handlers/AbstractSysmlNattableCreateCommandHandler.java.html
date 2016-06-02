@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AbstractSysmlNattableCreateCommandHandler.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.nattable.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.nattable.ui.handlers</a> &gt; <span class="el_source">AbstractSysmlNattableCreateCommandHandler.java</span></div><h1>AbstractSysmlNattableCreateCommandHandler.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Juan Cadavid (CEA LIST) juan.cadavid@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.nattable.ui.handlers;
+
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
+import org.eclipse.papyrus.infra.nattable.utils.INattableModelManagerUtils;
+import org.eclipse.papyrus.uml.nattable.menu.util.TableMenuUtils;
+import org.eclipse.papyrus.uml.service.types.utils.ICommandContext;
+
+/**
+ * Abstract handler for the creation commands of Sysml elements in the Nattable editor
+ *
+ */
+<span class="nc" id="L25">public abstract class AbstractSysmlNattableCreateCommandHandler extends AbstractSysmlCreateElementCommandHandler {</span>
+
+	/**
+	 * &lt;pre&gt;
+	 *
+	 * Build the create command for an element creation in the selected container.
+	 * The create command is given by the {@link org.eclipse.papyrus.infra.services.edit.service.IElementEditService} of selected
+	 * element.
+	 *
+	 * @return the composite creation command for current selection
+	 *
+	 * &lt;/pre&gt;
+	 */
+	@Override
+	protected Command buildCommand() {
+<span class="nc" id="L40">		Command createCmd = super.buildCommand();</span>
+<span class="nc" id="L41">		return TableMenuUtils.buildNattableCreationCommand(createCmd, this.createRequest);</span>
+	}
+
+	/**
+	 * Obtain the context of the active table editor.
+	 *
+	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCommandHandler#getCommandContext()
+	 *
+	 * @return
+	 */
+	@Override
+	protected ICommandContext getCommandContext() {
+<span class="nc" id="L53">		return TableMenuUtils.getTableCreateElementCommandContext(INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart()));</span>
+
+	}
+
+	/**
+	 * Verify if this handler is currently active and the command can execute. Additionally, verify if this table can add this type of element.
+	 *
+	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler#setEnabled(java.lang.Object)
+	 *
+	 * @param evaluationContext
+	 */
+	@Override
+	public void setEnabled(Object evaluationContext) {
+<span class="nc" id="L66">		boolean isEnabled = false;</span>
+<span class="nc" id="L67">		INattableModelManager tableManager = INattableModelManagerUtils.getTableManagerFromWorkbenchPart(getActiveWorkbenchPart());</span>
+<span class="nc" id="L68">		IElementType elementTypeToCreate = getElementTypeToCreate();</span>
+		
+<span class="nc bnc" id="L70" title="All 2 branches missed.">		if (elementTypeToCreate != null) {</span>
+<span class="nc" id="L71">			String id = elementTypeToCreate.getId();</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">			if (id != null){</span>
+<span class="nc" id="L73">				isEnabled = tableManager.canCreateRowElement(id);</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">				if (isEnabled) {</span>
+					// we test the enable of the super implementation
+<span class="nc" id="L76">					super.setEnabled(evaluationContext);</span>
+<span class="nc" id="L77">					isEnabled = super.isEnabled();</span>
+				}
+<span class="nc" id="L79">				setBaseEnabled(isEnabled);				</span>
+			}
+		}
+<span class="nc" id="L82">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

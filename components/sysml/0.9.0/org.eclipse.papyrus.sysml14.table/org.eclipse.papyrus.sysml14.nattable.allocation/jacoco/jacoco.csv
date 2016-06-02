@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.nattable.allocation,org.eclipse.papyrus.sysml14.nattable.allocation.tester,TableAllocationCreationTester,34,0,4,0,6,0,4,0,2,0
+org.eclipse.papyrus.sysml14.nattable.allocation,org.eclipse.papyrus.sysml14.nattable.allocation,Activator,3,0,0,0,1,0,1,0,1,0
+org.eclipse.papyrus.sysml14.nattable.allocation,org.eclipse.papyrus.sysml14.nattable.allocation,Messages,7,0,0,0,4,0,2,0,2,0

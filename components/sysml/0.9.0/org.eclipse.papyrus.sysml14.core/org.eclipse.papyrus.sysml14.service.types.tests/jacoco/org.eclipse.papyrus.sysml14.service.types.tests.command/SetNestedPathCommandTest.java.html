@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SetNestedPathCommandTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests.command</a> &gt; <span class="el_source">SetNestedPathCommandTest.java</span></div><h1>SetNestedPathCommandTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.service.types.tests.command;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransaction;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.papyrus.infra.emf.gmf.command.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.types.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.types.core.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+import org.eclipse.papyrus.sysml14.service.types.command.SetNestedPathCommand;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.service.types.util.UMLConnectorUtils;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * Test on SetNestedPathCommand
+ *
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L53">public class SetNestedPathCommandTest {</span>
+
+	@BeforeClass
+	public static void loadSysml14Defintion() {
+<span class="fc" id="L57">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L58">		Map&lt;String, Map&lt;String, ElementTypeSetConfiguration&gt;&gt; elementTypeSetConfigurations = instance.getElementTypeSetConfigurations();</span>
+<span class="fc" id="L59">		Map&lt;String, ElementTypeSetConfiguration&gt; map = elementTypeSetConfigurations.get(&quot;org.eclipse.papyrus.infra.services.edit.TypeContext&quot;);</span>
+<span class="fc" id="L60">		ElementTypeSetConfiguration elementTypeSetConfiguration = map.get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet&quot;);</span>
+<span class="fc" id="L61">		Assert.assertNotNull(&quot;The SysML 1.4 element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L62">	}</span>
+	
+<span class="fc" id="L64">	private UMLConnectorUtils utils = new UMLConnectorUtils(); // FIXME : should be access in static way (when the Papyrus API is modified)</span>
+
+	/**
+	 * Test method for {@link org.eclipse.papyrus.sysml14.service.types.command.SetNestedPathCommand#canExecute()}.
+	 */
+	@Test
+	public void testCanExecute() {
+<span class="fc" id="L71">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L72">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+<span class="fc" id="L74">		CreateElementRequest invalidRequest = new CreateElementRequest(ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_BLOCK));</span>
+<span class="fc" id="L75">		SetNestedPathCommand invalidCommand = new SetNestedPathCommand(&quot;Set a invalid nested path&quot;, invalidRequest.getNewElement(), invalidRequest, new ArrayList&lt;Property&gt;(), SetNestedPathCommand.NESTED_SOURCE);</span>
+<span class="fc" id="L76">		Assert.assertFalse(&quot;A nested path cannot be set in a Block&quot;, invalidCommand.canExecute());</span>
+		
+<span class="fc" id="L78">		CreateRelationshipRequest validRequest = new CreateRelationshipRequest(ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_CONFORM));</span>
+<span class="fc" id="L79">		Connector connector = UMLFactory.eINSTANCE.createConnector();</span>
+<span class="fc" id="L80">		connector.createEnd();</span>
+<span class="fc" id="L81">		connector.createEnd();</span>
+<span class="fc" id="L82">		SetNestedPathCommand setNestedPathCommand = new SetNestedPathCommand(&quot;Set a correct nested path&quot;, connector, validRequest, new ArrayList&lt;Property&gt;(), SetNestedPathCommand.NESTED_SOURCE);</span>
+<span class="fc" id="L83">		Assert.assertTrue(&quot;An empty nested path can be set to any connector&quot;, setNestedPathCommand.canExecute());</span>
+<span class="fc" id="L84">	}</span>
+
+	/**
+	 * Test method for {@link org.eclipse.papyrus.sysml14.service.types.command.SetNestedPathCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)}.
+	 * 
+	 * @throws InterruptedException
+	 * @throws RollbackException
+	 */
+	@Test
+	public void testDoExecuteWithResultIProgressMonitorIAdaptable() throws InterruptedException, RollbackException {
+<span class="fc" id="L94">		ResourceSetImpl resourceSet = new ResourceSetImpl();</span>
+<span class="fc" id="L95">		Model model = SysMLResource.createSysMLModel(resourceSet);</span>
+<span class="fc" id="L96">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+		
+<span class="fc" id="L98">		IElementType type = ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_CONFORM);</span>
+<span class="fc" id="L99">		Connector connector = UMLFactory.eINSTANCE.createConnector();</span>
+<span class="fc" id="L100">		connector.createEnd();</span>
+<span class="fc" id="L101">		connector.createEnd();	</span>
+<span class="fc" id="L102">		Class sourceClass = model.createOwnedClass(&quot;C1&quot;, false);</span>
+<span class="fc" id="L103">		Class targetClass = model.createOwnedClass(&quot;C2&quot;, false);</span>
+<span class="fc" id="L104">		targetClass.getOwnedConnectors().add(connector);</span>
+<span class="fc" id="L105">		Property createOwnedAttribute = targetClass.createOwnedAttribute(&quot;P1&quot;, null);</span>
+
+<span class="fc" id="L107">		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);</span>
+<span class="fc" id="L108">		InternalTransactionalEditingDomain editingDomain = (InternalTransactionalEditingDomain) TransactionUtil.getEditingDomain(model);</span>
+		
+<span class="fc" id="L110">		CreateRelationshipRequest validRequest = new CreateRelationshipRequest(editingDomain, sourceClass, targetClass, type);</span>
+<span class="fc" id="L111">		List&lt;Property&gt; nestedPath = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L112">		nestedPath.add(createOwnedAttribute);</span>
+<span class="fc" id="L113">		SetNestedPathCommand setNestedPathCommand = new SetNestedPathCommand(&quot;setNestedPathCommand&quot;, connector, validRequest, nestedPath, SetNestedPathCommand.NESTED_SOURCE);</span>
+<span class="fc" id="L114">		Assert.assertTrue(&quot;The setNestedPathCommand should be executable&quot;, setNestedPathCommand.canExecute());</span>
+
+<span class="fc" id="L116">		InternalTransaction startTransaction = editingDomain.startTransaction(false, null);</span>
+<span class="fc" id="L117">		editingDomain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(setNestedPathCommand));</span>
+<span class="fc" id="L118">		startTransaction.commit();</span>
+<span class="fc" id="L119">		Object result = setNestedPathCommand.getCommandResult().getReturnValue();</span>
+<span class="fc" id="L120">		Assert.assertTrue(&quot;The result of a seNestedPathCommand should be a Connector&quot;, result instanceof Connector);</span>
+<span class="fc" id="L121">		NestedConnectorEnd nestedConnectorEnd = UMLUtil.getStereotypeApplication(utils.getSourceConnectorEnd((Connector) result), NestedConnectorEnd.class);	</span>
+<span class="fc" id="L122">		Assert.assertEquals(&quot;The new nested Path should be the one in parameter of the command&quot;,nestedPath, nestedConnectorEnd.getPropertyPath());</span>
+<span class="fc" id="L123">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

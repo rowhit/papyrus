@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CDOIntegration.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests</a> &gt; <span class="el_source">CDOIntegration.java</span></div><h1>CDOIntegration.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests;
+
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.papyrus.sysml14.sysmlPackage;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.junit.Test;
+
+/**
+ * This class is here to check that the profile will work correctly with CDO
+ * The solution to have something working is:
+ *  - adding a DummyElement in the .ecore (not in the profile)
+ *  - it will generate the correct code
+ *  - this test will catch any regression
+ *  
+ *  This is clearly not a &quot;good&quot; solution and is open to improvement, but:
+ *    - avoid changing the profile (Keep the normative file)
+ *    - avoid using/maintain a custom generator
+ *
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="nc" id="L43">public class CDOIntegration {</span>
+
+	
+	@Test
+	public void testBlock() {
+<span class="nc" id="L48">		checkCrossResourceURIs(BlocksPackage.eINSTANCE); </span>
+<span class="nc" id="L49">		checkCrossResourceURIs(sysmlPackage.eINSTANCE);		</span>
+<span class="nc" id="L50">	}</span>
+	
+	 // This method is copy-pasted from CDOUTIL (do not modify it)
+	  public static void checkCrossResourceURIs(EPackage ePackage)
+	  {
+<span class="nc" id="L55">	    TreeIterator&lt;EObject&gt; it = ePackage.eAllContents();</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">	    while (it.hasNext())</span>
+	    {
+<span class="nc" id="L58">	      EObject e = it.next();</span>
+
+<span class="nc bnc" id="L60" title="All 2 branches missed.">	      if (e instanceof EAnnotation)</span>
+	      {
+	        // we don't need to validate the structure of annotations. The applications that
+	        // define annotations will have to take what they can get
+<span class="nc" id="L64">	        it.prune();</span>
+<span class="nc" id="L65">	      }</span>
+	      else
+	      {
+<span class="nc bnc" id="L68" title="All 2 branches missed.">	        for (EObject r : e.eCrossReferences())</span>
+	        {
+<span class="nc" id="L70">	          EObject refTarget = null;</span>
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">	          if (r.eIsProxy())</span>
+	          {
+<span class="nc" id="L74">	            String msg = &quot;Package '%s' contains unresolved proxy '%s'&quot;;</span>
+<span class="nc" id="L75">	            msg = String.format(msg, ePackage.getNsURI(), ((InternalEObject)r).eProxyURI());</span>
+<span class="nc" id="L76">	            throw new IllegalStateException(msg);</span>
+	          }
+
+<span class="nc bnc" id="L79" title="All 4 branches missed.">	          if (r.eResource() != null &amp;&amp; r.eResource() != e.eResource())</span>
+	          {
+	            // It's a ref into another resource
+<span class="nc" id="L82">	            EPackage pkg = null;</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">	            if (r instanceof EClassifier)</span>
+<span class="nc" id="L84">	            {System.out.println(&quot;EClassifier&quot;);</span>
+<span class="nc" id="L85">	              refTarget = r;</span>
+<span class="nc" id="L86">	              pkg = ((EClassifier)r).getEPackage();</span>
+<span class="nc" id="L87">	            }</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">	            else if (r instanceof EStructuralFeature)</span>
+<span class="nc" id="L89">	            {System.out.println(&quot;b&quot;);</span>
+<span class="nc" id="L90">	              refTarget = r;</span>
+<span class="nc" id="L91">	              EStructuralFeature feature = (EStructuralFeature)r;</span>
+<span class="nc" id="L92">	              EClass ownerClass = (EClass)feature.eContainer();</span>
+<span class="nc" id="L93">	              pkg = ownerClass.getEPackage();</span>
+<span class="nc" id="L94">	            }</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">	            else if (r instanceof EGenericType)</span>
+<span class="nc" id="L96">	            {System.out.println(&quot;c&quot;);</span>
+<span class="nc" id="L97">	              EGenericType genType = (EGenericType)r;</span>
+<span class="nc" id="L98">	              EClassifier c = genType.getEClassifier();</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">	              if (c != null)</span>
+	              {
+<span class="nc" id="L101">	                refTarget = c;</span>
+<span class="nc" id="L102">	                pkg = c.getEPackage();</span>
+	              }
+	            }
+
+<span class="nc bnc" id="L106" title="All 2 branches missed.">	            if (pkg == null)</span>
+	            {
+<span class="nc" id="L108">	              continue;</span>
+	            }
+
+<span class="nc bnc" id="L111" title="All 2 branches missed.">	            while (pkg.getESuperPackage() != null)</span>
+	            {
+<span class="nc" id="L113">	              pkg = pkg.getESuperPackage();</span>
+	            }
+
+<span class="nc" id="L116">	            Resource eResource = refTarget.eResource();</span>
+<span class="nc" id="L117">				String resourceURI = eResource.getURI().toString();</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">	            if (!resourceURI.toString().equals(pkg.getNsURI()))</span>
+	            {
+<span class="nc" id="L120">	              String msg = &quot;URI of the resource (%s) does not match the nsURI (%s) of the top-level package;\n&quot;</span>
+	                  + &quot;this can be fixed by calling Resource.setURI(URI) after loading the packages,\n&quot;
+	                  + &quot;or by configuring a URI mapping from nsURI's to location URI's before loading the packages,\n&quot;
+	                  + &quot;and then loading them with their nsURI's&quot;;
+<span class="nc" id="L124">	              msg = String.format(msg, resourceURI, pkg.getNsURI());</span>
+<span class="nc" id="L125">	              throw new IllegalStateException(msg);</span>
+	            }
+	          }
+	        }
+	      }
+	    }
+<span class="nc" id="L131">	  }</span>
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysMLConnectorFigure.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.figure</a> &gt; <span class="el_source">SysMLConnectorFigure.java</span></div><h1>SysMLConnectorFigure.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   CEA LIST - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.common.figure;
+
+import org.eclipse.swt.graphics.Image;
+
+/**
+ * This figure is a specialization of a connector in order to overload the display of the BindingConnector display
+ * This class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.diagram.internalblock#Req_004}
+ *
+ */
+<span class="nc" id="L23">public class SysMLConnectorFigure extends org.eclipse.papyrus.uml.diagram.composite.custom.figures.ConnectorFigure {</span>
+
+	/**
+	 * The String that must display a bindingConnector
+	 */
+	protected static final String STEREOTYPE_LABEL_BINDINGCONNECTOR = &quot;equal&quot;;
+	/**
+	 * String that replace the name of the stereotype BindingConnector
+	 */
+	protected static final String BINDING_CONNECTOR = &quot;BindingConnector&quot;;
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
+	 *
+	 * @param stereotypes
+	 * @param image
+	 */
+	@Override
+	public void setStereotypeDisplay(String stereotypes, Image image) {
+<span class="nc" id="L42">		String newStereotypeString = stereotypes.replaceAll(BINDING_CONNECTOR, STEREOTYPE_LABEL_BINDINGCONNECTOR);</span>
+<span class="nc" id="L43">		super.setStereotypeDisplay(newStereotypeString, image);</span>
+<span class="nc" id="L44">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

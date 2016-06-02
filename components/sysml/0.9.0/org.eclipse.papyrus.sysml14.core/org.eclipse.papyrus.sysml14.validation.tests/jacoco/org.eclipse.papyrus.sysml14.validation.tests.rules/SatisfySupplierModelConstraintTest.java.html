@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SatisfySupplierModelConstraintTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.validation.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.validation.tests.rules</a> &gt; <span class="el_source">SatisfySupplierModelConstraintTest.java</span></div><h1>SatisfySupplierModelConstraintTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.validation.tests.rules;
+
+import java.util.List;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransaction;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.emf.validation.service.ConstraintRegistry;
+import org.eclipse.emf.validation.service.IConstraintDescriptor;
+import org.eclipse.papyrus.infra.emf.gmf.command.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.papyrus.sysml14.validation.Activator;
+import org.eclipse.papyrus.sysml14.validation.internal.utils.DiagnosticUtil;
+import org.eclipse.papyrus.uml.service.validation.internal.UMLDiagnostician;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Test on Refine One Client and One Supplier constraint
+ *
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L47">public class SatisfySupplierModelConstraintTest {</span>
+
+	public static final String CONSTRAINT_ID = &quot;constraint.satisfy.supplier&quot;; //$NON-NLS-1$
+
+	/**
+	 * Test method for the constraint
+	 * 
+	 * @throws InterruptedException
+	 * @throws RollbackException
+	 */
+	@Test
+	public void checkRuleValidation() throws InterruptedException, RollbackException {
+<span class="fc" id="L59">		ResourceSetImpl resourceSet = new ResourceSetImpl();</span>
+<span class="fc" id="L60">		Model model = SysMLResource.createSysMLModel(resourceSet);</span>
+<span class="fc" id="L61">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());	</span>
+		
+<span class="fc" id="L63">		Abstraction satisfyValid = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L64">		model.getPackagedElements().add(satisfyValid);</span>
+<span class="fc" id="L65">		Class requirementSupplier = model.createOwnedClass(&quot;supplier&quot;, false);</span>
+<span class="fc" id="L66">		StereotypeApplicationHelper.getInstance(null).applyStereotype(requirementSupplier, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L67">		satisfyValid.getSuppliers().add(requirementSupplier);</span>
+<span class="fc" id="L68">		StereotypeApplicationHelper.getInstance(null).applyStereotype(satisfyValid, RequirementsPackage.eINSTANCE.getSatisfy());</span>
+			
+<span class="fc" id="L70">		Abstraction satisfyInvalid = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L71">		model.getPackagedElements().add(satisfyInvalid);</span>
+<span class="fc" id="L72">		satisfyInvalid.getSuppliers().add(model.createOwnedClass(&quot;fakesupplier&quot;, false));</span>
+<span class="fc" id="L73">		StereotypeApplicationHelper.getInstance(null).applyStereotype(satisfyInvalid, RequirementsPackage.eINSTANCE.getSatisfy());		</span>
+
+<span class="fc" id="L75">		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);</span>
+<span class="fc" id="L76">		InternalTransactionalEditingDomain editingDomain = (InternalTransactionalEditingDomain) TransactionUtil.getEditingDomain(model);</span>
+		
+<span class="fc" id="L78">		final ValidateModelCommand validateModelCommand = new ValidateModelCommand(model, new UMLDiagnostician());</span>
+		
+<span class="fc" id="L80">		InternalTransaction startTransaction = editingDomain.startTransaction(false, null);</span>
+<span class="fc" id="L81">		editingDomain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(validateModelCommand));</span>
+<span class="fc" id="L82">		startTransaction.commit();</span>
+		// check that the constraint exist
+<span class="fc" id="L84">		ConstraintRegistry instance = ConstraintRegistry.getInstance();</span>
+<span class="fc" id="L85">		IConstraintDescriptor descriptor = instance.getDescriptor(Activator.PLUGIN_ID, CONSTRAINT_ID);</span>
+<span class="fc" id="L86">		Assert.assertNotNull(&quot;Constraint is missing&quot;, descriptor);</span>
+
+<span class="fc" id="L88">		List&lt;Diagnostic&gt; constraintDiagnosticList = DiagnosticUtil.findDiagnosticBySource(validateModelCommand.getDiagnostic(), Activator.PLUGIN_ID + &quot;.&quot; + CONSTRAINT_ID);</span>
+				
+<span class="fc" id="L90">		Assert.assertEquals(&quot;The rule &quot;+CONSTRAINT_ID+&quot; should not trigger an issue for this use case &quot;, 0, DiagnosticUtil.filterDiagnosticsByElement(constraintDiagnosticList, satisfyValid).size());</span>
+<span class="fc" id="L91">		Assert.assertEquals(&quot;The rule &quot;+CONSTRAINT_ID+&quot; should trigger an issue for this use case &quot;, 1, DiagnosticUtil.filterDiagnosticsByElement(constraintDiagnosticList, satisfyInvalid).size());		</span>
+<span class="fc" id="L92">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

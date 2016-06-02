@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SysmlNattableCreateMenu.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.nattable.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.nattable.ui.handlers</a> &gt; <span class="el_source">SysmlNattableCreateMenu.java</span></div><h1>SysmlNattableCreateMenu.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Juan Cadavid (CEA LIST) juan.cadavid@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.nattable.ui.handlers;
+
+import org.eclipse.papyrus.infra.nattable.utils.NattableWidgetPropertyTester;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.menus.IContributionRoot;
+import org.eclipse.ui.services.IServiceLocator;
+
+/**
+ * Menu contributions for the creation of Sysml elements from the Nattable editor
+ */
+<span class="nc" id="L23">public class SysmlNattableCreateMenu extends AbstractCreateSysmlChildMenu {</span>
+
+<span class="nc" id="L25">	private NattableWidgetPropertyTester tester = new NattableWidgetPropertyTester();</span>
+
+	@Override
+	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
+<span class="nc" id="L29">		IWorkbenchPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">		if (tester.test(part, NattableWidgetPropertyTester.IS_NATTABLE_WIDGET, null, Boolean.TRUE)) {</span>
+<span class="nc" id="L31">			super.createContributionItems(serviceLocator, additions);</span>
+		}
+<span class="nc" id="L33">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

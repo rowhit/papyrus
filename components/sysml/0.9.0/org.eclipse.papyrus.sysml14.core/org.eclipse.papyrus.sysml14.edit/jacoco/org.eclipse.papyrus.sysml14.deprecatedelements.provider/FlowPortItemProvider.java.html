@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FlowPortItemProvider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.edit</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.deprecatedelements.provider</a> &gt; <span class="el_source">FlowPortItemProvider.java</span></div><h1>FlowPortItemProvider.java</h1><pre class="source lang-java linenums">/**
+ * Copyright (c) 2015 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *   Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ * 
+ */
+package org.eclipse.papyrus.sysml14.deprecatedelements.provider;
+
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort;
+
+import org.eclipse.papyrus.sysml14.portsandflows.FlowDirection;
+
+import org.eclipse.papyrus.sysml14.provider.SysMLEditPlugin;
+
+/**
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort} object.
+ * &lt;!-- begin-user-doc --&gt;
+ * &lt;!-- end-user-doc --&gt;
+ * @generated
+ */
+public class FlowPortItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	public FlowPortItemProvider(AdapterFactory adapterFactory) {
+<span class="nc" id="L63">		super(adapterFactory);</span>
+<span class="nc" id="L64">	}</span>
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public List&lt;IItemPropertyDescriptor&gt; getPropertyDescriptors(Object object) {
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		if (itemPropertyDescriptors == null) {</span>
+<span class="nc" id="L75">			super.getPropertyDescriptors(object);</span>
+
+<span class="nc" id="L77">			addBase_PortPropertyDescriptor(object);</span>
+<span class="nc" id="L78">			addDirectionPropertyDescriptor(object);</span>
+<span class="nc" id="L79">			addIsAtomicPropertyDescriptor(object);</span>
+		}
+<span class="nc" id="L81">		return itemPropertyDescriptors;</span>
+	}
+
+	/**
+	 * This adds a property descriptor for the Base Port feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addBase_PortPropertyDescriptor(Object object) {
+<span class="nc" id="L91">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L92">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L93">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L94">				 getResourceLocator(),</span>
+<span class="nc" id="L95">				 getString(&quot;_UI_FlowPort_base_Port_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L96">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_FlowPort_base_Port_feature&quot;, &quot;_UI_FlowPort_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L97">				 DeprecatedelementsPackage.Literals.FLOW_PORT__BASE_PORT,</span>
+<span class="nc" id="L98">				 true,</span>
+<span class="nc" id="L99">				 false,</span>
+<span class="nc" id="L100">				 true,</span>
+<span class="nc" id="L101">				 null,</span>
+<span class="nc" id="L102">				 null,</span>
+<span class="nc" id="L103">				 null));</span>
+<span class="nc" id="L104">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Direction feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addDirectionPropertyDescriptor(Object object) {
+<span class="nc" id="L113">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L114">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L115">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L116">				 getResourceLocator(),</span>
+<span class="nc" id="L117">				 getString(&quot;_UI_FlowPort_direction_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L118">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_FlowPort_direction_feature&quot;, &quot;_UI_FlowPort_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L119">				 DeprecatedelementsPackage.Literals.FLOW_PORT__DIRECTION,</span>
+<span class="nc" id="L120">				 true,</span>
+<span class="nc" id="L121">				 false,</span>
+<span class="nc" id="L122">				 false,</span>
+<span class="nc" id="L123">				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,</span>
+<span class="nc" id="L124">				 null,</span>
+<span class="nc" id="L125">				 null));</span>
+<span class="nc" id="L126">	}</span>
+
+	/**
+	 * This adds a property descriptor for the Is Atomic feature.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	protected void addIsAtomicPropertyDescriptor(Object object) {
+<span class="nc" id="L135">		itemPropertyDescriptors.add</span>
+<span class="nc" id="L136">			(createItemPropertyDescriptor</span>
+<span class="nc" id="L137">				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),</span>
+<span class="nc" id="L138">				 getResourceLocator(),</span>
+<span class="nc" id="L139">				 getString(&quot;_UI_FlowPort_isAtomic_feature&quot;), //$NON-NLS-1$</span>
+<span class="nc" id="L140">				 getString(&quot;_UI_PropertyDescriptor_description&quot;, &quot;_UI_FlowPort_isAtomic_feature&quot;, &quot;_UI_FlowPort_type&quot;), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+<span class="nc" id="L141">				 DeprecatedelementsPackage.Literals.FLOW_PORT__IS_ATOMIC,</span>
+<span class="nc" id="L142">				 true,</span>
+<span class="nc" id="L143">				 false,</span>
+<span class="nc" id="L144">				 false,</span>
+<span class="nc" id="L145">				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,</span>
+<span class="nc" id="L146">				 null,</span>
+<span class="nc" id="L147">				 null));</span>
+<span class="nc" id="L148">	}</span>
+
+	/**
+	 * This returns FlowPort.gif.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+<span class="nc" id="L158">		return overlayImage(object, getResourceLocator().getImage(&quot;full/obj16/FlowPort&quot;)); //$NON-NLS-1$</span>
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+<span class="nc" id="L169">		FlowDirection labelValue = ((FlowPort)object).getDirection();</span>
+<span class="nc bnc" id="L170" title="All 2 branches missed.">		String label = labelValue == null ? null : labelValue.toString();</span>
+<span class="nc bnc" id="L171" title="All 4 branches missed.">		return label == null || label.length() == 0 ?</span>
+<span class="nc" id="L172">			getString(&quot;_UI_FlowPort_type&quot;) : //$NON-NLS-1$</span>
+<span class="nc" id="L173">			getString(&quot;_UI_FlowPort_type&quot;) + &quot; &quot; + label; //$NON-NLS-1$ //$NON-NLS-2$</span>
+	}
+	
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+<span class="nc" id="L186">		updateChildren(notification);</span>
+
+<span class="nc bnc" id="L188" title="All 2 branches missed.">		switch (notification.getFeatureID(FlowPort.class)) {</span>
+			case DeprecatedelementsPackage.FLOW_PORT__DIRECTION:
+			case DeprecatedelementsPackage.FLOW_PORT__IS_ATOMIC:
+<span class="nc" id="L191">				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));</span>
+<span class="nc" id="L192">				return;</span>
+		}
+<span class="nc" id="L194">		super.notifyChanged(notification);</span>
+<span class="nc" id="L195">	}</span>
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection&lt;Object&gt; newChildDescriptors, Object object) {
+<span class="nc" id="L206">		super.collectNewChildDescriptors(newChildDescriptors, object);</span>
+<span class="nc" id="L207">	}</span>
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * &lt;!-- begin-user-doc --&gt;
+	 * &lt;!-- end-user-doc --&gt;
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+<span class="nc" id="L217">		return SysMLEditPlugin.INSTANCE;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
