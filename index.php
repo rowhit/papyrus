@@ -187,7 +187,7 @@
                     <p class="text-justify">As part of <a href="https://www.polarsys.org/" class="white-link">Polarsys</a> (the Industrial Working Group of Eclipse), Papyrus has become a <a href="https://www.polarsys.org/solutions/papyrus" class="white-link">PolarSys Solution</a>.
                     </p>
                     <p class="text-justify">
-                        In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industrial Consortium</a> has been setup.
+                        In addition, in order to federate the industrial needs and efforts on MBE, a <a href="https://www.eclipse.org/org/workinggroups/papyrusic_charter.php" class="white-link">Papyrus Industry Consortium</a> has been setup.
                     </p>
                     <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes.
                     </p>
