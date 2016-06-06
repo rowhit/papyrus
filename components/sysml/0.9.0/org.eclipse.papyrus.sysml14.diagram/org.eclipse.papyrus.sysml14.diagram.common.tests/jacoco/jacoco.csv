@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.diagram.common.tests,org.eclipse.papyrus.sysml14.diagram.common.tests.resources,SysML14ClassDiagramElementTypesExtensionTest,0,189,2,16,0,43,2,12,0,5
+org.eclipse.papyrus.sysml14.diagram.common.tests,org.eclipse.papyrus.sysml14.diagram.common.tests.resources,SysMLDiUMLTest,26,98,1,9,5,23,2,7,1,3
+org.eclipse.papyrus.sysml14.diagram.common.tests,org.eclipse.papyrus.sysml14.diagram.common.tests.resources,SysML14CompositeDiagramElementTypesExtensionTest,0,189,2,16,0,43,2,12,0,5

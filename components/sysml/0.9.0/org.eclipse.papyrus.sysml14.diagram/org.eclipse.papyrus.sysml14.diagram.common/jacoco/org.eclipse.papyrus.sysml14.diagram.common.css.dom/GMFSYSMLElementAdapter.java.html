@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GMFSYSMLElementAdapter.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.css.dom</a> &gt; <span class="el_source">GMFSYSMLElementAdapter.java</span></div><h1>GMFSYSMLElementAdapter.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre francois.le-fevre@cea.fr  - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.css.dom;
+
+
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
+import org.eclipse.gmf.runtime.emf.type.core.ISpecializationType;
+import org.eclipse.gmf.runtime.notation.BasicCompartment;
+import org.eclipse.gmf.runtime.notation.DecorationNode;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.css.dom.GMFElementAdapter;
+import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine;
+import org.eclipse.papyrus.infra.tools.util.ListHelper;
+import org.eclipse.papyrus.sysml14.diagram.common.css.helper.CSSDOMSYSMLSemanticElementHelper;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.util.DeprecatedElementUtil;
+import org.eclipse.papyrus.uml.diagram.common.stereotype.display.helper.StereotypeDisplayConstant;
+import org.eclipse.papyrus.uml.diagram.common.stereotype.display.helper.StereotypeDisplayUtil;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+
+/**
+ * DOM Element Adapter for SYSML Elements
+ *
+ * Supports applied stereotypes and stereotype properties
+ *
+ * @author Francois Le Fevre
+ *
+ */
+public class GMFSYSMLElementAdapter extends GMFElementAdapter {
+
+
+	/**
+	 * Name of the CSS Simple Selector to match on the Stereotype Compartment Shape
+	 */
+	private static final String STEREOTYPE_COMMENT = &quot;StereotypeComment&quot;; //$NON-NLS-1$
+
+	/** The stereotype helper. */
+<span class="nc" id="L59">	public final StereotypeDisplayUtil stereotypeHelper = StereotypeDisplayUtil.getInstance();</span>
+
+	/** The Constant IS_CONSTRAINT. */
+	private static final String IS_CONSTRAINT = &quot;isConstraint&quot;; //$NON-NLS-1$
+
+	/** The Constant IS_PART. */
+	private static final String IS_PART = &quot;isPart&quot;; //$NON-NLS-1$
+
+	/** The Constant IS_REFERENCE. */
+	private static final String IS_REFERENCE = &quot;isReference&quot;; //$NON-NLS-1$	
+
+	/** The Constant APPLIED_STEREOTYPES_PROPERTY. */
+	public static final String APPLIED_STEREOTYPES_PROPERTY = &quot;appliedStereotypes&quot;; //$NON-NLS-1$
+
+	/** The Constant DEPRECATED. */
+	public static final String DEPRECATED = &quot;deprecated&quot;; //$NON-NLS-1$
+	
+
+	/**
+	 * The CSS Separator for qualifiers, when we must use CSS ID
+	 * When we can use CSS String, we use the standard UML &quot;::&quot; qualifier separator
+	 *
+	 * NOTE: Separator &quot;__&quot; does not work
+	 */
+	public static final String QUALIFIER_SEPARATOR = &quot;--&quot;; //$NON-NLS-1$
+
+	public GMFSYSMLElementAdapter(View view, ExtendedCSSEngine engine) {
+<span class="nc" id="L86">		super(view, engine);</span>
+<span class="nc" id="L87">		helper = CSSDOMSYSMLSemanticElementHelper.getInstance();</span>
+<span class="nc" id="L88">	}</span>
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * Applied Stereotypes are manipulated as DOM Attributes
+	 */
+	@Override
+	protected String doGetAttribute(String attr) {
+<span class="nc" id="L97">		String parentValue = super.doGetAttribute(attr);</span>
+
+<span class="nc bnc" id="L99" title="All 2 branches missed.">		if (parentValue != null) {</span>
+<span class="nc" id="L100">			return parentValue;</span>
+		}
+
+		// get stereotype Label attribute
+<span class="nc bnc" id="L104" title="All 2 branches missed.">		if (stereotypeHelper.isStereotypeLabel(semanticElement)) {</span>
+<span class="nc" id="L105">			String value = getStereotypeLabelAttribute(attr);</span>
+<span class="nc bnc" id="L106" title="All 4 branches missed.">			if (value != null &amp;&amp; !value.isEmpty()) {</span>
+<span class="nc" id="L107">				return value;</span>
+			}
+		}
+
+		// get stereotype Compartment attribute
+<span class="nc bnc" id="L112" title="All 4 branches missed.">		if (stereotypeHelper.isStereotypeCompartment(semanticElement) || stereotypeHelper.isStereotypeBrace(semanticElement)) {</span>
+<span class="nc" id="L113">			String value = getStereotypeCompartmentAttribute(attr);</span>
+<span class="nc bnc" id="L114" title="All 4 branches missed.">			if (value != null &amp;&amp; !value.isEmpty()) {</span>
+<span class="nc" id="L115">				return value;</span>
+			}
+		}
+
+		// get stereotype Property attribute
+<span class="nc bnc" id="L120" title="All 4 branches missed.">		if (stereotypeHelper.isStereotypeProperty(semanticElement) || stereotypeHelper.isStereotypeBraceProperty(semanticElement)) {</span>
+<span class="nc" id="L121">			String value = getStereotypePropertyAttribute(attr);</span>
+<span class="nc bnc" id="L122" title="All 4 branches missed.">			if (value != null &amp;&amp; !value.isEmpty()) {</span>
+<span class="nc" id="L123">				return value;</span>
+			}
+		}
+
+<span class="nc bnc" id="L127" title="All 2 branches missed.">		if (semanticElement instanceof Element) {</span>
+
+			// Applied stereotypes
+<span class="nc" id="L130">			Element currentElement = (Element) semanticElement;</span>
+
+			// Get applied STereotypes Attributes
+<span class="nc bnc" id="L133" title="All 2 branches missed.">			if (APPLIED_STEREOTYPES_PROPERTY.equals(attr)) {</span>
+<span class="nc" id="L134">				List&lt;String&gt; appliedStereotypes = new LinkedList&lt;String&gt;();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">				for (Stereotype stereotype : currentElement.getAppliedStereotypes()) {</span>
+<span class="nc" id="L136">					appliedStereotypes.add(stereotype.getName());</span>
+<span class="nc" id="L137">					appliedStereotypes.add(stereotype.getQualifiedName());</span>
+				}
+<span class="nc bnc" id="L139" title="All 2 branches missed.">				if (!appliedStereotypes.isEmpty()) {</span>
+<span class="nc" id="L140">					return ListHelper.deepToString(appliedStereotypes, CSS_VALUES_SEPARATOR);</span>
+				}
+			}
+<span class="nc bnc" id="L143" title="All 2 branches missed.">			for (EObject stereotypeApplication : currentElement.getStereotypeApplications()) {</span>
+<span class="nc" id="L144">				EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(attr);</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">				if (feature != null) {</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">					if (feature.isMany()) {</span>
+<span class="nc" id="L147">						List&lt;?&gt; values = (List&lt;?&gt;) stereotypeApplication.eGet(feature);</span>
+<span class="nc" id="L148">						List&lt;String&gt; cssValues = new LinkedList&lt;String&gt;();</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">						for (Object value : values) {</span>
+<span class="nc" id="L150">							cssValues.add(getCSSValue(feature, value));</span>
+						}
+<span class="nc" id="L152">						return ListHelper.deepToString(cssValues, CSS_VALUES_SEPARATOR);</span>
+					} else {
+<span class="nc" id="L154">						Object value = stereotypeApplication.eGet(feature);</span>
+<span class="nc" id="L155">						return getCSSValue(feature, value);</span>
+					}
+				}
+			}
+
+<span class="nc bnc" id="L160" title="All 2 branches missed.">			if (attr.contains(QUALIFIER_SEPARATOR)) {</span>
+<span class="nc" id="L161">				List&lt;String&gt; qualifiers = ListHelper.asList(attr.split(QUALIFIER_SEPARATOR)); // Writable list</span>
+<span class="nc" id="L162">				String propertyName = qualifiers.remove(qualifiers.size() - 1); // Last element is the property name</span>
+				// Remaining strings can be used to build the Stereotype's qualified name
+<span class="nc" id="L164">				String stereotypeName = ListHelper.deepToString(qualifiers, &quot;::&quot;); //$NON-NLS-1$</span>
+<span class="nc" id="L165">				Stereotype appliedStereotype = currentElement.getAppliedStereotype(stereotypeName);</span>
+<span class="nc bnc" id="L166" title="All 2 branches missed.">				if (appliedStereotype != null) {</span>
+<span class="nc" id="L167">					EObject stereotypeApplication = currentElement.getStereotypeApplication(appliedStereotype);</span>
+<span class="nc" id="L168">					EStructuralFeature feature = stereotypeApplication.eClass().getEStructuralFeature(propertyName);</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">					if (feature != null) {</span>
+<span class="nc" id="L170">						Object value = stereotypeApplication.eGet(feature);</span>
+<span class="nc" id="L171">						return getCSSValue(feature, value);</span>
+					}
+				}
+			}
+			// manage of isConstraint=true attribute for Property
+<span class="nc bnc" id="L176" title="All 4 branches missed.">			if (IS_CONSTRAINT.equals(attr) &amp;&amp; semanticElement instanceof Property) {</span>
+<span class="nc" id="L177">				IElementMatcher constraint = ((ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_CONSTRAINTPROPERTY)).getMatcher();</span>
+<span class="nc" id="L178">				return String.valueOf(constraint.matches((Property) semanticElement));</span>
+			}
+			// manage of isPart=true attribute for Property
+<span class="nc bnc" id="L181" title="All 4 branches missed.">			if (IS_PART.equals(attr) &amp;&amp; semanticElement instanceof Property) {</span>
+<span class="nc" id="L182">				IElementMatcher part = ((ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_PART)).getMatcher();</span>
+<span class="nc" id="L183">				return String.valueOf(part.matches((Property) semanticElement));</span>
+			}
+			// manage of isReference=true attribute for Property
+<span class="nc bnc" id="L186" title="All 4 branches missed.">			if (IS_REFERENCE.equals(attr) &amp;&amp; semanticElement instanceof Property) {</span>
+<span class="nc" id="L187">				IElementMatcher reference = ((ISpecializationType) ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_REFERENCE)).getMatcher();</span>
+<span class="nc" id="L188">				return String.valueOf(reference.matches((Property) semanticElement));</span>
+			}
+			
+<span class="nc bnc" id="L191" title="All 2 branches missed.">			if(DEPRECATED.equals(attr)){</span>
+<span class="nc" id="L192">				return String.valueOf(DeprecatedElementUtil.isDeprecatedElement(semanticElement));</span>
+			}			
+		}
+<span class="nc" id="L195">		return null;</span>
+	}
+
+	/**
+	 * Retrieve the Matching String Value for the StereotypeCompartment Element
+	 *
+	 * @param attr
+	 *            Attribute of the String to match with
+	 * @return The matching value for this Attribute
+	 */
+	protected String getStereotypeCompartmentAttribute(String attr) {
+<span class="nc bnc" id="L206" title="All 2 branches missed.">		if (StereotypeDisplayConstant.STEREOTYPE_COMPARTMENT_NAME.equals(attr)) {</span>
+
+<span class="nc" id="L208">			BasicCompartment propertyCompartment = (BasicCompartment) semanticElement;</span>
+<span class="nc" id="L209">			return stereotypeHelper.getName(propertyCompartment);</span>
+
+		}
+<span class="nc" id="L212">		return &quot;&quot;;//$NON-NLS-1$</span>
+	}
+
+	/**
+	 * Retrieve the Matching String Value for the StereotypeCompartment Element
+	 *
+	 * @param attr
+	 *            Attribute of the String to match with
+	 * @return The matching value for this Attribute
+	 */
+	protected String getStereotypePropertyAttribute(String attr) {
+		// CSS can match property level
+<span class="nc bnc" id="L224" title="All 2 branches missed.">		if (StereotypeDisplayConstant.STEREOTYPE_PROPERTY_NAME.equals(attr)) {</span>
+
+<span class="nc" id="L226">			DecorationNode propertyLabel = (DecorationNode) semanticElement;</span>
+<span class="nc bnc" id="L227" title="All 2 branches missed.">			if (propertyLabel.getElement() instanceof Property) {</span>
+<span class="nc" id="L228">				Property prop = (Property) propertyLabel.getElement();</span>
+<span class="nc" id="L229">				return prop.getName();</span>
+			}
+			// CSS can match Container Name
+<span class="nc bnc" id="L232" title="All 2 branches missed.">		} else if (StereotypeDisplayConstant.STEREOTYPE_COMPARTMENT_NAME.equals(attr)) {</span>
+
+<span class="nc" id="L234">			EObject propertyCompartment = ((DecorationNode) semanticElement).eContainer();</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">			if (stereotypeHelper.isStereotypeCompartment(propertyCompartment)) {</span>
+
+<span class="nc" id="L237">				return stereotypeHelper.getName((DecorationNode) propertyCompartment);</span>
+			}
+
+		}
+<span class="nc" id="L241">		return &quot;&quot;;//$NON-NLS-1$</span>
+
+	}
+
+	/**
+	 * Get the matching Value of the Attribute
+	 *
+	 * @param attr
+	 *            Attribute of the String to match with
+	 * @return The matching value for this Attribute
+	 */
+	protected String getStereotypeLabelAttribute(String attr) {
+
+<span class="nc bnc" id="L254" title="All 2 branches missed.">		if (StereotypeDisplayConstant.STEREOTYPE_LABEL_NAME.equals(attr)) {</span>
+<span class="nc" id="L255">			DecorationNode label = (DecorationNode) semanticElement;</span>
+<span class="nc" id="L256">			return stereotypeHelper.getName(label);</span>
+		}
+
+<span class="nc bnc" id="L259" title="All 4 branches missed.">		if (KIND.equals(attr) &amp;&amp; stereotypeHelper.isStereotypeLabel(semanticElement)) {</span>
+<span class="nc" id="L260">			return StereotypeDisplayConstant.STEREOTYPE_LABEL_TYPE;</span>
+		}
+<span class="nc" id="L262">		return null;</span>
+	}
+
+	@Override
+	protected String getCSSValue(EStructuralFeature feature, Object value) {
+<span class="nc bnc" id="L267" title="All 4 branches missed.">		if (feature instanceof EReference &amp;&amp; value instanceof NamedElement) {</span>
+<span class="nc" id="L268">			String name = ((NamedElement) value).getName();</span>
+<span class="nc bnc" id="L269" title="All 4 branches missed.">			return name == null || name.isEmpty() ? EMPTY_VALUE : name; // Bug 467716: Never return null or empty string if the value is not null</span>
+		}
+<span class="nc" id="L271">		return super.getCSSValue(feature, value);</span>
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.dom.GMFElementAdapter#getLocalName()
+	 *
+	 * @return The Local name for the CSS matching.
+	 */
+	@Override
+	public String getLocalName() {
+		// In case of StereotypeComment type, the selector should match on the Stereotype Comment.
+<span class="nc bnc" id="L282" title="All 4 branches missed.">		if (localName == null &amp;&amp; stereotypeHelper.isStereotypeComment(getNotationElement())) {</span>
+<span class="nc" id="L283">			return STEREOTYPE_COMMENT;</span>
+		}
+<span class="nc" id="L285">		return super.getLocalName();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

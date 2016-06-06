@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ParametricDropEditPolicy.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.parametric</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.parametric.policy</a> &gt; <span class="el_source">ParametricDropEditPolicy.java</span></div><h1>ParametricDropEditPolicy.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.parametric.policy;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.papyrus.infra.gmfdiag.dnd.policy.CustomizableDropEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.dnd.strategy.DefaultDropStrategy;
+import org.eclipse.papyrus.infra.gmfdiag.dnd.strategy.DropStrategy;
+import org.eclipse.papyrus.sysml14.diagram.parametric.dnd.IParametricDropStrategy;
+
+/**
+ * 
+ * This class is used to associate adequate drop policy to Constraint property and parameter.
+ * 
+ */
+
+public class ParametricDropEditPolicy extends CustomizableDropEditPolicy {
+
+	/**
+	 * Constructor.
+	 *
+	 * @param defaultDropEditPolicy
+	 * @param defaultCreationEditPolicy
+	 */
+	public ParametricDropEditPolicy(EditPolicy defaultDropEditPolicy, EditPolicy defaultCreationEditPolicy) {
+<span class="nc" id="L42">		super(defaultDropEditPolicy, defaultCreationEditPolicy);</span>
+<span class="nc" id="L43">	}</span>
+
+	/**
+	 * Returns a map of DropStrategy / Command, for each Strategy which can handle
+	 * the given request. All the returned commands are executable. The map may be empty.
+	 *
+	 * @param request
+	 * @return
+	 */
+	@Override
+	protected Map&lt;DropStrategy, Command&gt; findStrategies(Request request) {
+<span class="nc" id="L54">		Map&lt;DropStrategy, Command&gt; matchingStrategies = super.findStrategies(request);</span>
+
+		// there is only parametric strategy and default
+		// remove default
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		if (matchingStrategies.size() == 2) {</span>
+			// when there is 2 strategies, the default is always the last
+<span class="nc" id="L60">			Object[] matchingStrategiesArray = matchingStrategies.keySet().toArray();</span>
+<span class="nc bnc" id="L61" title="All 4 branches missed.">			if (matchingStrategiesArray[0] instanceof IParametricDropStrategy &amp;&amp; matchingStrategiesArray[1] instanceof DefaultDropStrategy) {</span>
+<span class="nc" id="L62">					Map&lt;DropStrategy, Command&gt; parametricMatchingStrategies = new HashMap&lt;DropStrategy, Command&gt;();</span>
+<span class="nc" id="L63">					DropStrategy dropStrategyKey = (DropStrategy) matchingStrategiesArray[0];</span>
+<span class="nc" id="L64">					parametricMatchingStrategies.put(dropStrategyKey, matchingStrategies.get(dropStrategyKey));</span>
+<span class="nc" id="L65">					return parametricMatchingStrategies;</span>
+			}
+		}
+<span class="nc" id="L68">		return matchingStrategies;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

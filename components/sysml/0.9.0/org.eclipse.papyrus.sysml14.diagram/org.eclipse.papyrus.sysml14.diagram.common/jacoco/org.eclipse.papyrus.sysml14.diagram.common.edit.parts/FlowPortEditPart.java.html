@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FlowPortEditPart.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.edit.parts</a> &gt; <span class="el_source">FlowPortEditPart.java</span></div><h1>FlowPortEditPart.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.edit.parts;
+
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort;
+import org.eclipse.papyrus.sysml14.diagram.common.Activator;
+import org.eclipse.papyrus.sysml14.diagram.common.figure.FlowPortFigure;
+import org.eclipse.papyrus.sysml14.diagram.common.locator.FixedPortPositionLocator;
+import org.eclipse.papyrus.uml.diagram.common.figure.node.AffixedNamedElementFigure;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * This class implements an edit part for FlowPort represented as border items.
+ */
+public class FlowPortEditPart extends org.eclipse.papyrus.uml.diagram.common.editparts.AroundBorderItemEditPart {
+
+	private FlowPortFigure aprimaryShape;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param view
+	 */
+	public FlowPortEditPart(View view) {
+<span class="nc" id="L42">		super(view);</span>
+<span class="nc" id="L43">	}</span>
+
+	@Override
+	public AffixedNamedElementFigure getPrimaryShape() {
+<span class="nc" id="L47">		return (FlowPortFigure) aprimaryShape;</span>
+	}
+	
+	@Override
+	protected IFigure createNodeShape() {
+<span class="nc" id="L52">		aprimaryShape = new FlowPortFigure();</span>
+<span class="nc" id="L53">		return aprimaryShape;</span>
+	}
+
+	
+	@Override
+	public IBorderItemLocator getNewBorderItemLocator(IFigure mainFigure) {
+<span class="nc" id="L59">		org.eclipse.papyrus.uml.diagram.common.locator.PortPositionLocator portPositionLocator= new FixedPortPositionLocator(mainFigure, PositionConstants.NONE);</span>
+<span class="nc" id="L60">		portPositionLocator.setBorderItemOffset(0);</span>
+<span class="nc" id="L61">		return portPositionLocator;</span>
+	}
+	
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.RoundedBorderNamedElementEditPart#refreshVisuals()
+	 *
+	 */
+	@Override
+	protected void refreshVisuals() {
+<span class="nc" id="L70">		super.refreshVisuals();</span>
+<span class="nc" id="L71">		Element element = (Element) resolveSemanticElement();</span>
+<span class="nc" id="L72">		FlowPort flowPort = UMLUtil.getStereotypeApplication(element, FlowPort.class);</span>
+		
+<span class="nc" id="L74">		Image image = new Activator().getFlowPortImage(flowPort, getBorderItemLocator().getCurrentSideOfParent());</span>
+<span class="nc" id="L75">		aprimaryShape.setImage(image);</span>
+<span class="nc" id="L76">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

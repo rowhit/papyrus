@@ -1,0 +1,4 @@
+org.eclipse.papyrus.sysml14.validation
+org.eclipse.papyrus.sysml14.validation.internal.utils
+org.eclipse.papyrus.sysml14.validation.rules
+org.eclipse.papyrus.sysml14.validation.selectors

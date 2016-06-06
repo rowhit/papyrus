@@ -1,0 +1,7 @@
+org.eclipse.papyrus.sysml14.diagram.parametric
+org.eclipse.papyrus.sysml14.diagram.parametric.dnd
+org.eclipse.papyrus.sysml14.diagram.parametric.edit.part
+org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory
+org.eclipse.papyrus.sysml14.diagram.parametric.locator
+org.eclipse.papyrus.sysml14.diagram.parametric.policy
+org.eclipse.papyrus.sysml14.diagram.parametric.provider

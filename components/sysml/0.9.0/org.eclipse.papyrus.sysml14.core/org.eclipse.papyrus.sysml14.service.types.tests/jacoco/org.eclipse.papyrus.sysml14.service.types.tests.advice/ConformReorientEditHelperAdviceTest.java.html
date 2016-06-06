@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConformReorientEditHelperAdviceTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests.advice</a> &gt; <span class="el_source">ConformReorientEditHelperAdviceTest.java</span></div><h1>ConformReorientEditHelperAdviceTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.tests.advice;
+
+import java.util.Map;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
+import org.eclipse.papyrus.infra.types.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.types.core.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.sysml14.modelelements.ModelelementsPackage;
+import org.eclipse.papyrus.sysml14.service.types.advice.ConformReorientEditHelperAdvice;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * Test class for conform creation
+ * This class verifies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_001}
+ */
+<span class="fc" id="L41">public class ConformReorientEditHelperAdviceTest {</span>
+
+	@BeforeClass
+	public static void loadSysml14Definition() {
+<span class="fc" id="L45">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L46">		Map&lt;String, Map&lt;String, ElementTypeSetConfiguration&gt;&gt; elementTypeSetConfigurations = instance.getElementTypeSetConfigurations();</span>
+<span class="fc" id="L47">		Map&lt;String, ElementTypeSetConfiguration&gt; map = elementTypeSetConfigurations.get(&quot;org.eclipse.papyrus.infra.services.edit.TypeContext&quot;);</span>
+<span class="fc" id="L48">		ElementTypeSetConfiguration elementTypeSetConfiguration = map.get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet&quot;);</span>
+<span class="fc" id="L49">		Assert.assertNotNull(&quot;The SysML 1.4 element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+
+<span class="fc" id="L51">	}</span>
+
+	/**
+	 * A Class with the stereotype Viewpoint
+	 */
+	private org.eclipse.uml2.uml.Class classStereotypeViewpoint;
+
+	/**
+	 * A Class with the stereotype View
+	 */
+	private org.eclipse.uml2.uml.Class classStereotypeView;
+
+	/**
+	 * a class without stereotype
+	 */
+	private org.eclipse.uml2.uml.Class notStereotypeClass;
+
+	/**
+	 * the link conform
+	 */
+	private Abstraction conformLink;
+
+	/**
+	 * A Class with the stereotype Viewpoint to test re-orient
+	 */
+	private Class classStereotypeView2;
+
+	/**
+	 * A Class with the stereotype View to test re-orient
+	 */
+	private Class classStereotypeViewpoint2;
+
+	@Before
+	public void setUp() {
+		// Prepare test
+<span class="fc" id="L86">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L87">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+<span class="fc" id="L88">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+<span class="fc" id="L89">		classStereotypeViewpoint = model.createOwnedClass(&quot;classStereotypeViewpoint&quot;, false);</span>
+<span class="fc" id="L90">		stereotypeApplicationHelper.applyStereotype(classStereotypeViewpoint, ModelelementsPackage.eINSTANCE.getViewpoint());</span>
+<span class="fc" id="L91">		classStereotypeView = model.createOwnedClass(&quot;classStereotypeView&quot;, false);</span>
+<span class="fc" id="L92">		stereotypeApplicationHelper.applyStereotype(classStereotypeView, ModelelementsPackage.eINSTANCE.getView());</span>
+
+		// class not sterotyped
+<span class="fc" id="L95">		notStereotypeClass = model.createOwnedClass(&quot;notStereotypeClass&quot;, false);</span>
+
+		// creation of the conform link
+<span class="fc" id="L98">		conformLink = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L99">		model.getPackagedElements().add(conformLink);</span>
+<span class="fc" id="L100">		conformLink.getClients().add(classStereotypeView);</span>
+<span class="fc" id="L101">		conformLink.getSuppliers().add(classStereotypeViewpoint);</span>
+<span class="fc" id="L102">		stereotypeApplicationHelper.applyStereotype(conformLink, ModelelementsPackage.eINSTANCE.getConform());</span>
+
+
+<span class="fc" id="L105">		classStereotypeView2 = model.createOwnedClass(&quot;classStereotypeView2&quot;, false);</span>
+<span class="fc" id="L106">		stereotypeApplicationHelper.applyStereotype(classStereotypeView2, ModelelementsPackage.eINSTANCE.getView());</span>
+
+
+<span class="fc" id="L109">		classStereotypeViewpoint2 = model.createOwnedClass(&quot;classStereotypeViewpoint2&quot;, false);</span>
+<span class="fc" id="L110">		stereotypeApplicationHelper.applyStereotype(classStereotypeViewpoint2, ModelelementsPackage.eINSTANCE.getViewpoint());</span>
+<span class="fc" id="L111">	}</span>
+
+
+	/**
+	 * Test if the creation of conform following SysML requirements
+	 */
+	@Test
+	public void testApproveRequest() {
+<span class="fc" id="L119">		ConformReorientEditHelperAdvice conformReorientEditHelperAdvice = new ConformReorientEditHelperAdvice();</span>
+
+<span class="fc" id="L121">		IEditCommandRequest invalidRequest = new ReorientRelationshipRequest(conformLink, notStereotypeClass, classStereotypeViewpoint, ReorientRequest.REORIENT_TARGET);</span>
+<span class="fc" id="L122">		Assert.assertFalse(&quot;Target reorient should forbiden for a conform not linked to any elements&quot;, conformReorientEditHelperAdvice.approveRequest(invalidRequest));</span>
+
+<span class="fc" id="L124">		IEditCommandRequest validRequest = new ReorientRelationshipRequest(conformLink, classStereotypeViewpoint2, classStereotypeViewpoint, ReorientRequest.REORIENT_TARGET);</span>
+<span class="fc" id="L125">		Assert.assertTrue(&quot;Target reorient should allow on view point&quot;, conformReorientEditHelperAdvice.approveRequest(validRequest));</span>
+
+<span class="fc" id="L127">		IEditCommandRequest invalidRequest2 = new ReorientRelationshipRequest(conformLink, notStereotypeClass, classStereotypeView, ReorientRequest.REORIENT_SOURCE);</span>
+<span class="fc" id="L128">		Assert.assertFalse(&quot;Source reotient should forbiden for a conform not linked to any elements&quot;, conformReorientEditHelperAdvice.approveRequest(invalidRequest2));</span>
+
+<span class="fc" id="L130">		IEditCommandRequest validRequest2 = new ReorientRelationshipRequest(conformLink, classStereotypeView2, classStereotypeView, ReorientRequest.REORIENT_SOURCE);</span>
+<span class="fc" id="L131">		Assert.assertTrue(&quot;Source reorient should should allow on view &quot;, conformReorientEditHelperAdvice.approveRequest(validRequest2));</span>
+
+
+<span class="fc" id="L134">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

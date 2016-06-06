@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateAssociationCommand.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.command</a> &gt; <span class="el_source">CreateAssociationCommand.java</span></div><h1>CreateAssociationCommand.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015,2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - Initial API and implementation
+ *   Benoit Maggi    (CEA LIST) benoit.maggi@cea.fr - Bug 483564
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.command;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
+
+/**
+ * This class is used to create an association from a property
+ *
+ */
+public class CreateAssociationCommand extends ConfigureElementCommand {
+
+	private static final String DEFAULT_TARGET_PROPERTY_NAME = &quot;null&quot;;//$NON-NLS-1$
+	
+	private final AggregationKind aggregationKind;
+
+	/**
+	 * Constructor using default Aggregation
+	 *
+	 * @param request
+	 * @param aggregationKind
+	 */
+	public CreateAssociationCommand(ConfigureRequest request) {
+<span class="nc" id="L45">		this(request,AggregationKind.NONE_LITERAL);</span>
+<span class="nc" id="L46">	}	</span>
+	
+	/**
+	 * Constructor.
+	 *
+	 * @param request
+	 * @param aggregationKind
+	 */
+	public CreateAssociationCommand(ConfigureRequest request, AggregationKind aggregationKind) {
+<span class="nc" id="L55">		super(request);</span>
+<span class="nc" id="L56">		this.aggregationKind = aggregationKind;</span>
+<span class="nc" id="L57">	}</span>
+
+	/**
+	 * @see org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand#canExecute()
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean canExecute() {
+<span class="nc bnc" id="L66" title="All 4 branches missed.">		if (aggregationKind!= null &amp;&amp; (getElementToEdit() instanceof Property)) {</span>
+<span class="nc" id="L67">			return super.canExecute();</span>
+		}
+<span class="nc" id="L69">		return false;</span>
+	}
+	
+	@Override
+	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
+<span class="nc" id="L74">		Property sourcePart = (Property) getElementToEdit();</span>
+		
+		// set the aggregation
+<span class="nc bnc" id="L77" title="All 2 branches missed.">		if (sourcePart != null) {</span>
+<span class="nc" id="L78">			sourcePart.setAggregation(aggregationKind);</span>
+
+			// construct the Association
+<span class="nc bnc" id="L81" title="All 2 branches missed.">			if (sourcePart.getType() != null) {</span>
+
+				// Create association between element owner and element type
+<span class="nc" id="L84">				Type sourceType = (Type) sourcePart.getOwner();</span>
+<span class="nc" id="L85">				Package associationContainer = sourceType.getNearestPackage();</span>
+
+				// Create targetProperty
+<span class="nc" id="L88">				Property targetProperty = UMLFactory.eINSTANCE.createProperty();</span>
+<span class="nc" id="L89">				targetProperty.setType(sourceType);</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">				targetProperty.setName(sourceType.getName() != null ? sourceType.getName().toLowerCase() : DEFAULT_TARGET_PROPERTY_NAME); </span>
+
+<span class="nc" id="L92">				Association association = UMLFactory.eINSTANCE.createAssociation();</span>
+<span class="nc" id="L93">				association.setPackage(associationContainer);</span>
+<span class="nc" id="L94">				association.getMemberEnds().add(sourcePart);</span>
+<span class="nc" id="L95">				association.getOwnedEnds().add(targetProperty);</span>
+<span class="nc" id="L96">				association.getMemberEnds().add(targetProperty);		</span>
+			}
+		}
+<span class="nc" id="L99">		return CommandResult.newOKCommandResult(sourcePart);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

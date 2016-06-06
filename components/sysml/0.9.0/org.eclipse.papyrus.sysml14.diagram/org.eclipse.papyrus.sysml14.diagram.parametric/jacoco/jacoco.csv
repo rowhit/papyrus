@@ -1,0 +1,14 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.edit.part,ParameterBorderItermEditPart,10,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.edit.part,ParameterBorderItemNameEditPart,4,0,0,0,2,0,1,0,1,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory,BorderItemViewFactory,23,0,0,0,7,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory,BlockCompositeViewFactory,62,0,0,0,16,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.internal.factory,ConstraintPropertyViewFactory,71,0,0,0,17,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.locator,ParameterPositionLocator,10,0,0,0,4,0,2,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.dnd,ConstraintPropertyDropStrategy,91,0,12,0,20,0,14,0,8,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.dnd,ConstraintDropStrategy,106,0,18,0,21,0,16,0,7,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.dnd,ParameterDropStrategy,110,0,20,0,23,0,17,0,7,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.policy,ParametricDropEditPolicy,48,0,6,0,11,0,5,0,2,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.provider,ParametricDropEditPolicyProvider,92,0,12,0,29,0,10,0,4,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric.provider,ParserProvider,11,0,0,0,3,0,1,0,1,0
+org.eclipse.papyrus.sysml14.diagram.parametric,org.eclipse.papyrus.sysml14.diagram.parametric,Activator,7,0,0,0,2,0,2,0,2,0

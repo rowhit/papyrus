@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DocModelTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.parametric.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.parametric.tests.resources</a> &gt; <span class="el_source">DocModelTest.java</span></div><h1>DocModelTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.parametric.tests.resources;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.sysml14.diagram.parametric.Activator;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
+/**
+ * Test the doc model :
+ *  - validate the model
+ * 
+ * @author Benoit Maggi
+ */
+<span class="nc" id="L32">public class DocModelTest {</span>
+	
+	public static final String UML_MODEL_PATH = Activator.PLUGIN_ID+&quot;/resources/doc/org.eclipse.papyrus.sysml14.diagram.parametric.uml&quot;; //$NON-NLS-1$
+	
+	public static final String NOTATION_MODEL_PATH = Activator.PLUGIN_ID+&quot;/resources/doc/org.eclipse.papyrus.sysml14.diagram.parametric.notation&quot;; //$NON-NLS-1$
+	
+	public static final String DI_MODEL_PATH = Activator.PLUGIN_ID+&quot;/resources/doc/org.eclipse.papyrus.sysml14.diagram.parametric.di&quot;; //$NON-NLS-1$
+	
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Ignore //FIXME : Invalid model, problem in the import of the omg model
+	@Test
+	public void validateUmlModel() {
+<span class="nc" id="L46">		URI createPlatformPluginURI = URI.createPlatformPluginURI(UML_MODEL_PATH, true);</span>
+<span class="nc" id="L47">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="nc" id="L48">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="nc" id="L49">		Assert.assertEquals(&quot;The doc org.eclipse.papyrus.sysml14.diagram.parametric.uml model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity()); //$NON-NLS-1$</span>
+<span class="nc" id="L50">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Ignore // FIXME : should be valid at the official release of neon	
+	@Test
+	public void validateNotationModel() {
+<span class="nc" id="L58">		URI createPlatformPluginURI = URI.createPlatformPluginURI(NOTATION_MODEL_PATH, true);</span>
+<span class="nc" id="L59">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="nc" id="L60">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="nc" id="L61">		Assert.assertEquals(&quot;The doc org.eclipse.papyrus.sysml14.diagram.parametric.notation model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity()); //$NON-NLS-1$</span>
+<span class="nc" id="L62">	}	</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Ignore //FIXME : org.eclipse.emf.common.util.BasicEList$BasicIndexOutOfBoundsException: index=0, size=0 (Probably because the model is empty)	
+	@Test
+	public void validateDiModel() {
+<span class="nc" id="L70">		URI createPlatformPluginURI = URI.createPlatformPluginURI(DI_MODEL_PATH, true);</span>
+<span class="nc" id="L71">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="nc" id="L72">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="nc" id="L73">		Assert.assertEquals(&quot;The doc org.eclipse.papyrus.sysml14.diagram.parametric.di model is not valid &quot;, Diagnostic.OK, diagnostic.getSeverity()); //$NON-NLS-1$</span>
+<span class="nc" id="L74">	}	</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

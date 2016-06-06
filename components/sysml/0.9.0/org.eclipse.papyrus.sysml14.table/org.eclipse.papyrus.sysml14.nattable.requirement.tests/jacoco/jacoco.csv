@@ -1,0 +1,4 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.nattable.requirement.tests,org.eclipse.papyrus.sysml14.nattable.requirement.tests.resources,RequirementTableConfiguration,29,0,0,0,6,0,2,0,2,0
+org.eclipse.papyrus.sysml14.nattable.requirement.tests,org.eclipse.papyrus.sysml14.nattable.requirement.tests.resources,RequirementNattableTest,0,29,0,0,0,6,0,2,0,2
+org.eclipse.papyrus.sysml14.nattable.requirement.tests,org.eclipse.papyrus.sysml14.nattable.requirement.tests.tester,RequirementTableTesterTest,0,78,0,0,0,21,0,5,0,5
