@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.languages.cpp.profile
+org.eclipse.papyrus.designer.languages.cpp.profile.C_Cpp
+org.eclipse.papyrus.designer.languages.cpp.profile.C_Cpp.impl
+org.eclipse.papyrus.designer.languages.cpp.profile.C_Cpp.util
