@@ -16,6 +16,16 @@
 -->
 <news>
     <item
+		date="2016-06-18"
+		title="Papyrus at Incose Edinburgh 2016"
+		link="http://www.incose.org/symp2016/">
+		<p>Papyrus will be present in the Polarsys booth : 
+            <ul>
+                <li><a href="https://www.polarsys.org/polarsys-incose-international-symposium-2016">"Polarsys announcement"</a></li>
+			</ul>
+        </p>
+	</item>
+    <item
 		date="2016-04-26"
 		title="Talks at EclipseCon France 2016"
 		link="https://www.eclipsecon.org/france2016/">
