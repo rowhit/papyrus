@@ -16,6 +16,16 @@
 -->
 <news>
     <item
+		date="2016-06-23"
+		title="New video in Papyrus youtube channel"
+		link="https://www.youtube.com/channel/UCxyPoBlZc_rKLS7_K2dtwYA">
+		<p>
+            <ul>
+                <li><a href="https://youtu.be/eW1qut4NO_k">"Papyrus Information Modeling Preview"</a></li>
+			</ul>
+        </p>
+	</item>
+    <item
 		date="2016-06-18"
 		title="Papyrus at Incose Edinburgh 2016"
 		link="http://www.incose.org/symp2016/">
