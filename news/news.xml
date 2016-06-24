@@ -17,11 +17,12 @@
 <news>
     <item
 		date="2016-06-23"
-		title="New video in Papyrus youtube channel"
+		title="New videos in Papyrus youtube channel"
 		link="https://www.youtube.com/channel/UCxyPoBlZc_rKLS7_K2dtwYA">
 		<p>
             <ul>
                 <li><a href="https://youtu.be/eW1qut4NO_k">"Papyrus Information Modeling Preview"</a></li>
+                <li><a href="https://youtu.be/-k1xWJr4wg0">"Modeling and Safety Analysis of Nao Robot"</a></li>
 			</ul>
         </p>
 	</item>
