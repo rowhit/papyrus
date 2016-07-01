@@ -15,6 +15,14 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+	<item
+		date="2016-07-01"
+        title="Papyrus Use Case Story"
+        link="/papyrus/testimonials.html">
+        <p>
+            A new Papyrus Use Case Story entitled "Designing freedom of flight" from Airbus is <a href="/papyrus/resources/airbus-usecasestory.pdf" target="_blank">available here</a>.
+        </p>
+    </item>
     <item
 		date="2016-06-24"
         title="Papyrus 2.0.0 Neon Released"

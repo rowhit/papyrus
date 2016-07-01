@@ -395,6 +395,14 @@ li.footer-link > a:visited {
     margin-top: 10px;
 }
 
+/* columns of same height styles */
+
+.row-eq-height {
+
+}
+.panel-height {
+
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -418,5 +426,16 @@ li.footer-link > a:visited {
     
     .news-well {
         max-height: 300px;
+    }
+    
+    .row-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .panel-height {
+        height: 100%;
     }
 }

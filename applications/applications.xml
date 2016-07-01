@@ -21,4 +21,7 @@
 	<application author="Ericsson" logo="resources/ericsson-usecasestory.png" resource="http://www.ericsson.com/res/thecompany/docs/publications/ericsson_review/2015/er-network-modeling.pdf">
        Design, architects, and complex communication systems: painting the bigger picture
     </application>
+	<application author="Airbus" logo="resources/airbus-usecasestory.png" resource="resources/airbus-usecasestory.pdf">
+       Designing freedom of flight
+    </application>
 </applications>
