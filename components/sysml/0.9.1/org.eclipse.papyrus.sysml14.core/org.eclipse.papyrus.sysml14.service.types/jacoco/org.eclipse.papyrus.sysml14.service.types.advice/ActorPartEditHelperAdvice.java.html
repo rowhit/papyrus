@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ActorPartEditHelperAdvice.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.advice</a> &gt; <span class="el_source">ActorPartEditHelperAdvice.java</span></div><h1>ActorPartEditHelperAdvice.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.advice;
+
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+
+/**
+ * The creation of element can imply launch of popup.
+ * 
+ * It must be possible to let the possibility to add a popup to create actor Part
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#req_010_001}
+ *
+ *
+ */
+<span class="nc" id="L26">public class ActorPartEditHelperAdvice extends AbstractEditHelperAdvice {</span>
+
+
+	/**
+	 * Parameter id used to pass the command for setting the type of the property
+	 */
+	public static final String SET_ACTOR_ICOMMAND = &quot;SET_ACTOR_ICOMMAND&quot;; //$NON-NLS-1$
+
+
+	/**
+	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getAfterConfigureCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest)
+	 *
+	 * @param request
+	 * @return
+	 */
+	@Override
+	protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
+<span class="nc" id="L43">		Object parameter = request.getParameter(SET_ACTOR_ICOMMAND);</span>
+
+<span class="nc bnc" id="L45" title="All 2 branches missed.">		if (parameter instanceof ICommand) {</span>
+<span class="nc" id="L46">			return (ICommand) parameter;</span>
+		}
+<span class="nc" id="L48">		return super.getAfterConfigureCommand(request);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

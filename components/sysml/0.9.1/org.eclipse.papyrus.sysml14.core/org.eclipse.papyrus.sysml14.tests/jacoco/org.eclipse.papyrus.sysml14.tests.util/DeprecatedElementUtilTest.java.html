@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DeprecatedElementUtilTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.util</a> &gt; <span class="el_source">DeprecatedElementUtilTest.java</span></div><h1>DeprecatedElementUtilTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.util;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.DeprecatedelementsPackage;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowPort;
+import org.eclipse.papyrus.sysml14.deprecatedelements.FlowSpecification;
+import org.eclipse.papyrus.sysml14.util.DeprecatedElementUtil;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Tests for deprecated utility class
+ * 
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L37">public class DeprecatedElementUtilTest {</span>
+
+	/**
+	 * Check that FlowPort and FlowSpecification are deprecated
+	 */
+	@Test
+	public void testIsDeprecatedElement()  {
+		// Prepare Model test
+<span class="fc" id="L45">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L46">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+<span class="fc" id="L48">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+<span class="fc" id="L49">		Class c0 = model.createOwnedClass(&quot;class&quot;, false);</span>
+
+		// Create ports
+<span class="fc" id="L52">		Port port = c0.createOwnedPort(&quot;port&quot;, null);</span>
+
+<span class="fc" id="L54">		FlowPort fpDefault = (FlowPort) stereotypeApplicationHelper.applyStereotype(port,</span>
+<span class="fc" id="L55">				DeprecatedelementsPackage.eINSTANCE.getFlowPort());</span>
+
+<span class="fc" id="L57">		Assert.assertTrue(&quot;FlowPort should be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(fpDefault));</span>
+<span class="fc" id="L58">		Assert.assertTrue(&quot;FlowPort should be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(port));</span>
+		
+<span class="fc" id="L60">		Interface flowSpecificationInterface=model.createOwnedInterface(&quot;FlowSpecification1&quot;);</span>
+<span class="fc" id="L61">		FlowSpecification flowSpecification = (FlowSpecification) stereotypeApplicationHelper.applyStereotype(flowSpecificationInterface, DeprecatedelementsPackage.eINSTANCE.getFlowSpecification());</span>
+<span class="fc" id="L62">		Assert.assertTrue(&quot;FlowSpecification should be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(flowSpecificationInterface));</span>
+<span class="fc" id="L63">		Assert.assertTrue(&quot;FlowSpecification should be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(flowSpecification));</span>
+		
+<span class="fc" id="L65">		Class blockClass=model.createOwnedClass(&quot;Block1&quot;, false);</span>
+<span class="fc" id="L66">		Block block = (Block) stereotypeApplicationHelper.applyStereotype(blockClass, BlocksPackage.eINSTANCE.getBlock());</span>
+<span class="fc" id="L67">		Assert.assertFalse(&quot;Class should not be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(blockClass));</span>
+<span class="fc" id="L68">		Assert.assertFalse(&quot;Block should not be deprecated&quot;, DeprecatedElementUtil.isDeprecatedElement(block));		</span>
+		
+<span class="fc" id="L70">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

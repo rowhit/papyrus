@@ -1,0 +1,31 @@
+Started at Mon Aug 08 11:02:39 EDT 2016
+RCPTT Runner version: 2.1
+Invalid project location in '-import' arg: /jobs/genie.papyrus/papyrus-component-deploy-website/workspace/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.sysml14.rcptt.tests-0.9.1.zip
+Initializing target platform...
+Target platform is valid.
+Looking for tests...
+Existing projects in workspace:
+    /jobs/genie.papyrus/papyrus-component-deploy-website/workspace/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.tools.org.eclipse.papyrus.tools.rcptt
+    /jobs/genie.papyrus/papyrus-component-deploy-website/workspace/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.sysml14.rcptt.tests
+No projects to import
+Searching for tests in projects:
+    org.eclipse.papyrus.sysml14.rcptt.tests... 
+Complete OK
+    org.eclipse.papyrus.tools.rcptt... 
+No tests found
+Testcase Artifacts:5
+AUT-0:Launching
+AUT-0:Product: org.eclipse.papyrus.sysml14.rcp.product
+AUT-0:Application: org.eclipse.ui.ide.workbench
+AUT-0:Architecture: x86_64
+64bit arch is selected because AUT uses launcher library
+	"plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.400.v20160518-1444" specified in config file: papyrusSysML.ini
+/jobs/genie.papyrus/papyrus-component-deploy-website/workspace/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT arguments: -clean -port 8080 -os ${target.os} -arch ${target.arch} -consoleLog
+/jobs/genie.papyrus/papyrus-component-deploy-website/workspace/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT VM arguments: -Xms256m -Xmx1024m -XX:MaxPermSize=256m -Xmx1536m -XX:MaxPermSize=1024m
+Pass 1 (5) processed. 0 failed. spent: 0:28, 0:28 mins remaining. TC-AA-Init. time: 28192ms 
+Pass 2 (5) processed. 0 failed. spent: 1:19, 0:39 mins remaining. TC-AProjectCreation. time: 49287ms 
+Pass 3 (5) processed. 0 failed. spent: 1:37, 0:19 mins remaining. TC-BDD-DataType. time: 18296ms 
+Pass 4 (5) processed. 0 failed. spent: 1:43, 0:00 mins remaining. TC-BDD-OpenDiagram. time: 5593ms 
+Pass 5 (5) processed. 0 failed. spent: 2:23, 0:00 mins remaining. TC-ME-Property. time: 39431ms 
+Process terminated. Shut down AUTs
+Finished at Mon Aug 08 11:05:34 EDT 2016

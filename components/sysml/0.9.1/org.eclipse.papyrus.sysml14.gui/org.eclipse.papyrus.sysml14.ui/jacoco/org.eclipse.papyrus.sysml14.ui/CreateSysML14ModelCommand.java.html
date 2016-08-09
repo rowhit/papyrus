@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateSysML14ModelCommand.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui</a> &gt; <span class="el_source">CreateSysML14ModelCommand.java</span></div><h1>CreateSysML14ModelCommand.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - #483870: Add uml standard and primitive
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.ui;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.papyrus.uml.diagram.common.commands.ModelCreationCommandBase;
+import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.PackageImport;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.resource.UMLResource;
+
+
+/**
+ * The Class CreateSysMLModelCommand.
+ */
+<span class="nc" id="L30">public class CreateSysML14ModelCommand extends ModelCreationCommandBase {</span>
+
+	/**
+	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#createRootElement()
+	 *
+	 * @return
+	 */
+
+	@Override
+	protected EObject createRootElement() {
+<span class="nc" id="L40">		return UMLFactory.eINSTANCE.createModel();</span>
+	}
+
+	/**
+	 * A standard SysML model should have :
+	 *  - the SysML profile applied
+	 *  - the UML standard profile applied
+	 *  - the UML primitive library imported
+	 *  - the SysML library imported
+	 * 
+	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#initializeModel(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param owner
+	 */
+
+	@Override
+	protected void initializeModel(EObject owner) {
+<span class="nc" id="L57">		super.initializeModel(owner);</span>
+<span class="nc" id="L58">		Package packageOwner = (Package) owner;</span>
+
+		// Retrieve SysML profile and apply with Sub-profile
+<span class="nc" id="L61">		Profile sysml = (Profile) PackageUtil.loadPackage(URI.createURI(SysMLResource.PROFILE_PATH), owner.eResource().getResourceSet());</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		if (sysml != null) {</span>
+<span class="nc" id="L63">			PackageUtil.applyProfile(packageOwner, sysml, true);</span>
+		}
+
+<span class="nc" id="L66">		Profile standardUMLProfile = (Profile) PackageUtil.loadPackage(URI.createURI(UMLResource.STANDARD_PROFILE_URI), owner.eResource().getResourceSet());</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">		if (standardUMLProfile != null) {</span>
+<span class="nc" id="L68">			PackageUtil.applyProfile(packageOwner, standardUMLProfile, true);</span>
+		}
+
+<span class="nc" id="L71">		Package umlPrimitiveTypes = (Package) PackageUtil.loadPackage(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), owner.eResource().getResourceSet());</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		if (umlPrimitiveTypes != null){</span>
+<span class="nc" id="L73">			PackageImport pi = UMLFactory.eINSTANCE.createPackageImport();</span>
+<span class="nc" id="L74">			pi.setImportedPackage(umlPrimitiveTypes);</span>
+<span class="nc" id="L75">			packageOwner.getPackageImports().add(pi);</span>
+		}
+		
+<span class="nc" id="L78">		Package sysmlLibrary = (Package) PackageUtil.loadPackage(URI.createURI(SysMLResource.LIBRARY_PATH), owner.eResource().getResourceSet());</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		if (sysmlLibrary != null){</span>
+<span class="nc" id="L80">			PackageImport pi = UMLFactory.eINSTANCE.createPackageImport();</span>
+<span class="nc" id="L81">			pi.setImportedPackage(sysmlLibrary);</span>
+<span class="nc" id="L82">			packageOwner.getPackageImports().add(pi);</span>
+		}		
+
+<span class="nc" id="L85">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

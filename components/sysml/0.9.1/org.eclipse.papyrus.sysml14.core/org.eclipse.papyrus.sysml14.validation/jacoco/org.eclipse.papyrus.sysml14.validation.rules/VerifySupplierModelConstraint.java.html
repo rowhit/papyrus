@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VerifySupplierModelConstraint.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.validation</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.validation.rules</a> &gt; <span class="el_source">VerifySupplierModelConstraint.java</span></div><h1>VerifySupplierModelConstraint.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.validation.rules;
+
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.validation.AbstractModelConstraint;
+import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.papyrus.sysml14.requirements.Verify;
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.util.UMLUtil;
+/**
+ * 
+ * 16.3.2.8 Verify (SysML 1.4)
+ * Constraints
+ * [1]The supplier must be an element stereotyped by «requirement» or one of «requirement» subtypes.
+ *
+ */
+<span class="nc" id="L31">public class VerifySupplierModelConstraint extends AbstractModelConstraint {</span>
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.validation.AbstractModelConstraint#validate(org.eclipse.emf.validation.IValidationContext)
+	 */
+	@Override
+	public IStatus validate(IValidationContext context) {
+<span class="nc" id="L38">		Verify verify = (Verify) context.getTarget();</span>
+<span class="nc" id="L39">		Abstraction abstraction = verify.getBase_Abstraction();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		if (abstraction != null){</span>
+<span class="nc" id="L41">			EList&lt;NamedElement&gt; suppliers = abstraction.getSuppliers();</span>
+<span class="nc bnc" id="L42" title="All 4 branches missed.">			if (suppliers != null &amp;&amp; !suppliers.isEmpty()){</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">				if(UMLUtil.getStereotypeApplication(suppliers.get(0), Requirement.class)==null){</span>
+<span class="nc" id="L44">					return context.createFailureStatus(context.getTarget());</span>
+				}
+			}
+		}
+<span class="nc" id="L48">		return context.createSuccessStatus();</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

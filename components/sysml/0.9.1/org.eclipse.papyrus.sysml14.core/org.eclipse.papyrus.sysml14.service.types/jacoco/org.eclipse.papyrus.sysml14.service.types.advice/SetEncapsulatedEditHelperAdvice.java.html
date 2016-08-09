@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SetEncapsulatedEditHelperAdvice.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.advice</a> &gt; <span class="el_source">SetEncapsulatedEditHelperAdvice.java</span></div><h1>SetEncapsulatedEditHelperAdvice.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.advice;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.blocks.NestedConnectorEnd;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * 8.3.2.3 Block
+ * the service edit must implement the following constraints
+ * isEncapsulated: Boolean [0..1]
+ * If true, then the block is treated as a black box; a part typed by this black box can only be connected via its ports or
+ * directly to its outer boundary. If false, or if a value is not present, then connections can be established to elements of
+ * its internal structure via deep-nested connector ends.
+ * this class satisfies the requirement{@papyrus.req org.eclipse.papyrus.sysml14.service.types#Req_007}
+ * 
+ * &lt;pre&gt;
+ * This advice is used to remove inconsistent {@link Connector} when a related {@link Block}
+ * is set as encapsulated ({@link Block#isEncapsulated()} property).
+ * &lt;/pre&gt;
+ */
+<span class="nc" id="L54">public class SetEncapsulatedEditHelperAdvice extends AbstractEditHelperAdvice {</span>
+
+	/**
+	 * &lt;pre&gt;
+	 * {@inheritDoc}
+	 * 
+	 * Returns the command to destroy any {@link Connector} breaking encapsulation rules.
+	 * &lt;/pre&gt;
+	 *
+	 * @param request
+	 *            the request to modify the model
+	 * @return
+	 * 		the command to destroy the views of the parts which are not owned by the new type
+	 *
+	 */
+	@Override
+	protected ICommand getBeforeSetCommand(SetRequest request) {
+<span class="nc" id="L71">		ICommand setCommand = super.getBeforeSetCommand(request);</span>
+<span class="nc" id="L72">		Set&lt;Connector&gt; connectorToDelete = new HashSet&lt;Connector&gt;();</span>
+
+<span class="nc" id="L74">		EObject elementToEdit = request.getElementToEdit();</span>
+<span class="nc bnc" id="L75" title="All 4 branches missed.">		if ((elementToEdit instanceof Block) &amp;&amp; (request.getFeature() == BlocksPackage.eINSTANCE.getBlock_IsEncapsulated())) {</span>
+
+<span class="nc" id="L77">			Block blockApp = (Block) elementToEdit;</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">			Boolean setAsEncapsulated = (request.getValue() instanceof Boolean) ? (Boolean) request.getValue() : false;</span>
+<span class="nc bnc" id="L79" title="All 4 branches missed.">			if (!blockApp.isEncapsulated() &amp;&amp; setAsEncapsulated) {</span>
+
+<span class="nc bnc" id="L81" title="All 2 branches missed.">				for (Property property : getPropertyTypedByBlock(blockApp)) {</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">					for (NestedConnectorEnd nestedEnd : getRelatedNestedConnectorEnd(property)) {</span>
+<span class="nc" id="L83">						ConnectorEnd end = nestedEnd.getBase_ConnectorEnd();</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">						Connector connector = (end != null) ? (Connector) end.eContainer() : null;</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">						if (connector != null) {</span>
+<span class="nc" id="L86">							connectorToDelete.add(connector);</span>
+						}
+					}
+				}
+			}
+		}
+
+		// Add connector destroy command if needed
+<span class="nc bnc" id="L94" title="All 2 branches missed.">		if (!(connectorToDelete.isEmpty())) {</span>
+<span class="nc" id="L95">			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);</span>
+<span class="nc" id="L96">			req.setClientContext(request.getClientContext());</span>
+<span class="nc" id="L97">			req.addParameters(request.getParameters());</span>
+<span class="nc" id="L98">			ICommand connectorDestroyCommand = req.getDestroyDependentsCommand(connectorToDelete);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">			if (connectorDestroyCommand != null) {</span>
+<span class="nc" id="L100">				setCommand = CompositeCommand.compose(connectorDestroyCommand, setCommand);</span>
+			}
+		}
+
+<span class="nc" id="L104">		return setCommand;</span>
+	}
+
+	/**
+	 * Get any {@link Property} typed by the given {@link Block} (its base class).
+	 *
+	 * @param block
+	 *            the block.
+	 * @return a collection of {@link Property}
+	 */
+	private Collection&lt;Property&gt; getPropertyTypedByBlock(Block block) {
+<span class="nc" id="L115">		EReference[] eRefs = new EReference[] { UMLPackage.eINSTANCE.getTypedElement_Type() };</span>
+
+<span class="nc" id="L117">		Collection&lt;?&gt; references = EMFCoreUtil.getReferencers(block.getBase_Class(), eRefs);</span>
+<span class="nc" id="L118">		List&lt;Property&gt; propertyReferences = new LinkedList&lt;Property&gt;();</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">		for (Object reference : references) {</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">			if (reference instanceof Property) {</span>
+<span class="nc" id="L121">				propertyReferences.add((Property) reference);</span>
+			}
+		}
+
+<span class="nc" id="L125">		return propertyReferences;</span>
+	}
+
+	/**
+	 * Get any {@link NestedConnectorEnd} stereotype application that holds the property in its path.
+	 *
+	 * @param property
+	 *            the property that should be in the path.
+	 * @return a collection of {@link NestedConnectorEnd}
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	private Collection&lt;NestedConnectorEnd&gt; getRelatedNestedConnectorEnd(Property property) {
+<span class="nc" id="L137">		EReference[] eRefs = new EReference[] { BlocksPackage.eINSTANCE.getElementPropertyPath_PropertyPath() };</span>
+
+<span class="nc" id="L139">		Collection&lt;NestedConnectorEnd&gt; references = EMFCoreUtil.getReferencers(property, eRefs);</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">		return (references != null) ? references : Collections.unmodifiableList(new ArrayList&lt;NestedConnectorEnd&gt;());</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

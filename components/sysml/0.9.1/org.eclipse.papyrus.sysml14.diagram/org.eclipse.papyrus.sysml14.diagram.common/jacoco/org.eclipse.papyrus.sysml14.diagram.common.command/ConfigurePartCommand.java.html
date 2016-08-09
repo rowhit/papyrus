@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConfigurePartCommand.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.command</a> &gt; <span class="el_source">ConfigurePartCommand.java</span></div><h1>ConfigurePartCommand.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.common.command;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.papyrus.infra.services.edit.utils.GMFCommandUtils;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+
+/**
+ * Configure a part with the created/selected type
+ */
+public class ConfigurePartCommand extends ConfigureElementCommand {
+
+
+	private Type partType;
+	private ICommand typeCreationCommand;
+
+
+	/**
+	 * Constructor.
+	 *
+	 * @param request configuration request
+	 * @param partType the featuring type of the part
+	 * @param typeCreationCommand if needed create the type
+	 */
+	public ConfigurePartCommand(ConfigureRequest request, Type partType, ICommand typeCreationCommand) {
+<span class="nc" id="L45">		super(request);</span>
+<span class="nc" id="L46">		this.partType= partType;</span>
+<span class="nc" id="L47">		this.typeCreationCommand = typeCreationCommand;</span>
+<span class="nc" id="L48">	}</span>
+
+	@Override
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
+<span class="nc" id="L53">		Property part = (Property) getElementToEdit();</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">		if (partType != null) {</span>
+<span class="nc" id="L55">			part.setType(partType);</span>
+<span class="nc" id="L56">		} else {</span>
+<span class="nc" id="L57">			Type newType = (Type) GMFCommandUtils.getCommandEObjectResult(typeCreationCommand);</span>
+<span class="nc" id="L58">			part.setType(newType);</span>
+		}
+<span class="nc" id="L60">		return CommandResult.newOKCommandResult(part);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

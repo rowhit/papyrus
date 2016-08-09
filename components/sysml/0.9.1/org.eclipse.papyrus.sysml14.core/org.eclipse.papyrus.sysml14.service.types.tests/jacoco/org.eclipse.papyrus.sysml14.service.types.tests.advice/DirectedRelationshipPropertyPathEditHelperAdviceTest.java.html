@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DirectedRelationshipPropertyPathEditHelperAdviceTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.tests.advice</a> &gt; <span class="el_source">DirectedRelationshipPropertyPathEditHelperAdviceTest.java</span></div><h1>DirectedRelationshipPropertyPathEditHelperAdviceTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *  
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.tests.advice;
+
+import java.util.Map;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.papyrus.infra.types.ElementTypeSetConfiguration;
+import org.eclipse.papyrus.infra.types.core.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.sysml14.service.types.advice.DirectedRelationshipPropertyPathEditHelperAdvice;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Model;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+/**
+ * Test class for DirectedRelationshipPropertyPathEditHelperAdvice
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L38">public class DirectedRelationshipPropertyPathEditHelperAdviceTest {</span>
+
+	@BeforeClass
+	public static void loadSysml14Definition() {
+<span class="fc" id="L42">		ElementTypeSetConfigurationRegistry instance = ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="fc" id="L43">		Map&lt;String, Map&lt;String, ElementTypeSetConfiguration&gt;&gt; elementTypeSetConfigurations = instance.getElementTypeSetConfigurations();</span>
+<span class="fc" id="L44">		Map&lt;String, ElementTypeSetConfiguration&gt; map = elementTypeSetConfigurations.get(&quot;org.eclipse.papyrus.infra.services.edit.TypeContext&quot;);</span>
+<span class="fc" id="L45">		ElementTypeSetConfiguration elementTypeSetConfiguration = map.get(&quot;org.eclipse.papyrus.sysml14.service.types.elementTypeSet&quot;);</span>
+<span class="fc" id="L46">		Assert.assertNotNull(&quot;The SysML 1.4 element type set definition is missing&quot;, elementTypeSetConfiguration);</span>
+<span class="fc" id="L47">	}</span>
+
+	@Before
+	public void setUp() {
+		// Prepare test
+<span class="fc" id="L52">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L53">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+<span class="fc" id="L54">	}</span>
+
+
+	/**
+	 * Test if the call of after create with null parameter
+	 * Seems to happen sometimes https://bugs.eclipse.org/bugs/show_bug.cgi?id=492564
+	 */
+	@Test
+	public void testGetAfterCreateRelationshipCommand() {
+<span class="fc" id="L63">		DirectedRelationshipPropertyPathEditHelperAdvice directedRelationshipPropertyPathEditHelperAdvice = new DirectedRelationshipPropertyPathEditHelperAdvice();</span>
+<span class="fc" id="L64">		IElementType type = ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_ALLOCATE_ABSTRACTION);</span>
+<span class="fc" id="L65">		IEditCommandRequest invalidRequest = new CreateRelationshipRequest(null, null, type);</span>
+<span class="fc" id="L66">		Assert.assertNull(&quot;Conform is allow from a View to a Viewpoint&quot;, directedRelationshipPropertyPathEditHelperAdvice.getAfterEditCommand(invalidRequest));</span>
+
+<span class="fc" id="L68">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

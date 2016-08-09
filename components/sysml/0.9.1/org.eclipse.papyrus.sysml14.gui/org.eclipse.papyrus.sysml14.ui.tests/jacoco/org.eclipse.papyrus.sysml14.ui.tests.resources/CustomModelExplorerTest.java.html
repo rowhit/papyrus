@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CustomModelExplorerTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.tests.resources</a> &gt; <span class="el_source">CustomModelExplorerTest.java</span></div><h1>CustomModelExplorerTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.ui.tests.resources;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.papyrus.infra.types.core.registries.ElementTypeSetConfigurationRegistry;
+import org.eclipse.papyrus.sysml14.ui.Activator;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+/**
+ * Test the custom Model explorer model :
+ *  - validate the model
+ * 
+ * @author Francois Le Fevre
+ */
+<span class="nc" id="L34">public class CustomModelExplorerTest {</span>
+	
+	public static final String CUSTOM_MODEL_EXPLORER_PATH = Activator.PLUGIN_ID +&quot;/resources/custom/OperationalSysML.custom&quot;; //$NON-NLS-1$
+	
+	@BeforeClass
+	public static void loadElementTypeSet(){
+<span class="nc" id="L40">		ElementTypeSetConfigurationRegistry.getInstance();</span>
+<span class="nc" id="L41">	}</span>
+
+	/**
+	 * Validate the model with the rules defined in the meta-model tooling
+	 */
+	@Test
+	@Ignore //Model seems not to be valid due to the use of two classifier with the same name and a missing proxy to resolve a metamodel.
+	public void useValidation() {
+<span class="nc" id="L49">		URI createPlatformPluginURI = URI.createPlatformPluginURI(CUSTOM_MODEL_EXPLORER_PATH, true);</span>
+<span class="nc" id="L50">		Resource resource = new ResourceSetImpl().getResource(createPlatformPluginURI, true);</span>
+<span class="nc" id="L51">		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(resource.getContents().get(0));</span>
+<span class="nc" id="L52">		Assert.assertEquals(&quot;The custom model explorer Model is not valid &quot;+CUSTOM_MODEL_EXPLORER_PATH, Diagnostic.OK, diagnostic.getSeverity()); //$NON-NLS-1$</span>
+<span class="nc" id="L53">	}</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

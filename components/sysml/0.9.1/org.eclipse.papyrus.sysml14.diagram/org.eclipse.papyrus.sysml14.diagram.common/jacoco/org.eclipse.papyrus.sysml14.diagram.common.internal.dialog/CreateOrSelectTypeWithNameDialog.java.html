@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateOrSelectTypeWithNameDialog.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.internal.dialog</a> &gt; <span class="el_source">CreateOrSelectTypeWithNameDialog.java</span></div><h1>CreateOrSelectTypeWithNameDialog.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.diagram.common.internal.dialog;
+
+import java.util.List;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.papyrus.uml.diagram.common.dialogs.CreateOrSelectTypeDialog;
+import org.eclipse.swt.widgets.Shell;
+
+/**
+ * This class is used to keep the typed new name even after the widget is disposed
+ * It's internal since the capability should be moved to papyrus core in CreateOrSelectTypeDialog
+ * 
+ */
+// TODO :Bug 497304 move all the code/feature/open api in CreateOrSelectTypeDialog
+public class CreateOrSelectTypeWithNameDialog extends CreateOrSelectTypeDialog {
+
+	private String savedNewTypeNameText;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param shell
+	 * @param defaultContainer
+	 * @param elementType
+	 * @param editedFeature
+	 * @param elementEClass
+	 * @param containerType
+	 * @param containerFeature
+	 * @param containerEClass
+	 */
+	public CreateOrSelectTypeWithNameDialog(Shell shell, EObject defaultContainer, IElementType elementType, EStructuralFeature editedFeature, EClass elementEClass, IElementType containerType, EStructuralFeature containerFeature, EClass containerEClass) {
+<span class="nc" id="L48">		super(shell, defaultContainer, elementType, editedFeature, elementEClass, containerType, containerFeature, containerEClass);</span>
+<span class="nc" id="L49">	}</span>
+
+	/**
+	 * Constructor.
+	 *
+	 * @param shell
+	 * @param defaultContainer
+	 * @param elementType
+	 * @param editedFeature
+	 * @param elementEClass
+	 * @param containerType
+	 * @param containerFeature
+	 * @param containerEClass
+	 * @param notWantedMetaclasses
+	 */
+	public CreateOrSelectTypeWithNameDialog(Shell shell, EObject defaultContainer, IElementType elementType, EStructuralFeature editedFeature, EClass elementEClass, IElementType containerType, EStructuralFeature containerFeature, EClass containerEClass,
+			List&lt;?&gt; notWantedMetaclasses) {
+<span class="nc" id="L66">		super(shell, defaultContainer, elementType, editedFeature, elementEClass, containerType, containerFeature, containerEClass, notWantedMetaclasses);</span>
+<span class="nc" id="L67">	}</span>
+
+	
+	/**
+	 * @return the savedNewTypeNameText
+	 */
+	public String getSavedNewTypeNameText() {
+<span class="nc" id="L74">		return savedNewTypeNameText;</span>
+	}
+
+	/**
+	 * @param savedNewTypeNameText the savedNewTypeNameText to set
+	 */
+	public void setSavedNewTypeNameText(String savedNewTypeNameText) {
+<span class="nc" id="L81">		this.savedNewTypeNameText = savedNewTypeNameText;</span>
+<span class="nc" id="L82">	}</span>
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.common.dialogs.CreateOrSelectTypeDialog#buildNewTypeCreateCommand()
+	 *
+	 */
+	@Override
+	protected void buildNewTypeCreateCommand() {
+<span class="nc" id="L90">		super.buildNewTypeCreateCommand();</span>
+<span class="nc" id="L91">		savedNewTypeNameText = newTypeNameText.getText();</span>
+<span class="nc" id="L92">	}</span>
+	
+
+	public String getSavedNewTypeName() {
+<span class="nc" id="L96">			return savedNewTypeNameText;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

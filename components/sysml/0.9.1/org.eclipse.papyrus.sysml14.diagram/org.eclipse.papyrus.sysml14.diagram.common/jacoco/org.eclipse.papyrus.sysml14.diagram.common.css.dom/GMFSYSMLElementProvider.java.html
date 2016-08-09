@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GMFSYSMLElementProvider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.css.dom</a> &gt; <span class="el_source">GMFSYSMLElementProvider.java</span></div><h1>GMFSYSMLElementProvider.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre francois.le-fevre@cea.fr  - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.css.dom;
+
+import org.eclipse.e4.ui.css.core.engine.CSSEngine;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.gmfdiag.css.engine.ExtendedCSSEngine;
+import org.eclipse.papyrus.infra.gmfdiag.css.provider.IPapyrusElementProvider;
+import org.eclipse.papyrus.sysml14.diagram.common.css.helper.CSSDOMSYSMLSemanticElementHelper;
+import org.w3c.dom.Element;
+
+/**
+ * An IElementProvider for SysML-specific CSS concepts
+ *
+ * Provides a specialization of GMFElementAdapter for SysML Elements
+ *
+ * @author Francois Le Fevre
+ */
+<span class="nc" id="L30">public class GMFSYSMLElementProvider implements IPapyrusElementProvider {</span>
+
+	@Override
+	public Element getElement(Object element, CSSEngine engine) {
+
+<span class="nc bnc" id="L35" title="All 2 branches missed.">		if (!(element instanceof View)) {</span>
+<span class="nc" id="L36">			throw new IllegalArgumentException(&quot;Unknown element : &quot; + element);//$NON-NLS-1$</span>
+		}
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">		if (!(engine instanceof ExtendedCSSEngine)) {</span>
+<span class="nc" id="L40">			throw new IllegalArgumentException(&quot;Invalid CSS Engine : &quot; + engine);//$NON-NLS-1$</span>
+		}
+
+<span class="nc" id="L43">		return new GMFSYSMLElementAdapter((View) element, (ExtendedCSSEngine) engine);</span>
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.gmfdiag.css.provider.IPapyrusElementProvider#getPrimaryView(org.eclipse.emf.ecore.EObject)
+	 *
+	 * @param notationElement
+	 * @return
+	 */
+	@Override
+	public View getPrimaryView(EObject notationElement) {
+<span class="nc" id="L54">		return CSSDOMSYSMLSemanticElementHelper.getInstance().findPrimaryView(notationElement);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

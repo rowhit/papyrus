@@ -1,0 +1,13 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.paste,PartPasteStrategy.PartBlockAdditionalData,50,0,2,0,10,0,3,0,2,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.paste,PartPasteStrategy.PartAdditionalData,17,0,0,0,4,0,2,0,2,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.paste,PartPasteStrategy,333,0,54,0,89,0,44,0,17,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.queries.property,GetContainedAttributesJavaQuery,18,0,2,0,5,0,3,0,2,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.queries.property,IsTypedPropertyJavaQuery,12,0,2,0,2,0,3,0,2,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui,CreateSysML14ModelCommand,83,0,8,0,21,0,7,0,3,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui,Activator,24,0,0,0,11,0,5,0,5,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.constraints,HasStereotypeSysml14Constraint,64,0,10,0,12,0,9,0,4,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.template,ImportUMLStandardProfileInModel,51,0,0,0,11,0,5,0,5,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.template,ImportSysMLQUDVLibraryInModel,52,0,0,0,11,0,5,0,5,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.template,ImportUMLStandardProfileInModel.new RecordingCommand() {...},42,0,2,0,9,0,3,0,2,0
+org.eclipse.papyrus.sysml14.ui,org.eclipse.papyrus.sysml14.ui.template,ImportSysMLQUDVLibraryInModel.new RecordingCommand() {...},41,0,2,0,9,0,3,0,2,0

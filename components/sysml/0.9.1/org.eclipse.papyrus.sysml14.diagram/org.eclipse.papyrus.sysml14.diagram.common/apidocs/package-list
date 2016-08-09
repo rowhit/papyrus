@@ -1,0 +1,15 @@
+org.eclipse.papyrus.sysml14.diagram.common
+org.eclipse.papyrus.sysml14.diagram.common.advices
+org.eclipse.papyrus.sysml14.diagram.common.command
+org.eclipse.papyrus.sysml14.diagram.common.css.dom
+org.eclipse.papyrus.sysml14.diagram.common.css.helper
+org.eclipse.papyrus.sysml14.diagram.common.dialog
+org.eclipse.papyrus.sysml14.diagram.common.edit.parts
+org.eclipse.papyrus.sysml14.diagram.common.figure
+org.eclipse.papyrus.sysml14.diagram.common.internal.command
+org.eclipse.papyrus.sysml14.diagram.common.internal.dialog
+org.eclipse.papyrus.sysml14.diagram.common.internal.factory
+org.eclipse.papyrus.sysml14.diagram.common.internal.factory.util
+org.eclipse.papyrus.sysml14.diagram.common.locator
+org.eclipse.papyrus.sysml14.diagram.common.provider
+org.eclipse.papyrus.sysml14.diagram.common.util

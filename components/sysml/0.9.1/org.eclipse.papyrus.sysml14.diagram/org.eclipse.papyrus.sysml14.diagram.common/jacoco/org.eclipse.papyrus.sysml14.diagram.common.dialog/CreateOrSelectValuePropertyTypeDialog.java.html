@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CreateOrSelectValuePropertyTypeDialog.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.common</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.common.dialog</a> &gt; <span class="el_source">CreateOrSelectValuePropertyTypeDialog.java</span></div><h1>CreateOrSelectValuePropertyTypeDialog.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/*****************************************************************************</span>
+ * Copyright (c) 2011 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *
+ *		CEA LIST - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.common.dialog;
+
+import org.eclipse.gmf.runtime.diagram.ui.internal.commands.ElementTypeLabelProvider;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.papyrus.infra.services.edit.commands.ConfigureFeatureCommandFactory;
+import org.eclipse.papyrus.infra.services.edit.commands.IConfigureCommandFactory;
+import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
+import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.diagram.common.internal.dialog.CreateOrSelectTypeWithNameDialog;
+import org.eclipse.papyrus.sysml14.service.types.util.SysMLServiceTypeUtil;
+import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
+import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
+import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.UMLPackage;
+
+/**
+ * Dialog for initialization of Value (Property) type (the type is either selected or created).
+ */
+public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeWithNameDialog {
+
+<span class="nc" id="L52">	protected ComboViewer newTypeKindComboViewer = null;</span>
+
+<span class="nc" id="L54">	protected Combo newTypeKindCombo = null;</span>
+
+<span class="nc" id="L56">	protected IElementType[] valueTypeKind = { UMLElementTypes.DATA_TYPE, </span>
+<span class="nc" id="L57">			ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_VALUETYPE), </span>
+<span class="nc" id="L58">			UMLElementTypes.PRIMITIVE_TYPE, UMLElementTypes.ENUMERATION };</span>
+
+<span class="nc" id="L60">	protected IElementType newTypeKind = UMLElementTypes.DATA_TYPE;</span>
+
+	/** Constructor */
+	public CreateOrSelectValuePropertyTypeDialog(Shell shell, NamedElement owner) {
+<span class="nc" id="L64">		super(shell, owner, UMLElementTypes.DATA_TYPE, UMLPackage.eINSTANCE.getTypedElement_Type(), null, UMLElementTypes.PACKAGE, UMLPackage.eINSTANCE.getPackage_PackagedElement(), null);</span>
+<span class="nc" id="L65">	}</span>
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void createFormCreationSection(Composite pParent, FormToolkit pToolkit) {
+		// create the section
+<span class="nc" id="L73">		String lSectionTitle = getCreationSectionTitle();</span>
+<span class="nc" id="L74">		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);</span>
+<span class="nc" id="L75">		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">		if (lSectionTitle != null) {</span>
+<span class="nc" id="L77">			lSection.setText(lSectionTitle);</span>
+		}
+
+<span class="nc" id="L80">		ScrolledForm lInsideScrolledForm = pToolkit.createScrolledForm(lSection);</span>
+<span class="nc" id="L81">		lInsideScrolledForm.setExpandHorizontal(true);</span>
+<span class="nc" id="L82">		lInsideScrolledForm.setExpandVertical(true);</span>
+<span class="nc" id="L83">		Composite lBody = lInsideScrolledForm.getBody();</span>
+
+<span class="nc" id="L85">		GridLayout lLayout = new GridLayout(3,false);</span>
+<span class="nc" id="L86">		lBody.setLayout(lLayout);</span>
+
+		// content of the section
+<span class="nc" id="L89">		creationRadio = pToolkit.createButton(lBody, getCreationSectionRadioLabel(), SWT.RADIO);</span>
+<span class="nc" id="L90">		creationRadio.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 3, 1));</span>
+
+<span class="nc" id="L92">		pToolkit.createLabel(lBody, getNewTypeNameLabel(), SWT.NONE);</span>
+<span class="nc" id="L93">		newTypeNameText = pToolkit.createText(lBody, &quot;&quot;, SWT.BORDER);//$NON-NLS-1$</span>
+<span class="nc" id="L94">		newTypeNameText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));</span>
+<span class="nc" id="L95">		newTypeNameText.setFocus();</span>
+
+		// manage type selection
+<span class="nc" id="L98">		pToolkit.createLabel(lBody, getNewTypeContainerNameLabel(), SWT.NONE);</span>
+<span class="nc" id="L99">		newTypeContainerNameText = pToolkit.createText(lBody, labelProvider.getText(newTypeContainer), SWT.BORDER | SWT.READ_ONLY);</span>
+<span class="nc" id="L100">		newTypeContainerNameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));</span>
+<span class="nc" id="L101">		newTypeContainerButton = pToolkit.createButton(lBody, &quot;...&quot;, SWT.FLAT);//$NON-NLS-1$</span>
+		// TODO : getImage
+		// Image image = Activator.getDefault().getImage(containerType.getEClass());
+		// if (containerEClass != null) {
+		// image = Activator.getDefault().getImage(containerEClass);
+		// }
+		// Image image = null;
+		// newTypeContainerButton.setImage(image);
+<span class="nc" id="L109">		newTypeContainerButton.setLayoutData(new GridData(SWT.NONE));</span>
+
+<span class="nc" id="L111">		pToolkit.createLabel(lBody, &quot;New Label&quot;, SWT.NONE);</span>
+<span class="nc" id="L112">		newTypeKindCombo = new Combo(lBody, SWT.DROP_DOWN | SWT.READ_ONLY);</span>
+<span class="nc" id="L113">		newTypeKindComboViewer = new ComboViewer(newTypeKindCombo);</span>
+<span class="nc" id="L114">		pToolkit.adapt(newTypeKindCombo);</span>
+<span class="nc" id="L115">		newTypeKindCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));</span>
+<span class="nc" id="L116">		newTypeKindComboViewer.setLabelProvider(new ElementTypeLabelProvider());</span>
+<span class="nc" id="L117">		newTypeKindComboViewer.add(valueTypeKind);</span>
+<span class="nc" id="L118">		newTypeKindComboViewer.setSelection(new StructuredSelection(valueTypeKind[0]));</span>
+
+<span class="nc" id="L120">		lInsideScrolledForm.reflow(true);</span>
+<span class="nc" id="L121">		lSection.setClient(lInsideScrolledForm);</span>
+<span class="nc" id="L122">	}</span>
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void buildNewTypeCreateCommand() {
+		// The new element is expected to be a NamedElement.
+<span class="nc" id="L130">		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(newTypeContainer);</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">		if (commandService != null) {</span>
+<span class="nc" id="L132">			CreateElementRequest createTypeRequest = new CreateElementRequest(newTypeContainer, newTypeKind);</span>
+<span class="nc" id="L133">			createTypeRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getNamedElement_Name(), newTypeNameText.getText()));</span>
+<span class="nc" id="L134">			newTypeCreateCommand = commandService.getEditCommand(createTypeRequest);</span>
+		}
+<span class="nc" id="L136">		setSavedNewTypeNameText(newTypeNameText.getText());</span>
+<span class="nc" id="L137">	}</span>
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void hookListeners() {
+<span class="nc" id="L144">		super.hookListeners();</span>
+
+		// listener to select invocation type
+<span class="nc" id="L147">		ModifyListener newTypeKindListener = new ModifyListener() {</span>
+
+			/**
+			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
+			 */
+			@Override
+			public void modifyText(ModifyEvent e) {
+<span class="nc" id="L154">				ISelection sel = newTypeKindComboViewer.getSelection();</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">				if (sel instanceof StructuredSelection) {</span>
+<span class="nc" id="L156">					Object type = ((StructuredSelection) sel).getFirstElement();</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">					if (type instanceof IElementType) {</span>
+<span class="nc" id="L158">						newTypeKind = (IElementType) type;</span>
+<span class="nc" id="L159">					} else {</span>
+<span class="nc" id="L160">						newTypeKind = null;</span>
+					}
+
+					// reset name
+<span class="nc" id="L164">					setNewTypeName(null);</span>
+				}
+<span class="nc" id="L166">			}</span>
+		};
+<span class="nc" id="L168">		newTypeKindCombo.addModifyListener(newTypeKindListener);</span>
+<span class="nc" id="L169">	}</span>
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void setNewTypeName(String text) {
+<span class="nc" id="L176">		String name = text;</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">		if (text == null) {</span>
+<span class="nc" id="L178">			name = NamedElementUtil.getDefaultNameWithIncrementFromBase(newTypeKind.getEClass().getName(), newTypeContainer.eContents());</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">			if (newTypeKind == ElementTypeRegistry.getInstance().getType(SysMLServiceTypeUtil.ORG_ECLIPSE_PAPYRUS_SYSML14_VALUETYPE)) {</span>
+<span class="nc" id="L180">				name = NamedElementUtil.getDefaultNameWithIncrementFromBase(BlocksPackage.eINSTANCE.getValueType().getName(), newTypeContainer.eContents());</span>
+			}
+<span class="nc" id="L182">			newTypeNameText.setText(name);</span>
+
+<span class="nc" id="L184">		} else {</span>
+<span class="nc" id="L185">			newTypeNameText.setText(name);</span>
+<span class="nc" id="L186">			newTypeName = name;</span>
+		}
+
+<span class="nc" id="L189">		validateNewTypeName();</span>
+<span class="nc" id="L190">		refreshOkButton();</span>
+<span class="nc" id="L191">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
