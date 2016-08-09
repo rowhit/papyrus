@@ -1,0 +1,15 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,RefineDependencyModelConstraintTest,0,107,0,0,0,22,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,OptionalMultiplicityModelConstraintTest,0,111,0,0,0,25,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,TraceDependencyModelConstraintTest,0,107,0,0,0,22,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,CopyBetweenRequirementsModelConstraintTest,0,155,0,0,0,31,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,DeriveReqtSupplierModelConstraintTest,0,148,0,0,0,30,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,DeriveReqtClientModelConstraintTest,0,148,0,0,0,30,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,SatisfySupplierModelConstraintTest,0,130,0,0,0,27,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,TestCaseParameterVerdictKindModelConstraintTest,125,0,0,0,25,0,2,0,2,0
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,VerifySupplierModelConstraintTest,0,130,0,0,0,27,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,RefineOneClientSupplierModelConstraintTest,0,121,0,0,0,25,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,CopyReadOnlyModelConstraintTest,0,189,0,0,0,39,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.rules,TraceOneClientSupplierModelConstraintTest,0,121,0,0,0,25,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.ocl,RequirementTextTest,0,103,0,0,0,22,0,2,0,2
+org.eclipse.papyrus.sysml14.validation.tests,org.eclipse.papyrus.sysml14.validation.tests.ocl,RequirementIdTest,0,103,0,0,0,22,0,2,0,2

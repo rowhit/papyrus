@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PortViewFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.diagram.blockdefinition</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.diagram.blockdefinition.internal.factory</a> &gt; <span class="el_source">PortViewFactory.java</span></div><h1>PortViewFactory.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.diagram.blockdefinition.internal.factory;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.gmf.runtime.notation.Shape;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.papyrus.sysml14.diagram.common.internal.factory.AbstractBasicViewFactory;
+import org.eclipse.papyrus.uml.diagram.common.helper.PreferenceInitializerForElementHelper;
+
+<span class="nc" id="L26">public class PortViewFactory extends AbstractBasicViewFactory {</span>
+
+	/**
+	 * Base element of SysML Port
+	 */
+	private static final String PORT = &quot;Port&quot;;//$NON-NLS-1$
+	/**
+	 * visual ID for name label of border item
+	 */
+	protected static final String OPERATION_BORDER_ITEM_LABEL = &quot;Operation_BorderItem_Label&quot;;//$NON-NLS-1$
+
+	public Node createElementView(EObject domainElement, View containerView,String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
+<span class="nc" id="L38">		Shape node = NotationFactory.eINSTANCE.createShape();</span>
+<span class="nc" id="L39">		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());</span>
+<span class="nc" id="L40">		node.setType(semanticHint);</span>
+<span class="nc" id="L41">		ViewUtil.insertChildView(containerView, node, index, persisted);</span>
+<span class="nc" id="L42">		node.setElement(domainElement);</span>
+		// initializeFromPreferences 
+<span class="nc" id="L44">		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();</span>
+<span class="nc" id="L45">		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, PORT);</span>
+<span class="nc" id="L46">		Node label5125 = createLabel(node, OPERATION_BORDER_ITEM_LABEL);</span>
+<span class="nc" id="L47">		label5125.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());</span>
+<span class="nc" id="L48">		Location location5125 = (Location)label5125.getLayoutConstraint();</span>
+<span class="nc" id="L49">		location5125.setX(25);</span>
+<span class="nc" id="L50">		location5125.setY(3);</span>
+<span class="nc" id="L51">		return node;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

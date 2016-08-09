@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ReferencePropertyMatcher.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.service.types</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.service.types.matcher</a> &gt; <span class="el_source">ReferencePropertyMatcher.java</span></div><h1>ReferencePropertyMatcher.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2010 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.service.types.matcher;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * Test if current {@link Property} is a {@link Block} Reference
+ */
+<span class="nc" id="L25">public class ReferencePropertyMatcher implements IElementMatcher {</span>
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public boolean matches(EObject eObject) {
+<span class="nc" id="L31">		boolean isMatch = false;</span>
+<span class="nc bnc" id="L32" title="All 4 branches missed.">		if ((eObject instanceof Property) &amp;&amp; !(eObject instanceof Port)) {</span>
+<span class="nc" id="L33">			Property element = (Property) eObject;</span>
+			// The property is not a composition and has a type
+<span class="nc" id="L35">			Type type = element.getType();</span>
+<span class="nc bnc" id="L36" title="All 4 branches missed.">			if (type != null &amp;&amp; (element.getAggregation() != AggregationKind.COMPOSITE_LITERAL)) {</span>
+				// Moreover its type has to be a Block (type is tested as class before for performance)
+<span class="nc bnc" id="L38" title="All 4 branches missed.">				isMatch = type instanceof Class &amp;&amp; (UMLUtil.getStereotypeApplication(type, Block.class) != null);</span>
+			}
+		}
+<span class="nc" id="L41">		return isMatch;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

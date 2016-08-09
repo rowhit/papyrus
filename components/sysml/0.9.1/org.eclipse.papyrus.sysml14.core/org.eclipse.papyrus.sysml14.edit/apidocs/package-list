@@ -1,0 +1,10 @@
+org.eclipse.papyrus.sysml14.activities.provider
+org.eclipse.papyrus.sysml14.allocations.provider
+org.eclipse.papyrus.sysml14.blocks.provider
+org.eclipse.papyrus.sysml14.constraintblocks.provider
+org.eclipse.papyrus.sysml14.deprecatedelements.provider
+org.eclipse.papyrus.sysml14.edit.provider
+org.eclipse.papyrus.sysml14.modelelements.provider
+org.eclipse.papyrus.sysml14.portsandflows.provider
+org.eclipse.papyrus.sysml14.provider
+org.eclipse.papyrus.sysml14.requirements.provider

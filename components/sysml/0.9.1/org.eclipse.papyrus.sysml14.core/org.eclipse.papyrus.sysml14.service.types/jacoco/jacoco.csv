@@ -1,0 +1,45 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.util,ConnectorUtil,311,0,62,0,71,0,40,0,9,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.util,UMLConnectorUtils,337,0,74,0,76,0,46,0,9,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.util,PropertyPathUtil,67,0,14,0,20,0,11,0,4,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.util,SysMLServiceTypeUtil,3,0,0,0,2,0,1,0,1,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,PartAssociationEditHelperAdvice,14,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConstraintCreationEditHelperAdvice,49,0,10,0,12,0,7,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,QuantityKindEditHelperAdvice,13,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConformReorientEditHelperAdvice,78,0,20,0,23,0,12,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ReferenceCreationEditHelperAdvice,42,0,4,0,10,0,4,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConstraintPropertyEditHelperAdvice,17,0,2,0,5,0,3,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,SharedAssociationEditHelperAdvice.new ConfigureElementCommand() {...},22,0,0,0,4,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ActorPartEditHelperAdvice,17,0,2,0,5,0,3,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,DirectedRelationshipPropertyPathEditHelperAdvice,108,0,16,0,21,0,10,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ElementGroupEditHelperAdvice,3,0,0,0,1,0,1,0,1,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,UnitEditHelperAdvice,13,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,PrivatePackageImportEditHelperAdvice.new ConfigureElementCommand() {...},18,0,0,0,4,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,PartCreationEditHelperAdvice,42,0,4,0,10,0,4,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,PrivatePackageImportEditHelperAdvice,14,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,PartAssociationEditHelperAdvice.new ConfigureElementCommand() {...},22,0,0,0,4,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,AfterConfigureCommandEditHelperAdvice,17,0,2,0,5,0,3,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConnectorCreationEditHelperAdvice,159,0,30,0,30,0,18,0,3,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConformCreationEditHelperAdvice,116,0,24,0,31,0,14,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ConnectorReorientEditHelperAdvice,272,0,48,0,66,0,28,0,4,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,ReorientDirectedRelationshipPPEditHelperAdvice,76,0,10,0,17,0,7,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,SetEncapsulatedEditHelperAdvice,175,0,28,0,32,0,18,0,4,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.advice,SharedAssociationEditHelperAdvice,14,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command.wrapper,EMFToIEditCommandWrapper,26,0,2,0,7,0,3,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command.wrapper,EMFToReorientRelationshipEditCommandWrapper,11,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command.wrapper,EMFToCreateElementEditCommandWrapper,11,0,0,0,3,0,2,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command,InstanceSpecificationWithSlotConfigureElementCommand,53,0,4,0,12,0,4,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command,CreateAssociationCommand,84,0,10,0,23,0,9,0,4,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command,SetDirectedRelationshipPropertyPathCommand,85,0,10,0,24,0,9,0,4,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.command,SetNestedPathCommand,179,0,30,0,38,0,21,0,6,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,FlowPortNAMatcher,25,0,6,0,8,0,5,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,FlowPortOutMatcher,26,0,6,0,8,0,5,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,FlowPortInMatcher,26,0,6,0,8,0,5,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,ActorPartPropertyMatcher,27,0,8,0,7,0,6,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,ReferencePropertyMatcher,36,0,12,0,8,0,8,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,ConstraintPropertyMatcher,23,0,6,0,7,0,5,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,PartPropertyMatcher,36,0,12,0,8,0,8,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,ValuePropertyMatcher,34,0,12,0,9,0,8,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher,FlowPortInOutMatcher,26,0,6,0,8,0,5,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types.matcher.internal,SysML14ProfileMatcher,51,0,10,0,15,0,7,0,2,0
+org.eclipse.papyrus.sysml14.service.types,org.eclipse.papyrus.sysml14.service.types,Activator,3,0,0,0,1,0,1,0,1,0

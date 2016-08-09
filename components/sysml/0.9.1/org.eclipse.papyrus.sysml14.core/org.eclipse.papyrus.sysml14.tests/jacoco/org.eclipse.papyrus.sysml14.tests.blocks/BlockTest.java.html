@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BlockTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.blocks</a> &gt; <span class="el_source">BlockTest.java</span></div><h1>BlockTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Francois Le Fevre (CEA LIST) francois.le-fevre@cea.fr - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.blocks;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.blocks.Block;
+import org.eclipse.papyrus.sysml14.blocks.BlocksPackage;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * A test case for the model object '&lt;em&gt;&lt;b&gt;Block&lt;/b&gt;&lt;/em&gt;'.
+ * 
+ * FIXME I do not have any ReqID
+ *  See the requirement &lt;b&gt;{@papyrus.req org.eclipse.papyrus.sysml14#ReqX}&lt;/b&gt;.
+ *  FIXME what do you want here? 
+ * &lt;p&gt;
+ * The following features are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.Block#getReferences &lt;em&gt;References&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.Block#getParts &lt;em&gt;Parts&lt;/em&gt;}&lt;/li&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.blocks.Block#getFlowProperties &lt;em&gt;FlowProperties&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L48">public class BlockTest {</span>
+
+<span class="fc" id="L50">	private Block owningAgregationBlock=null;</span>
+
+<span class="fc" id="L52">	private Block owningCompositionBlock=null;</span>
+	
+<span class="fc" id="L54">	private Block flowPropertiesBlock=null;</span>
+
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp()  {
+		// Prepare Model test
+<span class="fc" id="L62">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+<span class="fc" id="L63">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+<span class="fc" id="L65">		StereotypeApplicationHelper stereotypeApplicationHelper = StereotypeApplicationHelper.getInstance(null);</span>
+		/*
+		 * create an association
+		 */
+<span class="fc" id="L69">		Class owningAgregationBlockClass1=model.createOwnedClass(&quot;Block1&quot;, false);</span>
+<span class="fc" id="L70">		owningAgregationBlock = (Block) stereotypeApplicationHelper.applyStereotype(owningAgregationBlockClass1, BlocksPackage.eINSTANCE.getBlock());</span>
+
+<span class="fc" id="L72">		Class ownedBlockClass2=model.createOwnedClass(&quot;Block2&quot;, false);</span>
+<span class="fc" id="L73">		stereotypeApplicationHelper.applyStereotype(ownedBlockClass2, BlocksPackage.eINSTANCE.getBlock());</span>
+
+<span class="fc" id="L75">		Property p1Inblock1 = owningAgregationBlockClass1.createOwnedAttribute(&quot;P1&quot;, ownedBlockClass2);</span>
+
+<span class="fc" id="L77">		Association associationAgregation = UMLFactory.eINSTANCE.createAssociation();</span>
+<span class="fc" id="L78">		Property p1InAsso = associationAgregation.createOwnedEnd(&quot;P1&quot;, owningAgregationBlockClass1);</span>
+<span class="fc" id="L79">		associationAgregation.getMemberEnds().add(p1Inblock1);</span>
+<span class="fc" id="L80">		associationAgregation.getMemberEnds().add(p1InAsso);</span>
+
+<span class="fc" id="L82">		p1Inblock1.setAggregation(AggregationKind.SHARED_LITERAL);</span>
+<span class="fc" id="L83">		p1InAsso.setAggregation(AggregationKind.NONE_LITERAL);</span>
+
+<span class="fc" id="L85">		associationAgregation.setPackage(model);</span>
+
+		/*
+		 * create a composition
+		 */
+<span class="fc" id="L90">		Class owningCompositionBlockClass3 = model.createOwnedClass(&quot;Block3&quot;, false);</span>
+<span class="fc" id="L91">		owningCompositionBlock = (Block) stereotypeApplicationHelper.applyStereotype(owningCompositionBlockClass3, BlocksPackage.eINSTANCE.getBlock());</span>
+
+<span class="fc" id="L93">		Property p1Inblock3 = owningCompositionBlockClass3.createOwnedAttribute(&quot;P1&quot;, ownedBlockClass2);</span>
+
+<span class="fc" id="L95">		Association compositionAssociation = UMLFactory.eINSTANCE.createAssociation();</span>
+<span class="fc" id="L96">		Property p1InAsso3 = compositionAssociation.createOwnedEnd(&quot;P1&quot;, owningCompositionBlockClass3);</span>
+<span class="fc" id="L97">		compositionAssociation.getMemberEnds().add(p1Inblock3);</span>
+<span class="fc" id="L98">		compositionAssociation.getMemberEnds().add(p1InAsso3);</span>
+
+<span class="fc" id="L100">		p1Inblock3.setAggregation(AggregationKind.COMPOSITE_LITERAL);</span>
+<span class="fc" id="L101">		p1InAsso3.setAggregation(AggregationKind.NONE_LITERAL);</span>
+
+<span class="fc" id="L103">		compositionAssociation.setPackage(model);</span>
+		
+		/*
+		 * create a flow property and add it to the Block
+		 */
+<span class="fc" id="L108">		Class flowPropertyClass = model.createOwnedClass(&quot;FPClass1&quot;, false);</span>
+<span class="fc" id="L109">		flowPropertiesBlock = (Block) stereotypeApplicationHelper.applyStereotype(flowPropertyClass, BlocksPackage.eINSTANCE.getBlock());</span>
+<span class="fc" id="L110">		Property p0 = flowPropertyClass.createOwnedAttribute(&quot;p0&quot;, null);</span>
+<span class="fc" id="L111">		StereotypeApplicationHelper.getInstance(null).applyStereotype(p0, PortsandflowsPackage.eINSTANCE.getFlowProperty());</span>
+<span class="fc" id="L112">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.blocks.Block#getReferences()
+	 * &lt;em&gt;Reference&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.blocks.Block#getReferences()
+	 */
+	@Test
+	public void testGetReferences() {  
+		/*
+		 * Test if association Aggregation is operational
+		 */
+<span class="fc" id="L124">		Assert.assertNotNull(&quot;References should not be null&quot;, owningAgregationBlock.getReferences());</span>
+<span class="fc" id="L125">		Assert.assertEquals(&quot;References size should be 1&quot;, 1,owningAgregationBlock.getReferences().size());</span>
+		/*
+		 * Test if association Composition is not interfering
+		 */
+<span class="fc" id="L129">		Assert.assertNotNull(&quot;References should not be null&quot;, owningCompositionBlock.getReferences());</span>
+<span class="fc" id="L130">		Assert.assertEquals(&quot;References size should be 0&quot;, 0,owningCompositionBlock.getReferences().size());</span>
+
+<span class="fc" id="L132">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.blocks.Block#getParts()
+	 * &lt;em&gt;Part&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.blocks.Block#getParts()
+	 */
+	@Test
+	public void testGetParts() {  
+		/*
+		 * Test if association Composition is not interfering
+		 */
+<span class="fc" id="L144">		Assert.assertNotNull(&quot;References should not be null&quot;, owningCompositionBlock.getParts());</span>
+<span class="fc" id="L145">		Assert.assertEquals(&quot;References size should be 1&quot;, 1,owningCompositionBlock.getParts().size());</span>
+
+<span class="fc" id="L147">	}</span>
+
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysml14.blocks.Block#getFlowProperties()
+	 * &lt;em&gt;FlowProperty&lt;/em&gt;}' feature getter. 
+	 * @see org.eclipse.papyrus.sysml14.blocks.Block#getFlowProperties()
+	 */
+	@Test
+	public void testGetFlowProperties() {  
+<span class="fc" id="L157">		Assert.assertNotNull(&quot;FlowProperties should not be null&quot;, flowPropertiesBlock.getFlowProperties());</span>
+<span class="fc" id="L158">		Assert.assertEquals(&quot;FlowProperties size should be 1&quot;, 1, flowPropertiesBlock.getFlowProperties().size());</span>
+<span class="fc" id="L159">	}</span>
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

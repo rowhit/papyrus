@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DiagnosticUtil.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.validation</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.validation.internal.utils</a> &gt; <span class="el_source">DiagnosticUtil.java</span></div><h1>DiagnosticUtil.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.validation.internal.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.uml2.uml.Element;
+
+/**
+ * This is an utility class for managing Diagnostic
+ *
+ */
+// TODO : this  functionalities should be provided by papyrus core or other upper framework
+public final class DiagnosticUtil {
+
+<span class="nc" id="L28">	private DiagnosticUtil() {}</span>
+	
+	/** 
+	 * Find diagnostic by source (Should be unique per element if the source is correctly defined)
+	 * @param diagnostic
+	 * @param source
+	 * @return
+	 */
+	public static List&lt;Diagnostic&gt; findDiagnosticBySource(Diagnostic diagnostic, String source) {
+<span class="nc" id="L37">		List&lt;Diagnostic&gt; foundDiagnostic = new ArrayList&lt;Diagnostic&gt;();</span>
+<span class="nc" id="L38">		List&lt;Diagnostic&gt; children = diagnostic.getChildren();</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">		if (source.equals(diagnostic.getSource())) {</span>
+<span class="nc" id="L40">			foundDiagnostic.add(diagnostic);</span>
+		}
+<span class="nc bnc" id="L42" title="All 4 branches missed.">		if (children != null &amp;&amp; !children.isEmpty()) {</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">			for (Diagnostic diagnostic2 : children) {</span>
+<span class="nc" id="L44">				foundDiagnostic.addAll(findDiagnosticBySource(diagnostic2, source));</span>
+			}
+		}
+<span class="nc" id="L47">		return foundDiagnostic;</span>
+	}
+
+	/**
+	 * Get diagnostics by element
+	 * @param diagnostics
+	 * @param element
+	 * @return
+	 */
+	public static List&lt;Diagnostic&gt; filterDiagnosticsByElement(List&lt;Diagnostic&gt; diagnostics, Element element) {
+<span class="nc" id="L57">		List&lt;Diagnostic&gt; filteredDiagnostics = new ArrayList&lt;Diagnostic&gt;();</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		for (Diagnostic diagnostic : diagnostics) {</span>
+<span class="nc" id="L59">			List&lt;?&gt; datas = diagnostic.getData();</span>
+<span class="nc bnc" id="L60" title="All 4 branches missed.">			if (datas != null &amp;&amp; !datas.isEmpty()) {</span>
+				// try to get first element. According to Diagnostic#getData() documentation : The first element is typically the object that is the primary source of the problem;
+<span class="nc" id="L62">				Object o = datas.get(0);</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">				if (element.equals(o)) {</span>
+<span class="nc" id="L64">					filteredDiagnostics.add(diagnostic);</span>
+				}
+			}
+		}
+<span class="nc" id="L68">		return filteredDiagnostics;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

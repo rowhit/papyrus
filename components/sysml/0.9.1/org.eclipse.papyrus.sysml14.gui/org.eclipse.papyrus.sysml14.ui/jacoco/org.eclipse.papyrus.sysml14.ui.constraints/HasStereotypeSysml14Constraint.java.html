@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>HasStereotypeSysml14Constraint.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.constraints</a> &gt; <span class="el_source">HasStereotypeSysml14Constraint.java</span></div><h1>HasStereotypeSysml14Constraint.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.ui.constraints;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.papyrus.uml.properties.constraints.HasStereotypeConstraint;
+import org.eclipse.uml2.uml.Profile;
+
+/**
+ * A constraint to test if the given object is a UML Element and
+ * has the given Stereotype and Sysml1.4 profile applied
+ *
+ * @author Benoit Maggi
+ */
+<span class="nc" id="L26">public class HasStereotypeSysml14Constraint extends HasStereotypeConstraint implements Constraint{</span>
+
+	/**
+	 * @see org.eclipse.papyrus.infra.constraints.constraints.AbstractConstraint#match(java.lang.Object)
+	 * Check if the containing package has profilUri applied.
+	 * @param selection
+	 * @return
+	 */
+	@Override
+	public boolean match(Object selection) {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">		if (super.match(selection)){</span>
+<span class="nc" id="L37">			EList&lt;Profile&gt; allAppliedProfiles = umlElement.getNearestPackage().getAllAppliedProfiles();</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">			for (Profile profile : allAppliedProfiles) {</span>
+<span class="nc" id="L39">				String uri = profile.getURI();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">				if (SysMLResource.PROFILE_URI.equals(uri)){</span>
+<span class="nc" id="L41">					return true;</span>
+				}
+			}
+		}
+<span class="nc" id="L45">		return false; // always called even when not defined </span>
+	}
+
+	
+
+	/**
+	 * @see java.lang.Object#toString()
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString() {
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		return String.format(&quot;HasStereotypeSysml14 %s (%s)&quot;, stereotypeName, getDisplayUnit().getElementMultiplicity() == 1 ? &quot;Single&quot; : &quot;Multiple&quot;); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$</span>
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.infra.constraints.constraints.AbstractConstraint#equivalent(org.eclipse.papyrus.infra.constraints.constraints.Constraint)
+	 * 
+	 * @param constraint
+	 * @return
+	 */
+	@Override
+	protected boolean equivalent(Constraint constraint) { 
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		if (super.equivalent(constraint)) {</span>
+<span class="nc" id="L69">			return (constraint instanceof HasStereotypeSysml14Constraint);</span>
+		}
+<span class="nc" id="L71">		return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

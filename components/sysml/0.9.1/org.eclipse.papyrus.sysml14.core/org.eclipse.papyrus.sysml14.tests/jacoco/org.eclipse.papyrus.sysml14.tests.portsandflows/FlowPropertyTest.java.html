@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>FlowPropertyTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.tests.portsandflows</a> &gt; <span class="el_source">FlowPropertyTest.java</span></div><h1>FlowPropertyTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2009, 2014 CEA LIST and others.
+ *
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
+ *  Christian W. Damus (CEA) - bug 422257
+ *  Benoit Maggi (CEA LIST)  - bug 476430           
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.tests.portsandflows;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.sysml14.portsandflows.FlowDirection;
+import org.eclipse.papyrus.sysml14.portsandflows.FlowProperty;
+import org.eclipse.papyrus.sysml14.portsandflows.PortsandflowsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.uml2.uml.Image;
+import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * A test case for the model object '&lt;em&gt;&lt;b&gt;Flow Property&lt;/b&gt;&lt;/em&gt;'. 
+ * &lt;p&gt;
+ * The following operations are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysml14.portsandflows.FlowProperty#getIcon() &lt;em&gt;Get Icon&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ * &lt;p&gt;
+ * The following operations are tested:
+ * &lt;ul&gt;
+ * &lt;li&gt;{@link org.eclipse.papyrus.sysm14.portsandflows.FlowProperty#getIcon()
+ * &lt;em&gt;Get Icon&lt;/em&gt;}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L50">public class FlowPropertyTest {</span>
+
+<span class="fc" id="L52">	private FlowProperty fpIn = null;</span>
+
+<span class="fc" id="L54">	private FlowProperty fpOut = null;</span>
+
+<span class="fc" id="L56">	private FlowProperty fpInOut = null;</span>
+	/**
+	 * @see junit.framework.TestCase#setUp()
+	 */
+	@Before
+	public void setUp(){
+		// Prepare test
+<span class="fc" id="L63">		Model model = SysMLResource.createSysMLModel(new ResourceSetImpl());</span>
+
+<span class="fc" id="L65">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());</span>
+
+		// Create interface
+<span class="fc" id="L68">		Interface i = model.createOwnedInterface(&quot;i&quot;);</span>
+
+		// Create properties
+<span class="fc" id="L71">		Property p0 = i.createOwnedAttribute(&quot;p0&quot;, null);</span>
+<span class="fc" id="L72">		Property p1 = i.createOwnedAttribute(&quot;p1&quot;, null);</span>
+<span class="fc" id="L73">		Property p2 = i.createOwnedAttribute(&quot;p2&quot;, null);</span>
+
+		// Add FlowPort stereotypes
+<span class="fc" id="L76">		fpIn = (FlowProperty)StereotypeApplicationHelper.getInstance(null).applyStereotype(p0, PortsandflowsPackage.eINSTANCE.getFlowProperty());</span>
+<span class="fc" id="L77">		fpIn.setDirection(FlowDirection.IN);</span>
+
+<span class="fc" id="L79">		fpOut = (FlowProperty)StereotypeApplicationHelper.getInstance(null).applyStereotype(p1, PortsandflowsPackage.eINSTANCE.getFlowProperty());</span>
+<span class="fc" id="L80">		fpOut.setDirection(FlowDirection.OUT);</span>
+
+<span class="fc" id="L82">		fpInOut = (FlowProperty)StereotypeApplicationHelper.getInstance(null).applyStereotype(p2, PortsandflowsPackage.eINSTANCE.getFlowProperty());</span>
+<span class="fc" id="L83">		fpInOut.setDirection(FlowDirection.INOUT);</span>
+
+<span class="fc" id="L85">	}</span>
+
+	/**
+	 * Tests the '{@link org.eclipse.papyrus.sysm14.portsandflows.FlowProperty#getIcon()
+	 * &lt;em&gt;Get Icon&lt;/em&gt;}' operation.
+	 *
+	 * @see org.eclipse.papyrus.sysm14.portsandflows.FlowProperty#getIcon()
+	 * 
+	 */
+	@Test
+	public void testGetIcon() {
+<span class="fc" id="L96">		Stereotype s = UMLUtil.getStereotype(fpIn); // Retrieve Stereotype</span>
+<span class="fc" id="L97">		Image imageIn = s.getIcons().get(FlowDirection.IN.getValue()); // IN</span>
+<span class="fc" id="L98">		Image imageOut = s.getIcons().get(FlowDirection.OUT.getValue()); // OUT</span>
+<span class="fc" id="L99">		Image imageInOut = s.getIcons().get(FlowDirection.INOUT.getValue()); // INOUT</span>
+		
+<span class="fc" id="L101">		Assert.assertEquals(&quot;A Flow property with an INOUT direction must have the INOUT image&quot;,imageInOut,fpInOut.getIcon());</span>
+<span class="fc" id="L102">		Assert.assertEquals(&quot;A Flow property with an OUT direction must have the OUT image&quot;,imageOut,fpOut.getIcon());</span>
+<span class="fc" id="L103">		Assert.assertEquals(&quot;A Flow property with an IN direction must have the IN image&quot;,imageIn,fpIn.getIcon());</span>
+<span class="fc" id="L104">	}</span>
+
+} 
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CopyReadOnlyModelConstraintTest.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.validation.tests</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.validation.tests.rules</a> &gt; <span class="el_source">CopyReadOnlyModelConstraintTest.java</span></div><h1>CopyReadOnlyModelConstraintTest.java</h1><pre class="source lang-java linenums">/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST and others.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Benoit Maggi (CEA LIST) benoit.maggi@cea.fr - Initial API and implementation
+ *   
+ *****************************************************************************/
+
+package org.eclipse.papyrus.sysml14.validation.tests.rules;
+
+import java.util.List;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.InternalTransaction;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.emf.validation.service.ConstraintRegistry;
+import org.eclipse.emf.validation.service.IConstraintDescriptor;
+import org.eclipse.papyrus.infra.emf.gmf.command.GMFtoEMFCommandWrapper;
+import org.eclipse.papyrus.infra.services.validation.commands.ValidateModelCommand;
+import org.eclipse.papyrus.sysml14.requirements.Requirement;
+import org.eclipse.papyrus.sysml14.requirements.RequirementsPackage;
+import org.eclipse.papyrus.sysml14.util.SysMLResource;
+import org.eclipse.papyrus.sysml14.validation.Activator;
+import org.eclipse.papyrus.sysml14.validation.internal.utils.DiagnosticUtil;
+import org.eclipse.papyrus.uml.service.validation.internal.UMLDiagnostician;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil.StereotypeApplicationHelper;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Test on Refine One Client and One Supplier constraint
+ *
+ */
+@SuppressWarnings(&quot;nls&quot;)
+<span class="fc" id="L48">public class CopyReadOnlyModelConstraintTest {</span>
+
+	public static final String CONSTRAINT_ID = &quot;constraint.copy.readonly&quot;; //$NON-NLS-1$
+
+	/**
+	 * Test method for the constraint
+	 * 
+	 * @throws InterruptedException
+	 * @throws RollbackException
+	 */
+	@Test
+	public void checkRuleValidation() throws InterruptedException, RollbackException {
+<span class="fc" id="L60">		ResourceSetImpl resourceSet = new ResourceSetImpl();</span>
+<span class="fc" id="L61">		Model model = SysMLResource.createSysMLModel(resourceSet);</span>
+<span class="fc" id="L62">		Assert.assertFalse(&quot;the SysML profil must be applied.&quot;, model.getAppliedProfiles().isEmpty());	</span>
+		
+<span class="fc" id="L64">		Abstraction copyValid = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L65">		model.getPackagedElements().add(copyValid);</span>
+<span class="fc" id="L66">		Class requirementSupplier = model.createOwnedClass(&quot;requirementSupplier&quot;, false);</span>
+<span class="fc" id="L67">		Requirement requirementSupplierStereotypeplication = (Requirement) StereotypeApplicationHelper.getInstance(null).applyStereotype(requirementSupplier, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L68">		requirementSupplierStereotypeplication.setText(&quot;Copied text&quot;);</span>
+<span class="fc" id="L69">		copyValid.getSuppliers().add(requirementSupplier);</span>
+<span class="fc" id="L70">		Class requirementClient = model.createOwnedClass(&quot;requirementClient&quot;, false);</span>
+<span class="fc" id="L71">		Requirement requirementSupplierStereotypeplication2 = (Requirement) StereotypeApplicationHelper.getInstance(null).applyStereotype(requirementClient, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L72">		requirementSupplierStereotypeplication2.setText(&quot;Copied text&quot;);</span>
+<span class="fc" id="L73">		copyValid.getClients().add(requirementClient);		</span>
+<span class="fc" id="L74">		StereotypeApplicationHelper.getInstance(null).applyStereotype(copyValid, RequirementsPackage.eINSTANCE.getCopy());</span>
+			
+<span class="fc" id="L76">		Abstraction copyInvalid = UMLFactory.eINSTANCE.createAbstraction();</span>
+<span class="fc" id="L77">		model.getPackagedElements().add(copyInvalid);</span>
+<span class="fc" id="L78">		Class requirementSupplierInvalid = model.createOwnedClass(&quot;requirementSupplier&quot;, false);</span>
+<span class="fc" id="L79">		Requirement requirementSupplierStereotypeplication3 = (Requirement) StereotypeApplicationHelper.getInstance(null).applyStereotype(requirementSupplierInvalid, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L80">		requirementSupplierStereotypeplication3.setText(&quot;Copied text&quot;);</span>
+<span class="fc" id="L81">		copyInvalid.getSuppliers().add(requirementSupplierInvalid);</span>
+<span class="fc" id="L82">		Class requirementClientInvalid = model.createOwnedClass(&quot;requirementClient&quot;, false);</span>
+<span class="fc" id="L83">		Requirement requirementSupplierStereotypeplication4 = (Requirement) StereotypeApplicationHelper.getInstance(null).applyStereotype(requirementClientInvalid, RequirementsPackage.eINSTANCE.getRequirement());</span>
+<span class="fc" id="L84">		requirementSupplierStereotypeplication4.setText(&quot;Different Copied text&quot;);</span>
+<span class="fc" id="L85">		copyInvalid.getClients().add(requirementClientInvalid);		</span>
+<span class="fc" id="L86">		StereotypeApplicationHelper.getInstance(null).applyStereotype(copyInvalid, RequirementsPackage.eINSTANCE.getCopy());		</span>
+
+<span class="fc" id="L88">		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);</span>
+<span class="fc" id="L89">		InternalTransactionalEditingDomain editingDomain = (InternalTransactionalEditingDomain) TransactionUtil.getEditingDomain(model);</span>
+		
+<span class="fc" id="L91">		final ValidateModelCommand validateModelCommand = new ValidateModelCommand(model, new UMLDiagnostician());</span>
+		
+<span class="fc" id="L93">		InternalTransaction startTransaction = editingDomain.startTransaction(false, null);</span>
+<span class="fc" id="L94">		editingDomain.getCommandStack().execute(GMFtoEMFCommandWrapper.wrap(validateModelCommand));</span>
+<span class="fc" id="L95">		startTransaction.commit();</span>
+		// check that the constraint exist
+<span class="fc" id="L97">		ConstraintRegistry instance = ConstraintRegistry.getInstance();</span>
+<span class="fc" id="L98">		IConstraintDescriptor descriptor = instance.getDescriptor(Activator.PLUGIN_ID, CONSTRAINT_ID);</span>
+<span class="fc" id="L99">		Assert.assertNotNull(&quot;Constraint is missing&quot;, descriptor);</span>
+
+<span class="fc" id="L101">		List&lt;Diagnostic&gt; constraintDiagnosticList = DiagnosticUtil.findDiagnosticBySource(validateModelCommand.getDiagnostic(), Activator.PLUGIN_ID + &quot;.&quot; + CONSTRAINT_ID);</span>
+				
+<span class="fc" id="L103">		Assert.assertEquals(&quot;The rule &quot;+CONSTRAINT_ID+&quot; should not trigger an issue for this use case &quot;, 0, DiagnosticUtil.filterDiagnosticsByElement(constraintDiagnosticList, copyValid).size());</span>
+<span class="fc" id="L104">		Assert.assertEquals(&quot;The rule &quot;+CONSTRAINT_ID+&quot; should trigger an issue for this use case &quot;, 1, DiagnosticUtil.filterDiagnosticsByElement(constraintDiagnosticList, copyInvalid).size());		</span>
+<span class="fc" id="L105">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>

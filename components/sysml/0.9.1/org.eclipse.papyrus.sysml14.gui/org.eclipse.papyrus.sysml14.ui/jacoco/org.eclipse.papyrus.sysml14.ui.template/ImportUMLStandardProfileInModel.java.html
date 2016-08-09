@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ImportUMLStandardProfileInModel.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org.eclipse.papyrus.sysml14.ui</a> &gt; <a href="index.source.html" class="el_package">org.eclipse.papyrus.sysml14.ui.template</a> &gt; <span class="el_source">ImportUMLStandardProfileInModel.java</span></div><h1>ImportUMLStandardProfileInModel.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/*****************************************************************************</span>
+ * Copyright (c) 2015 CEA LIST.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ * Benoit Maggi benoit.maggi@cea.fr - Initial API and implementation
+ *****************************************************************************/
+package org.eclipse.papyrus.sysml14.ui.template;
+
+import java.io.IOException;
+import java.util.Collections;
+
+import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.papyrus.infra.core.resource.ModelSet;
+import org.eclipse.papyrus.uml.diagram.wizards.transformation.IGenerator;
+import org.eclipse.papyrus.uml.tools.model.UmlUtils;
+import org.eclipse.papyrus.sysml14.ui.Activator;
+import org.eclipse.uml2.uml.PackageImport;
+
+
+/**
+ * Based on org.eclipse.papyrus.uml.templaterepository.ImportUMLPrimitiveTypesInModel
+ *
+ */
+@Deprecated //FIXME unused since the standard profile is in the default created model 0.8.1 (What about adding it in papyrus core?)
+<span class="nc" id="L34">public class ImportUMLStandardProfileInModel implements IGenerator {</span>
+
+
+	private ModelSet modelSet;
+
+	private org.eclipse.uml2.uml.Package rootElement;
+
+	private EObject standardProfile;
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.wizards.transformation.IGenerator#setModelSet(org.eclipse.papyrus.uml.diagram.wizards.transformation.ModelSet)
+	 *
+	 * @param modelSet
+	 */
+	public void setModelSet(ModelSet modelSet) {
+<span class="nc" id="L49">		this.modelSet = modelSet;</span>
+<span class="nc" id="L50">	}</span>
+
+	/**
+	 * @param modelSet
+	 *            the current model set
+	 * @return the associated command stack
+	 */
+	protected final CommandStack getCommandStack(ModelSet modelSet) {
+<span class="nc" id="L58">		return modelSet.getTransactionalEditingDomain().getCommandStack();</span>
+	}
+
+	/**
+	 * @return the model set
+	 */
+	public ModelSet getModelSet() {
+<span class="nc" id="L65">		return this.modelSet;</span>
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.uml.diagram.wizards.transformation.IGenerator#execute()
+	 *
+	 */
+	public void execute() {
+<span class="nc" id="L73">		Resource umlResource = UmlUtils.getUmlModel(modelSet).getResource();</span>
+
+		// Select the root element to add the wanted imports
+<span class="nc" id="L76">		rootElement = (org.eclipse.uml2.uml.Model) umlResource.getContents().get(0);</span>
+
+		// Load the needed libraries. 
+<span class="nc" id="L79">		URI standardProfileURI = URI.createURI(&quot;pathmap://UML_PROFILES/Standard.profile.uml&quot;).appendFragment(&quot;_0&quot;);  //$NON-NLS-1$ //$NON-NLS-2$</span>
+<span class="nc" id="L80">		standardProfile = modelSet.getEObject(standardProfileURI, true);</span>
+
+		// Creates the import packages at the root of the model (elements of type packageImport)
+<span class="nc" id="L83">		this.getCommandStack(modelSet).execute(new RecordingCommand(modelSet.getTransactionalEditingDomain()) {</span>
+
+			@Override
+			protected void doExecute() {
+
+<span class="nc" id="L88">				PackageImport importPrimitivePack = rootElement.createPackageImport((org.eclipse.uml2.uml.Package) standardProfile);</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">				if (!rootElement.getPackageImports().contains(importPrimitivePack)) {</span>
+<span class="nc" id="L90">					rootElement.getPackageImports().add(importPrimitivePack);</span>
+				}
+
+				try {
+<span class="nc" id="L94">					rootElement.eResource().save(Collections.EMPTY_MAP);</span>
+<span class="nc" id="L95">				} catch (IOException e) {</span>
+<span class="nc" id="L96">					Activator.getLogHelper().error(e);</span>
+				}
+<span class="nc" id="L98">			}</span>
+		});
+
+<span class="nc" id="L101">	}</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.4.201502262128</span></div></body></html>
