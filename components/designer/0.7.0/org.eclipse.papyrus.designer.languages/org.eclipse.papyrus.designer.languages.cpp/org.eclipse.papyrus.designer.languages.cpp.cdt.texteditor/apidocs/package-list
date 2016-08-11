@@ -1,8 +1,0 @@
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.editor
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.factory
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.handler
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.listener
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.modelresource
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.preferences
-org.eclipse.papyrus.designer.languages.cpp.cdt.texteditor.sync
