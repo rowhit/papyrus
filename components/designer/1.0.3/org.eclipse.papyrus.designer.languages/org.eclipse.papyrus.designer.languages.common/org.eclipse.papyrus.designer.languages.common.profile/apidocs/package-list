@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.languages.common.profile
+org.eclipse.papyrus.designer.languages.common.profile.Codegen
+org.eclipse.papyrus.designer.languages.common.profile.Codegen.impl
+org.eclipse.papyrus.designer.languages.common.profile.Codegen.util

@@ -1,0 +1,8 @@
+org.eclipse.papyrus.designer.components.modellibs.core
+org.eclipse.papyrus.designer.components.modellibs.core.bindinghelpers
+org.eclipse.papyrus.designer.components.modellibs.core.embeddingrules
+org.eclipse.papyrus.designer.components.modellibs.core.iconfigurators
+org.eclipse.papyrus.designer.components.modellibs.core.mappingrules
+org.eclipse.papyrus.designer.components.modellibs.core.statemachine
+org.eclipse.papyrus.designer.components.modellibs.core.wizards
+org.eclipse.papyrus.designer.components.modellibs.core.xtend

@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.languages.cpp.reverse.ui
+org.eclipse.papyrus.designer.languages.cpp.reverse.ui.dialog
+org.eclipse.papyrus.designer.languages.cpp.reverse.ui.handler
+org.eclipse.papyrus.designer.languages.cpp.reverse.ui.listener

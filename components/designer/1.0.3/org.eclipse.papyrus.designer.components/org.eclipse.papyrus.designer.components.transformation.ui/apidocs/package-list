@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.components.transformation.ui
+org.eclipse.papyrus.designer.components.transformation.ui.dialogs
+org.eclipse.papyrus.designer.components.transformation.ui.handlers
+org.eclipse.papyrus.designer.components.transformation.ui.preferences

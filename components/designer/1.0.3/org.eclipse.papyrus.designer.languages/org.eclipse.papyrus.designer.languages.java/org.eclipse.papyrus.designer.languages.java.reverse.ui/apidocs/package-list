@@ -1,0 +1,7 @@
+org.eclipse.papyrus.designer.languages.java.reverse.ui
+org.eclipse.papyrus.designer.languages.java.reverse.ui.dialog
+org.eclipse.papyrus.designer.languages.java.reverse.ui.dnd
+org.eclipse.papyrus.designer.languages.java.reverse.ui.exception
+org.eclipse.papyrus.designer.languages.java.reverse.ui.handlers
+org.eclipse.papyrus.designer.languages.java.reverse.ui.preference
+org.eclipse.papyrus.designer.languages.java.reverse.ui.utils

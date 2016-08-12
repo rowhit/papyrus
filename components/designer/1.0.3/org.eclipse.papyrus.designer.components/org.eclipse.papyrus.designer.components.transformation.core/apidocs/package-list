@@ -1,0 +1,14 @@
+org.eclipse.papyrus.designer.components.transformation.core
+org.eclipse.papyrus.designer.components.transformation.core.commands
+org.eclipse.papyrus.designer.components.transformation.core.deployment
+org.eclipse.papyrus.designer.components.transformation.core.extensions
+org.eclipse.papyrus.designer.components.transformation.core.generate
+org.eclipse.papyrus.designer.components.transformation.core.listeners
+org.eclipse.papyrus.designer.components.transformation.core.make
+org.eclipse.papyrus.designer.components.transformation.core.preferences
+org.eclipse.papyrus.designer.components.transformation.core.sync
+org.eclipse.papyrus.designer.components.transformation.core.templates
+org.eclipse.papyrus.designer.components.transformation.core.transformations
+org.eclipse.papyrus.designer.components.transformation.core.transformations.connector
+org.eclipse.papyrus.designer.components.transformation.core.transformations.container
+org.eclipse.papyrus.designer.components.transformation.core.transformations.filters
