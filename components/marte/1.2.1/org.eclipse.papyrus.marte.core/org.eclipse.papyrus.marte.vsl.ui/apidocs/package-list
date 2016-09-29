@@ -1,0 +1,8 @@
+org.eclipse.papyrus.marte.vsl.ui
+org.eclipse.papyrus.marte.vsl.ui.contentassist
+org.eclipse.papyrus.marte.vsl.ui.contentassist.antlr
+org.eclipse.papyrus.marte.vsl.ui.contentassist.antlr.internal
+org.eclipse.papyrus.marte.vsl.ui.internal
+org.eclipse.papyrus.marte.vsl.ui.labeling
+org.eclipse.papyrus.marte.vsl.ui.outline
+org.eclipse.papyrus.marte.vsl.ui.quickfix

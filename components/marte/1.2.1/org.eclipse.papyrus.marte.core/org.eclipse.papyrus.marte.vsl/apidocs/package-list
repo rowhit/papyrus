@@ -1,0 +1,13 @@
+org.eclipse.papyrus.marte.vsl
+org.eclipse.papyrus.marte.vsl.extensions
+org.eclipse.papyrus.marte.vsl.formatting
+org.eclipse.papyrus.marte.vsl.parseTreeConstruction
+org.eclipse.papyrus.marte.vsl.parser.antlr
+org.eclipse.papyrus.marte.vsl.parser.antlr.internal
+org.eclipse.papyrus.marte.vsl.scoping
+org.eclipse.papyrus.marte.vsl.scoping.visitors
+org.eclipse.papyrus.marte.vsl.services
+org.eclipse.papyrus.marte.vsl.vSL
+org.eclipse.papyrus.marte.vsl.vSL.impl
+org.eclipse.papyrus.marte.vsl.vSL.util
+org.eclipse.papyrus.marte.vsl.validation

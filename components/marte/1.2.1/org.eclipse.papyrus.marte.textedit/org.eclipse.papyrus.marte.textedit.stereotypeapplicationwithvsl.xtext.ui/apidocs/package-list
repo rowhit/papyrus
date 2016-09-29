@@ -1,0 +1,9 @@
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.contentassist
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.contentassist.antlr
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.contentassist.antlr.internal
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.contributions
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.internal
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.labeling
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.outline
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.ui.quickfix
