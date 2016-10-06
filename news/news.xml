@@ -15,6 +15,15 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+    <item
+		date="2016-10-06"
+        title="Papyrus 2.0.1 Neon.1 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.1">
+        <p>
+            The Eclipse Papyrus 2.0.1 Neon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
 	<item
 		date="2016-07-01"
         title="Papyrus Use Case Story"
