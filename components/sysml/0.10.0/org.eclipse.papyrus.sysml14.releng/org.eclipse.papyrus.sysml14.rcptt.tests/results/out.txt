@@ -1,0 +1,35 @@
+Started at Thu Jan 05 16:58:40 CET 2017
+RCPTT Runner version: 2.1
+Initializing target platform...
+Target platform is valid.
+Looking for tests...
+Existing projects in workspace:
+    <none>
+Importing projects to workspace:
+Refreshing projects:
+    /volatile/gits/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.sysml14.rcptt.tests... OK
+    /volatile/gits/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/projects/org.eclipse.papyrus.tools.org.eclipse.papyrus.tools.rcptt... OK
+Refreshing projects:
+    org.eclipse.papyrus.sysml14.rcptt.tests... OK
+    org.eclipse.papyrus.tools.rcptt... OK
+Searching for tests in projects:
+    org.eclipse.papyrus.sysml14.rcptt.tests... 
+Complete OK
+    org.eclipse.papyrus.tools.rcptt... 
+No tests found
+Testcase Artifacts:5
+AUT-0:Launching
+AUT-0:Product: org.eclipse.papyrus.sysml14.rcp.product
+AUT-0:Application: org.eclipse.ui.ide.workbench
+AUT-0:Architecture: x86_64
+64bit arch is selected because AUT uses launcher library
+	"plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740" specified in config file: papyrusSysML.ini
+/volatile/gits/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT arguments: -clean -port 8080 -os ${target.os} -arch ${target.arch} -consoleLog
+/volatile/gits/org.eclipse.papyrus-sysml/releng/org.eclipse.papyrus.sysml14.rcptt.tests/target/aut-ws-0: AUT VM arguments: -Xms256m -Xmx1024m -XX:MaxPermSize=256m -Xmx1536m -XX:MaxPermSize=1024m -DWORKSPACE=/volatile/home/fl218080/workspace
+Pass 1 (5) processed. 0 failed. spent: 0:23, 0:23 mins remaining. TC-AA-Init. time: 22874ms 
+Pass 2 (5) processed. 0 failed. spent: 1:17, 0:38 mins remaining. TC-AProjectCreation. time: 52855ms 
+Pass 3 (5) processed. 0 failed. spent: 1:30, 0:18 mins remaining. TC-BDD-DataType. time: 13395ms 
+Pass 4 (5) processed. 0 failed. spent: 1:35, 0:00 mins remaining. TC-BDD-OpenDiagram. time: 4177ms 
+Pass 5 (5) processed. 0 failed. spent: 2:15, 0:00 mins remaining. TC-ME-Property. time: 39107ms 
+Process terminated. Shut down AUTs
+Finished at Thu Jan 05 17:01:30 CET 2017

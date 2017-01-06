@@ -1,0 +1,8 @@
+org.eclipse.papyrus.sysml14.validation
+org.eclipse.papyrus.sysml14.validation.internal.utils
+org.eclipse.papyrus.sysml14.validation.rules.activities
+org.eclipse.papyrus.sysml14.validation.rules.blocks
+org.eclipse.papyrus.sysml14.validation.rules.modelelements
+org.eclipse.papyrus.sysml14.validation.rules.portsandflows
+org.eclipse.papyrus.sysml14.validation.rules.requirements
+org.eclipse.papyrus.sysml14.validation.selectors
