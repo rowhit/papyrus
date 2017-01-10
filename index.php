@@ -96,7 +96,7 @@
                             echo $papyrusnews;
                         ?>
                       </div>
-                        
+
                     <!--</div>-->
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group btn-group-xs" role="group">
@@ -106,7 +106,7 @@
                             <button type="button" class="btn btn-default" onclick="location.href='news/index.php'"><img src="img/rss.png" alt="RSS"></button>
                         </div>
                     </div>
-                    
+
                     <div class="well testimonial">
                         <?php
                             require_once ('quotes/quotes2html.php');
@@ -166,14 +166,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <p class="text-justify">Papyrus is an industrial-grade open source Model-Based Engineering tool. Papyrus has notably been used successfuly in industrial projects and is the base platform for several industrial modeling tools.
                     </p>
                     <h2 class="feature-heading-white">Papyrus Use Case Stories</h2>
-                    <p class="text-justify">Have a look to our detailed use case stories to learn how Papyrus has been applied to enable MBE in practice: 
+                    <p class="text-justify">Have a look to our detailed use case stories to learn how Papyrus has been applied to enable MBE in practice:
                     </p>
                     <div class="row">
-                        
+
                         <?php
                                 require_once ('applications/applications2html.php');
                                 $papyrusapplication = applications_to_html("applications/applications.xml", 3);
@@ -191,12 +191,12 @@
                     </p>
                     <p class="text-justify">Finally, Papyrus being open source, it has become the natural choice in academia for both teaching and research purposes.
                     </p>
-   
+
 
 
                 </div>
             </div>
-            
+
         </div>
     </section>
 
@@ -346,7 +346,7 @@
 
                     </p>
                     <ul class="text-left">
-                        <li><a href="https://projects.eclipse.org/projects/modeling.papyrus-rt">Papyrus RT</a> for Real-time Systems modeling.</li>
+                        <li><a href="https://www.eclipse.org/papyrus-rt/">Papyrus RT</a> for Real-time Systems modeling.</li>
                         <li><a href="http://git.eclipse.org/c/papyrus/org.eclipse.papyrus-robotml.git/">RobotML</a>: a Papyrus-based modeling environment dedicated to robotics.</li>
                         <li><a href="https://www.polarsys.org/solutions/papyrus">Papyrus PolarSys Solution</a>: Papyrus packaged as a PolarSys Solution.</li>
                         <li><a href="http://projects.eclipse.org/projects/modeling.upr">Eclipse UML Profiles Repository</a>.</li>
