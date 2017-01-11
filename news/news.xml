@@ -16,6 +16,15 @@
 -->
 <news>
     <item
+		date="2017-01-10"
+        title="Papyrus 2.0.2 Neon.2 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.2">
+        <p>
+            The Eclipse Papyrus 2.0.2 Neon release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
+    <item
 		date="2016-10-06"
         title="Papyrus 2.0.1 Neon.1 Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.1">
