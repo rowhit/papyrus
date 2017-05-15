@@ -7,6 +7,19 @@
       name="Languages"
       description="UML language extensions"
       relevance="6">
+    <components
+        name="Papyrus Req"
+        provider="Eclipse Modeling Project"
+        description="Component used to manage requirements of SysML"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/Papyrus_Req_32x32.png">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/oxygen</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Requirements/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/ </sitesURLS>
+      <overview
+          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation."/>
+      <id>org.eclipse.papyrus.requirements.features</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
