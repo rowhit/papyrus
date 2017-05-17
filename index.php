@@ -129,7 +129,7 @@
                     <img class="img-responsive center-block" src="img/standard-modeling.png" alt="Standard Modeling">
                     <h2>Standard based</h2>
 
-                    <p class="text-justify">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5.0</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.1 &amp; 1.4</a>, <a href="http://www.omg.org/spec/OCL/">OCL 2.3.1</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a> (incubation), <a href="http://www.east-adl.info/">EAST-ADL</a> (incubation), <a href="http://robotml.github.io/">RobotML</a> (incubation), UML-RT (incubation) and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
+                    <p class="text-justify">Implemented standards: <a href="http://www.omg.org/spec/UML/">UML 2.5</a>, <a href="http://www.omg.org/spec/SysML/">SysML 1.1 &amp; 1.4</a>, <a href="http://www.omg.org/spec/FUML/">fUML 1.2.1</a>, <a href="http://www.omg.org/spec/ALF/">ALF 1.0.1</a>, <a href="http://www.omg.org/spec/MARTE/">MARTE 1.1</a>, <a href="http://www.omg.org/spec/BPMNProfile/">BPMNProfile 1.0</a>, <a href="http://www.omg.org/spec/BMM/">BMM 1.3</a>, <a href="http://www.omg.org/spec/SMM/">SMM 1.1</a>, <a href="http://www.omg.org/spec/PSCS/">PSCS 1.0</a>, <a href="http://www.omg.org/spec/PSSM/">PSSM 1.0b</a>, <a href="http://fmi-standard.org/">FMI 2.0</a> and <a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=50508">ISO/IEC 42010</a>. </p>
                 </div>
                 <div class="col-md-4">
 
