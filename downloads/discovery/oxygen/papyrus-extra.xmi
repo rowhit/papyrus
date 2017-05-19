@@ -74,7 +74,7 @@
         image32="images/moka.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/oxygen</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/oxygen/ </sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.moka.p2/target/repository/</sitesURLS>
       <overview
           summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
       <id>org.eclipse.papyrus.moka.feature</id>
