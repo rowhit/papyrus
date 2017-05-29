@@ -1,0 +1,5 @@
+org.eclipse.papyrus.designer.languages.cpp.codegen
+org.eclipse.papyrus.designer.languages.cpp.codegen.preferences
+org.eclipse.papyrus.designer.languages.cpp.codegen.transformation
+org.eclipse.papyrus.designer.languages.cpp.codegen.utils
+org.eclipse.papyrus.designer.languages.cpp.codegen.xtend

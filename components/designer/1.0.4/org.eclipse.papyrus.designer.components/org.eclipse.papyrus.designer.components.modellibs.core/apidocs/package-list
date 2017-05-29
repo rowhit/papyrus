@@ -1,0 +1,6 @@
+org.eclipse.papyrus.designer.components.modellibs.core
+org.eclipse.papyrus.designer.components.modellibs.core.embeddingrules
+org.eclipse.papyrus.designer.components.modellibs.core.mappingrules
+org.eclipse.papyrus.designer.components.modellibs.core.transformations
+org.eclipse.papyrus.designer.components.modellibs.core.utils
+org.eclipse.papyrus.designer.components.modellibs.core.wizards

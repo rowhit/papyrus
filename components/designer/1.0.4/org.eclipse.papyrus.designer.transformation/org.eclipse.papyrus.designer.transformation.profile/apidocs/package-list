@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.transformation.profile
+org.eclipse.papyrus.designer.transformation.profile.Transformation
+org.eclipse.papyrus.designer.transformation.profile.Transformation.impl
+org.eclipse.papyrus.designer.transformation.profile.Transformation.util

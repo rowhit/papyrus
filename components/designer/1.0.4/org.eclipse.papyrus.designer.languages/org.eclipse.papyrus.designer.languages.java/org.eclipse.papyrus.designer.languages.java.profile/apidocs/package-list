@@ -1,0 +1,4 @@
+org.eclipse.papyrus.designer.languages.java.profile
+org.eclipse.papyrus.designer.languages.java.profile.PapyrusJava
+org.eclipse.papyrus.designer.languages.java.profile.PapyrusJava.impl
+org.eclipse.papyrus.designer.languages.java.profile.PapyrusJava.util

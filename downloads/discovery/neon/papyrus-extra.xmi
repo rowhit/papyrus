@@ -118,7 +118,7 @@
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.languages.java.feature</id>
     </components>
-        <components
+    <components
         name="Designer-CPP"
         provider="Eclipse Modeling Project"
         description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated for C++ applications."
@@ -132,6 +132,21 @@
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.languages.cpp.feature</id>
+    </components>
+    <components
+        name="Designer-UCM"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated to UCM (the OMG unified component model)"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/neon</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.ucm.feature</id>
     </components>
     <components
         name="Papyrus for Metrics"
