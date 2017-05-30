@@ -86,6 +86,31 @@
           summary="UML export is a Papyrus component for exporting papyrus profile in a plug-in"/>
       <id>org.eclipse.papyrus.uml.export.feature</id>
     </components>
+    <components
+        name="Import RSA model"
+        provider="Eclipse Modeling Project"
+        description="Provides Interoperability tools to migrate RSA models to Papyrus Models"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/PapyrusRSA.png">
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-rsa-oxygen/lastSuccessfulBuild/artifact/source/rsa/releng/org.eclipse.papyrus.interoperability.rsa.p2/target/repository/</sitesURLS>
+      <overview
+          summary="Provides Interoperability tools to migrate RSA models to Papyrus Models"/>
+      <id>org.eclipse.papyrus.interoperability.rsa.feature</id>
+    </components>
+    <components
+        name="Import Rhapsody model"
+        provider="Eclipse Modeling Project"
+        description="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/PapyrusRPY.png"
+        incubation="true">
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-rpy-oxygen/lastSuccessfulBuild/artifact/source/rpy/releng/org.eclipse.papyrus.interoperability.rpy.p2/target/repository/</sitesURLS>
+      <overview
+          summary="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"/>
+      <id>org.eclipse.papyrus.interoperability.rpy.feature</id>
+    </components>
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
