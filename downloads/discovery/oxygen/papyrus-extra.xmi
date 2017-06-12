@@ -124,6 +124,19 @@
           summary="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"/>
       <id>org.eclipse.papyrus.interoperability.rpy.feature</id>
     </components>
+ 	<components
+        name="SysML 1.1 to SysML 1.4 Migration Tool"
+        provider="Eclipse Modeling Project"
+        description="Migration tool for SysML 1.1 models to SysML 1.4 models"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/PapyrusSysMLInteroperability.png"
+        incubation="true">
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-sysml14-oxygen/lastSuccessfulBuild/artifact/source/sysml14/releng/org.eclipse.papyrus.interoperability.sysml14.sysml.p2/target/repository/</sitesURLS>
+      <overview
+          summary="Migration tool for SysML 1.1 models to SysML 1.4 models"/>
+      <id>org.eclipse.papyrus.interoperability.sysml14.sysml.feature</id>
+    </components>    
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
