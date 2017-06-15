@@ -36,6 +36,19 @@
       <id>org.eclipse.papyrus.layers.feature</id>
     </components>
     <components
+        name="Diagram generation"
+        provider="Eclipse Modeling Project"
+        description="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/DiagramTemplate.gif"
+        incubation="true">
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <overview
+          summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
+      <id>org.eclipse.papyrus.diagramtemplate.feature</id>
+    </components>
+    <components
         name="Papyrus DSML Validation"
         provider="Eclipse Modeling Project"
         description="Component to generate a validation plug-in from a UML Profile"
