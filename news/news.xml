@@ -16,6 +16,15 @@
 -->
 <news>
     <item
+		date="2017-06-28"
+        title="Papyrus 3.0.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.0.0">
+        <p>
+            The Eclipse Papyrus 3.0.0 Neon release is now available!
+            You'll be able to install it using the <a href="http://download.eclipse.org/modeling/mdt/papyrus/updates/releases/oxygen/">Oxygen update site</a>.
+        </p>
+    </item>
+    <item
 		date="2017-03-23"
         title="Papyrus 2.0.3 Neon.3 Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/2.0.3">
