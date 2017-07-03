@@ -30,7 +30,7 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
       <overview
           summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
       <id>org.eclipse.papyrus.layers.feature</id>
@@ -43,7 +43,7 @@
         groups="//@filters.1"
         image32="images/DiagramTemplate.gif"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/incubation/diagramtemplate/updates/oxygen/</sitesURLS>
       <overview
           summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
       <id>org.eclipse.papyrus.diagramtemplate.feature</id>
@@ -55,10 +55,10 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/incubation/dsml.validation/updates/oxygen/</sitesURLS>
       <overview
           summary="Component to generate a validation plug-in from a UML Profile"/>
-      <id>org.eclipse.papyrus.extra.dsml.validation.feature</id>
+      <id>org.eclipse.papyrus.dsml.validation.feature</id>
     </components>
     <components
         name="Integrated ALF Editor"
@@ -68,10 +68,10 @@
         groups="//@filters.1"
         image32="images/alf-icon-32x32.png"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Incubation/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
       <overview
           summary="ALF is a standard language enabling the specification of fUML (subet of UML - scope limited to Classes an Activities) models using text. The advantage of ALF is that it is fully aligned on the subset of UML  covered by fUML. This means any ALF specification can be compiled as a fUML model. Conversely a fUML model can be translated as an ALF model whose representation is given textually. ALF provides a way to make easier the specification of fUML models. This is especially true in the case of activities which become hard to understand as soon as you have more than a dozen of action nodes. In the context of Papyrus an ALF editor is integrated within the property and become available according to the selection you have in your current model. For the moment edition is limited to Class, Signal, DataType, Enumeration, Package, Association and Activity. The user has the opportunity to modify, validate and compile (i.e. propagate the modifications) ALF specifications corresponding to these elements. "/>
-      <id>org.eclipse.papyrus.uml.alf.extra.feature</id>
+      <id>org.eclipse.papyrus.uml.alf.feature</id>
     </components>
     <components
         name="Moka"
@@ -81,7 +81,7 @@
         groups="//@filters.1"
         image32="images/moka.png"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.moka.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/oxygen/</sitesURLS>
       <overview
           summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
       <id>org.eclipse.papyrus.moka.feature</id>
@@ -94,7 +94,7 @@
         groups="//@filters.1"
         image32="images/UMLExport_32_32.png"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
       <overview
           summary="UML export is a Papyrus component for exporting papyrus profile in a plug-in"/>
       <id>org.eclipse.papyrus.uml.export.feature</id>
@@ -106,7 +106,7 @@
         license="EPL"
         groups="//@filters.0"
         image32="images/PapyrusRSA.png">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-rsa-oxygen/lastSuccessfulBuild/artifact/source/rsa/releng/org.eclipse.papyrus.interoperability.rsa.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rsa/updates/oxygen/</sitesURLS>
       <overview
           summary="Provides Interoperability tools to migrate RSA models to Papyrus Models"/>
       <id>org.eclipse.papyrus.interoperability.rsa.feature</id>
@@ -119,7 +119,7 @@
         groups="//@filters.0"
         image32="images/PapyrusRPY.png"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-rpy-oxygen/lastSuccessfulBuild/artifact/source/rpy/releng/org.eclipse.papyrus.interoperability.rpy.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rpy/updates/oxygen/</sitesURLS>
       <overview
           summary="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"/>
       <id>org.eclipse.papyrus.interoperability.rpy.feature</id>
@@ -132,7 +132,7 @@
         groups="//@filters.1"
         image32="images/PapyrusSysMLInteroperability.png"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Interoperability/job/papyrus-interoperability-sysml14-oxygen/lastSuccessfulBuild/artifact/source/sysml14/releng/org.eclipse.papyrus.interoperability.sysml14.sysml.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/sysml11tosysml14/updates/oxygen/</sitesURLS>
       <overview
           summary="Migration tool for SysML 1.1 models to SysML 1.4 models"/>
       <id>org.eclipse.papyrus.interoperability.sysml14.sysml.feature</id>
