@@ -71,7 +71,7 @@
       <sitesURLS>https://hudson.eclipse.org/papyrus/view/Incubation/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
       <overview
           summary="ALF is a standard language enabling the specification of fUML (subet of UML - scope limited to Classes an Activities) models using text. The advantage of ALF is that it is fully aligned on the subset of UML  covered by fUML. This means any ALF specification can be compiled as a fUML model. Conversely a fUML model can be translated as an ALF model whose representation is given textually. ALF provides a way to make easier the specification of fUML models. This is especially true in the case of activities which become hard to understand as soon as you have more than a dozen of action nodes. In the context of Papyrus an ALF editor is integrated within the property and become available according to the selection you have in your current model. For the moment edition is limited to Class, Signal, DataType, Enumeration, Package, Association and Activity. The user has the opportunity to modify, validate and compile (i.e. propagate the modifications) ALF specifications corresponding to these elements. "/>
-      <id>org.eclipse.papyrus.uml.alf.feature</id>
+      <id>org.eclipse.papyrus.uml.alf.integration.feature</id>
     </components>
     <components
         name="Moka"
