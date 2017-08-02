@@ -1,0 +1,11 @@
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.impl
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.constraintWithVSLl.util
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.formatting
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.parseTreeConstruction
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.parser.antlr
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.parser.antlr.internal
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.scoping
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.services
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.validation

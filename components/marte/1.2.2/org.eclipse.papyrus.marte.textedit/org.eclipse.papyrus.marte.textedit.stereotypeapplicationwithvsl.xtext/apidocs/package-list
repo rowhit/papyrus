@@ -1,0 +1,11 @@
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.formatting
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.parseTreeConstruction
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.parser.antlr
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.parser.antlr.internal
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.scoping
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.services
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.impl
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.stereotypeApplicationWithVSL.util
+org.eclipse.papyrus.marte.textedit.stereotypeapplicationwithvsl.xtext.validation
