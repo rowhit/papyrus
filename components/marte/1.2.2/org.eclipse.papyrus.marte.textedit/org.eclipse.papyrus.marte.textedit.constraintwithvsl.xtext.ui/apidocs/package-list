@@ -1,0 +1,9 @@
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contentassist
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contentassist.antlr
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contentassist.antlr.internal
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.contributions
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.internal
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.labeling
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.outline
+org.eclipse.papyrus.marte.textedit.constraintwithvsl.xtext.ui.quickfix
