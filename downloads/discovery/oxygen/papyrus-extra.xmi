@@ -14,9 +14,9 @@
         license="EPL"
         groups="//@filters.1"
         image32="images/Papyrus_Req_32x32.png">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Requirements/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/</sitesURLS>
       <overview
-          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation."/>
+          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation. You will need the latest version of SyML14 to install this feature"/>
       <id>org.eclipse.papyrus.requirements.core.feature</id>
     </components>
   </categories>
