@@ -87,6 +87,58 @@
       <id>org.eclipse.papyrus.moka.feature</id>
     </components>
     <components
+        name="Designer-JAVA"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated for Java applications."
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.languages.java.feature</id>
+    </components>
+    <components
+        name="Designer-CPP"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated for C++ applications."
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.languages.cpp.feature</id>
+    </components>
+    <components
+        name="Designer-TRAFO"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated to enhanced code generation (e.g. state machine support) by executing model transformations before code generation."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.transformation.main.feature</id>
+    </components>
+    <components
+        name="Designer-UCM"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated to UCM (the OMG unified component model)"
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.ucm.feature</id>
+    </components>
+    <components
         name="Papyrus Export Profiles"
         provider="Eclipse Modeling Project"
         description="UML export is a Papyrus component for exporting papyrus profile in a plug-in"
