@@ -14,10 +14,10 @@
         license="EPL"
         groups="//@filters.1"
         image32="images/Papyrus_Req_32x32.png">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Requirements/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/ </sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/view/Requirements/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/</sitesURLS>
       <overview
           summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation."/>
-      <id>org.eclipse.papyrus.requirements.features</id>
+      <id>org.eclipse.papyrus.requirements.core.feature</id>
     </components>
   </categories>
   <categories
@@ -30,7 +30,7 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
+      <sitesURLS>https://hudson.eclipse.org/papyrus/job/Papyrus-Incubation-Layers/lastSuccessfulBuild/artifact/layers/releng/org.eclipse.papyrus.incubation.layers.p2/target/repository/</sitesURLS>
       <overview
           summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
       <id>org.eclipse.papyrus.layers.feature</id>
@@ -81,7 +81,7 @@
         groups="//@filters.1"
         image32="images/moka.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/oxygen/</sitesURLS>
+      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/oxygen/</sitesURLS -->
       <overview
           summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
       <id>org.eclipse.papyrus.moka.feature</id>
@@ -106,7 +106,7 @@
         license="EPL"
         groups="//@filters.0"
         image32="images/PapyrusRSA.png">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rsa/updates/oxygen/</sitesURLS>
+      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rsa/updates/oxygen/</sitesURLS -->
       <overview
           summary="Provides Interoperability tools to migrate RSA models to Papyrus Models"/>
       <id>org.eclipse.papyrus.interoperability.rsa.feature</id>
@@ -119,7 +119,7 @@
         groups="//@filters.0"
         image32="images/PapyrusRPY.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rpy/updates/oxygen/</sitesURLS>
+      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rpy/updates/oxygen/</sitesURLS -->
       <overview
           summary="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"/>
       <id>org.eclipse.papyrus.interoperability.rpy.feature</id>
@@ -132,7 +132,7 @@
         groups="//@filters.1"
         image32="images/PapyrusSysMLInteroperability.png"
         incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/sysml11tosysml14/updates/oxygen/</sitesURLS>
+      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/sysml11tosysml14/updates/oxygen/</sitesURLS -->
       <overview
           summary="Migration tool for SysML 1.1 models to SysML 1.4 models"/>
       <id>org.eclipse.papyrus.interoperability.sysml14.sysml.feature</id>
