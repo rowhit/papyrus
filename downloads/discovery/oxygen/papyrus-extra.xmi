@@ -19,6 +19,18 @@
           summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation. You will need the latest version of SyML14 to install this feature"/>
       <id>org.eclipse.papyrus.requirements.core.feature</id>
     </components>
+    <components
+        name="SysML 1.4"
+        provider="Eclipse Modeling Project"
+        description="SysML 1.4 extension for Papyrus"
+        license="EPL"
+        groups="//@filters.0"
+        image32="images/sysml_32x32.gif">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/oxygen/</sitesURLS>
+      <overview
+          summary="SysML 1.4 extension for Papyrus"/>
+      <id>org.eclipse.papyrus.sysml14.feature</id>
+    </components>
   </categories>
   <categories
       name="Modeler extensions"
