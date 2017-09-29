@@ -25,10 +25,10 @@
         description="SysML 1.4 extension for Papyrus"
         license="EPL"
         groups="//@filters.0"
-        image32="images/sysml_32x32.gif">
+        image32="images/sysml_32_32.gif">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/oxygen/</sitesURLS>
       <overview
-          summary="SysML 1.4 extension for Papyrus"/>
+          summary="SysML 1.4 extension for Papyrus. You will need the org.eclipse.ocl.all.sdk (5.3.0) and the org.eclipse.papyrus.sdk.feature (3.1.0) released in the eclipse oxygen update site"/>
       <id>org.eclipse.papyrus.sysml14.feature</id>
     </components>
   </categories>
