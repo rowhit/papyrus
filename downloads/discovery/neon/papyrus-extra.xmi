@@ -108,7 +108,7 @@
         provider="Eclipse Modeling Project"
         description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated for Java applications."
         license="EPL"
-        groups="//@filters.1"
+        groups="//@filters.0"
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
@@ -123,7 +123,7 @@
         provider="Eclipse Modeling Project"
         description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated for C++ applications."
         license="EPL"
-        groups="//@filters.1"
+        groups="//@filters.0"
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/releases/neon</sitesURLS>
@@ -132,6 +132,19 @@
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.languages.cpp.feature</id>
+    </components>
+    <components
+        name="Designer-TRAFO"
+        provider="Eclipse Modeling Project"
+        description="Papyrus Software Designer is a Papyrus environment dedicated to component-based modeling and code generation. This feature is dedicated to enhanced code generation (e.g. state machine support) by executing model transformations before code generation."
+        license="EPL"
+        groups="//@filters.1"
+        image32="images/designer_32_32.png"
+        incubation="true">
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
+      <overview
+          summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
+      <id>org.eclipse.papyrus.designer.transformation.main.feature</id>
     </components>
     <components
         name="Designer-UCM"
