@@ -107,7 +107,6 @@
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/marte</sitesURLS>
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.languages.java.feature</id>
@@ -121,7 +120,6 @@
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/marte</sitesURLS>
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.languages.cpp.feature</id>
@@ -135,7 +133,6 @@
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/marte</sitesURLS>
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.transformation.main.feature</id>
@@ -149,7 +146,6 @@
         image32="images/designer_32_32.png"
         incubation="true">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/designer</sitesURLS>
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/marte</sitesURLS>
       <overview
           summary="Designer is a project of the Eclipse Papyrus s galaxy. Papyrus Designer application is a Papyrus environment dedicated for component-based modeling and code generation."/>
       <id>org.eclipse.papyrus.designer.ucm.feature</id>
