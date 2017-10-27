@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AggregationKindValid xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../apidocs/org/eclipse/papyrus/designer/components/validation/constraints/AggregationKindValid.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_javadoccomment"> * All rights reserved. This program and the accompanying materials</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_javadoccomment"> * are made available under the terms of the Eclipse Public License v1.0</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> * which accompanies this distribution, and is available at</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_javadoccomment"> * <a href="http://www.eclipse.org/legal/epl-v10.htm" target="alexandria_uri">http://www.eclipse.org/legal/epl-v10.htm</a>l</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">package</strong> org.eclipse.papyrus.designer.components.validation.constraints;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> org.eclipse.core.runtime.IStatus;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> org.eclipse.emf.validation.AbstractModelConstraint;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> org.eclipse.emf.validation.IValidationContext;
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> org.eclipse.papyrus.designer.deployment.profile.Deployment.ConfigurationProperty;
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> org.eclipse.papyrus.designer.deployment.tools.DepUtils;
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">import</strong> org.eclipse.papyrus.uml.tools.utils.StereotypeUtil;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.AggregationKind;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.Class;
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.Property;
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.Type;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment"> * Verify that aggregation kinds are used well. General rule:</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment"> * attributes of a components should have aggregation kind "composite" unless</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment"> * (1) the are singletons (implementation property), i.e. there is exactly one instance.</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> * (2) they are *shared*. In this case an enclosing component has to define a property of same type</em>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment"> * and name (open if "same name" restriction is kept, since it implies an implicit relationship</em>
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment"> * that would break after name changes. But it allows for having multiple shared properties of same type)</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment"> * [it does not make a difference, whether "aggregation" or "none" is used as aggregation kind]</em>
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment"> * Alternative? give user a fine control in the instantiation model? Fractal: no need for a single</em>
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <em class="jxr_javadoccomment"> * composed property?</em>
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment"> * Rule has been made specific to SW Designer, since we verify that configurationProperty is applicable (implying that the</em>
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment"> * FCM profile is applied)</em>
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <em class="jxr_javadoccomment"> * @author ansgar</em>
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../../org/eclipse/papyrus/designer/components/validation/constraints/AggregationKindValid.html">AggregationKindValid</a> <strong class="jxr_keyword">extends</strong> AbstractModelConstraint {
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  	@Override
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  	<strong class="jxr_keyword">public</strong> IStatus validate(IValidationContext ctx)
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  	{
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  		Property attribute = (Property) ctx.getTarget();
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		Type type = attribute.getType();
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  		<strong class="jxr_keyword">if</strong> (type instanceof Class) {
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  			AggregationKind aggKind = attribute.getAggregation();
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  			<strong class="jxr_keyword">if</strong> (aggKind != AggregationKind.COMPOSITE_LITERAL) {
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  				<strong class="jxr_keyword">if</strong> (StereotypeUtil.isApplicable(attribute, ConfigurationProperty.<strong class="jxr_keyword">class</strong>) &amp;&amp; !DepUtils.isSingleton((Class) type)) {
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  					<em class="jxr_comment">// no composition, but not singleton: warn user to make up a proper deployment plan</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  					<em class="jxr_comment">// validation has been made SW Designer specific by checking whether the Configuration attribute is applicable</em>
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  					<strong class="jxr_keyword">return</strong> ctx.createFailureStatus(<span class="jxr_string">"The attribute '"</span> + attribute.getName() + <span class="jxr_string">"' has a non-composition aggregation kind, but the referenced type ('"</span> +
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  							type.getName() + <span class="jxr_string">"') is not a singleton. The associated instance specifications have to be set-up manually"</span>);
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  				}
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  			}
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		}
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  		<strong class="jxr_keyword">return</strong> ctx.createSuccessStatus();
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  	}
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2016&#x2013;2017 <a href="https://www.eclipse.org/">Eclipse foundation</a>. All rights reserved.</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>GeneratorSelectionDialog xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../apidocs/org/eclipse/papyrus/designer/languages/common/extensionpoints/GeneratorSelectionDialog.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <em class="jxr_javadoccomment">/*****************************************************************************</em>
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_javadoccomment"> * Copyright (c) 2015 CEA LIST.</em>
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_javadoccomment"> * All rights reserved. This program and the accompanying materials</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_javadoccomment"> * are made available under the terms of the Eclipse Public License v1.0</em>
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_javadoccomment"> * which accompanies this distribution, and is available at</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_javadoccomment"> * <a href="http://www.eclipse.org/legal/epl-v10.htm" target="alexandria_uri">http://www.eclipse.org/legal/epl-v10.htm</a>l</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_javadoccomment"> * Contributors:</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_javadoccomment"> *  Ansgar Radermacher  ansgar.radermacher@cea.fr</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  <em class="jxr_javadoccomment"> *****************************************************************************/</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">package</strong> org.eclipse.papyrus.designer.languages.common.extensionpoints;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <strong class="jxr_keyword">import</strong> java.util.Arrays;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">import</strong> org.eclipse.jface.viewers.LabelProvider;
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.SWT;
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.events.SelectionEvent;
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.events.SelectionListener;
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.layout.GridData;
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.widgets.Composite;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.widgets.Control;
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.widgets.Label;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.widgets.Shell;
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> org.eclipse.swt.widgets.Text;
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> org.eclipse.ui.dialogs.AbstractElementListSelectionDialog;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <em class="jxr_javadoccomment"> * Select a generator from a list of eligible generators</em>
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../../org/eclipse/papyrus/designer/languages/common/extensionpoints/GeneratorSelectionDialog.html">GeneratorSelectionDialog</a> <strong class="jxr_keyword">extends</strong> AbstractElementListSelectionDialog {
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  	<strong class="jxr_keyword">protected</strong> Text m_description;
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  	ILangCodegen generators[];
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  	
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../../../org/eclipse/papyrus/designer/languages/common/extensionpoints/GeneratorSelectionDialog.html">GeneratorSelectionDialog</a>(Shell parent, List&lt;ILangCodegen&gt; generatorList) {
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  		<strong class="jxr_keyword">super</strong>(parent, <strong class="jxr_keyword">new</strong> LabelProvider() {
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  			<strong class="jxr_keyword">public</strong> String getText(Object element) {
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  				<strong class="jxr_keyword">return</strong> LanguageCodegen.getID((ILangCodegen) element);
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  			}
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  		});
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  		generators = generatorList.toArray(<strong class="jxr_keyword">new</strong> <a href="../../../../../../../org/eclipse/papyrus/designer/languages/common/extensionpoints/ILangCodegen.html">ILangCodegen</a>[0]);
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  		setMultipleSelection(false);
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  		setTitle(Messages.GeneratorSelectionDialog_SelectGenerator);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  	}
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  	@Override
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  	<strong class="jxr_keyword">public</strong> Control createDialogArea(Composite parent) {
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  		Composite contents = (Composite) <strong class="jxr_keyword">super</strong>.createDialogArea(parent);
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  		createMessageArea(contents);
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  		<em class="jxr_comment">// createLabel(contents, "Connector type");</em>
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  		<em class="jxr_comment">// GridData gridData = DialogUtils.createFillGridData();</em>
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  		<em class="jxr_comment">// gridData.heightHint = 200;</em>
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  		createFilteredList(contents);
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  		createFilterText(contents);
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  		
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  		fFilteredList.setElements(generators);
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  		
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  		Label info = createMessageArea(contents);
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>  		info.setText(Messages.GeneratorSelectionDialog_infoCodeGen);
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  		<em class="jxr_comment">// m_description = createMessageArea(contents);</em>
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  		fFilteredList.addSelectionListener(<strong class="jxr_keyword">new</strong> SelectionListener() {
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  			
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  			@Override
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> widgetSelected(SelectionEvent e) {
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  				<strong class="jxr_keyword">int</strong> index = fFilteredList.getSelectionIndex();
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  				updateDescription(getElement(index));
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>  			}
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>  			
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>  			@Override
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  			<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> widgetDefaultSelected(SelectionEvent e) {
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>  			}
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>  		});
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>  		
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>  		GridData descriptionGD = <strong class="jxr_keyword">new</strong> GridData();
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>  		descriptionGD.horizontalAlignment = GridData.FILL;
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  		descriptionGD.grabExcessHorizontalSpace = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  		descriptionGD.heightHint = 80;
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  		descriptionGD.grabExcessVerticalSpace = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>  		descriptionGD.verticalAlignment = GridData.FILL;
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>  		m_description = <strong class="jxr_keyword">new</strong> Text(contents, SWT.NONE | SWT.WRAP | SWT.V_SCROLL | SWT.READ_ONLY);
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>  		m_description.setLayoutData(descriptionGD);
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>  		updateDescription(getElement(0));
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>  		
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  		<strong class="jxr_keyword">return</strong> contents;
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>  	}
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>  
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> updateDescription(<a href="../../../../../../../org/eclipse/papyrus/designer/languages/common/extensionpoints/ILangCodegen.html">ILangCodegen</a> codegen) {
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>  		<strong class="jxr_keyword">if</strong> (codegen instanceof ILangCodegen2) {
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>  			m_description.setText(((ILangCodegen2) codegen).getDescription());
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> 		}
+<a class="jxr_linenumber" name="L101" href="#L101">101</a> 		<strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L102" href="#L102">102</a> 			m_description.setText(<span class="jxr_string">"not available"</span>); <em class="jxr_comment">//$NON-NLS-1$</em>
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> 		}
+<a class="jxr_linenumber" name="L104" href="#L104">104</a> 	}
+<a class="jxr_linenumber" name="L105" href="#L105">105</a> 
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L107" href="#L107">107</a> <em class="jxr_javadoccomment">	 * Obtain ILangCodegen object via index. Note that we need to access the data from the filtered list</em>
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> <em class="jxr_javadoccomment">	 * since the order might not be the same as the local "generators" array (the filtered list sorts)</em>
+<a class="jxr_linenumber" name="L109" href="#L109">109</a> <em class="jxr_javadoccomment">	 * @param index</em>
+<a class="jxr_linenumber" name="L110" href="#L110">110</a> <em class="jxr_javadoccomment">	 * @return</em>
+<a class="jxr_linenumber" name="L111" href="#L111">111</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> 	ILangCodegen getElement(<strong class="jxr_keyword">int</strong> index) {
+<a class="jxr_linenumber" name="L113" href="#L113">113</a> 		<strong class="jxr_keyword">return</strong> (ILangCodegen) fFilteredList.getFoldedElements(index)[0];
+<a class="jxr_linenumber" name="L114" href="#L114">114</a> 	}
+<a class="jxr_linenumber" name="L115" href="#L115">115</a> 	
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> 	@Override
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> computeResult() {
+<a class="jxr_linenumber" name="L118" href="#L118">118</a> 		<strong class="jxr_keyword">int</strong> index = fFilteredList.getSelectionIndex();
+<a class="jxr_linenumber" name="L119" href="#L119">119</a> 		Object[] result = <strong class="jxr_keyword">new</strong> Object[] { getElement(index) };
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> 		setResult(Arrays.asList(result));		
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> 	}
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2016&#x2013;2017 <a href="https://www.eclipse.org/">Eclipse foundation</a>. All rights reserved.</div>
+</body>
+</html>

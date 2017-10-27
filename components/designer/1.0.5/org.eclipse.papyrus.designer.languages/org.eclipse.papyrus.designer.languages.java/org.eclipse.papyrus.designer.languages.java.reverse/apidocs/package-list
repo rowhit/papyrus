@@ -1,0 +1,14 @@
+org.eclipse.papyrus.designer.languages.java.reverse
+org.eclipse.papyrus.designer.languages.java.reverse.exception
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.body
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.comments
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.expr
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.internal
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.stmt
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.type
+org.eclipse.papyrus.designer.languages.java.reverse.javaparser.ast.visitor
+org.eclipse.papyrus.designer.languages.java.reverse.jdt
+org.eclipse.papyrus.designer.languages.java.reverse.umlparser
+org.eclipse.papyrus.designer.languages.java.reverse.utils

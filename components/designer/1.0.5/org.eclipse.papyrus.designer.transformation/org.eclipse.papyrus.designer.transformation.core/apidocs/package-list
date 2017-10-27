@@ -1,0 +1,11 @@
+org.eclipse.papyrus.designer.transformation.core
+org.eclipse.papyrus.designer.transformation.core.commands
+org.eclipse.papyrus.designer.transformation.core.copylisteners
+org.eclipse.papyrus.designer.transformation.core.generate
+org.eclipse.papyrus.designer.transformation.core.m2minterfaces
+org.eclipse.papyrus.designer.transformation.core.make
+org.eclipse.papyrus.designer.transformation.core.sync
+org.eclipse.papyrus.designer.transformation.core.templates
+org.eclipse.papyrus.designer.transformation.core.transformations
+org.eclipse.papyrus.designer.transformation.core.transformations.filters
+org.eclipse.papyrus.designer.transformation.core.utils

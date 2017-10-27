@@ -1,0 +1,5 @@
+org.eclipse.papyrus.designer.transformation.library
+org.eclipse.papyrus.designer.transformation.library.iconfigurators
+org.eclipse.papyrus.designer.transformation.library.transformations
+org.eclipse.papyrus.designer.transformation.library.transformations.bindinghelpers
+org.eclipse.papyrus.designer.transformation.library.xtend

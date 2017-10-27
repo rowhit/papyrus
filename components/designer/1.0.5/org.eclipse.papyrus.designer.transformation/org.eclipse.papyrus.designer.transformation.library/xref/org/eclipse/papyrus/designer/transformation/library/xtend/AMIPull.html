@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AMIPull xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../apidocs/org/eclipse/papyrus/designer/transformation/library/xtend/AMIPull.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> org.eclipse.papyrus.designer.transformation.library.xtend;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.base.Objects;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.eclipse.papyrus.designer.transformation.library.xtend.Marshalling;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.Operation;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.eclipse.uml2.uml.Type;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.eclipse.xtend2.lib.StringConcatenation;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   @SuppressWarnings(<span class="jxr_string">"all"</span>)
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../../org/eclipse/papyrus/designer/transformation/library/xtend/AMIPull.html">AMIPull</a> {
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <strong class="jxr_keyword">public</strong> CharSequence operation_(<strong class="jxr_keyword">final</strong> Operation operation) {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      StringConcatenation _builder = <strong class="jxr_keyword">new</strong> StringConcatenation();
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>      {
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>        String _name = operation.getName();
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>        <strong class="jxr_keyword">boolean</strong> _endsWith = _name.endsWith(<span class="jxr_string">"Poll"</span>);
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>        <strong class="jxr_keyword">if</strong> (_endsWith) {
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>          _builder.append(<span class="jxr_string">"// comment polling function"</span>);
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>          _builder.append(<span class="jxr_string">"if (!resultArrived) {"</span>);
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          _builder.append(<span class="jxr_string">"\t"</span>);
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>          _builder.append(<span class="jxr_string">"// wait for result, condition will be fired upon arrival"</span>);
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>          _builder.append(<span class="jxr_string">"\t"</span>);
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>          _builder.append(<span class="jxr_string">"TimeVal timeVal = TimeVal::current () + timeout;"</span>);
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>          _builder.append(<span class="jxr_string">"\t"</span>);
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>          _builder.append(<span class="jxr_string">"m_cond.waitUpto (timeout);"</span>);
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          _builder.append(<span class="jxr_string">"}"</span>);
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          CharSequence _unmarshall = Marshalling.unmarshall(operation);
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          _builder.append(_unmarshall, <span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>          _builder.newLineIfNotEmpty();
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          _builder.append(<span class="jxr_string">"}"</span>);
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          {
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>            Type _type = operation.getType();
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>            <strong class="jxr_keyword">boolean</strong> _notEquals = (!Objects.equal(_type, <strong class="jxr_keyword">null</strong>));
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>            <strong class="jxr_keyword">if</strong> (_notEquals) {
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>              _builder.append(<span class="jxr_string">"return retValue;"</span>);
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>            }
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>          }
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>          _builder.newLineIfNotEmpty();
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>        } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>          _builder.append(<span class="jxr_string">"// TODO: need suitable constant dimensioning"</span>);
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>          _builder.append(<span class="jxr_string">"pBuffer = &amp;buffer[500];  // grows backwards"</span>);
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>          _builder.append(<span class="jxr_string">"int operationID = ID_[operation.name/];"</span>);
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>          _builder.append(<span class="jxr_string">"// now marshall in and inout parameters via ASN.1"</span>);
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>          CharSequence _marshall = Marshalling.marshall(operation);
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>          _builder.append(_marshall, <span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>          _builder.newLineIfNotEmpty();
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>          _builder.append(<span class="jxr_string">"BEncAsnContent (&amp;amp;pBuffer, &amp;amp;operationID);"</span>);
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>          _builder.append(<span class="jxr_string">"pthread_t pt;"</span>);
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>          _builder.append(<span class="jxr_string">"pthread_create (&amp;amp;pt, NULL, staticDispatch, (void *) this);"</span>);
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>          _builder.append(<span class="jxr_string">"// TODO: add semaphore which assures that subsequent calls to [operation.name/] are not executed before dispatch"</span>);
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>          _builder.append(<span class="jxr_string">"// has removed the parameters from the pBuffer stack (pBuffer can be corrupted)."</span>);
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          _builder.append(<span class="jxr_string">"// even worse: buffer will be deallocated even without a 2nd call!"</span>);
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>          _builder.newLine();
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>        }
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>      }
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">return</strong> _builder;
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>    }
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2016&#x2013;2017 <a href="https://www.eclipse.org/">Eclipse foundation</a>. All rights reserved.</div>
+</body>
+</html>

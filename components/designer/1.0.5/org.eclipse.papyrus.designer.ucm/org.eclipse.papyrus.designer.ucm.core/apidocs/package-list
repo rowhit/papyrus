@@ -1,0 +1,8 @@
+org.eclipse.papyrus.designer.ucm.core
+org.eclipse.papyrus.designer.ucm.core.commands
+org.eclipse.papyrus.designer.ucm.core.menu
+org.eclipse.papyrus.designer.ucm.core.provider
+org.eclipse.papyrus.designer.ucm.core.types
+org.eclipse.papyrus.designer.ucm.core.types.advice
+org.eclipse.papyrus.designer.ucm.core.types.matcher
+org.eclipse.papyrus.designer.ucm.core.utils
