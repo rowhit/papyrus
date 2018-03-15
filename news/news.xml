@@ -15,6 +15,14 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+	<item
+		date="2018-03-14"
+        title="Papyrus 3.4.0 is planned" 
+        link="https://www.eclipse.org/forums/index.php/t/1092260/">
+        <p>
+            Papyrus Team will make a new service release of Papyrus, Papyrus 3.4. This latter will be available on May the 21th.
+        </p>
+    </item>
     <item
 		date="2017-09-27"
         title="Papyrus 3.1.0 Oxygen Released"
