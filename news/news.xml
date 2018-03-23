@@ -15,12 +15,40 @@
     For announcements about releases, the release page is used because the download site will change after archival.
 -->
 <news>
+    <item
+		date="2017-03-21"
+        title="Papyrus 3.3.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.3.0">
+        <p>
+            The Eclipse Papyrus 3.3.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
+        </p>
+    </item>
 	<item
 		date="2018-03-14"
         title="Papyrus 3.4.0 is planned" 
         link="https://www.eclipse.org/forums/index.php/t/1092260/">
         <p>
             Papyrus Team will make a new service release of Papyrus, Papyrus 3.4. This latter will be available on May the 21th.
+        </p>
+    </item>
+    <item
+		date="2017-03-14"
+        title="Papyrus 4.0.0 Photon M6 milestone"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/updates/milestones/4.0.0/M6">
+        <p>
+            The Eclipse Papyrus 4.0.0 M6 is now available!
+            This milestone contains the newly released Test and Developer tools under the Toolsmiths category.
+            You can see and install the new features in the latest Photon package by fetching them from the above mentioned update site. These will now be released with Papyrus UML to ease third party integration.
+        </p>
+    </item>
+    <item
+		date="2017-12-20"
+        title="Papyrus 3.2.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.2.0">
+        <p>
+            The Eclipse Papyrus 3.2.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install Papyrus.
         </p>
     </item>
     <item
