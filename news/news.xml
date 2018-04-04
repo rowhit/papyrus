@@ -16,6 +16,14 @@
 -->
 <news>
     <item
+		date="2017-04-04"
+        title="Papyrus 3.3.0 Oxygen RCP"
+        <p>
+            The Eclipse Papyrus 3.3.0 Oxygen RCP is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> latest released RCP section.
+        </p>
+    </item>
+    <item
 		date="2017-03-21"
         title="Papyrus 3.3.0 Oxygen Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.3.0">
