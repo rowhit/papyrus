@@ -16,7 +16,7 @@
         image32="images/Papyrus_Req_32x32.png">
       <sitesURLS>https://hudson.eclipse.org/papyrus/job/Requirements-Master/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.requirements.p2/target/repository/</sitesURLS>
       <overview
-          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation. You will need the latest version of SyML14 to install this feature"/>
+          summary="Component used to manage requirements of SysML: management of ID, traceability matrix, traceability validation. You will need the latest Oxygen version of SyML14 to install this feature"/>
       <id>org.eclipse.papyrus.requirements.core.feature</id>
     </components>
     <components
@@ -28,7 +28,7 @@
         image32="images/sysml_32_32.gif">
       <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/components/sysml14/oxygen/</sitesURLS>
       <overview
-          summary="SysML 1.4 extension for Papyrus. You will need the org.eclipse.ocl.all.sdk (5.3.0) and the org.eclipse.papyrus.sdk.feature (3.1.0) released in the eclipse oxygen update site"/>
+          summary="SysML 1.4 extension for Papyrus. You will need the org.eclipse.ocl.all.sdk (5.3.0) and the org.eclipse.papyrus.sdk.feature (3.1.0 or above) released in the eclipse oxygen update site"/>
       <id>org.eclipse.papyrus.sysml14.feature</id>
     </components>
   </categories>
@@ -42,23 +42,10 @@
         license="EPL"
         groups="//@filters.1"
         incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/Papyrus-Incubation-Layers/lastSuccessfulBuild/artifact/layers/releng/org.eclipse.papyrus.incubation.layers.p2/target/repository/</sitesURLS>
+      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/incubation/layers/updates/oxygen/</sitesURLS>
       <overview
-          summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views."/>
+          summary="Layers are used to control accurately what is shown by a diagram. A layer is used to associate some properties (graphical or domain) to some views (class, packages ...). This allows for example to set the same color to a set of views. You will need org.eclipse.emf.query.ocl 2.0.0 or above to install this feature."/>
       <id>org.eclipse.papyrus.layers.feature</id>
-    </components>
-    <components
-        name="Diagram generation"
-        provider="Eclipse Modeling Project"
-        description="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/DiagramTemplate.gif"
-        incubation="true">
-      <sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/incubation/diagramtemplate/updates/oxygen/</sitesURLS>
-      <overview
-          summary="Offers a tool for generating Papyrus Diagrams from a semantic UML Model"/>
-      <id>org.eclipse.papyrus.diagramtemplate.feature</id>
     </components>
     <components
         name="Papyrus DSML Validation"
@@ -98,57 +85,6 @@
           summary="Moka is a Papyrus module for execution of UML models, which natively includes an execution engine complying with OMG standards fUML and PSCS (which deal with execution semantics of UML). Moka is integrated with the Eclipse debug framework to provide control, observation and animation facilities over executions. Moka can be easily extended to support alternative execution semantics, and thereby be adapted to multiple usage scenarios and domains."/>
       <id>org.eclipse.papyrus.moka.feature</id>
     </components>
-    <components
-        name="Papyrus Export Profiles"
-        provider="Eclipse Modeling Project"
-        description="UML export is a Papyrus component for exporting papyrus profile in a plug-in"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/UMLExport_32_32.png"
-        incubation="true">
-      <sitesURLS>https://hudson.eclipse.org/papyrus/job/papyrus-incubation-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.papyrus.incubation.p2/target/repository/</sitesURLS>
-      <overview
-          summary="UML export is a Papyrus component for exporting papyrus profile in a plug-in"/>
-      <id>org.eclipse.papyrus.uml.export.feature</id>
-    </components>
-    <components
-        name="Import RSA model"
-        provider="Eclipse Modeling Project"
-        description="Provides Interoperability tools to migrate RSA models to Papyrus Models"
-        license="EPL"
-        groups="//@filters.0"
-        image32="images/PapyrusRSA.png">
-      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rsa/updates/oxygen/</sitesURLS -->
-      <overview
-          summary="Provides Interoperability tools to migrate RSA models to Papyrus Models"/>
-      <id>org.eclipse.papyrus.interoperability.rsa.feature</id>
-    </components>
-    <components
-        name="Import Rhapsody model"
-        provider="Eclipse Modeling Project"
-        description="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"
-        license="EPL"
-        groups="//@filters.0"
-        image32="images/PapyrusRPY.png"
-        incubation="true">
-      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/rpy/updates/oxygen/</sitesURLS -->
-      <overview
-          summary="Provides Interoperability tools to migrate Rhapsody models to Papyrus Models"/>
-      <id>org.eclipse.papyrus.interoperability.rpy.feature</id>
-    </components>
- 	<components
-        name="SysML 1.1 to SysML 1.4 Migration Tool"
-        provider="Eclipse Modeling Project"
-        description="Migration tool for SysML 1.1 models to SysML 1.4 models"
-        license="EPL"
-        groups="//@filters.1"
-        image32="images/PapyrusSysMLInteroperability.png"
-        incubation="true">
-      <!-- sitesURLS>http://download.eclipse.org/modeling/mdt/papyrus/interoperability/sysml11tosysml14/updates/oxygen/</sitesURLS -->
-      <overview
-          summary="Migration tool for SysML 1.1 models to SysML 1.4 models"/>
-      <id>org.eclipse.papyrus.interoperability.sysml14.sysml.feature</id>
-    </components>    
   </categories>
   <filters name="Stable"/>
   <filters name="Experimental"/>
