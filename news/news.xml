@@ -16,7 +16,16 @@
 -->
 <news>
     <item
-		date="2017-04-04"
+		date="2018-05-22"
+        title="Papyrus 3.4.0 Oxygen Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.4.0">
+        <p>
+            The Eclipse Papyrus 3.4.0 Oxygen release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html">Download page</a> to install it as an update site, a zip archive or as an RCP.
+        </p>
+    </item>
+    <item
+		date="2018-04-04"
         title="Papyrus 3.3.0 Oxygen RCP">
         <p>
             The Eclipse Papyrus 3.3.0 Oxygen RCP is now available!
@@ -24,7 +33,7 @@
         </p>
     </item>
     <item
-		date="2017-03-21"
+		date="2018-03-21"
         title="Papyrus 3.3.0 Oxygen Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/3.3.0">
         <p>
