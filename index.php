@@ -161,9 +161,9 @@
 
                     <div class="row papyrus-video">
                         <div class="col-md-6 col-md-offset-3">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qaypKeO5AUk?autoplay=0&modestbranding=1&rel=0&controls=2&theme=light&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                            </div>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=qaypKeO5AUk&feature=youtu.be">
+                            <img border="0" alt="PapyrusPitch" src="img/Papyrus_Web_Link_560_315.png" width="560" height="315">
+                            </a>
                         </div>
                     </div>
 
