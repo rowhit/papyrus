@@ -16,6 +16,24 @@
 -->
 <news>
     <item
+        date="2018-09-21"
+        title="Papyrus 4.1.0 2018-09 Released"
+        link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.1.0">
+        <p>
+            The Eclipse Papyrus 4.1.0 2018-09 release is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#accordion">Download page</a> to install it as an update site, a zip archive or as an RCP.
+        </p>
+    </item>
+    <item
+        date="2018-09-21"
+        title="Papyrus 4.1.0 2018-09 RCP"
+        link="http://download.eclipse.org/modeling/mdt/papyrus/rcp/2018-09/4.1.0/">
+        <p>
+            The Eclipse Papyrus 4.1.0 2018-09 RCP is now available!
+            Go to the <a href="https://www.eclipse.org/papyrus/download.html#rcp">Download page</a> latest released RCP section.
+        </p>
+    </item>
+    <item
         date="2018-06-26"
         title="Papyrus 4.0.0 Photon Released"
         link="http://projects.eclipse.org/projects/modeling.mdt.papyrus/releases/4.0.0">
